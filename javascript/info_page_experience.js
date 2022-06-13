@@ -37,7 +37,7 @@ const TAB = [
     info: [
       {
         year: "2018 - 2019",
-        subject: "Développement d’une version C et java du réseau de neurones SOM utilisant iris.data comme jeux de données.<br>Développement d’un CNN en python à l’aide de la bibliothèque KERAS pour la reconnaissance d’image.",
+        subject: "Développement d’une version C et java du réseau de neurones SOM utilisant iris.data comme jeux de données.<br><br>Développement d’un CNN en python à l’aide de la bibliothèque KERAS pour la reconnaissance d’image.",
       },
       {
         year: "2017",
@@ -45,7 +45,7 @@ const TAB = [
       },
       {
         year: "2016",
-        subject: "Développement d’un jeux vidéo d’infiltration en c# avec Unity.<br>Développement d’un jeu de stratégie en Java avec bibliothèque Swing inspiré du jeu Plague Inc.",
+        subject: "Développement d’un jeux vidéo d’infiltration en c# avec Unity.<br><br>Développement d’un jeu de stratégie en Java avec bibliothèque Swing inspiré du jeu Plague Inc.",
       },
       {
         year: "2015",
