@@ -1,8 +1,8 @@
 /* ========================ALL PAGE======================== */
 body {
     font-size: 1.3em;
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 }
 
 body img {
@@ -23,7 +23,7 @@ header {
     background-color: black;
     text-align: center;
     color: white;
-    margin: 0%;
+    margin: 0;
 }
 
 
@@ -46,7 +46,7 @@ nav.scrollmenu a {
     text-align: center;
     padding: 20px;
     text-decoration: none;
-    margin: 0%;
+    margin: 0;
 }
 
 nav li a:hover{
@@ -65,7 +65,7 @@ nav li a:hover{
 /* ========================SECTION======================== */
 main {
     padding-top : 2%;
-    padding-left:1%;
+    padding-left: 1%;
     width : 98%;
     overflow-y: auto;
     overflow-x: hidden; 
@@ -84,12 +84,14 @@ table{
 thead, tfoot {
     background-color: #333;
     color: #fff;
+    font-size: 1.3em;
 }
 
 td {
     text-align: center;
     padding-bottom : 20px;
-    font-size: 1em;
+    font-size: 1.3em;
+    width: 0;
 }
 
 
@@ -102,7 +104,7 @@ footer {
     bottom: 2%;
     text-align: center;
     font-style: italic;
-    padding-left:1%;
+    padding-left: 1%;
     margin:  auto;
     border:  2px groove threedface; 
 
@@ -113,7 +115,7 @@ footer a {
 }
 
 footer fieldset{
-    padding:  0%;
+    padding:  0;
 }
 
 
@@ -124,7 +126,7 @@ footer table  {
 } 
 
 footer thead{
-    margin:  0%;
+    margin:  0;
     padding: 1px;
 }
 
@@ -138,14 +140,14 @@ footer table th#tabReseauLast{
 }
 
 footer tr {
-    margin:  0%;
-    padding: 0%;
+    margin:  0;
+    padding: 0;
 }
 
 footer td {
     border: 1px solid black;
-    margin:  0%;
-    padding: 0px;
+    margin:  0;
+    padding: 0;
     padding-top:  5px;
     background-color: rgb(228,228,228);
 }
