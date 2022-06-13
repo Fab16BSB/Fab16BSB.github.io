@@ -47,6 +47,7 @@ nav.scrollmenu a {
     padding: 20px;
     text-decoration: none;
     margin: 0;
+    font-size: 1.3em;
 }
 
 nav li a:hover{
