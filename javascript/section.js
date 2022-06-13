@@ -9,8 +9,10 @@ function loadSection() {
 
       // afficher le nom de celui-ci si necessaire
       monInnerHtml += tab?.name ? `<h2> ${tab.name} </h2>` : "";
+	    
       // ouverture de tableau
-      monInnerHtml += "<table> <thead> <tr>";
+      monInnerHtml += tab?.id ? `<table id="${tab.id}"> <thead> <tr>` : "<table> <thead> <tr>";
+	    
       // Ajout des en-têtes
       tab.label.forEach(element => monInnerHtml += `<th> ${element}  </th>`);
       monInnerHtml += `</tr>  </thead> <tbody>`
