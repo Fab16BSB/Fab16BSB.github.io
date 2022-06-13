@@ -9,4 +9,5 @@
   <p> English Version -> not available now </p>
   <p> Desktop version -> ok </p>
   <p> Mobile version -> not available now </p>
+  <p> Mail option -> not available now </p>
 </html>
