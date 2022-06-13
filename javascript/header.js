@@ -1,7 +1,7 @@
 const headerTag = document.getElementById("header");
 headerTag.innerHTML = `
 	<h1> POIRIER FABIEN </h1>
-	<p> <img src="Image/grade_2.png" alt="diplome_icon"/> Doctorant 3ème année <img src="Image/localisation_2.png" alt="localisation_icon"/> France </p>
+	<p> <img src="Image/grade_2.png" alt="diplome_icon"/> Doctorant 3ème année <img src="../Image/localisation_2.png" alt="localisation_icon"/> France </p>
 	<p id="interets"><i> Intérêts :  Jeux vidéo, Programmation, Série, Manga-Animé </i></p> 
 
 	<nav class="scrollmenu">
