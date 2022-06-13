@@ -1,0 +1,179 @@
+/* ========================ALL PAGE======================== */
+body {
+    font-size: 1.3em;
+    margin: 0%;
+    padding: 0%;
+}
+
+body img {
+    width: 30px;
+    height: 30px;
+}
+
+body h2 {
+    text-decoration: underline;
+    font-size: 1.17em
+}
+
+/* ========================HEADER======================== */
+
+header {
+    width:  100%;
+    padding-top : 2px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    margin: 0%;
+}
+
+
+/* ========================NAV======================== */
+nav.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    padding-bottom: 1px;
+}
+
+nav.scrollmenu li {
+    text-decoration: none;
+    display: inline;
+}
+
+nav.scrollmenu a {
+    display: inline;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    margin: 0%;
+}
+
+nav li a:hover{
+    background-color: #777;
+    border-bottom: 3px solid #777;
+}
+
+.selected{
+   border-bottom: 3px solid orange;
+}
+
+.selected:hover{
+    border-bottom: 3px solid orange;
+}
+
+/* ========================SECTION======================== */
+main {
+    padding-top : 2%;
+    padding-left:1%;
+    width : 98%;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    border:  2px groove threedface; 
+    margin:  auto;
+    margin-top:  30px;
+    margin-bottom: 30px;
+}
+
+table{
+    width:  100%;
+    text-align: center;
+    font-style: italic;
+}
+
+thead, tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+td {
+    text-align: center;
+    padding-bottom : 20px;
+}
+
+
+
+/* ========================FOOTER======================== */
+
+footer {
+    padding-top: 2%;
+    width : 98%;
+    bottom: 2%;
+    text-align: center;
+    font-style: italic;
+    padding-left:1%;
+    margin:  auto;
+    border:  2px groove threedface; 
+
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer fieldset{
+    padding:  0%;
+}
+
+
+footer table  {
+    border-spacing:0; 
+    border-collapse: collapse; 
+    width:  99%;
+} 
+
+footer thead{
+    margin:  0%;
+    padding: 1px;
+}
+
+footer table th#tabReseauFirst {
+    border-left : 1px solid #333;
+    border-right:  1px solid black;
+}
+
+footer table th#tabReseauLast{
+     border-right : 1px solid #333;
+}
+
+footer tr {
+    margin:  0%;
+    padding: 0%;
+}
+
+footer td {
+    border: 1px solid black;
+    margin:  0%;
+    padding: 0px;
+    padding-top:  5px;
+    background-color: rgb(228,228,228);
+}
+
+footer td:hover{
+    background-color: rgb(166,244,255);
+}
+
+footer img#htmlIcon {
+    width: 40px;
+    height: 40px;
+}
+
+footer img#cssIcon {
+    width: 30px;
+    height: 40px;
+}
+
+footer img#javascriptIcon{
+    width: 40px;
+    height: 40px;
+}
+
+footer img#w3cValidation {
+    width: 100px;
+    height: 40px;
+}
+
+
+
+
+
