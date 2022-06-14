@@ -3,8 +3,8 @@ footerTag.innerHTML = `
         <table class="reseaux">
           <thead>
             <tr>
-              <th colspan="4" id="tabReseauFirst"> -- Mes Réseaux --  </th>
-              <th colspan="3" id="tabReseauLast"> -- Ma Communauté -- </th>
+              <th colspan="4" id="tabReseauFirst"> Mes Réseaux </th>
+              <th colspan="3" id="tabReseauLast"> Ma Communauté </th>
             </tr>
           </thead>
 
