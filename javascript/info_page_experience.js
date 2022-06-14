@@ -1,7 +1,6 @@
 const TAB = [
   {
     name: "Projets Professionnel",
-    id: "tabPro",
     label: ["Années", "Contrats", "Sujets"],
     info: [
       {
@@ -34,7 +33,6 @@ const TAB = [
 
   {
     name: "Projets Académique",
-    id:"tabScolaire",
     label: ["Années", "Sujets"],
     info: [
       {
