@@ -11,7 +11,7 @@ function loadSection() {
       monInnerHtml += tab?.name ? `<h2> ${tab.name} </h2>` : "";
 	    
       // ouverture de tableau
-      monInnerHtml += tab?.id ? `<table id="${tab.id}"> <thead> <tr>` : "<table> <thead> <tr>";
+      monInnerHtml += "<table> <thead> <tr>";
 	    
       // Ajout des en-têtes
       tab.label.forEach(element => monInnerHtml += `<th> ${element}  </th>`);
@@ -22,8 +22,7 @@ function loadSection() {
         monInnerHtml += `<tr>`;
 
         for (const param in entry) {
-          monInnerHtml += `
-				    <td>  ${entry[param]} </td> `
+          monInnerHtml += ` <td>  ${entry[param]} </td> `
         }
 
         monInnerHtml += `</tr>`;
