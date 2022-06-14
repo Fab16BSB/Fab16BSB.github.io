@@ -22,6 +22,7 @@ headerTag.innerHTML = `
 function selectedPage() {
   const url = window.location.href.split('/');
   const page = url[url.length - 1].split('.')[0];
+	console.log(page);
   document.getElementById(page).classList = "selected";
 }
 
