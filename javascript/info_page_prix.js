@@ -5,7 +5,7 @@ const TAB = [
       {
         year: "2022",
         event: "Conférence EGC",
-        place: "<img src=\"Image/first.png\"> Prix de la meilleur Démo"
+        place: "<img src=\"Image/first.png\"> Prix de la meilleure Démo"
       },
     ]
   },
