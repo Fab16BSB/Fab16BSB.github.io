@@ -21,8 +21,7 @@ headerTag.innerHTML = `
 
 function selectedPage() {
   const url = window.location.href.split('/');
-  const page = url[url.length - 1].split('.')[0];
-	console.log(page);
+  const page = (url[url.length - 1].split('.')[0]).length > 0 ? url[url.length - 1].split('.')[0] : "index" ;
   document.getElementById(page).classList = "selected";
 }
 
