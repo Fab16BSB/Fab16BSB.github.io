@@ -32,7 +32,7 @@ nav.scrollmenu {
     background-color: #333;
     overflow: auto;
     white-space: nowrap;
-    padding-bottom: 1px;
+    padding-bottom: 3px;
 }
 
 nav.scrollmenu li {
@@ -52,15 +52,15 @@ nav.scrollmenu a {
 
 nav li a:hover{
     background-color: #777;
-    border-bottom: 3px solid #777;
+    border-bottom: 6px solid #777;
 }
 
 .selected{
-   border-bottom: 3px solid orange;
+   border-bottom: 6px solid orange;
 }
 
 .selected:hover{
-    border-bottom: 3px solid orange;
+    border-bottom: 6px solid orange;
 }
 
 /* ========================SECTION======================== */
@@ -69,7 +69,7 @@ main {
     padding-left: 1%;
     width : 98%;
     overflow-y: auto;
-    overflow-x: hidden; 
+    overflow-x: auto; 
     border:  2px groove threedface; 
     margin:  auto;
     margin-top:  30px;
@@ -98,14 +98,6 @@ td {
     font-size: 1.3em;
 }
 
-table#tabPro td {
-    width:  33%;
-}
-
-table#tabScolaire td {
-    width:  50%;
-}
-
 
 /* ========================FOOTER======================== */
 
@@ -118,7 +110,7 @@ footer {
     padding-left: 1%;
     margin:  auto;
     border:  2px groove threedface; 
-
+    font-size: 1.3em;
 }
 
 footer a {
