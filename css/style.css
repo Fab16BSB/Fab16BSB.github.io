@@ -111,6 +111,7 @@ footer {
     margin:  auto;
     border:  2px groove threedface; 
     font-size: 1.3em;
+    overflow-x: auto;
 }
 
 footer a {
