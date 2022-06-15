@@ -238,9 +238,15 @@ footer img#w3cValidation {
     thead, tfoot {
         font-size: 1.2em;
     }
-
+    
+    th {
+        font-size: 1.1em;
+        padding: 10px;
+    }
+    
     td {
         font-size: 1.2em;
+        padding: 10px;
     }
 
     footer {
