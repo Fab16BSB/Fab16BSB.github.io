@@ -11,7 +11,8 @@ headerTag.innerHTML = `
 			<li> <a id="publication" class="unSelected" href="publication.html"> Publications </a> </li>
 			<li> <a id="prix" class="unSelected" href="prix.html"> Prix </a> </li>
 		 	<li> <a id="enseignement" class="unSelected" href="enseignement.html"> Enseignements </a> </li>
-		  	<!--<li> <a href=""> Projets </a> </li>-->
+		  	<li> <span id="changeTheme"> Dark Mode </span> </li>
+			<!--<li> <a href=""> Projets </a> </li>-->
 		  	<!--<li> <a href=""> Langues </a> </li>-->
 		</ul>
 	</nav>
