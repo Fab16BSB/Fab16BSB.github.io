@@ -1,8 +1,19 @@
+/* ========================DESKTOP VERSION======================== */
+
+/* ========================VARIABLES======================== */
+:root {
+    --background_color: white;
+    --ecriture_color:  black;
+    --td_color: #f2f2f2;
+}
+
 /* ========================ALL PAGE======================== */
 body {
     font-size: 1.3em;
     margin: 0;
     padding: 0;
+    background: var(--background_color);
+    color : var(--ecriture_color);
 }
 
 body img {
@@ -63,6 +74,18 @@ nav li a:hover{
     border-bottom: 6px solid orange;
 }
 
+#changeTheme {
+    padding: 20px;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+#changeTheme:hover{
+    background-color: #777;
+    border-bottom: 6px solid #777;
+
+}
+
 /* ========================SECTION======================== */
 main {
     padding-top : 2%;
@@ -89,7 +112,7 @@ thead, tfoot {
 }
 
 tr:nth-child(even){
-    background-color: #f2f2f2
+    background-color: var(--td_color)
 }
 
 td {
@@ -180,7 +203,28 @@ footer img#w3cValidation {
     height: 40px;
 }
 
+/* ========================MOBILE VERSION======================== */
+@media screen and (max-width: 700px) {
+    body {
+        font-size: 1.2em;
+    }
 
+    body h2 {
+        font-size: 1.17em
+    }
+
+    thead, tfoot {
+        font-size: 1.2em;
+    }
+
+    td {
+        font-size: 1.2em;
+    }
+
+    footer {
+        font-size: 1.2em;
+    }
+}
 
 
 
