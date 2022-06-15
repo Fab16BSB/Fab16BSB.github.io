@@ -5,10 +5,10 @@
   
   <h2> ChangeLog </h2>
   <h3> V1.0.0 </h3>
-  <p> Version Française -> ok </p>
+  <p> Version Française -> ✔️ </p>
   <p> English Version -> not available now </p>
-  <p> Desktop version -> ok </p>
-  <p> Mobile version -> ok </p>
-  <p> Dark mode -> ok </p>
+  <p> Desktop version -> ✔️ </p>
+  <p> Mobile version -> ✔️ </p>
+  <p> Dark mode -> ✔️ </p>
   <p> Mail option -> not available now </p>
 </html>
