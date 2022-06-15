@@ -7,6 +7,12 @@
     --td_color: #f2f2f2;
 }
 
+.dark-theme{
+    --background_color: #101010;
+    --ecriture_color:  white;
+    --td_color: #404040;
+}
+
 /* ========================ALL PAGE======================== */
 body {
     font-size: 1.3em;
