@@ -27,7 +27,7 @@ footerTag.innerHTML = `
 
         <p> <img id="htmlIcon" src="Image/html5.png" alt="HTML5"/> <img id="cssIcon" src="Image/css3.png" alt="CSS3"/> <img id="javascriptIcon" src="Image/javascript.png" alt="javascript"/> <img id="w3cValidation" src="Image/w3c.gif" alt="W3C Validation"/> <br>
           Icônes provenant de <a href="https://www.flaticon.com" title="www.flaticon.com"> flaticon </a> <br>
-          Dernière mise à jour le 12/06/2022 <br>
+          Dernière mise à jour le 16/06/2022 <br>
           Site créé le 02/06/2022 <br>
         </p>
 `
