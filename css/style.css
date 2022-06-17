@@ -228,7 +228,7 @@ footer img#w3cValidation {
 /* ========================MOBILE VERSION======================== */
 @media screen and (max-width: 700px) {
     body {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     body h2 {
@@ -245,12 +245,12 @@ footer img#w3cValidation {
     }
     
     td {
-        font-size: 1.2em;
+        font-size: 1.1em;
         padding: 10px;
     }
 
     footer {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 }
 
