@@ -133,8 +133,14 @@ tr:nth-child(even){
     background-color: var(--td_color)
 }
 
+th {
+    font-size: 1.3em;
+    padding: 10px;
+}
+
 td {
     text-align: center;
+    padding: 10px;
     padding-bottom : 20px;
     font-size: 1.3em;
 }
@@ -246,7 +252,6 @@ footer img#w3cValidation {
     
     td {
         font-size: 1.1em;
-        padding: 10px;
     }
 
     footer {
