@@ -127,7 +127,7 @@ const TAB = [
      spanish:[
       {
         name: "Proyecto Profesional",
-        label: ["Años", "Contractos", "Tema"],
+        label: ["Años", "Contratos", "Tema"],
         info: [
           {
             year: "2020-2022",
