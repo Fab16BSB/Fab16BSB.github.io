@@ -8,7 +8,7 @@ const TAB = [
             year: "2022",
             event: "Conférence EGC",
             state: "Publier",
-            title: "Détection d'anomalie en temps réel dans un flux vidéo",
+            title: "Détection d'anomalies en temps réel dans un flux vidéo",
             english: "Non disponible pour le moment",
             french: "<a href=\"https://editions-rnti.fr/render_pdf.php?p=1002757\"> Version officiel </a>"
           },
@@ -24,7 +24,7 @@ const TAB = [
             year: "2022",
             event: "EGC Conference",
             state: "Published",
-            title: "Anomalie detection in real time on video",
+            title: "Anomalies detection in real time on video",
             english: "Not available yet",
             french: "<a href=\"https://editions-rnti.fr/render_pdf.php?p=1002757\"> Officiel version </a>"
           },
