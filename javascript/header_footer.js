@@ -16,21 +16,21 @@ function loadHeader(){
 
 		<ul id="setting">
 			<li class="selected"> <span class="french"  onclick="setLangue();"> <img src="Image/france.png" class="french" alt="french"/> </span> </li>
-			<li class="unSelected"> <span class="english" onclick="setLangue();"> <img src="Image/anglais.png" class="english" alt="english"/> </span> </li>
-			<li class="unSelected"> <span class="spanish" onclick="setLangue();"> <img src="Image/espagne.png" class="spanish" alt="spanish"/> </span> </li>
-			<li class="unSelected"> <span id="changeTheme" class="unSelected"> <img src=${pathIcon} alt=${modeIcon}/> </span> </li>
+			<li> <span class="english" onclick="setLangue();"> <img src="Image/anglais.png" class="english" alt="english"/> </span> </li>
+			<li> <span class="spanish" onclick="setLangue();"> <img src="Image/espagne.png" class="spanish" alt="spanish"/> </span> </li>
+			<li> <span id="changeTheme" class="unSelected"> <img src=${pathIcon} alt=${modeIcon}/> </span> </li>
 		</ul>
 
-    <div id="principalMenu">
-  		<ul id="menu">
-  			<li> <a id="index" class="unSelected" href="index.html"> ${info.menu[0]} </a> </li>
-  			<li> <a id="experience" class="unSelected" href="experience.html"> ${info.menu[1]} </a> </li>
-  			<li> <a id="publication" class="unSelected" href="publication.html"> ${info.menu[2]} </a> </li>
-  			<li> <a id="prix" class="unSelected" href="prix.html"> ${info.menu[3]} </a> </li>
-  		 	<li> <a id="enseignement" class="unSelected" href="enseignement.html"> ${info.menu[4]} </a> </li>
-  		  	<!--<li> <a href=""> Projets </a> </li>-->  			
-  		</ul>
-    </div>
+		<div id="principalMenu">
+			<ul id="menu">
+				<li> <a id="index" href="index.html"> ${info.menu[0]} </a> </li>
+				<li> <a id="experience" href="experience.html"> ${info.menu[1]} </a> </li>
+				<li> <a id="publication" href="publication.html"> ${info.menu[2]} </a> </li>
+				<li> <a id="prix" href="prix.html"> ${info.menu[3]} </a> </li>
+				<li> <a id="enseignement" href="enseignement.html"> ${info.menu[4]} </a> </li>
+				<!--<li> <a href=""> Projets </a> </li>-->  			
+			</ul>
+		</div>
 	</nav>`
 
 }
