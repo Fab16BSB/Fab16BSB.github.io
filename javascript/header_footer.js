@@ -3,9 +3,9 @@ function loadHeader(){
 	const langue = localStorage.getItem("langue");
 	const headerTag = document.getElementById("header");
 	const info = HeaderInfo[langue];
-  const mode = localStorage.getItem("dark-mode");
-  let modeIcon = mode == "enabled" ? "light_mode" : "dark_mode";
-  let pathIcon = "Image/" + modeIcon + ".png"
+  	const mode = localStorage.getItem("dark-mode");
+  	let modeIcon = mode == "enabled" ? "light_mode" : "dark_mode";
+  	let pathIcon = "Image/" + modeIcon + ".png"
 
 
 	headerTag.innerHTML = `
