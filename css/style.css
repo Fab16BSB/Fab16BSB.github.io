@@ -51,7 +51,6 @@ header {
 /* ========================NAV======================== */
 nav {
     background-color: #333;
-    overflow: auto;
     white-space: nowrap;
     padding-bottom: 4px;
 }
