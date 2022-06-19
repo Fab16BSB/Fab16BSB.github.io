@@ -6,7 +6,7 @@ function loadHeader(){
   	const mode = localStorage.getItem("dark-mode");
   	let modeIcon = mode == "enabled" ? "light_mode" : "dark_mode";
   	let pathIcon = "Image/" + modeIcon + ".png"
-	console.log(info);
+	console.log(langue, HeaderInfo, info);
 
 	headerTag.innerHTML = `
 	<h1> POIRIER FABIEN </h1>
