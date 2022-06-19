@@ -35,21 +35,21 @@ const TAB = [
         info: [
           {
             year: "2021-2022",
-            theme: "Oriented Object Programing in Java",
+            theme: "Oriented Object Programming in Java",
             lvl: "License 2",
             place: "Distance",
             role: "Work supervisor"
           },
           {
             year: "2020-2021",
-            theme: "Oriented Object Programing in Java",
+            theme: "Oriented Object Programming in Java",
             lvl: "License 2",
             place: "Distance",
             role: "Work supervisor"
           },
           {
             year: "2019-2020",
-            theme: "Oriented Object Programing in Java",
+            theme: "Oriented Object Programming in Java",
             lvl: "License 2",
             place: "Face to face",
             role: "Assistant"
