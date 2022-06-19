@@ -59,7 +59,7 @@ const TAB = [
           },
           {
             year: "2014",
-            diploma: "French equivalent to the Higher Leaving Certificate with specility computer science and option Spanish european",
+            diploma: "French equivalent to the Higher Leaving Certificate with speciality computer science and option Spanish europian",
             place: "Jacques Brel High School, La Courneuve"
           },
         ]
