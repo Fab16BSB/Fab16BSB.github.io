@@ -1,6 +1,6 @@
 function loadHeader(){
 
-	const langue = localStorage.getItem("langue");
+	const langue = (localStorage.getItem("langue") == undefined ? "french" : localStorage.getItem("langue"));
 	const headerTag = document.getElementById("header");
 	const info = HeaderInfo[langue];
   	const mode = localStorage.getItem("dark-mode");
