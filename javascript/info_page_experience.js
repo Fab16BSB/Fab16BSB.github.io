@@ -95,7 +95,7 @@ const TAB = [
       },
 
       {
-                name: "Academical Projects",
+        name: "Academical Projects",
         label: ["Years", "Subjets"],
         info: [
           {
