@@ -68,13 +68,13 @@ const TAB = [
         info: [
           {
             year: "2020-2022",
-            contact: "Fixed term contract",
+            contact: "Fixed-term contract",
             subject: "Thesis on real-time videos anomaly detection.",
           },
           {
             year: "2019",
             contact: "Internship",
-            subject: "Development of a deep learning model in python using Keras in order to detect in real time objects on video data.",
+            subject: "Development of a deep learning model in python using Keras in order to detect in real-time objects on video data.",
           },
           {
             year: "2018",
