@@ -11,13 +11,15 @@
   <p> Dark mode ✔️ </p>
   <p> Mail option ❌ </p>
   
- <h3> V2.0.0 </h3>
- <p> + upgrade black mode </p>
- <p> + english mode </p>
- <p> + spanish mode </p>
+  <h2> ChangeLog </h2>
   
- <h2> ChangeLog </h2>
- <h3> V1.1.0 </h3>
- <p> + Black mode </p>
+   <h3> V2.0.0 </h3>
+   <p> + upgrade black mode </p>
+   <p> + english mode </p>
+   <p> + spanish mode </p>
+
+
+   <h3> V1.1.0 </h3>
+   <p> + Black mode </p>
   
 </html>
