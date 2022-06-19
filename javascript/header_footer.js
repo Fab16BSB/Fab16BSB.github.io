@@ -28,9 +28,7 @@ function loadHeader(){
   			<li> <a id="publication" class="unSelected" href="publication.html"> ${info.menu[2]} </a> </li>
   			<li> <a id="prix" class="unSelected" href="prix.html"> ${info.menu[3]} </a> </li>
   		 	<li> <a id="enseignement" class="unSelected" href="enseignement.html"> ${info.menu[4]} </a> </li>
-  		  <!--<li> <a href=""> Projets </a> </li>-->
-  		  <!--<li> <a href=""> Langues </a> </li>-->
-  			
+  		  	<!--<li> <a href=""> Projets </a> </li>-->  			
   		</ul>
     </div>
 	</nav>`
