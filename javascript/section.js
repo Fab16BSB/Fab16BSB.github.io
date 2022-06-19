@@ -7,7 +7,7 @@ function loadSection() {
     let monInnerHtml = "";
 
     let langue = localStorage.getItem("langue");
-
+    console.log(TAB, TAB{0], TAB[0][langue])
     // Pour chaque tableau d'info trouvé
     for (const tab of TAB[0][langue]) {
         
