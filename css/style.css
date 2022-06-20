@@ -152,6 +152,10 @@ td {
     font-size: 1.3em;
 }
 
+iframe{
+    width: 560px; 
+    height: 315px;
+}
 
 /* ========================FOOTER======================== */
 
@@ -264,7 +268,11 @@ footer img#w3cValidation {
         font-size: 1.1em;
         padding: 10px;
     }
-
+    
+    iframe{
+        width: 350px; 
+    }
+    
     footer {
         font-size: 1.2em;
     }
