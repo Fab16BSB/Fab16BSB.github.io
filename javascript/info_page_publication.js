@@ -26,7 +26,7 @@ const TAB = [
             state: "Published",
             title: "Anomalies detection in real time on video",
             english: "Not available yet",
-            french: "<a href=\"https://editions-rnti.fr/render_pdf.php?p=1002757\"> Officiel version </a>"
+            french: "<a href=\"https://editions-rnti.fr/render_pdf.php?p=1002757\"> Official version </a>"
           },
         ]
       },
