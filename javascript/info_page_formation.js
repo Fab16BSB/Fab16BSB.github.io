@@ -54,7 +54,7 @@ const TAB = [
           },
           {
             year: "2014 - 2016",
-            diploma: "DUT in Computer Science",
+            diploma: "Practical 2-years degree in Computer Science",
             place: "Paris 8, IUT of Montreuil"
           },
           {
