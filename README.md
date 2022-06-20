@@ -13,6 +13,9 @@
   
   <h2> ChangeLog </h2>
   
+  <h3> V2.1.0 </h3>
+  <p> + include my video démo on award page </p> 
+  
    <h3> V2.0.0 </h3>
    <p> + upgrade black mode </p>
    <p> + english version </p>
