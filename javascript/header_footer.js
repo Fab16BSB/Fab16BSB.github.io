@@ -116,7 +116,7 @@ function selectLangue(){
 function changeTheme(){
   const toggleBtn = document.getElementById("changeTheme");
   const body = document.getElementById("body");
-  let darkMode = localStorage.getItem("dark-mode");
+  let darkMode;
 
   const enableDarkMode = () => {
     body.classList.add("dark-theme");
@@ -136,7 +136,7 @@ function changeTheme(){
   }
   
   toggleBtn.addEventListener("click", (e) => {
-    darkMode = localStorage.getItem("dark-mode"); // update darkMode when clicked
+    darkMode = (localStorage.getItem("dark-mode") == null ? "disabled" : localStorage.getItem("dark-mode")); // update darkMode when clicked
 
     if (darkMode === "disabled") {
       enableDarkMode();
