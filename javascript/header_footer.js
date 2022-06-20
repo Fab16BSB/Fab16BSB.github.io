@@ -37,7 +37,7 @@ function loadHeader(){
 
 function loadFooter(){
 
-  const langue = localStorage.getItem("langue");
+  const langue = (localStorage.getItem("langue") == null ? "french" : localStorage.getItem("langue"));
   const headerTag = document.getElementById("footer");
   const info = FooterInfo[langue];
 
