@@ -7,7 +7,7 @@ const TAB = [
           {
             year: "2022",
             event: "Conférence EGC",
-            place: "<img src=\"Image/first.png\"> Prix de la meilleure démo"
+            place: `<img src=\"Image/first.png\"> Prix de la meilleure démo. <iframe width="560" height="315" src="https://www.youtube.com/embed/oslEliHZxT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
           },
         ]
       },
@@ -20,7 +20,7 @@ const TAB = [
           {
             year: "2022",
             event: "EGC Conference",
-            place: "<img src=\"Image/first.png\"> Selected for the best demo"
+            place: `<img src=\"Image/first.png\"> Selected for the best demo. <iframe width="560" height="315" src="https://www.youtube.com/embed/oslEliHZxT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
           },
         ]
       },
@@ -33,7 +33,7 @@ const TAB = [
           {
             year: "2022",
             event: "Conferencia EGC",
-            place: "<img src=\"Image/first.png\"> Elegido mejor demo"
+            place: `<img src=\"Image/first.png\"> Elegido mejor demo. <iframe width="560" height="315" src="https://www.youtube.com/embed/oslEliHZxT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
           },
         ]
       },
