@@ -105,7 +105,7 @@ function selectLangue(){
 	let oldButtom = document.querySelector("li.selected");
   oldButtom.classList = "unSelected";
      
-  let langue = localStorage.getItem("langue");
+  let langue = (localStorage.getItem("langue") == null ? "french" : localStorage.getItem("langue"));
   let newButtom = document.getElementsByClassName(langue);
   newButtom[0].parentNode.classList = "selected";
   selectedPage();
