@@ -68,27 +68,27 @@ const TAB = [
         info: [
           {
             year: "2020-2022",
-            contact: "Fixed-term contract",
+            contact: "Intership : Fixed-term contract",
             subject: "Thesis on real-time videos anomaly detection.",
           },
           {
             year: "2019",
-            contact: "Internship",
+            contact: "Training",
             subject: "Development of a deep learning model in python using Keras in order to detect in real-time objects on video data.",
           },
           {
             year: "2018",
-            contact: "Internship",
+            contact: "Training",
             subject: "Development of neural networks in python using Scikit Learn, pandas and NLTK libraries for checking and comparing Excel invoices.",
           },
           {
             year: "2017",
-            contact: "Internship",
+            contact: "Training",
             subject: "Development of a web crawling tool in Java using the HtmlUnit library in order to classified Mexican ads from real estate / automotive websites.",
           },
           {
             year: "2016",
-            contact: "Internship",
+            contact: "Training",
             subject: "Development of an IOS application in Accelerator Titanium called \"Soldout\" available on the App Store allowing to consult, reserve and buy tickets for shows.",
           },
         ],
