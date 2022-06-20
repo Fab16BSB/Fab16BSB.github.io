@@ -4,7 +4,7 @@ const HeaderInfo = {
 		status: "Doctorant 3ème année",
 		lieu: "France",
 		interet: "Intérêts : Jeux vidéo, Programmation, Série, Manga, Animé",
-		menu: ["Formations", "Expériences", "Publications", "Prix", "Enseignements"],
+		menu: ["Formations", "Expériences", "Publications", "Récompenses", "Enseignements"],
 	},
 
 	english: {
