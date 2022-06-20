@@ -49,7 +49,7 @@ const TAB = [
           },
           {
             year: "2016 - 2017",
-            diploma: "License in Micro Computing and Embedded Machines",
+            diploma: "Licence in Micro Computing and Embedded Machines",
             place: "Paris 8 University"
           },
           {
@@ -59,7 +59,7 @@ const TAB = [
           },
           {
             year: "2014",
-            diploma: "French equivalent to the Higher Leaving Certificate with speciality computer science and option Spanish europian",
+            diploma: "Bachelor with speciality computer science and option Spanish europian",
             place: "Jacques Brel High School, La Courneuve"
           },
         ]
