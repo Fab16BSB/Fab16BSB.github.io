@@ -77,7 +77,7 @@ const TAB = [
           },
           {
             year: "2017 - 2019",
-            diploma: "Master en Big Data y Machine Learning",
+            diploma: "Máster en Big Data y Machine Learning",
             place: "Universidad de París 8"
           },
           {
