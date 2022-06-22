@@ -13,12 +13,12 @@ const TAB = [
           {
             year: "2019",
             contact: "Stage",
-            subject: "Développement d’un modèle deep learning en python à l’aide Keras dans le but de détecter en temps réel des d’objets dans des données vidéos.",
+            subject: "Développement d’un modèle deep learning en Python à l’aide Keras dans le but de détecter en temps réel des d’objets dans des données vidéos.",
           },
           {
             year: "2018",
             contact: "Stage",
-            subject: "Développement de réseaux de neurones en python utilisant les bibliothèques Scikit Learn, pandas et NLTK pour vérification et comparaison de factures Excel.",
+            subject: "Développement de réseaux de neurones en Python utilisant les bibliothèques Scikit Learn, pandas et NLTK pour vérification et comparaison de factures Excel.",
           },
           {
             year: "2017",
@@ -74,12 +74,12 @@ const TAB = [
           {
             year: "2019",
             contact: "Training",
-            subject: "Development of a deep learning model in python using Keras in order to detect in real-time objects on video data.",
+            subject: "Development of a deep learning model in Python using Keras in order to detect in real-time objects on video data.",
           },
           {
             year: "2018",
             contact: "Training",
-            subject: "Development of neural networks in python using Scikit Learn, pandas and NLTK libraries for checking and comparing Excel invoices.",
+            subject: "Development of neural networks in Python using Scikit Learn, pandas and NLTK libraries for checking and comparing Excel invoices.",
           },
           {
             year: "2017",
@@ -137,16 +137,16 @@ const TAB = [
           {
             year: "2019",
             contact: "Practica",
-            subject: "Desarrollo de un modelo de aprendizaje profundo en python usando Keras para detectar en tiempo real objetos en videos.",
+            subject: "Desarrollo de un modelo de aprendizaje profundo en Python usando Keras para detectar en tiempo real objetos en videos.",
           },
           {
             year: "2018",
             contact: "Practica",
-            subject: "Desarrollo de una redes neuronales en python utilizando Scikit Learn, pandas y bibliotecas NLTK para la comparación de facturas Excel.",       },
+            subject: "Desarrollo de una red neuronales en Python utilizando Scikit Learn, pandas y bibliotecas NLTK para la comparación de facturas Excel.",       },
           {
             year: "2017",
             contact: "Practica",
-            subject: "Desarrollo de una herramienta crawling web en Java usando la librería HtmlUnit para clasificar anuncios mexicanos de paginas web inmobiliarios/automobiles.",
+            subject: "Desarrollo de una herramienta de crawling web en Java utilizando la librería HtmlUnit para clasificar anuncios mexicanos de páginas web inmobiliarios/automóviles.",
           },
           {
             year: "2016",
@@ -157,12 +157,12 @@ const TAB = [
       },
 
       {
-        name: "Proyecto Academico",
+        name: "Proyecto Académico",
         label: ["Años", "Tema"],
         info: [
           {
             year: "2018 - 2019",
-            subject: "Desarrollo de una versión C y Java de la red neuronal SOM usando iris.data.<br><br>Desarrollo de una CNN en python para classificacion de imágenes usando la librería KERAS.",
+            subject: "Desarrollo de una versión C y Java de la red neuronal SOM usando iris.data.<br><br>Desarrollo de una CNN en Python para clasificación de imágenes usando la librería KERAS.",
           },
           {
             year: "2017",
@@ -174,7 +174,7 @@ const TAB = [
           },
           {
             year: "2015",
-            subject: "Creación de pagina web con arquitectura MVC usando HTML, CSS, PHP y base de datos PotsgreSQL.",
+            subject: "Creación de páginas web con arquitectura MVC utilizando HTML, CSS, PHP y base de datos PotsgreSQL.",
           },
           {
             year: "2014",
