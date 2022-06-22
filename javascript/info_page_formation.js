@@ -72,23 +72,23 @@ const TAB = [
         info: [
           {
             year: "2019 - 2022",
-            diploma: "Doctorado informatica",
-            place: "Universidad de Paris 8"
+            diploma: "Doctorado informática",
+            place: "Universidad de París 8"
           },
           {
             year: "2017 - 2019",
             diploma: "Domina en Big Data y Machine Learning",
-            place: "Universidad de Paris 8"
+            place: "Universidad de París 8"
           },
           {
             year: "2016 - 2017",
-            diploma: "License in Micro Computing and Embedded Machines",
-            place: "Universidad de Paris 8"
+            diploma: "Licencia en Micro Computing and Embedded Machines",
+            place: "Universidad de París 8"
           },
           {
             year: "2014 - 2016",
-            diploma: "DUT informatica",
-            place: "Paris 8, IUT de Montreuil"
+            diploma: "DUT informática",
+            place: "París 8, IUT de Montreuil"
           },
           {
             year: "2014",
