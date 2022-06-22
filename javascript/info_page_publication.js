@@ -34,7 +34,7 @@ const TAB = [
 
     spanish: [
       {
-        label: ["Años", "Eventos", "Estado", "Titulo", "Version Inglesa", "Version Francesa"],
+        label: ["Años", "Eventos", "Estado", "Título", "Versión Inglesa", "Versión Francesa"],
         info: [
           {
             year: "2022",
@@ -42,7 +42,7 @@ const TAB = [
             state: "Publicado",
             title: "Detección de anomalías en videos en tiempo real",
             english: "No disponible por el momento",
-            french: "<a href=\"https://editions-rnti.fr/render_pdf.php?p=1002757\"> Version official </a>"
+            french: "<a href=\"https://editions-rnti.fr/render_pdf.php?p=1002757\"> Versión oficial </a>"
           },
         ]
       },
