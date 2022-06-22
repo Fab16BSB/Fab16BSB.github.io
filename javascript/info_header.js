@@ -15,7 +15,7 @@ const HeaderInfo = {
 	},
 
 	spanish: {
-		status: "doctorado de 3er año",
+		status: "Doctorado de 3er año",
 		lieu: "Francia",
 		interet: "Intereses: Videojuegos, Programación, Series, Manga, Anime",
 		menu: ["Estudios", "Experiencias", "Publicaciones", "Premios", "Enseñanzas"],
