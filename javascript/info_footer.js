@@ -7,7 +7,7 @@ const FooterInfo = {
 
 	spanish: {
 		tableau: ["Mis redes", "Mi comunidad"],
-		texte: `Íconos de <a href="http://www.flaticon.com" title="www.flaticon.com"> flaticon </a><br>Última actualización el 21/06/2022<br>Página creada el 02/06/2022`
+		texte: `Iconos de <a href="http://www.flaticon.com" title="www.flaticon.com"> flaticon </a><br>Última actualización el 21/06/2022<br>Página creada el 02/06/2022`
 	},
 
 	english: {
