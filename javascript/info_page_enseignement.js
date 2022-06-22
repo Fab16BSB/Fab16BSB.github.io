@@ -60,20 +60,20 @@ const TAB = [
 
     spanish :[
       {
-        label: ["Años", "Tema", "Nivel", "Lugar", "Role"],
+        label: ["Años", "Tema", "Nivel", "Lugar", "Rol"],
         info: [
           {
             year: "2021-2022",
             theme: "Programación Orientada a Objetos con Java",
             lvl: "Licencia 2",
-            place: "À distancia",
+            place: "A distancia",
             role: "Director de trabajos dirigidos"
           },
           {
             year: "2020-2021",
             theme: "Programación Orientada a Objetos con Java",
             lvl: "Licencia 2",
-            place: "À distancia",
+            place: "A distancia",
             role: "Director de trabajos dirigidos"
           },
           {
