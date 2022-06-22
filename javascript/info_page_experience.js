@@ -142,7 +142,7 @@ const TAB = [
           {
             year: "2018",
             contact: "Practica",
-            subject: "Desarrollo de una red neuronales en Python utilizando Scikit Learn, pandas y bibliotecas NLTK para la comparación de facturas Excel.",       },
+            subject: "Desarrollo de una red neuronal en Python utilizando Scikit Learn, pandas y bibliotecas NLTK para la comparación de facturas Excel.",       },
           {
             year: "2017",
             contact: "Practica",
