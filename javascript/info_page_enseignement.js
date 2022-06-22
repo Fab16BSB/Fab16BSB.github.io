@@ -64,21 +64,21 @@ const TAB = [
         info: [
           {
             year: "2021-2022",
-            theme: "Programacion Orientada a Objetos con Java",
+            theme: "Programación Orientada a Objetos con Java",
             lvl: "Licencia 2",
             place: "À distancia",
             role: "Director de trabajos dirigidos"
           },
           {
             year: "2020-2021",
-            theme: "Programacion Orientada a Objetos con Java",
+            theme: "Programación Orientada a Objetos con Java",
             lvl: "Licencia 2",
             place: "À distancia",
             role: "Director de trabajos dirigidos"
           },
           {
             year: "2019-2020",
-            theme: "Programacion Orientada a Objetos con Java",
+            theme: "Programación Orientada a Objetos con Java",
             lvl: "Licencia 2",
             place: "Presencial",
             role: "Ayudante"
