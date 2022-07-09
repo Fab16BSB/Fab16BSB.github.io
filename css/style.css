@@ -254,6 +254,10 @@ footer img#w3cValidation {
     body h2 {
         font-size: 1.17em
     }
+    
+    nav a {
+        padding-bottom: 19px;
+    }
 
     thead, tfoot {
         font-size: 1.2em;
