@@ -9,7 +9,7 @@ const TAB = [
             event: "Conférence EGC",
             state: "Publier",
             title: "Détection d'anomalies en temps réel dans un flux vidéo",
-            english: "<a href=\"https://medium.com/@fab.16/real-time-anomalies-detection-on-videos-d8b3a4ae9c9b\">",
+            english: "<a href=\"https://medium.com/@fab.16/real-time-anomalies-detection-on-videos-d8b3a4ae9c9b\"> International Version </a>",
             french: "<a href=\"https://editions-rnti.fr/render_pdf.php?p=1002757\"> Version officiel </a>"
           },
         ]
@@ -25,7 +25,7 @@ const TAB = [
             event: "EGC Conference",
             state: "Published",
             title: "Anomalies detection in real time on video",
-            english: "<a href=\"https://medium.com/@fab.16/real-time-anomalies-detection-on-videos-d8b3a4ae9c9b\">",
+            english: "<a href=\"https://medium.com/@fab.16/real-time-anomalies-detection-on-videos-d8b3a4ae9c9b\"> International Version </a>",
             french: "<a href=\"https://editions-rnti.fr/render_pdf.php?p=1002757\"> Official version </a>"
           },
         ]
@@ -41,7 +41,7 @@ const TAB = [
             event: "Conferencia EGC",
             state: "Publicado",
             title: "Detección de anomalías en videos en tiempo real",
-            english: "<a href=\"https://medium.com/@fab.16/real-time-anomalies-detection-on-videos-d8b3a4ae9c9b\">",
+            english: "<a href=\"https://medium.com/@fab.16/real-time-anomalies-detection-on-videos-d8b3a4ae9c9b\"> Versión internacional </a>",
             french: "<a href=\"https://editions-rnti.fr/render_pdf.php?p=1002757\"> Versión oficial </a>"
           },
         ]
