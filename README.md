@@ -13,6 +13,9 @@
   
   <h2> ChangeLog </h2>
   
+  <h3> V2.1.1 </h3>
+  <p> add a traduction of my article </p>
+  
   <h3> V2.1.0 </h3>
   <p> + include my démo video on awards page </p> 
   
