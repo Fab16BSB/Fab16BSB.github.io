@@ -116,7 +116,7 @@ function selectLangue(){
 function changeTheme(){
   const toggleBtn = document.getElementById("changeTheme");
   const body = document.getElementById("body");
-  let darkMode;
+  let darkMode = localStorage.getItem("dark-mode");
 
   const enableDarkMode = () => {
     body.classList.add("dark-theme");
