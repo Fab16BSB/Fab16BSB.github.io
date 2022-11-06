@@ -56,7 +56,7 @@ const TAB = [
                 <span class='skill-text sk-good'>GOOD</span>  
               </div> 
               <div class='skill-container'> 
-                <img src='image/skill/tensorflow.png' alt='tensorflow' class='skill-icon bordered b-low' />
+                <img src='Image/skill/tensorflow.png' alt='tensorflow' class='skill-icon bordered b-low' />
                 <span class='skill-text sk-low'>LOW</span> 
               </div> 
               <div class='skill-container'>
