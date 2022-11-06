@@ -9,31 +9,31 @@ const TAB = [
             skill: `
             <span class='row-icons-container'> 
               <div class='skill-container'> 
-               <img src='image/skill/html.png' alt='html5' class='skill-icon bordered b-good' /> 
+               <img src='Image/skill/html.png' alt='html5' class='skill-icon bordered b-good' /> 
                <span class='skill-text sk-good'>GOOD</span> 
               </div> 
               <div class='skill-container'> 
-                <img src='image/skill/css.png' alt='css' class='skill-icon bordered b-good' />
+                <img src='Image/skill/css.png' alt='css' class='skill-icon bordered b-good' />
                 <span class='skill-text sk-good'>GOOD</span>
               </div> 
               <div class='skill-container'> 
-                <img src='image/skill/js.png' alt='javascript' class='skill-icon bordered b-med' />
+                <img src='Image/skill/js.png' alt='javascript' class='skill-icon bordered b-med' />
                 <span class='skill-text sk-med'>MEDIUM</span>
               </div> 
               <div class='skill-container'>
-                <img src='image/skill/sql.png' alt='sql' class='skill-icon bordered b-med' />
+                <img src='Image/skill/sql.png' alt='sql' class='skill-icon bordered b-med' />
                 <span class='skill-text sk-med'>MEDIUM</span>
               </div> 
               <div class='skill-container'>
-                <img src='image/skill/c.png' alt='langage C' class='skill-icon bordered b-med' />
+                <img src='Image/skill/c.png' alt='langage C' class='skill-icon bordered b-med' />
                 <span class='skill-text sk-med'>MEDIUM</span>
               </div>
               <div class='skill-container'>
-                <img src='image/skill/java.png' alt='java' class='skill-icon bordered b-good' />
+                <img src='Image/skill/java.png' alt='java' class='skill-icon bordered b-good' />
                 <span class='skill-text sk-good'>GOOD</span>
               </div>
               <div class='skill-container'>
-                <img src='image/skill/python.png' alt='python' class='skill-icon bordered b-med' />
+                <img src='Image/skill/python.png' alt='python' class='skill-icon bordered b-med' />
                 <span class='skill-text sk-med'>MEDIUM</span>
               </div>
             </span>`
@@ -48,11 +48,11 @@ const TAB = [
           {
             framwork: ` <span class='row-icons-container'> 
               <div class='skill-container'>
-                <img src='image/skill/sklearn.png' alt='sk-learn' class='skill-icon bordered b-med' /> 
+                <img src='Image/skill/sklearn.png' alt='sk-learn' class='skill-icon bordered b-med' /> 
                 <span class='skill-text sk-med'>MEDIUM</span> 
               </div> 
               <div class='skill-container'>
-                <img src='image/skill/keras.png' alt='keras' class='skill-icon bordered b-good' />
+                <img src='Image/skill/keras.png' alt='keras' class='skill-icon bordered b-good' />
                 <span class='skill-text sk-good'>GOOD</span>  
               </div> 
               <div class='skill-container'> 
@@ -60,7 +60,7 @@ const TAB = [
                 <span class='skill-text sk-low'>LOW</span> 
               </div> 
               <div class='skill-container'>
-                <img src='image/skill/pytorch.png' alt='pytorch' class='skill-icon bordered b-low' /> 
+                <img src='Image/skill/pytorch.png' alt='pytorch' class='skill-icon bordered b-low' /> 
                 <span class='skill-text sk-low'>LOW</span> 
               </div>
             </span>`
@@ -75,11 +75,11 @@ const TAB = [
           {
             ide: `<span class='row-icons-container'>
               <div class='skill-container'>
-                <img src='image/skill/eclipse.png' alt='eclipse' class='skill-icon bordered b-good'>
+                <img src='Image/skill/eclipse.png' alt='eclipse' class='skill-icon bordered b-good'>
                 <span class='skill-text sk-good'>GOOD</span> 
               </div>
               <div class='skill-container'>
-                <img src='image/skill/jupyter.png' alt='jupyter notebook' class='skill-icon bordered b-good'>
+                <img src='Image/skill/jupyter.png' alt='jupyter notebook' class='skill-icon bordered b-good'>
                 <span class='skill-text sk-good'>GOOD</span> 
               </div>
             </span>`
