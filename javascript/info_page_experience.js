@@ -3,31 +3,36 @@ const TAB = [
     french:[
       {
         name: "Projets Professionnel",
-        label: ["Années", "Contrats", "Sujets"],
+        label: ["Années", "Contrats", "Lieux", "Sujets"],
         info: [
           {
             year: "2020-2022",
             contact: "CDD",
+            place: "<a href=\"http://www.othello.group\" title=\"http://www.othello.group\"> Othello </a>",
             subject: "Thèse Cifre sur la détection d'anomalie en temps réel.",
           },
           {
             year: "2019",
             contact: "Stage",
+            place: "<a href=\"https://www.univ-paris8.fr/UR-Laboratoire-d-Intelligence-Artificielle-et-Semantique-des-Donnees-LIASD\" title=\"https://www.univ-paris8.fr/UR-Laboratoire-d-Intelligence-Artificielle-et-Semantique-des-Donnees-LIASD\"> Laboratoire d'Intelligence Artificielle et Semantique des Données (LIASD) </a>",
             subject: "Développement d’un modèle deep learning en Python à l’aide Keras dans le but de détecter en temps réel des d’objets dans des données vidéos.",
           },
           {
             year: "2018",
             contact: "Stage",
+            place: "<a href=\"http://www.quatorze-ig.com\" title=\"http://www.quatorze-ig.com\"> Quatorze IG </a>",
             subject: "Développement de réseaux de neurones en Python utilisant les bibliothèques Scikit Learn, pandas et NLTK pour vérification et comparaison de factures Excel.",
           },
           {
             year: "2017",
             contact: "Stage",
+            place: "<a href=\"http://www.directannonces.com\" title=\"http://www.directannonces.com\"> Directannonces </a>",
             subject: "Développement d’un outil de crawling web en Java utilisant la bibliothèque HtmlUnit dans le but de récupérer des petites annonces sur des site immobilier / automobile mexicain.",
           },
           {
             year: "2016",
             contact: "Stage",
+            place: "<a href=\"https://mobile.twitter.com/soldoutapp\" title=\"https://mobile.twitter.com/soldoutapp\"> SOULD OUT </a>",
             subject: "Développement d’une application IOS en Apcelerator Titanium appelée \"Soldout\" disponible sur l’App Store permettant de consulter, réserver et acheter des places de spectacles.",
           },
         ]
@@ -64,31 +69,36 @@ const TAB = [
     english:[
       {
         name: "Professional Projects",
-        label: ["Years", "Contracts", "Subjets"],
+        label: ["Years", "Contracts", "Places", "Subjets"],
         info: [
           {
             year: "2020-2022",
             contact: "Intership : Fixed-term contract",
+            place: "<a href=\"http://www.othello.group\" title=\"http://www.othello.group\"> Othello </a>",
             subject: "Thesis on real-time videos anomaly detection.",
           },
           {
             year: "2019",
             contact: "Training",
+            place: "<a href=\"https://www.univ-paris8.fr/UR-Laboratoire-d-Intelligence-Artificielle-et-Semantique-des-Donnees-LIASD\" title=\"https://www.univ-paris8.fr/UR-Laboratoire-d-Intelligence-Artificielle-et-Semantique-des-Donnees-LIASD\"> Laboratoire d'Intelligence Artificielle et Semantique des Données (LIASD) </a>",
             subject: "Development of a deep learning model in Python using Keras in order to detect in real-time objects on video data.",
           },
           {
             year: "2018",
             contact: "Training",
+            place: "<a href=\"http://www.quatorze-ig.com\" title=\"http://www.quatorze-ig.com\"> Quatorze IG </a>",
             subject: "Development of neural networks in Python using Scikit Learn, pandas and NLTK libraries for checking and comparing Excel invoices.",
           },
           {
             year: "2017",
             contact: "Training",
+            place: "<a href=\"http://www.directannonces.com\" title=\"http://www.directannonces.com\"> Directannonces </a>",
             subject: "Development of a web crawling tool in Java using the HtmlUnit library in order to classified Mexican ads from real estate / automotive websites.",
           },
           {
             year: "2016",
             contact: "Training",
+            place: "<a href=\"https://mobile.twitter.com/soldoutapp\" title=\"https://mobile.twitter.com/soldoutapp\"> SOULD OUT </a>",
             subject: "Development of an IOS application in Accelerator Titanium called \"Soldout\" available on the App Store allowing to consult, reserve and buy tickets for shows.",
           },
         ],
@@ -127,30 +137,35 @@ const TAB = [
      spanish:[
       {
         name: "Proyecto Profesional",
-        label: ["Años", "Contratos", "Tema"],
+        label: ["Años", "Contratos", "Lugares", "Tema"],
         info: [
           {
             year: "2020-2022",
             contact: "CDD",
+            place: "<a href=\"http://www.othello.group\" title=\"http://www.othello.group\"> Othello </a>",
             subject: "Tesis sobre la detección de anomalías en videos en tiempo real.",
           },
           {
             year: "2019",
             contact: "Practica",
+            place: "<a href=\"https://www.univ-paris8.fr/UR-Laboratoire-d-Intelligence-Artificielle-et-Semantique-des-Donnees-LIASD\" title=\"https://www.univ-paris8.fr/UR-Laboratoire-d-Intelligence-Artificielle-et-Semantique-des-Donnees-LIASD\"> Laboratoire d'Intelligence Artificielle et Semantique des Données (LIASD) </a>",
             subject: "Desarrollo de un modelo de aprendizaje profundo en Python usando Keras para detectar en tiempo real objetos en videos.",
           },
           {
             year: "2018",
             contact: "Practica",
+            place: "<a href=\"http://www.quatorze-ig.com\" title=\"http://www.quatorze-ig.com\"> Quatorze IG </a>",
             subject: "Desarrollo de una red neuronal en Python utilizando Scikit Learn, pandas y bibliotecas NLTK para la comparación de facturas Excel.",       },
           {
             year: "2017",
             contact: "Practica",
+            place: "<a href=\"http://www.directannonces.com\" title=\"http://www.directannonces.com\"> Directannonces </a>",
             subject: "Desarrollo de una herramienta de crawling web en Java utilizando la librería HtmlUnit para clasificar anuncios mexicanos de páginas web inmobiliarios/automóviles.",
           },
           {
             year: "2016",
             contact: "Practica",
+            place: "<a href=\"https://mobile.twitter.com/soldoutapp\" title=\"https://mobile.twitter.com/soldoutapp\"> SOULD OUT </a>",
             subject: "Desarrollo de una aplicación para IOS en Accelerator Titanium denominada \"Soldout\" disponible en App Store que permite consultar, reservar y comprar entradas para espectáculos.",
           },
         ]
