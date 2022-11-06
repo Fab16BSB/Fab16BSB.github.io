@@ -1,0 +1,67 @@
+/* ========================SECTION======================== */
+
+.row-icons-container {
+  display: flex;
+  row-gap: 20px;
+  column-gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.skill-container {
+  position: relative;
+  cursor: help;
+}
+
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.skill-text {
+  position: absolute;
+  width: 100%;
+  bottom: -11px;
+  left: 0;
+  font-size: 1rem;
+  color: white;
+  white-space: nowrap;
+  display: none;
+}
+
+.bordered {
+  border-bottom: 5px solid
+}
+
+.b-good {
+  border-color: green;
+}
+
+.b-med {
+  border-color: orange;
+}
+
+.b-low {
+  border-color: red;
+}
+
+.sk-good {
+  background-color: green;
+}
+
+.sk-med {
+  background-color: orange;
+}
+
+.sk-low {
+  background-color: red;
+}
+
+.skill-container:hover>.skill-text {
+  display: unset;
+}
