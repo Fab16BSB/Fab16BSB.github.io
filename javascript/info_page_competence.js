@@ -43,7 +43,7 @@ const TAB = [
 
       {
         name: "",
-        label: ["Framworks"],
+        label: ["Frameworks"],
         info: [
           {
             framwork: ` <span class='row-icons-container'> 
