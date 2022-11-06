@@ -14,7 +14,9 @@
   <h2> ChangeLog </h2>
   
   <h3> V2.1.2 </h3>
-  <p> 06/11/22 add localisation column to experience tab + add page skills</p>
+  <p> 06/11/22 </p>
+  <p> + localisation column to experience tab </p>
+  <p> + new page skills </p>
   
   <h3> V2.1.1 </h3>
   <p> + traduction of my article </p>
