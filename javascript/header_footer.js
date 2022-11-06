@@ -25,9 +25,10 @@ function loadHeader(){
 			<ul id="menu">
 				<li> <a id="index" href="index.html"> ${info.menu[0]} </a> </li>
 				<li> <a id="experience" href="experience.html"> ${info.menu[1]} </a> </li>
-				<li> <a id="publication" href="publication.html"> ${info.menu[2]} </a> </li>
-				<li> <a id="prix" href="prix.html"> ${info.menu[3]} </a> </li>
-				<li> <a id="enseignement" href="enseignement.html"> ${info.menu[4]} </a> </li>
+				<li> <a id="competence" href="competence.html"> ${info.menu[2]} </a> </li>
+				<li> <a id="publication" href="publication.html"> ${info.menu[3]} </a> </li>
+				<li> <a id="prix" href="prix.html"> ${info.menu[4]} </a> </li>
+				<li> <a id="enseignement" href="enseignement.html"> ${info.menu[5]} </a> </li>
 				<!--<li> <a href=""> Projets </a> </li>-->  			
 			</ul>
 		</div>
