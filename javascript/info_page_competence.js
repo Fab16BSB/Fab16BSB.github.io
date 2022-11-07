@@ -3,7 +3,7 @@ const TAB = [
     french: [
       {
         name: "",
-        label: ["Langages"],
+        label: ["Languages"],
         info: [
           {
             skill: `
