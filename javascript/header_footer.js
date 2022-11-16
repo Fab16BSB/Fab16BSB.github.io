@@ -80,7 +80,12 @@ function selectedPage() {
   const url = window.location.href.split('/');
   const page = (url[url.length - 1].split('.')[0]).length > 0 ? url[url.length - 1].split('.')[0] : "index" ;
   document.getElementById(page).classList = "selected";
-	
+
+  // Fixer la barre de scroll
+  var scroll = document.getElementById("principalMenu");
+  var linkBtm = document.getElementById(page);
+  scroll.scrollLeft = linkBtm.getBoundingClientRect().x;	
+  /*
   const langue = (localStorage.getItem("langue") == null ? "french" : localStorage.getItem("langue"));
   const info = HeaderInfo[langue];
   const pageName = document.getElementById(page).text.trim();
@@ -91,6 +96,7 @@ function selectedPage() {
 
   // To set the scroll
   scroll.scrollLeft = (scrollWidth/info.menu.length)*(2*indexPage + indexPage/2)
+  */
 }
 
 function setLangue(){
@@ -160,7 +166,7 @@ function changeTheme(){
 
 
 loadHeader();
-selectedPage();
+//selectedPage();
 selectLangue();
 loadFooter();
 
