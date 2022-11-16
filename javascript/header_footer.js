@@ -90,7 +90,7 @@ function selectedPage() {
   var scrollWidth = scroll.clientWidth;
 
   // To set the scroll
-  scroll.scrollLeft = (scrollWidth/info.menu.length)*(2.5*indexPage + indexPage/2)
+  scroll.scrollLeft = (scrollWidth/info.menu.length)*(2*indexPage + indexPage/2)
 }
 
 function setLangue(){
