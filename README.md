@@ -12,6 +12,9 @@
   <p> Mail option ❌ </p>
   
   <h2> ChangeLog </h2>
+  <h3> V2.1.3 </h3>
+  <p> 16/11/22 </p>
+  <p> + set scroll bar on mobile </p>
   
   <h3> V2.1.2 </h3>
   <p> 06/11/22 </p>
