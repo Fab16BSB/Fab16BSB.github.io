@@ -80,6 +80,18 @@ function selectedPage() {
   const url = window.location.href.split('/');
   const page = (url[url.length - 1].split('.')[0]).length > 0 ? url[url.length - 1].split('.')[0] : "index" ;
   document.getElementById(page).classList = "selected";
+	
+  const langue = (localStorage.getItem("langue") == null ? "french" : localStorage.getItem("langue"));
+  const info = HeaderInfo[langue];
+  const pageName = document.getElementById(page).text.trim();
+  const indexPage = info.menu.indexOf(pageName)
+
+  var scroll = document.getElementById("principalMenu");
+  var scrollWidth = scroll.clientWidth;
+
+
+  // To set the scroll
+  scroll.scrollLeft = (scrollWidth/info.menu.length)*(2*indexPage)
 }
 
 function setLangue(){
