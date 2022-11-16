@@ -84,7 +84,8 @@ function selectedPage() {
   // Fixer la barre de scroll
   var scroll = document.getElementById("principalMenu");
   var linkBtm = document.getElementById(page);
-  scroll.scrollLeft = linkBtm.getBoundingClientRect().x;	
+  scroll.scrollLeft = linkBtm.getBoundingClientRect().x;
+	
   /*
   const langue = (localStorage.getItem("langue") == null ? "french" : localStorage.getItem("langue"));
   const info = HeaderInfo[langue];
