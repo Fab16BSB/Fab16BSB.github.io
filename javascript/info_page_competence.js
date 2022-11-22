@@ -13,7 +13,7 @@ const TAB = [
                <span class='skill-text sk-good'>GOOD</span> 
               </div> 
               <div class='skill-container'> 
-                <img src='Image/skill/css.png' alt='css' class='skill-icon bordered b-good' />
+                <img src='Image/skill/css.png' alt='css' class='skill-icon bordered b-med' />
                 <span class='skill-text sk-med'>GOOD</span>
               </div> 
               <div class='skill-container'> 
@@ -33,7 +33,7 @@ const TAB = [
                 <span class='skill-text sk-good'>GOOD</span>
               </div>
               <div class='skill-container'>
-                <img src='Image/skill/python.png' alt='python' class='skill-icon bordered b-med' />
+                <img src='Image/skill/python.png' alt='python' class='skill-icon bordered b-good' />
                 <span class='skill-text sk-good'>MEDIUM</span>
               </div>
             </span>`
