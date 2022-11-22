@@ -14,7 +14,7 @@ const TAB = [
               </div> 
               <div class='skill-container'> 
                 <img src='Image/skill/css.png' alt='css' class='skill-icon bordered b-med' />
-                <span class='skill-text sk-med'>GOOD</span>
+                <span class='skill-text sk-med'>MEDIUM</span>
               </div> 
               <div class='skill-container'> 
                 <img src='Image/skill/js.png' alt='javascript' class='skill-icon bordered b-med' />
@@ -34,7 +34,7 @@ const TAB = [
               </div>
               <div class='skill-container'>
                 <img src='Image/skill/python.png' alt='python' class='skill-icon bordered b-good' />
-                <span class='skill-text sk-good'>MEDIUM</span>
+                <span class='skill-text sk-good'>GOOD</span>
               </div>
             </span>`
           }
