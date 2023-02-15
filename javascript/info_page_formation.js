@@ -5,7 +5,7 @@ const TAB = [
         label: ["Années", "Diplômes", "Lieux"],
         info: [
           {
-            year: "2019 - 2022",
+            year: "2019 - 2023",
             diploma: "Doctorat Informatique",
             place: "Université Paris 8"
           },
@@ -38,7 +38,7 @@ const TAB = [
         label: ["Years", "Diplomas", "Places"],
         info: [
           {
-            year: "2019 - 2022",
+            year: "2019 - 2023",
             diploma: "PhD Computer Science",
             place: "Paris 8 University"
           },
@@ -71,7 +71,7 @@ const TAB = [
         label: ["Años", "Diplomas", "Lugares"],
         info: [
           {
-            year: "2019 - 2022",
+            year: "2019 - 2023",
             diploma: "Doctorado informática",
             place: "Universidad de París 8"
           },
