@@ -116,9 +116,22 @@ function setLangue(){
         loadSection();
         loadFooter();
 
+        // Vérification de la page actuelle
+        const url = window.location.href.split('/');
+        const currentPage = (url[url.length - 1].split('.')[0]).length > 0 ? url[url.length - 1].split('.')[0] : "index";
+        if (currentPage === "enseignement") {
+          // Import du fichier JS contenant la fonction addCliquable
+          const script = document.createElement("script");
+          script.src = "cours_cliquable.js";
+          document.body.appendChild(script);
+
+          // Appel de la fonction addCliquable
+          addCoursInfo();
+        }
     }
   }
 }
+
 
 function selectLangue(){
 	let oldButtom = document.querySelector("li.selected");

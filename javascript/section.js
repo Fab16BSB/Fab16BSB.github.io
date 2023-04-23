@@ -3,6 +3,9 @@ function loadSection() {
   // verification de l'existance des infos
   try {
 
+  const url = window.location.href.split('/');
+  const page = (url[url.length - 1].split('.')[0]).length > 0 ? url[url.length - 1].split('.')[0] : "index" ;
+
     const section = document.getElementById("section");
     let monInnerHtml = "";
 
@@ -22,8 +25,10 @@ function loadSection() {
         monInnerHtml += `</tr>  </thead> <tbody>`
 
         // Ajout des cellules
-        for (const entry of tab.info) {
-          monInnerHtml += `<tr>`;
+        for (const [i, entry] of tab.info.entries()) {
+
+          // Ajout de l'attribut data-id pour identifier chaque ligne du tableau
+          monInnerHtml += `<tr class="${page}_cliquable" data-id="${i}" data-theme="${entry.theme || ''}" open="false">`;
 
           for (const param in entry) {
             monInnerHtml += ` <td>  ${entry[param]} </td> `
@@ -50,5 +55,6 @@ function loadSection() {
     }
   }
 }
+
 
 loadSection();
