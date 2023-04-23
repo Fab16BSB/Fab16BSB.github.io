@@ -12,6 +12,10 @@
   <p> Mail option ❌ </p>
   
   <h2> ChangeLog </h2>
+   <h3> V2.1.4 </h3>
+  <p> 23/04/23 </p>
+  <p> + add classes sumary description </p>
+  
   <h3> V2.1.3 </h3>
   <p> 16/11/22 </p>
   <p> + set scroll bar on mobile </p>
