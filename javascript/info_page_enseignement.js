@@ -30,7 +30,7 @@ const TAB = [
           },
           {
             year: "2020-2021",
-            theme: "Programmation Orienté Objet en Java",
+            theme: "Programmation Java",
             lvl: "Licence 2",
             place: "À distance",
             quantity: "35h",
@@ -86,7 +86,7 @@ const TAB = [
           },
           {
             year: "2019-2020",
-            theme: "Oriented Object Programming in Java",
+            theme: "Java Programming",
             lvl: "License 2",
             place: "Face to face",
             quantity: "15h",
@@ -134,7 +134,7 @@ const TAB = [
           },
           {
             year: "2019-2020",
-            theme: "Programación Orientada a Objetos con Java",
+            theme: "Programación Java",
             lvl: "Licencia 2",
             place: "Presencial",
             quantity: "15h",
