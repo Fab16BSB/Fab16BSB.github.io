@@ -3,12 +3,10 @@ function modifyTdContent() {
   const page = (url[url.length - 1].split('.')[0]).length > 0 ? url[url.length - 1].split('.')[0] : "index";
 
   const rows = document.querySelectorAll(`tr.${page}_cliquable`);
-  console.log("element cliquable", rows)
   rows.forEach((row) => {
     const theme = row.getAttribute("data-theme");
-    console.log("theme", theme)
     const tds = row.getElementsByTagName("td");
-    console.log("tds", tds)
+
     for (let i = 0; i < tds.length; i++) {
       const td = tds[i];
       if (td.textContent.trim() === theme) {
