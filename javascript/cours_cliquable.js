@@ -49,9 +49,6 @@ function addCoursInfo() {
       
       // Si la ligne n'est pas ouverte, on ajoute la nouvelle ligne
       if (!isOpen) {
-        isOpen = true;
-        row.setAttribute("open", "true");
-
         // Création de la liste énumérée
         let listItems = '';
         COURSINFO[langue][theme].forEach(info => {
@@ -67,6 +64,9 @@ function addCoursInfo() {
         if (img) {
           img.style.transform = "rotate(180deg)";
         }
+        
+        isOpen = true;
+        row.setAttribute("open", "true");
       }
 
       // Si la ligne est déjà ouverte, on la supprime
