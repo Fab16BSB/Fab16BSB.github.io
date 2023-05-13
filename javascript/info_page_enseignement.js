@@ -102,7 +102,7 @@ const TAB = [
         info: [
            {
             year: "2022-2023",
-            theme: "Deep Learning",
+            theme: "Deep learning",
             lvl: "Master 1",
             place: "Presencial",
             quantity: "30h",
