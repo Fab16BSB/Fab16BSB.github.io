@@ -7,14 +7,16 @@
     --td_color: #f2f2f2;
     --link_color : blue;
     --visited_link_color: purple;
+    --th_color: white;
 }
 
 .dark-theme{
     --background_color: #101010;
     --ecriture_color:  white;
     --td_color: #404040;
-    --link_color : green;
+    --link_color : rgb(14, 184, 14);
     --visited_link_color : orange;
+    --th_color: rgb(241, 209, 121);
 }
 
 /* ========================ALL PAGE======================== */
@@ -141,16 +143,27 @@ thead, tfoot {
     background-color: #333;
     color: #fff;
     font-size: 1.3em;
+    
 }
 
 tr:nth-child(even){
     background-color: var(--td_color)
 }
 
+thead tr th{
+    padding-right: 8px;
+    padding-left: 8px;
+    color : var(--th_color);
+}
+
 td {
     text-align: center;
-    padding-bottom : 20px;
+    padding : 10px 8px;
     font-size: 1.3em;
+}
+
+td.year {
+    white-space: nowrap; /* Empêche le saut de ligne */
 }
 
 iframe{
@@ -273,6 +286,10 @@ footer img#w3cValidation {
         font-size: 1.1em;
         padding: 10px;
     }
+
+    .perso{
+        padding: 15px;
+    }
     
     iframe{
         width: 350px; 
@@ -280,5 +297,16 @@ footer img#w3cValidation {
     
     footer {
         font-size: 1.2em;
+    }
+}
+
+@media screen and (width < 600px) {
+    td span {
+      display: block;
+      text-align: center;
+    }
+    td.year {
+      display: flex;
+      flex-direction: column-reverse;
     }
 }

@@ -1,0 +1,62 @@
+
+:root {
+    --button_color : #3498db;
+    --button_animation : rgb(80, 196, 45);
+}
+
+.dark-theme{
+    --button_color : #175179;
+    --button_animation : rgb(54, 146, 26);
+}
+
+td {
+  vertical-align: top;
+}
+
+.button {
+    display: inline-block;
+    padding: 6px 4px;
+    background-color:  var(--button_color); /* Bleu [dark theme : #175179;] */
+    color: #ffffff; /* Blanc */
+    text-decoration: none;
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease; /* Animation de transition */
+    margin-top: 10px;
+    min-width: 200px;
+    min-height: 30px; 
+  }
+  
+  .button:last-child {
+    margin-bottom: 0; /* Aucune marge à droite pour le dernier bouton */
+  }
+  
+  .button:hover {
+    background-color:  var(--button_animation); /* dark theme rgb(54, 146, 26); /* Nouvelle couleur de fond au survol */
+  }
+  
+  .button img {
+    vertical-align: middle;
+    margin-right: 10px; /* Marge entre l'icône et le texte */
+  }
+  
+  .button span {
+    vertical-align: middle;
+    color: white;
+  }
+  
+  /* Ajustez la largeur de la colonne pour accommoder le nouveau design */
+  td:nth-child(4) {
+    width: 25%; /* Ajustez la largeur de la colonne selon vos besoins */
+    text-align: center; /* Centrer le contenu de la colonne */
+  }
+  
+  .popover {
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 5px;
+    display: none;
+  }
+  

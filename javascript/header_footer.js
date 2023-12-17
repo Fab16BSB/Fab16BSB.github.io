@@ -52,19 +52,19 @@ function loadFooter(){
           </thead>
 
             <tr>
-              <td> <a href=""> <div style="height:100%;width:100%"> <img src="Image/mail_icon.png" alt="mail"> </div> </a>  </td>
+              <td class="perso"> <a href=""> <div style="height:100%;width:100%"> <img src="Image/mail_icon.png" alt="mail"> </div> </a>  </td>
 
-              <td> <a href="https://github.com/Fab16BSB" title="https://github.com/Fab16BSB"> <div style="height:100%;width:100%"> <img src="Image/github_icon.png" alt="github"> </div> </a>  </td>
+              <td class="perso"> <a href="https://github.com/Fab16BSB" title="https://github.com/Fab16BSB"> <div style="height:100%;width:100%"> <img src="Image/github_icon.png" alt="github"> </div> </a>  </td>
 
-              <td> <a href="https://medium.com/@fab.16" title="https://medium.com/@fab.16"> <div style="height:100%;width:100%"> <img src="Image/medium_icon.png" alt="medium"> </div> </a>  </td>
+              <td class="perso"> <a href="https://medium.com/@fab.16" title="https://medium.com/@fab.16"> <div style="height:100%;width:100%"> <img src="Image/medium_icon.png" alt="medium"> </div> </a>  </td>
 
-              <td> <a href="https://www.youtube.com/channel/UCHS2xgITwh7olsnznmq8o0A" title="https://www.youtube.com/channel/UCHS2xgITwh7olsnznmq8o0A"> <div style="height:100%;width:100%"> <img src="Image/youtube_icon.png" alt="youtube">  </div> </a> </td>
+              <td class="perso"> <a href="https://www.youtube.com/channel/UCHS2xgITwh7olsnznmq8o0A" title="https://www.youtube.com/channel/UCHS2xgITwh7olsnznmq8o0A"> <div style="height:100%;width:100%"> <img src="Image/youtube_icon.png" alt="youtube">  </div> </a> </td>
 
-              <td> <a href="https://discord.gg/pgEUk9xVKe" title="https://discord.gg/pgEUk9xVKe"> <div style="height:100%;width:100%"> <img src="Image/discord_icon.png" alt="discord"> </div> </a> </td>
+              <td class="communaute"> <a href="https://discord.gg/pgEUk9xVKe" title="https://discord.gg/pgEUk9xVKe"> <div style="height:100%;width:100%"> <img src="Image/discord_icon.png" alt="discord"> </div> </a> </td>
 
-              <td> <a href="https://github.com/override-community" title="https://github.com/override-community"> <div style="height:100%;width:100%"> <img src="Image/github_icon.png" alt="github"> </div> </a>  </td>
+              <td class="communaute"> <a href="https://github.com/override-community" title="https://github.com/override-community"> <div style="height:100%;width:100%"> <img src="Image/github_icon.png" alt="github"> </div> </a>  </td>
 
-              <td> <a href="https://medium.com/@overridecommunuty" title="https://medium.com/@overridecommunuty"> <div style="height:100%;width:100%"> <img src="Image/medium_icon.png" alt="medium"> </div> </a> </td>
+              <td class="communaute"> <a href="https://medium.com/@overridecommunuty" title="https://medium.com/@overridecommunuty"> <div style="height:100%;width:100%"> <img src="Image/medium_icon.png" alt="medium"> </div> </a> </td>
             </tr>
         </table>
 

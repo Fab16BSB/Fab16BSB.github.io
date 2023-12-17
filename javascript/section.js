@@ -1,3 +1,61 @@
+/**
+ * Récupère la position d'un élément passé en paramètre
+ * @param {Object} element - l'élément
+ */ 
+function getPosition(element) {
+  const rect = element.getBoundingClientRect();
+  return {
+    top: rect.top + window.scrollY,
+    left: rect.left + window.scrollX
+  };
+}
+
+/**
+ * Copie un message passé en paramètre dans le presse papier
+ * @param {Event} event - l'évenement correspondant au clique
+ * @param {String} message - le message à copier
+ * @todo Changer le pop-up généré en cas d'alerte par le popover.
+ */ 
+function copierReference(event, message) {
+  event.preventDefault();
+
+  // Récupérer l'élément cliqué
+  const button = event.currentTarget;
+
+  navigator.clipboard.writeText(message)
+    .then(() => {
+      // Obtenir la position de l'élément cliqué
+      const position = getPosition(button);
+
+      // Calculer la nouvelle position du popover (par exemple, 10 pixels en dessous)
+      const newPositionTop = position.top + button.offsetHeight + 10;
+      const newPositionLeft = position.left;
+
+      // Appliquer la nouvelle position au popover
+      const popover = document.getElementById('popover');
+      popover.style.top = newPositionTop + 'px';
+      popover.style.left = newPositionLeft + 104 + 'px';
+
+      // Afficher le popover
+      popover.style.display = 'block';
+
+      // Masquer le popover après un certain délai (par exemple, 2000 ms)
+      setTimeout(() => {
+        popover.style.display = 'none';
+      }, 2000);
+    })
+    .catch((error) => {
+      console.error("Erreur lors de la copie dans le presse-papiers : ", error);
+      alert("Une erreur s'est produite lors de la copie dans le presse-papiers."); // TODO CHANGER LE TEXTE DU POPOVER
+    });
+}
+
+
+
+/**
+ * Charge les information de la section dynamiquement via un tableau d'information
+ * @throws toutes erreurs non liées au chargement de la page
+ */ 
 function loadSection() {
 	
   // verification de l'existance des infos
@@ -16,6 +74,9 @@ function loadSection() {
         
         // afficher le nom de celui-ci si necessaire
         monInnerHtml += tab?.name ? `<h2> ${tab.name} </h2>` : "";
+
+        // afficher la legende de celui-ci si necessaire
+        monInnerHtml += tab?.legend ? `<p class="legende"> ${tab.legend} </p>` : "";
   	    
         // ouverture de tableau
         monInnerHtml += "<table> <thead> <tr>";
@@ -31,7 +92,7 @@ function loadSection() {
           monInnerHtml += `<tr class="${page}_cliquable" data-id="${i}" data-theme="${entry.theme || ''}" open="false">`;
 
           for (const param in entry) {
-            monInnerHtml += ` <td>  ${entry[param]} </td> `
+            monInnerHtml += ` <td class=${param}>  ${entry[param]} </td> `
           }
 
           monInnerHtml += `</tr>`;
@@ -55,6 +116,8 @@ function loadSection() {
     }
   }
 }
+
+
 
 
 loadSection();
