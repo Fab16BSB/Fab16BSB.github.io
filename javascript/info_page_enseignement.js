@@ -111,7 +111,7 @@ const TAB = [
     english :[
       {
         legend: "<b>* LC</b>: Lecture Class / <b>DW</b>: Directed Work / <b>PW</b>: Practical Work / <b>LES</b>: Learning and Evaluation Situation / <b>SC</b>: Support Classes",
-        label: ["Years", "Theme", "Level", "Students", "Place", "Volume", "Distribution"],
+        label: ["Years", "Theme", "Level", "Students", "Place", "Volume", "Distribution *"],
         info: [
           {
             year: `<span>2023</span>
@@ -219,7 +219,7 @@ const TAB = [
     spanish :[
       {
         legend: "<b>* CM</b>: Clase Magistral / <b>TD</b>: Trabajos Dirigidos / <b>TP</b>: Trabajos Prácticos / <b>SAE</b>: Situación de Aprendizaje Evaluada / <b>CR</b>: Curso de Refuerzo",
-        label: ["Años", "Tema", "Nivel", "Estudiantes", "Lugar", "Volumen", "Distribución"],
+        label: ["Años", "Tema", "Nivel", "Estudiantes", "Lugar", "Volumen", "Distribución *"],
         info: [
           {
             year: `<span>2023</span>
