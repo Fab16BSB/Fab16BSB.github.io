@@ -5,22 +5,30 @@ const TAB = [
         label: ["Années", "Diplômes", "Lieux"],
         info: [
           {
-            year: "2019 - 2023",
+            year:`<span>2019</span>
+                <span> - </span>
+                <span>2023</span>`,
             diploma: "Doctorat Informatique",
             place: "Université Paris 8"
           },
           {
-            year: "2017 - 2019",
+            year:`<span>2017</span>
+                <span> - </span>
+                <span>2019</span>`,
             diploma: "Master Big Data et Machine Learning",
             place: "Université Paris 8"
           },
           {
-            year: "2016 - 2017",
+            year:`<span>2016</span>
+                <span> - </span>
+                <span>2017</span>`,
             diploma: "Licence Informatique MIME <br>(Micro Informatique et Machines Embarquées)",
             place: "Université Paris 8"
           },
           {
-            year: "2014 - 2016",
+            year:`<span>2014</span>
+                  <span> - </span>
+                  <span>2016</span>`,
             diploma: "DUT Informatique",
             place: "IUT de Montreuil, Paris 8"
           },
@@ -38,22 +46,30 @@ const TAB = [
         label: ["Years", "Diplomas", "Places"],
         info: [
           {
-            year: "2019 - 2023",
+            year:`<span>2019</span>
+            <span> - </span>
+            <span>2023</span>`,
             diploma: "PhD Computer Science",
             place: "Paris 8 University"
           },
           {
-            year: "2017 - 2019",
+            year:`<span>2017</span>
+            <span> - </span>
+            <span>2019</span>`,
             diploma: "Master in Big Data and Machine Learning",
             place: "Paris 8 University"
           },
           {
-            year: "2016 - 2017",
+            year:`<span>2016</span>
+                <span> - </span>
+                <span>2017</span>`,
             diploma: "Licence in Micro Computing and Embedded Machines",
             place: "Paris 8 University"
           },
           {
-            year: "2014 - 2016",
+            year:`<span>2014</span>
+                  <span> - </span>
+                  <span>2016</span>`,
             diploma: "Practical 2-years degree in Computer Science",
             place: "Paris 8, IUT of Montreuil"
           },
@@ -71,22 +87,30 @@ const TAB = [
         label: ["Años", "Diplomas", "Lugares"],
         info: [
           {
-            year: "2019 - 2023",
+            year:`<span>2019</span>
+                <span> - </span>
+                <span>2023</span>`,
             diploma: "Doctorado informática",
             place: "Universidad de París 8"
           },
           {
-            year: "2017 - 2019",
+            year:`<span>2017</span>
+                <span> - </span>
+                <span>2019</span>`,
             diploma: "Máster en Big Data y Machine Learning",
             place: "Universidad de París 8"
           },
           {
-            year: "2016 - 2017",
+            year:`<span>2016</span>
+                <span> - </span>
+                <span>2017</span>`,
             diploma: "Licencia en Micro Computing and Embedded Machines",
             place: "Universidad de París 8"
           },
           {
-            year: "2014 - 2016",
+            year:`<span>2014</span>
+                  <span> - </span>
+                  <span>2016</span>`,
             diploma: "DUT informática",
             place: "París 8, IUT de Montreuil"
           },

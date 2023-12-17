@@ -2,11 +2,21 @@ const TAB = [
   {
     french:[
       {
-        name: "Projets Professionnel",
+        name: "Projets Professionnels",
         label: ["Années", "Contrats", "Lieux", "Sujets"],
         info: [
           {
-            year: "2020-2022",
+            year: `<span>2023</span>
+                  <span> - </span>
+                  <span>2024</span>`,
+            contact: "CDD",
+            place: "<a href=\"https://www.iut.univ-paris8.fr\" title=\"https://www.iut.univ-paris8.fr\"> IUT Montreuil Paris 8 </a>",
+            subject: "ATER : Attaché Temporaire d'Enseignement et de Recherche",
+          },
+          {
+            year: `<span>2019</span>
+                  <span> - </span>
+                  <span>2022</span>`,
             contact: "CDD",
             place: "<a href=\"http://www.othello.group\" title=\"http://www.othello.group\"> Othello </a>",
             subject: "Thèse Cifre sur la détection d'anomalie en temps réel.",
@@ -39,11 +49,13 @@ const TAB = [
       },
 
       {
-        name: "Projets Académique",
+        name: "Projets Académiques",
         label: ["Années", "Sujets"],
         info: [
           {
-            year: "2018 - 2019",
+            year: `<span>2018</span>
+                  <span> - </span>
+                  <span>2019</span>`,
             subject: "Développement d’une version C et Java du réseau de neurones SOM utilisant iris.data comme jeux de données.<br><br>Développement d’un CNN en python à l’aide de la bibliothèque KERAS pour la reconnaissance d’image.",
           },
           {
@@ -72,7 +84,17 @@ const TAB = [
         label: ["Years", "Contracts", "Places", "Subjets"],
         info: [
           {
-            year: "2020-2022",
+            year: `<span>2023</span>
+                  <span> - </span>
+                  <span>2024</span>`,
+            contact: "Intership : Fixed-term contract",
+            place: "<a href=\"https://www.iut.univ-paris8.fr\" title=\"https://www.iut.univ-paris8.fr\"> IUT Montreuil Paris 8 </a>",
+            subject: "Temporary Teaching and Research Associate",
+          },
+          {
+            year:`<span>2019</span>
+                  <span> - </span>
+                  <span>2022</span>`,
             contact: "Intership : Fixed-term contract",
             place: "<a href=\"http://www.othello.group\" title=\"http://www.othello.group\"> Othello </a>",
             subject: "Thesis on real-time videos anomaly detection.",
@@ -109,7 +131,9 @@ const TAB = [
         label: ["Years", "Subjets"],
         info: [
           {
-            year: "2018 - 2019",
+            year:`<span>2018</span>
+                  <span> - </span>
+                  <span>2019</span>`,
             subject: "Development of a C and Java version of the SOM neural network using iris.data.<br><br>Development of a CNN in python for image recognition using the KERAS library.",
           },
           {
@@ -136,11 +160,21 @@ const TAB = [
 
      spanish:[
       {
-        name: "Proyecto Profesional",
+        name: "Proyectos Profesionales",
         label: ["Años", "Contratos", "Lugares", "Tema"],
         info: [
           {
-            year: "2020-2022",
+            year:`<span>2023</span>
+                  <span> - </span>
+                  <span>2024</span>`,
+            contact: "CDD",
+            place: "<a href=\"https://www.iut.univ-paris8.fr\" title=\"https://www.iut.univ-paris8.fr\"> IUT Montreuil Paris 8 </a>",
+            subject: "Asociado Temporal de Enseñanza e Investigación",
+          },
+          {
+            year: `<span>2019</span>
+                  <span> - </span>
+                  <span>2022</span>`,
             contact: "CDD",
             place: "<a href=\"http://www.othello.group\" title=\"http://www.othello.group\"> Othello </a>",
             subject: "Tesis sobre la detección de anomalías en videos en tiempo real.",
@@ -172,11 +206,13 @@ const TAB = [
       },
 
       {
-        name: "Proyecto Académico",
+        name: "Proyectos Académicos",
         label: ["Años", "Tema"],
         info: [
           {
-            year: "2018 - 2019",
+            year:`<span>2018</span>
+                  <span> - </span>
+                  <span>2019</span>`,
             subject: "Desarrollo de una versión C y Java de la red neuronal SOM usando iris.data.<br><br>Desarrollo de una CNN en Python para clasificación de imágenes usando la librería KERAS.",
           },
           {
