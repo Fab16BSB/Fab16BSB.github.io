@@ -14,7 +14,7 @@ const TAB = [
             student: "&asymp; 10",
             place: "Présentiel",
             quantity: "6h",
-            distribution: "CS "
+            distribution: "<div> CS </div>"
           },
           {
             year:`<span>2023</span>
@@ -25,7 +25,7 @@ const TAB = [
             student: "15",
             place: "Présentiel",
             quantity: "20h",
-            distribution: "TP"
+            distribution: "<div> TP </div>"
           },
           {
             year:`<span>2023</span>
@@ -36,7 +36,7 @@ const TAB = [
             student: "[30 - 45]",
             place: "Présentiel",
             quantity: "6h",
-            distribution: "SAE"
+            distribution: "<div> SAE </div>"
           },
           {
             year:`<span>2023</span>
@@ -58,7 +58,7 @@ const TAB = [
             student: "38",
             place: "Présentiel",
             quantity: "9.5h",
-            distribution: "TP"
+            distribution: "<div> TP </div>"
           },
           {
             year:`<span>2023</span>
@@ -69,7 +69,7 @@ const TAB = [
             student: "38",
             place: "Présentiel",
             quantity: "17h",
-            distribution: "CM (6) </br> TP (11)"
+            distribution: "<div> CM (6) </br> TP (11) </div>"
           },
           {
             year:`<span>2022</span>
@@ -80,7 +80,7 @@ const TAB = [
             student: "&asymp; 30",
             place: "Présentiel",
             quantity: "30h",
-            distribution: "CM"
+            distribution: "<div> CM </div>"
           },
           {
             year:`<span>2020</span>
@@ -91,7 +91,7 @@ const TAB = [
             student: "&asymp; 30/ans",
             place: "À distance",
             quantity: "135h",
-            distribution: "TD (50) </br> TD (50) </br> TD (35)"
+            distribution: "<div> TD (50) </br> TD (50) </br> TD (35) </div>"
           },
           {
             year:`<span>2019</span>
@@ -102,7 +102,7 @@ const TAB = [
             student: "&asymp; 30",
             place: "Présentiel",
             quantity: "15h",
-            distribution: "CM"
+            distribution: "<div> CM </div>"
           },
         ]
       },
@@ -122,7 +122,7 @@ const TAB = [
             student: "&asymp; 10",
             place: "On-site",
             quantity: "6h",
-            distribution: "SC"
+            distribution: "<div> SC </div>"
           },
           {
             year: `<span>2023</span>
@@ -133,7 +133,7 @@ const TAB = [
             student: "15",
             place: "On-site",
             quantity: "20h",
-            distribution: "PW"
+            distribution: "<div> PW </div>"
           },
           {
             year: `<span>2023</span>
@@ -144,7 +144,7 @@ const TAB = [
             student: "[30 - 45]",
             place: "On-site",
             quantity: "6h",
-            distribution: "LES"
+            distribution: "<div> LES </div>"
           },
           {
             year: `<span>2023</span>
@@ -155,7 +155,7 @@ const TAB = [
             student: "[15 - 30]",
             place: "On-site",
             quantity: "49.5h",
-            distribution: "DW (13.5) </br> PW (36)"
+            distribution: "<div> DW (13.5) </br> PW (36) </div>"
           },
           {
             year: `<span>2023</span>
@@ -166,7 +166,7 @@ const TAB = [
             student: "38",
             place: "On-site",
             quantity: "9.5h",
-            distribution: "PW"
+            distribution: "<div> PW </div>"
           },
           {
             year: `<span>2023</span>
@@ -177,7 +177,7 @@ const TAB = [
             student: "38",
             place: "On-site",
             quantity: "17h",
-            distribution: "LC (6) </br> PW (11)"
+            distribution: "<div> LC (6) </br> PW (11) </div>"
           },
            {
             year:`<span>2022</span>
@@ -188,7 +188,7 @@ const TAB = [
             student: "&asymp;30",
             place: "On-site",
             quantity: "30h",
-            distribution: "LC"
+            distribution: "<div> LC </div>"
           },
           {
             year:`<span>2020</span>
@@ -199,7 +199,7 @@ const TAB = [
             student: "&asymp;30/years",
             place: "Distance",
             quantity: "135h",
-            distribution: "DW (50) </br> DW (50) </br> DW (35)"
+            distribution: "<div> DW (50) </br> DW (50) </br> DW (35) </div>"
           },
           {
             year:`<span>2019</span>
@@ -210,7 +210,7 @@ const TAB = [
             student: "&asymp;30",
             place: "On-site",
             quantity: "15h",
-            distribution: "LC"
+            distribution: "<div> LC </div>"
           },
         ]
       },
@@ -230,7 +230,7 @@ const TAB = [
             student: "&asymp; 10",
             place: "Presencial",
             quantity: "6h",
-            distribution: "CR"
+            distribution: "<div> CR </div>"
           },
           {
             year: `<span>2023</span>
@@ -241,7 +241,7 @@ const TAB = [
             student: "15",
             place: "Presencial",
             quantity: "20h",
-            distribution: "TP"
+            distribution: "<div> TP </div>"
           },
           {
             year: `<span>2023</span>
@@ -252,7 +252,7 @@ const TAB = [
             student: "[30 - 45]",
             place: "Presencial",
             quantity: "6h",
-            distribution: "SAE"
+            distribution: "<div> SAE </div>"
           },
           {
             year: `<span>2023</span>
@@ -263,7 +263,7 @@ const TAB = [
             student: "[15 - 30]",
             place: "Presencial",
             quantity: "49.5h",
-            distribution: "TD (13.5) </br> TP (36)"
+            distribution: "<div> TD (13.5) </br> TP (36) </div>"
           },
           {
             year: `<span>2023</span>
@@ -274,7 +274,7 @@ const TAB = [
             student: "38",
             place: "Presencial",
             quantity: "9.5h",
-            distribution: "TP"
+            distribution: "<div> TP </div>"
           },
           {
             year: `<span>2023</span>
@@ -285,7 +285,7 @@ const TAB = [
             student: "38",
             place: "Presencial",
             quantity: "17h",
-            distribution: "CM (6) </br> TP (11)"
+            distribution: "<div> CM (6) </br> TP (11) </div>"
           },          
            {
             year: "2022-2023",
@@ -294,7 +294,7 @@ const TAB = [
             student: "&asymp;30",
             place: "Presencial",
             quantity: "30h",
-            distribution: "CM"
+            distribution: "<div> CM </div>"
           },
            {
             year: "2020-2023",
@@ -303,7 +303,7 @@ const TAB = [
             student: "&asymp;30/años",
             place: "A distancia",
             quantity: "135h",
-            distribution: "TD (50) </br> TD (50) </br> TD (35)"
+            distribution: "<div> TD (50) </br> TD (50) </br> TD (35) </div>"
           },
           {
             year: "2019-2020",
@@ -312,7 +312,7 @@ const TAB = [
             student: "&asymp;30",
             place: "Presencial",
             quantity: "15h",
-            distribution: "CM"
+            distribution: "<div> CM </div>"
           },
         ]
       },

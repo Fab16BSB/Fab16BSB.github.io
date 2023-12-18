@@ -156,10 +156,12 @@ thead tr th{
     color : var(--th_color);
 }
 
+
 td {
     text-align: center;
     padding : 10px 8px;
     font-size: 1.3em;
+
 }
 
 td.year {
