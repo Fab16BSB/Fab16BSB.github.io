@@ -79,7 +79,7 @@ function loadSection() {
         monInnerHtml += tab?.legend ? `<p class="legende"> ${tab.legend} </p>` : "";
   	    
         // ouverture de tableau
-        monInnerHtml += "<table> <thead> <tr>";
+        monInnerHtml += `<table class="${page}"> <thead> <tr>`;
   	    
         // Ajout des en-têtes
         tab.label.forEach(element => monInnerHtml += `<th> ${element}  </th>`);

@@ -166,6 +166,14 @@ td.year {
     white-space: nowrap; /* Empêche le saut de ligne */
 }
 
+table.publication td {
+   max-width: 150px;
+}
+
+table.enseignement td {
+    max-width: 450px ;
+ }
+
 iframe{
     width: 560px; 
     height: 315px;

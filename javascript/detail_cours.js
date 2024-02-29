@@ -202,6 +202,32 @@ const COURSINFO = {
       }
     },
 
+    "PPP (Projet Professionnel et Personnel)": {
+      support_cours: "",
+      TD: {
+        "Découverte de fiche métier" : [],
+      },
+
+      Descriptif: {
+        "Événement de partage d’expérience professionnelle. <br>Je suis à l’initiative d’un projet destiné aux étudiants de première année. L’objectif principal de ce projet est de les mettre en contact avec des intervenants du milieu professionnel de l’informatique. Concrètement, le projet consiste à inviter des professionnels du secteur à organiser des présentations à distance. Chaque intervenant a l’occasion de se présenter, de partager son expérience professionnelle, de parler de son entreprise et des études qu’il a suivies. Les étudiants ont ensuite l’opportunité de poser des questions, ce qui favorise un échange direct et enrichissant. L’objectif global est de permettre aux étudiants de découvrir différentes branches de l’informatique, d’obtenir des conseils pratiques de la part de professionnels et ainsi mieux orienter leur parcours académique. Au total, une dizaine de participants issus de divers horizons professionnels sont envisagés pour prendre part à ces présentations. Parmi eux, des experts des domaines tels que le développement web, l'intelligence artificielle, le réseau, la programmation, la cybersécurité, etc." : [],
+      }
+    },
+
+    "DOO (Developpement Orienté Objet)": {
+      support_cours: "Support fourni",
+      TP: {
+        "TP de Java portant sur l'objet (Banque)" : [],
+        "TP de Java portant sur l'objet + UML (Serveur mail) " : [],
+      }
+    },
+
+    "prog BN": {
+      support_cours: "Support fourni",
+      TP: {
+        "TP en C portant sur les structures" : [],
+      }
+    },
+
   },
 
 
@@ -436,7 +462,23 @@ const COURSINFO = {
         "Database (1)": [],
         "Java Development (2)": []
       }
-    }
+    },
+
+    "OOD (Object Oriented Development)": {
+      support_cours: "Proposed Support",
+      TP: {
+        "Workshop in Java based on object (Bank)": [],
+        "Workshop in Java based on object + UML (Mail Server)": [],
+      }
+    },
+
+    "prog BN": {
+      support_cours: "Proposed Support",
+      TP: {
+        "Workshop in C focusing on structures": [],      
+      }
+    },
+
   },
 
 
@@ -675,6 +717,21 @@ const COURSINFO = {
           "Base de Datos (1)": [],
           "Desarrollo Java (2)": []
         },
+      },
+
+      "DOO (Desarrollo Orientado a Objetos)": {
+        support_cours: "Material de curso disponible",
+        TP: {
+          "TP Java sobre el concepto de objeto (Banco)": [],
+          "TP Java sobre objetos + UML (Servidores Mail)": [],
+        }
+      },
+  
+      "prog BN": {
+        support_cours: "Material de curso disponible",
+        TP: {
+          "TP C basado en estructuras": [],  
+        }
       },
   },
 };

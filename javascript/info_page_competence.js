@@ -25,6 +25,10 @@ const TAB = [
                 <span class='skill-text sk-med'>MEDIUM</span>
               </div> 
               <div class='skill-container'>
+                <img src='Image/skill/bash.png' alt='bash' class='skill-icon bordered b-med' />
+                <span class='skill-text sk-med'>MEDIUM</span>
+              </div>
+              <div class='skill-container'>
                 <img src='Image/skill/c.png' alt='langage C' class='skill-icon bordered b-med' />
                 <span class='skill-text sk-med'>MEDIUM</span>
               </div>
@@ -82,6 +86,40 @@ const TAB = [
                 <img src='Image/skill/jupyter.png' alt='jupyter notebook' class='skill-icon bordered b-good'>
                 <span class='skill-text sk-good'>GOOD</span> 
               </div>
+              <div class='skill-container'>
+                <img src='Image/skill/intellij.png' alt='intellij' class='skill-icon bordered b-low'>
+                <span class='skill-text sk-low'>LOW</span> 
+              </div>
+              <div class='skill-container'>
+              <img src='Image/skill/vscode.png' alt='vscode' class='skill-icon bordered b-low'>
+              <span class='skill-text sk-low'>LOW</span> 
+            </div>
+            </span>`
+          }
+        ],
+      },
+      {
+        name: "",
+        label: ["Technologies"],
+        info: [
+          {
+            ide: `<span class='row-icons-container'>
+              <div class='skill-container'>
+                <img src='Image/skill/UML.png' alt='UML' class='skill-icon bordered b-med'>
+                <span class='skill-text sk-med'>MEDIUM</span> 
+              </div>
+              <div class='skill-container'>
+                <img src='Image/skill/junit.png' alt='junit' class='skill-icon bordered b-good'>
+                <span class='skill-text sk-good'>GOOD</span> 
+              </div>
+              <div class='skill-container'>
+                <img src='Image/skill/latex.png' alt='latex' class='skill-icon bordered b-med'>
+                <span class='skill-text sk-med'>MEDIUM</span> 
+              </div>
+              <div class='skill-container'>
+              <img src='Image/skill/git.png' alt='git' class='skill-icon bordered b-upcoming'>
+              <span class='skill-text sk-upcoming'>UPCOMING</span> 
+            </div>
             </span>`
           }
         ],
