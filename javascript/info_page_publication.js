@@ -18,7 +18,7 @@ const TAB = [
             state: "Soutenu en attente de publication",
             title: "Détection d'anomalies en temps réel dans un flux vidéo",
             oficial: `<a href="document/thèse_poirier_fabien.pdf" class="button"> 
-                        <img src="image/article_icon.png" alt="Article Icon"> 
+                        <img src="Image/article_icon.png" alt="Article Icon"> 
                         <span> Article </span> 
                       </a>`,
             translate: `<p> À venir </p>`
@@ -29,7 +29,7 @@ const TAB = [
             state: "Publié",
             title: "Détection d'anomalies en temps réel dans un flux vidéo",
             oficial: `<a href="https://editions-rnti.fr/?inprocid=1002757" class="button"> 
-                        <img src="image/article_icon.png" alt="Article Icon"> 
+                        <img src="Image/article_icon.png" alt="Article Icon"> 
                         <span> Article </span> 
                       </a> 
                       <a href="#" class="button" onClick="copierReference(event,\`@article{RNTI/papers/1002757,
@@ -40,20 +40,20 @@ const TAB = [
                       year      = {2022},
                       pages     = {437-444}
                       }\`)"> 
-                        <img src="image/citation_icon.png" alt="Citation Icon"> 
+                        <img src="Image/citation_icon.png" alt="Citation Icon"> 
                         <span> Cite Me </span> 
                         <div class="popover" id="popover"> Référence Copiée ! </div>
                       </a>
                       <a href="document/EGC2022_POSTER_POIRIER_FABIEN.pdf" class="button"> 
-                        <img src="image/poster_icon.png" alt="Poster Icon"> 
+                        <img src="Image/poster_icon.png" alt="Poster Icon"> 
                         <span> Poster </span> 
                       </a>
                       <a href="https://www.youtube.com/watch?v=EGHUEPMI4c8" class="button"> 
-                        <img src="image/demo_icon.png" alt="Demo Icon"> 
+                        <img src="Image/demo_icon.png" alt="Demo Icon"> 
                         <span> Demo </span> 
                       </a>`,
             translate: `<a href="https://medium.com/@fab.16/real-time-anomalies-detection-on-videos-d8b3a4ae9c9b" class="button"> 
-                          <img src="image/article_icon.png" alt="Article Icon"> 
+                          <img src="Image/article_icon.png" alt="Article Icon"> 
                           <span> Article </span> 
                         </a>
                         `
@@ -80,7 +80,7 @@ const TAB = [
             state: "Defended, pending publication",
             title: "Détection d'anomalies en temps réel dans un flux vidéo",
             oficial: `<a href="document/thèse_poirier_fabien.pdf" class="button"> 
-                      <img src="image/article_icon.png" alt="Article Icon"> 
+                      <img src="Image/article_icon.png" alt="Article Icon"> 
                       <span> Article </span> 
                     </a>`,
             translate: `<p> Upcoming </p>`
@@ -91,7 +91,7 @@ const TAB = [
             state: "Published",
             title: "Détection d'anomalies en temps réel dans un flux vidéo",
             oficial: `<a href="https://editions-rnti.fr/?inprocid=1002757" class="button"> 
-                      <img src="image/article_icon.png" alt="Article Icon"> 
+                      <img src="Image/article_icon.png" alt="Article Icon"> 
                       <span> Article </span> 
                     </a> 
                     <a href="#" class="button" onClick="copierReference(event,\`@article{RNTI/papers/1002757,
@@ -102,20 +102,20 @@ const TAB = [
                     year      = {2022},
                     pages     = {437-444}
                     }\`)"> 
-                      <img src="image/citation_icon.png" alt="Citation Icon"> 
+                      <img src="Image/citation_icon.png" alt="Citation Icon"> 
                       <span> Cite Me </span> 
                       <div class="popover" id="popover"> Reference Copied ! </div>
                     </a>
                     <a href="document/EGC2022_POSTER_POIRIER_FABIEN.pdf" class="button"> 
-                      <img src="image/poster_icon.png" alt="Poster Icon"> 
+                      <img src="Image/poster_icon.png" alt="Poster Icon"> 
                       <span> Poster </span> 
                     </a>
                     <a href="https://www.youtube.com/watch?v=EGHUEPMI4c8" class="button"> 
-                      <img src="image/demo_icon.png" alt="Demo Icon"> 
+                      <img src="Image/demo_icon.png" alt="Demo Icon"> 
                       <span> Demo </span> 
                     </a>`,
             translate: `<a href="https://medium.com/@fab.16/real-time-anomalies-detection-on-videos-d8b3a4ae9c9b" class="button"> 
-                          <img src="image/article_icon.png" alt="Article Icon"> 
+                          <img src="Image/article_icon.png" alt="Article Icon"> 
                           <span> Article </span> 
                         </a>`
           },
@@ -141,7 +141,7 @@ const TAB = [
             state: "Defendido, pendiente de publicación",
             title: "Détection d'anomalies en temps réel dans un flux vidéo",
             oficial: `<a href="document/thèse_poirier_fabien.pdf" class="button"> 
-                        <img src="image/article_icon.png" alt="Article Icon"> 
+                        <img src="Image/article_icon.png" alt="Article Icon"> 
                         <span> Article </span> 
                     </a>`,
             translate: "<p> Próximamente </p>"
@@ -152,7 +152,7 @@ const TAB = [
             state: "Publicado",
             title: "Détection d'anomalies en temps réel dans un flux vidéo",
             oficial: `<a href="https://editions-rnti.fr/?inprocid=1002757" class="button"> 
-                      <img src="image/article_icon.png" alt="Article Icon"> 
+                      <img src="Image/article_icon.png" alt="Article Icon"> 
                       <span> Article </span> 
                     </a> 
                     <a href="#" class="button" onClick="copierReference(event,\`@article{RNTI/papers/1002757,
@@ -163,16 +163,16 @@ const TAB = [
                     year      = {2022},
                     pages     = {437-444}
                     }\`)"> 
-                      <img src="image/citation_icon.png" alt="Citation Icon"> 
+                      <img src="Image/citation_icon.png" alt="Citation Icon"> 
                       <span> Cite Me </span> 
                       <div class="popover" id="popover"> ¡Referencia Copiada! </div>
                     </a>
                     <a href="document/EGC2022_POSTER_POIRIER_FABIEN.pdf" class="button"> 
-                      <img src="image/poster_icon.png" alt="Poster Icon"> 
+                      <img src="Image/poster_icon.png" alt="Poster Icon"> 
                       <span> Poster </span> 
                     </a>
                     <a href="https://www.youtube.com/watch?v=EGHUEPMI4c8" class="button"> 
-                      <img src="image/demo_icon.png" alt="Demo Icon"> 
+                      <img src="Image/demo_icon.png" alt="Demo Icon"> 
                       <span> Demo </span> 
                     </a>`,
             translate: "<p> Próximamente </p>"

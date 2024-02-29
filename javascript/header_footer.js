@@ -8,7 +8,7 @@ function loadHeader(){
   	let pathIcon = "Image/" + modeIcon + ".png"
 
 	headerTag.innerHTML = `
-	<h1> POIRIER FABIEN </h1>
+	<h1>FABIEN POIRIER</h1>
 	<p> <img src="Image/grade_2.png" alt="diplome_icon"/> ${info.status} <img src="Image/localisation_2.png" alt="localisation_icon"/> ${info.lieu} </p>
 	<p id="interets"><i> ${info.interet} </i></p> 
 
