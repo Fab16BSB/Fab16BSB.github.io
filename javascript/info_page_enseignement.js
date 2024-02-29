@@ -18,6 +18,39 @@ const TAB = [
           },
           {
             year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "prog BN",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Présentiel",
+            quantity: "6h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "DOO (Developpement Orienté Objet)",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Présentiel",
+            quantity: "7.5h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "PPP (Projet Professionnel et Personnel)",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Présentiel",
+            quantity: "3h",
+            distribution: "<div> TD </div>"
+          },
+          {
+            year:`<span>2023</span>
                   <span> - </span>
                   <span>2024</span>`,
             theme: "Initiation au développement (Java)",
@@ -123,6 +156,39 @@ const TAB = [
             place: "On-site",
             quantity: "6h",
             distribution: "<div> SC </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "prog BN",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Présentiel",
+            quantity: "6h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "OOD (Object Oriented Development)",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Présentiel",
+            quantity: "7.5h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "PPP (Professional and Personal Project)",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Présentiel",
+            quantity: "3h",
+            distribution: "<div> TD </div>"
           },
           {
             year: `<span>2023</span>
@@ -231,6 +297,39 @@ const TAB = [
             place: "Presencial",
             quantity: "6h",
             distribution: "<div> CR </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "prog BN",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Présentiel",
+            quantity: "6h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "DOO (Desarrollo Orientado a Objetos)",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Présentiel",
+            quantity: "7.5h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "PPP (Proyecto Profesional y Personal)",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Présentiel",
+            quantity: "3h",
+            distribution: "<div> TD </div>"
           },
           {
             year: `<span>2023</span>

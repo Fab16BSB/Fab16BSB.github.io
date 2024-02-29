@@ -202,6 +202,32 @@ const COURSINFO = {
       }
     },
 
+    "PPP (Projet Professionnel et Personnel)": {
+      support_cours: "",
+      TD: {
+        "Découverte de fiche métier" : [],
+      },
+
+      Descriptif: {
+        "Événement de partage d’expérience professionnelle. <br>Je suis à l’initiative d’un projet destiné aux étudiants de première année. L’objectif principal de ce projet est de les mettre en contact avec des intervenants du milieu professionnel de l’informatique. Concrètement, le projet consiste à inviter des professionnels du secteur à organiser des présentations à distance. Chaque intervenant a l’occasion de se présenter, de partager son expérience professionnelle, de parler de son entreprise et des études qu’il a suivies. Les étudiants ont ensuite l’opportunité de poser des questions, ce qui favorise un échange direct et enrichissant. L’objectif global est de permettre aux étudiants de découvrir différentes branches de l’informatique, d’obtenir des conseils pratiques de la part de professionnels et ainsi mieux orienter leur parcours académique. Au total, une dizaine de participants issus de divers horizons professionnels sont envisagés pour prendre part à ces présentations. Parmi eux, des experts des domaines tels que le développement web, l'intelligence artificielle, le réseau, la programmation, la cybersécurité, etc." : [],
+      }
+    },
+
+    "DOO (Developpement Orienté Objet)": {
+      support_cours: "Support fourni",
+      TP: {
+        "TP de Java portant sur l'objet (Banque)" : [],
+        "TP de Java portant sur l'objet + UML (Serveur mail) " : [],
+      }
+    },
+
+    "prog BN": {
+      support_cours: "Support fourni",
+      TP: {
+        "TP en C portant sur les structures" : [],
+      }
+    },
+
   },
 
 
@@ -436,7 +462,34 @@ const COURSINFO = {
         "Database (1)": [],
         "Java Development (2)": []
       }
-    }
+    },
+
+    "PPP (Professional and Personal Project)": {
+      support_cours: "",
+      TD: {
+        "Job Description Discovery" : [],
+      },
+
+      Descriptif: {
+        "Event for sharing professional experience. <br> I am leading a project aimed at first-year students. The main objective of this project is to connect them with professionals in the field of computer science. Concretely, the project involves inviting professionals from the sector to organize remote presentations. Each speaker has the opportunity to introduce themselves, share their professional experience, talk about their company, and the studies they have pursued. Students then have the opportunity to ask questions, fostering direct and enriching exchange. The overall goal is to allow students to discover different branches of computer science, obtain practical advice from professionals, and thus better orient their academic path. In total, about ten participants from various professional backgrounds are expected to take part in these presentations. Among them, experts in areas such as web development, artificial intelligence, networking, programming, cybersecurity, etc." : [],
+      }
+    },
+
+    "OOD (Object Oriented Development)": {
+      support_cours: "Course material provided",
+      TP: {
+        "Workshop in Java based on object (Bank)": [],
+        "Workshop in Java based on object + UML (Mail Server)": [],
+      }
+    },
+
+    "prog BN": {
+      support_cours: "Course material provided",
+      TP: {
+        "Workshop in C focusing on structures": [],      
+      }
+    },
+
   },
 
 
@@ -675,6 +728,32 @@ const COURSINFO = {
           "Base de Datos (1)": [],
           "Desarrollo Java (2)": []
         },
+      },
+
+      "PPP (Proyecto Profesional y Personal)": {
+        support_cours: "",
+        TD: {
+          "Descubrimiento de Descripción de Puesto" : [],
+        },
+  
+        Descriptif: {
+          "Evento para compartir experiencia profesional. <br> Estoy liderando un proyecto dirigido a estudiantes de primer año. El objetivo principal de este proyecto es conectarlos con profesionales del campo de la informática. Concretamente, el proyecto implica invitar a profesionales del sector a organizar presentaciones remotas. Cada ponente tiene la oportunidad de presentarse, compartir su experiencia profesional, hablar sobre su empresa y los estudios que han seguido. Los estudiantes luego tienen la oportunidad de hacer preguntas, fomentando un intercambio directo y enriquecedor. El objetivo general es permitir que los estudiantes descubran diferentes ramas de la informática, obtener consejos prácticos de profesionales y así orientar mejor su trayectoria académica. En total, se espera que alrededor de diez participantes de diversos ámbitos profesionales participen en estas presentaciones. Entre ellos, expertos en áreas como desarrollo web, inteligencia artificial, redes, programación, ciberseguridad, etc." : [],
+        }
+      },
+
+      "DOO (Desarrollo Orientado a Objetos)": {
+        support_cours: "Material de curso disponible",
+        TP: {
+          "TP Java sobre el concepto de objeto (Banco)": [],
+          "TP Java sobre objetos + UML (Servidores Mail)": [],
+        }
+      },
+  
+      "prog BN": {
+        support_cours: "Material de curso disponible",
+        TP: {
+          "TP C basado en estructuras": [],  
+        }
       },
   },
 };

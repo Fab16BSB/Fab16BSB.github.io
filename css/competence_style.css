@@ -18,8 +18,8 @@
   width: 60px;
   height: 60px;
   object-fit: contain;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 14px;
+  padding-left: 14px;
   padding-bottom: 5px;
 }
 
@@ -50,6 +50,10 @@
   border-color: red;
 }
 
+.b-upcoming {
+  border-color: purple;
+}
+
 .sk-good {
   background-color: green;
 }
@@ -60,6 +64,10 @@
 
 .sk-low {
   background-color: red;
+}
+
+.sk-upcoming {
+  background-color: purple;
 }
 
 .skill-container:hover>.skill-text {

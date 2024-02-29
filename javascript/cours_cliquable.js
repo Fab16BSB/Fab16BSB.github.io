@@ -52,9 +52,16 @@ function addCoursInfo() {
                 if (Array.isArray(innerValue)) {
                   loadInfo += innerValue.map(item => `<span class="keyword">${item}</span>`).join(' ');
                 }
+
+                // Format texte (description trouvé plutot qu'une liste de mot clé)
+                else {
+                  loadInfo += `<p class="description">${innerValue}</p>`;
+                }
+
+                loadInfo += "</div></li>"
               }
 
-              loadInfo += `</div></li></ul><div></br>`;
+              loadInfo += `</ul></div>`;
               console.log(loadInfo)
             } 
             
