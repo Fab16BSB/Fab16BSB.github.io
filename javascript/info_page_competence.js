@@ -91,9 +91,13 @@ const TAB = [
                 <span class='skill-text sk-low'>LOW</span> 
               </div>
               <div class='skill-container'>
-              <img src='Image/skill/vscode.png' alt='vscode' class='skill-icon bordered b-low'>
-              <span class='skill-text sk-low'>LOW</span> 
-            </div>
+                <img src='Image/skill/PyCharm.png' alt='pycharm' class='skill-icon bordered b-low'>
+                <span class='skill-text sk-low'>LOW</span> 
+              </div>
+              <div class='skill-container'>
+                <img src='Image/skill/vscode.png' alt='vscode' class='skill-icon bordered b-low'>
+                <span class='skill-text sk-low'>LOW</span> 
+              </div>
             </span>`
           }
         ],
@@ -105,7 +109,7 @@ const TAB = [
           {
             ide: `<span class='row-icons-container'>
               <div class='skill-container'>
-                <img src='Image/skill/UML.png' alt='UML' class='skill-icon bordered b-med'>
+                <img src='Image/skill/uml.png' alt='uml' class='skill-icon bordered b-med'>
                 <span class='skill-text sk-med'>MEDIUM</span> 
               </div>
               <div class='skill-container'>
