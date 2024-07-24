@@ -17,7 +17,7 @@ const TAB = [
             event: "Soutenance de Thèse",
             state: "Soutenu en attente de publication",
             title: "Détection d'anomalies en temps réel dans un flux vidéo",
-            oficial: `<a href="document/thèse_poirier_fabien.pdf" class="button"> 
+            oficial: `<a href="document/these_poirier_fabien.pdf" class="button"> 
                         <img src="Image/article_icon.png" alt="Article Icon"> 
                         <span> Article </span> 
                       </a>`,
@@ -79,7 +79,7 @@ const TAB = [
             event: "Thesis Defense",
             state: "Defended, pending publication",
             title: "Détection d'anomalies en temps réel dans un flux vidéo",
-            oficial: `<a href="document/thèse_poirier_fabien.pdf" class="button"> 
+            oficial: `<a href="document/these_poirier_fabien.pdf" class="button"> 
                       <img src="Image/article_icon.png" alt="Article Icon"> 
                       <span> Article </span> 
                     </a>`,
@@ -140,7 +140,7 @@ const TAB = [
             event: "Defensa de Tesis",
             state: "Defendido, pendiente de publicación",
             title: "Détection d'anomalies en temps réel dans un flux vidéo",
-            oficial: `<a href="document/thèse_poirier_fabien.pdf" class="button"> 
+            oficial: `<a href="document/these_poirier_fabien.pdf" class="button"> 
                         <img src="Image/article_icon.png" alt="Article Icon"> 
                         <span> Article </span> 
                     </a>`,
