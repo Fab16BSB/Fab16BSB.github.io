@@ -8,7 +8,7 @@ const TAB = [
           {
             year: `<span>2023</span>
                   <span> - </span>
-                  <span>2024</span>`,
+                  <span>2025</span>`,
             contact: "CDD",
             place: "<a href=\"https://www.iut.univ-paris8.fr\" title=\"https://www.iut.univ-paris8.fr\"> IUT Montreuil Paris 8 </a>",
             subject: "ATER : Attaché Temporaire d'Enseignement et de Recherche",
@@ -86,7 +86,7 @@ const TAB = [
           {
             year: `<span>2023</span>
                   <span> - </span>
-                  <span>2024</span>`,
+                  <span>2025</span>`,
             contact: "Intership : Fixed-term contract",
             place: "<a href=\"https://www.iut.univ-paris8.fr\" title=\"https://www.iut.univ-paris8.fr\"> IUT Montreuil Paris 8 </a>",
             subject: "Temporary Teaching and Research Associate",
@@ -166,7 +166,7 @@ const TAB = [
           {
             year:`<span>2023</span>
                   <span> - </span>
-                  <span>2024</span>`,
+                  <span>2025</span>`,
             contact: "CDD",
             place: "<a href=\"https://www.iut.univ-paris8.fr\" title=\"https://www.iut.univ-paris8.fr\"> IUT Montreuil Paris 8 </a>",
             subject: "Asociado Temporal de Enseñanza e Investigación",

@@ -1,6 +1,33 @@
 const COURSINFO = {
 
   french: {
+    "Architecture des Ordinateurs": {
+      support_cours: "Support fourni",
+      TD:{
+        "": ["Binaire", "Octale", "Hexa", "Complément à 1", "complément à 2", "Opération Binaire", "ASCII", "UTF-8"],
+      },
+    },
+
+    "Architecture Logiciel": {
+      support_cours: "Production du support",
+
+      CM: {
+        "Les bases de Python": [
+          "Python2", "Python3", "Typage statique", "Typage dynamique", "Compiler", "Interpréter", "Typage faible", "Typage fort", "PEP 8", "PEP 257", "PEP 484", "snake_case",
+          "Variables", "print", "input", "if", "else", "elif", "for i in range", "while", "match case", "cast", "caractère spéciaux", "ternaire", "assertion", "break", "continue",
+          "pass", "compréhension list", "tuple", "list", "dict", "set", "string", "map", "zip", "lambda", "enumerate", "slice"
+        ],
+        "La POO en Python": [
+          "méthode", "fonction", "procedure", "main", "paramètre", "paramètre optionnel", "passage par copie", "passage par référence", "return", "yield", "underscore", "generateur",
+          "DocString", "Type Hints", "importations", "pip2", "pip3", "fichier", "erreur", "exception", "classe", "objet", "héritage", "polymorphisme", "self", "__str__", "__init__",
+          "__eq__", "__hash__", "Surcharge d’opérateur", "méthode statique", "décorateur"
+        ],
+        "Flask / Archi logiciel (Fourni)": [
+          "Application", "API", "Routes", "Endpoint"
+        ],
+      },
+    },
+
     "Programmation Java": {
       support_cours: "Production du support",
 
@@ -165,6 +192,7 @@ const COURSINFO = {
         "TD4 : Chercher": ["Utilisation de l'instruction grep"],
         "TD5 : Scripts": ["Script", "Arguments", "Saisie"],
         "TD6 : Scripts : Structures de controle </br>": ["Condition", "Boucle"],
+        "TD : sed" : ["Utilisation de la commande sed"]
      },
      TP : {
         "TP1 : Premieres commandes shell": ["Commande de base Unix", "ls", "cd", "touch", "mkdir", "Méta-caractères", "more", "head", "tail", "cat", "echo", "more", ">", ">>"],
@@ -174,6 +202,13 @@ const COURSINFO = {
         "TP5 : Premier script": ["Compréhension de Script", "Exécution", "Modification de Script"],
         "TP6 : Scripts Conditions et boucles": ["Élaboration de script", "Gestion des retours d'erreur"],
      }
+    },
+
+    "Développement Web": {
+      support_cours: "Support fourni",
+      TD:{
+        "": ["HTML", "CSS", "Flexbox", "Grid", "Positionnement"],
+      },
     },
 
     "Initiation au développement (Java)" : {
@@ -187,9 +222,10 @@ const COURSINFO = {
 
     "Intallation de Poste" : {
       Descriptif: {
-        "Encadrement d'une Situation d'Apprentissage et d'Évaluation (SAE) visant à guider les étudiants de première année de BUT dans l'installation d'un dual boot (Windows / Ubuntu) ainsi que dans l'acquisition des logiciels fondamentaux pour leur formation incluant les outils de développement, bases de données et les langages de programmation." : [],
+        "2023-2024 </br> Encadrement d'une Situation d'Apprentissage et d'Évaluation (SAE) visant à guider les étudiants de première année de BUT dans l'installation d'un dual boot (Windows / Ubuntu) ainsi que dans l'acquisition des logiciels fondamentaux pour leur formation incluant les outils de développement, bases de données et les langages de programmation." : [],
+        "2023-2025 </br> Encadrement d'une Situation d'Apprentissage et d'Évaluation (SAE) visant à guider les étudiants de première année de BUT dans l'installation d'une machine virtuel Ubuntu ainsi que dans l'acquisition des logiciels fondamentaux pour leur formation incluant les outils de développement, bases de données et les langages de programmation." : [],
 
-        "Supervision de plusieurs soutenances, impliquant environ 45 étudiants répartis en groupes de 2 à 3." : [],
+        "Supervision de plusieurs soutenances, impliquant environ 90 étudiants répartis en groupes de 2 à 3." : [],
       }
     },
 

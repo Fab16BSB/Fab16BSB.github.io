@@ -11,6 +11,7 @@
 
 td {
   vertical-align: top;
+    padding: 10px 30px 30px;
 }
 
 .button {
@@ -22,8 +23,10 @@ td {
     border-radius: 5px; /* Coins arrondis */
     transition: background-color 0.3s ease; /* Animation de transition */
     margin-top: 10px;
-    min-width: 200px;
-    min-height: 30px; 
+    /*min-width: 200px;
+    min-height: 30px;*/
+    min-width: 100%;
+    min-height: 5%;
   }
   
   .button:last-child {

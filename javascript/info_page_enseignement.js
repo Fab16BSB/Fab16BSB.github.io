@@ -6,6 +6,83 @@ const TAB = [
         label: ["Années", "Thème", "Niveau", "Étudiants", "Lieux", "Volume", "Distribution *"],
         info: [
           {
+            year:`<span>2024</span>
+                  <span> - </span>
+                  <span>2025</span>`,
+            theme: "Architecture des Ordinateurs",
+            lvl: "BUT 1",
+            student: "[30 - 15]",
+            place: "Présentiel",
+            quantity: "10",
+            distribution: "<div> TD (5) </br> TP (5) </div>"
+          },
+          {
+            year:`<span>2024</span>
+                  <span> - </span>
+                  <span>2025</span>`,
+            theme: "Développement Web",
+            lvl: "BUT 1",
+            student: "15",
+            place: "Présentiel",
+            quantity: "10",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year:`<span>2023</span>
+                  <span> - </span>
+                  <span>2025</span>`,
+            theme: "Initiation au développement (Java)",
+            lvl: "BUT 1",
+            student: "15",
+            place: "Présentiel",
+            quantity: "44h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year:`<span>2023</span>
+                  <span> - </span>
+                  <span>2025</span>`,
+            theme: "Intallation de Poste",
+            lvl: "BUT 1",
+            student: "[30 - 45]",
+            place: "Présentiel",
+            quantity: "18h",
+            distribution: "<div> SAE </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2025</span>`,
+            theme: "Système d'exploitation",
+            lvl: "BUT 1",
+            student: "[15 - 30]",
+            place: "Présentiel",
+            quantity: "75h",
+            distribution: "<div> TD (28) </br> TP (46) </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2025</span>`,
+            theme: "Qualité d'algo",
+            lvl: "BUT 3",
+            student: "38",
+            place: "Présentiel",
+            quantity: "19.5h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year:`<span>2023</span>
+                  <span> - </span>
+                  <span>2025</span>`,
+            theme: "Programmation multimédia",
+            lvl: "BUT 3",
+            student: "[38 - 18]",
+            place: "Présentiel",
+            quantity: "32h",
+            distribution: "<div> CM (11) </br> TP (21) </div>"
+          },
+          {
             year:`<span>2023</span>
                 <span> - </span>
                 <span>2024</span>`,
@@ -18,13 +95,68 @@ const TAB = [
           },
           {
             year:`<span>2023</span>
+                  <span> - </span>
+                  <span>2024</span>`,
+            theme: "Architecture Logiciel",
+            lvl: "BUT 1",
+            student: "50",
+            place: "Présentiel",
+            quantity: "21.5",
+            distribution: "<div> CM (6)</br>TP (15.5) </div>"
+          },
+          {
+            year:`<span>2023</span>
                 <span> - </span>
                 <span>2024</span>`,
-            theme: "prog BN",
+            theme: "Implémentation d’un besoin client",
+            lvl: "BUT 1",
+            student: "15",
+            place: "Présentiel",
+            quantity: "9h",
+            distribution: "<div> SAE </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "Comparaison d’approches algorithmiques",
+            lvl: "BUT 1",
+            student: "15",
+            place: "Présentiel",
+            quantity: "6h",
+            distribution: "<div> SAE </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "Développement d’une application + Qualité de développement",
+            lvl: "BUT 1",
+            student: "15",
+            place: "Présentiel",
+            quantity: "24h",
+            distribution: "<div> SAE </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "Programation bas niveau",
             lvl: "BUT 1",
             student: "&asymp; 30",
             place: "Présentiel",
             quantity: "6h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year:`<span>2023</span>
+                <span> - </span>
+                <span>2024</span>`,
+            theme: "Développement d’applications avec IHM",
+            lvl: "BUT 1",
+            student: "15",
+            place: "Présentiel",
+            quantity: "14h",
             distribution: "<div> TP </div>"
           },
           {
@@ -50,61 +182,6 @@ const TAB = [
             distribution: "<div> TD </div>"
           },
           {
-            year:`<span>2023</span>
-                  <span> - </span>
-                  <span>2024</span>`,
-            theme: "Initiation au développement (Java)",
-            lvl: "BUT 1",
-            student: "15",
-            place: "Présentiel",
-            quantity: "20h",
-            distribution: "<div> TP </div>"
-          },
-          {
-            year:`<span>2023</span>
-                  <span> - </span>
-                  <span>2024</span>`,
-            theme: "Intallation de Poste",
-            lvl: "BUT 1",
-            student: "[30 - 45]",
-            place: "Présentiel",
-            quantity: "6h",
-            distribution: "<div> SAE </div>"
-          },
-          {
-            year:`<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "Système d'exploitation",
-            lvl: "BUT 1",
-            student: "[15 - 30]",
-            place: "Présentiel",
-            quantity: "49.5h",
-            distribution: "<div> TD (13.5) </br> TP (36) </div>"
-          },
-          {
-            year:`<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "Qualité d'algo",
-            lvl: "BUT 3",
-            student: "38",
-            place: "Présentiel",
-            quantity: "9.5h",
-            distribution: "<div> TP </div>"
-          },
-          {
-            year:`<span>2023</span>
-                  <span> - </span>
-                  <span>2024</span>`,
-            theme: "Programmation multimédia",
-            lvl: "BUT 3",
-            student: "38",
-            place: "Présentiel",
-            quantity: "17h",
-            distribution: "<div> CM (6) </br> TP (11) </div>"
-          },
-          {
             year:`<span>2022</span>
                 <span> - </span>
                 <span>2023</span>`,
@@ -124,7 +201,7 @@ const TAB = [
             student: "&asymp; 30/ans",
             place: "À distance",
             quantity: "135h",
-            distribution: "<div> TD (50) </br> TD (50) </br> TD (35) </div>"
+            distribution: "<div> TD </div>"
           },
           {
             year:`<span>2019</span>
@@ -147,9 +224,86 @@ const TAB = [
         label: ["Years", "Theme", "Level", "Students", "Place", "Volume", "Distribution *"],
         info: [
           {
+            year: `<span>2024</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Computer Architecture",
+            lvl: "BUT 1",
+            student: "[30 - 15]",
+            place: "On-site",
+            quantity: "10",
+            distribution: "<div> DW (5) </br> PW (5) </div>"
+          },
+          {
+            year: `<span>2024</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Web Development",
+            lvl: "BUT 1",
+            student: "15",
+            place: "On-site",
+            quantity: "10",
+            distribution: "<div> PW </div>"
+          },
+          {
             year: `<span>2023</span>
-                    <span> - </span>
-                    <span>2024</span>`,
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Introduction to Development (Java)",
+            lvl: "BUT 1",
+            student: "15",
+            place: "On-site",
+            quantity: "44h",
+            distribution: "<div> PW </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Workstation Setup",
+            lvl: "BUT 1",
+            student: "[30 - 45]",
+            place: "On-site",
+            quantity: "18h",
+            distribution: "<div> LES </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Operating Systems",
+            lvl: "BUT 1",
+            student: "[15 - 30]",
+            place: "On-site",
+            quantity: "75h",
+            distribution: "<div> DW (28) </br> PW (46) </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Algorithm Quality",
+            lvl: "BUT 3",
+            student: "38",
+            place: "On-site",
+            quantity: "19.5h",
+            distribution: "<div> PW </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Multimedia Programming",
+            lvl: "BUT 3",
+            student: "[38 - 18]",
+            place: "On-site",
+            quantity: "32h",
+            distribution: "<div> LC (11) </br> PW (21) </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2024</span>`,
             theme: "Support Classes",
             lvl: "BUT 1",
             student: "&asymp; 10",
@@ -158,122 +312,122 @@ const TAB = [
             distribution: "<div> SC </div>"
           },
           {
-            year:`<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "prog BN",
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Software Architecture",
             lvl: "BUT 1",
-            student: "&asymp; 30",
-            place: "Présentiel",
-            quantity: "6h",
-            distribution: "<div> TP </div>"
-          },
-          {
-            year:`<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "OOD (Object Oriented Development)",
-            lvl: "BUT 1",
-            student: "&asymp; 30",
-            place: "Présentiel",
-            quantity: "7.5h",
-            distribution: "<div> TP </div>"
-          },
-          {
-            year:`<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "PPP (Professional and Personal Project)",
-            lvl: "BUT 1",
-            student: "&asymp; 30",
-            place: "Présentiel",
-            quantity: "3h",
-            distribution: "<div> TD </div>"
+            student: "50",
+            place: "On-site",
+            quantity: "21.5",
+            distribution: "<div> LC (6)</br>PW (15.5) </div>"
           },
           {
             year: `<span>2023</span>
-                  <span> - </span>
-                  <span>2024</span>`,
-            theme: "Introduction to Development (Java)",
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Implementing Client Requirements",
             lvl: "BUT 1",
             student: "15",
             place: "On-site",
-            quantity: "20h",
-            distribution: "<div> PW </div>"
+            quantity: "9h",
+            distribution: "<div> LES </div>"
           },
           {
             year: `<span>2023</span>
-                  <span> - </span>
-                  <span>2024</span>`,
-            theme: "Workstation Setup",
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Comparison of Algorithmic Approaches",
             lvl: "BUT 1",
-            student: "[30 - 45]",
+            student: "15",
             place: "On-site",
             quantity: "6h",
             distribution: "<div> LES </div>"
           },
           {
             year: `<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "Operating System",
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Application Development + Development Quality",
             lvl: "BUT 1",
-            student: "[15 - 30]",
+            student: "15",
             place: "On-site",
-            quantity: "49.5h",
-            distribution: "<div> DW (13.5) </br> PW (36) </div>"
+            quantity: "24h",
+            distribution: "<div> LES </div>"
           },
           {
             year: `<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "Algorithm Quality",
-            lvl: "BUT 3",
-            student: "38",
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Low-Level Programming",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
             place: "On-site",
-            quantity: "9.5h",
+            quantity: "6h",
             distribution: "<div> PW </div>"
           },
           {
             year: `<span>2023</span>
-                  <span> - </span>
-                  <span>2024</span>`,
-            theme: "Multimedia Programming",
-            lvl: "BUT 3",
-            student: "38",
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Application Development with GUI",
+            lvl: "BUT 1",
+            student: "15",
             place: "On-site",
-            quantity: "17h",
-            distribution: "<div> LC (6) </br> PW (11) </div>"
+            quantity: "14h",
+            distribution: "<div> PW </div>"
           },
-           {
-            year:`<span>2022</span>
-                  <span> - </span>
-                  <span>2023</span>`,
-            theme: "Deep learning",
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "OOP (Object-Oriented Programming)",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "On-site",
+            quantity: "7.5h",
+            distribution: "<div> PW </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "PPP (Personal and Professional Project)",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "On-site",
+            quantity: "3h",
+            distribution: "<div> WD </div>"
+          },
+          {
+            year: `<span>2022</span>
+            <span> - </span>
+            <span>2023</span>`,
+            theme: "Deep Learning",
             lvl: "Master 1",
-            student: "&asymp;30",
+            student: "&asymp; 30",
             place: "On-site",
             quantity: "30h",
             distribution: "<div> LC </div>"
           },
           {
-            year:`<span>2020</span>
-                  <span> - </span>
-                  <span>2023</span>`,
-            theme: "Oriented Object Programming in Java",
-            lvl: "Licence 2",
-            student: "&asymp;30/years",
-            place: "Distance",
+            year: `<span>2020</span>
+            <span> - </span>
+            <span>2023</span>`,
+            theme: "Object-Oriented Programming in Java",
+            lvl: "Bachelor's 2nd year",
+            student: "&asymp; 30/year",
+            place: "Online",
             quantity: "135h",
-            distribution: "<div> DW (50) </br> DW (50) </br> DW (35) </div>"
+            distribution: "<div> DW </div>"
           },
           {
-            year:`<span>2019</span>
-                  <span> - </span>
-                  <span>2020</span>`,
+            year: `<span>2019</span>
+            <span> - </span>
+            <span>2020</span>`,
             theme: "Java Programming",
-            lvl: "License 2",
-            student: "&asymp;30",
+            lvl: "Bachelor's 2nd year",
+            student: "&asymp; 30",
             place: "On-site",
             quantity: "15h",
             distribution: "<div> LC </div>"
@@ -288,10 +442,87 @@ const TAB = [
         label: ["Años", "Tema", "Nivel", "Estudiantes", "Lugar", "Volumen", "Distribución *"],
         info: [
           {
+            year: `<span>2024</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Arquitectura de Ordenadores",
+            lvl: "BUT 1",
+            student: "[30 - 15]",
+            place: "Presencial",
+            quantity: "10",
+            distribution: "<div> TD (5) </br> TP (5) </div>"
+          },
+          {
+            year: `<span>2024</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Desarrollo Web",
+            lvl: "BUT 1",
+            student: "15",
+            place: "Presencial",
+            quantity: "10",
+            distribution: "<div> TP </div>"
+          },
+          {
             year: `<span>2023</span>
-                    <span> - </span>
-                    <span>2024</span>`,
-            theme: "Clases de Refuerzos",
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Introducción al desarrollo (Java)",
+            lvl: "BUT 1",
+            student: "15",
+            place: "Presencial",
+            quantity: "44h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Instalación de Puestos",
+            lvl: "BUT 1",
+            student: "[30 - 45]",
+            place: "Presencial",
+            quantity: "18h",
+            distribution: "<div> SAE </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Sistemas Operativos",
+            lvl: "BUT 1",
+            student: "[15 - 30]",
+            place: "Presencial",
+            quantity: "75h",
+            distribution: "<div> TD (28) </br> TP (46) </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Calidad de Algoritmos",
+            lvl: "BUT 3",
+            student: "38",
+            place: "Presencial",
+            quantity: "19.5h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2025</span>`,
+            theme: "Programación Multimedia",
+            lvl: "BUT 3",
+            student: "[38 - 18]",
+            place: "Presencial",
+            quantity: "32h",
+            distribution: "<div> CM (11) </br> TP (21) </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Clases de Apoyo",
             lvl: "BUT 1",
             student: "&asymp; 10",
             place: "Presencial",
@@ -299,116 +530,122 @@ const TAB = [
             distribution: "<div> CR </div>"
           },
           {
-            year:`<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "prog BN",
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Arquitectura de Software",
             lvl: "BUT 1",
-            student: "&asymp; 30",
-            place: "Présentiel",
-            quantity: "6h",
-            distribution: "<div> TP </div>"
-          },
-          {
-            year:`<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "DOO (Desarrollo Orientado a Objetos)",
-            lvl: "BUT 1",
-            student: "&asymp; 30",
-            place: "Présentiel",
-            quantity: "7.5h",
-            distribution: "<div> TP </div>"
-          },
-          {
-            year:`<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "PPP (Proyecto Profesional y Personal)",
-            lvl: "BUT 1",
-            student: "&asymp; 30",
-            place: "Présentiel",
-            quantity: "3h",
-            distribution: "<div> TD </div>"
+            student: "50",
+            place: "Presencial",
+            quantity: "21.5",
+            distribution: "<div> CM (6)</br>TP (15.5) </div>"
           },
           {
             year: `<span>2023</span>
-                  <span> - </span>
-                  <span>2024</span>`,
-            theme: "Introducción al Desarrollo (Java)",
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Implementación de un Requisito del Cliente",
             lvl: "BUT 1",
             student: "15",
             place: "Presencial",
-            quantity: "20h",
-            distribution: "<div> TP </div>"
+            quantity: "9h",
+            distribution: "<div> SAE </div>"
           },
           {
             year: `<span>2023</span>
-                  <span> - </span>
-                  <span>2024</span>`,
-            theme: "Instalación de Estación de Trabajo",
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Comparación de Enfoques Algorítmicos",
             lvl: "BUT 1",
-            student: "[30 - 45]",
+            student: "15",
             place: "Presencial",
             quantity: "6h",
             distribution: "<div> SAE </div>"
           },
           {
             year: `<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "Sistema Operativo",
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Desarrollo de una Aplicación + Calidad del Desarrollo",
             lvl: "BUT 1",
-            student: "[15 - 30]",
+            student: "15",
             place: "Presencial",
-            quantity: "49.5h",
-            distribution: "<div> TD (13.5) </br> TP (36) </div>"
+            quantity: "24h",
+            distribution: "<div> SAE </div>"
           },
           {
             year: `<span>2023</span>
-                <span> - </span>
-                <span>2024</span>`,
-            theme: "Calidad de Algoritmos",
-            lvl: "BUT 3",
-            student: "38",
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Programación de Bajo Nivel",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
             place: "Presencial",
-            quantity: "9.5h",
+            quantity: "6h",
             distribution: "<div> TP </div>"
           },
           {
             year: `<span>2023</span>
-                  <span> - </span>
-                  <span>2024</span>`,
-            theme: "Programación Multimedia",
-            lvl: "BUT 3",
-            student: "38",
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "Desarrollo de Aplicaciones con IHM",
+            lvl: "BUT 1",
+            student: "15",
             place: "Presencial",
-            quantity: "17h",
-            distribution: "<div> CM (6) </br> TP (11) </div>"
-          },          
-           {
-            year: "2022-2023",
-            theme: "Deep learning",
+            quantity: "14h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "DOO (Desarrollo Orientado a Objetos)",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Presencial",
+            quantity: "7.5h",
+            distribution: "<div> TP </div>"
+          },
+          {
+            year: `<span>2023</span>
+            <span> - </span>
+            <span>2024</span>`,
+            theme: "PPP (Proyecto Personal y Profesional)",
+            lvl: "BUT 1",
+            student: "&asymp; 30",
+            place: "Presencial",
+            quantity: "3h",
+            distribution: "<div> TD </div>"
+          },
+          {
+            year: `<span>2022</span>
+            <span> - </span>
+            <span>2023</span>`,
+            theme: "Deep Learning",
             lvl: "Master 1",
-            student: "&asymp;30",
+            student: "&asymp; 30",
             place: "Presencial",
             quantity: "30h",
             distribution: "<div> CM </div>"
           },
-           {
-            year: "2020-2023",
-            theme: "Programación Orientada a Objetos con Java",
-            lvl: "Licencia 2",
-            student: "&asymp;30/años",
+          {
+            year: `<span>2020</span>
+            <span> - </span>
+            <span>2023</span>`,
+            theme: "Programación Orientada a Objetos en Java",
+            lvl: "Licenciatura 2",
+            student: "&asymp; 30/año",
             place: "A distancia",
             quantity: "135h",
-            distribution: "<div> TD (50) </br> TD (50) </br> TD (35) </div>"
+            distribution: "<div> TD </div>"
           },
           {
-            year: "2019-2020",
-            theme: "Programación Java",
-            lvl: "Licencia 2",
-            student: "&asymp;30",
+            year: `<span>2019</span>
+            <span> - </span>
+            <span>2020</span>`,
+            theme: "Programación en Java",
+            lvl: "Licenciatura 2",
+            student: "&asymp; 30",
             place: "Presencial",
             quantity: "15h",
             distribution: "<div> CM </div>"
