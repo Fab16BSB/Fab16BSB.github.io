@@ -1,3 +1,4 @@
+/* TODO FAIRE LE LIEN ENTRE LES COURS ET LES DETAIL VIA UN ID PLUTOT QUE LE NOM DU COURS ? */
 const TAB = [
   {
     french :[
@@ -228,7 +229,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Computer Architecture",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "[30 - 15]",
             place: "On-site",
             quantity: "10",
@@ -239,7 +240,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Web Development",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "15",
             place: "On-site",
             quantity: "10",
@@ -250,7 +251,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Introduction to Development (Java)",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "15",
             place: "On-site",
             quantity: "44h",
@@ -261,7 +262,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Workstation Setup",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "[30 - 45]",
             place: "On-site",
             quantity: "18h",
@@ -272,7 +273,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Operating Systems",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "[15 - 30]",
             place: "On-site",
             quantity: "75h",
@@ -283,7 +284,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Algorithm Quality",
-            lvl: "BUT 3",
+            lvl: "3rd year of a Bachelor's in Technology",
             student: "38",
             place: "On-site",
             quantity: "19.5h",
@@ -294,7 +295,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Multimedia Programming",
-            lvl: "BUT 3",
+            lvl: "3rd year of a Bachelor's in Technology",
             student: "[38 - 18]",
             place: "On-site",
             quantity: "32h",
@@ -305,7 +306,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Support Classes",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "&asymp; 10",
             place: "On-site",
             quantity: "6h",
@@ -316,7 +317,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Software Architecture",
-            lvl: "BUT 1",
+            lvl: "2nd year of a Bachelor's in Technology",
             student: "50",
             place: "On-site",
             quantity: "21.5",
@@ -327,7 +328,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Implementing Client Requirements",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "15",
             place: "On-site",
             quantity: "9h",
@@ -338,7 +339,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Comparison of Algorithmic Approaches",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "15",
             place: "On-site",
             quantity: "6h",
@@ -349,7 +350,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Application Development + Development Quality",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "15",
             place: "On-site",
             quantity: "24h",
@@ -360,7 +361,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Low-Level Programming",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "&asymp; 30",
             place: "On-site",
             quantity: "6h",
@@ -371,7 +372,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Application Development with GUI",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "15",
             place: "On-site",
             quantity: "14h",
@@ -382,7 +383,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "OOP (Object-Oriented Programming)",
-            lvl: "BUT 1",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "&asymp; 30",
             place: "On-site",
             quantity: "7.5h",
@@ -392,8 +393,8 @@ const TAB = [
             year: `<span>2023</span>
             <span> - </span>
             <span>2024</span>`,
-            theme: "PPP (Personal and Professional Project)",
-            lvl: "BUT 1",
+            theme: "PPP (Professional and Personal Project)",
+            lvl: "1st year of a Bachelor's in Technology",
             student: "&asymp; 30",
             place: "On-site",
             quantity: "3h",
@@ -446,7 +447,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Arquitectura de Ordenadores",
-            lvl: "BUT 1",
+            lvl: "1er año de Grado Técnico",
             student: "[30 - 15]",
             place: "Presencial",
             quantity: "10",
@@ -457,7 +458,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Desarrollo Web",
-            lvl: "BUT 1",
+            lvl: "1er año de Grado Técnico",
             student: "15",
             place: "Presencial",
             quantity: "10",
@@ -468,7 +469,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Introducción al desarrollo (Java)",
-            lvl: "BUT 1",
+            lvl: "1er año de Grado Técnico",
             student: "15",
             place: "Presencial",
             quantity: "44h",
@@ -478,8 +479,8 @@ const TAB = [
             year: `<span>2023</span>
             <span> - </span>
             <span>2025</span>`,
-            theme: "Instalación de Puestos",
-            lvl: "BUT 1",
+            theme: "Instalación de Estación de Trabajo",
+            lvl: "1er año de Grado Técnico",
             student: "[30 - 45]",
             place: "Presencial",
             quantity: "18h",
@@ -489,8 +490,8 @@ const TAB = [
             year: `<span>2023</span>
             <span> - </span>
             <span>2025</span>`,
-            theme: "Sistemas Operativos",
-            lvl: "BUT 1",
+            theme: "Sistema Operativo",
+            lvl: "1er año de Grado Técnico",
             student: "[15 - 30]",
             place: "Presencial",
             quantity: "75h",
@@ -501,7 +502,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Calidad de Algoritmos",
-            lvl: "BUT 3",
+            lvl: "3e año de Grado Técnico",
             student: "38",
             place: "Presencial",
             quantity: "19.5h",
@@ -512,7 +513,7 @@ const TAB = [
             <span> - </span>
             <span>2025</span>`,
             theme: "Programación Multimedia",
-            lvl: "BUT 3",
+            lvl: "3e año de Grado Técnico",
             student: "[38 - 18]",
             place: "Presencial",
             quantity: "32h",
@@ -522,8 +523,8 @@ const TAB = [
             year: `<span>2023</span>
             <span> - </span>
             <span>2024</span>`,
-            theme: "Clases de Apoyo",
-            lvl: "BUT 1",
+            theme: "Clases de Refuerzos",
+            lvl: "1er año de Grado Técnico",
             student: "&asymp; 10",
             place: "Presencial",
             quantity: "6h",
@@ -534,7 +535,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Arquitectura de Software",
-            lvl: "BUT 1",
+            lvl: "1er año de Grado Técnico",
             student: "50",
             place: "Presencial",
             quantity: "21.5",
@@ -544,8 +545,8 @@ const TAB = [
             year: `<span>2023</span>
             <span> - </span>
             <span>2024</span>`,
-            theme: "Implementación de un Requisito del Cliente",
-            lvl: "BUT 1",
+            theme: "Implementación de los Requisitos de un Cliente",
+            lvl: "1er año de Grado Técnico",
             student: "15",
             place: "Presencial",
             quantity: "9h",
@@ -556,7 +557,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Comparación de Enfoques Algorítmicos",
-            lvl: "BUT 1",
+            lvl: "1er año de Grado Técnico",
             student: "15",
             place: "Presencial",
             quantity: "6h",
@@ -567,7 +568,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Desarrollo de una Aplicación + Calidad del Desarrollo",
-            lvl: "BUT 1",
+            lvl: "1er año de Grado Técnico",
             student: "15",
             place: "Presencial",
             quantity: "24h",
@@ -578,7 +579,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Programación de Bajo Nivel",
-            lvl: "BUT 1",
+            lvl: "1er año de Grado Técnico",
             student: "&asymp; 30",
             place: "Presencial",
             quantity: "6h",
@@ -589,7 +590,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "Desarrollo de Aplicaciones con IHM",
-            lvl: "BUT 1",
+            lvl: "1er año de Grado Técnico",
             student: "15",
             place: "Presencial",
             quantity: "14h",
@@ -600,7 +601,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "DOO (Desarrollo Orientado a Objetos)",
-            lvl: "BUT 1",
+            lvl: "1er año de Grado Técnico",
             student: "&asymp; 30",
             place: "Presencial",
             quantity: "7.5h",
@@ -611,7 +612,7 @@ const TAB = [
             <span> - </span>
             <span>2024</span>`,
             theme: "PPP (Proyecto Personal y Profesional)",
-            lvl: "BUT 1",
+            lvl: "1er año de Grado Técnico",
             student: "&asymp; 30",
             place: "Presencial",
             quantity: "3h",
@@ -632,8 +633,8 @@ const TAB = [
             year: `<span>2020</span>
             <span> - </span>
             <span>2023</span>`,
-            theme: "Programación Orientada a Objetos en Java",
-            lvl: "Licenciatura 2",
+            theme: "Programación Orientada a Objetos con Java",
+            lvl: "2e año de Grado",
             student: "&asymp; 30/año",
             place: "A distancia",
             quantity: "135h",
@@ -643,8 +644,8 @@ const TAB = [
             year: `<span>2019</span>
             <span> - </span>
             <span>2020</span>`,
-            theme: "Programación en Java",
-            lvl: "Licenciatura 2",
+            theme: "Programación Java",
+            lvl: " 2e año de Grado",
             student: "&asymp; 30",
             place: "Presencial",
             quantity: "15h",

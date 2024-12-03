@@ -184,7 +184,7 @@ const COURSINFO = {
     },
 
     "Système d'exploitation": {
-      support_cours: "Support fourni",
+     support_cours: "Support fourni",
      TD:{
         "TD1 : Manipulation de fichiers": ["Deplacement", "Listing", "Droits"],
         "TD2 : Droits et utilisateurs": ["Type de droits", "Mask"],
@@ -201,6 +201,7 @@ const COURSINFO = {
         "TP4 : Chercher et Trouver": ["find", "grep"],
         "TP5 : Premier script": ["Compréhension de Script", "Exécution", "Modification de Script"],
         "TP6 : Scripts Conditions et boucles": ["Élaboration de script", "Gestion des retours d'erreur"],
+        "TP : Sed" : ["Utilisation de la commande sed"]
      }
     },
 
@@ -257,10 +258,35 @@ const COURSINFO = {
       }
     },
 
-    "prog BN": {
+    "Programation bas niveau": {
       support_cours: "Support fourni",
       TP: {
         "TP en C portant sur les structures" : [],
+      }
+    },
+
+    "Développement d’applications avec IHM": {
+      support_cours: "Support fourni",
+      TP: {
+        "TP de Java portant sur JavaFx" : ["Scène builder", "xml", "javaFx", "Properties", "ActionListener", "bind"],
+      }
+    },
+
+    "Implémentation d’un besoin client" : {
+      Descriptif: {
+        "Encadrement d'une Situation d'Apprentissage et d'Évaluation (SAE) destinée aux étudiants de première année de BUT 1, visant à les accompagner dans le développement d'un jeu de plateau en console. Les projets, réalisés en binome à l'aide de Java, utilisaient des matrices 2D et incluaient des jeux tels que la bataille navale, le puissance 4, les dames ou les échecs." : [],
+      }
+    },
+
+    "Comparaison d’approches algorithmiques" : {
+      Descriptif: {
+        "Encadrement d'une Situation d'Apprentissage et d'Évaluation (SAE) destinée aux étudiants de première année de BUT 1, axée sur le développement et la mise en œuvre de différentes techniques de tri de tableaux, telles que le tri par insertion, le tri par sélection et le tri à bulles." : [],
+      }
+    },
+
+    "Développement d’une application + Qualité de développement" : {
+      Descriptif: {
+        "Encadrement d'une Situation d'Apprentissage et d'Évaluation (SAE) pour des étudiants de première année de BUT, visant à développer un jeu 2D de type Zelda en Java. Ce projet intègre l'utilisation de JavaFX, le modèle MVC, ainsi que des outils de gestion de projet comme Trello et GitHub, tout en mettant en œuvre des tests unitaires avec JUnit." : [],
       }
     },
 
@@ -327,7 +353,7 @@ const COURSINFO = {
         },
       },
 
-    "Oriented Object Programming in Java": {
+    "Object-Oriented Programming in Java": {
       support_cours: "Production of the support",
 
       CM: {
@@ -364,7 +390,7 @@ const COURSINFO = {
       },
     },
 
-    "Deep learning": {
+    "Deep Learning": {
       support_cours: "Production of the support",
       CM: {
         "Introduction to Deep Learning": [
@@ -452,8 +478,8 @@ const COURSINFO = {
       },
     },
 
-    "Operating System": {
-      support_cours: "Course material provided",
+    "Operating Systems": {
+      support_cours: "Material provided",
 
       TD: {
         "DW1: File Manipulation": ["Move", "Listing", "Permissions"],
@@ -475,7 +501,7 @@ const COURSINFO = {
     },
 
     "Introduction to Development (Java)": {
-      support_cours: "Course material provided",
+      support_cours: "Material provided",
 
       TP: {
         "PW on Conditions": [],
@@ -483,14 +509,16 @@ const COURSINFO = {
         "PW on Arrays": []
       }
     },
-  
+
     "Workstation Setup": {
-      Descriptif: {
-        "Supervision of a Learning and Evaluation Situation (SAE) aimed at guiding first-year BUT students in setting up a dual boot (Windows / Ubuntu) and acquiring essential software for their classes, including development tools, databases, and programming languages.": [],
-        "Supervision of multiple defenses, involving approximately 45 students divided into groups of 2 to 3.": []
+      "Description": {
+        "2023-2024 </br> Supervision of a Learning and Assessment Situation (SAE) aimed at guiding first-year BUT students in setting up a dual boot system (Windows/Ubuntu) and acquiring fundamental software for their studies, including development tools, databases, and programming languages.": [],
+        "2023-2025 </br> Supervision of a Learning and Assessment Situation (SAE) aimed at guiding first-year BUT students in setting up an Ubuntu virtual machine and acquiring fundamental software for their studies, including development tools, databases, and programming languages.": [],
+
+        "Supervision of several presentations, involving approximately 90 students divided into groups of 2 to 3.": [],
       }
     },
-  
+
     "Support Classes": {
       support_cours: "Proposed Support",
       CM: {
@@ -511,20 +539,81 @@ const COURSINFO = {
       }
     },
 
-    "OOD (Object Oriented Development)": {
-      support_cours: "Course material provided",
+    "OOP (Object-Oriented Programming)": {
+      support_cours: "Material provided",
       TP: {
         "Workshop in Java based on object (Bank)": [],
         "Workshop in Java based on object + UML (Mail Server)": [],
       }
     },
 
-    "prog BN": {
-      support_cours: "Course material provided",
+    "Low-Level Programming": {
+      support_cours: "Material provided",
       TP: {
         "Workshop in C focusing on structures": [],      
       }
     },
+
+    "Computer Architecture": {
+      support_cours: "Material provided",
+      TP: {
+        "": ["Binary", "Octal", "Hexadecimal", "One's Complement", "Two's Complement", "Binary Operations", "ASCII", "UTF-8"],
+      },
+    },
+
+    "Software Architecture": {
+      support_cours: "Material developed",
+
+      CM: {
+        "Python Basics": [
+          "Python2", "Python3", "Static Typing", "Dynamic Typing", "Compile", "Interpret", "Weak Typing", "Strong Typing", "PEP 8", "PEP 257", "PEP 484", "snake_case",
+          "Variables", "print", "input", "if", "else", "elif", "for i in range", "while", "match case", "cast", "special characters", "ternary", "assertion", "break", "continue",
+          "pass", "list comprehension", "tuple", "list", "dict", "set", "string", "map", "zip", "lambda", "enumerate", "slice"
+        ],
+        "OOP in Python": [
+          "method", "function", "procedure", "main", "parameter", "optional parameter", "pass by value", "pass by reference", "return", "yield", "underscore", "generator",
+          "DocString", "Type Hints", "imports", "pip2", "pip3", "file", "error", "exception", "class", "object", "inheritance", "polymorphism", "self", "__str__", "__init__",
+          "__eq__", "__hash__", "Operator Overloading", "static method", "decorator"
+        ],
+        "Flask / Software Architecture (Provided)": [
+          "Application", "API", "Routes", "Endpoint"
+        ],
+      },
+    },
+
+    "Web Development": {
+      support_cours: "Material provided",
+      TP: {
+        "": ["HTML", "CSS", "Flexbox", "Grid", "Positioning"],
+      },
+    },
+
+    "Application Development with GUI": {
+      support_cours: "Provided materials",
+      TP: {
+        "Java practicals focusing on JavaFX": ["Scene Builder", "XML", "JavaFX", "Properties", "ActionListener", "Bind"]
+      }
+    },
+
+    "Implementing Client Requirements": {
+      Descriptif: {
+        "Supervision of a Learning and Assessment Situation (SAE) aimed at first-year BUT students, guiding them in the development of a console-based board game. The projects, carried out in pairs using Java, utilized 2D matrices and included games such as Battleship, Connect Four, Checkers, and Chess.": []
+      }
+    },
+
+    "Comparison of Algorithmic Approaches": {
+      Descriptif: {
+        "Supervision of a Learning and Assessment Situation (SAE) aimed at first-year BUT students, focusing on the development and implementation of various array sorting techniques, including insertion sort, selection sort, and bubble sort.": []
+      }
+    },
+
+    "Application Development + Development Quality": {
+      Descriptif: {
+        "Supervision of a Learning and Assessment Situation (SAE) for first-year BUT students, aimed at developing a 2D game inspired by Zelda using Java. This project incorporated the use of JavaFX, the MVC model, as well as project management tools like Trello and GitHub, while implementing unit testing with JUnit.": []
+      }
+    },
+
+
 
   },
 
@@ -533,7 +622,7 @@ const COURSINFO = {
 
   spanish: {
       "Programación Java": {
-        support_cours: "Material preparado para el curso",
+        support_cours: "Material desarrollado",
         
         CM: {
           "Conceptos y Términos": [
@@ -591,7 +680,7 @@ const COURSINFO = {
       },
 
       "Programación Orientada a Objetos con Java": {
-        support_cours: "Material preparado para el curso",
+        support_cours: "Material desarrollado",
 
         CM: {
           "Introduction a la Programación Orientada a Objetos (POO)": [
@@ -628,8 +717,8 @@ const COURSINFO = {
       },
     
 
-      "Deep learning": {
-        support_cours: "Material preparado para el curso",
+      "Deep Learning": {
+        support_cours: "Material desarrollado",
 
         CM: {
           "Introduction au Deep Learning": [
@@ -682,7 +771,7 @@ const COURSINFO = {
       },
 
       "Programación Multimedia": {
-        support_cours: "Material preparado para el curso",
+        support_cours: "Material desarrollado",
 
         CM: {
           "Introducción a la programación multimedia": [
@@ -708,7 +797,7 @@ const COURSINFO = {
       },
 
       "Calidad de Algoritmos": {
-        support_cours: "Material preparado para el curso",
+        support_cours: "Material desarrollado",
 
         TP: {
           "TP1: Calidad de Algoritmos": ["Java", "Optimización", "Refactorización", "Escalabilidad", "Revisión de Código", "CheckStyle"],
@@ -718,7 +807,7 @@ const COURSINFO = {
       },
 
       "Sistema Operativo": {
-        support_cours: "Material de curso disponible",
+        support_cours: "Material proporcionado",
 
         TD: {
           "TD1: Manipulación de archivos": ["Mover", "Listar", "Permisos"],
@@ -741,13 +830,15 @@ const COURSINFO = {
 
       "Instalación de Estación de Trabajo": {
         Descriptif: {
-          "Supervisión de una Situación de Aprendizaje y Evaluación (SAE) destinada a guiar a los estudiantes de primer año de BUT en la instalación de un arranque dual (Windows / Ubuntu) y la adquisición de software esencial para su formación, incluidas las herramientas de desarrollo, bases de datos y lenguajes de programación.": [],
-          "Supervisión de varias defensas, involucrando aproximadamente a 45 estudiantes divididos en grupos de 2 a 3.": []
-        },
+          "2023-2024 </br> Supervisión de una Situación de Aprendizaje y Evaluación (SAE) destinada a guiar a los estudiantes de primer año de BUT en la configuración de un sistema de arranque dual (Windows/Ubuntu) y la adquisición de software fundamental para sus estudios, incluidos herramientas de desarrollo, bases de datos y lenguajes de programación.": [],
+          "2023-2025 </br> Supervisión de una Situación de Aprendizaje y Evaluación (SAE) destinada a guiar a los estudiantes de primer año de BUT en la configuración de una máquina virtual Ubuntu y la adquisición de software fundamental para sus estudios, incluidos herramientas de desarrollo, bases de datos y lenguajes de programación.": [],
+
+          "Supervisión de varias presentaciones, involucrando aproximadamente 90 estudiantes divididos en grupos de 2 a 3.": [],
+        }
       },
 
-      "Introducción al Desarrollo (Java)": {
-        support_cours: "Material de curso disponible",
+      "Introducción al desarrollo (Java)": {
+        support_cours: "Material proporcionado",
 
         TP: {
           "TP sobre Condiciones": [],
@@ -766,7 +857,7 @@ const COURSINFO = {
         },
       },
 
-      "PPP (Proyecto Profesional y Personal)": {
+      "PPP (Proyecto Personal y Profesional)": {
         support_cours: "",
         TD: {
           "Descubrimiento de Descripción de Puesto" : [],
@@ -778,18 +869,79 @@ const COURSINFO = {
       },
 
       "DOO (Desarrollo Orientado a Objetos)": {
-        support_cours: "Material de curso disponible",
+        support_cours: "Material proporcionado",
         TP: {
           "TP Java sobre el concepto de objeto (Banco)": [],
           "TP Java sobre objetos + UML (Servidores Mail)": [],
         }
       },
   
-      "prog BN": {
-        support_cours: "Material de curso disponible",
+      "Programación de Bajo Nivel": {
+        support_cours: "Material proporcionado",
         TP: {
           "TP C basado en estructuras": [],  
         }
       },
+
+    "Desarrollo de Aplicaciones con IHM": {
+      support_cours: "Material proporcionado",
+      "Sesiones Prácticas": {
+        "Prácticas de Java centradas en JavaFX": ["Scene Builder", "XML", "JavaFX", "Properties", "ActionListener", "Bind"]
+      }
+    },
+
+    "Implementación de los Requisitos de un Cliente": {
+      Descriptif: {
+        "Supervisión de una Situación de Aprendizaje y Evaluación (SAE) destinada a estudiantes de primer año de BUT, guiándolos en el desarrollo de un juego de mesa basado en consola. Los proyectos, realizados en parejas utilizando Java, utilizaban matrices 2D e incluían juegos como Batalla Naval, Conecta 4, Damas y Ajedrez.": []
+      }
+    },
+
+    "Comparación de Enfoques Algorítmicos": {
+      Descriptif: {
+        "Supervisión de una Situación de Aprendizaje y Evaluación (SAE) destinada a estudiantes de primer año de BUT, centrada en el desarrollo e implementación de diversas técnicas de ordenación de arrays, como ordenación por inserción, por selección y burbuja.": []
+      }
+    },
+
+    "Desarrollo de una Aplicación + Calidad del Desarrollo": {
+      Descriptif: {
+        "Supervisión de una Situación de Aprendizaje y Evaluación (SAE) para estudiantes de primer año de BUT, destinada al desarrollo de un juego 2D inspirado en Zelda utilizando Java. Este proyecto incorporó el uso de JavaFX, el modelo MVC, así como herramientas de gestión de proyectos como Trello y GitHub, implementando pruebas unitarias con JUnit.": []
+      }
+    },
+
+    "Arquitectura de Ordenadores": {
+      support_cours: "Material proporcionado",
+      "Tutoriales": {
+        "": ["Binario", "Octal", "Hexadecimal", "Complemento a 1", "Complemento a 2", "Operaciones binarias", "ASCII", "UTF-8"],
+      },
+    },
+
+    "Arquitectura de Software": {
+      support_cours: "Material desarrollado",
+
+      CM: {
+        "Conceptos básicos de Python": [
+          "Python2", "Python3", "Tipado estático", "Tipado dinámico", "Compilación", "Interpretación", "Tipado débil", "Tipado fuerte", "PEP 8", "PEP 257", "PEP 484", "snake_case",
+          "Variables", "print", "input", "if", "else", "elif", "for i in range", "while", "match case", "cast", "caracteres especiales", "ternario", "assertion", "break", "continue",
+          "pass", "comprensión de listas", "tuple", "list", "dict", "set", "string", "map", "zip", "lambda", "enumerate", "slice"
+        ],
+        "POO en Python": [
+          "método", "función", "procedimiento", "main", "parámetro", "parámetro opcional", "pasaje por valor", "pasaje por referencia", "return", "yield", "underscore", "generador",
+          "DocString", "Type Hints", "importaciones", "pip2", "pip3", "archivo", "error", "excepción", "clase", "objeto", "herencia", "polimorfismo", "self", "__str__", "__init__",
+          "__eq__", "__hash__", "Sobrecarga de operadores", "método estático", "decorador"
+        ],
+        "Flask / Arquitectura de software (Proporcionado)": [
+          "Aplicación", "API", "Rutas", "Endpoint"
+        ],
+      },
+    },
+
+    "Desarrollo Web": {
+      support_cours: "Material proporcionado",
+      TP: {
+        "": ["HTML", "CSS", "Flexbox", "Grid", "Posicionamiento"],
+      },
+    },
+
+
   },
 };
