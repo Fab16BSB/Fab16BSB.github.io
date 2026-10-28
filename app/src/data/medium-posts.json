@@ -1,0 +1,152 @@
+[
+  {
+    "id": "https://medium.com/p/89bd19ca464b",
+    "title": "CNN: The Revolution That Gave Machines Eyes",
+    "url": "https://medium.com/@fab.16/cnn-the-revolution-that-gave-machines-eyes-89bd19ca464b",
+    "publishedAt": "2026-10-03T12:03:31.000Z",
+    "excerpt": "In our previous post , we discovered the Multilayer Perceptron (MLP) , the architecture that allowed us to solve non-linear problems like XOR by stacking interconnected neurons. However,…",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*JrFo8WQsphJ-QL17_P51VQ.jpeg",
+    "tags": [
+      "deep-learning",
+      "machine-learning",
+      "artificial-intelligence",
+      "convolutional-network",
+      "cnn"
+    ],
+    "readingTime": 22,
+    "language": "en"
+  },
+  {
+    "id": "https://medium.com/p/f98104af68fe",
+    "title": "CNN: La revolución que dio ojos a las máquinas",
+    "url": "https://medium.com/@fab.16/cnn-la-revoluci%C3%B3n-que-dio-ojos-a-las-m%C3%A1quinas-f98104af68fe",
+    "publishedAt": "2026-09-27T11:17:40.000Z",
+    "excerpt": "En nuestro post anterior , descubrimos el Perceptrón Multicapa (MLP) , arquitectura que permitió resolver problemas no lineales como el XOR apilando neuronas conectadas entre sí. Sin emba…",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*r7Ka2wKPEboafS9eb2iTIg.jpeg",
+    "tags": [
+      "cnn",
+      "artificial-intelligence",
+      "convolutional-neural-net",
+      "machine-learning",
+      "deep-learning"
+    ],
+    "readingTime": 24,
+    "language": "es"
+  },
+  {
+    "id": "https://medium.com/p/505cdf727735",
+    "title": "CNN : La révolution qui a donné des yeux aux machines",
+    "url": "https://medium.com/@fab.16/cnn-la-r%C3%A9volution-qui-a-donn%C3%A9-des-yeux-aux-machines-505cdf727735",
+    "publishedAt": "2026-09-24T10:50:50.000Z",
+    "excerpt": "Dans notre précédent post , nous avons découvert le Perceptron Multicouche (MLP) , cette architecture qui a permis de résoudre des problèmes non-linéaires comme le XOR en empilant des neu…",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*gWOQWY33txmr8f-3fkaLaw.jpeg",
+    "tags": [
+      "computer-vision",
+      "cnn",
+      "machine-learning",
+      "artificial-intelligence",
+      "deep-learning"
+    ],
+    "readingTime": 24,
+    "language": "fr"
+  },
+  {
+    "id": "https://medium.com/p/7e11c3f0434e",
+    "title": "What is an artificial neural network ?",
+    "url": "https://medium.com/@fab.16/what-is-an-artificial-neural-network-7e11c3f0434e",
+    "publishedAt": "2026-03-25T16:32:53.000Z",
+    "excerpt": "In our previous post , we dissected the anatomy of an artificial neuron (or perceptron). We saw that it revolves around three key components: the dendrites that receive inputs, the cell b…",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*f9cQC_omwNcvymWGgTbjqQ.png",
+    "tags": [
+      "machine-learning",
+      "multi-layer-perceptron",
+      "artificial-intelligence",
+      "multilayer-perceptron",
+      "deep-learning"
+    ],
+    "readingTime": 22,
+    "language": "en"
+  },
+  {
+    "id": "https://medium.com/p/3bbb9b38aec7",
+    "title": "¿ Qué es una red de neuronas artificiales ?",
+    "url": "https://medium.com/@fab.16/qu%C3%A9-es-una-red-de-neurones-artificiales-3bbb9b38aec7",
+    "publishedAt": "2026-03-25T11:12:29.000Z",
+    "excerpt": "En nuestro post anterior , analizamos la anatomía de una neurona artificial (o perceptrón). Vimos que se articula en torno a tres componentes clave: las dendritas que reciben las entradas…",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*NBEq_QDJE7CDAt_LVyQBGA.png",
+    "tags": [
+      "multi-layer-perceptron",
+      "multilayer-perceptron",
+      "artificial-intelligence",
+      "machine-learning",
+      "deep-learning"
+    ],
+    "readingTime": 23,
+    "language": "es"
+  },
+  {
+    "id": "https://medium.com/p/2b84f642e027",
+    "title": "Qu’est ce qu’un réseau de neurones artificiel ?",
+    "url": "https://medium.com/@fab.16/quest-ce-qu-un-r%C3%A9seau-de-neurones-artificiel-2b84f642e027",
+    "publishedAt": "2026-03-24T11:11:19.000Z",
+    "excerpt": "Dans notre précédent post , nous avons décortiqué l’anatomie d’un neurone artificiel (ou perceptron). Nous avons vu qu’il s’articule autour de trois composants clés : les dendrites qui re…",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*lwZgkr8SpRV3pnsDLCrPJA.png",
+    "tags": [
+      "multilayer-perceptron",
+      "artificial-intelligence",
+      "deep-learning",
+      "multi-layer-perceptron",
+      "machine-learning"
+    ],
+    "readingTime": 23,
+    "language": "fr"
+  },
+  {
+    "id": "https://medium.com/p/257850cd83e8",
+    "title": "What Is an Artificial Neuron?",
+    "url": "https://medium.com/@fab.16/what-is-an-artificial-neuron-257850cd83e8",
+    "publishedAt": "2026-03-15T12:36:57.000Z",
+    "excerpt": "Nowadays, with the rise of Artificial Intelligence (AI) , terms like “AI,” “machine learning models,” and “neural networks” have become omnipresent. But what do these concepts actually me…",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*SOrvQSHtrqT2jiUN8H2_kA.png",
+    "tags": [
+      "machine-learning",
+      "perceptron",
+      "artificial-intelligence",
+      "deep-learning"
+    ],
+    "readingTime": 13,
+    "language": "en"
+  },
+  {
+    "id": "https://medium.com/p/448b8ff2a461",
+    "title": "¿Qué es una neurona artificial?",
+    "url": "https://medium.com/@fab.16/qu%C3%A9-es-una-neurona-artificial-448b8ff2a461",
+    "publishedAt": "2026-03-11T20:21:35.000Z",
+    "excerpt": "Hoy en día, con la popularidad de la inteligencia artificial (IA), términos como “IA”, “modelos de inteligencia artificial”, “redes neuronales”… se han vuelto omnipresentes. Pero, ¿qué si…",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*0ZKY6vWLXkjuXUttOJyIXQ.png",
+    "tags": [
+      "perceptron",
+      "artificial-intelligence",
+      "machine-learning",
+      "deep-learning"
+    ],
+    "readingTime": 14,
+    "language": "es"
+  },
+  {
+    "id": "https://medium.com/p/e4fbd82fd615",
+    "title": "Qu’est ce qu’un neurone artificiel ?",
+    "url": "https://medium.com/@fab.16/quest-ce-qu-un-neurone-artificiel-e4fbd82fd615",
+    "publishedAt": "2026-03-11T13:35:41.000Z",
+    "excerpt": "De nos jours, avec l’essor de l’intelligence artificielle (IA), des termes tels que “IA”, “modèles d’intelligence artificielle”, “réseaux de neurones”, etc…sont devenus omniprésents. Mais…",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*axTXI5HxbgcDaHgl7TW0SQ.png",
+    "tags": [
+      "artificial-intelligence",
+      "machine-learning",
+      "deep-learning",
+      "perceptron"
+    ],
+    "readingTime": 14,
+    "language": "fr"
+  }
+]

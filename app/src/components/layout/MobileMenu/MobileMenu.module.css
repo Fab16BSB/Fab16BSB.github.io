@@ -1,0 +1,97 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Panneau
+   ───────────────────────────────────────────────────────────────────────── */
+.panel {
+  position: fixed;
+  inset: var(--header-h) 0 0 0;
+  z-index: 95;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem var(--gutter) 2rem;
+  background: var(--bg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition:
+    opacity 220ms var(--ease),
+    transform 220ms var(--ease),
+    visibility 220ms;
+  overflow-y: auto;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Navigation
+   ───────────────────────────────────────────────────────────────────────── */
+.nav {
+  padding-top: 0.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list li {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 260ms var(--ease),
+    transform 260ms var(--ease);
+  transition-delay: calc(var(--index) * 45ms);
+  border-bottom: 1px solid var(--border);
+}
+
+.open .list li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 5vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.link:hover,
+.active {
+  color: var(--text);
+}
+
+.active svg {
+  color: var(--accent-2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Réseaux sociaux
+   ───────────────────────────────────────────────────────────────────────── */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding-top: 1rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────────────────────────── */
+@media (min-width: 1040px) {
+  .panel {
+    display: none;
+  }
+}

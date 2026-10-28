@@ -1,0 +1,20 @@
+# IDE et OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs et fichiers locaux
+*.log
+*.local
+.env
+.env.*
+
+# Outils locaux
+.opencode/
+
+# Dépendances et build
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo

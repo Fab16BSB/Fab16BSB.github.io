@@ -1,0 +1,269 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Filtres
+   ───────────────────────────────────────────────────────────────────────── */
+.toolbar {
+  position: relative;
+  z-index: 40;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.mobileFilters {
+  display: none;
+}
+
+.count {
+  color: var(--text-faint);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Compétences
+   ───────────────────────────────────────────────────────────────────────── */
+/* Grille de cartes */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+  animation: gridIn 240ms var(--ease);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Animations
+   ───────────────────────────────────────────────────────────────────────── */
+@keyframes gridIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Carte de compétence */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 260ms var(--ease),
+    border-color 260ms var(--ease),
+    box-shadow 260ms var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  box-shadow: var(--shadow-md);
+}
+
+/* Icône ou monogramme */
+.iconTile {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: #f6f1e6;
+  border: 1px solid rgba(38, 30, 20, 0.1);
+  overflow: hidden;
+}
+
+[data-theme='dark'] .iconTile {
+  background: #e9edf5;
+}
+
+.iconTile img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.monogram {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: #334155;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Nom de la compétence */
+.name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Voir plus */
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.1rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Domaines
+   ───────────────────────────────────────────────────────────────────────── */
+.knowledge {
+  margin-bottom: clamp(2.6rem, 6vw, 4rem);
+}
+
+.knowledgeGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+/* Carte de domaine */
+.knowledgeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.knowledgeIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--gradient-soft);
+  color: var(--accent-2);
+}
+
+.knowledgeCard h3 {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+/* Tags du domaine */
+.knowledgeTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.knowledgeTags li {
+  padding: 0.24rem 0.56rem;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Outils
+   ───────────────────────────────────────────────────────────────────────── */
+.tools {
+  margin-top: clamp(2.4rem, 5vw, 3.4rem);
+  padding-top: clamp(1.8rem, 4vw, 2.4rem);
+  border-top: 1px solid var(--border);
+}
+
+.toolsHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.toolsTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.6vw, 1.65rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .desktopFilters {
+    display: none;
+  }
+
+  .mobileFilters {
+    display: block;
+    width: min(100%, 240px);
+  }
+}
+
+@media (min-width: 360px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 820px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .knowledgeGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    gap: 0.5rem;
+    padding: 0.6rem;
+  }
+
+  .iconTile {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .iconTile img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .name {
+    font-size: 0.78rem;
+  }
+
+  .monogram {
+    font-size: 0.64rem;
+  }
+}

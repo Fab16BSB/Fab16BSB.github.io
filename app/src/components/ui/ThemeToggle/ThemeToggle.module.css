@@ -1,0 +1,40 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Bouton
+   ───────────────────────────────────────────────────────────────────────── */
+.button {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    background-color var(--transition),
+    transform var(--transition);
+}
+
+.button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--gradient-soft);
+  transform: translateY(-1px);
+}
+
+[data-theme='light'] .button:hover {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.14);
+}
+
+.iconWrap {
+  display: grid;
+  place-items: center;
+  transition: transform 400ms var(--ease);
+}
+
+.button:hover .iconWrap {
+  transform: rotate(18deg);
+}

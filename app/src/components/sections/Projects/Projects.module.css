@@ -1,0 +1,120 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Filtres
+   ───────────────────────────────────────────────────────────────────────── */
+.controls {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.tabsRow {
+  display: flex;
+}
+
+.filters {
+  display: flex;
+  flex: 1 1 320px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.search {
+  flex: 1 1 220px;
+  max-width: 360px;
+}
+
+.results {
+  margin-bottom: 0.8rem;
+  color: var(--text-faint);
+  font-size: 0.72rem;
+  text-align: right;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Grille de projets
+   ───────────────────────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  animation: gridIn 260ms var(--ease);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Animations
+   ───────────────────────────────────────────────────────────────────────── */
+@keyframes gridIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Voir plus
+   ───────────────────────────────────────────────────────────────────────── */
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────────────────────────── */
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: dense;
+    grid-auto-rows: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tabsRow {
+    flex: 1 0 100%;
+  }
+
+  .filters {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .controls {
+    align-items: stretch;
+  }
+
+  .filters {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+  }
+
+  .search {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+
+  .results {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}

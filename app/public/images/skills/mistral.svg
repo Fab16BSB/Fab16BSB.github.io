@@ -1,0 +1,16 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mistral" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD800" />
+      <stop offset="0.55" stop-color="#FFA300" />
+      <stop offset="1" stop-color="#FF5000" />
+    </linearGradient>
+  </defs>
+  <g fill="url(#mistral)">
+    <rect x="3" y="3" width="4" height="18" rx="0.5" />
+    <rect x="7" y="3" width="4" height="11" rx="0.5" />
+    <rect x="11" y="8" width="2" height="13" rx="0.5" />
+    <rect x="13" y="3" width="4" height="11" rx="0.5" />
+    <rect x="17" y="3" width="4" height="18" rx="0.5" />
+  </g>
+</svg>

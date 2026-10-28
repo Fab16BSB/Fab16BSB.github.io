@@ -1,0 +1,303 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Onglets
+   ───────────────────────────────────────────────────────────────────────── */
+.toolbar {
+  margin-bottom: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Timeline
+   ───────────────────────────────────────────────────────────────────────── */
+/* Liste et rail vertical */
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list::before {
+  content: '';
+  position: absolute;
+  top: 1.7rem;
+  bottom: 2rem;
+  left: 8px;
+  width: 2px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    var(--accent),
+    var(--accent-2) 45%,
+    color-mix(in srgb, var(--accent-2) 15%, transparent)
+  );
+  opacity: 0.4;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  column-gap: 0.9rem;
+  align-items: start;
+}
+
+.itemDate {
+  display: none;
+}
+
+.itemRail {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding-top: 1.15rem;
+}
+
+/* Point coloré de chaque étape */
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--item-accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--item-accent) 18%, transparent);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Cartes
+   ───────────────────────────────────────────────────────────────────────── */
+.card {
+  position: relative;
+  z-index: 1;
+  padding: 1.1rem 1.15rem 1.15rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  border-top: 2px solid color-mix(in srgb, var(--item-accent) 75%, var(--border));
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 300ms var(--ease),
+    border-color 300ms var(--ease),
+    box-shadow 300ms var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--item-accent) 40%, var(--border));
+  box-shadow: var(--shadow-md);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.45rem;
+}
+
+.mobileDate {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--item-accent) 28%, transparent);
+  background: color-mix(in srgb, var(--item-accent) 14%, var(--surface));
+  color: var(--item-accent);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Type d'expérience */
+.type {
+  --type-color: var(--text-faint);
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--type-color) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--type-color) 32%, transparent);
+  color: var(--type-color);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.type[data-type='freelance'] {
+  --type-color: var(--accent-2);
+}
+
+.type[data-type='cdd'] {
+  --type-color: var(--accent);
+}
+
+.type[data-type='thesis'] {
+  --type-color: var(--color-rose);
+}
+
+.type[data-type='internship'] {
+  --type-color: var(--accent-3);
+}
+
+.title {
+  margin-top: 0.1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+/* Organisme et liens */
+.org {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.org a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--accent-2);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.org a:hover {
+  color: var(--accent);
+}
+
+.separator {
+  color: var(--text-faint);
+}
+
+.description {
+  margin-top: 0.55rem;
+  color: var(--text-muted);
+  font-size: 0.83rem;
+  line-height: 1.65;
+}
+
+/* Points détaillés */
+.points {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.points li {
+  position: relative;
+  padding-left: 0.95rem;
+  color: var(--text-muted);
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+.points li::before {
+  content: '';
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: var(--item-accent);
+}
+
+/* Liens associés */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.3rem 0.62rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--item-accent) 32%, transparent);
+  background: color-mix(in srgb, var(--item-accent) 10%, var(--surface));
+  color: var(--item-accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
+}
+
+.links a:hover {
+  background: color-mix(in srgb, var(--item-accent) 18%, var(--surface));
+  border-color: color-mix(in srgb, var(--item-accent) 55%, transparent);
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.75rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────────────────────────── */
+@media (min-width: 900px) {
+  .list {
+    gap: 1.2rem;
+  }
+
+  .list::before {
+    left: calc(120px + 1.2rem + 10px);
+  }
+
+  .item {
+    grid-template-columns: 120px 20px minmax(0, 1fr);
+    column-gap: 1.2rem;
+  }
+
+  .itemDate {
+    display: block;
+    padding-top: 1.15rem;
+    color: var(--item-accent);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: right;
+  }
+
+  .itemRail {
+    padding-top: 1.15rem;
+  }
+
+  .mobileDate {
+    display: none;
+  }
+
+  .card {
+    padding: 1.15rem 1.3rem 1.2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .item {
+    column-gap: 0.7rem;
+  }
+}

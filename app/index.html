@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="%HTML_LANG%" data-theme="dark">
+  <head>
+
+    <!-- ============================================================ -->
+    <!--  MÉTADONNÉES DE BASE                                         -->
+    <!-- ============================================================ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070b14" />
+
+    <!-- ============================================================ -->
+    <!--  SEO ET PARTAGE SOCIAL                                       -->
+    <!--  Les valeurs viennent de src/data/seo.data.ts et sont        -->
+    <!--  injectées au build par vite.config.ts.                      -->
+    <!--  La langue est mise à jour au runtime par I18nProvider.      -->
+    <!-- ============================================================ -->
+    <meta name="description" content="%SEO_DESCRIPTION%" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="%SEO_URL%" />
+
+    <!-- Open Graph : aperçu lors d'un partage sur LinkedIn, Facebook, Discord, Slack, WhatsApp… -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="%SEO_NAME%" />
+    <meta property="og:url" content="%SEO_URL%" />
+    <meta property="og:title" content="%SEO_TITLE%" />
+    <meta property="og:description" content="%SEO_DESCRIPTION%" />
+    <meta property="og:image" content="%SEO_IMAGE%" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="%SEO_IMAGE_WIDTH%" />
+    <meta property="og:image:height" content="%SEO_IMAGE_HEIGHT%" />
+    <meta property="og:image:alt" content="%SEO_IMAGE_ALT%" />
+    <meta property="og:locale" content="%SEO_LOCALE%" />
+
+    <!-- Twitter Card : aperçu sur X / Twitter -->
+    <meta name="twitter:card" content="%SEO_TWITTER_CARD%" />
+    <meta name="twitter:title" content="%SEO_TITLE%" />
+    <meta name="twitter:description" content="%SEO_DESCRIPTION%" />
+    <meta name="twitter:image" content="%SEO_IMAGE%" />
+    <meta name="twitter:image:alt" content="%SEO_IMAGE_ALT%" />
+
+    <!-- ============================================================ -->
+    <!--  PRÉCHARGEMENTS                                              -->
+    <!-- ============================================================ -->
+    <link rel="preload" as="image" href="/images/profil/profil.webp" type="image/webp" />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      href="/fonts/space-grotesk-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <title>%SEO_TITLE%</title>
+    <!-- JSON-LD injecté au build depuis src/data/seo.data.ts -->
+    <!-- SEO_JSON_LD -->
+
+    <!-- ============================================================ -->
+    <!--  INITIALISATION DU THÈME (avant React)                       -->
+    <!-- ============================================================ -->
+    <script src="/theme-init.js"></script>
+  </head>
+  <body>
+    <!-- Point de montage React -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

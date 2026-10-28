@@ -1,0 +1,147 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Sélecteur
+   ───────────────────────────────────────────────────────────────────────── */
+.wrapper {
+  position: relative;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  height: 42px;
+  padding: 0 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.trigger:hover,
+.trigger[aria-expanded='true'] {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--gradient-soft);
+}
+
+[data-theme='light'] .trigger:hover,
+[data-theme='light'] .trigger[aria-expanded='true'] {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.14);
+}
+
+[data-theme='light'] .option:hover {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  color: var(--text);
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--accent-2);
+}
+
+.value {
+  white-space: nowrap;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--text-faint);
+  transition: transform var(--transition);
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Menu
+   ───────────────────────────────────────────────────────────────────────── */
+.menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 60;
+  min-width: 190px;
+  max-width: calc(100vw - 2rem);
+  max-height: min(320px, calc(100vh - 2rem));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  animation: menuIn 160ms var(--ease);
+}
+
+.menuUp {
+  top: auto;
+  bottom: calc(100% + 0.5rem);
+}
+
+.menuLeft {
+  right: auto;
+  left: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Animations
+   ───────────────────────────────────────────────────────────────────────── */
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Option
+   ───────────────────────────────────────────────────────────────────────── */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.58rem 0.65rem;
+  border-radius: 10px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: left;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.option:hover,
+.option:focus-visible {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.option:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-2) 55%, transparent);
+}
+
+.active {
+  color: var(--text);
+  background: var(--gradient-soft);
+}
+
+.option svg {
+  margin-left: auto;
+  color: var(--accent-2);
+}

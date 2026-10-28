@@ -1,0 +1,56 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Champ
+   ───────────────────────────────────────────────────────────────────────── */
+.wrapper {
+  display: flex;
+  flex: 1 1 220px;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 360px;
+  height: 42px;
+  padding: 0 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-faint);
+  transition: border-color var(--transition);
+}
+
+.wrapper:focus-within {
+  border-color: var(--accent);
+}
+
+.wrapper input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.84rem;
+}
+
+.wrapper input::placeholder {
+  color: var(--text-faint);
+}
+
+.wrapper input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.clear {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: var(--text-faint);
+  transition:
+    color var(--transition),
+    background-color var(--transition);
+}
+
+.clear:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}

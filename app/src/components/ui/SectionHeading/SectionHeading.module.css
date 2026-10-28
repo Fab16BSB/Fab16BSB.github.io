@@ -1,0 +1,28 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Titre
+   ───────────────────────────────────────────────────────────────────────── */
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 720px;
+  margin-bottom: clamp(2rem, 5vw, 3.4rem);
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.center .eyebrow::before {
+  display: none;
+}
+
+.wide {
+  max-width: 900px;
+}
+
+p.wideLede {
+  max-width: none;
+}

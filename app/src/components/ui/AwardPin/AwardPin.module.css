@@ -1,0 +1,16 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Badge
+   ───────────────────────────────────────────────────────────────────────── */
+.pin {
+  width: clamp(90px, 11vw, 118px);
+  height: auto;
+  filter: drop-shadow(0 16px 26px rgba(7, 11, 20, 0.28));
+  transition:
+    transform 400ms var(--ease),
+    filter 400ms var(--ease);
+}
+
+.pin:hover {
+  transform: translateY(-4px) rotate(-2deg);
+  filter: drop-shadow(0 22px 34px rgba(109, 94, 252, 0.3));
+}

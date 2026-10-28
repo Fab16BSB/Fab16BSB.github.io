@@ -1,0 +1,141 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Déclencheur
+   ───────────────────────────────────────────────────────────────────────── */
+.wrapper {
+  position: relative;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 42px;
+  padding: 0 0.7rem 0 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.trigger:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--gradient-soft);
+}
+
+[data-theme='light'] .trigger:hover {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.14);
+}
+
+/* Drapeau. */
+.flag {
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--border-strong);
+}
+
+.trigger:hover .flag {
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.flagSmall {
+  width: 22px;
+  height: 15px;
+}
+
+/* Libellé masqué sur mobile. */
+.current {
+  display: none;
+}
+
+/* Chevron retourné quand le menu est ouvert. */
+.rotated {
+  transform: rotate(180deg);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Menu
+   ───────────────────────────────────────────────────────────────────────── */
+.menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 60;
+  min-width: 190px;
+  padding: 0.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--glass-strong);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-md);
+  animation: menuIn 160ms var(--ease);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Animations
+   ───────────────────────────────────────────────────────────────────────── */
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Options
+   ───────────────────────────────────────────────────────────────────────── */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.62rem 0.65rem;
+  border-radius: 10px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  text-align: left;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.option:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.active {
+  color: var(--text);
+  background: var(--gradient-soft);
+}
+
+/* Coche de la langue active. */
+.check {
+  margin-left: auto;
+  color: var(--accent-2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────────────────────────── */
+@media (min-width: 720px) {
+  .current {
+    display: inline;
+  }
+}

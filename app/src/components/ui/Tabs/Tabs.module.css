@@ -1,0 +1,157 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Onglets
+   ───────────────────────────────────────────────────────────────────────── */
+.tabs {
+  display: inline-flex;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.segmented {
+  flex-wrap: nowrap;
+}
+
+.filters {
+  flex-wrap: wrap;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Onglet
+   ───────────────────────────────────────────────────────────────────────── */
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 38px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition),
+    filter var(--transition);
+}
+
+.tab:not(.active):hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Onglet actif
+   ───────────────────────────────────────────────────────────────────────── */
+.active {
+  color: var(--accent-contrast);
+  background: var(--gradient);
+  box-shadow: 0 8px 20px rgba(109, 94, 252, 0.24);
+}
+
+[data-theme='light'] .active {
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+}
+
+.tab.active:hover {
+  color: var(--accent-contrast);
+  background: var(--gradient);
+}
+
+[data-theme='light'] .tab.active:hover {
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.34);
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+[data-theme='light'] .tab:not(.active):hover {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 0.68rem;
+}
+
+.active .count {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .segmented {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    width: 100%;
+    border-radius: var(--radius-md);
+    gap: 0.2rem;
+  }
+
+  .segmented .tab {
+    justify-content: center;
+    min-height: 36px;
+    padding-inline: 0.45rem;
+    font-size: 0.76rem;
+  }
+
+  .segmented .count {
+    min-width: 18px;
+    height: 18px;
+    font-size: 0.62rem;
+  }
+
+  .filters {
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .filters .tab {
+    flex: 0 0 auto;
+    justify-content: center;
+    padding-inline: 0.65rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .filters {
+    flex-wrap: nowrap;
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filters .tab {
+    flex: 0 0 auto;
+  }
+
+  .filters.scrollable {
+    mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 1.6rem), transparent 100%);
+  }
+}

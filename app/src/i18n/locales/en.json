@@ -1,0 +1,341 @@
+{
+  "nav": {
+    "about": "About",
+    "timeline": "Background",
+    "skills": "Skills",
+    "projects": "Projects",
+    "publications": "Publications",
+    "videos": "Videos",
+    "teaching": "Teaching",
+    "awards": "Awards"
+  },
+
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleTheme": "Toggle theme",
+    "changeLanguage": "Change language",
+    "externalLink": "Opens in a new tab",
+    "mainNavigation": "Main navigation",
+    "sectionNavigation": "Section navigation",
+    "previousSection": "Previous section",
+    "nextSection": "Next section",
+    "socialLinks": "Social links",
+    "projectDetails": "Project details",
+    "closeDialog": "Close dialog"
+  },
+
+  "common": {
+    "all": "All",
+    "resetFilters": "Reset filters",
+    "close": "Close",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "cite": "Cite",
+    "article": "Article",
+    "pdf": "PDF",
+    "poster": "Poster",
+    "demo": "Demo",
+    "code": "Code",
+    "translation": "Translation",
+    "github": "GitHub",
+    "site": "Website",
+    "video": "Video",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "present": "Present",
+    "loading": "Loading",
+    "external": "Opens in a new tab",
+    "menu": "Menu",
+    "theme": "Theme",
+    "language": "Language",
+    "light": "Light",
+    "dark": "Dark",
+    "backToTop": "Back to top",
+    "builtWith": "Built with React, TypeScript and CSS Modules",
+    "rights": "All rights reserved"
+  },
+
+  "about": {
+    "eyebrow": "01 — About",
+    "location": "France",
+    "portraitAlt": "Illustrated portrait of Fabien Poirier",
+    "p1": "To me, artificial intelligence isn’t a black box: it’s a fascinating architecture that I love taking apart brick by brick to understand how it really works.",
+    "p2": "Building projects from the ground up, testing new libraries and sharpening my analytical thinking: that’s where I thrive. I also care about making these technologies accessible by explaining and sharing what I learn, because the best way to master a topic is still to pass it on.",
+    "quote": "Keep in mind that knowledge takes up no space!",
+    "mottoLabel": "My motto",
+    "passions": "My passions",
+    "passionGames": "Video games",
+    "passionScifi": "Science fiction",
+    "passionAnime": "Anime / Manga",
+    "qualities": "What defines me",
+    "qualityCreative": "Creative",
+    "qualityPersistent": "Persistent",
+    "qualitySocial": "Sociable"
+  },
+
+  "timeline": {
+    "eyebrow": "02 — Background",
+    "title": "Education and experience",
+    "description": "A journey through research, teaching and AI systems development.",
+    "tabs": {
+      "education": "Education",
+      "experience": "Experience"
+    },
+    "present": "Present"
+  },
+
+  "skills": {
+    "eyebrow": "03 — Skills",
+    "categories": {
+      "languages": "Languages",
+      "libraries": "Libraries & frameworks",
+      "llm": "LLM & RAG",
+      "databases": "Databases",
+      "deployment": "Deployment & MLOps",
+      "tools": "Tools & methods"
+    },
+    "toolsTitle": "Tools & technologies",
+    "count": "skills",
+    "knowledge": {
+      "title": "Knowledge & expertise",
+      "domains": {
+        "vision": "Computer vision",
+        "nlp": "NLP & LLM",
+        "ml": "Machine Learning & Deep Learning"
+      },
+      "items": {
+        "cnn": "CNN",
+        "yolo": "YOLO",
+        "vgg": "VGG19",
+        "objectDetection": "Object detection",
+        "anomaly": "Anomaly detection",
+        "ocr": "OCR",
+        "nlp": "NLP",
+        "llm": "LLM",
+        "rag": "RAG",
+        "transformers": "Transformers",
+        "embeddings": "Embeddings",
+        "reranking": "Reranking",
+        "mlp": "MLP",
+        "neuralNetwork": "Neural network",
+        "rnn": "RNN / LSTM / GRU",
+        "regression": "Regression",
+        "classification": "Classification",
+        "decisionTree": "Decision tree",
+        "randomForest": "Random forest",
+        "xgboost": "XGBoost",
+        "knn": "KNN",
+        "svm": "SVM",
+        "clustering": "Clustering",
+        "som": "SOM",
+        "featureEngineering": "Feature engineering",
+        "dataAugmentation": "Data augmentation",
+        "interpretability": "Interpretability",
+        "timeseries": "Time series"
+      }
+    }
+  },
+
+  "projects": {
+    "eyebrow": "04 — Projects",
+    "title": "Personal, professional & academic projects",
+    "description": "",
+    "searchPlaceholder": "Search a project, a technology…",
+    "clearSearch": "Clear search",
+    "year": "Year",
+    "allYears": "All years",
+    "results": "results",
+    "noResults": "No project matches these filters.",
+    "noResultsHint": "Try another keyword or another year.",
+    "resetFilters": "Reset filters",
+    "filters": {
+      "all": "All",
+      "personal": "Personal",
+      "professional": "Professional",
+      "academic": "Academic"
+    },
+    "levels": {
+      "but1": "BUT 1",
+      "but2": "BUT 2",
+      "but3": "BUT 3",
+      "master1": "Master 1",
+      "master2": "Master 2",
+      "doctorate": "PhD"
+    },
+    "details": "View project",
+    "gallery": "Application preview",
+    "status": {
+      "active": "Active",
+      "archived": "Completed"
+    },
+    "links": {
+      "github": "Code",
+      "demo": "Demo",
+      "video": "Video",
+      "site": "Website",
+      "pdf": "PDF"
+    },
+    "empty": "No project in this category."
+  },
+
+  "publications": {
+    "eyebrow": "05 — Publications",
+    "title": "Publications & articles",
+    "description": "",
+    "tabs": {
+      "scientific": "Scientific",
+      "medium": "Articles"
+    },
+    "published": "Published",
+    "preprint": "Preprint",
+    "searchPlaceholder": "Search by title, author…",
+    "clearSearch": "Clear search",
+    "year": "Year",
+    "allYears": "All years",
+    "results": "results",
+    "noResults": "No publication matches these filters.",
+    "noResultsHint": "Try another title, author or year.",
+    "resetFilters": "Reset filters",
+    "language": "Language",
+    "showVersion": "Show version",
+    "languages": {
+      "fr": "French",
+      "en": "English"
+    },
+    "cite": "Cite",
+    "minutes": "min",
+    "readOnMedium": "Read on Medium",
+    "allPosts": "Read all articles",
+    "mediumEmpty": "Medium articles will appear here soon.",
+    "mediumEmptyCta": "Visit the Medium profile"
+  },
+
+  "videos": {
+    "eyebrow": "06 — YouTube",
+    "title": "Videos & tutorials",
+    "description": "",
+    "searchPlaceholder": "Search a video…",
+    "clearSearch": "Clear search",
+    "year": "Year",
+    "allYears": "All years",
+    "filters": {
+      "all": "All",
+      "video": "Videos",
+      "short": "Shorts"
+    },
+    "empty": "No video in this category.",
+    "noResults": "No video matches these filters.",
+    "noResultsHint": "Try another keyword or another year.",
+    "results": "videos",
+    "views": "views",
+    "watch": "Watch on YouTube",
+    "allVideos": "See all videos"
+  },
+
+  "teaching": {
+    "eyebrow": "07 — Teaching",
+    "title": "Teaching and supervision",
+    "description": "",
+    "searchPlaceholder": "Search a course…",
+    "clearSearch": "Clear search",
+    "noResults": "No course matches these filters.",
+    "noResultsHint": "Try another keyword, year or level.",
+    "tabs": {
+      "courses": "Courses",
+      "supervisions": "Supervision"
+    },
+    "stats": {
+      "hours": "hours taught",
+      "courses": "courses",
+      "students": "students",
+      "levels": "levels"
+    },
+    "filters": {
+      "year": "Year",
+      "level": "Level",
+      "allYears": "All years",
+      "allLevels": "All levels"
+    },
+    "labels": {
+      "hours": "Volume",
+      "students": "Students",
+      "place": "Location",
+      "distribution": "Distribution",
+      "onsite": "On-site",
+      "online": "Online",
+      "theme": "Topic",
+      "year": "Year",
+      "level": "Level"
+    },
+    "distribution": {
+      "CM": "Lecture",
+      "TD": "Tutorial",
+      "TP": "Lab",
+      "SAE": "Project",
+      "CS": "Support"
+    },
+    "levels": {
+      "but1": "1st year",
+      "but2": "2nd year",
+      "but3": "3rd year",
+      "master1": "Master 1",
+      "licence2": "2nd year"
+    },
+    "distributionHelp": {
+      "title": "Understanding the breakdown",
+      "CM": "Lecture",
+      "TD": "Tutorial",
+      "TP": "Practical work",
+      "SAE": "Learning and assessment project",
+      "CS": "Support class"
+    },
+    "supervisionKinds": {
+      "apprenticeship": "Apprenticeship",
+      "internship": "Internship",
+      "tutoring": "Tutoring"
+    },
+    "supervisionModes": {
+      "onsite": "On-site",
+      "remote": "Remote",
+      "hybrid": "Hybrid"
+    },
+    "supervisionStats": {
+      "contexts": "supervisions",
+      "remote": "remote"
+    },
+    "student": "student",
+    "students": "students",
+    "placeholder": {
+      "title": "Supervision coming soon",
+      "text": "This section will soon list supervised students, topics and levels."
+    },
+    "totalHours": "Total",
+    "courseCount": "courses shown"
+  },
+
+  "awards": {
+    "eyebrow": "08 — Awards",
+    "title": "A few highlights",
+    "description": "",
+    "kinds": {
+      "medal": "Medal",
+      "trophy": "Trophy",
+      "badge": "Badge",
+      "pin": "Pin"
+    },
+    "event": "Event",
+    "demo": "Watch the demo"
+  },
+
+  "footer": {
+    "tagline": "I build AI projects from the ground up and share what I learn.",
+    "nav": "Navigation",
+    "community": "Community",
+    "lastUpdated": "Last updated: {date}",
+    "builtWith": "Built with React, TypeScript and CSS Modules",
+    "rights": "All rights reserved",
+    "backToTop": "Back to top"
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "nav": {
+    "about": "À propos",
+    "timeline": "Parcours",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "publications": "Publications",
+    "videos": "Vidéos",
+    "teaching": "Enseignement",
+    "awards": "Palmarès"
+  },
+
+  "accessibility": {
+    "skipToContent": "Aller au contenu",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "toggleTheme": "Changer de thème",
+    "changeLanguage": "Changer de langue",
+    "externalLink": "Ouvre un nouvel onglet",
+    "mainNavigation": "Navigation principale",
+    "sectionNavigation": "Navigation entre les sections",
+    "previousSection": "Section précédente",
+    "nextSection": "Section suivante",
+    "socialLinks": "Réseaux sociaux",
+    "projectDetails": "Détails du projet",
+    "closeDialog": "Fermer la fenêtre"
+  },
+
+  "common": {
+    "all": "Tout",
+    "resetFilters": "Réinitialiser",
+    "close": "Fermer",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "cite": "Citer",
+    "article": "Article",
+    "pdf": "PDF",
+    "poster": "Poster",
+    "demo": "Démo",
+    "code": "Code",
+    "translation": "Traduction",
+    "github": "GitHub",
+    "site": "Site",
+    "video": "Vidéo",
+    "seeMore": "Voir plus",
+    "seeLess": "Voir moins",
+    "present": "Aujourd'hui",
+    "loading": "Chargement",
+    "external": "Ouvre un nouvel onglet",
+    "menu": "Menu",
+    "theme": "Thème",
+    "language": "Langue",
+    "light": "Clair",
+    "dark": "Sombre",
+    "backToTop": "Retour en haut",
+    "builtWith": "Conçu avec React, TypeScript et CSS Modules",
+    "rights": "Tous droits réservés"
+  },
+
+  "about": {
+    "eyebrow": "01 — À propos",
+    "location": "France",
+    "portraitAlt": "Portrait illustré de Fabien Poirier",
+    "p1": "Pour moi, l'intelligence artificielle n'est pas une boîte noire : c'est une architecture fascinante, que j'aime démonter brique par brique pour comprendre comment elle fonctionne vraiment.",
+    "p2": "Concevoir des projets de A à Z, tester de nouvelles bibliothèques et affûter ma logique d'analyse : c'est là que je m'épanouis. J'aime aussi rendre ces technologies accessibles en expliquant et en partageant ce que j'apprends, parce que la meilleure façon de maîtriser un sujet reste encore de le transmettre.",
+    "quote": "Gardez à l'esprit que le savoir ne prend pas de place !",
+    "mottoLabel": "Ma devise",
+    "passions": "Mes passions",
+    "passionGames": "Jeux vidéo",
+    "passionScifi": "Science-fiction",
+    "passionAnime": "Animé / Manga",
+    "qualities": "Ce qui me caractérise",
+    "qualityCreative": "Créatif",
+    "qualityPersistent": "Persévérant",
+    "qualitySocial": "Sociable"
+  },
+
+  "timeline": {
+    "eyebrow": "02 — Parcours",
+    "title": "Formation et expérience",
+    "description": "Un parcours entre recherche, enseignement et développement de systèmes IA.",
+    "tabs": {
+      "education": "Formation",
+      "experience": "Expérience"
+    },
+    "present": "Aujourd'hui"
+  },
+
+  "skills": {
+    "eyebrow": "03 — Compétences",
+    "categories": {
+      "languages": "Langages",
+      "libraries": "Librairies & frameworks",
+      "llm": "LLM & RAG",
+      "databases": "Bases de données",
+      "deployment": "Déploiement & MLOps",
+      "tools": "Outils & méthodes"
+    },
+    "toolsTitle": "Outils & technologies",
+    "count": "compétences",
+    "knowledge": {
+      "title": "Connaissances & expertises",
+      "domains": {
+        "vision": "Vision par ordinateur",
+        "nlp": "NLP & LLM",
+        "ml": "Machine Learning & Deep Learning"
+      },
+      "items": {
+        "cnn": "CNN",
+        "yolo": "YOLO",
+        "vgg": "VGG19",
+        "objectDetection": "Détection d'objets",
+        "anomaly": "Détection d'anomalies",
+        "ocr": "OCR",
+        "nlp": "NLP",
+        "llm": "LLM",
+        "rag": "RAG",
+        "transformers": "Transformers",
+        "embeddings": "Embeddings",
+        "reranking": "Reranking",
+        "mlp": "MLP",
+        "neuralNetwork": "Réseau de neurones",
+        "rnn": "RNN / LSTM / GRU",
+        "regression": "Régression",
+        "classification": "Classification",
+        "decisionTree": "Arbre de décision",
+        "randomForest": "Random forest",
+        "xgboost": "XGBoost",
+        "knn": "KNN",
+        "svm": "SVM",
+        "clustering": "Clustering",
+        "som": "SOM",
+        "featureEngineering": "Feature engineering",
+        "dataAugmentation": "Data augmentation",
+        "interpretability": "Interprétabilité",
+        "timeseries": "Séries temporelles"
+      }
+    }
+  },
+
+  "projects": {
+    "eyebrow": "04 — Projets",
+    "title": "Projets perso, pro & académiques",
+    "description": "",
+    "searchPlaceholder": "Rechercher un projet, une techno…",
+    "clearSearch": "Effacer la recherche",
+    "year": "Année",
+    "allYears": "Toutes les années",
+    "results": "résultats",
+    "noResults": "Aucun projet ne correspond à ces filtres.",
+    "noResultsHint": "Essaie un autre mot-clé ou une autre année.",
+    "resetFilters": "Réinitialiser",
+    "filters": {
+      "all": "Tout",
+      "personal": "Perso",
+      "professional": "Pro",
+      "academic": "Académique"
+    },
+    "levels": {
+      "but1": "BUT 1",
+      "but2": "BUT 2",
+      "but3": "BUT 3",
+      "master1": "Master 1",
+      "master2": "Master 2",
+      "doctorate": "Doctorat"
+    },
+    "details": "Voir le projet",
+    "gallery": "Aperçu de l’application",
+    "status": {
+      "active": "En cours",
+      "archived": "Terminé"
+    },
+    "links": {
+      "github": "Code",
+      "demo": "Démo",
+      "video": "Vidéo",
+      "site": "Site",
+      "pdf": "PDF"
+    },
+    "empty": "Aucun projet dans cette catégorie."
+  },
+
+  "publications": {
+    "eyebrow": "05 — Publications",
+    "title": "Publications & articles",
+    "description": "",
+    "tabs": {
+      "scientific": "Scientifique",
+      "medium": "Articles"
+    },
+    "published": "Publié",
+    "preprint": "Prépublication",
+    "searchPlaceholder": "Rechercher un titre, un auteur…",
+    "clearSearch": "Effacer la recherche",
+    "year": "Année",
+    "allYears": "Toutes les années",
+    "results": "résultats",
+    "noResults": "Aucune publication ne correspond à ces filtres.",
+    "noResultsHint": "Essaie un autre titre, auteur ou une autre année.",
+    "resetFilters": "Réinitialiser",
+    "language": "Langue",
+    "showVersion": "Afficher la version",
+    "languages": {
+      "fr": "Français",
+      "en": "Anglais"
+    },
+    "cite": "Citer",
+    "minutes": "min",
+    "readOnMedium": "Lire sur Medium",
+    "allPosts": "Voir tous les articles",
+    "mediumEmpty": "Les articles Medium seront bientôt disponibles ici.",
+    "mediumEmptyCta": "Voir le profil Medium"
+  },
+
+  "videos": {
+    "eyebrow": "06 — YouTube",
+    "title": "Vidéos & tutoriels",
+    "description": "",
+    "searchPlaceholder": "Rechercher une vidéo…",
+    "clearSearch": "Effacer la recherche",
+    "year": "Année",
+    "allYears": "Toutes les années",
+    "filters": {
+      "all": "Tout",
+      "video": "Vidéos",
+      "short": "Shorts"
+    },
+    "empty": "Aucune vidéo dans cette catégorie.",
+    "noResults": "Aucune vidéo ne correspond à ces filtres.",
+    "noResultsHint": "Essaie un autre mot-clé ou une autre année.",
+    "results": "vidéos",
+    "views": "vues",
+    "watch": "Voir sur YouTube",
+    "allVideos": "Voir toutes les vidéos"
+  },
+
+  "teaching": {
+    "eyebrow": "07 — Enseignement",
+    "title": "Transmettre et encadrer",
+    "description": "",
+    "searchPlaceholder": "Rechercher un cours…",
+    "clearSearch": "Effacer la recherche",
+    "noResults": "Aucun cours ne correspond à ces filtres.",
+    "noResultsHint": "Essaie un autre mot-clé, une autre année ou un autre niveau.",
+    "tabs": {
+      "courses": "Cours",
+      "supervisions": "Encadrements"
+    },
+    "stats": {
+      "hours": "heures enseignées",
+      "courses": "cours",
+      "students": "étudiants",
+      "levels": "niveaux"
+    },
+    "filters": {
+      "year": "Année",
+      "level": "Niveau",
+      "allYears": "Toutes les années",
+      "allLevels": "Tous les niveaux"
+    },
+    "labels": {
+      "hours": "Volume",
+      "students": "Étudiants",
+      "place": "Lieu",
+      "distribution": "Répartition",
+      "onsite": "Présentiel",
+      "online": "À distance",
+      "theme": "Thème",
+      "year": "Année",
+      "level": "Niveau"
+    },
+    "distribution": {
+      "CM": "CM",
+      "TD": "TD",
+      "TP": "TP",
+      "SAE": "SAE",
+      "CS": "CS"
+    },
+    "levels": {
+      "but1": "BUT 1",
+      "but2": "BUT 2",
+      "but3": "BUT 3",
+      "master1": "Master 1",
+      "licence2": "Licence 2"
+    },
+    "distributionHelp": {
+      "title": "Comprendre la répartition",
+      "CM": "Cours magistral",
+      "TD": "Travaux dirigés",
+      "TP": "Travaux pratiques",
+      "SAE": "Situation d'Apprentissage et d'Évaluation",
+      "CS": "Cours de soutien"
+    },
+    "supervisionKinds": {
+      "apprenticeship": "Alternance",
+      "internship": "Stage",
+      "tutoring": "Tutorat"
+    },
+    "supervisionModes": {
+      "onsite": "Sur site",
+      "remote": "À distance",
+      "hybrid": "Hybride"
+    },
+    "supervisionStats": {
+      "contexts": "encadrements",
+      "remote": "à distance"
+    },
+    "student": "étudiant",
+    "students": "étudiants",
+    "placeholder": {
+      "title": "Encadrements à venir",
+      "text": "Cette section sera complétée prochainement avec les étudiants encadrés, les sujets et les niveaux."
+    },
+    "totalHours": "Total",
+    "courseCount": "cours affichés"
+  },
+
+  "awards": {
+    "eyebrow": "08 — Palmarès",
+    "title": "Quelques réussites",
+    "description": "",
+    "kinds": {
+      "medal": "Médaille",
+      "trophy": "Trophée",
+      "badge": "Badge",
+      "pin": "Pin"
+    },
+    "event": "Événement",
+    "demo": "Voir la démo"
+  },
+
+  "footer": {
+    "tagline": "Je construis des projets IA de A à Z et je partage ce que j'apprends.",
+    "nav": "Navigation",
+    "community": "Communauté",
+    "lastUpdated": "Dernière mise à jour : {date}",
+    "builtWith": "Conçu avec React, TypeScript et CSS Modules",
+    "rights": "Tous droits réservés",
+    "backToTop": "Retour en haut"
+  }
+}
