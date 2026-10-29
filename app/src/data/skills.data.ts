@@ -30,8 +30,8 @@ export const skills: Skill[] = [
   { id: 'numpy', name: 'NumPy', category: 'libraries', icon: 'numpy.svg' },
   { id: 'opencv', name: 'OpenCV', category: 'libraries', icon: 'opencv.svg' },
   { id: 'nltk', name: 'NLTK', category: 'libraries', monogram: 'NLTK' },
-  { id: 'seaborn', name: 'Seaborn', category: 'libraries', monogram: 'SB' },
-  { id: 'matplotlib', name: 'Matplotlib', category: 'libraries', monogram: 'MPL' },
+  { id: 'seaborn', name: 'Seaborn', category: 'libraries', icon: 'seaborn.svg' },
+  { id: 'matplotlib', name: 'Matplotlib', category: 'libraries', icon: 'matplotlib.svg' },
 
   /** ▸ LLM & RAG */
   { id: 'langchain', name: 'LangChain', category: 'llm', icon: 'langchain.svg' },
