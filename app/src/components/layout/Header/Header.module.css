@@ -21,6 +21,28 @@
   box-shadow: 0 10px 30px rgba(7, 11, 20, 0.06);
 }
 
+/* Progression du défilement, posée sur la bordure basse. */
+.header::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  border-radius: 0 999px 999px 0;
+  background: var(--progress-gradient);
+  box-shadow: 0 0 12px var(--progress-glow);
+  opacity: 0;
+  pointer-events: none;
+  transform: scaleX(var(--scroll-progress, 0));
+  transform-origin: left center;
+  transition: opacity var(--transition);
+}
+
+.header[data-scrolled='true']::after {
+  opacity: 1;
+}
+
 .inner {
   display: flex;
   align-items: center;

@@ -49,6 +49,9 @@
   --gradient-soft: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(180, 83, 9, 0.09));
   --glow: 0 0 90px rgba(180, 83, 9, 0.1);
 
+  --progress-gradient: linear-gradient(90deg, #1d4ed8 0%, #0e7490 100%);
+  --progress-glow: rgba(14, 116, 144, 0.4);
+
   --color-indigo: #4338ca;
   --color-cyan: #0e7490;
   --color-amber: #b45309;
@@ -88,6 +91,9 @@
   --gradient-warm: linear-gradient(135deg, #fbbf24 0%, #fb7185 100%);
   --gradient-soft: linear-gradient(135deg, rgba(139, 124, 255, 0.18), rgba(34, 211, 238, 0.1));
   --glow: 0 0 110px rgba(109, 94, 252, 0.22);
+
+  --progress-gradient: linear-gradient(90deg, #8b7cff 0%, #22d3ee 100%);
+  --progress-glow: rgba(34, 211, 238, 0.45);
 
   --color-indigo: #818cf8;
   --color-cyan: #22d3ee;
