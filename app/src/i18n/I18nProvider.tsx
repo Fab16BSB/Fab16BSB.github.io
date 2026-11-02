@@ -59,17 +59,20 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     }
   }, [locale]);
 
-  // Traduit une clé avec repli sur le français.
-  const t = useCallback(
-    (key: string, vars?: Record<string, string | number>) => {
-      const value =
-        getByPath(dictionaries[locale], key) ??
-        getByPath(dictionaries[DEFAULT_LOCALE], key) ??
-        key;
+  // Traduit une clé dans une langue donnée, avec repli sur le français.
+  const tFor = useCallback((target: Locale, key: string, vars?: Record<string, string | number>) => {
+    const value =
+      getByPath(dictionaries[target], key) ??
+      getByPath(dictionaries[DEFAULT_LOCALE], key) ??
+      key;
 
-      return interpolate(value, vars);
-    },
-    [locale],
+    return interpolate(value, vars);
+  }, []);
+
+  // Traduit une clé dans la langue courante.
+  const t = useCallback(
+    (key: string, vars?: Record<string, string | number>) => tFor(locale, key, vars),
+    [locale, tFor],
   );
 
   // Retourne un texte localisé.
@@ -77,8 +80,8 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   // Valeur exposée aux consommateurs du contexte.
   const context = useMemo<I18nContextValue>(
-    () => ({ locale, setLocale, t, loc }),
-    [locale, setLocale, t, loc],
+    () => ({ locale, setLocale, t, tFor, loc }),
+    [locale, setLocale, t, tFor, loc],
   );
 
   return <I18nContext.Provider value={context}>{children}</I18nContext.Provider>;

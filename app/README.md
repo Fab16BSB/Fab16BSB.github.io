@@ -70,6 +70,8 @@ Helper and hook files are only created when they make sense.
 - **Projects**: `src/data/projects.data.ts` (public GitHub repositories only).
 - **Skills**: `src/data/skills.data.ts`.
 - **Publications**: `src/data/publications.data.ts`.
+- **Public essentials**: `src/data/publication-summaries.data.ts` (context, problem and proposed solution plus keywords per scientific publication, in FR / EN / ES; they follow the FR / EN version toggled on each card, and Medium posts are excluded).
+- **Abstracts**: each `PublicationVersion` in `src/data/publications.data.ts` carries its original abstract (FR / EN), shown in the "Abstract" tab of the card.
 - **Teaching**: `src/data/teaching.data.ts`.
 - **Awards / achievements**: `src/data/awards.data.ts`.
 - **Supervisions**: `src/data/supervisions.data.ts` (4 supervisions shown in the Teaching tab).

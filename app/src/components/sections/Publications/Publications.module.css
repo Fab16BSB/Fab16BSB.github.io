@@ -299,6 +299,119 @@
   font-style: italic;
 }
 
+/* Résumé grand public */
+.summary {
+  margin-top: 0.4rem;
+  padding: 0.7rem 0.85rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  border-left: 2px solid color-mix(in srgb, var(--accent-2) 60%, transparent);
+  background: var(--surface-2);
+}
+
+/* Onglets internes de l'encart */
+.panelTabs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.panelTab {
+  margin-bottom: -1px;
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid transparent;
+  color: var(--text-faint);
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition:
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.panelTab:hover {
+  color: var(--text);
+}
+
+.panelTabActive {
+  color: var(--accent-2);
+  border-bottom-color: var(--accent-2);
+}
+
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-left: 1.05rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  list-style: disc;
+}
+
+.summaryList li::marker {
+  color: var(--accent-2);
+}
+
+.summaryTerm {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.abstract {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.abstractCredit {
+  margin-top: 0.45rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.5rem;
+  margin-top: 0.65rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+}
+
+.keywordsLabel {
+  color: var(--text-faint);
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.keywordsList {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: baseline;
+  row-gap: 0.15rem;
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+.keywordsList li:not(:last-child)::after {
+  content: '·';
+  margin: 0 0.5rem;
+  color: var(--text-faint);
+  font-weight: 700;
+}
+
 .paperActions {
   display: flex;
   flex-wrap: wrap;

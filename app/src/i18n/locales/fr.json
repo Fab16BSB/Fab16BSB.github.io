@@ -190,6 +190,15 @@
     },
     "published": "Publié",
     "preprint": "Prépublication",
+    "summary": "L'essentiel",
+    "abstract": "Abstract",
+    "panel": "Contenu de l'article",
+    "points": {
+      "context": "Contexte :",
+      "problem": "Problématique :",
+      "solution": "Solution proposée :"
+    },
+    "keywords": "Mots-clés :",
     "searchPlaceholder": "Rechercher un titre, un auteur…",
     "clearSearch": "Effacer la recherche",
     "year": "Année",

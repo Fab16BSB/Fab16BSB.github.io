@@ -6,12 +6,14 @@ import type { Locale, Localized } from './common.types';
  * @property {Locale} locale - Langue courante.
  * @property {(locale: Locale) => void} setLocale - Change la langue courante.
  * @property {(key: string, vars?: Record<string, string | number>) => string} t - Traduit une clé.
+ * @property {(locale: Locale, key: string, vars?: Record<string, string | number>) => string} tFor - Traduit une clé dans une langue donnée.
  * @property {(value: Localized) => string} loc - Retourne un texte localisé.
  */
 export type I18nContextValue = {
   locale: Locale;
   setLocale: (locale: Locale) => void;
   t: (key: string, vars?: Record<string, string | number>) => string;
+  tFor: (locale: Locale, key: string, vars?: Record<string, string | number>) => string;
   loc: (value: Localized) => string;
 };
 

@@ -190,6 +190,15 @@
     },
     "published": "Published",
     "preprint": "Preprint",
+    "summary": "The essentials",
+    "abstract": "Abstract",
+    "panel": "Article content",
+    "points": {
+      "context": "Context:",
+      "problem": "Problem:",
+      "solution": "Proposed solution:"
+    },
+    "keywords": "Keywords:",
     "searchPlaceholder": "Search by title, author…",
     "clearSearch": "Clear search",
     "year": "Year",

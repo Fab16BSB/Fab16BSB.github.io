@@ -2,6 +2,7 @@
   IMPORTS
 ========================================================================= */
 import type { CSSProperties } from 'react';
+import { publicationSummaries } from '@/data/publication-summaries.data';
 import { useI18n } from '@/i18n/useI18n';
 import type { Locale } from '@/types/common.types';
 import type { Publication, PublicationLanguage, PublicationLink } from '@/types/publication.types';
@@ -9,7 +10,8 @@ import type { IconName } from '@/types/ui.types';
 import { CopyButton } from '@/components/ui/CopyButton/CopyButton';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { LanguageFlag } from '@/components/ui/LanguageFlag/LanguageFlag';
-import { pickPublicationVersion } from '../publications.helpers';
+import { PublicationEssentials } from './PublicationEssentials';
+import { pickPublicationVersion, sortPublicationLinks } from '../publications.helpers';
 import styles from '../Publications.module.css';
 
 /* =========================================================================
@@ -50,6 +52,12 @@ export function PublicationCard({
   const activeLanguage = selectedLanguage ?? fallbackVersion.language;
   const version =
     publication.versions.find((item) => item.language === activeLanguage) ?? fallbackVersion;
+
+  // Contenu éditorial : version explicitement choisie, sinon langue du site.
+  const summary = publicationSummaries[publication.id];
+  const summaryLocale = selectedLanguage ?? locale;
+  const summaryPoints = summary?.points[summaryLocale];
+  const keywords = summary?.keywords[summaryLocale];
 
   return (
     <article
@@ -134,9 +142,21 @@ export function PublicationCard({
         <h3 className={styles.paperTitle}>{version.title}</h3>
         {version.subtitle && <p className={styles.subtitle}>{loc(version.subtitle)}</p>}
 
-        {/* Liens et citation. */}
+        {/* Points clés et abstract, dans la langue de la version affichée. */}
+        {summaryPoints && keywords && (
+          <PublicationEssentials
+            id={publication.id}
+            locale={summaryLocale}
+            points={summaryPoints}
+            keywords={keywords}
+            abstract={version.abstract}
+            rights={version.rights}
+          />
+        )}
+
+        {/* Liens et citation, dans un ordre identique pour toutes les versions. */}
         <div className={styles.paperActions}>
-          {version.links.map((link) => (
+          {sortPublicationLinks(version.links).map((link) => (
             <a
               className={`button button--ghost button--small ${styles.link}`}
               key={link.key}

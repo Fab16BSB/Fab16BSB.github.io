@@ -3,13 +3,22 @@
 ========================================================================= */
 import type { Locale } from '@/types/common.types';
 import type { MediumPost } from '@/types/medium.types';
-import type { Publication, PublicationVersion } from '@/types/publication.types';
+import type { Publication, PublicationLink, PublicationVersion } from '@/types/publication.types';
 import { matchesQuery } from '@/lib/search';
 
 /* =========================================================================
   HELPERS : publications — fonctions pures
   Tri, filtrage, recherche et formatage des publications.
 ========================================================================= */
+
+/* Ordre d'affichage des liens d'une publication. */
+const linkPriorities: Record<PublicationLink['key'], number> = {
+  article: 0,
+  pdf: 1,
+  poster: 2,
+  code: 3,
+  demo: 4,
+};
 
 /**
  * Trie les publications par année décroissante.
@@ -42,6 +51,17 @@ export function filterMediumPosts(posts: MediumPost[], locale: Locale): MediumPo
   const matching = posts.filter((post) => post.language === locale);
 
   return matching.length > 0 ? matching : posts;
+}
+
+/**
+ * Trie les liens dans un ordre identique pour toutes les publications :
+ * article, PDF, poster, code puis démonstration.
+ *
+ * @param links - Liens de la version affichée.
+ * @returns Une copie triée.
+ */
+export function sortPublicationLinks(links: PublicationLink[]): PublicationLink[] {
+  return [...links].sort((a, b) => linkPriorities[a.key] - linkPriorities[b.key]);
 }
 
 /**
