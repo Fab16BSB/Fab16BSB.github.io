@@ -57,6 +57,28 @@
     "rights": "Tous droits réservés"
   },
 
+  "search": {
+    "deep": {
+      "label": "Recherche approfondie",
+      "enable": "Activer la recherche approfondie",
+      "disable": "Désactiver la recherche approfondie",
+      "disableShort": "Désactiver",
+      "cancelDownload": "Annuler",
+      "title": "Recherche approfondie",
+      "description": "Comprend le sens des phrases et les paraphrases, en plus des mots-clés.",
+      "cost": "Télécharge un modèle et son moteur (environ 140 Mo) une seule fois, puis fonctionne hors ligne. Les requêtes ne quittent pas ton navigateur.",
+      "confirm": "Activer",
+      "cancel": "Plus tard",
+      "try": "Essayer la recherche approfondie",
+      "hint": "Aucun résultat avec les mots-clés ?",
+      "loadingShort": "Téléchargement du modèle : {progress} %",
+      "active": "Recherche approfondie active.",
+      "retry": "Réessayer",
+      "error": "La recherche approfondie a échoué. La recherche classique reste disponible.",
+      "unavailable": "Recherche approfondie indisponible sur cet appareil (capacités ou connexion insuffisantes)."
+    }
+  },
+
   "about": {
     "eyebrow": "01 — À propos",
     "location": "France",

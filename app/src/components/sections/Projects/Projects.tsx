@@ -8,6 +8,7 @@ import { ProjectCard } from '@/components/ui/ProjectCard/ProjectCard';
 import { ProjectModal } from '@/components/ui/ProjectModal/ProjectModal';
 import { SearchInput } from '@/components/ui/SearchInput/SearchInput';
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading';
+import { SemanticHint } from '@/components/ui/SemanticSearch/SemanticHint';
 import { Select } from '@/components/ui/Select/Select';
 import { Tabs } from '@/components/ui/Tabs/Tabs';
 import { projectCategories } from './projects.helpers';
@@ -19,7 +20,7 @@ import styles from './Projects.module.css';
   Section projets.
 ========================================================================= */
 export function Projects() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const {
     active,
     setActive,
@@ -39,7 +40,7 @@ export function Projects() {
     hasMore,
     resetFilters,
     hasFilters,
-  } = useProjects();
+  } = useProjects(locale);
 
   const tabs = [
     { id: 'all', label: t('projects.filters.all'), count: counts.all },
@@ -131,13 +132,16 @@ export function Projects() {
         ) : (
 
           // Aucun résultat : réinitialisation proposée si des filtres sont actifs.
-          <EmptyState
-            icon="search"
-            title={t('projects.noResults')}
-            description={t('projects.noResultsHint')}
-            actionLabel={hasFilters ? t('common.resetFilters') : undefined}
-            onAction={hasFilters ? resetFilters : undefined}
-          />
+          <>
+            <EmptyState
+              icon="search"
+              title={t('projects.noResults')}
+              description={t('projects.noResultsHint')}
+              actionLabel={hasFilters ? t('common.resetFilters') : undefined}
+              onAction={hasFilters ? resetFilters : undefined}
+            />
+            {query.trim().length > 0 && <SemanticHint />}
+          </>
         )}
       </div>
 

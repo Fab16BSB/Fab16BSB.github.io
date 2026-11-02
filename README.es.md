@@ -62,4 +62,16 @@ Soy doctor en Inteligencia Artificial, especializado en RAG, visión por computa
 - FR / EN / ES
 - GitHub Pages + GitHub Actions
 - Sincronización RSS de Medium / YouTube
+- Búsqueda de texto completo (MiniSearch)
+- Búsqueda avanzada opcional (modelo local)
 - Sin backend
+
+## 🔎 Búsqueda
+
+Las barras de búsqueda (proyectos, publicaciones, vídeos, docencia) son
+instantáneas, insensibles a los acentos y tolerantes a las erratas. Funcionan
+en francés, inglés y español.
+
+Una **búsqueda avanzada** opcional también puede entender el sentido de las
+frases. Está desactivada por defecto, solo se activa tras confirmación en un
+dispositivo compatible y las consultas nunca salen del navegador.

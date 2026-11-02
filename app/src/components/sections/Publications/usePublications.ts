@@ -3,16 +3,19 @@
 ========================================================================= */
 import { useCallback, useMemo, useState } from 'react';
 import mediumPostsRaw from '@/data/medium-posts.json';
+import { publicationSummaries } from '@/data/publication-summaries.data';
 import { publications } from '@/data/publications.data';
+import { getSearchIndex, searchDocuments } from '@/lib/search-engine';
+import { mediumPostSearchFields, publicationSearchFields } from '@/lib/search-fields';
+import { rankSearchResults } from '@/lib/search-rank';
+import { useSemanticSearch } from '@/search/useSemanticSearch';
 import type { Locale } from '@/types/common.types';
 import type { MediumPost } from '@/types/medium.types';
-import type { PublicationLanguage } from '@/types/publication.types';
+import type { PublicationLanguage, Publication } from '@/types/publication.types';
 import {
   availableYears,
   filterMediumPosts,
-  mediumPostMatches,
   mediumPostYear,
-  publicationMatches,
   sortMediumPosts,
   sortPublications,
 } from './publications.helpers';
@@ -60,27 +63,126 @@ export function usePublications(locale: Locale) {
   const years = tab === 'scientific' ? scientificYears : mediumYears;
   const activeYear = years.includes(year) ? year : 'all';
 
-  // Publications filtrées par année et recherche.
-  const scientific = useMemo(
+  // Scores sémantiques de la requête courante, si l'option est active.
+  const { semanticScores } = useSemanticSearch('publications', query);
+
+  // Index plein texte des publications scientifiques.
+  const scientificIndex = useMemo(
     () =>
-      allScientific.filter(
-        (publication) =>
-          (activeYear === 'all' || publication.year === activeYear) &&
-          publicationMatches(publication, query),
+      getSearchIndex(
+        `publications:scientific:${locale}`,
+        locale,
+        publications.map((publication) => ({
+          id: `publications:${publication.id}`,
+          ...publicationSearchFields(
+            publication,
+            locale,
+            publicationSummaries[publication.id],
+          ),
+        })),
       ),
-    [allScientific, activeYear, query],
+    [locale],
   );
 
-  // Articles Medium filtrés par année et recherche.
-  const medium = useMemo(
+  // Index plein texte des articles Medium de la langue courante.
+  const mediumIndex = useMemo(
     () =>
-      allMedium.filter(
-        (post) =>
-          (activeYear === 'all' || mediumPostYear(post) === activeYear) &&
-          mediumPostMatches(post, query),
+      getSearchIndex(
+        `publications:medium:${locale}`,
+        locale,
+        allMedium.map((post) => ({
+          id: `publications:${post.id}`,
+          ...mediumPostSearchFields(post, locale),
+        })),
       ),
-    [allMedium, activeYear, query],
+    [allMedium, locale],
   );
+
+  // Identifiants autorisés pour limiter les candidats sémantiques.
+  const scientificIds = useMemo(
+    () => new Set(publications.map((publication) => `publications:${publication.id}`)),
+    [],
+  );
+  const mediumIds = useMemo(
+    () => new Set(allMedium.map((post) => `publications:${post.id}`)),
+    [allMedium],
+  );
+
+  // Correspondances lexicales puis fusion avec les scores sémantiques.
+  const scientificMatches = useMemo(
+    () => searchDocuments(scientificIndex, query),
+    [query, scientificIndex],
+  );
+  const mediumMatches = useMemo(
+    () => searchDocuments(mediumIndex, query),
+    [mediumIndex, query],
+  );
+  const orderedScientific = useMemo(
+    () =>
+      rankSearchResults({
+        lexical: scientificMatches,
+        semantic: semanticScores,
+        allowedIds: scientificIds,
+      }),
+    [scientificIds, scientificMatches, semanticScores],
+  );
+  const orderedMedium = useMemo(
+    () =>
+      rankSearchResults({
+        lexical: mediumMatches,
+        semantic: semanticScores,
+        allowedIds: mediumIds,
+      }),
+    [mediumIds, mediumMatches, semanticScores],
+  );
+
+  // Publications filtrées par année, puis classées par pertinence.
+  const scientific = useMemo(() => {
+    const base = allScientific.filter(
+      (publication) => activeYear === 'all' || publication.year === activeYear,
+    );
+    let result = base;
+
+    if (query.trim().length > 0) {
+      const order = new Map(orderedScientific.map((id, rank) => [id, rank]));
+
+      result = base
+        .map((publication) => ({
+          publication,
+          rank: order.get(`publications:${publication.id}`),
+        }))
+        .filter(
+          (entry): entry is { publication: Publication; rank: number } =>
+            entry.rank !== undefined,
+        )
+        .sort((left, right) => left.rank - right.rank)
+        .map((entry) => entry.publication);
+    }
+
+    return result;
+  }, [activeYear, allScientific, orderedScientific, query]);
+
+  // Articles Medium filtrés par année, puis classés par pertinence.
+  const medium = useMemo(() => {
+    const base = allMedium.filter(
+      (post) => activeYear === 'all' || mediumPostYear(post) === activeYear,
+    );
+    let result = base;
+
+    if (query.trim().length > 0) {
+      const order = new Map(orderedMedium.map((id, rank) => [id, rank]));
+
+      result = base
+        .map((post) => ({ post, rank: order.get(`publications:${post.id}`) }))
+        .filter(
+          (entry): entry is { post: MediumPost; rank: number } => entry.rank !== undefined,
+        )
+        .sort((left, right) => left.rank - right.rank)
+        .map((entry) => entry.post);
+    }
+
+    return result;
+  }, [activeYear, allMedium, orderedMedium, query]);
 
   // Le changement d'onglet remet l'année à zéro puisque les listes diffèrent.
   const setTab = useCallback((next: PublicationTab) => {

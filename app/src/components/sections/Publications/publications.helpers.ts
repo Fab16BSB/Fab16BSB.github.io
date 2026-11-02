@@ -4,7 +4,6 @@
 import type { Locale } from '@/types/common.types';
 import type { MediumPost } from '@/types/medium.types';
 import type { Publication, PublicationLink, PublicationVersion } from '@/types/publication.types';
-import { matchesQuery } from '@/lib/search';
 
 /* =========================================================================
   HELPERS : publications — fonctions pures
@@ -90,25 +89,6 @@ export function availableYears(items: Array<{ year: string }>): string[] {
 }
 
 /**
- * Vérifie qu'une publication correspond à la recherche.
- *
- * @param publication - Publication à tester.
- * @param query - Recherche saisie.
- * @returns `true` si l'année, les auteurs, le lieu ou les titres correspondent.
- */
-export function publicationMatches(publication: Publication, query: string): boolean {
-  const versions = publication.versions.flatMap((version) => [
-    version.title,
-    ...(version.subtitle ? Object.values(version.subtitle) : []),
-  ]);
-
-  return matchesQuery(
-    [publication.year, ...publication.authors, ...Object.values(publication.venue), ...versions],
-    query,
-  );
-}
-
-/**
  * Extrait l'année d'un article Medium.
  *
  * @param post - Article Medium.
@@ -116,17 +96,6 @@ export function publicationMatches(publication: Publication, query: string): boo
  */
 export function mediumPostYear(post: MediumPost): string {
   return post.publishedAt.slice(0, 4);
-}
-
-/**
- * Vérifie qu'un article Medium correspond à la recherche.
- *
- * @param post - Article à tester.
- * @param query - Recherche saisie.
- * @returns `true` si le titre, l'extrait, la date ou les tags correspondent.
- */
-export function mediumPostMatches(post: MediumPost, query: string): boolean {
-  return matchesQuery([post.title, post.excerpt, post.publishedAt, ...post.tags], query);
 }
 
 /**

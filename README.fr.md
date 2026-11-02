@@ -62,4 +62,16 @@ Je suis docteur en intelligence artificielle, spécialisé en RAG, computer visi
 - FR / EN / ES
 - GitHub Pages + GitHub Actions
 - Synchronisation RSS Medium / YouTube
+- Recherche plein texte (MiniSearch)
+- Recherche approfondie optionnelle (modèle local)
 - Aucun backend
+
+## 🔎 Recherche
+
+Les barres de recherche (projets, publications, vidéos, enseignement) sont
+instantanées, insensibles aux accents et tolérantes aux fautes de frappe. Elles
+fonctionnent en français, en anglais et en espagnol.
+
+Une **recherche approfondie** optionnelle peut aussi comprendre le sens des
+phrases. Elle reste désactivée par défaut, ne s'active qu'après confirmation sur
+un appareil compatible, et les requêtes ne quittent jamais le navigateur.

@@ -3,12 +3,16 @@
 ========================================================================= */
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { projects } from '@/data/projects.data';
+import { getSearchIndex, searchDocuments } from '@/lib/search-engine';
+import { projectSearchFields } from '@/lib/search-fields';
+import { rankSearchResults } from '@/lib/search-rank';
+import { useSemanticSearch } from '@/search/useSemanticSearch';
+import type { Locale } from '@/types/common.types';
 import type { Project, ProjectCategory } from '@/types/project.types';
 import {
   countProjects,
   filterProjects,
   getProjectYears,
-  projectMatches,
 } from './projects.helpers';
 
 /* =========================================================================
@@ -21,7 +25,7 @@ export type ProjectFilter = ProjectCategory | 'all';
 /** Nombre de projets affichés avant « voir plus ». */
 const INITIAL_VISIBLE = 6;
 
-export function useProjects() {
+export function useProjects(locale: Locale) {
   // Catégorie active.
   const [active, setActiveState] = useState<ProjectFilter>('all');
 
@@ -48,18 +52,57 @@ export function useProjects() {
   // Une année absente de la catégorie courante retombe sur « toutes ».
   const activeYear = years.includes(year) ? year : 'all';
 
-  // Projets filtrés, puis triés par année décroissante.
-  const filtered = useMemo(
+  // Index plein texte des projets, construit une fois par langue.
+  const index = useMemo(
     () =>
-      filterProjects(projects, active)
-        .filter(
-          (project) =>
-            (activeYear === 'all' || project.year === activeYear) &&
-            projectMatches(project, query),
-        )
-        .sort((a, b) => Number(b.year) - Number(a.year)),
-    [active, activeYear, query],
+      getSearchIndex(
+        `projects:${locale}`,
+        locale,
+        projects.map((project) => ({
+          id: `projects:${project.id}`,
+          ...projectSearchFields(project, locale),
+        })),
+      ),
+    [locale],
   );
+
+  // Scores sémantiques de la requête courante, si l'option est active.
+  const { semanticScores } = useSemanticSearch('projects', query);
+
+  // Identifiants des projets, pour limiter les candidats sémantiques.
+  const allowedIds = useMemo(
+    () => new Set(projects.map((project) => `projects:${project.id}`)),
+    [],
+  );
+
+  // Correspondances lexicales puis fusion avec les scores sémantiques.
+  const matches = useMemo(() => searchDocuments(index, query), [index, query]);
+  const orderedIds = useMemo(
+    () => rankSearchResults({ lexical: matches, semantic: semanticScores, allowedIds }),
+    [allowedIds, matches, semanticScores],
+  );
+
+  // Projets filtrés, puis classés par pertinence ou par année décroissante.
+  const filtered = useMemo(() => {
+    const base = filterProjects(projects, active).filter(
+      (project) => activeYear === 'all' || project.year === activeYear,
+    );
+    let result: Project[] = [];
+
+    if (query.trim().length === 0) {
+      result = [...base].sort((left, right) => Number(right.year) - Number(left.year));
+    } else {
+      const order = new Map(orderedIds.map((id, rank) => [id, rank]));
+
+      result = base
+        .map((project) => ({ project, rank: order.get(`projects:${project.id}`) }))
+        .filter((entry): entry is { project: Project; rank: number } => entry.rank !== undefined)
+        .sort((left, right) => left.rank - right.rank)
+        .map((entry) => entry.project);
+    }
+
+    return result;
+  }, [active, activeYear, orderedIds, query]);
 
   // Compteurs des onglets, calculés sur la liste complète.
   const counts = useMemo(

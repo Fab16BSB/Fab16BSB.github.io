@@ -2,7 +2,6 @@
   IMPORTS
 ========================================================================= */
 import type { Project, ProjectCategory } from '@/types/project.types';
-import { matchesQuery } from '@/lib/search';
 
 
 /* =========================================================================
@@ -53,25 +52,5 @@ export function countProjects(projects: Project[], category: ProjectCategory | '
 export function getProjectYears(projects: Project[]): string[] {
   return [...new Set(projects.map((project) => project.year))].sort(
     (a, b) => Number(b) - Number(a),
-  );
-}
-
-/**
- * Vérifie qu'un projet correspond à la recherche.
- *
- * @param project - Projet à tester.
- * @param query - Recherche saisie.
- * @returns `true` si un champ du projet contient les termes recherchés.
- */
-export function projectMatches(project: Project, query: string): boolean {
-  return matchesQuery(
-    [
-      project.year,
-      ...Object.values(project.title),
-      ...Object.values(project.description),
-      ...Object.values(project.details),
-      ...project.stack,
-    ],
-    query,
   );
 }

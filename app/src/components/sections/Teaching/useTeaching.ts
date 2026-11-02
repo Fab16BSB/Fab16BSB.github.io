@@ -4,7 +4,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { teaching } from '@/data/teaching.data';
 import { supervisions } from '@/data/supervisions.data';
-import type { TeachingLevel } from '@/types/teaching.types';
+import { getSearchIndex, searchDocuments } from '@/lib/search-engine';
+import { teachingCourseSearchFields } from '@/lib/search-fields';
+import { rankSearchResults } from '@/lib/search-rank';
+import { useSemanticSearch } from '@/search/useSemanticSearch';
+import type { Locale } from '@/types/common.types';
+import type { TeachingCourse, TeachingLevel } from '@/types/teaching.types';
 import { filterCourses, getLevels, getYears, totalHours } from './teaching.helpers';
 
 
@@ -17,7 +22,7 @@ export type TeachingTab = 'courses' | 'supervisions';
   HOOK : useTeaching
   Gère les filtres, les totaux et l'affichage progressif de l'enseignement.
 ========================================================================= */
-export function useTeaching() {
+export function useTeaching(locale: Locale) {
 
   // Onglet actif.
   const [tab, setTab] = useState<TeachingTab>('courses');
@@ -39,11 +44,56 @@ export function useTeaching() {
     setExpanded(false);
   }, [year, level, query, tab]);
 
-  // Cours filtrés.
-  const filtered = useMemo(
-    () => filterCourses(teaching, year, level, query),
-    [year, level, query],
+  // Index plein texte des cours, construit une fois par langue.
+  const index = useMemo(
+    () =>
+      getSearchIndex(
+        `teaching:${locale}`,
+        locale,
+        teaching.map((course) => ({
+          id: `teaching:${course.id}`,
+          ...teachingCourseSearchFields(course, locale),
+        })),
+      ),
+    [locale],
   );
+
+  // Scores sémantiques de la requête courante, si l'option est active.
+  const { semanticScores } = useSemanticSearch('teaching', query);
+
+  // Identifiants des cours, pour limiter les candidats sémantiques.
+  const allowedIds = useMemo(
+    () => new Set(teaching.map((course) => `teaching:${course.id}`)),
+    [],
+  );
+
+  // Correspondances lexicales puis fusion avec les scores sémantiques.
+  const matches = useMemo(() => searchDocuments(index, query), [index, query]);
+  const orderedIds = useMemo(
+    () => rankSearchResults({ lexical: matches, semantic: semanticScores, allowedIds }),
+    [allowedIds, matches, semanticScores],
+  );
+
+  // Cours filtrés par année et niveau, puis classés par pertinence.
+  const filtered = useMemo(() => {
+    const base = filterCourses(teaching, year, level);
+    let result = base;
+
+    if (query.trim().length > 0) {
+      const order = new Map(orderedIds.map((id, rank) => [id, rank]));
+
+      result = base
+        .map((course) => ({ course, rank: order.get(`teaching:${course.id}`) }))
+        .filter(
+          (entry): entry is { course: TeachingCourse; rank: number } =>
+            entry.rank !== undefined,
+        )
+        .sort((left, right) => left.rank - right.rank)
+        .map((entry) => entry.course);
+    }
+
+    return result;
+  }, [level, orderedIds, query, year]);
 
   // Années et niveaux disponibles.
   const years = useMemo(() => getYears(teaching), []);

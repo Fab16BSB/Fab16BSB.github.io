@@ -2,7 +2,6 @@
   IMPORTS
 ========================================================================= */
 import type { TeachingCourse, TeachingLevel } from '@/types/teaching.types';
-import { matchesQuery } from '@/lib/search';
 
 /* =========================================================================
   HELPERS : teaching — fonctions pures
@@ -21,25 +20,21 @@ export function courseMatchesYear(course: TeachingCourse, year: number | 'all'):
 }
 
 /**
- * Filtre les cours par année, niveau et recherche.
+ * Filtre les cours par année et niveau.
  *
  * @param courses - Liste complète des cours.
  * @param year - Année sélectionnée, ou `all`.
  * @param level - Niveau sélectionné, ou `all`.
- * @param query - Recherche saisie.
  * @returns Les cours correspondant aux filtres.
  */
 export function filterCourses(
   courses: TeachingCourse[],
   year: number | 'all',
   level: TeachingLevel | 'all',
-  query = '',
 ): TeachingCourse[] {
   return courses.filter(
     (course) =>
-      courseMatchesYear(course, year) &&
-      (level === 'all' || course.level === level) &&
-      matchesQuery(Object.values(course.theme), query),
+      courseMatchesYear(course, year) && (level === 'all' || course.level === level),
   );
 }
 

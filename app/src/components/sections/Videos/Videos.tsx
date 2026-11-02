@@ -8,6 +8,7 @@ import { EmptyState } from '@/components/ui/EmptyState/EmptyState';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { SearchInput } from '@/components/ui/SearchInput/SearchInput';
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading';
+import { SemanticHint } from '@/components/ui/SemanticSearch/SemanticHint';
 import { Select } from '@/components/ui/Select/Select';
 import { Tabs } from '@/components/ui/Tabs/Tabs';
 import { useVideos, type VideoFilter } from './useVideos';
@@ -32,7 +33,7 @@ export function Videos() {
     filtered,
     hasFilters,
     resetFilters,
-  } = useVideos();
+  } = useVideos(locale);
 
   const tabs = [
     { id: 'all', label: t('videos.filters.all'), count: counts.all },
@@ -150,13 +151,16 @@ export function Videos() {
           </div>
         ) : (
           // Aucun résultat ou aucune vidéo disponible.
-          <EmptyState
-            icon={hasFilters ? 'search' : 'youtube'}
-            title={hasFilters ? t('videos.noResults') : t('videos.empty')}
-            description={hasFilters ? t('videos.noResultsHint') : undefined}
-            actionLabel={hasFilters ? t('common.resetFilters') : undefined}
-            onAction={hasFilters ? resetFilters : undefined}
-          />
+          <>
+            <EmptyState
+              icon={hasFilters ? 'search' : 'youtube'}
+              title={hasFilters ? t('videos.noResults') : t('videos.empty')}
+              description={hasFilters ? t('videos.noResultsHint') : undefined}
+              actionLabel={hasFilters ? t('common.resetFilters') : undefined}
+              onAction={hasFilters ? resetFilters : undefined}
+            />
+            {query.trim().length > 0 && <SemanticHint />}
+          </>
         )}
 
         {/* Lien vers la chaîne YouTube. */}

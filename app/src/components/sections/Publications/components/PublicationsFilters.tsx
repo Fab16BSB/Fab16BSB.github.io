@@ -2,7 +2,7 @@
   IMPORTS
 ========================================================================= */
 import { useI18n } from '@/i18n/useI18n';
-import { Icon } from '@/components/ui/Icon/Icon';
+import { SearchInput } from '@/components/ui/SearchInput/SearchInput';
 import { Select } from '@/components/ui/Select/Select';
 import { Tabs } from '@/components/ui/Tabs/Tabs';
 import type { SelectOption, TabItem } from '@/types/ui.types';
@@ -52,27 +52,12 @@ export function PublicationsFilters({
 
       {/* Recherche et année. */}
       <div className={styles.filters}>
-        <div className={styles.search}>
-          <Icon name="search" size={16} />
-          <input
-            type="search"
-            value={query}
-            onChange={(event) => onQueryChange(event.target.value)}
-            placeholder={t('publications.searchPlaceholder')}
-            aria-label={t('publications.searchPlaceholder')}
-          />
-          {query && (
-            // Efface la recherche.
-            <button
-              type="button"
-              className={styles.clear}
-              onClick={() => onQueryChange('')}
-              aria-label={t('publications.clearSearch')}
-            >
-              <Icon name="close" size={14} />
-            </button>
-          )}
-        </div>
+        <SearchInput
+          value={query}
+          onChange={onQueryChange}
+          placeholder={t('publications.searchPlaceholder')}
+          clearLabel={t('publications.clearSearch')}
+        />
 
         <Select
           value={year}

@@ -62,4 +62,16 @@ I am a PhD in Artificial Intelligence, specializing in RAG, computer vision, mac
 - FR / EN / ES
 - GitHub Pages + GitHub Actions
 - RSS sync for Medium / YouTube
+- Full-text search (MiniSearch)
+- Optional deep search (local model)
 - No backend
+
+## 🔎 Search
+
+The search bars (projects, publications, videos, teaching) are instant,
+accent-insensitive and tolerant of typos. They work in French, English and
+Spanish.
+
+An optional **deep search** can also understand the meaning of sentences. It is
+off by default, only enabled after confirmation on a compatible device, and
+queries never leave the browser.

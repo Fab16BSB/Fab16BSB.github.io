@@ -1,6 +1,6 @@
 /* =========================================================================
-  HELPERS : recherche — fonctions pures
-  Normalisation et correspondance de texte.
+  HELPERS : texte de recherche — fonctions pures
+  Normalisation des accents et de la ponctuation.
 ========================================================================= */
 
 /**
@@ -13,26 +13,20 @@ export function normalize(value: string): string {
   return value
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/œ/g, 'oe')
+    .replace(/æ/g, 'ae');
 }
 
 /**
- * Vérifie qu'un texte contient tous les termes de la recherche.
+ * Normalise un texte pour l'indexation et la requête.
  *
- * @param parts - Fragments de texte à comparer.
- * @param query - Recherche saisie par l'utilisateur.
- * @returns `true` si tous les termes sont présents, ou si la recherche est vide.
+ * La ponctuation est remplacée par des espaces pour que le tokenizer du moteur
+ * sépare correctement « d'anomalies » ou « C++ ».
+ *
+ * @param value - Texte à normaliser.
+ * @returns Le texte en minuscules, sans accents ni ponctuation.
  */
-export function matchesQuery(parts: string[], query: string): boolean {
-
-  // Termes utiles de la recherche.
-  const terms = normalize(query).trim().split(/\s+/).filter(Boolean);
-  let result = true;
-
-  if (terms.length > 0) {
-    const haystack = normalize(parts.join(' ')); // Texte complet normalisé dans lequel chercher.
-    result = terms.every((term) => haystack.includes(term));
-  }
-
-  return result;
+export function normalizeSearchText(value: string): string {
+  return normalize(value).replace(/[^a-z0-9]+/g, ' ').trim();
 }

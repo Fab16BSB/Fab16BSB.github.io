@@ -3,7 +3,11 @@
 ========================================================================= */
 import { useMemo, useState } from 'react';
 import videosRaw from '@/data/youtube-videos.json';
-import { matchesQuery } from '@/lib/search';
+import { getSearchIndex, searchDocuments } from '@/lib/search-engine';
+import { videoSearchFields } from '@/lib/search-fields';
+import { rankSearchResults } from '@/lib/search-rank';
+import { useSemanticSearch } from '@/search/useSemanticSearch';
+import type { Locale } from '@/types/common.types';
 import type { YoutubeVideo } from '@/types/youtube.types';
 import { videoYear } from './videos.helpers';
 
@@ -22,7 +26,7 @@ const videos = videosRaw as YoutubeVideo[];
   HOOK : useVideos
   Gère les filtres, la recherche et les dérivations de la section Vidéos.
 ========================================================================= */
-export function useVideos() {
+export function useVideos(locale: Locale) {
 
   // Filtre de type actif.
   const [filter, setFilter] = useState<VideoFilter>('all');
@@ -39,15 +43,52 @@ export function useVideos() {
     [],
   );
 
-  // Vidéos correspondant à l'année et à la recherche.
-  const searched = useMemo(
+  // Index plein texte des vidéos, construit une fois par langue.
+  const index = useMemo(
     () =>
-      videos.filter(
-        (video) =>
-          (year === 'all' || videoYear(video) === year) && matchesQuery([video.title], query),
+      getSearchIndex(
+        `videos:${locale}`,
+        locale,
+        videos.map((video) => ({
+          id: `videos:${video.id}`,
+          ...videoSearchFields(video, locale),
+        })),
       ),
-    [query, year],
+    [locale],
   );
+
+  // Scores sémantiques de la requête courante, si l'option est active.
+  const { semanticScores } = useSemanticSearch('videos', query);
+
+  // Identifiants des vidéos, pour limiter les candidats sémantiques.
+  const allowedIds = useMemo(() => new Set(videos.map((video) => `videos:${video.id}`)), []);
+
+  // Correspondances lexicales puis fusion avec les scores sémantiques.
+  const matches = useMemo(() => searchDocuments(index, query), [index, query]);
+  const orderedIds = useMemo(
+    () => rankSearchResults({ lexical: matches, semantic: semanticScores, allowedIds }),
+    [allowedIds, matches, semanticScores],
+  );
+
+  // Vidéos correspondant à l'année, classées par pertinence.
+  const searched = useMemo(() => {
+    const base = videos.filter((video) => year === 'all' || videoYear(video) === year);
+    let result: YoutubeVideo[] = [];
+
+    if (query.trim().length === 0) {
+      result = base;
+    } else {
+      const order = new Map(orderedIds.map((id, rank) => [id, rank]));
+
+      result = base
+        .map((video) => ({ video, rank: order.get(`videos:${video.id}`) }))
+        .filter((entry): entry is { video: YoutubeVideo; rank: number } => entry.rank !== undefined)
+        .sort((left, right) => left.rank - right.rank)
+        .map((entry) => entry.video);
+    }
+
+    return result;
+  }, [orderedIds, query, year]);
 
   // Compteurs des onglets, calculés sur les résultats recherchés.
   const counts = useMemo(

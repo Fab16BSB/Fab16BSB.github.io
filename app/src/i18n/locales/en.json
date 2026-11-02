@@ -57,6 +57,28 @@
     "rights": "All rights reserved"
   },
 
+  "search": {
+    "deep": {
+      "label": "Deep search",
+      "enable": "Enable deep search",
+      "disable": "Disable deep search",
+      "disableShort": "Disable",
+      "cancelDownload": "Cancel",
+      "title": "Deep search",
+      "description": "Understands the meaning of sentences and paraphrases, in addition to keywords.",
+      "cost": "Downloads a model and its runtime (about 140 MB) once, then works offline. Queries never leave your browser.",
+      "confirm": "Enable",
+      "cancel": "Later",
+      "try": "Try deep search",
+      "hint": "No results with keywords?",
+      "loadingShort": "Downloading model: {progress}%",
+      "active": "Deep search is active.",
+      "retry": "Retry",
+      "error": "Deep search failed. Keyword search remains available.",
+      "unavailable": "Deep search is unavailable on this device (insufficient capabilities or connection)."
+    }
+  },
+
   "about": {
     "eyebrow": "01 — About",
     "location": "France",

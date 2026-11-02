@@ -52,6 +52,19 @@ jobs:
         working-directory: app
         run: npm run sync:youtube
 
+      - name: Cache embedding model
+        uses: actions/cache@v4
+        with:
+          path: app/.cache/transformers
+          key: transformers-${{ runner.os }}-multilingual-e5-small-q8-761b726
+
+      # Un échec conserve l'index commité : les nouveaux contenus restent
+      # trouvables par la recherche lexicale.
+      - name: Embed search index
+        working-directory: app
+        continue-on-error: true
+        run: npm run embed:search
+
       - name: Build
         working-directory: app
         run: npm run build

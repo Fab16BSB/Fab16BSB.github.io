@@ -65,6 +65,10 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  // Les workers utilisent des imports dynamiques (transformers.js).
+  worker: {
+    format: 'es',
+  },
   build: {
     outDir: 'dist',
     sourcemap: false,

@@ -54,3 +54,11 @@
   color: var(--text);
   background: var(--surface-2);
 }
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .wrapper {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}

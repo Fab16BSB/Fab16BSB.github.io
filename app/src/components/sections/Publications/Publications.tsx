@@ -6,6 +6,7 @@ import { useI18n } from '@/i18n/useI18n';
 import { EmptyState } from '@/components/ui/EmptyState/EmptyState';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading';
+import { SemanticHint } from '@/components/ui/SemanticSearch/SemanticHint';
 import { MediumPostCard } from './components/MediumPostCard';
 import { PublicationCard } from './components/PublicationCard';
 import { PublicationsFilters } from './components/PublicationsFilters';
@@ -89,13 +90,16 @@ export function Publications() {
               ))}
             </div>
           ) : (
-            <EmptyState
-              icon="search"
-              title={t('publications.noResults')}
-              description={t('publications.noResultsHint')}
-              actionLabel={t('common.resetFilters')}
-              onAction={resetFilters}
-            />
+            <>
+              <EmptyState
+                icon="search"
+                title={t('publications.noResults')}
+                description={t('publications.noResultsHint')}
+                actionLabel={t('common.resetFilters')}
+                onAction={resetFilters}
+              />
+              {query.trim().length > 0 && <SemanticHint />}
+            </>
           ))}
 
         {/* Articles Medium. */}
@@ -122,13 +126,16 @@ export function Publications() {
                 </a>
               </div>
             ) : (
-              <EmptyState
-                icon="search"
-                title={t('publications.noResults')}
-                description={t('publications.noResultsHint')}
-                actionLabel={t('common.resetFilters')}
-                onAction={resetFilters}
-              />
+              <>
+                <EmptyState
+                  icon="search"
+                  title={t('publications.noResults')}
+                  description={t('publications.noResultsHint')}
+                  actionLabel={t('common.resetFilters')}
+                  onAction={resetFilters}
+                />
+                {query.trim().length > 0 && <SemanticHint />}
+              </>
             )}
 
             {/* Lien vers tous les articles. */}

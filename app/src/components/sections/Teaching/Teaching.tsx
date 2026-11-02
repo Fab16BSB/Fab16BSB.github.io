@@ -5,6 +5,7 @@ import { useI18n } from '@/i18n/useI18n';
 import { EmptyState } from '@/components/ui/EmptyState/EmptyState';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading';
+import { SemanticHint } from '@/components/ui/SemanticSearch/SemanticHint';
 import { Tabs } from '@/components/ui/Tabs/Tabs';
 import { CourseCards } from './components/CourseCards';
 import { CourseFilters } from './components/CourseFilters';
@@ -19,7 +20,7 @@ import styles from './Teaching.module.css';
   Section enseignement.
 ========================================================================= */
 export function Teaching() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const {
     tab,
     setTab,
@@ -39,7 +40,7 @@ export function Teaching() {
     reset,
     supervisions,
     hasFilters,
-  } = useTeaching();
+  } = useTeaching(locale);
 
   const tabs = [
     { id: 'courses', label: t('teaching.tabs.courses'), count: filtered.length },
@@ -150,6 +151,7 @@ export function Teaching() {
                 onAction={hasFilters ? reset : undefined}
               />
             )}
+            {filtered.length === 0 && query.trim().length > 0 && <SemanticHint />}
           </>
         )}
 

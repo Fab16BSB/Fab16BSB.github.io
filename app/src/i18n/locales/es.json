@@ -57,6 +57,28 @@
     "rights": "Todos los derechos reservados"
   },
 
+  "search": {
+    "deep": {
+      "label": "Búsqueda avanzada",
+      "enable": "Activar la búsqueda avanzada",
+      "disable": "Desactivar la búsqueda avanzada",
+      "disableShort": "Desactivar",
+      "cancelDownload": "Cancelar",
+      "title": "Búsqueda avanzada",
+      "description": "Entiende el sentido de las frases y las paráfrasis, además de las palabras clave.",
+      "cost": "Descarga un modelo y su motor (unos 140 MB) una sola vez y luego funciona sin conexión. Las consultas no salen del navegador.",
+      "confirm": "Activar",
+      "cancel": "Más tarde",
+      "try": "Probar la búsqueda avanzada",
+      "hint": "¿Sin resultados con las palabras clave?",
+      "loadingShort": "Descargando el modelo: {progress} %",
+      "active": "Búsqueda avanzada activa.",
+      "retry": "Reintentar",
+      "error": "La búsqueda avanzada ha fallado. La búsqueda por palabras clave sigue disponible.",
+      "unavailable": "La búsqueda avanzada no está disponible en este dispositivo (capacidades o conexión insuficientes)."
+    }
+  },
+
   "about": {
     "eyebrow": "01 — Sobre mí",
     "location": "Francia",
