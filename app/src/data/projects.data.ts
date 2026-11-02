@@ -252,7 +252,7 @@ export const projects: Project[] = [
       en: 'Image classification experiments with Keras and TensorFlow.',
       es: 'Experimentos de clasificación de imágenes con Keras y TensorFlow.',
     },
-    stack: ['Python', 'Jupyter', 'Keras', 'TensorFlow'],
+    stack: ['Python', 'CNN', 'Keras', 'TensorFlow', 'Jupyter'],
     links: { github: 'https://github.com/Fab16BSB/image_classification' },
     image: '/images/projects/image-classification.webp',
     accent: 'rose',
