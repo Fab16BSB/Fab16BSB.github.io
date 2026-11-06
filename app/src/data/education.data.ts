@@ -14,6 +14,7 @@ import { links } from './links.data';
  * @property {Localized} [detail] - Précision optionnelle.
  * @property {string} [schoolUrl] - URL de l'établissement.
  * @property {EducationLink[]} [links] - Liens PDF, HAL, démo ou code (`label`, `url`, `icon`).
+ * @property {string[]} [tags] - Technologies et méthodes apprises.
  * @property {Accent} accent - Couleur d'accent.
  */
 export const education: Education[] = [
@@ -123,6 +124,7 @@ export const education: Education[] = [
       es: 'IUT de Montreuil, Paris 8',
     },
     schoolUrl: links.organizations.sit,
+    tags: ['JUnit'],
     accent: 'emerald',
   },
 ];

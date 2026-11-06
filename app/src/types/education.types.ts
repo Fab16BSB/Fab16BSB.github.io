@@ -1,5 +1,8 @@
 import type { Accent, Localized } from './common.types';
 
+/** Identifiants stables des formations du portfolio. */
+export type EducationId = 'phd' | 'master' | 'licence' | 'dut';
+
 /**
  * Lien complémentaire affiché sur une formation.
  *
@@ -24,10 +27,11 @@ export type EducationLink = {
  * @property {Localized} [detail] - Précision optionnelle.
  * @property {string} [schoolUrl] - URL de l'établissement.
  * @property {EducationLink[]} [links] - Liens complémentaires.
+ * @property {string[]} [tags] - Technologies et méthodes apprises.
  * @property {Accent} accent - Couleur d'accent.
  */
 export type Education = {
-  id: string;
+  id: EducationId;
   start: number;
   end: number;
   degree: Localized;
@@ -35,5 +39,6 @@ export type Education = {
   detail?: Localized;
   schoolUrl?: string;
   links?: EducationLink[];
+  tags?: string[];
   accent: Accent;
 };

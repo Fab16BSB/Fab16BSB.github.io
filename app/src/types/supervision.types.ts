@@ -19,6 +19,7 @@ export type SupervisionMode = 'onsite' | 'remote' | 'hybrid';
  * @property {number} students - Nombre d'étudiants encadrés.
  * @property {string} institution - Établissement ou entreprise.
  * @property {Localized} description - Description.
+ * @property {string[]} [tags] - Technologies et méthodes de l'encadrement.
  */
 export type Supervision = {
   id: string;
@@ -31,4 +32,5 @@ export type Supervision = {
   students: number;
   institution: string;
   description: Localized;
+  tags?: string[];
 };

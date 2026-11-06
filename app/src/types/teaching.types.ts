@@ -32,6 +32,7 @@ export type TeachingDistribution = {
  * @property {TeachingPlace} place - Présentiel ou en ligne.
  * @property {number} hours - Volume horaire total.
  * @property {TeachingDistribution[]} distribution - Répartition par activité.
+ * @property {string[]} [tags] - Technologies et méthodes enseignées.
  */
 export type TeachingCourse = {
   id: string;
@@ -43,4 +44,5 @@ export type TeachingCourse = {
   place: TeachingPlace;
   hours: number;
   distribution: TeachingDistribution[];
+  tags?: string[];
 };

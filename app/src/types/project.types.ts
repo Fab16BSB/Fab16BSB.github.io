@@ -1,4 +1,6 @@
 import type { Accent, Localized } from './common.types';
+import type { EducationId } from './education.types';
+import type { ExperienceId } from './experience.types';
 
 /** Catégorie d'un projet. */
 export type ProjectCategory = 'personal' | 'professional' | 'academic';
@@ -56,6 +58,8 @@ export type ProjectGalleryImage = {
  * @property {ProjectGalleryImage[]} [gallery] - Captures détaillées du projet.
  * @property {'active' | 'archived'} [status] - Statut du projet.
  * @property {ProjectStudyLevel} [studyLevel] - Niveau d'études associé.
+ * @property {EducationId[]} [educationIds] - Formations pendant lesquelles le projet a été réalisé.
+ * @property {ExperienceId[]} [experienceIds] - Expériences pendant lesquelles le projet a été réalisé.
  * @property {Accent} accent - Couleur d'accent.
  * @property {string} icon - Texte affiché si le visuel manque.
  */
@@ -74,6 +78,8 @@ export type Project = {
   gallery?: ProjectGalleryImage[];
   status?: 'active' | 'archived';
   studyLevel?: ProjectStudyLevel;
+  educationIds?: EducationId[];
+  experienceIds?: ExperienceId[];
   accent: Accent;
   icon: string;
 };

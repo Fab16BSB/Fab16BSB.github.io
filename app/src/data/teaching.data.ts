@@ -14,6 +14,7 @@ import type { TeachingCourse } from '@/types/teaching.types';
  * @property {TeachingPlace} place - Cours en présentiel ou en ligne.
  * @property {number} hours - Volume horaire total.
  * @property {TeachingDistribution[]} distribution - Répartition par type d'activité.
+ * @property {string[]} [tags] - Technologies et méthodes enseignées.
  *
  * `distribution` contient `type` (CM, TD, TP, SAE, CS) et `hours`.
  */
@@ -284,6 +285,7 @@ export const teaching: TeachingCourse[] = [
     place: 'onsite',
     hours: 7.5,
     distribution: [{ type: 'TP', hours: 7.5 }],
+    tags: ['UML', 'POO'],
   },
 
   /** ▸ 2023–2024 · BUT1 */
@@ -335,6 +337,7 @@ export const teaching: TeachingCourse[] = [
     place: 'online',
     hours: 135,
     distribution: [{ type: 'TD', hours: 135 }],
+    tags: ['UML', 'POO', 'Java'],
   },
 
   /** ▸ 2019–2020 · Licence 2 */

@@ -14,6 +14,7 @@ import { links } from './links.data';
  * @property {string} company - Nom de l'entreprise.
  * @property {string} [companyUrl] - URL de l'entreprise.
  * @property {string} [secondaryUrl] - URL secondaire, par exemple le laboratoire.
+ * @property {EducationId} [educationId] - Formation suivie pendant l'expérience.
  * @property {Localized} [description] - Description longue.
  * @property {Localized[]} [points] - Points clés.
  * @property {string[]} tags - Technologies et mots-clés.
@@ -40,7 +41,7 @@ export const experiences: Experience[] = [
       en: 'Designed a Retrieval-Augmented Generation (RAG) system specialised in real-estate contract analysis. Built a complete pipeline from OCR (text extraction from scanned documents) to hybrid search (semantic and keyword) via Elasticsearch. Orchestrated models through the Mistral AI and Gemini APIs. Developed a backend API and a dynamic React chat interface integrated into the client ecosystem.',
       es: 'Diseño de un sistema de Retrieval-Augmented Generation (RAG) especializado en el análisis de contratos inmobiliarios. Implementación de un pipeline completo desde el OCR (extracción de texto de documentos escaneados) hasta la búsqueda híbrida (semántica y textual) mediante Elasticsearch. Orquestación de modelos mediante las API de Mistral AI y Gemini. Desarrollo de una API backend y una interfaz de chat dinámica en React integrada en el ecosistema del cliente.',
     },
-    tags: ['RAG', 'Mistral AI', 'Gemini', 'Elasticsearch', 'OCR', 'React', 'API REST'],
+    tags: ['RAG', 'Mistral AI', 'Gemini', 'Elasticsearch', 'OCR', 'React', 'API REST', 'Pytest'],
     accent: 'cyan',
   },
 
@@ -87,6 +88,7 @@ export const experiences: Experience[] = [
     company: 'Othello',
     companyUrl: links.organizations.othello,
     secondaryUrl: links.organizations.lab,
+    educationId: 'phd',
     description: {
       fr: 'Développement d\'un système de détection d\'anomalies (incendies, bagarres, coups de feu) en temps réel dans des flux vidéo, conçu dans le cadre d\'un appel à projets pour les Jeux olympiques de Paris 2024. Le pipeline associe la détection d\'objets clés via YOLOv7 à une analyse comportementale par un modèle VGG19 + GRU. La solution atteint une précision supérieure à 85 % pour un temps d\'inférence de 0,8 à 1,5 seconde, et a été récompensée par le prix de la meilleure démonstration à la conférence EGC 2022.',
       en: 'Developed a real-time anomaly detection system (fires, fights, gunshots) for video streams, designed as part of a call for projects for the Paris 2024 Olympic Games. The pipeline combines key-object detection with YOLOv7 and behavioural analysis with a VGG19 + GRU model. The solution achieves over 85% accuracy with an inference time of 0.8–1.5 seconds and won the Best Demo Award at the EGC 2022 conference.',
@@ -109,12 +111,23 @@ export const experiences: Experience[] = [
     },
     company: 'Quatorze-IG',
     companyUrl: links.organizations.quatorze,
+    educationId: 'master',
     description: {
-      fr: 'Conception d\'un système d\'analyse automatique de factures en Python avec scikit-learn. Le pipeline couvre le feature engineering, l\'entraînement d\'un SVM et la classification supervisée.',
-      en: 'Designed an automated invoice analysis system in Python with scikit-learn. The pipeline covers feature engineering, SVM training and supervised classification.',
-      es: 'Diseño de un sistema de análisis automático de facturas en Python con scikit-learn. El pipeline incluye feature engineering, entrenamiento de un SVM y clasificación supervisada.',
+      fr: 'Détection automatique de factures conformes : extraction des documents, définition des critères, annotation manuelle du jeu de données, feature engineering, entraînement d\'un SVM avec scikit-learn et évaluation.',
+      en: 'Automatic detection of compliant invoices: document extraction, criteria definition, manual dataset annotation, feature engineering, SVM training with scikit-learn and evaluation.',
+      es: 'Detección automática de facturas conformes: extracción de documentos, definición de criterios, anotación manual del conjunto de datos, feature engineering, entrenamiento de un SVM con scikit-learn y evaluación.',
     },
-    tags: ['Python', 'scikit-learn', 'SVM', 'Machine Learning'],
+    tags: [
+      'Python',
+      'scikit-learn',
+      'SVM',
+      'Machine Learning',
+      'Analyse de factures',
+      'Extraction de documents',
+      'Feature engineering',
+      'Annotation',
+      'Classification de documents',
+    ],
     accent: 'amber',
     legacy: true,
   },
@@ -132,12 +145,23 @@ export const experiences: Experience[] = [
     },
     company: 'Directannonces',
     companyUrl: links.organizations.directannonces,
+    educationId: 'licence',
     description: {
-      fr: 'Développement d\'un outil de crawling web en Java avec HtmlUnit pour récupérer et classer des petites annonces immobilières et automobiles.',
-      en: 'Developed a Java web crawler with HtmlUnit to collect and classify real-estate and automotive ads.',
-      es: 'Desarrollo de una herramienta de crawling web en Java con HtmlUnit para recopilar y clasificar anuncios inmobiliarios y automovilísticos.',
+      fr: 'Développement d\'un outil de crawling et de scraping en Java avec HtmlUnit : configuration des sites et des dates de scraping, extraction des petites annonces immobilières et automobiles, puis insertion des données en base SQL.',
+      en: 'Built a Java crawling and scraping tool with HtmlUnit: configured sites and scraping dates, extracted real-estate and automotive ads, then inserted the data into a SQL database.',
+      es: 'Desarrollo de una herramienta de crawling y scraping en Java con HtmlUnit: configuración de los sitios y las fechas de scraping, extracción de anuncios inmobiliarios y automovilísticos, e inserción de los datos en una base SQL.',
     },
-    tags: ['Java', 'HtmlUnit', 'Web Scraping'],
+    tags: [
+      'Java',
+      'HtmlUnit',
+      'Crawling',
+      'Scraping',
+      'Extraction de données',
+      'SQL',
+      'Base de données',
+      'Annonces immobilières',
+      'Annonces automobiles',
+    ],
     accent: 'emerald',
     legacy: true,
   },
@@ -155,12 +179,13 @@ export const experiences: Experience[] = [
     },
     company: 'Soldout',
     companyUrl: links.organizations.soldout,
+    educationId: 'dut',
     description: {
       fr: 'Développement d\'une application iOS avec Appcelerator Titanium, publiée sur l\'App Store, pour consulter, réserver et acheter des places de spectacle.',
       en: 'Developed an iOS app with Appcelerator Titanium, published on the App Store, to browse, book and buy show tickets.',
       es: 'Desarrollo de una aplicación iOS con Appcelerator Titanium, publicada en la App Store para consultar, reservar y comprar entradas de espectáculos.',
     },
-    tags: ['iOS', 'Appcelerator Titanium', 'Mobile'],
+    tags: ['iOS', 'Appcelerator Titanium', 'Java', 'Mobile'],
     accent: 'slate',
     legacy: true,
   },
