@@ -120,6 +120,14 @@
     },
     "toolsTitle": "Outils & technologies",
     "count": "compétences",
+    "related": {
+      "title": "Réalisations liées",
+      "subtitle": "Projets, publications et contenus qui utilisent cette compétence.",
+      "empty": "Pas encore de réalisation liée",
+      "emptyHint": "Cette compétence n'est pas encore associée à un projet, une publication ou une vidéo du portfolio.",
+      "emptyAction": "Explorer les projets",
+      "open": "Voir les réalisations liées à {name}"
+    },
     "knowledge": {
       "title": "Connaissances & expertises",
       "domains": {
@@ -187,7 +195,16 @@
       "doctorate": "Doctorat"
     },
     "details": "Voir le projet",
-    "gallery": "Aperçu de l’application",
+    "gallery": "Aperçu de l'application",
+    "related": {
+      "title": "Voir aussi",
+      "subtitle": "Points communs avec ce projet.",
+      "theme": "Thème",
+      "tech": "Mot-clé",
+      "emptyTitle": "Pas de projet proche identifié",
+      "empty": "Aucun projet suffisamment proche pour le moment.",
+      "open": "Ouvrir {title}"
+    },
     "status": {
       "active": "En cours",
       "archived": "Terminé"
@@ -202,13 +219,34 @@
     "empty": "Aucun projet dans cette catégorie."
   },
 
+  "knowledge": {
+    "kinds": {
+      "project": "Projet",
+      "publication": "Publication",
+      "article": "Post",
+      "skill": "Compétence",
+      "teaching": "Enseignement",
+      "experience": "Expérience",
+      "education": "Formation",
+      "award": "Distinction",
+      "supervision": "Encadrement",
+      "video": "Vidéo"
+    },
+    "related": {
+      "title": "Contenus liés",
+      "subtitle": "Publications, posts, vidéos et autres contenus proches.",
+      "context": "Contexte",
+      "semantic": "Similarité sémantique"
+    }
+  },
+
   "publications": {
     "eyebrow": "05 — Publications",
-    "title": "Publications & articles",
+    "title": "Publications & posts",
     "description": "",
     "tabs": {
       "scientific": "Scientifique",
-      "medium": "Articles"
+      "medium": "Posts"
     },
     "published": "Publié",
     "preprint": "Prépublication",
@@ -238,8 +276,8 @@
     "cite": "Citer",
     "minutes": "min",
     "readOnMedium": "Lire sur Medium",
-    "allPosts": "Voir tous les articles",
-    "mediumEmpty": "Les articles Medium seront bientôt disponibles ici.",
+    "allPosts": "Voir tous les posts",
+    "mediumEmpty": "Les posts Medium seront bientôt disponibles ici.",
     "mediumEmptyCta": "Voir le profil Medium"
   },
 
@@ -367,6 +405,7 @@
     "lastUpdated": "Dernière mise à jour : {date}",
     "builtWith": "Conçu avec React, TypeScript et CSS Modules",
     "rights": "Tous droits réservés",
-    "backToTop": "Retour en haut"
+    "backToTop": "Retour en haut",
+    "knowledgeGraph": "Graphe de connaissances"
   }
 }
