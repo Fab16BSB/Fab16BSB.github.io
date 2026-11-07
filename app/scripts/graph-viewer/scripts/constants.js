@@ -90,6 +90,25 @@ const CANVAS_COLORS = {
   },
 };
 
+// Bornes du zoom manuel sur la scène.
+const ZOOM_MIN = 0.18;
+const ZOOM_MAX = 3;
+
+// Tolérance de clic ajoutée au rayon des nœuds, en pixels écran.
+const NODE_HIT_SLOP = 4;
+
+// Tolérance supplémentaire pour un appui tactile.
+const TOUCH_HIT_SLOP = 10;
+
+// Agrandissement visuel des nœuds sur les petits écrans.
+const COMPACT_NODE_SCALE = 1.3;
+
+// Part de la hauteur d'écran occupée par la feuille ouverte.
+const SHEET_OPEN_RATIO = 0.6;
+
+// Délai pendant lequel la feuille ignore le clic qui suit son ouverture.
+const SHEET_CLOSE_GUARD_MS = 350;
+
 // Rayon de dessin des nœuds par type, en pixels monde.
 const KIND_RADIUS = {
   project: 11,

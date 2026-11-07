@@ -345,6 +345,37 @@ canvas.dragging {
   -webkit-backdrop-filter: blur(12px);
 }
 
+/* Zoom tactile, affiché sur les petits écrans. */
+.zoom-controls {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 20;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.zoom-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--glass-strong);
+  color: var(--text);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.zoom-btn:hover,
+.zoom-btn:active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* Infobulle de survol d'un nœud. */
 .tooltip {
   position: absolute;

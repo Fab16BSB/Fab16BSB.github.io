@@ -170,7 +170,7 @@ function drawNodes(highlighted, palette) {
 function drawNode(entry, highlighted, palette) {
   const node = entry.node;
   const position = entry.position;
-  const radius = (KIND_RADIUS[node.kind] || 5) / Math.sqrt(view.scale);
+  const radius = nodeRadius(node.kind);
   const focused = node.id === selectedId || node.id === hoverId;
   const connected = highlighted.has(node.id);
   const matched = matchIds.has(node.id);
@@ -316,7 +316,7 @@ function truncateLabel(text) {
  * @returns {{ x1: number, y1: number, x2: number, y2: number }} Rectangle de l'étiquette.
  */
 function labelRect(position, kind, text, layout) {
-  const offset = (KIND_RADIUS[kind] || 4) / Math.sqrt(view.scale) + LABEL_PADDING / view.scale;
+  const offset = nodeRadius(kind) + LABEL_PADDING / view.scale;
   const width = ctx.measureText(text).width;
   const startsAt = position.x > layout.centerWorldX
     ? position.x - offset - width - layout.padding * 2

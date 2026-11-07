@@ -65,6 +65,7 @@ let langMenuOpen = false;
 // Sélection, feuille mobile et filtre local du thème.
 let selectedId = null;
 let sheetOpen = false;
+let sheetOpenedAt = 0;
 let memberKindFilter = new Set();
 let memberFilterKey = null;
 
@@ -82,6 +83,12 @@ let alpha = 1;
 // Transformation monde vers écran et état du glisser.
 const view = { scale: 1, x: 0, y: 0 };
 const drag = { mode: null, nodeId: null, startX: 0, startY: 0, moved: false };
+
+// Pointeurs actifs sur la scène, pour le panoramique et le pincement tactile.
+const pointers = new Map();
+
+// État du pincement tactile : distance de départ et point monde sous le milieu.
+const pinch = { active: false, distance: 0, scale: 1, worldX: 0, worldY: 0 };
 
 // --- DÉTECTION DE LA LANGUE -------------------------------------------------
 

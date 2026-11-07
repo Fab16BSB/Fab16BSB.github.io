@@ -43,6 +43,17 @@ function canvasPalette() {
 }
 
 /**
+ * Retourne le rayon monde d'un nœud, agrandi sur les petits écrans.
+ *
+ * @param {string} kind - Identifiant du type de nœud.
+ * @returns {number} Rayon en unités monde.
+ */
+function nodeRadius(kind) {
+  const boost = isCompactLayout() ? COMPACT_NODE_SCALE : 1;
+  return ((KIND_RADIUS[kind] || 5) * boost) / Math.sqrt(view.scale);
+}
+
+/**
  * Met à jour le libellé et l'icône du bouton de thème.
  *
  * @returns {void}

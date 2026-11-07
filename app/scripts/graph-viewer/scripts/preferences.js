@@ -7,6 +7,19 @@
 const SHEET_MEDIA_QUERY = '(max-width: 1020px)';
 const sheetMedia = window.matchMedia(SHEET_MEDIA_QUERY);
 
+// Point de rupture du mode compact (téléphones).
+const COMPACT_MEDIA_QUERY = '(max-width: 680px)';
+const compactMedia = window.matchMedia(COMPACT_MEDIA_QUERY);
+
+/**
+ * Indique si l'interface est en mode compact.
+ *
+ * @returns {boolean} `true` sur téléphone.
+ */
+function isCompactLayout() {
+  return compactMedia.matches;
+}
+
 // --- FILTRES ----------------------------------------------------------------
 
 /**
@@ -49,6 +62,7 @@ function updateSheetLabels() {
  */
 function setSheetOpen(next) {
   sheetOpen = next;
+  if (next) sheetOpenedAt = performance.now();
   panelRoot.dataset.open = next ? 'true' : 'false';
   panelBackdrop.hidden = !next;
   sheetToggle.setAttribute('aria-expanded', next ? 'true' : 'false');
@@ -191,7 +205,12 @@ function bindLanguageControls() {
 function bindSheetControls() {
   sheetToggle.addEventListener('click', () => setSheetOpen(!sheetOpen));
   sheetClose.addEventListener('click', () => setSheetOpen(false));
-  panelBackdrop.addEventListener('click', () => setSheetOpen(false));
+
+  // Ignore le clic synthétique qui suit l'ouverture par un appui sur un nœud.
+  panelBackdrop.addEventListener('click', () => {
+    if (performance.now() - sheetOpenedAt < SHEET_CLOSE_GUARD_MS) return;
+    setSheetOpen(false);
+  });
 
   // Branche l'écouteur de changement de disposition.
   if (typeof sheetMedia.addEventListener === 'function') {

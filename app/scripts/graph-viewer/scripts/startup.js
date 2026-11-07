@@ -35,6 +35,10 @@ document.getElementById('toggle-labels').addEventListener('click', (event) => {
   event.currentTarget.setAttribute('aria-pressed', showLabels ? 'true' : 'false');
 });
 
+// Zoom tactile : boutons visibles sur les petits écrans.
+document.getElementById('zoom-in').addEventListener('click', () => zoomBy(1.35));
+document.getElementById('zoom-out').addEventListener('click', () => zoomBy(1 / 1.35));
+
 // Recentre la vue sans réinitialiser les positions.
 document.getElementById('reset-view').addEventListener('click', () => {
   alpha = 0.02;
@@ -76,7 +80,7 @@ if (typeof ResizeObserver === 'function') {
 }
 
 // Premier rendu : libellés, dimensions, données et panneau.
-filtersCollapsed = false;
+filtersCollapsed = isCompactLayout();
 applyLabels();
 resize();
 rebuild();

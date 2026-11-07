@@ -75,8 +75,22 @@
     <!-- Scène du graphe : canvas et infobulle. -->
     <div class="stage" id="stage">
       <canvas id="graph"></canvas>
-      <div class="hint" data-i18n="hint">Molette : zoom · Glisser le fond : déplacer · Glisser un nœud : épingler · Double-clic : relâcher</div>
+      <div class="hint" data-i18n="hint">Pincer ou molette : zoom · Glisser le fond : déplacer · Glisser un nœud : épingler · Double-clic : relâcher</div>
       <div class="tooltip" id="tooltip"></div>
+
+      <!-- Zoom tactile, affiché sur les petits écrans. -->
+      <div class="zoom-controls">
+        <button type="button" id="zoom-in" class="zoom-btn" aria-label="Zoomer" data-i18n-aria="zoomIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </button>
+        <button type="button" id="zoom-out" class="zoom-btn" aria-label="Dézoomer" data-i18n-aria="zoomOut">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+            <path d="M5 12h14" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Fond assombri quand le panneau mobile est ouvert. -->

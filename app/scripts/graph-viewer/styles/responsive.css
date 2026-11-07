@@ -61,8 +61,8 @@
   }
 
   aside[data-open='true'] {
-    height: min(80vh, calc(100vh - 80px));
-    height: min(80dvh, calc(100dvh - 80px));
+    height: min(60vh, calc(100vh - 80px));
+    height: min(60dvh, calc(100dvh - 80px));
   }
 
   .sheet-head {
@@ -194,6 +194,10 @@
 
   .hint {
     display: none;
+  }
+
+  .zoom-controls {
+    display: flex;
   }
 }
 
