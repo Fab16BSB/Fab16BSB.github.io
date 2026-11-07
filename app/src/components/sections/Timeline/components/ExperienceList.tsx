@@ -1,6 +1,7 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
+import { education } from '@/data/education.data';
 import { experiences } from '@/data/experience.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
@@ -12,6 +13,7 @@ import styles from '../Timeline.module.css';
   CONSTANTES
 ========================================================================= */
 const sortedExperiences = sortExperiences(experiences);
+const educationById = new Map(education.map((item) => [item.id, item]));
 
 /* =========================================================================
   COMPOSANT : ExperienceList
@@ -27,6 +29,11 @@ export function ExperienceList() {
         // Même période affichée dans la colonne et sur la carte mobile.
         const date = formatRange(item.start, item.end, t('timeline.present'));
 
+        // Formation suivie pendant l'expérience, si elle est déclarée.
+        const linkedEducation = item.educationId
+          ? educationById.get(item.educationId)
+          : undefined;
+
         return (
           <TimelineItem
             key={item.id}
@@ -34,9 +41,23 @@ export function ExperienceList() {
             index={index}
             date={date}
             badge={
-              <span className={styles.type} data-type={item.type}>
-                {loc(experienceTypeLabels[item.type])}
-              </span>
+              <>
+                <span className={styles.type} data-type={item.type}>
+                  {loc(experienceTypeLabels[item.type])}
+                </span>
+
+                {linkedEducation && (
+                  <span className={styles.formation}>
+                    <Icon name="graduation" size={13} aria-hidden="true" />
+                    <span className={styles.formationLabel}>
+                      {t('timeline.tabs.education')}
+                    </span>
+                    <span className={styles.formationName}>
+                      {loc(linkedEducation.degree)}
+                    </span>
+                  </span>
+                )}
+              </>
             }
           >
             <h3 className={styles.title}>{loc(item.role)}</h3>

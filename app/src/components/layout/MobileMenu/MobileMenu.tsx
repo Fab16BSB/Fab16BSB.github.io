@@ -52,8 +52,18 @@ export function MobileMenu({ open, active, onClose }: MobileMenuProps) {
         </ul>
       </nav>
 
-      {/* Réseaux sociaux */}
+      {/* Réseaux sociaux et accès au graphe */}
       <div className={styles.footer}>
+        <a
+          className={styles.graphLink}
+          href="/graph/index.html"
+          onClick={onClose}
+          tabIndex={open ? 0 : -1}
+        >
+          <Icon name="graph" size={18} />
+          <span>{t('graph.label')}</span>
+          <Icon name="arrow-up-right" size={16} />
+        </a>
         <SocialLinks links={socials} />
       </div>
     </div>

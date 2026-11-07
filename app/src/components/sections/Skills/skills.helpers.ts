@@ -1,19 +1,7 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import type { KnowledgeDomainId, Skill, SkillCategory } from '@/types/skill.types';
-
-
-/* =========================================================================
-  TYPES & INTERFACES
-========================================================================= */
-
-/** Domaine de connaissance affiché dans la section. */
-export type KnowledgeDomain = {
-  id: KnowledgeDomainId;
-  titleKey: string;
-  items: string[];
-};
+import type { Skill, SkillCategory } from '@/types/skill.types';
 
 
 /* =========================================================================
@@ -28,42 +16,6 @@ export const skillCategories: SkillCategory[] = [
   'databases',
   'deployment',
   'tools',
-];
-
-/** Domaines affichés, avec leurs compétences associées. */
-export const knowledgeDomains: KnowledgeDomain[] = [
-  {
-    id: 'vision',
-    titleKey: 'skills.knowledge.domains.vision',
-    items: ['objectDetection', 'anomaly', 'ocr', 'cnn', 'yolo', 'vgg'],
-  },
-  {
-    id: 'nlp',
-    titleKey: 'skills.knowledge.domains.nlp',
-    items: ['nlp', 'llm', 'rag', 'transformers', 'embeddings', 'reranking'],
-  },
-  {
-    id: 'ml',
-    titleKey: 'skills.knowledge.domains.ml',
-    items: [
-      'regression',
-      'classification',
-      'clustering',
-      'timeseries',
-      'featureEngineering',
-      'dataAugmentation',
-      'interpretability',
-      'neuralNetwork',
-      'mlp',
-      'rnn',
-      'decisionTree',
-      'randomForest',
-      'xgboost',
-      'svm',
-      'knn',
-      'som',
-    ],
-  },
 ];
 
 

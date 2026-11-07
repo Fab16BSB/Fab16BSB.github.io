@@ -5,10 +5,13 @@ import type { CSSProperties } from 'react';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { KnowledgeIcon } from '@/components/ui/KnowledgeIcon/KnowledgeIcon';
+import { ProjectModal } from '@/components/ui/ProjectModal/ProjectModal';
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading';
 import { Select } from '@/components/ui/Select/Select';
 import { Tabs } from '@/components/ui/Tabs/Tabs';
-import { knowledgeDomains, skillCategories } from './skills.helpers';
+import { SkillModal } from './components/SkillModal';
+import { knowledgeDomains } from '@/data/knowledge-domains.data';
+import { skillCategories } from './skills.helpers';
 import { useSkills } from './useSkills';
 import styles from './Skills.module.css';
 
@@ -18,7 +21,23 @@ import styles from './Skills.module.css';
 ========================================================================= */
 export function Skills() {
   const { t } = useI18n();
-  const { active, setActive, filtered, visible, counts, expanded, setExpanded, hasMore } = useSkills();
+  const {
+    active,
+    setActive,
+    filtered,
+    visible,
+    counts,
+    expanded,
+    setExpanded,
+    hasMore,
+    selectedSkill,
+    selectedProject,
+    openSkill,
+    closeSkill,
+    openProject,
+    openProjectById,
+    closeProject,
+  } = useSkills();
 
   const tabs = [
     { id: 'all', label: t('common.all'), count: counts.all },
@@ -56,7 +75,7 @@ export function Skills() {
                 <h3>{t(domain.titleKey)}</h3>
                 <ul className={styles.knowledgeTags}>
                   {domain.items.map((item) => (
-                    <li key={item}>{t(`skills.knowledge.items.${item}`)}</li>
+                    <li key={item.id}>{t(`skills.knowledge.items.${item.labelKey}`)}</li>
                   ))}
                 </ul>
               </article>
@@ -102,14 +121,17 @@ export function Skills() {
           {/* Grille des compétences filtrées. */}
           <div className={styles.grid} key={active}>
             {visible.map((skill, index) => (
-              <article
+              <button
+                type="button"
                 className={styles.card}
                 key={skill.id}
                 style={{ '--reveal-delay': `${Math.min(index, 12) * 28}ms` } as CSSProperties}
+                onClick={() => openSkill(skill)}
+                aria-label={t('skills.related.open', { name: skill.name })}
                 data-reveal
               >
                 {/* Icône ou monogramme de la compétence. */}
-                <div className={styles.iconTile} aria-hidden="true">
+                <span className={styles.iconTile} aria-hidden="true">
                   {skill.icon ? (
                     <img
                       src={`/images/skills/${skill.icon}`}
@@ -121,9 +143,10 @@ export function Skills() {
                   ) : (
                     <span className={styles.monogram}>{skill.monogram ?? skill.name.slice(0, 2)}</span>
                   )}
-                </div>
-                <h3 className={styles.name}>{skill.name}</h3>
-              </article>
+                </span>
+                <span className={styles.name}>{skill.name}</span>
+                <Icon name="chevron-right" size={16} className={styles.chevron} />
+              </button>
             ))}
           </div>
 
@@ -142,6 +165,24 @@ export function Skills() {
           )}
         </div>
       </div>
+
+      {/* Détail d'une compétence et projets associés. */}
+      {selectedSkill && (
+        <SkillModal
+          skill={selectedSkill}
+          onClose={closeSkill}
+          onOpenProject={openProjectById}
+        />
+      )}
+
+      {selectedProject && (
+        <ProjectModal
+          key={selectedProject.id}
+          project={selectedProject}
+          onClose={closeProject}
+          onOpenProject={openProject}
+        />
+      )}
     </section>
   );
 }

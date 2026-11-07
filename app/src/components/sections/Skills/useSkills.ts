@@ -1,9 +1,11 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { projects } from '@/data/projects.data';
 import { skills } from '@/data/skills.data';
-import type { SkillCategory } from '@/types/skill.types';
+import type { Project } from '@/types/project.types';
+import type { Skill, SkillCategory } from '@/types/skill.types';
 import { countSkills, filterSkills, skillCategories } from './skills.helpers';
 
 
@@ -30,6 +32,12 @@ export function useSkills() {
   // Indique si la liste complète est affichée.
   const [expanded, setExpanded] = useState(false);
 
+  // Compétence dont le détail est ouvert.
+  const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
+
+  // Projet ouvert depuis la modale d'une compétence.
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   // Chaque catégorie repart d'une liste repliée.
   useEffect(() => {
     setExpanded(false);
@@ -54,5 +62,45 @@ export function useSkills() {
     active === 'all' && !expanded ? filtered.slice(0, INITIAL_VISIBLE) : filtered;
   const hasMore = active === 'all' && filtered.length > INITIAL_VISIBLE;
 
-  return { active, setActive, filtered, visible, counts, expanded, setExpanded, hasMore };
+  // Ouvre le détail d'une compétence.
+  const openSkill = useCallback((skill: Skill) => setSelectedSkill(skill), []);
+
+  // Ferme le détail de la compétence.
+  const closeSkill = useCallback(() => setSelectedSkill(null), []);
+
+  // Ouvre un projet précis et referme la modale de compétence.
+  const openProject = useCallback((project: Project) => {
+    setSelectedSkill(null);
+    setSelectedProject(project);
+  }, []);
+
+  // Ouvre un projet à partir de son identifiant.
+  const openProjectById = useCallback(
+    (projectId: string) => {
+      const project = projects.find((item) => item.id === projectId);
+      if (project) openProject(project);
+    },
+    [openProject],
+  );
+
+  // Ferme la modale de projet.
+  const closeProject = useCallback(() => setSelectedProject(null), []);
+
+  return {
+    active,
+    setActive,
+    filtered,
+    visible,
+    counts,
+    expanded,
+    setExpanded,
+    hasMore,
+    selectedSkill,
+    selectedProject,
+    openSkill,
+    closeSkill,
+    openProject,
+    openProjectById,
+    closeProject,
+  };
 }

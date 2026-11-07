@@ -140,4 +140,14 @@ export const strokePaths: Partial<Record<IconName, ReactNode>> = {
       <path d="m3 12 9 5 9-5M3 16l9 5 9-5" />
     </>
   ),
+  graph: (
+    <>
+      <circle cx="12" cy="12" r="2.4" />
+      <circle cx="5" cy="5.5" r="2" />
+      <circle cx="19" cy="5.5" r="2" />
+      <circle cx="5.5" cy="19" r="2" />
+      <circle cx="18.5" cy="19" r="2" />
+      <path d="m10.4 10.4-3.8-3.3M13.6 10.4l3.8-3.3M10.4 13.6l-3.4 3.9M13.6 13.6l3.4 3.9" />
+    </>
+  ),
 };

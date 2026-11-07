@@ -53,6 +53,14 @@ export function Header() {
           <div className={styles.actions}>
             <LanguageSwitcher />
             <ThemeToggle />
+            <a
+              className={styles.graphButton}
+              href="/graph/index.html"
+              aria-label={t('graph.open')}
+              title={t('graph.open')}
+            >
+              <Icon name="graph" size={19} />
+            </a>
             <button
               type="button"
               className={styles.menuButton}

@@ -5,8 +5,12 @@ import { useId } from 'react';
 import { createPortal } from 'react-dom';
 import { useI18n } from '@/i18n/useI18n';
 import type { Project, ProjectLinkKey } from '@/types/project.types';
+import type { KnowledgeContentKind } from '@/types/knowledge.types';
 import { Icon } from '@/components/ui/Icon/Icon';
+import { RelatedContent } from '@/components/ui/RelatedContent/RelatedContent';
+import { KNOWLEDGE_RANKING } from '@/lib/knowledge.config';
 import type { IconName } from '@/types/ui.types';
+import { RelatedProjects } from './components/RelatedProjects/RelatedProjects';
 import { useProjectModal } from './useProjectModal';
 import styles from './ProjectModal.module.css';
 
@@ -23,19 +27,23 @@ const linkIcons: Record<ProjectLinkKey, IconName> = {
 
 const linkOrder: ProjectLinkKey[] = ['github', 'demo', 'video', 'site', 'pdf'];
 
+/** Les projets sont déjà listés par RelatedProjects. */
+const PROJECT_RELATED_EXCLUDED: KnowledgeContentKind[] = ['project'];
+
 /* =========================================================================
   TYPES & INTERFACES
 ========================================================================= */
 type ProjectModalProps = {
   project: Project;
   onClose: () => void;
+  onOpenProject: (project: Project) => void;
 };
 
 /* =========================================================================
   COMPOSANT : ProjectModal
   Modale de détail d'un projet.
 ========================================================================= */
-export function ProjectModal({ project, onClose }: ProjectModalProps) {
+export function ProjectModal({ project, onClose, onOpenProject }: ProjectModalProps) {
   const { t, loc } = useI18n();
   const titleId = useId();
   const { dialogRef, scrollRef, thumbRef } = useProjectModal(onClose);
@@ -127,28 +135,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               ))}
             </div>
 
-            {/* Captures détaillées du projet. */}
-            {project.gallery && project.gallery.length > 0 && (
-              <div className={styles.galleryBlock}>
-                <h4 className={styles.galleryTitle}>{t('projects.gallery')}</h4>
-                <div className={styles.gallery}>
-                  {project.gallery.map((item) => (
-                    <figure className={styles.figure} key={item.src}>
-                      <a
-                        className={styles.figureLink}
-                        href={item.src}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img src={item.src} alt={loc(item.caption)} loading="lazy" />
-                      </a>
-                      <figcaption>{loc(item.caption)}</figcaption>
-                    </figure>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {hasLinks && (
               // Liens externes du projet.
               <div className={styles.links}>
@@ -178,6 +164,44 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 ))}
               </div>
             )}
+
+            {/* Captures détaillées du projet. */}
+            {project.gallery && project.gallery.length > 0 && (
+              <div className={styles.galleryBlock}>
+                <h4 className={styles.galleryTitle}>{t('projects.gallery')}</h4>
+                <div className={styles.gallery}>
+                  {project.gallery.map((item) => (
+                    <figure className={styles.figure} key={item.src}>
+                      <a
+                        className={styles.figureLink}
+                        href={item.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img src={item.src} alt={loc(item.caption)} loading="lazy" />
+                      </a>
+                      <figcaption>{loc(item.caption)}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Projets proches issus du graphe de connaissances. */}
+            <RelatedProjects projectId={project.id} onOpenProject={onOpenProject} />
+
+            {/* Autres contenus proches, toutes natures confondues. */}
+            <RelatedContent
+              nodeId={`project:${project.id}`}
+              excludeKinds={PROJECT_RELATED_EXCLUDED}
+              limit={6}
+              minScore={KNOWLEDGE_RANKING.projectContentMinScore}
+              onNavigate={(href) => {
+                onClose();
+                window.location.hash = href;
+              }}
+            />
+
           </div>
         </div>
 

@@ -146,7 +146,14 @@ export function Projects() {
       </div>
 
       {/* Modale de détail du projet sélectionné. */}
-      {selected && <ProjectModal project={selected} onClose={closeProject} />}
+      {selected && (
+        <ProjectModal
+          key={selected.id}
+          project={selected}
+          onClose={closeProject}
+          onOpenProject={openProject}
+        />
+      )}
     </section>
   );
 }

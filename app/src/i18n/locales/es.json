@@ -10,6 +10,11 @@
     "awards": "Palmarés"
   },
 
+  "graph": {
+    "label": "Grafo de conocimientos",
+    "open": "Abrir el grafo de conocimientos"
+  },
+
   "accessibility": {
     "skipToContent": "Ir al contenido",
     "openMenu": "Abrir el menú",
@@ -405,7 +410,6 @@
     "lastUpdated": "Última actualización: {date}",
     "builtWith": "Creado con React, TypeScript y CSS Modules",
     "rights": "Todos los derechos reservados",
-    "backToTop": "Volver arriba",
-    "knowledgeGraph": "Grafo de conocimientos"
+    "backToTop": "Volver arriba"
   }
 }

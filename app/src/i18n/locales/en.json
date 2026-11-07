@@ -10,6 +10,11 @@
     "awards": "Awards"
   },
 
+  "graph": {
+    "label": "Knowledge graph",
+    "open": "Open the knowledge graph"
+  },
+
   "accessibility": {
     "skipToContent": "Skip to content",
     "openMenu": "Open menu",
@@ -405,7 +410,6 @@
     "lastUpdated": "Last updated: {date}",
     "builtWith": "Built with React, TypeScript and CSS Modules",
     "rights": "All rights reserved",
-    "backToTop": "Back to top",
-    "knowledgeGraph": "Knowledge graph"
+    "backToTop": "Back to top"
   }
 }

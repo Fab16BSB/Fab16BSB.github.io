@@ -33,6 +33,7 @@ export type IconName =
   | 'quote'
   | 'play'
   | 'layers'
+  | 'graph'
   | 'github'
   | 'linkedin'
   | 'medium'

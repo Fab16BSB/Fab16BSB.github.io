@@ -87,6 +87,28 @@
   padding-top: 1rem;
 }
 
+/* Accès au graphe de connaissances */
+.graphLink {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.graphLink:hover {
+  color: var(--text);
+}
+
+.graphLink svg:last-child {
+  margin-left: auto;
+  color: var(--text-faint);
+}
+
 /* ─────────────────────────────────────────────────────────────────────────
    Responsive
    ───────────────────────────────────────────────────────────────────────── */
