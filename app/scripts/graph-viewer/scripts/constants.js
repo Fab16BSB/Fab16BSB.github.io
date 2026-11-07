@@ -100,6 +100,10 @@ const NODE_HIT_SLOP = 4;
 // Tolérance supplémentaire pour un appui tactile.
 const TOUCH_HIT_SLOP = 10;
 
+// Déplacement maximal toléré pour considérer un appui comme un clic.
+const TAP_SLOP_TOUCH = 12;
+const TAP_SLOP_MOUSE = 4;
+
 // Agrandissement visuel des nœuds sur les petits écrans.
 const COMPACT_NODE_SCALE = 1.3;
 

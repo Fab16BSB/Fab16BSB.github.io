@@ -232,7 +232,7 @@ below, and the search stays visible when filters are collapsed. It carries
 
 - Filter by content kind, search a title, toggle technical concepts and labels.
 - In a theme panel, see the linked skills/technologies and filter its attached contents by content kind.
-- Click a node to see its themes, technologies and “see also” recommendations.
+- Tap or click a node to see its themes, technologies and "see also" recommendations.
 - Drag a node to pin it, double-click to release it; wheel or pinch to zoom. On
   phones, the `+` / `−` buttons zoom, filters start collapsed, and the detail
   sheet leaves the focused node visible above it.

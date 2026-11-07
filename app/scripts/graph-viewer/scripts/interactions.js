@@ -125,12 +125,6 @@ function startPinch() {
   const metrics = pinchMetrics();
   const world = screenToWorld({ x: metrics.midX, y: metrics.midY });
 
-  // Un premier doigt posé sur un nœud ne doit pas l'épingler par accident.
-  if (drag.mode === 'node' && drag.nodeId && !drag.moved) {
-    const position = positions.get(drag.nodeId);
-    if (position) position.pinned = false;
-  }
-
   pinch.active = true;
   pinch.distance = Math.max(metrics.distance, 1);
   pinch.scale = view.scale;
@@ -183,11 +177,13 @@ canvas.addEventListener('pointerdown', (event) => {
   followId = null;
   drag.moved = false;
 
-  // Un nœud saisi est épinglé immédiatement.
+  // Un appui sur un nœud devient un glissement seulement au-delà du seuil.
   if (entry) {
     drag.mode = 'node';
     drag.nodeId = entry.node.id;
-    entry.position.pinned = true;
+    drag.startX = point.x;
+    drag.startY = point.y;
+    drag.slop = event.pointerType === 'touch' ? TAP_SLOP_TOUCH : TAP_SLOP_MOUSE;
   } else {
     // Sinon, mémorise l'origine du déplacement de la vue.
     drag.mode = 'pan';
@@ -209,8 +205,16 @@ canvas.addEventListener('pointermove', (event) => {
   }
 
   if (drag.mode === 'node') {
+    // Sous le seuil, l'appui reste un clic : ni épinglage ni déplacement.
+    if (!drag.moved) {
+      const distance = Math.hypot(point.x - drag.startX, point.y - drag.startY);
+      if (distance < drag.slop) return;
+      drag.moved = true;
+      const dragged = positions.get(drag.nodeId);
+      if (dragged) dragged.pinned = true;
+    }
+
     // Le nœud suit le pointeur et relance légèrement la simulation.
-    drag.moved = true;
     const world = screenToWorld(point);
     const position = positions.get(drag.nodeId);
     position.x = world.x;

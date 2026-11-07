@@ -82,7 +82,7 @@ let alpha = 1;
 
 // Transformation monde vers écran et état du glisser.
 const view = { scale: 1, x: 0, y: 0 };
-const drag = { mode: null, nodeId: null, startX: 0, startY: 0, moved: false };
+const drag = { mode: null, nodeId: null, startX: 0, startY: 0, slop: 0, moved: false };
 
 // Pointeurs actifs sur la scène, pour le panoramique et le pincement tactile.
 const pointers = new Map();
