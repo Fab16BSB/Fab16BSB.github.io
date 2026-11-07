@@ -14,6 +14,7 @@ import {
   detectLocale,
   getByPath,
   interpolate,
+  isLocale,
   localized,
 } from './i18n.helpers';
 
@@ -58,6 +59,38 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       description.setAttribute('content', localizedSiteMeta[locale].description);
     }
   }, [locale]);
+
+  // Synchronise la langue (cache ou modification externe)
+  useEffect(() => {
+    const syncLocale = () => {
+      const stored = window.localStorage.getItem(LANGUAGE_KEY);
+      if (isLocale(stored)) {
+        setLocaleState((current) => (current === stored ? current : stored));
+      }
+    };
+
+    const onPageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) syncLocale();
+    };
+
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === LANGUAGE_KEY) syncLocale();
+    };
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'visible') syncLocale();
+    };
+
+    window.addEventListener('pageshow', onPageShow);
+    window.addEventListener('storage', onStorage);
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    return () => {
+      window.removeEventListener('pageshow', onPageShow);
+      window.removeEventListener('storage', onStorage);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+    };
+  }, []);
 
   // Traduit une clé dans une langue donnée, avec repli sur le français.
   const tFor = useCallback((target: Locale, key: string, vars?: Record<string, string | number>) => {

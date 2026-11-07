@@ -48,6 +48,38 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     window.localStorage.setItem(THEME_KEY, theme);
   }, [theme]);
 
+  // Synchronise le thème (cache ou modification externe)
+  useEffect(() => {
+    const syncTheme = () => {
+      const stored = window.localStorage.getItem(THEME_KEY);
+      if (stored === 'light' || stored === 'dark') {
+        setThemeState((current) => (current === stored ? current : stored));
+      }
+    };
+
+    const onPageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) syncTheme();
+    };
+
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === THEME_KEY) syncTheme();
+    };
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'visible') syncTheme();
+    };
+
+    window.addEventListener('pageshow', onPageShow);
+    window.addEventListener('storage', onStorage);
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    return () => {
+      window.removeEventListener('pageshow', onPageShow);
+      window.removeEventListener('storage', onStorage);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+    };
+  }, []);
+
   // Valeur exposée aux consommateurs du contexte.
   const value = useMemo<ThemeContextValue>(
     () => ({ theme, setTheme, toggleTheme }),
