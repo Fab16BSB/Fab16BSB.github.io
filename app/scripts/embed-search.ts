@@ -41,14 +41,29 @@ import type { YoutubeVideo } from '../src/types/youtube.types';
 /* =========================================================================
   CONFIGURATION
 ========================================================================= */
+
+/** Répertoire du script, pour résoudre les chemins. */
 const scriptDir = dirname(fileURLToPath(import.meta.url));
+
+/** Répertoire des index de recherche générés. */
 const outputDir = resolve(scriptDir, '../src/data/search');
+
+/** Cache local du modèle d'embedding. */
 const cacheDir = resolve(scriptDir, '../.cache/transformers');
+
+/** Langues indexées. */
 const locales: Locale[] = ['fr', 'en', 'es'];
+
+/** Nombre de textes encodés par lot. */
 const batchSize = 8;
+
+/** Articles Medium normalisés depuis le JSON brut. */
 const mediumPosts = mediumPostsRaw as unknown as MediumPost[];
+
+/** Vidéos YouTube normalisées depuis le JSON brut. */
 const videos = videosRaw as unknown as YoutubeVideo[];
 
+// Force le cache local et interdit les modèles distants non versionnés.
 env.cacheDir = cacheDir;
 env.allowLocalModels = false;
 env.allowRemoteModels = true;
@@ -56,6 +71,8 @@ env.allowRemoteModels = true;
 /* =========================================================================
   TYPES
 ========================================================================= */
+
+/** Document indexé pour une section et une langue. */
 type SearchDocument = {
   id: string;
   section: SearchSection;
@@ -334,6 +351,10 @@ async function buildLocale(
 /* =========================================================================
   EXÉCUTION
 ========================================================================= */
+
+/**
+ * Point d'entrée du script : reconstruit les index de recherche.
+ */
 async function main(): Promise<void> {
   const force = process.argv.includes('--force');
   let lastProgress = -10;
