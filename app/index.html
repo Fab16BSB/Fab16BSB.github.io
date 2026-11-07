@@ -60,8 +60,13 @@
     <!--  INITIALISATION DU THÈME (avant React)                       -->
     <!-- ============================================================ -->
     <script src="/theme-init.js"></script>
+
+    <!-- Écran de chargement statique, affiché avant le montage React. -->
+    <link rel="stylesheet" href="/src/boot-splash/boot-splash.css" />
   </head>
   <body>
+    <!--__BOOT_SPLASH__-->
+
     <!-- Point de montage React -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

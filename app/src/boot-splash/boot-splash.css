@@ -1,0 +1,219 @@
+/* =========================================================================
+  ÉCRAN DE CHARGEMENT
+  Affiché avant le montage React, retiré par boot-splash.ts.
+  Les particules se rassemblent pour former le nom, puis le texte net prend le relais.
+========================================================================= */
+
+/* =========================================================================
+  POLICES
+  Chargée ici pour que le nom s'affiche correctement avant le CSS de l'app.
+========================================================================= */
+
+@font-face {
+  font-family: 'Space Grotesk Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url('/fonts/space-grotesk-latin.woff2') format('woff2-variations');
+}
+
+/* =========================================================================
+  JETONS
+  Valeurs locales au splash : le CSS de l'app n'est pas encore chargé.
+========================================================================= */
+
+#boot-splash {
+  /* Fond et halos. */
+  --boot-bg: #070b14;
+  --boot-glow: rgba(109, 94, 252, 0.22);
+  --boot-glow-alt: rgba(34, 211, 238, 0.1);
+
+  /* Textes. */
+  --boot-name: #f4f6ff;
+  --boot-muted: rgba(226, 232, 255, 0.66);
+
+  /* Couleurs du flux de particules. */
+  --boot-start: #8b7cff;
+  --boot-end: #22d3ee;
+}
+
+[data-theme='light'] #boot-splash {
+  --boot-bg: #e7dfd1;
+  --boot-glow: rgba(109, 94, 252, 0.12);
+  --boot-glow-alt: rgba(14, 116, 144, 0.07);
+  --boot-name: #191a2c;
+  --boot-muted: rgba(40, 40, 65, 0.68);
+  --boot-start: #1d4ed8;
+  --boot-end: #0e7490;
+}
+
+/* =========================================================================
+  ÉCRAN
+  Plein écran opaque, avec deux halos discrets derrière la composition.
+========================================================================= */
+
+#boot-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(58% 52% at 50% 52%, var(--boot-glow), transparent 72%),
+    radial-gradient(38% 34% at 18% 24%, var(--boot-glow-alt), transparent 76%),
+    var(--boot-bg);
+  transition: opacity 240ms ease;
+}
+
+/* Classe posée par boot-splash.ts juste avant la suppression du nœud. */
+#boot-splash.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =========================================================================
+  FLUX
+  Canvas plein écran : les particules se rassemblent sur les lettres.
+========================================================================= */
+
+.boot-flow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 400ms ease;
+}
+
+/* Le flux s'efface quand le texte net prend le relais. */
+#boot-splash.is-text-visible .boot-flow {
+  opacity: 0;
+}
+
+#boot-splash.is-fallback .boot-flow {
+  display: none;
+}
+
+/* =========================================================================
+  COMPOSITION
+  Nom et titre empilés au centre, au-dessus du canvas.
+========================================================================= */
+
+.boot-stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  width: min(1040px, 92vw);
+  text-align: center;
+}
+
+/* =========================================================================
+  NOM
+  Grand wordmark : cible du rassemblement, puis texte net.
+  Pas de letter-spacing : le canvas doit reproduire exactement le texte.
+========================================================================= */
+
+.boot-name {
+  max-width: 100%;
+  margin: 0;
+  color: var(--boot-name);
+  font-family: 'Space Grotesk Variable', 'Space Grotesk', 'Segoe UI', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.02;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* =========================================================================
+  TITRE
+  Sous-titre plus discret que le nom, dans la même famille typographique.
+========================================================================= */
+
+.boot-role {
+  max-width: 100%;
+  margin: 0;
+  color: var(--boot-muted);
+  font-family: 'Space Grotesk Variable', 'Space Grotesk', 'Segoe UI', sans-serif;
+  font-size: clamp(0.78rem, 1.25vw, 0.95rem);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* =========================================================================
+  RÉVÉLATION
+  Le texte est masqué dès le premier paint : aucun nom net avant l'effet.
+========================================================================= */
+
+.boot-name,
+.boot-role {
+  opacity: 0;
+  filter: blur(14px);
+  transition:
+    opacity 360ms ease,
+    filter 360ms ease;
+}
+
+.boot-role {
+  filter: blur(10px);
+  transition-delay: 80ms;
+}
+
+#boot-splash.is-text-visible .boot-name,
+#boot-splash.is-text-visible .boot-role {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Repli si le module d'animation n'a pas démarré. */
+#boot-splash.is-fallback .boot-name,
+#boot-splash.is-fallback .boot-role {
+  opacity: 1;
+  filter: none;
+  transition: none;
+}
+
+/* =========================================================================
+  RESPONSIVE
+========================================================================= */
+
+@media (max-width: 600px) {
+  .boot-stage {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .boot-name {
+    font-size: clamp(1.9rem, 9vw, 2.4rem);
+  }
+}
+
+/* =========================================================================
+  ACCESSIBILITÉ
+  Animations coupées : le nom et le titre restent affichés, sans canvas.
+========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  #boot-splash {
+    transition: none;
+  }
+
+  .boot-flow {
+    display: none;
+  }
+
+  .boot-name,
+  .boot-role {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none;
+  }
+}

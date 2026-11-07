@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -52,8 +53,42 @@ function seoHtml(): Plugin {
   };
 }
 
+/** Empêche la bfcache en dev pour éviter les erreurs WebSocket du HMR Vite. */
+function devNoStoreHtml(): Plugin {
+  return {
+    name: 'dev-no-store-html',
+    configureServer(server) {
+      server.middlewares.use((_request, response, next) => {
+        const writeHead = response.writeHead.bind(response);
+        response.writeHead = ((...args: Parameters<typeof writeHead>) => {
+          response.setHeader('Cache-Control', 'no-store');
+          return writeHead(...args);
+        }) as typeof response.writeHead;
+        next();
+      });
+    },
+  };
+}
+
+/** Injecte le HTML de l'écran de chargement dans `index.html`. */
+function bootSplash(): Plugin {
+  return {
+    name: 'boot-splash',
+    transformIndexHtml: {
+      // Avant le traitement des balises : Vite doit voir le module de démarrage.
+      order: 'pre',
+      handler(html) {
+        const splashPath = fileURLToPath(
+          new URL('./src/boot-splash/boot-splash.html', import.meta.url),
+        );
+        return html.replace('<!--__BOOT_SPLASH__-->', readFileSync(splashPath, 'utf8'));
+      },
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), seoHtml()],
+  plugins: [react(), seoHtml(), bootSplash(), devNoStoreHtml()],
   // Site utilisateur servi à la racine de fab16bsb.github.io.
   base: '/',
   define: {

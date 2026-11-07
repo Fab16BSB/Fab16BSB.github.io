@@ -1,0 +1,46 @@
+<!-- Écran de chargement : les particules se rassemblent pour former le nom. -->
+<div id="boot-splash" aria-hidden="true">
+  <!-- Le flux de particules est dessiné ici, derrière le texte final. -->
+  <canvas class="boot-flow" id="boot-flow"></canvas>
+
+  <div class="boot-stage">
+    <p class="boot-name" id="boot-name">Fabien Poirier</p>
+    <p class="boot-role">Docteur en Intelligence Artificielle</p>
+  </div>
+
+  <noscript>
+    <style>
+      #boot-splash .boot-name,
+      #boot-splash .boot-role {
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
+      }
+
+      #boot-splash .boot-flow {
+        display: none !important;
+      }
+    </style>
+  </noscript>
+
+  <script type="module" src="/src/boot-splash/boot-splash.start.ts"></script>
+  <script>
+    // Repli après chargement complet : sans animation, le texte statique prend le relais.
+    (() => {
+      const splash = document.getElementById('boot-splash');
+      if (!splash || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const showFallback = () => {
+        if (splash.dataset.flow !== 'on') splash.classList.add('is-fallback');
+      };
+
+      if (document.readyState === 'complete') {
+        window.setTimeout(showFallback, 2000);
+      } else {
+        window.addEventListener('load', () => window.setTimeout(showFallback, 2000), {
+          once: true,
+        });
+      }
+    })();
+  </script>
+</div>
