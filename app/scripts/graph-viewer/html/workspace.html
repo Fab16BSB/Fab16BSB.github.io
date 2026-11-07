@@ -1,0 +1,118 @@
+<!-- Recherche, filtres, scène du graphe et panneau latéral. -->
+<div class="workspace">
+
+    <!-- Carte des filtres : résumé, recherche et actions de sélection. -->
+    <section class="filters" id="filters-card" aria-label="Filtres par type" data-i18n-aria="filtersLabel">
+      <div class="filters-toolbar">
+
+        <!-- Titre et compteurs des types et contenus actuellement affichés. -->
+        <div class="filters-head">
+          <span class="filters-title" data-i18n="filtersTitle">Filtres</span>
+          <span class="filters-summary" id="filters-summary">
+            <span class="filters-summary-types" id="filters-summary-types"></span>
+            <span class="filters-summary-sep" aria-hidden="true">·</span>
+            <span class="filters-summary-contents" id="filters-summary-contents"></span>
+          </span>
+        </div>
+
+        <!-- Recherche plein texte, validée par la touche Entrée. -->
+        <div class="filters-search">
+          <label class="search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+            <input
+              id="search"
+              type="search"
+              placeholder="Rechercher un projet, un thème…"
+              autocomplete="off"
+              aria-label="Rechercher un contenu"
+              data-i18n-aria="searchLabel"
+            />
+            <kbd data-i18n="enter">Entrée</kbd>
+          </label>
+        </div>
+
+        <!-- Actions rapides : tout sélectionner, tout désélectionner et replier la carte. -->
+        <div class="filters-actions">
+          <button type="button" class="filter-action" id="filters-all">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 7h10M4 12h10M4 17h10" />
+              <path d="m17 9 2 2 4-4" />
+            </svg>
+            <span data-i18n="filterAll">Tout</span>
+          </button>
+
+          <button type="button" class="filter-action filter-action--muted" id="filters-none">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="7.5" />
+              <path d="m7 17 10-10" />
+            </svg>
+            <span data-i18n="filterNone">Aucun</span>
+          </button>
+
+          <button
+            type="button"
+            class="icon-btn filters-toggle"
+            id="filters-toggle"
+            aria-expanded="true"
+            aria-controls="filters"
+            aria-label="Replier les filtres"
+            title="Replier les filtres"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Liste des filtres par type, remplie par filters.js. -->
+      <div class="filters-list" id="filters"></div>
+    </section>
+
+    <!-- Scène du graphe : canvas et infobulle. -->
+    <div class="stage" id="stage">
+      <canvas id="graph"></canvas>
+      <div class="hint" data-i18n="hint">Molette : zoom · Glisser le fond : déplacer · Glisser un nœud : épingler · Double-clic : relâcher</div>
+      <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <!-- Fond assombri quand le panneau mobile est ouvert. -->
+    <div class="panel-backdrop" id="panel-backdrop" hidden></div>
+
+    <!-- Panneau latéral sur desktop, feuille rétractable sur mobile/tablette. -->
+    <aside id="panel" data-open="false">
+      <!-- Poignée de la feuille mobile : ouverture, titre courant et fermeture. -->
+      <div class="sheet-head" id="sheet-head">
+        <button
+          type="button"
+          class="sheet-toggle"
+          id="sheet-toggle"
+          aria-expanded="false"
+          aria-controls="panel-content"
+          aria-label="Ouvrir le panneau"
+        >
+          <span class="sheet-grip" aria-hidden="true"></span>
+          <span class="sheet-title" id="sheet-title">Vue d'ensemble</span>
+          <svg class="sheet-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 15 6-6 6 6" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="sheet-close"
+          id="sheet-close"
+          aria-label="Replier le panneau"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Contenu du panneau, injecté par panel.js selon la sélection. -->
+      <div class="panel-content" id="panel-content"></div>
+    </aside>
+  </div>

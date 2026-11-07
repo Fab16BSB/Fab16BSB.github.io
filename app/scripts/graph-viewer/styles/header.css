@@ -1,0 +1,321 @@
+/* =========================================================================
+   EN-TÊTE
+========================================================================= */
+header {
+  z-index: 20;
+  border-bottom: 1px solid var(--border);
+  background: var(--glass);
+  box-shadow: var(--header-shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Grille de l'en-tête : marque, outils et actions. */
+.header-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.85rem;
+  width: min(1180px, calc(100% - 2 * clamp(1rem, 4vw, 2.5rem)));
+  min-height: 72px;
+  margin-inline: auto;
+}
+
+/* Identité. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  margin-right: 0;
+  justify-self: start;
+}
+
+.monogram {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--gradient);
+  box-shadow: var(--monogram-shadow);
+  color: #070b14;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.brand-text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.05rem;
+  line-height: 1.15;
+}
+
+.brand-text strong {
+  overflow: hidden;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand-text span {
+  overflow: hidden;
+  color: var(--text-faint);
+  font-size: 0.64rem;
+  letter-spacing: 0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Actions. */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 0.45rem;
+}
+
+/* Retour au portfolio et bascule de thème, alignés sur le portfolio. */
+.portfolio-link,
+.theme-toggle {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    background-color var(--transition),
+    transform var(--transition);
+}
+
+.portfolio-link:hover,
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--gradient-soft);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Icône visible selon le thème courant. */
+.theme-icon--moon {
+  display: none;
+}
+
+[data-theme='light'] .theme-icon--sun {
+  display: none;
+}
+
+[data-theme='light'] .theme-icon--moon {
+  display: block;
+}
+
+/* Sélecteur de langue. */
+.lang-switch {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Bouton d'ouverture du menu des langues. */
+.lang-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 42px;
+  padding: 0 0.7rem 0 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    background-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.lang-trigger:hover,
+.lang-trigger[aria-expanded='true'] {
+  border-color: var(--accent);
+  background: var(--gradient-soft);
+  color: var(--text);
+}
+
+/* Drapeau de la langue courante. */
+.flag {
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--border-strong);
+}
+
+.lang-trigger:hover .flag,
+.lang-trigger[aria-expanded='true'] .flag {
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.flag-small {
+  width: 22px;
+  height: 15px;
+}
+
+/* Libellé de la langue courante, masqué sur mobile comme sur le site. */
+.lang-current {
+  display: none;
+  white-space: nowrap;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--text-faint);
+  transition: transform var(--transition);
+}
+
+.lang-trigger[aria-expanded='true'] .chevron {
+  transform: rotate(180deg);
+}
+
+/* Menu des langues. */
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 60;
+  min-width: 190px;
+  margin: 0;
+  padding: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--glass-strong);
+  box-shadow: var(--shadow-md);
+  list-style: none;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  animation: langMenuIn 160ms var(--ease);
+}
+
+.lang-menu[hidden] {
+  display: none;
+}
+
+@keyframes langMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.62rem 0.65rem;
+  border-radius: 10px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  text-align: left;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.lang-option:hover,
+.lang-option:focus-visible {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.lang-option.active {
+  background: var(--gradient-soft);
+  color: var(--text);
+}
+
+.lang-option .check {
+  margin-left: auto;
+  color: var(--accent-2);
+  opacity: 0;
+}
+
+.lang-option[aria-selected='true'] .check {
+  opacity: 1;
+}
+
+/* Barre d'outils centrale. */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  gap: 0.1rem;
+}
+
+/* Bouton d'outil et état actif. */
+.tool {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  height: 38px;
+  padding: 0 0.65rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    color var(--transition),
+    background-color var(--transition);
+}
+
+.tool:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.tool svg {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.tool[aria-pressed='true'] {
+  color: var(--text);
+}
+
+.tool[aria-pressed='true']::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 14px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--gradient);
+  transform: translateX(-50%);
+}

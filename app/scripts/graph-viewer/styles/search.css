@@ -1,0 +1,66 @@
+/* =========================================================================
+   RECHERCHE
+========================================================================= */
+/* Conteneur du champ de recherche. */
+.search {
+  display: flex;
+  flex: 0 1 520px;
+  width: min(100%, 520px);
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 210px;
+  height: 42px;
+  margin-inline: 0;
+  padding: 0 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-faint);
+  transition:
+    border-color var(--transition),
+    background-color var(--transition),
+    box-shadow var(--transition);
+}
+
+/* Anneau de focus du champ. */
+.search:focus-within {
+  border-color: var(--accent);
+  background: var(--surface-2);
+  box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+.search svg {
+  flex-shrink: 0;
+}
+
+/* Zone de saisie sans bordure interne. */
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.84rem;
+}
+
+.search input::placeholder {
+  color: var(--text-faint);
+}
+
+.search input::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* Raccourci clavier affiché à droite. */
+.search kbd {
+  flex-shrink: 0;
+  padding: 0.12rem 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  line-height: 1.4;
+}

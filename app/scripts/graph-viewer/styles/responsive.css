@@ -1,0 +1,356 @@
+/* =========================================================================
+   RESPONSIVE
+========================================================================= */
+/* Affiche le libellé de langue dès 720 px. */
+@media (min-width: 720px) {
+  .lang-current {
+    display: inline;
+  }
+}
+
+/* Réduit la largeur du panneau sous 1100 px. */
+@media (max-width: 1100px) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+}
+
+/* Passe le panneau en feuille mobile sous 1020 px. */
+@media (max-width: 1020px) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .filters-list {
+    max-height: min(30vh, 180px);
+  }
+
+  .panel-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 79;
+    display: block;
+    background: rgba(7, 11, 20, 0.5);
+    backdrop-filter: blur(2px);
+  }
+
+  .panel-backdrop[hidden] {
+    display: none;
+  }
+
+  aside {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 80;
+    display: flex;
+    flex-direction: column;
+    height: calc(56px + env(safe-area-inset-bottom, 0px));
+    max-height: none;
+    padding: 0 0 env(safe-area-inset-bottom, 0px);
+    border-top: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border));
+    border-left: 0;
+    border-radius: 18px 18px 0 0;
+    background: var(--glass-strong);
+    box-shadow: 0 -18px 50px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    transition: height 260ms var(--ease);
+  }
+
+  aside[data-open='true'] {
+    height: min(80vh, calc(100vh - 80px));
+    height: min(80dvh, calc(100dvh - 80px));
+  }
+
+  .sheet-head {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.85rem 0.35rem 0.55rem;
+    border-bottom: 1px solid transparent;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--accent) 8%, transparent),
+      transparent
+    );
+  }
+
+  aside[data-open='true'] .sheet-head {
+    border-bottom-color: var(--border);
+  }
+
+  .sheet-toggle {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
+    height: 44px;
+    color: var(--text-muted);
+    text-align: left;
+  }
+
+  .sheet-toggle:hover {
+    color: var(--text);
+  }
+
+  .sheet-grip {
+    flex-shrink: 0;
+    width: 32px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--accent);
+    opacity: 0.7;
+  }
+
+  .sheet-title {
+    overflow: hidden;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 0.86rem;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sheet-chevron {
+    flex-shrink: 0;
+    color: var(--text-faint);
+    transition: transform var(--transition);
+  }
+
+  aside[data-open='true'] .sheet-chevron {
+    transform: rotate(180deg);
+  }
+
+  .sheet-close {
+    display: none;
+    flex-shrink: 0;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text-muted);
+    transition:
+      color var(--transition),
+      border-color var(--transition),
+      background-color var(--transition);
+  }
+
+  aside[data-open='true'] .sheet-close {
+    display: inline-grid;
+  }
+
+  .sheet-close:hover {
+    border-color: var(--accent);
+    background: var(--gradient-soft);
+    color: var(--accent);
+  }
+
+  .panel-content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 0 1.25rem 1.25rem;
+    overscroll-behavior: contain;
+    visibility: hidden;
+  }
+
+  aside[data-open='true'] .panel-content {
+    visibility: visible;
+  }
+
+  .panel-content .panel-head,
+  .panel-close {
+    display: none;
+  }
+
+  .stats {
+    margin: 0.85rem 0;
+  }
+
+  .stat {
+    padding: 0.6rem 0.7rem;
+  }
+
+  .stat strong {
+    font-size: 1.2rem;
+  }
+
+  .empty-card {
+    padding: 0.85rem;
+  }
+
+  .filters {
+    max-height: 40vh;
+    padding: 0.5rem 0.85rem 0.6rem;
+  }
+
+  .hint {
+    display: none;
+  }
+}
+
+/* Réduit les boutons d'outils à leurs icônes sous 1020 px. */
+@media (max-width: 1020px) {
+  .toolbar {
+    gap: 0.35rem;
+  }
+
+  .tool {
+    justify-content: center;
+    width: 38px;
+    padding: 0;
+  }
+
+  .tool span {
+    display: none;
+  }
+}
+
+/* Place la recherche sur toute la largeur sous 680 px. */
+@media (max-width: 680px) {
+  .filters-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .filters-search {
+    order: -1;
+    flex: 1 1 100%;
+  }
+}
+
+/* Masque le sous-titre et le raccourci sous 640 px. */
+@media (max-width: 640px) {
+  .brand-text span {
+    display: none;
+  }
+
+  .search kbd {
+    display: none;
+  }
+
+  .lang-trigger {
+    padding: 0 0.55rem 0 0.45rem;
+  }
+}
+
+/* Masque le texte de marque sous 599 px. */
+@media (max-width: 599px) {
+  .brand-text {
+    display: none;
+  }
+}
+
+/* Réorganise l'en-tête en flex sous 520 px. */
+@media (max-width: 520px) {
+  .header-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    padding-block: 0.55rem;
+  }
+
+  .brand {
+    flex-shrink: 0;
+    margin-right: 0;
+  }
+
+  .toolbar {
+    order: 2;
+    flex: 1 1 auto;
+    justify-content: center;
+    gap: 0.15rem;
+  }
+
+  .tool {
+    width: 34px;
+    height: 36px;
+    padding: 0;
+  }
+
+  .tool svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .actions {
+    order: 3;
+    flex-shrink: 0;
+    margin-left: 0;
+    gap: 0.25rem;
+  }
+
+  .theme-toggle,
+  .portfolio-link {
+    width: 36px;
+    height: 36px;
+  }
+
+  .lang-trigger {
+    width: 40px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .lang-trigger .chevron {
+    display: none;
+  }
+}
+
+/* Cache les détails du résumé de filtres sous 420 px. */
+@media (max-width: 420px) {
+  .actions {
+    gap: 0.3rem;
+  }
+
+  .filters-summary-types,
+  .filters-summary-sep {
+    display: none;
+  }
+}
+
+/* Compression maximale de l'en-tête sous 340 px. */
+@media (max-width: 340px) {
+  .header-inner {
+    gap: 0.3rem;
+  }
+
+  .toolbar {
+    gap: 0.1rem;
+  }
+
+  .tool {
+    width: 30px;
+  }
+
+  .theme-toggle,
+  .portfolio-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .lang-trigger {
+    width: 36px;
+    height: 32px;
+  }
+}
+
+/* Réduit les animations si l'utilisateur le demande. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

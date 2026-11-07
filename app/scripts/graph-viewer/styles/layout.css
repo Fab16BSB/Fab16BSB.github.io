@@ -1,0 +1,17 @@
+/* =========================================================================
+   STRUCTURE
+========================================================================= */
+/* Colonnes de l'application : en-tête puis espace de travail. */
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+/* Grille du viewer : graphe à gauche, panneau à droite. */
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 0;
+}

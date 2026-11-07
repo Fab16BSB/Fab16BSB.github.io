@@ -1,0 +1,339 @@
+/* =========================================================================
+   PANNEAU LATÉRAL
+========================================================================= */
+/* Panneau latéral desktop. */
+aside {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  overflow: auto;
+  min-width: 0;
+  padding: 1.25rem;
+  border-left: 1px solid var(--border);
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.panel-content {
+  min-height: 0;
+}
+
+.panel-backdrop {
+  display: none;
+}
+
+.sheet-head {
+  display: none;
+}
+
+/* En-tête du détail. */
+.panel-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.panel-title {
+  min-width: 0;
+}
+
+.panel-kicker {
+  margin-bottom: 0.3rem;
+  color: var(--text-faint);
+  font-family: var(--font-display);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.panel-title h2,
+aside h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.panel-close {
+  margin-left: auto;
+}
+
+/* Métadonnées du nœud. */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+  color: var(--text-faint);
+  font-size: 0.72rem;
+}
+
+/* Badge du type de contenu. */
+.kind-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.kind-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--kind, var(--accent));
+}
+
+.meta-year {
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+}
+
+/* Lien vers la section du portfolio. */
+.site-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.85rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--gradient-soft);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.site-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Sections du panneau. */
+.section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.section h3 {
+  margin: 0 0 0.65rem;
+  color: var(--text-faint);
+  font-family: var(--font-display);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Rangée de puces. */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Filtre local des contenus rattachés à un thème. */
+.member-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.member-filters .chip {
+  padding: 0.26rem 0.5rem;
+  font-size: 0.66rem;
+}
+
+.member-filters .chip .count {
+  min-width: 16px;
+  height: 16px;
+  padding: 0 0.24rem;
+  font-size: 0.56rem;
+}
+
+/* Recommandations. */
+.rec {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  text-align: left;
+  transition:
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.rec:hover {
+  border-color: rgba(139, 124, 255, 0.45);
+  background: var(--surface-2);
+}
+
+[data-theme='light'] .tool[aria-pressed='true'],
+[data-theme='light'] .rec:hover {
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+.rec:last-child {
+  margin-bottom: 0;
+}
+
+.rec .row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.rec .name {
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* Score de la recommandation. */
+.rec .score {
+  flex-shrink: 0;
+  padding: 0.08rem 0.35rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Étiquette de type dans les contenus rattachés à un thème. */
+.kind-tag {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-self: flex-start;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.05rem;
+  padding: 0.18rem 0.48rem;
+  border: 1px solid color-mix(in srgb, var(--kind, var(--accent)) 42%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--kind, var(--accent)) 13%, var(--surface-2));
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.kind-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--kind, var(--accent));
+}
+
+.rec .why {
+  margin-top: 0.3rem;
+  color: var(--text-faint);
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+/* Barre de score. */
+.bar {
+  overflow: hidden;
+  height: 3px;
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  background: var(--subtle-fill);
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--gradient);
+}
+
+/* États vides et statistiques. */
+.empty {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.empty-card {
+  padding: 1rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-note {
+  margin: 0.55rem 0 0;
+  color: var(--text-faint);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+/* Grille des compteurs. */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.stat {
+  padding: 0.75rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat strong {
+  display: block;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat span {
+  color: var(--text-faint);
+  font-size: 0.64rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

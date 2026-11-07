@@ -1,0 +1,109 @@
+/* =========================================================================
+   BASE
+========================================================================= */
+/* Réinitialisation et hauteur pleine page. */
+* { box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+@supports (height: 100dvh) {
+  html,
+  body {
+    height: 100dvh;
+  }
+}
+
+/* Fond, texte et blocage du défilement global. */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 var(--font-body);
+  overflow: hidden;
+}
+
+/* Halos colorés et trame discrète, comme sur le site. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 12% -8%, rgba(109, 94, 252, 0.18), transparent 60%),
+    radial-gradient(50rem 36rem at 92% 4%, rgba(6, 182, 212, 0.14), transparent 62%),
+    radial-gradient(44rem 40rem at 50% 110%, rgba(244, 63, 94, 0.08), transparent 65%);
+}
+
+[data-theme='light'] body::before {
+  background:
+    radial-gradient(60rem 40rem at 12% -8%, rgba(37, 99, 235, 0.12), transparent 60%),
+    radial-gradient(50rem 36rem at 92% 4%, rgba(14, 116, 144, 0.1), transparent 62%),
+    radial-gradient(44rem 40rem at 50% 110%, rgba(180, 83, 9, 0.06), transparent 65%);
+}
+
+/* Trame discrète alignée sur les surfaces. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 78%);
+}
+
+/* Contrôles natifs alignés sur la typographie. */
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* Focus clavier et sélection de texte. */
+:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(139, 124, 255, 0.35);
+  color: #fff;
+}
+
+/* Barres de défilement discrètes. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
