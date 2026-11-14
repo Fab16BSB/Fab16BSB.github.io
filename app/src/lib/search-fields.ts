@@ -69,6 +69,7 @@ export function projectSearchFields(
     tags: [
       project.stack.join(' '),
       project.year,
+      project.category === 'notebook' ? 'notebook kaggle' : '',
       sectionSearchLabel('projects', locale),
     ]
       .filter(Boolean)

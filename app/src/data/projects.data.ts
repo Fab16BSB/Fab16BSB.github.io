@@ -8,7 +8,7 @@ import { links } from './links.data';
  *
  * @property {string} id - Identifiant stable.
  * @property {string} year - Année affichée.
- * @property {ProjectCategory} category - Projet académique, personnel ou professionnel.
+ * @property {ProjectCategory} category - Projet académique, personnel, professionnel ou notebook Kaggle.
  * @property {Localized} title - Titre en FR / EN / ES.
  * @property {Localized} description - Description courte en FR / EN / ES.
  * @property {Localized} details - Description détaillée en FR / EN / ES.
@@ -29,6 +29,265 @@ import { links } from './links.data';
  * @property {string} icon - Texte affiché si le visuel manque.
  */
 export const projects: Project[] = [
+
+  /** ▸ Notebook Kaggle · 2026 · Fuel Efficiency Prediction */
+  {
+    id: 'kaggle-auto-mpg',
+    year: '2026',
+    category: 'notebook',
+    title: {
+      fr: 'Fuel Efficiency Prediction : Auto-MPG',
+      en: 'Fuel Efficiency Prediction: Auto-MPG',
+      es: 'Fuel Efficiency Prediction: Auto-MPG',
+    },
+    description: {
+      fr: 'Notebook de régression qui prédit la consommation de carburant (mpg) de véhicules à partir de leurs caractéristiques.',
+      en: 'Regression notebook that predicts a vehicle\'s fuel consumption (mpg) from its specifications.',
+      es: 'Notebook de regresión que predice el consumo de combustible (mpg) de un vehículo a partir de sus características.',
+    },
+    details: {
+      fr: 'Le jeu Auto-MPG décrit des véhicules par leur cylindrée, leur puissance, leur poids, leur accélération, leur année et leur origine. L\'objectif est de prédire la consommation de carburant (mpg) à partir de ces caractéristiques.',
+      en: 'The Auto-MPG dataset describes vehicles by displacement, horsepower, weight, acceleration, model year and origin. The goal is to predict fuel consumption (mpg) from these features.',
+      es: 'El conjunto Auto-MPG describe vehículos por su cilindrada, potencia, peso, aceleración, año y origen. El objetivo es predecir el consumo de combustible (mpg) a partir de estas características.',
+    },
+    highlights: [
+      {
+        fr: 'Nettoyage des valeurs manquantes.',
+        en: 'Cleaning missing values.',
+        es: 'Limpieza de valores ausentes.',
+      },
+      {
+        fr: 'Suppression des doublons.',
+        en: 'Removing duplicates.',
+        es: 'Eliminación de duplicados.',
+      },
+      {
+        fr: 'Analyse exploratoire : distributions, corrélations et valeurs aberrantes.',
+        en: 'Exploratory analysis: distributions, correlations and outliers.',
+        es: 'Análisis exploratorio: distribuciones, correlaciones y valores atípicos.',
+      },
+      {
+        fr: 'Ingénierie de variables.',
+        en: 'Feature engineering.',
+        es: 'Ingeniería de variables.',
+      },
+      {
+        fr: 'Découpage train / test reproductible.',
+        en: 'Reproducible train / test split.',
+        es: 'División reproducible entre entrenamiento y prueba.',
+      },
+      {
+        fr: 'Comparaison de modèles (régression linéaire, SVM, arbres) sur plusieurs métriques.',
+        en: 'Model comparison (linear regression, SVM, trees) across multiple metrics.',
+        es: 'Comparación de modelos (regresión lineal, SVM, árboles) con varias métricas.',
+      },
+      {
+        fr: 'Réglage des hyperparamètres.',
+        en: 'Hyperparameter tuning.',
+        es: 'Ajuste de hiperparámetros.',
+      },
+      {
+        fr: 'Stacking Regressor pour la prédiction finale.',
+        en: 'Stacking Regressor for the final prediction.',
+        es: 'Stacking Regressor para la predicción final.',
+      },
+    ],
+    stack: ['Python', 'Pandas', 'scikit-learn', 'Régression', 'Stacking'],
+    links: {},
+    extraLinks: [
+      {
+        label: {
+          fr: 'Ouvrir le notebook',
+          en: 'Open the notebook',
+          es: 'Abrir el notebook',
+        },
+        url: 'https://www.kaggle.com/code/fpoirier/fuel-efficiency-prediction-auto-mpg-dataset',
+        icon: 'kaggle',
+      },
+    ],
+    notebook: {
+      dataset: 'Auto-MPG',
+      task: 'regression',
+    },
+    accent: 'emerald',
+    icon: 'MPG',
+  },
+
+  /** ▸ Notebook Kaggle · 2025 · House Price Prediction */
+  {
+    id: 'kaggle-california-housing',
+    year: '2025',
+    category: 'notebook',
+    title: {
+      fr: 'House Price Prediction : California Housing',
+      en: 'House Price Prediction: California Housing',
+      es: 'House Price Prediction: California Housing',
+    },
+    description: {
+      fr: 'Notebook de régression immobilière qui estime le prix médian des logements en Californie.',
+      en: 'Real-estate regression notebook that estimates the median house value in California.',
+      es: 'Notebook de regresión inmobiliaria que estima el precio medio de la vivienda en California.',
+    },
+    details: {
+      fr: 'Le jeu California Housing, issu du recensement californien de 1990, décrit des quartiers par leur localisation, le revenu médian, l\'âge des logements et la population. L\'objectif est d\'estimer le prix médian des logements.',
+      en: 'The California Housing dataset, from the 1990 California census, describes districts by location, median income, housing age and population. The goal is to estimate the median house value.',
+      es: 'El conjunto California Housing, procedente del censo de California de 1990, describe distritos por su ubicación, la renta media, la antigüedad de las viviendas y la población. El objetivo es estimar el precio medio de la vivienda.',
+    },
+    highlights: [
+      {
+        fr: 'Analyse exploratoire des variables géographiques et démographiques.',
+        en: 'Exploratory analysis of the geographic and demographic variables.',
+        es: 'Análisis exploratorio de las variables geográficas y demográficas.',
+      },
+      {
+        fr: 'Imputation des valeurs manquantes.',
+        en: 'Imputation of missing values.',
+        es: 'Imputación de valores ausentes.',
+      },
+      {
+        fr: 'Standardisation des variables numériques.',
+        en: 'Scaling of numerical variables.',
+        es: 'Escalado de las variables numéricas.',
+      },
+      {
+        fr: 'Encodage des variables catégorielles.',
+        en: 'Encoding of categorical variables.',
+        es: 'Codificación de las variables categóricas.',
+      },
+      {
+        fr: 'Construction d\'un pipeline de prétraitement réutilisable.',
+        en: 'Building a reusable preprocessing pipeline.',
+        es: 'Construcción de un pipeline de preprocesamiento reutilizable.',
+      },
+      {
+        fr: 'Comparaison de modèles à base d\'arbres (Random Forest, XGBoost).',
+        en: 'Comparison of tree-based models (Random Forest, XGBoost).',
+        es: 'Comparación de modelos de árboles (Random Forest, XGBoost).',
+      },
+      {
+        fr: 'Réglage des hyperparamètres.',
+        en: 'Hyperparameter tuning.',
+        es: 'Ajuste de hiperparámetros.',
+      },
+      {
+        fr: 'Évaluation sur plusieurs métriques de régression.',
+        en: 'Evaluation across multiple regression metrics.',
+        es: 'Evaluación con varias métricas de regresión.',
+      },
+    ],
+    stack: ['Python', 'Pandas', 'scikit-learn', 'XGBoost', 'Random Forest'],
+    links: {},
+    extraLinks: [
+      {
+        label: {
+          fr: 'Ouvrir le notebook',
+          en: 'Open the notebook',
+          es: 'Abrir el notebook',
+        },
+        url: 'https://www.kaggle.com/code/fpoirier/house-price-prediction-california-housing-dataset',
+        icon: 'kaggle',
+      },
+    ],
+    notebook: {
+      dataset: 'California Housing',
+      task: 'regression',
+    },
+    accent: 'cyan',
+    icon: 'CAL',
+  },
+
+  /** ▸ Notebook Kaggle · 2025 · Customer Churn Classification */
+  {
+    id: 'kaggle-telco-churn',
+    year: '2025',
+    category: 'notebook',
+    title: {
+      fr: 'Customer Churn Classification : Telco Dataset',
+      en: 'Customer Churn Classification: Telco Dataset',
+      es: 'Customer Churn Classification: Telco Dataset',
+    },
+    description: {
+      fr: 'Notebook de classification binaire qui prédit la résiliation de clients d\'un opérateur télécom.',
+      en: 'Binary classification notebook that predicts customer churn for a telecom operator.',
+      es: 'Notebook de clasificación binaria que predice la baja de clientes de un operador de telecomunicaciones.',
+    },
+    details: {
+      fr: 'Le jeu Telco Customer Churn décrit des clients d\'un opérateur télécom par leurs services souscrits, leur contrat, leur facturation et leur profil démographique. L\'objectif est de prédire la résiliation (churn) à partir de ces informations.',
+      en: 'The Telco Customer Churn dataset describes a telecom operator\'s customers through their subscribed services, contract, billing and demographic profile. The goal is to predict churn from this information.',
+      es: 'El conjunto Telco Customer Churn describe a los clientes de un operador de telecomunicaciones por sus servicios contratados, su contrato, su facturación y su perfil demográfico. El objetivo es predecir la baja (churn) a partir de esta información.',
+    },
+    highlights: [
+      {
+        fr: 'Nettoyage des données.',
+        en: 'Data cleaning.',
+        es: 'Limpieza de datos.',
+      },
+      {
+        fr: 'Analyse exploratoire du churn.',
+        en: 'Exploratory analysis of churn.',
+        es: 'Análisis exploratorio de la baja.',
+      },
+      {
+        fr: 'Ingénierie de variables.',
+        en: 'Feature engineering.',
+        es: 'Ingeniería de variables.',
+      },
+      {
+        fr: 'Encodage des variables catégorielles.',
+        en: 'Encoding of categorical variables.',
+        es: 'Codificación de las variables categóricas.',
+      },
+      {
+        fr: 'Standardisation des variables numériques.',
+        en: 'Scaling of numerical variables.',
+        es: 'Escalado de las variables numéricas.',
+      },
+      {
+        fr: 'Construction d\'un pipeline de prétraitement.',
+        en: 'Building a preprocessing pipeline.',
+        es: 'Construcción de un pipeline de preprocesamiento.',
+      },
+      {
+        fr: 'Comparaison de modèles (régression logistique, Random Forest, XGBoost).',
+        en: 'Model comparison (logistic regression, Random Forest, XGBoost).',
+        es: 'Comparación de modelos (regresión logística, Random Forest, XGBoost).',
+      },
+      {
+        fr: 'Gestion du déséquilibre des classes par pondération.',
+        en: 'Handling class imbalance through class weighting.',
+        es: 'Gestión del desequilibrio de clases mediante ponderación.',
+      },
+      {
+        fr: 'Réglage des hyperparamètres.',
+        en: 'Hyperparameter tuning.',
+        es: 'Ajuste de hiperparámetros.',
+      },
+      {
+        fr: 'Évaluation avec plusieurs métriques de classification.',
+        en: 'Evaluation with multiple classification metrics.',
+        es: 'Evaluación con varias métricas de clasificación.',
+      },
+    ],
+    stack: ['Python', 'Pandas', 'scikit-learn', 'XGBoost', 'Classification binaire'],
+    links: {},
+    extraLinks: [
+      {
+        label: {
+          fr: 'Ouvrir le notebook',
+          en: 'Open the notebook',
+          es: 'Abrir el notebook',
+        },
+        url: 'https://www.kaggle.com/code/fpoirier/customer-churn-classification-telco-dataset',
+        icon: 'kaggle',
+      },
+    ],
+    notebook: {
+      dataset: 'Telco Customer Churn',
+      task: 'classification',
+    },
+    accent: 'amber',
+    icon: 'CHN',
+  },
 
   /** ▸ Professionnel · 2025 · Scheduler Finder */
   {

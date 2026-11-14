@@ -9,7 +9,12 @@ import type { Project, ProjectCategory } from '@/types/project.types';
 ========================================================================= */
 
 /** Catégories de projets, dans l'ordre des onglets. */
-export const projectCategories: ProjectCategory[] = ['personal', 'professional', 'academic'];
+export const projectCategories: ProjectCategory[] = [
+  'personal',
+  'professional',
+  'academic',
+  'notebook',
+];
 
 
 /* =========================================================================

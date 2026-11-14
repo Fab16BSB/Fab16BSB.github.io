@@ -5,6 +5,7 @@ import type { CSSProperties } from 'react';
 import { useI18n } from '@/i18n/useI18n';
 import type { Project } from '@/types/project.types';
 import { Icon } from '@/components/ui/Icon/Icon';
+import { NotebookCover } from '@/components/ui/NotebookCover/NotebookCover';
 import styles from './ProjectCard.module.css';
 
 /* =========================================================================
@@ -37,9 +38,15 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
           .join(' ')}
         aria-hidden="true"
       >
-        {/* Visuel ou motif de remplacement. */}
+        {/* Visuel, couverture de notebook ou motif de remplacement. */}
         {project.image ? (
           <img className={styles.coverImage} src={project.image} alt="" loading="lazy" />
+        ) : project.notebook ? (
+          <NotebookCover
+            dataset={project.notebook.dataset}
+            task={project.notebook.task}
+            accent={project.accent}
+          />
         ) : (
           <>
             <span className={styles.grid} />

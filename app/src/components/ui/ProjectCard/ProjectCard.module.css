@@ -36,6 +36,7 @@
   justify-content: center;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  container-type: inline-size;
   background:
     radial-gradient(circle at 28% 18%, color-mix(in srgb, var(--project-accent) 58%, transparent), transparent 55%),
     linear-gradient(135deg, color-mix(in srgb, var(--project-accent) 20%, var(--surface-2)), var(--surface-2));
@@ -176,6 +177,22 @@
 
 .card:hover .footer svg {
   transform: translate(2px, -2px);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Couverture de notebook : réaction au survol de la carte
+   ───────────────────────────────────────────────────────────────────────── */
+.card:hover [data-notebook-part='preview'] {
+  transform: translateY(-50%) rotate(-1.5deg) scale(1.03);
+}
+
+.card:hover [data-notebook-part='halo'] {
+  opacity: 1;
+}
+
+.card:hover [data-notebook-part='shine'] {
+  opacity: 1;
+  transform: translateX(360%) rotate(16deg);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────

@@ -1,6 +1,7 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
+import { links } from '@/data/links.data';
 import { useI18n } from '@/i18n/useI18n';
 import { EmptyState } from '@/components/ui/EmptyState/EmptyState';
 import { Icon } from '@/components/ui/Icon/Icon';
@@ -127,6 +128,21 @@ export function Projects() {
                   {expanded ? t('common.seeLess') : t('common.seeMore')}
                   <Icon name={expanded ? 'chevron-up' : 'chevron-down'} size={15} />
                 </button>
+              </div>
+            )}
+
+            {/* Profil Kaggle complet, proposé sur la vue notebooks. */}
+            {active === 'notebook' && (
+              <div className={styles.more}>
+                <a
+                  className="button button--soft button--small"
+                  href={links.social.kaggle}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('projects.allNotebooks')}
+                  <Icon name="arrow-up-right" size={15} />
+                </a>
               </div>
             )}
           </>

@@ -175,7 +175,7 @@
 
   "projects": {
     "eyebrow": "04 — Projets",
-    "title": "Projets perso, pro & académiques",
+    "title": "Projets perso, pro, académiques & notebooks",
     "description": "",
     "searchPlaceholder": "Rechercher un projet, une techno…",
     "clearSearch": "Effacer la recherche",
@@ -185,11 +185,21 @@
     "noResults": "Aucun projet ne correspond à ces filtres.",
     "noResultsHint": "Essaie un autre mot-clé ou une autre année.",
     "resetFilters": "Réinitialiser",
+    "allNotebooks": "Tous mes notebooks Kaggle",
+    "notebookContents": "Dans ce notebook, vous retrouverez :",
+    "notebookDataset": "Jeu de données",
+    "notebookTasks": {
+      "regression": "Régression",
+      "classification": "Classification",
+      "clustering": "Clustering",
+      "anomaly": "Détection d'anomalie"
+    },
     "filters": {
       "all": "Tout",
       "personal": "Perso",
       "professional": "Pro",
-      "academic": "Académique"
+      "academic": "Académique",
+      "notebook": "Notebooks"
     },
     "levels": {
       "but1": "BUT 1",

@@ -2,8 +2,8 @@ import type { Accent, Localized } from './common.types';
 import type { EducationId } from './education.types';
 import type { ExperienceId } from './experience.types';
 
-/** Catégorie d'un projet. */
-export type ProjectCategory = 'personal' | 'professional' | 'academic';
+/** Catégorie d'un projet, notebook Kaggle compris. */
+export type ProjectCategory = 'personal' | 'professional' | 'academic' | 'notebook';
 
 /** Niveau d'études associé à un projet académique. */
 export type ProjectStudyLevel =
@@ -17,17 +17,31 @@ export type ProjectStudyLevel =
 /** Clés de liens possibles pour un projet. */
 export type ProjectLinkKey = 'github' | 'demo' | 'video' | 'site' | 'pdf';
 
+/** Tâche d'apprentissage illustrée sur la couverture d'un notebook. */
+export type NotebookTask = 'regression' | 'classification' | 'clustering' | 'anomaly';
+
+/**
+ * Métadonnées affichées sur la couverture d'un notebook.
+ *
+ * @property {string} dataset - Nom du jeu de données.
+ * @property {NotebookTask} task - Tâche d'apprentissage illustrée.
+ */
+export type ProjectNotebook = {
+  dataset: string;
+  task: NotebookTask;
+};
+
 /**
  * Lien supplémentaire affiché sur une carte projet.
  *
  * @property {Localized} label - Libellé traduit.
  * @property {string} url - URL cible.
- * @property {'github' | 'external' | 'book' | 'download' | 'play'} [icon] - Icône du lien.
+ * @property {'github' | 'external' | 'book' | 'download' | 'play' | 'kaggle'} [icon] - Icône du lien.
  */
 export type ProjectExtraLink = {
   label: Localized;
   url: string;
-  icon?: 'github' | 'external' | 'book' | 'download' | 'play';
+  icon?: 'github' | 'external' | 'book' | 'download' | 'play' | 'kaggle';
 };
 
 /**
@@ -46,7 +60,7 @@ export type ProjectGalleryImage = {
  *
  * @property {string} id - Identifiant stable.
  * @property {string} year - Année affichée.
- * @property {ProjectCategory} category - Projet académique, personnel ou professionnel.
+ * @property {ProjectCategory} category - Projet académique, personnel, professionnel ou notebook Kaggle.
  * @property {Localized} title - Titre.
  * @property {Localized} description - Description courte.
  * @property {Localized} details - Description détaillée.
@@ -56,6 +70,7 @@ export type ProjectGalleryImage = {
  * @property {ProjectExtraLink[]} [extraLinks] - Liens supplémentaires.
  * @property {string} [image] - Visuel de la carte.
  * @property {ProjectGalleryImage[]} [gallery] - Captures détaillées du projet.
+ * @property {ProjectNotebook} [notebook] - Jeu de données et tâche affichés sur la couverture d'un notebook.
  * @property {'active' | 'archived'} [status] - Statut du projet.
  * @property {ProjectStudyLevel} [studyLevel] - Niveau d'études associé.
  * @property {EducationId[]} [educationIds] - Formations pendant lesquelles le projet a été réalisé.
@@ -76,6 +91,7 @@ export type Project = {
   extraLinks?: ProjectExtraLink[];
   image?: string;
   gallery?: ProjectGalleryImage[];
+  notebook?: ProjectNotebook;
   status?: 'active' | 'archived';
   studyLevel?: ProjectStudyLevel;
   educationIds?: EducationId[];

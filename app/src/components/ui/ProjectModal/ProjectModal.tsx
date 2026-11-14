@@ -7,6 +7,7 @@ import { useI18n } from '@/i18n/useI18n';
 import type { Project, ProjectLinkKey } from '@/types/project.types';
 import type { KnowledgeContentKind } from '@/types/knowledge.types';
 import { Icon } from '@/components/ui/Icon/Icon';
+import { NotebookCover } from '@/components/ui/NotebookCover/NotebookCover';
 import { RelatedContent } from '@/components/ui/RelatedContent/RelatedContent';
 import { KNOWLEDGE_RANKING } from '@/lib/knowledge.config';
 import type { IconName } from '@/types/ui.types';
@@ -85,9 +86,15 @@ export function ProjectModal({ project, onClose, onOpenProject }: ProjectModalPr
               .join(' ')}
             aria-hidden="true"
           >
-            {/* Visuel ou motif de remplacement. */}
+            {/* Visuel, couverture de notebook ou motif de remplacement. */}
             {project.image ? (
               <img className={styles.coverImage} src={project.image} alt="" />
+            ) : project.notebook ? (
+              <NotebookCover
+                dataset={project.notebook.dataset}
+                task={project.notebook.task}
+                accent={project.accent}
+              />
             ) : (
               <>
                 <span className={styles.grid} />
@@ -119,11 +126,18 @@ export function ProjectModal({ project, onClose, onOpenProject }: ProjectModalPr
 
             {/* Points clés du projet. */}
             {project.highlights && project.highlights.length > 0 && (
-              <ul className={styles.highlights}>
-                {project.highlights.map((highlight) => (
-                  <li key={loc(highlight)}>{loc(highlight)}</li>
-                ))}
-              </ul>
+              <div className={styles.highlightsBlock}>
+                {project.category === 'notebook' && (
+                  <p className={styles.highlightsIntro}>
+                    {t('projects.notebookContents')}
+                  </p>
+                )}
+                <ul className={styles.highlights}>
+                  {project.highlights.map((highlight) => (
+                    <li key={loc(highlight)}>{loc(highlight)}</li>
+                  ))}
+                </ul>
+              </div>
             )}
 
             {/* Technologies utilisées. */}

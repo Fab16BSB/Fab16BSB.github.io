@@ -175,7 +175,7 @@
 
   "projects": {
     "eyebrow": "04 — Projects",
-    "title": "Personal, professional & academic projects",
+    "title": "Personal, professional, academic projects & notebooks",
     "description": "",
     "searchPlaceholder": "Search a project, a technology…",
     "clearSearch": "Clear search",
@@ -185,11 +185,21 @@
     "noResults": "No project matches these filters.",
     "noResultsHint": "Try another keyword or another year.",
     "resetFilters": "Reset filters",
+    "allNotebooks": "All my Kaggle notebooks",
+    "notebookContents": "In this notebook, you will find:",
+    "notebookDataset": "Dataset",
+    "notebookTasks": {
+      "regression": "Regression",
+      "classification": "Classification",
+      "clustering": "Clustering",
+      "anomaly": "Anomaly detection"
+    },
     "filters": {
       "all": "All",
       "personal": "Personal",
       "professional": "Professional",
-      "academic": "Academic"
+      "academic": "Academic",
+      "notebook": "Notebooks"
     },
     "levels": {
       "but1": "BUT 1",

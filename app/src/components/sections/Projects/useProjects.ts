@@ -111,6 +111,7 @@ export function useProjects(locale: Locale) {
       personal: countProjects(projects, 'personal'),
       professional: countProjects(projects, 'professional'),
       academic: countProjects(projects, 'academic'),
+      notebook: countProjects(projects, 'notebook'),
     }),
     [],
   );

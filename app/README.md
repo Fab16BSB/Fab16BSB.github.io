@@ -77,7 +77,7 @@ Helper and hook files are only created when they make sense.
 
 - **UI text**: `src/i18n/locales/fr.json`, `en.json`, `es.json`.
 - **Experience / education**: `src/data/experience.data.ts`, `education.data.ts`.
-- **Projects**: `src/data/projects.data.ts` (public GitHub repositories only).
+- **Projects**: `src/data/projects.data.ts` (public GitHub repositories and Kaggle notebooks; notebooks use `category: 'notebook'` and a Kaggle `extraLinks` entry).
 - **Skills**: `src/data/skills.data.ts`.
 - **Publications**: `src/data/publications.data.ts`.
 - **Public essentials**: `src/data/publication-summaries.data.ts` (context, problem and proposed solution plus keywords per scientific publication, in FR / EN / ES; they follow the FR / EN version toggled on each card, and Medium posts are excluded).

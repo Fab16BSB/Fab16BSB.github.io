@@ -102,6 +102,7 @@
   justify-content: center;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  container-type: inline-size;
   background:
     radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 55%, transparent), transparent 58%),
     linear-gradient(135deg, rgba(109, 94, 252, 0.22), rgba(6, 182, 212, 0.12)),
@@ -204,6 +205,18 @@
   color: var(--text-muted);
   font-size: 0.9rem;
   line-height: 1.7;
+}
+
+.highlightsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.highlightsIntro {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .highlights {

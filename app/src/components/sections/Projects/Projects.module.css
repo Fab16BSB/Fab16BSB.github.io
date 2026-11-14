@@ -16,6 +16,11 @@
   display: flex;
 }
 
+/* Cinq filtres : passage à la ligne plutôt qu'un défilement horizontal. */
+.tabsRow [role='tablist'] {
+  flex-wrap: wrap;
+}
+
 .filters {
   display: flex;
   flex: 1 1 320px;
