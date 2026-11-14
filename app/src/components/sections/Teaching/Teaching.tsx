@@ -83,6 +83,7 @@ export function Teaching() {
         {/* En-tête de la section. */}
         <SectionHeading
           eyebrow={t('teaching.eyebrow')}
+          icon="graduation"
           title={t('teaching.title')}
           description={t('teaching.description')}
           titleId="teaching-title"

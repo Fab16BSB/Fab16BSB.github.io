@@ -31,6 +31,7 @@ export function Timeline() {
         {/* En-tête de la section. */}
         <SectionHeading
           eyebrow={t('timeline.eyebrow')}
+          icon="route"
           title={t('timeline.title')}
           description={t('timeline.description')}
           titleId="timeline-title"

@@ -22,7 +22,10 @@ export function About() {
 
         {/* Identité : nom, rôle et localisation. */}
         <header className={styles.header} data-reveal>
-          <span className="eyebrow">{t('about.eyebrow')}</span>
+          <span className="eyebrow">
+            <Icon name="user" size={20} />
+            {t('about.eyebrow')}
+          </span>
           <h1 id="about-title" className={styles.name}>
             {profile.name}
           </h1>

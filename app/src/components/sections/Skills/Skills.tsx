@@ -60,6 +60,7 @@ export function Skills() {
         {/* En-tête de la section. */}
         <SectionHeading
           eyebrow={t('skills.eyebrow')}
+          icon="sparkles"
           title={t('skills.knowledge.title')}
           titleId="skills-title"
         />

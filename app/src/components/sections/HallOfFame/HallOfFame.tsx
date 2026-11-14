@@ -23,6 +23,7 @@ export function HallOfFame() {
         {/* En-tête de la section. */}
         <SectionHeading
           eyebrow={t('awards.eyebrow')}
+          icon="trophy"
           title={t('awards.title')}
           description={t('awards.description')}
           titleId="awards-title"

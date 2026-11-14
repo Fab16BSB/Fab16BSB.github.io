@@ -53,6 +53,7 @@ export function Publications() {
         {/* En-tête de la section. */}
         <SectionHeading
           eyebrow={t('publications.eyebrow')}
+          icon="book"
           title={t('publications.title')}
           description={t('publications.description')}
           titleId="publications-title"

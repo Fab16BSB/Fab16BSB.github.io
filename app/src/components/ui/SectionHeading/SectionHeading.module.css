@@ -15,10 +15,6 @@
   margin-inline: auto;
 }
 
-.center .eyebrow::before {
-  display: none;
-}
-
 .wide {
   max-width: 900px;
 }

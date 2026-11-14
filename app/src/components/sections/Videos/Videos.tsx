@@ -53,6 +53,7 @@ export function Videos() {
         {/* En-tête de la section. */}
         <SectionHeading
           eyebrow={t('videos.eyebrow')}
+          icon="play"
           title={t('videos.title')}
           description={t('videos.description')}
           titleId="videos-title"
