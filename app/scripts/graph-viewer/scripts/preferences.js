@@ -227,20 +227,25 @@ function bindThemeToggle() {
   });
 }
 
-/** Branche le retour vers la section précédente du portfolio. */
-function bindPortfolioLink() {
-  backToPortfolio.addEventListener('click', (event) => {
-    if (window.history.length > 1) {
-      try {
-        const referrer = new URL(document.referrer);
-        if (referrer.origin === window.location.origin) {
-          event.preventDefault();
-          window.history.back();
-        }
-      } catch (error) {
-        console.debug('Référent absent ou invalide : navigation normale vers le portfolio.', error);
+/** Revient à la section précédente du portfolio quand elle vient du site. */
+function goBackToPortfolio(event) {
+  if (window.history.length > 1) {
+    try {
+      const referrer = new URL(document.referrer);
+      if (referrer.origin === window.location.origin) {
+        event.preventDefault();
+        window.history.back();
       }
+    } catch (error) {
+      console.debug('Référent absent ou invalide : navigation normale vers le portfolio.', error);
     }
+  }
+}
+
+/** Branche le retour au portfolio depuis le bouton et le monogramme FP. */
+function bindPortfolioLink() {
+  [backToPortfolio, brandHome].forEach((link) => {
+    link?.addEventListener('click', goBackToPortfolio);
   });
 }
 

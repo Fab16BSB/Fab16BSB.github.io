@@ -49,6 +49,7 @@ const langFlag = document.getElementById('lang-flag');
 const langCurrent = document.getElementById('lang-current');
 const themeToggle = document.getElementById('theme-toggle');
 const backToPortfolio = document.getElementById('back-to-portfolio');
+const brandHome = document.getElementById('brand-home');
 
 // --- ÉTAT MUTABLE -----------------------------------------------------------
 

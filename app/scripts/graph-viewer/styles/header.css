@@ -45,6 +45,14 @@ header {
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.03em;
+  text-decoration: none;
+  transition:
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.monogram:hover {
+  transform: translateY(-1px);
 }
 
 .brand-text {
