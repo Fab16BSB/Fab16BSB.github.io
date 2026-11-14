@@ -15,6 +15,31 @@ const LABEL_PRIORITIES = {
   article: 4,
 };
 
+// Largeurs de texte déjà mesurées, pour éviter un measureText par image.
+const labelWidthCache = new Map();
+
+/**
+ * Mesure un texte avec la police des étiquettes, en mettant le résultat en cache.
+ *
+ * La largeur est mesurée une fois à la taille de référence puis mise à
+ * l'échelle : la largeur d'un texte est proportionnelle à sa taille de police.
+ *
+ * @param {string} text - Texte à mesurer.
+ * @param {number} size - Taille de police en unités monde.
+ * @returns {number} Largeur du texte en unités monde.
+ */
+function labelWidth(text, size) {
+  let base = labelWidthCache.get(text);
+  if (base === undefined) {
+    const previousFont = ctx.font;
+    ctx.font = LABEL_FONT_SIZE + 'px ' + LABEL_FONT_FAMILY;
+    base = ctx.measureText(text).width;
+    ctx.font = previousFont;
+    labelWidthCache.set(text, base);
+  }
+  return base * (size / LABEL_FONT_SIZE);
+}
+
 /**
  * Indique si une arête touche un nœud donné.
  *
@@ -61,7 +86,9 @@ function draw() {
 
   drawEdges(focusId, palette);
   drawNodes(highlighted, palette);
-  if (showLabels) drawLabels(palette);
+
+  // Les noms de nœuds restent toujours affichés.
+  drawLabels(palette);
 
   ctx.restore();
 }
@@ -228,8 +255,23 @@ function drawThemeRing(position, radius, palette) {
  * @param {object} palette - Couleurs du canvas.
  */
 function drawLabels(palette) {
+
+  // Écarte les noms hors champ avant de mesurer leur largeur.
+  const margin = 120 / view.scale;
+  const viewLeft = -view.x / view.scale;
+  const viewTop = -view.y / view.scale;
+  const viewRight = (stage.clientWidth - view.x) / view.scale;
+  const viewBottom = (stage.clientHeight - view.y) / view.scale;
+
   const labelEntries = nodes
     .filter((entry) => isLabelVisible(entry.node))
+    .filter(
+      (entry) =>
+        entry.position.x >= viewLeft - margin &&
+        entry.position.x <= viewRight + margin &&
+        entry.position.y >= viewTop - margin &&
+        entry.position.y <= viewBottom + margin,
+    )
     .sort((left, right) => labelPriority(left.node) - labelPriority(right.node));
 
   const size = LABEL_FONT_SIZE / view.scale;
@@ -317,7 +359,7 @@ function truncateLabel(text) {
  */
 function labelRect(position, kind, text, layout) {
   const offset = nodeRadius(kind) + LABEL_PADDING / view.scale;
-  const width = ctx.measureText(text).width;
+  const width = labelWidth(text, layout.size);
   const startsAt = position.x > layout.centerWorldX
     ? position.x - offset - width - layout.padding * 2
     : position.x + offset;

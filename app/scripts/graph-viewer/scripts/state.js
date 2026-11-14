@@ -59,7 +59,6 @@ let lang = detectLanguage();
 let theme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
 let visibleKinds = new Set(DEFAULT_KINDS);
 let showConcepts = false;
-let showLabels = true;
 let filtersCollapsed = false;
 let langMenuOpen = false;
 

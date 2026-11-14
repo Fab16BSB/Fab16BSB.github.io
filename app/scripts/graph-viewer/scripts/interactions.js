@@ -65,9 +65,6 @@ function updateTooltip(event, entry) {
 /**
  * Centre la vue sur un nœud sans réduire le zoom courant.
  *
- * Sur mobile, la feuille ouverte masque le bas de la scène : le nœud est
- * centré dans la bande restée visible.
- *
  * @param {string} id - Identifiant du nœud.
  * @returns {void}
  */
@@ -76,13 +73,8 @@ function focusNode(id) {
   if (!position) return;
 
   view.scale = Math.max(view.scale, 1);
-  const covered = isSheetLayout() ? stage.clientHeight * SHEET_OPEN_RATIO : 0;
-  const centerY = Math.max(
-    stage.clientHeight * 0.2,
-    (stage.clientHeight - covered) / 2,
-  );
   view.x = stage.clientWidth / 2 - position.x * view.scale;
-  view.y = centerY - position.y * view.scale;
+  view.y = stage.clientHeight / 2 - position.y * view.scale;
 }
 
 /**

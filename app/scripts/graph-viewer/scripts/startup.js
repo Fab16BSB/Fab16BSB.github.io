@@ -29,12 +29,6 @@ document.getElementById('toggle-concepts').addEventListener('click', (event) => 
   renderPanel();
 });
 
-// Bascule des étiquettes sans relancer la simulation.
-document.getElementById('toggle-labels').addEventListener('click', (event) => {
-  showLabels = !showLabels;
-  event.currentTarget.setAttribute('aria-pressed', showLabels ? 'true' : 'false');
-});
-
 // Zoom tactile : boutons visibles sur les petits écrans.
 document.getElementById('zoom-in').addEventListener('click', () => zoomBy(1.35));
 document.getElementById('zoom-out').addEventListener('click', () => zoomBy(1 / 1.35));

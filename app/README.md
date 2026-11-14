@@ -230,12 +230,14 @@ theme and a “Portfolio” button on the right. Search and filters sit in a bar
 below, and the search stays visible when filters are collapsed. It carries
 `noindex,nofollow` and stays out of search engines.
 
-- Filter by content kind, search a title, toggle technical concepts and labels.
+- Filter by content kind, search a title and toggle technical concepts.
+- Node names stay visible with the same zoom-based decluttering; relation
+  details and reasons live in the side panel.
 - In a theme panel, see the linked skills/technologies and filter its attached contents by content kind.
 - Tap or click a node to see its themes, technologies and "see also" recommendations.
 - Drag a node to pin it, double-click to release it; wheel or pinch to zoom. On
   phones, the `+` / `−` buttons zoom, filters start collapsed, and the detail
-  sheet leaves the focused node visible above it.
+  sheet opens full height over the graph.
 - Deep link: `/graph/?select=project:these`, optionally with `&concepts=1`; use
   `public/graph/index.html?select=project:these` when opening the file directly.
 

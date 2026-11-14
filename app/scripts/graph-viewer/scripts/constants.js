@@ -107,9 +107,6 @@ const TAP_SLOP_MOUSE = 4;
 // Agrandissement visuel des nœuds sur les petits écrans.
 const COMPACT_NODE_SCALE = 1.3;
 
-// Part de la hauteur d'écran occupée par la feuille ouverte.
-const SHEET_OPEN_RATIO = 0.6;
-
 // Délai pendant lequel la feuille ignore le clic qui suit son ouverture.
 const SHEET_CLOSE_GUARD_MS = 350;
 
