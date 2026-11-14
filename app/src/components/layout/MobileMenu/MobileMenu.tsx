@@ -44,7 +44,10 @@ export function MobileMenu({ open, active, onClose }: MobileMenuProps) {
                 onClick={onClose}
                 tabIndex={open ? 0 : -1}
               >
-                <span>{t(item.labelKey)}</span>
+                <span className={styles.label}>
+                  <Icon name={item.icon} size={22} className={styles.icon} />
+                  {t(item.labelKey)}
+                </span>
                 <Icon name="arrow-up-right" size={17} />
               </a>
             </li>

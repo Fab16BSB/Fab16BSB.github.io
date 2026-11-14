@@ -68,11 +68,33 @@
   transition: color var(--transition);
 }
 
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.label .icon {
+  flex-shrink: 0;
+  color: var(--accent-2);
+  opacity: 0.9;
+  transition:
+    opacity var(--transition),
+    color var(--transition);
+}
+
+.link:hover .icon,
+.active .icon {
+  opacity: 1;
+}
+
 .link:hover,
 .active {
   color: var(--text);
 }
 
+.active .icon,
 .active svg {
   color: var(--accent-2);
 }
@@ -112,7 +134,7 @@
 /* ─────────────────────────────────────────────────────────────────────────
    Responsive
    ───────────────────────────────────────────────────────────────────────── */
-@media (min-width: 1040px) {
+@media (min-width: 1360px) {
   .panel {
     display: none;
   }

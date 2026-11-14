@@ -31,8 +31,9 @@ export function SectionBar() {
           href={previous.href}
           aria-label={`${t('accessibility.previousSection')} : ${t(previous.labelKey)}`}
         >
-          <Icon name="chevron-left" size={18} />
+          <Icon name="chevron-left" size={15} className={styles.chevron} />
           <span>{t(previous.labelKey)}</span>
+          <Icon name={previous.icon} size={18} className={styles.sectionIcon} />
         </a>
       ) : (
         <span className={styles.placeholder} aria-hidden="true" />
@@ -40,7 +41,10 @@ export function SectionBar() {
 
       {/* Section courante */}
       <div className={styles.center}>
-        <span className={styles.current}>{t(current.labelKey)}</span>
+        <span className={styles.current}>
+          <Icon name={current.icon} size={20} className={styles.sectionIcon} />
+          <span className={styles.currentLabel}>{t(current.labelKey)}</span>
+        </span>
         <span className={styles.count}>
           {String(index + 1).padStart(2, '0')} / {total}
         </span>
@@ -53,8 +57,9 @@ export function SectionBar() {
           href={next.href}
           aria-label={`${t('accessibility.nextSection')} : ${t(next.labelKey)}`}
         >
+          <Icon name={next.icon} size={18} className={styles.sectionIcon} />
           <span>{t(next.labelKey)}</span>
-          <Icon name="chevron-right" size={18} />
+          <Icon name="chevron-right" size={15} className={styles.chevron} />
         </a>
       ) : (
         <span className={styles.placeholder} aria-hidden="true" />

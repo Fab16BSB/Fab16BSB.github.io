@@ -40,7 +40,10 @@
 }
 
 .current {
-  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
   max-width: 100%;
   color: var(--text);
   font-family: var(--font-display);
@@ -48,8 +51,17 @@
   font-weight: 650;
   letter-spacing: -0.01em;
   text-align: center;
-  text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.currentLabel {
+  overflow: hidden;
+  min-width: 0;
+  text-overflow: ellipsis;
+}
+
+.center .sectionIcon {
+  color: var(--accent-2);
 }
 
 .count {
@@ -68,7 +80,7 @@
   display: inline-flex;
   max-width: 100%;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.3rem;
   min-width: 0;
   color: var(--accent-2);
   font-family: var(--font-display);
@@ -93,23 +105,29 @@
 }
 
 .previous svg,
-.next svg {
+.next svg,
+.sectionIcon {
   flex-shrink: 0;
   transition: transform var(--transition);
 }
 
-.previous:hover svg {
+/* Chevron de direction, plus discret que l'icône de rubrique. */
+.chevron {
+  opacity: 0.6;
+}
+
+.previous:hover > svg:first-child {
   transform: translateX(-2px);
 }
 
-.next:hover svg {
+.next:hover > svg:last-child {
   transform: translateX(2px);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
    Responsive
    ───────────────────────────────────────────────────────────────────────── */
-@media (max-width: 1179px) {
+@media (max-width: 1359px) {
   .bar {
     display: grid;
   }

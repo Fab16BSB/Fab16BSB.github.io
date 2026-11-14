@@ -22,7 +22,7 @@ export function Header() {
   return (
     <>
       <header className={styles.header} data-scrolled={scrolled}>
-        <div className={`container ${styles.inner}`}>
+        <div className={styles.inner}>
 
           {/* Identité */}
           <a className={styles.brand} href="#about" aria-label="Fabien Poirier — accueil">
@@ -42,6 +42,7 @@ export function Header() {
                     className={[styles.navLink, active === item.id ? styles.active : ''].filter(Boolean).join(' ')}
                     href={item.href}
                   >
+                    <Icon name={item.icon} size={18} className={styles.navIcon} />
                     {t(item.labelKey)}
                   </a>
                 </li>

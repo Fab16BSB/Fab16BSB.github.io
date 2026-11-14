@@ -102,6 +102,13 @@ export const strokePaths: Partial<Record<IconName, ReactNode>> = {
       <path d="M12 7v5l3 2" />
     </>
   ),
+  route: (
+    <>
+      <circle cx="5.5" cy="18.5" r="2" />
+      <circle cx="18.5" cy="5.5" r="2" />
+      <path d="M7 18.5h4c3 0 3-6.5 0-6.5h-3c-3 0-3-6.5 0-6.5h8" />
+    </>
+  ),
   filter: <path d="M4 6h16M7 12h10M10 18h4" />,
   search: (
     <>
