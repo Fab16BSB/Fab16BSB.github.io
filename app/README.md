@@ -184,7 +184,7 @@ The standalone viewer is written only once, to `app/public/graph/index.html`
 The viewer source lives in `scripts/graph-viewer/`:
 
 - `template.html` — skeleton with placeholders.
-- `html/` — head, header and workspace partials.
+- `html/` — head, icons, header and workspace partials.
 - `styles/` — CSS split by responsibility (tokens, header, filters, stage, panel, responsive).
 - `scripts/` — JavaScript split by responsibility (data, state, layout, render, panel, filters, preferences, startup).
 

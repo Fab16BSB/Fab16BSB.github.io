@@ -7,6 +7,8 @@ import type { IconName } from '@/types/ui.types';
 /* =========================================================================
   TRACÉS : icônes au trait
 ========================================================================= */
+// Certaines icônes (soleil, lune, recherche, croix, chevrons) sont aussi
+// dans le sprite du viewer de graphe : garder les tracés alignés.
 export const strokePaths: Partial<Record<IconName, ReactNode>> = {
   'arrow-right': <path d="M4 12h15m0 0-5.5-5.5M19 12l-5.5 5.5" />,
   'arrow-down': <path d="M12 4v15m0 0 5.5-5.5M12 19l-5.5-5.5" />,

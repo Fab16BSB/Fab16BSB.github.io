@@ -7,6 +7,8 @@ import type { Locale } from '@/types/common.types';
 /* =========================================================================
   TRACÉS : drapeaux
 ========================================================================= */
+// Drapeaux repris dans le sprite du viewer de graphe : garder les tracés
+// alignés avec app/scripts/graph-viewer/html/icons.html.
 export const flagPaths: Record<Locale, ReactNode> = {
   // France.
   fr: (

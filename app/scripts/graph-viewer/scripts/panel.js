@@ -182,7 +182,7 @@ function createCloseButton() {
   close.innerHTML = [
     '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"',
     'stroke-width="1.8" stroke-linecap="round" aria-hidden="true">',
-    '<path d="M6 6l12 12M18 6L6 18" />',
+    '<use href="#icon-close"></use>',
     '</svg>',
   ].join('');
   close.addEventListener('click', closeSelectedPanel);

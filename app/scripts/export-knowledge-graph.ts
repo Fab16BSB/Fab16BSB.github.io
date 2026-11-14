@@ -51,6 +51,7 @@ const templatePath = resolve(viewerDir, 'template.html');
 /** Partials HTML du viewer, dans l'ordre d'assemblage. */
 const VIEWER_HTML_FILES = [
   'html/head.html',
+  'html/icons.html',
   'html/header.html',
   'html/workspace.html',
 ];
@@ -514,7 +515,7 @@ async function main(): Promise<void> {
       (await readFile(resolve(viewerDir, file), 'utf8')).trim(),
     ),
   );
-  const [head, headerHtml, workspaceHtml] = htmlParts;
+  const [head, iconsHtml, headerHtml, workspaceHtml] = htmlParts;
   const styles = await readViewerFiles(VIEWER_STYLE_FILES);
   const scripts = await readViewerFiles(VIEWER_SCRIPT_FILES);
   const themeInit = await readFile(
@@ -525,6 +526,7 @@ async function main(): Promise<void> {
   const embedded = JSON.stringify(payload).replace(/</g, '\\u003c');
   const viewer = template
     .replace('<!--__HEAD__-->', head)
+    .replace('<!--__ICONS__-->', iconsHtml)
     .replace('/*__THEME_INIT__*/', themeInit.trim())
     .replace('<!--__HEADER__-->', headerHtml)
     .replace('<!--__WORKSPACE__-->', workspaceHtml)
