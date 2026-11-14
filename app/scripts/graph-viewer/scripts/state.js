@@ -15,7 +15,8 @@ const byId = new Map(DATA.nodes.map((node) => [node.id, node]));
 
 // Compte les nœuds par type pour les filtres et le résumé.
 const kindCounts = DATA.nodes.reduce((counts, node) => {
-  counts.set(node.kind, (counts.get(node.kind) || 0) + 1);
+  const kind = displayKind(node);
+  counts.set(kind, (counts.get(kind) || 0) + 1);
   return counts;
 }, new Map());
 

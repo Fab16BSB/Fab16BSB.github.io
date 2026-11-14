@@ -34,6 +34,17 @@ function kindColor(kind) {
 }
 
 /**
+ * Retourne le type d'affichage d'un nœud.
+ * Les notebooks restent des projets mais sont filtrés et colorés à part.
+ *
+ * @param {object} node - Nœud du graphe.
+ * @returns {string} Type d'affichage.
+ */
+function displayKind(node) {
+  return node.isNotebook ? 'notebook' : node.kind;
+}
+
+/**
  * Retourne les couleurs du canvas pour le thème courant.
  *
  * @returns {object} Palette de tracés et d'étiquettes.
@@ -150,7 +161,7 @@ function isVisible(node) {
   let visible;
   if (node.kind === 'theme') visible = true;
   else if (node.kind === 'concept') visible = showConcepts;
-  else visible = visibleKinds.has(node.kind);
+  else visible = visibleKinds.has(displayKind(node));
   return visible;
 }
 

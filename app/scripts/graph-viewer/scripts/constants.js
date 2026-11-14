@@ -4,7 +4,7 @@
 
 // Types de contenus affichables dans les filtres.
 const CONTENT_KINDS = [
-  'project', 'publication', 'article', 'teaching', 'experience',
+  'project', 'notebook', 'publication', 'article', 'teaching', 'experience',
   'education', 'award', 'supervision', 'video', 'skill',
 ];
 
@@ -14,6 +14,7 @@ const DEFAULT_KINDS = CONTENT_KINDS.filter((kind) => kind !== 'skill');
 // Libellés localisés des types de nœuds.
 const KIND_LABELS = {
   project: { fr: 'Projets', en: 'Projects', es: 'Proyectos' },
+  notebook: { fr: 'Notebooks', en: 'Notebooks', es: 'Notebooks' },
   publication: { fr: 'Publications', en: 'Publications', es: 'Publicaciones' },
   article: { fr: 'Posts', en: 'Posts', es: 'Posts' },
   teaching: { fr: 'Enseignement', en: 'Teaching', es: 'Enseñanza' },
@@ -30,6 +31,7 @@ const KIND_LABELS = {
 // Couleurs de base par type pour le thème sombre.
 const KIND_COLORS = {
   project: '#6366f1',
+  notebook: '#d946ef',
   publication: '#f43f5e',
   article: '#fb923c',
   teaching: '#10b981',
@@ -47,6 +49,7 @@ const KIND_COLORS = {
 const KIND_COLORS_LIGHT = {
   ...KIND_COLORS,
   project: '#4f46e5',
+  notebook: '#a21caf',
   publication: '#e11d48',
   article: '#c2410c',
   teaching: '#047857',
@@ -113,6 +116,7 @@ const SHEET_CLOSE_GUARD_MS = 350;
 // Rayon de dessin des nœuds par type, en pixels monde.
 const KIND_RADIUS = {
   project: 11,
+  notebook: 11,
   publication: 10,
   article: 8,
   teaching: 9,

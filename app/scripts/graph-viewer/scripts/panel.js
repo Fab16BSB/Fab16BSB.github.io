@@ -208,8 +208,9 @@ function closeSelectedPanel() {
  */
 function createNodeMeta(node) {
   const meta = element('div', 'meta');
-  const badge = element('span', 'kind-badge', kindLabel(node.kind));
-  badge.style.setProperty('--kind', kindColor(node.kind));
+  const kind = displayKind(node);
+  const badge = element('span', 'kind-badge', kindLabel(kind));
+  badge.style.setProperty('--kind', kindColor(kind));
   meta.appendChild(badge);
   if (node.year) meta.appendChild(element('span', 'meta-year', String(node.year)));
   return meta;
@@ -257,7 +258,7 @@ function createRecordButton(target, onSelect) {
 
   const row = element('div', 'row');
   row.appendChild(element('span', 'name', labelOf(target)));
-  row.appendChild(createKindTag(target.kind));
+  row.appendChild(createKindTag(displayKind(target)));
   button.appendChild(row);
 
   button.addEventListener('click', () => onSelect(target.id));
@@ -348,7 +349,7 @@ function createContextSection(node) {
 function selectContentNode(id) {
   const target = byId.get(id);
   if (target) {
-    visibleKinds.add(target.kind);
+    visibleKinds.add(displayKind(target));
     rebuild();
     renderFilters();
     selectNode(id);
@@ -363,7 +364,7 @@ function selectContentNode(id) {
 function selectRecommendedNode(id) {
   const target = byId.get(id);
   if (target) {
-    visibleKinds.add(target.kind);
+    visibleKinds.add(displayKind(target));
     if (target.kind === 'concept') showConcepts = true;
     rebuild();
     renderFilters();
@@ -438,7 +439,7 @@ function getThemeMembers(node) {
  */
 function getMemberKinds(members) {
   return CONTENT_KINDS.filter((kind) =>
-    members.some((member) => member.kind === kind),
+    members.some((member) => displayKind(member) === kind),
   );
 }
 
@@ -469,7 +470,7 @@ function syncMemberKindFilter(node, kinds) {
 function getVisibleMembers(members) {
   return memberKindFilter.size === 0
     ? members
-    : members.filter((member) => memberKindFilter.has(member.kind));
+    : members.filter((member) => memberKindFilter.has(displayKind(member)));
 }
 
 /**
@@ -508,7 +509,7 @@ function createMemberFilters(members, kinds) {
   filterRow.appendChild(createAllMembersChip());
 
   for (const kind of kinds) {
-    const count = members.filter((member) => member.kind === kind).length;
+    const count = members.filter((member) => displayKind(member) === kind).length;
     filterRow.appendChild(createMemberChip(kind, count));
   }
 

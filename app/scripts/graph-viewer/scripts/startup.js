@@ -86,7 +86,7 @@ const params = new URLSearchParams(window.location.search);
 const initialId = params.get('select');
 if (initialId && byId.has(initialId)) {
   const initialNode = byId.get(initialId);
-  visibleKinds.add(initialNode.kind);
+  visibleKinds.add(displayKind(initialNode));
   if (params.get('concepts') === '1') showConcepts = true;
   rebuild();
   renderFilters();

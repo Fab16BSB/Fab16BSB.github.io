@@ -105,6 +105,7 @@ export type KnowledgeContentNode = KnowledgeNode & {
   educationId?: EducationId;
   educationIds?: EducationId[];
   experienceIds?: ExperienceId[];
+  isNotebook?: boolean;
 };
 
 /**

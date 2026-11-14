@@ -36,6 +36,7 @@ export type KnowledgeRawNode = {
   educationId?: EducationId;
   educationIds?: EducationId[];
   experienceIds?: ExperienceId[];
+  isNotebook?: boolean;
   tags: string[];
   text: Record<Locale, string>;
 };
@@ -142,6 +143,7 @@ function projectRawNode(project: (typeof projects)[number]): KnowledgeRawNode {
     anchor: '#projects',
     educationIds: project.educationIds,
     experienceIds: project.experienceIds,
+    isNotebook: project.category === 'notebook',
     tags: [...project.stack, project.category],
     text,
   };

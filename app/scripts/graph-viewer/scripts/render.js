@@ -9,6 +9,7 @@ const LABEL_MAX_LENGTH = 38;
 const LABEL_FONT_FAMILY = '"Segoe UI", system-ui, sans-serif';
 const LABEL_PRIORITIES = {
   project: 0,
+  notebook: 0,
   theme: 1,
   publication: 2,
   teaching: 3,
@@ -197,7 +198,7 @@ function drawNodes(highlighted, palette) {
 function drawNode(entry, highlighted, palette) {
   const node = entry.node;
   const position = entry.position;
-  const radius = nodeRadius(node.kind);
+  const radius = nodeRadius(displayKind(node));
   const focused = node.id === selectedId || node.id === hoverId;
   const connected = highlighted.has(node.id);
   const matched = matchIds.has(node.id);
@@ -208,7 +209,7 @@ function drawNode(entry, highlighted, palette) {
 
   ctx.beginPath();
   ctx.arc(position.x, position.y, radius, 0, Math.PI * 2);
-  ctx.fillStyle = kindColor(node.kind);
+  ctx.fillStyle = kindColor(displayKind(node));
   ctx.globalAlpha = focused || connected || matched ? 1 : 0.88;
   ctx.fill();
   ctx.globalAlpha = 1;
@@ -294,7 +295,7 @@ function drawLabels(palette) {
  * @returns {number} Priorité, la plus petite étant affichée en premier.
  */
 function labelPriority(node) {
-  let priority = LABEL_PRIORITIES[node.kind] ?? 5;
+  let priority = LABEL_PRIORITIES[displayKind(node)] ?? 5;
   if (node.id === selectedId) priority = -2;
   else if (node.id === hoverId) priority = -1;
   return priority;
@@ -307,11 +308,12 @@ function labelPriority(node) {
  * @returns {boolean} `true` si l'étiquette peut être affichée.
  */
 function isLabelVisible(node) {
+  const kind = displayKind(node);
   let visible = view.scale >= 1.1;
   if (node.id === selectedId || node.id === hoverId) visible = true;
-  else if (node.kind === 'theme' || node.kind === 'project') visible = true;
-  else if (node.kind === 'publication') visible = view.scale >= 0.9;
-  else if (node.kind === 'concept') visible = view.scale >= 1.5;
+  else if (kind === 'theme' || kind === 'project' || kind === 'notebook') visible = true;
+  else if (kind === 'publication') visible = view.scale >= 0.9;
+  else if (kind === 'concept') visible = view.scale >= 1.5;
   return visible;
 }
 
@@ -326,7 +328,7 @@ function drawLabel(entry, palette, layout) {
   const node = entry.node;
   const position = entry.position;
   const text = truncateLabel(labelOf(node));
-  const rect = labelRect(position, node.kind, text, layout);
+  const rect = labelRect(position, displayKind(node), text, layout);
 
   if (!labelsOverlap(rect, layout.placed)) {
     layout.placed.push(rect);

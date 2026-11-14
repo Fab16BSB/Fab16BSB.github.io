@@ -24,7 +24,7 @@ function nodeAt(screenPoint, extraSlop = 0) {
   let closest = null;
   let closestDistance = Infinity;
   for (const entry of nodes) {
-    const radius = nodeRadius(entry.node.kind) + (NODE_HIT_SLOP + extraSlop) / view.scale;
+    const radius = nodeRadius(displayKind(entry.node)) + (NODE_HIT_SLOP + extraSlop) / view.scale;
     const dx = entry.position.x - world.x;
     const dy = entry.position.y - world.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
@@ -48,7 +48,7 @@ function updateTooltip(event, entry) {
     tooltip.textContent = labelOf(node);
 
     const small = document.createElement('small');
-    small.textContent = kindLabel(node.kind) + (node.year ? ' · ' + node.year : '');
+    small.textContent = kindLabel(displayKind(node)) + (node.year ? ' · ' + node.year : '');
     tooltip.appendChild(small);
 
     tooltip.style.left = event.clientX - canvas.getBoundingClientRect().left + 'px';

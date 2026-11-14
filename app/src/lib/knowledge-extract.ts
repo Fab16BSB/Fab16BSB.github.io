@@ -179,6 +179,7 @@ function enrichNode(
     ...(rawNode.educationId ? { educationId: rawNode.educationId } : {}),
     ...(rawNode.educationIds?.length ? { educationIds: rawNode.educationIds } : {}),
     ...(rawNode.experienceIds?.length ? { experienceIds: rawNode.experienceIds } : {}),
+    ...(rawNode.isNotebook ? { isNotebook: true } : {}),
     themes: detectThemes(themeText),
     terms: [...new Set([...concepts, ...looseTerms])].sort(),
     tags: rawNode.tags,

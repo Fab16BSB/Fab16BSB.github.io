@@ -104,7 +104,7 @@ function runSearch() {
   for (const node of matches) matchIds.add(node.id);
   if (matches.length > 0) {
     const first = matches[0];
-    visibleKinds.add(first.kind);
+    visibleKinds.add(displayKind(first));
     rebuild();
     renderFilters();
     selectNode(first.id);
