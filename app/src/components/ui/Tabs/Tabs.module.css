@@ -16,7 +16,25 @@
 }
 
 .filters {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filters .tab {
+  flex: 0 0 auto;
+}
+
+/* Dégradé de fin quand des onglets restent hors champ. */
+.filters.scrollable {
+  mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 1.6rem), transparent 100%);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -126,32 +144,7 @@
   }
 
   .filters .tab {
-    flex: 0 0 auto;
     justify-content: center;
     padding-inline: 0.65rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .filters {
-    flex-wrap: nowrap;
-    width: fit-content;
-    max-width: 100%;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .filters::-webkit-scrollbar {
-    display: none;
-  }
-
-  .filters .tab {
-    flex: 0 0 auto;
-  }
-
-  .filters.scrollable {
-    mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 1.6rem), transparent 100%);
   }
 }

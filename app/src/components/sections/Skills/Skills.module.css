@@ -12,6 +12,11 @@
   margin-bottom: 1.6rem;
 }
 
+.desktopFilters {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .mobileFilters {
   display: none;
 }
