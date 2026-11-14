@@ -12,12 +12,19 @@ import { useHeader } from './useHeader';
 import styles from './Header.module.css';
 
 /* =========================================================================
+  INTERFACE
+========================================================================= */
+type HeaderProps = {
+  active: string | null;
+};
+
+/* =========================================================================
   COMPOSANT : Header
   En-tête du site avec navigation et actions.
 ========================================================================= */
-export function Header() {
+export function Header({ active }: HeaderProps) {
   const { t, loc } = useI18n();
-  const { scrolled, active, open, close, toggle } = useHeader();
+  const { scrolled, open, close, toggle } = useHeader();
 
   return (
     <>

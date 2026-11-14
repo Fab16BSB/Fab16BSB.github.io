@@ -2,14 +2,11 @@
   IMPORTS
 ========================================================================= */
 import { useCallback, useEffect, useState } from 'react';
-import { useScrollSpy } from '@/hooks/sections/useScrollSpy';
 import { useLockBodyScroll } from '@/hooks/ui/useLockBodyScroll';
-import { navItems } from '@/data/navigation.data';
-import { getScrollProgress } from './header.helpers';
 
 /* =========================================================================
   HOOK : useHeader
-  Gère l'état du header : scroll, section active et menu mobile.
+  Gère l'état du header : apparition au scroll et menu mobile.
 ========================================================================= */
 export function useHeader() {
 
@@ -18,9 +15,6 @@ export function useHeader() {
 
   // État d'ouverture du menu mobile.
   const [open, setOpen] = useState(false);
-
-  // Section actuellement visible.
-  const active = useScrollSpy(navItems.map((item) => item.id));
 
   // Bloque le défilement quand le menu est ouvert.
   useLockBodyScroll(open);
@@ -31,41 +25,19 @@ export function useHeader() {
   // Ouvre ou ferme le menu mobile.
   const toggle = useCallback(() => setOpen((current) => !current), []);
 
-  // Met à jour l'état `scrolled` et la progression du défilement.
+  // Met à jour l'état `scrolled` au défilement et au redimensionnement.
   useEffect(() => {
-    let frame = 0;
-
-    const update = () => {
-      frame = 0;
-
-      const root = document.documentElement;
-      const progress = getScrollProgress(
-        window.scrollY,
-        root.scrollHeight,
-        window.innerHeight,
-      );
-
-      setScrolled(window.scrollY > 10);
-      // Variable CSS mise à jour sans rendu React, pour rester fluide au défilement.
-      root.style.setProperty('--scroll-progress', progress.toFixed(4));
-    };
-
-    const onScroll = () => {
-      if (frame === 0) {
-        frame = window.requestAnimationFrame(update);
-      }
-    };
+    const update = () => setScrolled(window.scrollY > 10);
 
     update();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
 
     return () => {
-      window.cancelAnimationFrame(frame);
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
     };
   }, []);
 
-  return { scrolled, active, open, close, toggle };
+  return { scrolled, open, close, toggle };
 }

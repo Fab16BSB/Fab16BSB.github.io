@@ -11,3 +11,6 @@ export const navItems: NavItem[] = [
   { id: 'teaching', href: '#teaching', labelKey: 'nav.teaching', icon: 'graduation' },
   { id: 'awards', href: '#awards', labelKey: 'nav.awards', icon: 'trophy' },
 ];
+
+// Identifiants des sections, dans l'ordre de la frise.
+export const sectionIds = navItems.map((item) => item.id);

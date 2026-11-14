@@ -11,6 +11,9 @@ body {
   color: var(--text);
   font-size: 1rem;
   overflow-x: hidden;
+
+  /* Réserve la hauteur de la frise fixée en bas de page. */
+  padding-bottom: calc(var(--timeline-h) + env(safe-area-inset-bottom));
 }
 
 body::before {
@@ -364,15 +367,10 @@ body::after {
 /* ─────────────────────────────────────────────────────────────────────────
    Responsive
    ───────────────────────────────────────────────────────────────────────── */
-@media (max-width: 1179px) {
-  body {
-    padding-bottom: calc(58px + env(safe-area-inset-bottom));
-  }
-}
-
 @media (max-width: 640px) {
   :root {
     --header-h: 64px;
+    --timeline-h: 52px;
   }
 
   .section {

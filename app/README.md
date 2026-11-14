@@ -48,7 +48,7 @@ app/
 └─ src/
    ├─ boot-splash/      # diffusion loader shown before React mounts
    ├─ components/
-   │  ├─ layout/         # Header, MobileMenu, Footer, SectionBar
+   │  ├─ layout/         # Header, SectionTimeline, MobileMenu, Footer
    │  ├─ ui/             # reusable building blocks
    │  └─ sections/       # page sections
    ├─ data/              # structured content

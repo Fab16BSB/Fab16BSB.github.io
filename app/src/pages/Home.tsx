@@ -2,12 +2,14 @@
   IMPORTS
 ========================================================================= */
 import { useReveal } from '@/hooks/sections/useReveal';
+import { useSectionProgress } from '@/hooks/sections/useSectionProgress';
+import { sectionIds } from '@/data/navigation.data';
 import { useI18n } from '@/i18n/useI18n';
 
 // Layout
 import { Header } from '@/components/layout/Header/Header';
 import { Footer } from '@/components/layout/Footer/Footer';
-import { SectionBar } from '@/components/layout/SectionBar/SectionBar';
+import { SectionTimeline } from '@/components/layout/SectionTimeline/SectionTimeline';
 
 // Sections
 import { About } from '@/components/sections/About/About';
@@ -27,6 +29,9 @@ export function Home() {
   const { t } = useI18n();
   const revealRef = useReveal<HTMLDivElement>();
 
+  // Section lue et progression commune au header et à la frise du bas.
+  const { active, progressRef } = useSectionProgress(sectionIds);
+
   return (
     <div ref={revealRef}>
 
@@ -35,7 +40,7 @@ export function Home() {
         {t('accessibility.skipToContent')}
       </a>
 
-      <Header />
+      <Header active={active} />
 
       <main id="main">
         <About />
@@ -50,8 +55,8 @@ export function Home() {
 
       <Footer />
 
-      {/* Barre flottante de navigation entre les sections. */}
-      <SectionBar />
+      {/* Frise de progression entre les sections, fixée en bas de page. */}
+      <SectionTimeline active={active} progressRef={progressRef} />
     </div>
   );
 }
