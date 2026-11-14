@@ -1,12 +1,15 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-06T13:11:26.251Z",
+  "generatedAt": "2026-11-14T15:40:52.582Z",
   "model": {
     "name": "Xenova/multilingual-e5-small",
     "revision": "761b726dd34fb83930e26aab4e9ac3899aa1fa78",
     "dimension": 384
   },
   "sources": {
+    "project:kaggle-auto-mpg": "115c95420fd5b4ec93b4ecbbecc9f14e8a3d2d5582b4afc1783aa225b584da4e",
+    "project:kaggle-california-housing": "b6e2a591ef2ec30a1e77bed11659fdf4b633b983e1c3e61c244556a982d4a257",
+    "project:kaggle-telco-churn": "58289f911ad160c71327738beab7ec29399861eb0555da429db9a30bf83ec754",
     "project:scheduler-finder": "1f794a4c81774113fc04dbea6aad733eba9a6ac0f72281079fc0d5c270bf866d",
     "project:progenimages": "90d8a5a23421f49a5fd52cf5ed3e8eef3bdca2566803a61b5763ed722fea11f7",
     "project:these": "3697c6820bf674ff9f7aee634e8c0417f6bc8507c00f1f40c0df400f1c06c1e2",
@@ -129,43 +132,43 @@
       "neighbors": [
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.705
+          0.713
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.689
+          0.69
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.666
-        ],
-        [
-          "article:https://medium.com/p/3bbb9b38aec7",
-          0.529
+          0.66
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.514
+          0.526
+        ],
+        [
+          "article:https://medium.com/p/3bbb9b38aec7",
+          0.522
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.467
+          0.462
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.324
+          0.322
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.312
+          0.292
         ],
         [
           "project:image-classification",
-          0.221
+          0.209
         ],
         [
           "project:progenimages",
-          0.214
+          0.196
         ]
       ]
     },
@@ -173,43 +176,43 @@
       "neighbors": [
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.795
+          0.793
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.741
+          0.748
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.704
-        ],
-        [
-          "article:https://medium.com/p/448b8ff2a461",
-          0.523
+          0.711
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.514
+          0.526
+        ],
+        [
+          "article:https://medium.com/p/448b8ff2a461",
+          0.525
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.458
+          0.451
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.38
+          0.369
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.341
+          0.333
         ],
         [
           "project:som",
-          0.216
+          0.211
         ],
         [
           "project:image-classification",
-          0.214
+          0.206
         ]
       ]
     },
@@ -217,43 +220,43 @@
       "neighbors": [
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.795
+          0.793
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.725
+          0.716
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.711
+          0.692
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.565
+          0.551
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.529
+          0.522
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.475
+          0.463
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.348
+          0.335
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.3
+          0.29
         ],
         [
           "project:som",
-          0.193
+          0.182
         ],
         [
           "project:story-bot",
-          0.176
+          0.175
         ]
       ]
     },
@@ -261,43 +264,43 @@
       "neighbors": [
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.711
-        ],
-        [
-          "article:https://medium.com/p/e4fbd82fd615",
           0.692
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.689
+          0.69
+        ],
+        [
+          "article:https://medium.com/p/e4fbd82fd615",
+          0.687
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.523
+          0.525
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.522
+          0.514
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.465
+          0.452
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.29
+          0.273
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.256
-        ],
-        [
-          "project:story-bot",
-          0.196
+          0.249
         ],
         [
           "project:som",
-          0.195
+          0.191
+        ],
+        [
+          "project:story-bot",
+          0.19
         ]
       ]
     },
@@ -305,43 +308,43 @@
       "neighbors": [
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.743
+          0.731
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.72
+          0.718
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.458
+          0.451
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.424
+          0.431
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.358
+          0.355
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.312
+          0.292
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.3
+          0.29
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.256
+          0.249
         ],
         [
           "project:image-classification",
-          0.215
+          0.23
         ],
         [
           "project:som",
-          0.178
+          0.172
         ]
       ]
     },
@@ -349,43 +352,43 @@
       "neighbors": [
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.741
+          0.748
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.725
+          0.716
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.705
+          0.713
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.545
-        ],
-        [
-          "article:https://medium.com/p/e4fbd82fd615",
           0.54
         ],
         [
-          "article:https://medium.com/p/448b8ff2a461",
-          0.522
+          "article:https://medium.com/p/e4fbd82fd615",
+          0.538
         ],
         [
-          "article:https://medium.com/p/505cdf727735",
-          0.358
+          "article:https://medium.com/p/448b8ff2a461",
+          0.514
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.353
+          0.356
+        ],
+        [
+          "article:https://medium.com/p/505cdf727735",
+          0.355
         ],
         [
           "project:image-classification",
-          0.248
+          0.244
         ],
         [
           "project:story-bot",
-          0.162
+          0.155
         ]
       ]
     },
@@ -393,43 +396,43 @@
       "neighbors": [
         [
           "article:https://medium.com/p/505cdf727735",
-          0.743
+          0.731
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.719
+          0.726
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.545
+          0.54
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.467
+          0.462
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.38
+          0.369
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.348
+          0.335
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.321
+          0.315
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.29
+          0.273
         ],
         [
           "project:image-classification",
-          0.231
+          0.233
         ],
         [
           "publication:arxiv-2410-15909",
-          0.212
+          0.204
         ]
       ]
     },
@@ -437,87 +440,87 @@
       "neighbors": [
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.704
+          0.711
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.692
+          0.687
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.666
+          0.66
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.565
+          0.551
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.54
+          0.538
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.424
-        ],
-        [
-          "article:https://medium.com/p/89bd19ca464b",
-          0.321
+          0.431
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
+          0.319
+        ],
+        [
+          "article:https://medium.com/p/89bd19ca464b",
           0.315
         ],
         [
           "project:som",
-          0.263
+          0.248
         ],
         [
           "project:story-bot",
-          0.221
+          0.216
         ]
       ]
     },
     "article:https://medium.com/p/f98104af68fe": {
       "neighbors": [
         [
-          "article:https://medium.com/p/505cdf727735",
-          0.72
+          "article:https://medium.com/p/89bd19ca464b",
+          0.726
         ],
         [
-          "article:https://medium.com/p/89bd19ca464b",
-          0.719
+          "article:https://medium.com/p/505cdf727735",
+          0.718
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.475
+          0.463
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.465
+          0.452
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.353
+          0.356
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.341
+          0.333
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.324
+          0.322
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.315
+          0.319
         ],
         [
           "project:image-classification",
-          0.17
+          0.185
         ],
         [
           "project:som",
-          0.16
+          0.172
         ]
       ]
     },
@@ -525,35 +528,43 @@
       "neighbors": [
         [
           "award:jury-alternance",
-          0.766
+          0.772
         ],
         [
           "award:selection-candidats",
-          0.709
+          0.705
         ],
         [
           "award:forum-metiers",
-          0.67
+          0.668
         ],
         [
           "education:dut",
-          0.344
+          0.341
         ],
         [
           "award:egc-2022",
-          0.252
+          0.268
         ],
         [
           "supervision:alternance-aeroport",
-          0.236
+          0.235
         ],
         [
           "supervision:stages-tutorat-iut",
-          0.235
+          0.228
         ],
         [
           "project:scheduler-finder",
           0.176
+        ],
+        [
+          "education:master",
+          0.055
+        ],
+        [
+          "teaching:poste-2025",
+          0.054
         ]
       ]
     },
@@ -561,43 +572,43 @@
       "neighbors": [
         [
           "video:EGHUEPMI4c8",
-          0.444
+          0.43
         ],
         [
           "award:jury-alternance",
-          0.307
+          0.31
         ],
         [
           "award:co-responsable-alternance",
-          0.252
+          0.268
         ],
         [
           "award:selection-candidats",
-          0.176
+          0.186
         ],
         [
           "skill:gemini",
-          0.161
+          0.154
         ],
         [
           "award:forum-metiers",
-          0.122
-        ],
-        [
-          "skill:api-rest",
-          0.122
-        ],
-        [
-          "skill:langchain",
-          0.104
+          0.14
         ],
         [
           "video:uye9Z8fGWSs",
-          0.104
+          0.134
+        ],
+        [
+          "skill:api-rest",
+          0.131
         ],
         [
           "skill:ollama",
-          0.101
+          0.124
+        ],
+        [
+          "skill:langchain",
+          0.114
         ]
       ]
     },
@@ -605,43 +616,43 @@
       "neighbors": [
         [
           "award:selection-candidats",
-          0.695
+          0.699
         ],
         [
           "award:co-responsable-alternance",
-          0.67
+          0.668
         ],
         [
           "award:jury-alternance",
-          0.615
+          0.612
         ],
         [
           "education:dut",
-          0.34
+          0.351
         ],
         [
           "supervision:stages-tutorat-iut",
-          0.214
+          0.204
         ],
         [
           "teaching:poste-2025",
-          0.17
+          0.183
         ],
         [
           "project:scheduler-finder",
+          0.146
+        ],
+        [
+          "award:egc-2022",
           0.14
         ],
         [
           "supervision:alternance-aeroport",
-          0.133
-        ],
-        [
-          "award:egc-2022",
-          0.122
+          0.116
         ],
         [
           "teaching:client-need-2024",
-          0.087
+          0.1
         ]
       ]
     },
@@ -649,43 +660,43 @@
       "neighbors": [
         [
           "award:co-responsable-alternance",
-          0.766
+          0.772
         ],
         [
           "award:selection-candidats",
-          0.7
+          0.698
         ],
         [
           "award:forum-metiers",
-          0.615
+          0.612
         ],
         [
           "education:dut",
-          0.312
+          0.325
         ],
         [
           "award:egc-2022",
-          0.307
+          0.31
         ],
         [
           "supervision:alternance-aeroport",
-          0.249
+          0.253
         ],
         [
           "supervision:stages-tutorat-iut",
-          0.22
+          0.209
         ],
         [
           "project:scheduler-finder",
-          0.19
+          0.198
         ],
         [
           "video:EGHUEPMI4c8",
-          0.18
+          0.144
         ],
         [
           "teaching:poste-2025",
-          0.079
+          0.076
         ]
       ]
     },
@@ -693,87 +704,87 @@
       "neighbors": [
         [
           "award:co-responsable-alternance",
-          0.709
-        ],
-        [
-          "award:jury-alternance",
-          0.7
+          0.705
         ],
         [
           "award:forum-metiers",
-          0.695
+          0.699
+        ],
+        [
+          "award:jury-alternance",
+          0.698
         ],
         [
           "education:dut",
-          0.381
-        ],
-        [
-          "supervision:stages-tutorat-iut",
-          0.189
+          0.378
         ],
         [
           "award:egc-2022",
-          0.176
+          0.186
         ],
         [
           "project:scheduler-finder",
-          0.17
+          0.177
+        ],
+        [
+          "supervision:stages-tutorat-iut",
+          0.175
         ],
         [
           "supervision:alternance-aeroport",
-          0.137
+          0.125
         ],
         [
-          "video:EGHUEPMI4c8",
-          0.081
+          "education:master",
+          0.088
         ],
         [
           "teaching:poste-2025",
-          0.08
+          0.087
         ]
       ]
     },
     "education:dut": {
       "neighbors": [
         [
-          "education:licence",
-          0.544
+          "education:master",
+          0.547
         ],
         [
-          "education:master",
-          0.533
+          "education:licence",
+          0.542
         ],
         [
           "education:phd",
-          0.409
+          0.421
         ],
         [
           "award:selection-candidats",
-          0.381
-        ],
-        [
-          "award:co-responsable-alternance",
-          0.344
+          0.378
         ],
         [
           "award:forum-metiers",
-          0.34
+          0.351
+        ],
+        [
+          "award:co-responsable-alternance",
+          0.341
         ],
         [
           "award:jury-alternance",
-          0.312
+          0.325
         ],
         [
           "teaching:architecture-2025",
-          0.195
+          0.215
         ],
         [
           "supervision:stages-tutorat-iut",
-          0.185
+          0.176
         ],
         [
-          "supervision:alternance-aeroport",
-          0.145
+          "video:uye9Z8fGWSs",
+          0.173
         ]
       ]
     },
@@ -781,43 +792,43 @@
       "neighbors": [
         [
           "education:master",
-          0.578
+          0.586
         ],
         [
           "education:dut",
-          0.544
+          0.542
         ],
         [
           "education:phd",
-          0.417
+          0.427
         ],
         [
           "teaching:architecture-2025",
-          0.156
+          0.168
         ],
         [
           "skill:postgresql",
-          0.066
+          0.067
         ],
         [
           "teaching:multimedia-2025",
+          0.063
+        ],
+        [
+          "video:YR8VKxy8JX0",
           0.061
         ],
         [
-          "supervision:alternance-aeroport",
+          "video:uye9Z8fGWSs",
           0.061
         ],
         [
           "supervision:stage-liasd",
-          0.06
+          0.057
         ],
         [
           "award:selection-candidats",
-          0.059
-        ],
-        [
-          "video:YR8VKxy8JX0",
-          0.056
+          0.055
         ]
       ]
     },
@@ -825,43 +836,43 @@
       "neighbors": [
         [
           "education:licence",
-          0.578
+          0.586
         ],
         [
           "education:dut",
-          0.533
+          0.547
         ],
         [
           "education:phd",
-          0.495
+          0.492
         ],
         [
           "supervision:stage-liasd",
-          0.144
+          0.133
         ],
         [
           "video:uye9Z8fGWSs",
-          0.093
-        ],
-        [
-          "award:egc-2022",
-          0.092
-        ],
-        [
-          "experience:stage-quatorze",
-          0.081
+          0.116
         ],
         [
           "award:selection-candidats",
-          0.075
+          0.088
         ],
         [
-          "project:image-classification",
-          0.069
+          "experience:stage-quatorze",
+          0.084
+        ],
+        [
+          "award:egc-2022",
+          0.079
         ],
         [
           "award:forum-metiers",
-          0.058
+          0.07
+        ],
+        [
+          "award:jury-alternance",
+          0.063
         ]
       ]
     },
@@ -869,43 +880,43 @@
       "neighbors": [
         [
           "education:master",
-          0.495
+          0.492
         ],
         [
           "education:licence",
-          0.417
+          0.427
         ],
         [
           "education:dut",
-          0.409
+          0.421
         ],
         [
           "project:these",
-          0.359
+          0.353
         ],
         [
           "experience:these-othello",
-          0.308
-        ],
-        [
-          "publication:arxiv-2410-15909",
-          0.2
+          0.296
         ],
         [
           "publication:egc-2022",
-          0.19
+          0.187
         ],
         [
-          "publication:aiccsa-2023",
-          0.168
+          "publication:arxiv-2410-15909",
+          0.185
         ],
         [
           "publication:thesis-2023",
-          0.165
+          0.159
         ],
         [
-          "video:EGHUEPMI4c8",
-          0.129
+          "publication:aiccsa-2023",
+          0.139
+        ],
+        [
+          "experience:stage-quatorze",
+          0.12
         ]
       ]
     },
@@ -913,43 +924,43 @@
       "neighbors": [
         [
           "project:story-bot",
-          0.328
+          0.326
         ],
         [
           "supervision:stage-imt-albi",
-          0.281
-        ],
-        [
-          "supervision:stage-liasd",
-          0.207
-        ],
-        [
-          "publication:egc-2022",
-          0.199
+          0.269
         ],
         [
           "project:scheduler-finder",
-          0.198
+          0.199
+        ],
+        [
+          "publication:egc-2022",
+          0.197
+        ],
+        [
+          "supervision:stage-liasd",
+          0.19
         ],
         [
           "project:image-classification",
-          0.188
-        ],
-        [
-          "experience:freelance-leasup",
-          0.16
+          0.176
         ],
         [
           "experience:stage-quatorze",
-          0.159
+          0.154
+        ],
+        [
+          "experience:freelance-leasup",
+          0.153
         ],
         [
           "project:searchengine",
-          0.151
+          0.141
         ],
         [
           "publication:arxiv-2411-04707",
-          0.125
+          0.114
         ]
       ]
     },
@@ -957,30 +968,26 @@
       "neighbors": [
         [
           "supervision:stage-imt-albi",
-          0.299
+          0.297
         ],
         [
           "project:scheduler-finder",
-          0.194
+          0.18
         ],
         [
           "supervision:stage-liasd",
-          0.179
-        ],
-        [
-          "experience:ater-paris8",
-          0.16
-        ],
-        [
-          "experience:stage-soldout",
-          0.159
+          0.177
         ],
         [
           "experience:stage-directannonces",
-          0.159
+          0.162
         ],
         [
-          "project:story-bot",
+          "experience:stage-soldout",
+          0.161
+        ],
+        [
+          "experience:ater-paris8",
           0.153
         ],
         [
@@ -988,12 +995,16 @@
           0.148
         ],
         [
-          "project:progenimages",
-          0.127
+          "project:story-bot",
+          0.144
         ],
         [
-          "publication:arxiv-2411-04707",
-          0.117
+          "project:kaggle-telco-churn",
+          0.14
+        ],
+        [
+          "project:progenimages",
+          0.123
         ]
       ]
     },
@@ -1001,43 +1012,43 @@
       "neighbors": [
         [
           "project:plagiat-inc",
-          0.295
+          0.28
         ],
         [
           "project:searchengine",
-          0.266
-        ],
-        [
-          "experience:stage-soldout",
-          0.239
+          0.264
         ],
         [
           "teaching:oop-java-2023",
-          0.23
+          0.228
         ],
         [
-          "project:infiltration",
-          0.197
+          "experience:stage-soldout",
+          0.224
         ],
         [
           "teaching:java-init-2025",
-          0.187
+          0.206
         ],
         [
-          "project:scheduler-finder",
-          0.17
+          "project:infiltration",
+          0.205
         ],
         [
           "experience:freelance-leasup",
-          0.159
+          0.162
         ],
         [
-          "teaching:java-2020",
-          0.148
+          "project:scheduler-finder",
+          0.153
         ],
         [
           "project:kermtech",
-          0.146
+          0.145
+        ],
+        [
+          "teaching:java-2020",
+          0.138
         ]
       ]
     },
@@ -1045,43 +1056,43 @@
       "neighbors": [
         [
           "supervision:stage-liasd",
-          0.224
+          0.23
         ],
         [
           "publication:egc-2022",
-          0.202
+          0.197
         ],
         [
           "project:these",
-          0.188
-        ],
-        [
-          "supervision:stages-tutorat-iut",
-          0.188
+          0.186
         ],
         [
           "project:scheduler-finder",
-          0.187
+          0.178
         ],
         [
-          "project:searchengine",
-          0.163
+          "supervision:stages-tutorat-iut",
+          0.174
         ],
         [
           "project:image-classification",
-          0.162
+          0.166
         ],
         [
-          "experience:ater-paris8",
-          0.159
+          "project:searchengine",
+          0.16
         ],
         [
           "supervision:stage-imt-albi",
-          0.158
+          0.159
         ],
         [
-          "supervision:alternance-aeroport",
-          0.152
+          "experience:ater-paris8",
+          0.154
+        ],
+        [
+          "experience:freelance-leasup",
+          0.148
         ]
       ]
     },
@@ -1089,43 +1100,43 @@
       "neighbors": [
         [
           "project:scheduler-finder",
-          0.256
+          0.246
         ],
         [
           "experience:stage-directannonces",
-          0.239
-        ],
-        [
-          "supervision:alternance-aeroport",
-          0.226
-        ],
-        [
-          "project:infiltration",
-          0.226
+          0.224
         ],
         [
           "project:plagiat-inc",
-          0.214
+          0.218
         ],
         [
-          "supervision:stages-tutorat-iut",
-          0.202
+          "project:infiltration",
+          0.211
+        ],
+        [
+          "supervision:alternance-aeroport",
+          0.207
         ],
         [
           "project:som",
-          0.189
+          0.173
+        ],
+        [
+          "supervision:stages-tutorat-iut",
+          0.166
         ],
         [
           "experience:freelance-leasup",
-          0.159
+          0.161
         ],
         [
           "project:kermtech",
-          0.108
+          0.1
         ],
         [
           "experience:stage-quatorze",
-          0.094
+          0.073
         ]
       ]
     },
@@ -1133,43 +1144,43 @@
       "neighbors": [
         [
           "project:these",
-          0.808
+          0.809
         ],
         [
           "publication:thesis-2023",
-          0.472
+          0.484
         ],
         [
           "publication:aiccsa-2023",
-          0.423
+          0.421
         ],
         [
           "publication:arxiv-2410-15909",
-          0.402
+          0.398
         ],
         [
           "publication:egc-2022",
-          0.364
+          0.382
         ],
         [
           "education:phd",
-          0.308
+          0.296
         ],
         [
           "publication:arxiv-2411-04707",
-          0.201
-        ],
-        [
-          "video:EGHUEPMI4c8",
-          0.151
+          0.188
         ],
         [
           "experience:stage-quatorze",
-          0.15
+          0.147
         ],
         [
-          "experience:ater-paris8",
-          0.106
+          "video:EGHUEPMI4c8",
+          0.146
+        ],
+        [
+          "project:scheduler-finder",
+          0.096
         ]
       ]
     },
@@ -1177,43 +1188,43 @@
       "neighbors": [
         [
           "project:som",
-          0.26
+          0.266
         ],
         [
           "project:progenimages",
-          0.25
+          0.238
         ],
         [
           "project:plagiat-inc",
-          0.188
+          0.18
         ],
         [
           "project:searchengine",
-          0.186
+          0.174
         ],
         [
           "project:image-classification",
-          0.184
+          0.173
         ],
         [
           "project:infiltration",
-          0.158
+          0.167
         ],
         [
           "video:9XfqYxcB6vE",
-          0.134
+          0.139
         ],
         [
           "experience:stage-directannonces",
-          0.128
+          0.131
         ],
         [
           "project:kermtech",
-          0.113
+          0.12
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.097
+          0.105
         ]
       ]
     },
@@ -1221,43 +1232,43 @@
       "neighbors": [
         [
           "supervision:stage-liasd",
-          0.364
+          0.358
         ],
         [
           "publication:egc-2022",
           0.309
         ],
         [
-          "project:progenimages",
-          0.262
-        ],
-        [
           "publication:thesis-2023",
-          0.253
-        ],
-        [
-          "article:https://medium.com/p/7e11c3f0434e",
-          0.248
+          0.249
         ],
         [
           "publication:arxiv-2411-04707",
+          0.247
+        ],
+        [
+          "project:progenimages",
+          0.244
+        ],
+        [
+          "article:https://medium.com/p/7e11c3f0434e",
+          0.244
+        ],
+        [
+          "project:kaggle-telco-churn",
           0.243
         ],
         [
-          "publication:aiccsa-2023",
-          0.239
-        ],
-        [
           "article:https://medium.com/p/89bd19ca464b",
-          0.231
+          0.233
         ],
         [
-          "article:https://medium.com/p/257850cd83e8",
-          0.221
+          "article:https://medium.com/p/505cdf727735",
+          0.23
         ],
         [
-          "publication:arxiv-2410-15909",
-          0.22
+          "publication:aiccsa-2023",
+          0.224
         ]
       ]
     },
@@ -1265,43 +1276,175 @@
       "neighbors": [
         [
           "project:plagiat-inc",
-          0.396
-        ],
-        [
-          "experience:stage-soldout",
-          0.226
+          0.388
         ],
         [
           "project:som",
-          0.224
+          0.219
+        ],
+        [
+          "experience:stage-soldout",
+          0.211
         ],
         [
           "experience:stage-directannonces",
-          0.197
+          0.205
         ],
         [
           "project:progenimages",
-          0.163
+          0.168
         ],
         [
           "project:huffman",
-          0.158
+          0.167
         ],
         [
           "project:scheduler-finder",
-          0.139
-        ],
-        [
-          "teaching:gui-2024",
-          0.114
+          0.136
         ],
         [
           "teaching:app-quality-2024",
+          0.094
+        ],
+        [
+          "teaching:gui-2024",
+          0.083
+        ],
+        [
+          "teaching:java-init-2025",
+          0.08
+        ]
+      ]
+    },
+    "project:kaggle-auto-mpg": {
+      "neighbors": [
+        [
+          "project:kaggle-california-housing",
+          0.31
+        ],
+        [
+          "project:kaggle-telco-churn",
+          0.284
+        ],
+        [
+          "project:scheduler-finder",
+          0.157
+        ],
+        [
+          "project:image-classification",
+          0.147
+        ],
+        [
+          "publication:arxiv-2411-04707",
+          0.146
+        ],
+        [
+          "project:searchengine",
+          0.143
+        ],
+        [
+          "project:progenimages",
+          0.13
+        ],
+        [
+          "experience:stage-quatorze",
+          0.127
+        ],
+        [
+          "supervision:stage-liasd",
+          0.124
+        ],
+        [
+          "publication:aiccsa-2023",
+          0.12
+        ]
+      ]
+    },
+    "project:kaggle-california-housing": {
+      "neighbors": [
+        [
+          "project:kaggle-auto-mpg",
+          0.31
+        ],
+        [
+          "project:kaggle-telco-churn",
+          0.305
+        ],
+        [
+          "project:image-classification",
+          0.177
+        ],
+        [
+          "project:searchengine",
+          0.148
+        ],
+        [
+          "publication:arxiv-2411-04707",
+          0.144
+        ],
+        [
+          "publication:arxiv-2410-15909",
+          0.135
+        ],
+        [
+          "experience:stage-directannonces",
+          0.106
+        ],
+        [
+          "supervision:stage-liasd",
           0.1
         ],
         [
+          "experience:freelance-leasup",
+          0.095
+        ],
+        [
+          "project:scheduler-finder",
+          0.078
+        ]
+      ]
+    },
+    "project:kaggle-telco-churn": {
+      "neighbors": [
+        [
+          "project:kaggle-california-housing",
+          0.305
+        ],
+        [
+          "project:kaggle-auto-mpg",
+          0.284
+        ],
+        [
+          "project:image-classification",
+          0.243
+        ],
+        [
+          "supervision:stage-liasd",
+          0.222
+        ],
+        [
+          "publication:thesis-2023",
+          0.196
+        ],
+        [
+          "publication:egc-2022",
+          0.195
+        ],
+        [
+          "publication:aiccsa-2023",
+          0.178
+        ],
+        [
           "project:story-bot",
-          0.086
+          0.171
+        ],
+        [
+          "publication:arxiv-2411-04707",
+          0.166
+        ],
+        [
+          "experience:freelance-leasup",
+          0.14
         ]
       ]
     },
@@ -1309,43 +1452,43 @@
       "neighbors": [
         [
           "project:progenimages",
-          0.182
+          0.17
         ],
         [
           "supervision:stage-liasd",
-          0.151
+          0.147
         ],
         [
           "experience:stage-directannonces",
-          0.146
+          0.145
         ],
         [
           "project:searchengine",
-          0.128
+          0.123
         ],
         [
           "project:huffman",
-          0.113
+          0.12
+        ],
+        [
+          "project:kaggle-auto-mpg",
+          0.107
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.112
-        ],
-        [
-          "experience:stage-soldout",
-          0.108
-        ],
-        [
-          "project:these",
           0.106
         ],
         [
-          "project:plagiat-inc",
-          0.096
+          "experience:stage-soldout",
+          0.1
         ],
         [
-          "article:https://medium.com/p/89bd19ca464b",
-          0.096
+          "project:these",
+          0.1
+        ],
+        [
+          "project:som",
+          0.098
         ]
       ]
     },
@@ -1353,43 +1496,43 @@
       "neighbors": [
         [
           "project:infiltration",
-          0.396
-        ],
-        [
-          "experience:stage-directannonces",
-          0.295
+          0.388
         ],
         [
           "project:som",
-          0.275
+          0.281
         ],
         [
-          "experience:stage-soldout",
-          0.214
-        ],
-        [
-          "project:huffman",
-          0.188
+          "experience:stage-directannonces",
+          0.28
         ],
         [
           "skill:java",
-          0.187
+          0.229
         ],
         [
-          "project:searchengine",
-          0.142
+          "experience:stage-soldout",
+          0.218
+        ],
+        [
+          "project:huffman",
+          0.18
         ],
         [
           "project:scheduler-finder",
           0.132
         ],
         [
+          "project:searchengine",
+          0.129
+        ],
+        [
           "project:progenimages",
-          0.13
+          0.124
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.123
+          0.114
         ]
       ]
     },
@@ -1397,43 +1540,43 @@
       "neighbors": [
         [
           "project:image-classification",
-          0.262
+          0.244
         ],
         [
           "project:huffman",
-          0.25
+          0.238
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.214
-        ],
-        [
-          "project:kermtech",
-          0.182
-        ],
-        [
-          "article:https://medium.com/p/e4fbd82fd615",
-          0.179
-        ],
-        [
-          "publication:egc-2022",
-          0.166
+          0.196
         ],
         [
           "publication:arxiv-2411-04707",
-          0.163
+          0.174
         ],
         [
-          "project:story-bot",
-          0.163
+          "article:https://medium.com/p/e4fbd82fd615",
+          0.173
+        ],
+        [
+          "project:kermtech",
+          0.17
         ],
         [
           "project:infiltration",
-          0.163
+          0.168
         ],
         [
-          "article:https://medium.com/p/505cdf727735",
+          "publication:egc-2022",
+          0.162
+        ],
+        [
+          "project:som",
           0.16
+        ],
+        [
+          "project:story-bot",
+          0.146
         ]
       ]
     },
@@ -1441,43 +1584,43 @@
       "neighbors": [
         [
           "supervision:stages-tutorat-iut",
-          0.288
+          0.285
         ],
         [
           "supervision:alternance-aeroport",
-          0.263
+          0.261
         ],
         [
           "experience:stage-soldout",
-          0.256
+          0.246
         ],
         [
           "experience:ater-paris8",
+          0.199
+        ],
+        [
+          "award:jury-alternance",
           0.198
         ],
         [
           "experience:freelance-leasup",
-          0.194
-        ],
-        [
-          "award:jury-alternance",
-          0.19
+          0.18
         ],
         [
           "experience:stage-quatorze",
-          0.187
+          0.178
+        ],
+        [
+          "award:selection-candidats",
+          0.177
         ],
         [
           "award:co-responsable-alternance",
           0.176
         ],
         [
-          "publication:arxiv-2411-04707",
-          0.17
-        ],
-        [
-          "experience:stage-directannonces",
-          0.17
+          "publication:aiccsa-2023",
+          0.168
         ]
       ]
     },
@@ -1485,43 +1628,43 @@
       "neighbors": [
         [
           "experience:stage-directannonces",
-          0.266
+          0.264
         ],
         [
           "project:huffman",
-          0.186
+          0.174
         ],
         [
           "project:som",
-          0.181
+          0.173
         ],
         [
           "experience:stage-quatorze",
-          0.163
+          0.16
+        ],
+        [
+          "project:kaggle-california-housing",
+          0.148
+        ],
+        [
+          "project:kaggle-auto-mpg",
+          0.143
         ],
         [
           "experience:ater-paris8",
-          0.151
+          0.141
         ],
         [
           "project:plagiat-inc",
-          0.142
-        ],
-        [
-          "project:scheduler-finder",
-          0.138
+          0.129
         ],
         [
           "project:kermtech",
-          0.128
+          0.123
         ],
         [
-          "article:https://medium.com/p/89bd19ca464b",
-          0.125
-        ],
-        [
-          "teaching:oop-java-2023",
-          0.115
+          "project:scheduler-finder",
+          0.118
         ]
       ]
     },
@@ -1529,43 +1672,43 @@
       "neighbors": [
         [
           "project:plagiat-inc",
-          0.275
-        ],
-        [
-          "article:https://medium.com/p/e4fbd82fd615",
-          0.263
+          0.281
         ],
         [
           "project:huffman",
-          0.26
+          0.266
+        ],
+        [
+          "article:https://medium.com/p/e4fbd82fd615",
+          0.248
         ],
         [
           "project:infiltration",
-          0.224
+          0.219
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.216
-        ],
-        [
-          "article:https://medium.com/p/257850cd83e8",
-          0.195
+          0.211
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.195
+          0.191
+        ],
+        [
+          "article:https://medium.com/p/257850cd83e8",
+          0.186
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.193
-        ],
-        [
-          "experience:stage-soldout",
-          0.189
+          0.182
         ],
         [
           "project:searchengine",
-          0.181
+          0.173
+        ],
+        [
+          "experience:stage-soldout",
+          0.173
         ]
       ]
     },
@@ -1573,43 +1716,43 @@
       "neighbors": [
         [
           "experience:ater-paris8",
-          0.328
+          0.326
         ],
         [
           "supervision:stage-liasd",
-          0.266
+          0.258
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.221
+          0.216
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.203
+          0.195
         ],
         [
           "project:image-classification",
-          0.202
-        ],
-        [
-          "article:https://medium.com/p/257850cd83e8",
-          0.2
+          0.191
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.196
+          0.19
+        ],
+        [
+          "article:https://medium.com/p/257850cd83e8",
+          0.182
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.176
+          0.175
         ],
         [
-          "project:progenimages",
-          0.163
+          "project:kaggle-telco-churn",
+          0.171
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.162
+          0.155
         ]
       ]
     },
@@ -1617,7 +1760,7 @@
       "neighbors": [
         [
           "experience:these-othello",
-          0.808
+          0.809
         ],
         [
           "publication:arxiv-2410-15909",
@@ -1625,35 +1768,35 @@
         ],
         [
           "publication:aiccsa-2023",
-          0.59
+          0.596
         ],
         [
           "publication:thesis-2023",
-          0.522
+          0.539
         ],
         [
           "publication:egc-2022",
-          0.52
+          0.533
         ],
         [
           "education:phd",
-          0.359
+          0.353
         ],
         [
           "publication:arxiv-2411-04707",
-          0.34
+          0.341
         ],
         [
           "experience:stage-quatorze",
-          0.188
+          0.186
         ],
         [
           "project:image-classification",
-          0.17
+          0.165
         ],
         [
-          "project:scheduler-finder",
-          0.112
+          "experience:ater-paris8",
+          0.107
         ]
       ]
     },
@@ -1669,35 +1812,35 @@
         ],
         [
           "project:these",
-          0.59
+          0.596
         ],
         [
           "publication:egc-2022",
-          0.579
+          0.582
         ],
         [
           "publication:arxiv-2411-04707",
-          0.567
+          0.569
         ],
         [
           "experience:these-othello",
-          0.423
+          0.421
         ],
         [
           "project:image-classification",
-          0.239
+          0.224
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.205
+          0.202
         ],
         [
-          "education:phd",
-          0.168
+          "project:kaggle-telco-churn",
+          0.178
         ],
         [
           "project:scheduler-finder",
-          0.166
+          0.168
         ]
       ]
     },
@@ -1709,11 +1852,11 @@
         ],
         [
           "publication:thesis-2023",
-          0.642
+          0.641
         ],
         [
           "publication:arxiv-2411-04707",
-          0.619
+          0.618
         ],
         [
           "publication:egc-2022",
@@ -1725,23 +1868,23 @@
         ],
         [
           "experience:these-othello",
-          0.402
+          0.398
         ],
         [
           "project:image-classification",
-          0.22
+          0.209
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.212
+          0.204
         ],
         [
           "education:phd",
-          0.2
+          0.185
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.148
+          0.153
         ]
       ]
     },
@@ -1749,43 +1892,43 @@
       "neighbors": [
         [
           "publication:egc-2022",
-          0.635
+          0.63
         ],
         [
           "publication:arxiv-2410-15909",
-          0.619
+          0.618
         ],
         [
           "publication:thesis-2023",
-          0.614
+          0.6
         ],
         [
           "publication:aiccsa-2023",
-          0.567
+          0.569
         ],
         [
           "project:these",
-          0.34
+          0.341
         ],
         [
           "project:image-classification",
-          0.243
-        ],
-        [
-          "experience:these-othello",
-          0.201
+          0.247
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.2
+          0.194
         ],
         [
-          "project:scheduler-finder",
-          0.17
+          "experience:these-othello",
+          0.188
         ],
         [
           "project:progenimages",
-          0.163
+          0.174
+        ],
+        [
+          "project:kaggle-telco-churn",
+          0.166
         ]
       ]
     },
@@ -1793,7 +1936,7 @@
       "neighbors": [
         [
           "publication:arxiv-2411-04707",
-          0.635
+          0.63
         ],
         [
           "publication:arxiv-2410-15909",
@@ -1801,35 +1944,35 @@
         ],
         [
           "publication:thesis-2023",
-          0.605
+          0.604
         ],
         [
           "publication:aiccsa-2023",
-          0.579
+          0.582
         ],
         [
           "project:these",
-          0.52
+          0.533
         ],
         [
           "experience:these-othello",
-          0.364
+          0.382
         ],
         [
           "project:image-classification",
           0.309
         ],
         [
-          "experience:stage-quatorze",
-          0.202
-        ],
-        [
           "experience:ater-paris8",
-          0.199
+          0.197
         ],
         [
-          "supervision:stage-liasd",
-          0.198
+          "experience:stage-quatorze",
+          0.197
+        ],
+        [
+          "project:kaggle-telco-churn",
+          0.195
         ]
       ]
     },
@@ -1841,39 +1984,39 @@
         ],
         [
           "publication:arxiv-2410-15909",
-          0.642
-        ],
-        [
-          "publication:arxiv-2411-04707",
-          0.614
+          0.641
         ],
         [
           "publication:egc-2022",
-          0.605
+          0.604
+        ],
+        [
+          "publication:arxiv-2411-04707",
+          0.6
         ],
         [
           "project:these",
-          0.522
+          0.539
         ],
         [
           "experience:these-othello",
-          0.472
+          0.484
         ],
         [
           "project:image-classification",
-          0.253
+          0.249
+        ],
+        [
+          "project:kaggle-telco-churn",
+          0.196
         ],
         [
           "education:phd",
-          0.165
+          0.159
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.147
-        ],
-        [
-          "supervision:stage-liasd",
-          0.131
+          0.136
         ]
       ]
     },
@@ -1881,43 +2024,43 @@
       "neighbors": [
         [
           "skill:chromadb",
-          0.328
-        ],
-        [
-          "skill:langchain",
-          0.309
+          0.349
         ],
         [
           "skill:pytest",
-          0.307
+          0.311
+        ],
+        [
+          "skill:langchain",
+          0.306
         ],
         [
           "skill:elasticsearch",
-          0.292
-        ],
-        [
-          "skill:postgresql",
-          0.289
+          0.304
         ],
         [
           "skill:mlflow",
-          0.274
-        ],
-        [
-          "skill:tensorflow",
-          0.256
+          0.279
         ],
         [
           "skill:mistral",
-          0.239
+          0.266
         ],
         [
-          "skill:seaborn",
-          0.221
+          "skill:tensorflow",
+          0.251
         ],
         [
-          "skill:opencv",
-          0.21
+          "skill:postgresql",
+          0.238
+        ],
+        [
+          "skill:ollama",
+          0.226
+        ],
+        [
+          "skill:huggingface",
+          0.206
         ]
       ]
     },
@@ -1925,43 +2068,43 @@
       "neighbors": [
         [
           "skill:postgresql",
-          0.414
+          0.418
         ],
         [
           "skill:matplotlib",
-          0.354
-        ],
-        [
-          "skill:tensorflow",
-          0.345
+          0.358
         ],
         [
           "skill:elasticsearch",
-          0.336
-        ],
-        [
-          "skill:langchain",
-          0.331
+          0.355
         ],
         [
           "skill:api-rest",
+          0.349
+        ],
+        [
+          "skill:tensorflow",
           0.328
         ],
         [
-          "skill:mlflow",
-          0.327
+          "skill:opencv",
+          0.324
         ],
         [
-          "skill:opencv",
-          0.326
+          "skill:langchain",
+          0.321
+        ],
+        [
+          "skill:mlflow",
+          0.319
         ],
         [
           "skill:sql",
-          0.277
+          0.313
         ],
         [
           "skill:mysql",
-          0.26
+          0.283
         ]
       ]
     },
@@ -1969,7 +2112,7 @@
       "neighbors": [
         [
           "skill:html",
-          0.586
+          0.575
         ],
         [
           "skill:javascript",
@@ -1977,35 +2120,35 @@
         ],
         [
           "skill:react",
-          0.311
+          0.322
         ],
         [
           "skill:flask",
-          0.252
+          0.265
         ],
         [
           "skill:mvc",
-          0.25
+          0.26
         ],
         [
           "skill:mysql",
-          0.237
+          0.247
         ],
         [
           "skill:keras",
-          0.234
-        ],
-        [
-          "skill:sql",
-          0.228
+          0.244
         ],
         [
           "skill:latex",
-          0.216
+          0.24
         ],
         [
           "skill:git",
-          0.215
+          0.235
+        ],
+        [
+          "skill:sql",
+          0.221
         ]
       ]
     },
@@ -2013,87 +2156,87 @@
       "neighbors": [
         [
           "skill:git",
-          0.393
-        ],
-        [
-          "skill:jupyter",
-          0.306
-        ],
-        [
-          "skill:nltk",
-          0.276
+          0.387
         ],
         [
           "skill:react",
-          0.276
+          0.292
         ],
         [
-          "skill:postgresql",
-          0.276
+          "skill:mysql",
+          0.288
         ],
         [
           "skill:python",
-          0.275
+          0.283
         ],
         [
-          "skill:keras",
-          0.265
+          "skill:postgresql",
+          0.277
         ],
         [
           "skill:seaborn",
+          0.273
+        ],
+        [
+          "skill:javascript",
+          0.272
+        ],
+        [
+          "skill:keras",
+          0.27
+        ],
+        [
+          "skill:jupyter",
+          0.267
+        ],
+        [
+          "skill:nltk",
           0.262
-        ],
-        [
-          "skill:mvc",
-          0.26
-        ],
-        [
-          "skill:elasticsearch",
-          0.253
         ]
       ]
     },
     "skill:elasticsearch": {
       "neighbors": [
         [
-          "skill:postgresql",
-          0.347
+          "skill:chromadb",
+          0.355
         ],
         [
-          "skill:chromadb",
-          0.336
+          "skill:postgresql",
+          0.339
         ],
         [
           "skill:tensorflow",
-          0.323
+          0.325
         ],
         [
           "skill:api-rest",
-          0.292
-        ],
-        [
-          "skill:langchain",
-          0.256
-        ],
-        [
-          "skill:docker",
-          0.253
+          0.304
         ],
         [
           "skill:mlflow",
-          0.241
+          0.264
+        ],
+        [
+          "skill:docker",
+          0.256
         ],
         [
           "skill:matplotlib",
-          0.238
+          0.255
         ],
         [
-          "skill:opencv",
-          0.228
+          "skill:langchain",
+          0.245
         ],
         [
           "skill:sql",
-          0.214
+          0.219
+        ],
+        [
+          "skill:mysql",
+          0.213
         ]
       ]
     },
@@ -2101,15 +2244,15 @@
       "neighbors": [
         [
           "skill:pandas",
-          0.342
-        ],
-        [
-          "skill:poo",
-          0.331
+          0.341
         ],
         [
           "skill:swagger",
-          0.326
+          0.337
+        ],
+        [
+          "skill:poo",
+          0.329
         ],
         [
           "skill:react",
@@ -2117,27 +2260,27 @@
         ],
         [
           "skill:python",
-          0.283
+          0.29
         ],
         [
           "skill:keras",
-          0.269
+          0.279
         ],
         [
-          "skill:gemini",
-          0.265
+          "skill:seaborn",
+          0.277
         ],
         [
           "skill:junit",
-          0.263
+          0.273
+        ],
+        [
+          "skill:gemini",
+          0.27
         ],
         [
           "skill:jupyter",
-          0.259
-        ],
-        [
-          "skill:huggingface",
-          0.254
+          0.266
         ]
       ]
     },
@@ -2145,43 +2288,43 @@
       "neighbors": [
         [
           "skill:pandas",
-          0.314
+          0.321
         ],
         [
           "skill:jupyter",
-          0.283
+          0.292
         ],
         [
           "skill:huggingface",
-          0.266
+          0.277
         ],
         [
           "skill:flask",
-          0.265
-        ],
-        [
-          "skill:swagger",
-          0.26
+          0.27
         ],
         [
           "skill:numpy",
-          0.254
+          0.262
+        ],
+        [
+          "skill:swagger",
+          0.256
         ],
         [
           "skill:seaborn",
-          0.241
+          0.244
         ],
         [
           "skill:poo",
-          0.231
+          0.242
         ],
         [
           "skill:junit",
-          0.229
+          0.238
         ],
         [
-          "skill:ollama",
-          0.222
+          "skill:keras",
+          0.228
         ]
       ]
     },
@@ -2189,43 +2332,43 @@
       "neighbors": [
         [
           "skill:docker",
-          0.393
-        ],
-        [
-          "skill:python",
-          0.334
+          0.387
         ],
         [
           "skill:junit",
           0.333
         ],
         [
-          "skill:mysql",
-          0.313
-        ],
-        [
-          "skill:javascript",
-          0.312
+          "skill:python",
+          0.327
         ],
         [
           "skill:react",
-          0.291
+          0.314
+        ],
+        [
+          "skill:javascript",
+          0.311
+        ],
+        [
+          "skill:mysql",
+          0.297
         ],
         [
           "skill:java",
-          0.276
+          0.244
         ],
         [
-          "skill:sql",
-          0.25
+          "skill:jupyter",
+          0.236
+        ],
+        [
+          "skill:css",
+          0.235
         ],
         [
           "skill:flask",
-          0.232
-        ],
-        [
-          "skill:html",
-          0.222
+          0.234
         ]
       ]
     },
@@ -2233,43 +2376,43 @@
       "neighbors": [
         [
           "skill:css",
-          0.586
+          0.575
         ],
         [
           "skill:javascript",
-          0.527
+          0.526
         ],
         [
           "skill:react",
-          0.347
+          0.338
         ],
         [
           "skill:mysql",
-          0.332
-        ],
-        [
-          "skill:uml",
-          0.325
+          0.333
         ],
         [
           "skill:mvc",
-          0.314
+          0.313
+        ],
+        [
+          "skill:uml",
+          0.289
         ],
         [
           "skill:latex",
-          0.271
+          0.285
         ],
         [
           "skill:mlflow",
-          0.257
+          0.27
         ],
         [
           "skill:python",
-          0.249
+          0.252
         ],
         [
           "skill:sql",
-          0.227
+          0.222
         ]
       ]
     },
@@ -2277,43 +2420,43 @@
       "neighbors": [
         [
           "skill:swagger",
-          0.344
+          0.361
         ],
         [
-          "skill:mistral",
-          0.306
+          "skill:poo",
+          0.303
         ],
         [
           "skill:seaborn",
           0.294
         ],
         [
-          "skill:opencv",
-          0.276
-        ],
-        [
-          "skill:poo",
-          0.275
-        ],
-        [
-          "skill:jupyter",
-          0.274
-        ],
-        [
-          "skill:ollama",
-          0.266
-        ],
-        [
-          "skill:gemini",
-          0.266
+          "skill:mistral",
+          0.284
         ],
         [
           "skill:langchain",
-          0.256
+          0.282
+        ],
+        [
+          "skill:jupyter",
+          0.281
+        ],
+        [
+          "skill:ollama",
+          0.281
+        ],
+        [
+          "skill:gemini",
+          0.277
+        ],
+        [
+          "skill:opencv",
+          0.264
         ],
         [
           "skill:flask",
-          0.254
+          0.262
         ]
       ]
     },
@@ -2321,43 +2464,43 @@
       "neighbors": [
         [
           "skill:javascript",
-          0.518
+          0.504
         ],
         [
           "skill:python",
-          0.406
-        ],
-        [
-          "skill:mysql",
-          0.279
-        ],
-        [
-          "skill:junit",
-          0.278
-        ],
-        [
-          "skill:git",
-          0.276
+          0.39
         ],
         [
           "skill:uml",
-          0.268
+          0.274
         ],
         [
-          "skill:sql",
+          "skill:mysql",
           0.267
         ],
         [
+          "skill:junit",
+          0.255
+        ],
+        [
+          "skill:git",
+          0.244
+        ],
+        [
+          "skill:sql",
+          0.231
+        ],
+        [
+          "project:plagiat-inc",
+          0.229
+        ],
+        [
           "skill:docker",
-          0.223
-        ],
-        [
-          "skill:html",
-          0.221
-        ],
-        [
-          "skill:jupyter",
           0.211
+        ],
+        [
+          "skill:css",
+          0.203
         ]
       ]
     },
@@ -2365,43 +2508,43 @@
       "neighbors": [
         [
           "skill:html",
-          0.527
+          0.526
         ],
         [
           "skill:java",
-          0.518
+          0.504
         ],
         [
           "skill:python",
-          0.448
+          0.46
         ],
         [
           "skill:react",
-          0.387
+          0.42
         ],
         [
           "skill:css",
           0.377
         ],
         [
-          "skill:sql",
-          0.319
-        ],
-        [
           "skill:mysql",
-          0.315
+          0.333
         ],
         [
           "skill:git",
-          0.312
+          0.311
         ],
         [
-          "skill:uml",
-          0.309
+          "skill:sql",
+          0.302
         ],
         [
           "skill:latex",
-          0.301
+          0.302
+        ],
+        [
+          "skill:uml",
+          0.292
         ]
       ]
     },
@@ -2409,43 +2552,43 @@
       "neighbors": [
         [
           "skill:jupyter",
-          0.346
+          0.363
         ],
         [
           "skill:git",
           0.333
         ],
         [
-          "skill:java",
-          0.278
+          "skill:flask",
+          0.273
         ],
         [
-          "skill:flask",
-          0.263
+          "skill:huggingface",
+          0.257
+        ],
+        [
+          "skill:java",
+          0.255
         ],
         [
           "skill:pytest",
           0.245
         ],
         [
-          "skill:huggingface",
-          0.242
+          "skill:react",
+          0.24
         ],
         [
           "skill:gemini",
-          0.229
+          0.238
         ],
         [
-          "skill:react",
-          0.227
+          "skill:javascript",
+          0.235
         ],
         [
-          "skill:poo",
-          0.225
-        ],
-        [
-          "skill:seaborn",
-          0.219
+          "skill:swagger",
+          0.23
         ]
       ]
     },
@@ -2453,43 +2596,43 @@
       "neighbors": [
         [
           "skill:python",
-          0.415
+          0.43
         ],
         [
           "skill:pandas",
-          0.383
+          0.401
         ],
         [
           "skill:numpy",
-          0.376
+          0.381
         ],
         [
           "skill:pytest",
-          0.371
+          0.375
         ],
         [
           "skill:junit",
-          0.346
-        ],
-        [
-          "skill:keras",
-          0.326
+          0.363
         ],
         [
           "skill:swagger",
-          0.315
+          0.325
         ],
         [
-          "skill:docker",
-          0.306
+          "skill:keras",
+          0.324
         ],
         [
           "skill:gemini",
-          0.283
+          0.292
         ],
         [
           "skill:huggingface",
-          0.274
+          0.281
+        ],
+        [
+          "skill:seaborn",
+          0.269
         ]
       ]
     },
@@ -2497,219 +2640,219 @@
       "neighbors": [
         [
           "skill:pandas",
-          0.336
+          0.345
         ],
         [
           "skill:jupyter",
-          0.326
+          0.324
         ],
         [
           "skill:python",
-          0.322
+          0.31
         ],
         [
           "skill:numpy",
-          0.301
-        ],
-        [
-          "skill:opencv",
-          0.281
-        ],
-        [
-          "skill:tensorflow",
-          0.278
+          0.289
         ],
         [
           "skill:flask",
-          0.269
+          0.279
+        ],
+        [
+          "skill:tensorflow",
+          0.274
+        ],
+        [
+          "skill:opencv",
+          0.272
         ],
         [
           "skill:docker",
+          0.27
+        ],
+        [
+          "skill:seaborn",
           0.265
         ],
         [
           "skill:langchain",
-          0.254
-        ],
-        [
-          "skill:seaborn",
-          0.249
+          0.25
         ]
       ]
     },
     "skill:langchain": {
       "neighbors": [
         [
-          "skill:mlflow",
-          0.391
+          "skill:nltk",
+          0.375
         ],
         [
-          "skill:nltk",
-          0.376
+          "skill:mlflow",
+          0.353
         ],
         [
           "skill:chromadb",
-          0.331
-        ],
-        [
-          "skill:tensorflow",
-          0.313
+          0.321
         ],
         [
           "skill:api-rest",
-          0.309
-        ],
-        [
-          "skill:seaborn",
-          0.3
-        ],
-        [
-          "skill:postgresql",
-          0.297
+          0.306
         ],
         [
           "skill:matplotlib",
-          0.285
+          0.292
+        ],
+        [
+          "skill:huggingface",
+          0.282
+        ],
+        [
+          "skill:tensorflow",
+          0.276
+        ],
+        [
+          "skill:seaborn",
+          0.275
         ],
         [
           "skill:pytest",
-          0.261
+          0.259
         ],
         [
-          "skill:elasticsearch",
-          0.256
+          "skill:keras",
+          0.25
         ]
       ]
     },
     "skill:latex": {
       "neighbors": [
         [
-          "skill:nltk",
-          0.393
-        ],
-        [
           "skill:react",
-          0.362
+          0.39
         ],
         [
-          "skill:uml",
-          0.328
-        ],
-        [
-          "skill:javascript",
-          0.301
-        ],
-        [
-          "skill:python",
-          0.287
+          "skill:nltk",
+          0.384
         ],
         [
           "skill:matplotlib",
-          0.286
+          0.316
+        ],
+        [
+          "skill:uml",
+          0.311
+        ],
+        [
+          "skill:javascript",
+          0.302
+        ],
+        [
+          "skill:python",
+          0.292
         ],
         [
           "skill:html",
-          0.271
+          0.285
         ],
         [
           "skill:flask",
-          0.241
-        ],
-        [
-          "skill:docker",
-          0.233
+          0.25
         ],
         [
           "skill:numpy",
-          0.223
+          0.249
+        ],
+        [
+          "skill:css",
+          0.24
         ]
       ]
     },
     "skill:matplotlib": {
       "neighbors": [
         [
-          "skill:tensorflow",
-          0.411
+          "skill:mlflow",
+          0.441
         ],
         [
-          "skill:mlflow",
-          0.408
+          "skill:tensorflow",
+          0.435
         ],
         [
           "skill:numpy",
-          0.399
+          0.431
         ],
         [
           "skill:chromadb",
-          0.354
+          0.358
         ],
         [
           "skill:opencv",
-          0.338
+          0.323
         ],
         [
           "skill:pytest",
-          0.304
-        ],
-        [
-          "skill:seaborn",
-          0.295
-        ],
-        [
-          "skill:nltk",
-          0.29
+          0.322
         ],
         [
           "skill:latex",
-          0.286
+          0.316
         ],
         [
           "skill:langchain",
-          0.285
+          0.292
+        ],
+        [
+          "skill:nltk",
+          0.277
+        ],
+        [
+          "skill:postgresql",
+          0.271
         ]
       ]
     },
     "skill:mistral": {
       "neighbors": [
         [
-          "skill:huggingface",
-          0.306
-        ],
-        [
           "skill:tensorflow",
-          0.265
+          0.304
         ],
         [
-          "skill:opencv",
-          0.261
+          "skill:huggingface",
+          0.284
         ],
         [
           "skill:api-rest",
-          0.239
-        ],
-        [
-          "skill:seaborn",
-          0.237
+          0.266
         ],
         [
           "skill:matplotlib",
-          0.236
-        ],
-        [
-          "skill:gemini",
-          0.222
-        ],
-        [
-          "skill:langchain",
-          0.221
+          0.263
         ],
         [
           "skill:mlflow",
-          0.217
+          0.255
+        ],
+        [
+          "skill:langchain",
+          0.245
+        ],
+        [
+          "skill:opencv",
+          0.243
+        ],
+        [
+          "skill:gemini",
+          0.211
+        ],
+        [
+          "skill:seaborn",
+          0.203
         ],
         [
           "skill:elasticsearch",
-          0.2
+          0.202
         ]
       ]
     },
@@ -2717,43 +2860,43 @@
       "neighbors": [
         [
           "skill:tensorflow",
-          0.482
+          0.487
         ],
         [
           "skill:matplotlib",
-          0.408
+          0.441
         ],
         [
           "skill:langchain",
-          0.391
+          0.353
         ],
         [
           "skill:uml",
-          0.354
-        ],
-        [
-          "skill:chromadb",
-          0.327
+          0.348
         ],
         [
           "skill:mvc",
-          0.326
+          0.33
+        ],
+        [
+          "skill:chromadb",
+          0.319
         ],
         [
           "skill:api-rest",
-          0.274
-        ],
-        [
-          "skill:opencv",
-          0.271
-        ],
-        [
-          "skill:seaborn",
-          0.264
+          0.279
         ],
         [
           "skill:html",
-          0.257
+          0.27
+        ],
+        [
+          "skill:elasticsearch",
+          0.264
+        ],
+        [
+          "skill:ollama",
+          0.256
         ]
       ]
     },
@@ -2761,43 +2904,43 @@
       "neighbors": [
         [
           "skill:opencv",
-          0.378
+          0.391
         ],
         [
           "skill:mysql",
-          0.345
+          0.346
         ],
         [
           "skill:mlflow",
-          0.326
+          0.33
         ],
         [
           "skill:html",
-          0.314
-        ],
-        [
-          "skill:docker",
-          0.26
-        ],
-        [
-          "skill:swagger",
-          0.257
+          0.313
         ],
         [
           "skill:uml",
-          0.253
+          0.273
+        ],
+        [
+          "skill:swagger",
+          0.266
         ],
         [
           "skill:css",
-          0.25
+          0.26
         ],
         [
-          "skill:langchain",
-          0.236
+          "skill:numpy",
+          0.243
         ],
         [
-          "skill:pandas",
-          0.228
+          "skill:nltk",
+          0.24
+        ],
+        [
+          "skill:docker",
+          0.233
         ]
       ]
     },
@@ -2805,43 +2948,43 @@
       "neighbors": [
         [
           "skill:sql",
-          0.639
+          0.636
         ],
         [
           "skill:postgresql",
-          0.433
+          0.438
         ],
         [
           "skill:mvc",
-          0.345
+          0.346
         ],
         [
           "skill:html",
-          0.332
+          0.333
         ],
         [
           "skill:javascript",
-          0.315
+          0.333
         ],
         [
           "skill:git",
-          0.313
+          0.297
         ],
         [
-          "skill:python",
-          0.29
+          "skill:docker",
+          0.288
         ],
         [
           "skill:uml",
-          0.281
+          0.288
         ],
         [
-          "skill:java",
-          0.279
+          "skill:python",
+          0.288
         ],
         [
           "skill:chromadb",
-          0.26
+          0.283
         ]
       ]
     },
@@ -2849,43 +2992,43 @@
       "neighbors": [
         [
           "skill:latex",
-          0.393
+          0.384
         ],
         [
           "skill:langchain",
-          0.376
+          0.375
         ],
         [
           "skill:ollama",
-          0.318
+          0.307
         ],
         [
           "skill:matplotlib",
-          0.29
-        ],
-        [
-          "skill:docker",
-          0.276
+          0.277
         ],
         [
           "skill:seaborn",
-          0.273
+          0.276
         ],
         [
           "skill:poo",
-          0.268
+          0.274
         ],
         [
           "skill:swagger",
-          0.245
+          0.272
+        ],
+        [
+          "skill:docker",
+          0.262
+        ],
+        [
+          "skill:huggingface",
+          0.248
         ],
         [
           "skill:mvc",
-          0.226
-        ],
-        [
-          "skill:html",
-          0.224
+          0.24
         ]
       ]
     },
@@ -2893,43 +3036,43 @@
       "neighbors": [
         [
           "skill:python",
-          0.441
+          0.433
         ],
         [
           "skill:matplotlib",
-          0.399
+          0.431
         ],
         [
           "skill:jupyter",
-          0.376
+          0.381
         ],
         [
           "skill:opencv",
-          0.323
+          0.324
         ],
         [
           "skill:pytest",
-          0.32
+          0.318
         ],
         [
           "skill:uml",
-          0.308
-        ],
-        [
-          "skill:keras",
-          0.301
+          0.304
         ],
         [
           "skill:sql",
-          0.281
+          0.302
+        ],
+        [
+          "skill:tensorflow",
+          0.291
         ],
         [
           "skill:pandas",
-          0.275
+          0.29
         ],
         [
-          "skill:postgresql",
-          0.265
+          "skill:keras",
+          0.289
         ]
       ]
     },
@@ -2937,87 +3080,87 @@
       "neighbors": [
         [
           "skill:seaborn",
-          0.34
+          0.336
         ],
         [
           "skill:nltk",
-          0.318
+          0.307
         ],
         [
           "skill:huggingface",
-          0.266
-        ],
-        [
-          "skill:mlflow",
-          0.242
-        ],
-        [
-          "skill:gemini",
-          0.222
-        ],
-        [
-          "skill:swagger",
-          0.222
-        ],
-        [
-          "skill:matplotlib",
-          0.221
-        ],
-        [
-          "skill:langchain",
-          0.22
-        ],
-        [
-          "skill:flask",
-          0.217
+          0.281
         ],
         [
           "skill:chromadb",
-          0.21
+          0.257
+        ],
+        [
+          "skill:mlflow",
+          0.256
+        ],
+        [
+          "skill:langchain",
+          0.244
+        ],
+        [
+          "skill:flask",
+          0.231
+        ],
+        [
+          "skill:api-rest",
+          0.226
+        ],
+        [
+          "skill:swagger",
+          0.217
+        ],
+        [
+          "skill:gemini",
+          0.217
         ]
       ]
     },
     "skill:opencv": {
       "neighbors": [
         [
-          "skill:tensorflow",
-          0.401
-        ],
-        [
           "skill:mvc",
-          0.378
+          0.391
         ],
         [
-          "skill:matplotlib",
-          0.338
-        ],
-        [
-          "skill:chromadb",
-          0.326
+          "skill:tensorflow",
+          0.383
         ],
         [
           "skill:numpy",
+          0.324
+        ],
+        [
+          "skill:chromadb",
+          0.324
+        ],
+        [
+          "skill:matplotlib",
           0.323
         ],
         [
           "skill:keras",
-          0.281
+          0.272
         ],
         [
           "skill:huggingface",
-          0.276
+          0.264
         ],
         [
           "skill:postgresql",
-          0.276
+          0.256
         ],
         [
           "skill:mlflow",
-          0.271
+          0.254
         ],
         [
           "skill:mistral",
-          0.261
+          0.243
         ]
       ]
     },
@@ -3025,43 +3168,43 @@
       "neighbors": [
         [
           "skill:python",
-          0.384
+          0.428
         ],
         [
           "skill:jupyter",
-          0.383
-        ],
-        [
-          "skill:flask",
-          0.342
+          0.401
         ],
         [
           "skill:keras",
-          0.336
+          0.345
         ],
         [
-          "skill:poo",
-          0.328
+          "skill:flask",
+          0.341
         ],
         [
           "skill:gemini",
-          0.314
+          0.321
+        ],
+        [
+          "skill:poo",
+          0.303
         ],
         [
           "skill:numpy",
-          0.275
+          0.29
         ],
         [
           "skill:swagger",
-          0.257
+          0.268
         ],
         [
           "skill:seaborn",
-          0.237
+          0.252
         ],
         [
-          "skill:pytest",
-          0.231
+          "skill:mvc",
+          0.232
         ]
       ]
     },
@@ -3069,43 +3212,43 @@
       "neighbors": [
         [
           "skill:swagger",
-          0.333
+          0.345
         ],
         [
           "skill:flask",
-          0.331
+          0.329
         ],
         [
           "skill:pandas",
-          0.328
+          0.303
         ],
         [
           "skill:huggingface",
-          0.275
+          0.303
         ],
         [
           "skill:seaborn",
-          0.271
+          0.275
         ],
         [
           "skill:nltk",
-          0.268
+          0.274
         ],
         [
           "skill:jupyter",
-          0.25
+          0.265
         ],
         [
           "skill:langchain",
-          0.244
+          0.25
         ],
         [
           "skill:gemini",
-          0.231
+          0.242
         ],
         [
-          "skill:junit",
-          0.225
+          "skill:keras",
+          0.23
         ]
       ]
     },
@@ -3113,43 +3256,43 @@
       "neighbors": [
         [
           "skill:sql",
-          0.582
+          0.594
         ],
         [
           "skill:mysql",
-          0.433
+          0.438
         ],
         [
           "skill:chromadb",
-          0.414
+          0.418
         ],
         [
           "skill:elasticsearch",
-          0.347
+          0.339
         ],
         [
           "skill:tensorflow",
-          0.308
-        ],
-        [
-          "skill:langchain",
-          0.297
-        ],
-        [
-          "skill:javascript",
-          0.292
-        ],
-        [
-          "skill:api-rest",
-          0.289
+          0.294
         ],
         [
           "skill:docker",
-          0.276
+          0.277
+        ],
+        [
+          "skill:matplotlib",
+          0.271
+        ],
+        [
+          "skill:numpy",
+          0.27
+        ],
+        [
+          "skill:javascript",
+          0.269
         ],
         [
           "skill:opencv",
-          0.276
+          0.256
         ]
       ]
     },
@@ -3157,31 +3300,35 @@
       "neighbors": [
         [
           "skill:python",
-          0.476
+          0.489
         ],
         [
           "skill:jupyter",
-          0.371
-        ],
-        [
-          "skill:numpy",
-          0.32
-        ],
-        [
-          "skill:api-rest",
-          0.307
+          0.375
         ],
         [
           "skill:matplotlib",
-          0.304
+          0.322
+        ],
+        [
+          "skill:numpy",
+          0.318
+        ],
+        [
+          "skill:api-rest",
+          0.311
         ],
         [
           "skill:langchain",
-          0.261
+          0.259
+        ],
+        [
+          "skill:chromadb",
+          0.25
         ],
         [
           "skill:tensorflow",
-          0.256
+          0.245
         ],
         [
           "skill:junit",
@@ -3190,10 +3337,6 @@
         [
           "skill:seaborn",
           0.236
-        ],
-        [
-          "skill:mlflow",
-          0.234
         ]
       ]
     },
@@ -3201,42 +3344,42 @@
       "neighbors": [
         [
           "skill:pytest",
-          0.476
+          0.489
         ],
         [
           "skill:javascript",
-          0.448
+          0.46
         ],
         [
           "skill:numpy",
-          0.441
+          0.433
         ],
         [
           "skill:jupyter",
-          0.415
-        ],
-        [
-          "skill:java",
-          0.406
+          0.43
         ],
         [
           "skill:pandas",
-          0.384
+          0.428
+        ],
+        [
+          "skill:java",
+          0.39
         ],
         [
           "skill:git",
-          0.334
+          0.327
         ],
         [
           "skill:keras",
-          0.322
+          0.31
         ],
         [
-          "skill:sql",
-          0.308
+          "skill:latex",
+          0.292
         ],
         [
-          "skill:mysql",
+          "skill:flask",
           0.29
         ]
       ]
@@ -3245,42 +3388,42 @@
       "neighbors": [
         [
           "skill:javascript",
-          0.387
+          0.42
         ],
         [
           "skill:latex",
-          0.362
+          0.39
         ],
         [
           "skill:html",
-          0.347
+          0.338
         ],
         [
           "skill:css",
-          0.311
+          0.322
+        ],
+        [
+          "skill:git",
+          0.314
         ],
         [
           "skill:flask",
           0.292
         ],
         [
-          "skill:git",
-          0.291
-        ],
-        [
           "skill:docker",
-          0.276
-        ],
-        [
-          "skill:uml",
-          0.248
+          0.292
         ],
         [
           "skill:junit",
-          0.227
+          0.24
         ],
         [
           "skill:mysql",
+          0.237
+        ],
+        [
+          "skill:seaborn",
           0.223
         ]
       ]
@@ -3289,87 +3432,87 @@
       "neighbors": [
         [
           "skill:swagger",
-          0.367
+          0.401
         ],
         [
           "skill:ollama",
-          0.34
-        ],
-        [
-          "skill:langchain",
-          0.3
-        ],
-        [
-          "skill:matplotlib",
-          0.295
+          0.336
         ],
         [
           "skill:huggingface",
           0.294
         ],
         [
+          "skill:flask",
+          0.277
+        ],
+        [
           "skill:nltk",
-          0.273
+          0.276
         ],
         [
           "skill:poo",
-          0.271
+          0.275
         ],
         [
-          "skill:mlflow",
-          0.264
+          "skill:langchain",
+          0.275
         ],
         [
           "skill:docker",
-          0.262
+          0.273
         ],
         [
-          "skill:flask",
-          0.254
+          "skill:matplotlib",
+          0.269
+        ],
+        [
+          "skill:jupyter",
+          0.269
         ]
       ]
     },
     "skill:sklearn": {
       "neighbors": [
         [
+          "skill:langchain",
+          0.246
+        ],
+        [
           "skill:matplotlib",
-          0.211
+          0.233
         ],
         [
           "skill:pytest",
-          0.194
-        ],
-        [
-          "skill:langchain",
-          0.187
+          0.195
         ],
         [
           "skill:huggingface",
-          0.175
+          0.187
         ],
         [
-          "skill:elasticsearch",
+          "skill:api-rest",
           0.151
         ],
         [
-          "skill:seaborn",
+          "skill:elasticsearch",
           0.15
         ],
         [
-          "skill:ollama",
-          0.138
-        ],
-        [
           "skill:tensorflow",
-          0.135
+          0.139
         ],
         [
           "skill:chromadb",
-          0.128
+          0.134
+        ],
+        [
+          "skill:ollama",
+          0.13
         ],
         [
           "skill:jupyter",
-          0.116
+          0.121
         ]
       ]
     },
@@ -3377,43 +3520,43 @@
       "neighbors": [
         [
           "skill:mysql",
-          0.639
+          0.636
         ],
         [
           "skill:postgresql",
-          0.582
-        ],
-        [
-          "skill:javascript",
-          0.319
-        ],
-        [
-          "skill:python",
-          0.308
-        ],
-        [
-          "skill:uml",
-          0.293
-        ],
-        [
-          "skill:numpy",
-          0.281
+          0.594
         ],
         [
           "skill:chromadb",
-          0.277
+          0.313
         ],
         [
-          "skill:java",
-          0.267
+          "skill:javascript",
+          0.302
+        ],
+        [
+          "skill:numpy",
+          0.302
+        ],
+        [
+          "skill:uml",
+          0.296
+        ],
+        [
+          "skill:python",
+          0.274
         ],
         [
           "skill:docker",
-          0.251
+          0.245
         ],
         [
-          "skill:git",
-          0.25
+          "skill:java",
+          0.231
+        ],
+        [
+          "skill:html",
+          0.222
         ]
       ]
     },
@@ -3421,43 +3564,43 @@
       "neighbors": [
         [
           "skill:seaborn",
-          0.367
+          0.401
         ],
         [
           "skill:huggingface",
-          0.344
+          0.361
         ],
         [
           "skill:poo",
-          0.333
+          0.345
         ],
         [
           "skill:flask",
-          0.326
+          0.337
         ],
         [
           "skill:jupyter",
-          0.315
-        ],
-        [
-          "skill:gemini",
-          0.26
-        ],
-        [
-          "skill:mvc",
-          0.257
-        ],
-        [
-          "skill:pandas",
-          0.257
-        ],
-        [
-          "skill:docker",
-          0.25
+          0.325
         ],
         [
           "skill:nltk",
-          0.245
+          0.272
+        ],
+        [
+          "skill:pandas",
+          0.268
+        ],
+        [
+          "skill:mvc",
+          0.266
+        ],
+        [
+          "skill:gemini",
+          0.256
+        ],
+        [
+          "skill:langchain",
+          0.234
         ]
       ]
     },
@@ -3465,43 +3608,43 @@
       "neighbors": [
         [
           "skill:mlflow",
-          0.482
+          0.487
         ],
         [
           "skill:matplotlib",
-          0.411
+          0.435
         ],
         [
           "skill:opencv",
-          0.401
+          0.383
         ],
         [
           "skill:chromadb",
-          0.345
+          0.328
         ],
         [
           "skill:elasticsearch",
-          0.323
-        ],
-        [
-          "skill:langchain",
-          0.313
-        ],
-        [
-          "skill:postgresql",
-          0.308
-        ],
-        [
-          "skill:keras",
-          0.278
+          0.325
         ],
         [
           "skill:mistral",
-          0.265
+          0.304
+        ],
+        [
+          "skill:postgresql",
+          0.294
         ],
         [
           "skill:numpy",
-          0.264
+          0.291
+        ],
+        [
+          "skill:langchain",
+          0.276
+        ],
+        [
+          "skill:keras",
+          0.274
         ]
       ]
     },
@@ -3509,43 +3652,43 @@
       "neighbors": [
         [
           "skill:mlflow",
-          0.354
+          0.348
         ],
         [
           "skill:latex",
-          0.328
-        ],
-        [
-          "skill:html",
-          0.325
-        ],
-        [
-          "skill:javascript",
-          0.309
+          0.311
         ],
         [
           "skill:numpy",
-          0.308
+          0.304
         ],
         [
           "skill:sql",
-          0.293
+          0.296
+        ],
+        [
+          "skill:javascript",
+          0.292
+        ],
+        [
+          "skill:html",
+          0.289
         ],
         [
           "skill:mysql",
-          0.281
+          0.288
         ],
         [
           "skill:java",
-          0.268
-        ],
-        [
-          "skill:python",
-          0.264
+          0.274
         ],
         [
           "skill:mvc",
-          0.253
+          0.273
+        ],
+        [
+          "skill:python",
+          0.257
         ]
       ]
     },
@@ -3553,43 +3696,43 @@
       "neighbors": [
         [
           "supervision:stages-tutorat-iut",
-          0.639
+          0.643
         ],
         [
           "project:scheduler-finder",
-          0.263
+          0.261
         ],
         [
           "award:jury-alternance",
-          0.249
+          0.253
         ],
         [
           "award:co-responsable-alternance",
-          0.236
+          0.235
         ],
         [
           "experience:stage-soldout",
-          0.226
+          0.207
         ],
         [
           "supervision:stage-liasd",
-          0.206
+          0.204
         ],
         [
           "experience:stage-quatorze",
-          0.152
-        ],
-        [
-          "education:dut",
-          0.145
+          0.139
         ],
         [
           "supervision:stage-imt-albi",
-          0.142
+          0.139
+        ],
+        [
+          "education:dut",
+          0.133
         ],
         [
           "award:selection-candidats",
-          0.137
+          0.125
         ]
       ]
     },
@@ -3597,43 +3740,43 @@
       "neighbors": [
         [
           "experience:freelance-leasup",
-          0.299
+          0.297
         ],
         [
           "experience:ater-paris8",
-          0.281
+          0.269
         ],
         [
           "supervision:stages-tutorat-iut",
-          0.271
+          0.266
         ],
         [
           "supervision:stage-liasd",
-          0.235
+          0.242
         ],
         [
           "experience:stage-quatorze",
-          0.158
+          0.159
         ],
         [
           "project:story-bot",
-          0.156
+          0.146
         ],
         [
           "supervision:alternance-aeroport",
-          0.142
-        ],
-        [
-          "publication:arxiv-2411-04707",
-          0.133
+          0.139
         ],
         [
           "project:scheduler-finder",
-          0.131
+          0.129
+        ],
+        [
+          "publication:arxiv-2411-04707",
+          0.123
         ],
         [
           "experience:stage-directannonces",
-          0.117
+          0.115
         ]
       ]
     },
@@ -3641,43 +3784,43 @@
       "neighbors": [
         [
           "project:image-classification",
-          0.364
+          0.358
         ],
         [
           "supervision:stages-tutorat-iut",
-          0.319
+          0.328
         ],
         [
           "project:story-bot",
-          0.266
+          0.258
         ],
         [
           "supervision:stage-imt-albi",
-          0.235
+          0.242
         ],
         [
           "experience:stage-quatorze",
-          0.224
+          0.23
         ],
         [
-          "experience:ater-paris8",
-          0.207
+          "project:kaggle-telco-churn",
+          0.222
         ],
         [
           "supervision:alternance-aeroport",
-          0.206
+          0.204
         ],
         [
-          "publication:egc-2022",
-          0.198
+          "experience:ater-paris8",
+          0.19
         ],
         [
           "experience:freelance-leasup",
-          0.179
+          0.177
         ],
         [
-          "project:kermtech",
-          0.151
+          "publication:egc-2022",
+          0.176
         ]
       ]
     },
@@ -3685,43 +3828,43 @@
       "neighbors": [
         [
           "supervision:alternance-aeroport",
-          0.639
+          0.643
         ],
         [
           "supervision:stage-liasd",
-          0.319
+          0.328
         ],
         [
           "project:scheduler-finder",
-          0.288
+          0.285
         ],
         [
           "supervision:stage-imt-albi",
-          0.271
+          0.266
         ],
         [
           "award:co-responsable-alternance",
-          0.235
+          0.228
         ],
         [
           "award:jury-alternance",
-          0.22
+          0.209
         ],
         [
           "award:forum-metiers",
-          0.214
+          0.204
         ],
         [
-          "experience:stage-soldout",
-          0.202
+          "teaching:ppp-2024",
+          0.194
+        ],
+        [
+          "education:dut",
+          0.176
         ],
         [
           "award:selection-candidats",
-          0.189
-        ],
-        [
-          "experience:stage-quatorze",
-          0.188
+          0.175
         ]
       ]
     },
@@ -3729,43 +3872,43 @@
       "neighbors": [
         [
           "teaching:client-need-2024",
-          0.571
+          0.562
         ],
         [
           "teaching:app-quality-2024",
-          0.564
-        ],
-        [
-          "teaching:poste-2025",
-          0.531
-        ],
-        [
-          "teaching:support-2024",
-          0.515
+          0.557
         ],
         [
           "teaching:algo-quality-2025",
-          0.513
+          0.546
         ],
         [
-          "teaching:low-level-2024",
-          0.507
+          "teaching:poste-2025",
+          0.515
+        ],
+        [
+          "teaching:support-2024",
+          0.499
         ],
         [
           "teaching:architecture-2025",
-          0.487
+          0.493
         ],
         [
-          "teaching:web-2025",
-          0.47
+          "teaching:low-level-2024",
+          0.491
         ],
         [
           "teaching:os-2025",
-          0.462
+          0.463
+        ],
+        [
+          "teaching:web-2025",
+          0.463
         ],
         [
           "teaching:gui-2024",
-          0.445
+          0.437
         ]
       ]
     },
@@ -3773,87 +3916,87 @@
       "neighbors": [
         [
           "teaching:software-archi-2024",
-          0.604
+          0.629
         ],
         [
           "teaching:multimedia-2025",
-          0.597
+          0.615
         ],
         [
           "teaching:low-level-2024",
-          0.564
+          0.589
         ],
         [
           "teaching:os-2025",
-          0.546
+          0.563
         ],
         [
           "teaching:algo-compare-2024",
-          0.513
-        ],
-        [
-          "teaching:web-2025",
-          0.509
-        ],
-        [
-          "teaching:support-2024",
-          0.502
+          0.546
         ],
         [
           "teaching:architecture-2025",
-          0.502
+          0.519
+        ],
+        [
+          "teaching:web-2025",
+          0.496
+        ],
+        [
+          "teaching:support-2024",
+          0.494
         ],
         [
           "teaching:poste-2025",
-          0.47
+          0.471
         ],
         [
-          "teaching:java-init-2025",
-          0.463
+          "teaching:gui-2024",
+          0.465
         ]
       ]
     },
     "teaching:app-quality-2024": {
       "neighbors": [
         [
-          "teaching:gui-2024",
-          0.662
+          "teaching:client-need-2024",
+          0.648
         ],
         [
-          "teaching:client-need-2024",
-          0.647
+          "teaching:gui-2024",
+          0.648
         ],
         [
           "teaching:web-2025",
-          0.607
-        ],
-        [
-          "teaching:java-init-2025",
-          0.605
+          0.598
         ],
         [
           "teaching:poste-2025",
-          0.588
+          0.591
+        ],
+        [
+          "teaching:java-init-2025",
+          0.585
         ],
         [
           "teaching:algo-compare-2024",
-          0.564
+          0.557
         ],
         [
           "teaching:os-2025",
-          0.477
+          0.467
         ],
         [
           "teaching:low-level-2024",
-          0.461
+          0.441
         ],
         [
-          "teaching:support-2024",
-          0.438
+          "teaching:algo-quality-2025",
+          0.431
         ],
         [
           "teaching:oop-2024",
-          0.431
+          0.419
         ]
       ]
     },
@@ -3861,43 +4004,43 @@
       "neighbors": [
         [
           "teaching:os-2025",
-          0.719
+          0.729
         ],
         [
           "teaching:web-2025",
-          0.677
+          0.675
         ],
         [
           "teaching:software-archi-2024",
-          0.639
-        ],
-        [
-          "teaching:low-level-2024",
-          0.533
+          0.655
         ],
         [
           "teaching:gui-2024",
-          0.533
+          0.552
+        ],
+        [
+          "teaching:low-level-2024",
+          0.527
         ],
         [
           "teaching:java-init-2025",
-          0.525
+          0.52
         ],
         [
           "teaching:algo-quality-2025",
-          0.502
+          0.519
         ],
         [
           "teaching:algo-compare-2024",
-          0.487
+          0.493
         ],
         [
-          "teaching:support-2024",
-          0.485
+          "teaching:multimedia-2025",
+          0.477
         ],
         [
           "teaching:oop-2024",
-          0.472
+          0.461
         ]
       ]
     },
@@ -3905,43 +4048,43 @@
       "neighbors": [
         [
           "teaching:app-quality-2024",
-          0.647
+          0.648
         ],
         [
           "teaching:poste-2025",
-          0.638
+          0.627
         ],
         [
           "teaching:algo-compare-2024",
-          0.571
+          0.562
         ],
         [
           "teaching:web-2025",
-          0.558
+          0.544
         ],
         [
           "teaching:gui-2024",
-          0.53
+          0.533
         ],
         [
           "teaching:low-level-2024",
-          0.526
+          0.511
         ],
         [
           "teaching:support-2024",
-          0.516
-        ],
-        [
-          "teaching:os-2025",
           0.486
         ],
         [
-          "teaching:java-init-2025",
-          0.447
+          "teaching:os-2025",
+          0.478
         ],
         [
-          "teaching:software-archi-2024",
-          0.419
+          "teaching:algo-quality-2025",
+          0.424
+        ],
+        [
+          "teaching:java-init-2025",
+          0.411
         ]
       ]
     },
@@ -3949,43 +4092,43 @@
       "neighbors": [
         [
           "teaching:java-2020",
-          0.462
+          0.466
         ],
         [
           "teaching:low-level-2024",
-          0.441
+          0.432
         ],
         [
           "teaching:web-2025",
-          0.378
+          0.39
         ],
         [
-          "teaching:poste-2025",
-          0.372
+          "teaching:architecture-2025",
+          0.382
         ],
         [
           "teaching:software-archi-2024",
-          0.371
+          0.367
         ],
         [
           "teaching:os-2025",
           0.367
         ],
         [
-          "teaching:support-2024",
-          0.366
+          "teaching:oop-2024",
+          0.367
         ],
         [
-          "teaching:architecture-2025",
+          "teaching:support-2024",
           0.365
         ],
         [
-          "teaching:oop-2024",
-          0.357
+          "teaching:multimedia-2025",
+          0.35
         ],
         [
-          "teaching:multimedia-2025",
-          0.328
+          "teaching:poste-2025",
+          0.35
         ]
       ]
     },
@@ -3993,43 +4136,43 @@
       "neighbors": [
         [
           "teaching:web-2025",
-          0.708
+          0.721
         ],
         [
           "teaching:java-init-2025",
-          0.683
+          0.672
         ],
         [
           "teaching:app-quality-2024",
-          0.662
+          0.648
         ],
         [
           "teaching:os-2025",
-          0.573
+          0.587
         ],
         [
           "teaching:low-level-2024",
-          0.55
+          0.568
         ],
         [
           "teaching:architecture-2025",
-          0.533
+          0.552
         ],
         [
           "teaching:client-need-2024",
-          0.53
+          0.533
         ],
         [
           "teaching:software-archi-2024",
-          0.522
+          0.529
         ],
         [
           "teaching:poste-2025",
-          0.488
+          0.483
         ],
         [
           "teaching:multimedia-2025",
-          0.465
+          0.467
         ]
       ]
     },
@@ -4037,43 +4180,43 @@
       "neighbors": [
         [
           "teaching:oop-java-2023",
-          0.722
-        ],
-        [
-          "teaching:low-level-2024",
-          0.568
+          0.726
         ],
         [
           "teaching:software-archi-2024",
-          0.561
+          0.563
+        ],
+        [
+          "teaching:low-level-2024",
+          0.56
         ],
         [
           "teaching:java-init-2025",
-          0.541
+          0.55
         ],
         [
           "teaching:web-2025",
-          0.492
+          0.494
         ],
         [
           "teaching:multimedia-2025",
-          0.482
+          0.484
         ],
         [
           "teaching:deep-learning-2023",
-          0.462
-        ],
-        [
-          "teaching:support-2024",
-          0.419
+          0.466
         ],
         [
           "teaching:gui-2024",
-          0.416
+          0.427
         ],
         [
-          "teaching:poste-2025",
-          0.411
+          "teaching:support-2024",
+          0.425
+        ],
+        [
+          "teaching:architecture-2025",
+          0.407
         ]
       ]
     },
@@ -4081,87 +4224,87 @@
       "neighbors": [
         [
           "teaching:web-2025",
-          0.703
+          0.694
         ],
         [
           "teaching:gui-2024",
-          0.683
+          0.672
         ],
         [
           "teaching:app-quality-2024",
-          0.605
+          0.585
         ],
         [
           "teaching:os-2025",
-          0.561
+          0.55
         ],
         [
           "teaching:java-2020",
-          0.541
+          0.55
         ],
         [
           "teaching:architecture-2025",
-          0.525
+          0.52
         ],
         [
           "teaching:software-archi-2024",
-          0.516
+          0.505
         ],
         [
           "teaching:low-level-2024",
-          0.503
-        ],
-        [
-          "teaching:oop-2024",
           0.481
         ],
         [
-          "teaching:algo-quality-2025",
-          0.463
+          "teaching:oop-2024",
+          0.473
+        ],
+        [
+          "teaching:oop-java-2023",
+          0.449
         ]
       ]
     },
     "teaching:low-level-2024": {
       "neighbors": [
         [
-          "teaching:web-2025",
-          0.636
+          "teaching:multimedia-2025",
+          0.644
         ],
         [
-          "teaching:multimedia-2025",
-          0.624
+          "teaching:web-2025",
+          0.621
         ],
         [
           "teaching:support-2024",
-          0.624
+          0.613
         ],
         [
           "teaching:software-archi-2024",
-          0.601
-        ],
-        [
-          "teaching:java-2020",
-          0.568
+          0.605
         ],
         [
           "teaching:algo-quality-2025",
-          0.564
-        ],
-        [
-          "teaching:os-2025",
-          0.559
+          0.589
         ],
         [
           "teaching:gui-2024",
-          0.55
+          0.568
+        ],
+        [
+          "teaching:java-2020",
+          0.56
+        ],
+        [
+          "teaching:os-2025",
+          0.56
         ],
         [
           "teaching:poste-2025",
-          0.543
+          0.535
         ],
         [
           "teaching:architecture-2025",
-          0.533
+          0.527
         ]
       ]
     },
@@ -4169,86 +4312,86 @@
       "neighbors": [
         [
           "teaching:low-level-2024",
-          0.624
+          0.644
+        ],
+        [
+          "teaching:algo-quality-2025",
+          0.615
         ],
         [
           "teaching:software-archi-2024",
           0.611
         ],
         [
-          "teaching:algo-quality-2025",
-          0.597
+          "teaching:os-2025",
+          0.515
         ],
         [
           "teaching:poste-2025",
-          0.512
-        ],
-        [
-          "teaching:os-2025",
           0.494
         ],
         [
           "teaching:java-2020",
-          0.482
-        ],
-        [
-          "teaching:web-2025",
-          0.471
-        ],
-        [
-          "teaching:gui-2024",
-          0.465
+          0.484
         ],
         [
           "teaching:architecture-2025",
-          0.463
+          0.477
+        ],
+        [
+          "teaching:gui-2024",
+          0.467
+        ],
+        [
+          "teaching:web-2025",
+          0.464
         ],
         [
           "teaching:oop-2024",
-          0.449
+          0.454
         ]
       ]
     },
     "teaching:oop-2024": {
       "neighbors": [
         [
-          "teaching:web-2025",
-          0.553
+          "teaching:os-2025",
+          0.535
         ],
         [
-          "teaching:os-2025",
-          0.54
+          "teaching:web-2025",
+          0.532
         ],
         [
           "teaching:low-level-2024",
-          0.503
+          0.491
         ],
         [
           "teaching:java-init-2025",
-          0.481
+          0.473
         ],
         [
           "teaching:ppp-2024",
-          0.479
+          0.47
         ],
         [
           "teaching:software-archi-2024",
-          0.479
+          0.469
         ],
         [
           "teaching:architecture-2025",
-          0.472
-        ],
-        [
-          "teaching:gui-2024",
-          0.455
+          0.461
         ],
         [
           "teaching:multimedia-2025",
-          0.449
+          0.454
         ],
         [
-          "teaching:app-quality-2024",
+          "teaching:gui-2024",
+          0.441
+        ],
+        [
+          "teaching:algo-quality-2025",
           0.431
         ]
       ]
@@ -4257,43 +4400,43 @@
       "neighbors": [
         [
           "teaching:java-2020",
-          0.722
+          0.726
         ],
         [
           "teaching:java-init-2025",
-          0.446
+          0.449
         ],
         [
           "teaching:oop-2024",
-          0.41
+          0.394
         ],
         [
           "teaching:low-level-2024",
-          0.401
+          0.38
         ],
         [
           "teaching:architecture-2025",
-          0.352
+          0.334
         ],
         [
           "teaching:software-archi-2024",
-          0.323
-        ],
-        [
-          "teaching:os-2025",
-          0.322
+          0.33
         ],
         [
           "teaching:web-2025",
-          0.315
+          0.308
+        ],
+        [
+          "teaching:os-2025",
+          0.307
         ],
         [
           "teaching:multimedia-2025",
-          0.301
+          0.304
         ],
         [
           "teaching:gui-2024",
-          0.285
+          0.275
         ]
       ]
     },
@@ -4301,43 +4444,43 @@
       "neighbors": [
         [
           "teaching:architecture-2025",
-          0.719
+          0.729
         ],
         [
           "teaching:web-2025",
-          0.653
-        ],
-        [
-          "teaching:poste-2025",
-          0.575
+          0.654
         ],
         [
           "teaching:gui-2024",
-          0.573
+          0.587
+        ],
+        [
+          "teaching:poste-2025",
+          0.574
         ],
         [
           "teaching:software-archi-2024",
           0.573
         ],
         [
-          "teaching:java-init-2025",
-          0.561
+          "teaching:algo-quality-2025",
+          0.563
         ],
         [
           "teaching:low-level-2024",
-          0.559
+          0.56
         ],
         [
-          "teaching:algo-quality-2025",
-          0.546
+          "teaching:java-init-2025",
+          0.55
         ],
         [
           "teaching:oop-2024",
-          0.54
+          0.535
         ],
         [
-          "teaching:support-2024",
-          0.517
+          "teaching:multimedia-2025",
+          0.515
         ]
       ]
     },
@@ -4345,87 +4488,87 @@
       "neighbors": [
         [
           "teaching:client-need-2024",
-          0.638
+          0.627
         ],
         [
           "teaching:app-quality-2024",
-          0.588
+          0.591
         ],
         [
           "teaching:os-2025",
-          0.575
+          0.574
         ],
         [
           "teaching:low-level-2024",
-          0.543
+          0.535
         ],
         [
           "teaching:algo-compare-2024",
-          0.531
+          0.515
         ],
         [
           "teaching:support-2024",
-          0.528
+          0.496
         ],
         [
           "teaching:multimedia-2025",
-          0.512
+          0.494
         ],
         [
           "teaching:web-2025",
-          0.505
+          0.486
         ],
         [
           "teaching:gui-2024",
-          0.488
+          0.483
         ],
         [
-          "teaching:software-archi-2024",
-          0.472
+          "teaching:algo-quality-2025",
+          0.471
         ]
       ]
     },
     "teaching:ppp-2024": {
       "neighbors": [
         [
-          "teaching:oop-2024",
-          0.479
+          "teaching:os-2025",
+          0.482
         ],
         [
           "teaching:low-level-2024",
-          0.478
+          0.47
         ],
         [
-          "teaching:os-2025",
-          0.476
+          "teaching:oop-2024",
+          0.47
         ],
         [
           "teaching:multimedia-2025",
-          0.437
+          0.438
         ],
         [
           "teaching:web-2025",
-          0.428
+          0.419
         ],
         [
           "teaching:software-archi-2024",
-          0.411
+          0.409
         ],
         [
           "teaching:java-init-2025",
-          0.401
-        ],
-        [
-          "teaching:poste-2025",
-          0.395
+          0.403
         ],
         [
           "teaching:gui-2024",
-          0.393
+          0.403
         ],
         [
-          "teaching:app-quality-2024",
-          0.365
+          "teaching:poste-2025",
+          0.384
+        ],
+        [
+          "teaching:architecture-2025",
+          0.373
         ]
       ]
     },
@@ -4433,23 +4576,23 @@
       "neighbors": [
         [
           "teaching:architecture-2025",
-          0.639
+          0.655
+        ],
+        [
+          "teaching:algo-quality-2025",
+          0.629
         ],
         [
           "teaching:multimedia-2025",
           0.611
         ],
         [
-          "teaching:algo-quality-2025",
-          0.604
-        ],
-        [
           "teaching:low-level-2024",
-          0.601
+          0.605
         ],
         [
           "teaching:web-2025",
-          0.588
+          0.582
         ],
         [
           "teaching:os-2025",
@@ -4457,19 +4600,19 @@
         ],
         [
           "teaching:java-2020",
-          0.561
+          0.563
         ],
         [
           "teaching:gui-2024",
-          0.522
+          0.529
         ],
         [
           "teaching:java-init-2025",
-          0.516
+          0.505
         ],
         [
           "teaching:support-2024",
-          0.501
+          0.48
         ]
       ]
     },
@@ -4477,43 +4620,43 @@
       "neighbors": [
         [
           "teaching:low-level-2024",
-          0.624
+          0.613
         ],
         [
           "teaching:web-2025",
-          0.621
-        ],
-        [
-          "teaching:poste-2025",
-          0.528
-        ],
-        [
-          "teaching:os-2025",
-          0.517
-        ],
-        [
-          "teaching:client-need-2024",
-          0.516
+          0.595
         ],
         [
           "teaching:algo-compare-2024",
-          0.515
+          0.499
+        ],
+        [
+          "teaching:poste-2025",
+          0.496
+        ],
+        [
+          "teaching:os-2025",
+          0.495
         ],
         [
           "teaching:algo-quality-2025",
-          0.502
+          0.494
+        ],
+        [
+          "teaching:client-need-2024",
+          0.486
         ],
         [
           "teaching:software-archi-2024",
-          0.501
+          0.48
         ],
         [
           "teaching:architecture-2025",
-          0.485
+          0.453
         ],
         [
           "teaching:java-init-2025",
-          0.457
+          0.442
         ]
       ]
     },
@@ -4521,43 +4664,43 @@
       "neighbors": [
         [
           "teaching:gui-2024",
-          0.708
+          0.721
         ],
         [
           "teaching:java-init-2025",
-          0.703
+          0.694
         ],
         [
           "teaching:architecture-2025",
-          0.677
+          0.675
         ],
         [
           "teaching:os-2025",
-          0.653
+          0.654
         ],
         [
           "teaching:low-level-2024",
-          0.636
-        ],
-        [
-          "teaching:support-2024",
           0.621
         ],
         [
           "teaching:app-quality-2024",
-          0.607
+          0.598
+        ],
+        [
+          "teaching:support-2024",
+          0.595
         ],
         [
           "teaching:software-archi-2024",
-          0.588
+          0.582
         ],
         [
           "teaching:client-need-2024",
-          0.558
+          0.544
         ],
         [
           "teaching:oop-2024",
-          0.553
+          0.532
         ]
       ]
     },
@@ -4565,43 +4708,43 @@
       "neighbors": [
         [
           "video:whxjoMvrq2E",
-          0.734
+          0.741
         ],
         [
           "video:9XfqYxcB6vE",
-          0.556
+          0.562
         ],
         [
           "video:p7ifvNUNk_4",
-          0.405
-        ],
-        [
-          "video:EYinYM2M43A",
-          0.349
-        ],
-        [
-          "video:GLin95_je_A",
-          0.343
+          0.403
         ],
         [
           "video:YR8VKxy8JX0",
-          0.341
+          0.343
+        ],
+        [
+          "video:EYinYM2M43A",
+          0.332
+        ],
+        [
+          "video:GLin95_je_A",
+          0.329
         ],
         [
           "video:qENBQokefZs",
-          0.313
+          0.323
         ],
         [
           "video:MNPhTlvzSIA",
-          0.305
+          0.313
         ],
         [
           "video:GjQaSi18B08",
-          0.255
+          0.257
         ],
         [
           "video:uye9Z8fGWSs",
-          0.221
+          0.236
         ]
       ]
     },
@@ -4609,87 +4752,87 @@
       "neighbors": [
         [
           "video:whxjoMvrq2E",
-          0.659
+          0.68
         ],
         [
           "video:5RA39MJpAtU",
-          0.556
+          0.562
         ],
         [
           "video:qENBQokefZs",
-          0.347
+          0.355
         ],
         [
           "video:p7ifvNUNk_4",
-          0.329
+          0.325
         ],
         [
           "video:YR8VKxy8JX0",
-          0.311
+          0.314
         ],
         [
           "video:GLin95_je_A",
-          0.279
+          0.262
         ],
         [
           "video:MNPhTlvzSIA",
-          0.242
-        ],
-        [
-          "video:EYinYM2M43A",
-          0.228
+          0.252
         ],
         [
           "teaching:java-init-2025",
-          0.185
+          0.229
+        ],
+        [
+          "video:EYinYM2M43A",
+          0.223
         ],
         [
           "video:__0pkM8zBdQ",
-          0.179
+          0.187
         ]
       ]
     },
     "video:AvebYlXnoPo": {
       "neighbors": [
         [
-          "video:GjQaSi18B08",
-          0.667
+          "video:MNPhTlvzSIA",
+          0.669
         ],
         [
-          "video:MNPhTlvzSIA",
-          0.66
+          "video:GjQaSi18B08",
+          0.668
         ],
         [
           "video:KP1CgRq7ffk",
-          0.592
+          0.603
         ],
         [
           "video:__0pkM8zBdQ",
-          0.575
-        ],
-        [
-          "video:qENBQokefZs",
-          0.543
+          0.568
         ],
         [
           "video:p7ifvNUNk_4",
-          0.518
+          0.551
+        ],
+        [
+          "video:qENBQokefZs",
+          0.53
         ],
         [
           "video:GLin95_je_A",
-          0.441
+          0.494
         ],
         [
           "video:uye9Z8fGWSs",
-          0.4
+          0.414
         ],
         [
           "video:EYinYM2M43A",
-          0.371
+          0.389
         ],
         [
           "video:YR8VKxy8JX0",
-          0.364
+          0.371
         ]
       ]
     },
@@ -4697,43 +4840,43 @@
       "neighbors": [
         [
           "award:egc-2022",
-          0.444
+          0.43
         ],
         [
           "video:p7ifvNUNk_4",
-          0.333
-        ],
-        [
-          "video:EYinYM2M43A",
-          0.301
+          0.354
         ],
         [
           "video:uye9Z8fGWSs",
-          0.279
+          0.343
         ],
         [
-          "video:MNPhTlvzSIA",
-          0.25
+          "video:EYinYM2M43A",
+          0.318
         ],
         [
           "video:GLin95_je_A",
-          0.25
+          0.294
         ],
         [
-          "video:__0pkM8zBdQ",
-          0.247
-        ],
-        [
-          "video:qENBQokefZs",
-          0.246
+          "video:MNPhTlvzSIA",
+          0.277
         ],
         [
           "video:GjQaSi18B08",
-          0.243
+          0.268
+        ],
+        [
+          "video:qENBQokefZs",
+          0.265
+        ],
+        [
+          "video:__0pkM8zBdQ",
+          0.259
         ],
         [
           "video:AvebYlXnoPo",
-          0.223
+          0.254
         ]
       ]
     },
@@ -4741,43 +4884,43 @@
       "neighbors": [
         [
           "video:GjQaSi18B08",
-          0.603
+          0.624
         ],
         [
           "video:GLin95_je_A",
-          0.58
+          0.609
         ],
         [
           "video:MNPhTlvzSIA",
-          0.526
+          0.557
         ],
         [
           "video:p7ifvNUNk_4",
-          0.515
+          0.527
         ],
         [
           "video:KP1CgRq7ffk",
-          0.418
+          0.446
         ],
         [
           "video:__0pkM8zBdQ",
-          0.416
+          0.435
         ],
         [
           "video:uye9Z8fGWSs",
-          0.387
+          0.423
         ],
         [
           "video:AvebYlXnoPo",
-          0.371
+          0.389
         ],
         [
           "video:qENBQokefZs",
-          0.358
+          0.383
         ],
         [
-          "video:5RA39MJpAtU",
-          0.349
+          "video:YR8VKxy8JX0",
+          0.342
         ]
       ]
     },
@@ -4785,43 +4928,43 @@
       "neighbors": [
         [
           "video:MNPhTlvzSIA",
-          0.606
+          0.663
         ],
         [
           "video:EYinYM2M43A",
-          0.58
+          0.609
         ],
         [
           "video:GjQaSi18B08",
-          0.58
+          0.588
         ],
         [
           "video:p7ifvNUNk_4",
-          0.517
+          0.557
         ],
         [
           "video:qENBQokefZs",
-          0.489
-        ],
-        [
-          "video:__0pkM8zBdQ",
-          0.466
+          0.545
         ],
         [
           "video:KP1CgRq7ffk",
-          0.454
+          0.512
+        ],
+        [
+          "video:__0pkM8zBdQ",
+          0.501
         ],
         [
           "video:AvebYlXnoPo",
-          0.441
+          0.494
         ],
         [
           "video:uye9Z8fGWSs",
-          0.429
+          0.43
         ],
         [
           "video:YR8VKxy8JX0",
-          0.416
+          0.422
         ]
       ]
     },
@@ -4829,43 +4972,43 @@
       "neighbors": [
         [
           "video:MNPhTlvzSIA",
-          0.677
+          0.683
         ],
         [
           "video:AvebYlXnoPo",
-          0.667
+          0.668
         ],
         [
           "video:EYinYM2M43A",
-          0.603
+          0.624
         ],
         [
           "video:GLin95_je_A",
-          0.58
+          0.588
         ],
         [
           "video:KP1CgRq7ffk",
-          0.553
+          0.563
         ],
         [
           "video:uye9Z8fGWSs",
-          0.529
+          0.54
         ],
         [
           "video:p7ifvNUNk_4",
-          0.501
+          0.515
         ],
         [
           "video:YR8VKxy8JX0",
-          0.436
+          0.44
         ],
         [
           "video:__0pkM8zBdQ",
-          0.432
+          0.427
         ],
         [
           "video:qENBQokefZs",
-          0.405
+          0.401
         ]
       ]
     },
@@ -4873,43 +5016,43 @@
       "neighbors": [
         [
           "video:__0pkM8zBdQ",
-          0.697
+          0.701
         ],
         [
           "video:MNPhTlvzSIA",
-          0.675
+          0.68
         ],
         [
           "video:AvebYlXnoPo",
-          0.592
+          0.603
         ],
         [
           "video:GjQaSi18B08",
-          0.553
-        ],
-        [
-          "video:qENBQokefZs",
-          0.53
+          0.563
         ],
         [
           "video:p7ifvNUNk_4",
-          0.493
+          0.519
+        ],
+        [
+          "video:qENBQokefZs",
+          0.514
         ],
         [
           "video:GLin95_je_A",
-          0.454
+          0.512
         ],
         [
           "video:EYinYM2M43A",
-          0.418
+          0.446
         ],
         [
           "video:uye9Z8fGWSs",
-          0.403
+          0.408
         ],
         [
           "video:YR8VKxy8JX0",
-          0.275
+          0.283
         ]
       ]
     },
@@ -4917,43 +5060,43 @@
       "neighbors": [
         [
           "video:GjQaSi18B08",
-          0.677
+          0.683
         ],
         [
           "video:KP1CgRq7ffk",
-          0.675
+          0.68
         ],
         [
           "video:AvebYlXnoPo",
-          0.66
+          0.669
         ],
         [
           "video:GLin95_je_A",
-          0.606
+          0.663
         ],
         [
           "video:p7ifvNUNk_4",
-          0.584
+          0.615
         ],
         [
           "video:qENBQokefZs",
           0.578
         ],
         [
-          "video:__0pkM8zBdQ",
-          0.552
+          "video:EYinYM2M43A",
+          0.557
         ],
         [
-          "video:EYinYM2M43A",
-          0.526
+          "video:__0pkM8zBdQ",
+          0.546
         ],
         [
           "video:uye9Z8fGWSs",
-          0.483
+          0.493
         ],
         [
           "video:YR8VKxy8JX0",
-          0.458
+          0.46
         ]
       ]
     },
@@ -4961,43 +5104,43 @@
       "neighbors": [
         [
           "video:whxjoMvrq2E",
-          0.465
-        ],
-        [
-          "video:MNPhTlvzSIA",
-          0.458
+          0.471
         ],
         [
           "video:p7ifvNUNk_4",
-          0.456
+          0.46
+        ],
+        [
+          "video:MNPhTlvzSIA",
+          0.46
         ],
         [
           "video:GjQaSi18B08",
-          0.436
+          0.44
         ],
         [
           "video:GLin95_je_A",
-          0.416
+          0.422
         ],
         [
           "video:uye9Z8fGWSs",
-          0.393
+          0.417
         ],
         [
           "video:qENBQokefZs",
-          0.376
+          0.39
         ],
         [
           "video:AvebYlXnoPo",
-          0.364
+          0.371
         ],
         [
           "video:5RA39MJpAtU",
-          0.341
+          0.343
         ],
         [
           "video:EYinYM2M43A",
-          0.328
+          0.342
         ]
       ]
     },
@@ -5005,43 +5148,43 @@
       "neighbors": [
         [
           "video:KP1CgRq7ffk",
-          0.697
-        ],
-        [
-          "video:AvebYlXnoPo",
-          0.575
+          0.701
         ],
         [
           "video:p7ifvNUNk_4",
-          0.553
+          0.569
+        ],
+        [
+          "video:AvebYlXnoPo",
+          0.568
         ],
         [
           "video:MNPhTlvzSIA",
-          0.552
+          0.546
         ],
         [
           "video:qENBQokefZs",
-          0.552
+          0.527
         ],
         [
           "video:GLin95_je_A",
-          0.466
-        ],
-        [
-          "video:GjQaSi18B08",
-          0.432
+          0.501
         ],
         [
           "video:EYinYM2M43A",
-          0.416
+          0.435
+        ],
+        [
+          "video:GjQaSi18B08",
+          0.427
         ],
         [
           "video:uye9Z8fGWSs",
-          0.398
+          0.409
         ],
         [
           "video:YR8VKxy8JX0",
-          0.299
+          0.298
         ]
       ]
     },
@@ -5049,87 +5192,87 @@
       "neighbors": [
         [
           "video:MNPhTlvzSIA",
+          0.615
+        ],
+        [
+          "video:qENBQokefZs",
           0.584
         ],
         [
           "video:__0pkM8zBdQ",
-          0.553
-        ],
-        [
-          "video:qENBQokefZs",
-          0.55
-        ],
-        [
-          "video:AvebYlXnoPo",
-          0.518
+          0.569
         ],
         [
           "video:GLin95_je_A",
-          0.517
+          0.557
+        ],
+        [
+          "video:AvebYlXnoPo",
+          0.551
         ],
         [
           "video:EYinYM2M43A",
-          0.515
-        ],
-        [
-          "video:GjQaSi18B08",
-          0.501
+          0.527
         ],
         [
           "video:KP1CgRq7ffk",
-          0.493
+          0.519
         ],
         [
-          "video:whxjoMvrq2E",
-          0.482
+          "video:GjQaSi18B08",
+          0.515
         ],
         [
           "video:uye9Z8fGWSs",
-          0.459
+          0.507
+        ],
+        [
+          "video:whxjoMvrq2E",
+          0.479
         ]
       ]
     },
     "video:qENBQokefZs": {
       "neighbors": [
         [
+          "video:p7ifvNUNk_4",
+          0.584
+        ],
+        [
           "video:MNPhTlvzSIA",
           0.578
         ],
         [
-          "video:__0pkM8zBdQ",
-          0.552
-        ],
-        [
-          "video:p7ifvNUNk_4",
-          0.55
+          "video:GLin95_je_A",
+          0.545
         ],
         [
           "video:AvebYlXnoPo",
-          0.543
-        ],
-        [
-          "video:KP1CgRq7ffk",
           0.53
         ],
         [
-          "video:GLin95_je_A",
-          0.489
+          "video:__0pkM8zBdQ",
+          0.527
+        ],
+        [
+          "video:KP1CgRq7ffk",
+          0.514
         ],
         [
           "video:whxjoMvrq2E",
-          0.449
+          0.459
         ],
         [
           "video:uye9Z8fGWSs",
-          0.429
+          0.426
         ],
         [
           "video:GjQaSi18B08",
-          0.405
+          0.401
         ],
         [
           "video:YR8VKxy8JX0",
-          0.376
+          0.39
         ]
       ]
     },
@@ -5137,43 +5280,43 @@
       "neighbors": [
         [
           "video:GjQaSi18B08",
-          0.529
-        ],
-        [
-          "video:MNPhTlvzSIA",
-          0.483
+          0.54
         ],
         [
           "video:p7ifvNUNk_4",
-          0.459
+          0.507
         ],
         [
-          "video:qENBQokefZs",
-          0.429
+          "video:MNPhTlvzSIA",
+          0.493
         ],
         [
           "video:GLin95_je_A",
-          0.429
+          0.43
         ],
         [
-          "video:KP1CgRq7ffk",
-          0.403
-        ],
-        [
-          "video:AvebYlXnoPo",
-          0.4
-        ],
-        [
-          "video:__0pkM8zBdQ",
-          0.398
-        ],
-        [
-          "video:YR8VKxy8JX0",
-          0.393
+          "video:qENBQokefZs",
+          0.426
         ],
         [
           "video:EYinYM2M43A",
-          0.387
+          0.423
+        ],
+        [
+          "video:YR8VKxy8JX0",
+          0.417
+        ],
+        [
+          "video:AvebYlXnoPo",
+          0.414
+        ],
+        [
+          "video:__0pkM8zBdQ",
+          0.409
+        ],
+        [
+          "video:KP1CgRq7ffk",
+          0.408
         ]
       ]
     },
@@ -5181,43 +5324,43 @@
       "neighbors": [
         [
           "video:5RA39MJpAtU",
-          0.734
+          0.741
         ],
         [
           "video:9XfqYxcB6vE",
-          0.659
+          0.68
         ],
         [
           "video:p7ifvNUNk_4",
-          0.482
+          0.479
         ],
         [
           "video:YR8VKxy8JX0",
-          0.465
+          0.471
         ],
         [
           "video:qENBQokefZs",
-          0.449
+          0.459
         ],
         [
           "video:GLin95_je_A",
-          0.39
+          0.373
         ],
         [
           "video:MNPhTlvzSIA",
-          0.364
+          0.362
         ],
         [
           "video:EYinYM2M43A",
-          0.33
+          0.321
         ],
         [
           "video:GjQaSi18B08",
-          0.299
+          0.293
         ],
         [
-          "video:__0pkM8zBdQ",
-          0.275
+          "video:uye9Z8fGWSs",
+          0.273
         ]
       ]
     }
