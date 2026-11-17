@@ -2,12 +2,6 @@
   ÉTAT
 ======================================================================= */
 
-// --- CONSTANTES DE PERSISTANCE ---------------------------------------------
-
-// Clés de persistance partagées avec le portfolio.
-const THEME_KEY = 'fp-theme';
-const LANGUAGE_KEY = 'fp-lang';
-
 // --- INDEX DÉRIVÉS ----------------------------------------------------------
 
 // Index des nœuds par identifiant pour les accès directs.
@@ -42,6 +36,15 @@ const filtersSummaryContents = document.getElementById('filters-summary-contents
 const filtersToggle = document.getElementById('filters-toggle');
 const search = document.getElementById('search');
 
+// Outils de vue disponibles selon la disposition.
+const toggleConcepts = document.getElementById('toggle-concepts');
+const releaseNodes = document.getElementById('release-nodes');
+
+// Menu de vue mobile.
+const viewToolbar = document.getElementById('view-toolbar');
+const viewTrigger = document.getElementById('view-trigger');
+const viewTriggerUse = document.getElementById('view-trigger-use');
+
 // Préférences et retour au portfolio.
 const langSwitch = document.getElementById('lang-switch');
 const langTrigger = document.getElementById('lang-trigger');
@@ -62,6 +65,10 @@ let visibleKinds = new Set(DEFAULT_KINDS);
 let showConcepts = false;
 let filtersCollapsed = false;
 let langMenuOpen = false;
+let viewMenuOpen = false;
+
+// Disposition courante : réseau de liens, grappes par section ou par thème.
+let layoutMode = 'network';
 
 // Sélection, feuille mobile et filtre local du thème.
 let selectedId = null;
@@ -79,6 +86,8 @@ let matchIds = new Set();
 const positions = new Map();
 let nodes = [];
 let edges = [];
+let clusters = [];
+let clusterCellX = 0;
 let alpha = 1;
 
 // Transformation monde vers écran et état du glisser.
@@ -100,7 +109,7 @@ const pinch = { active: false, distance: 0, scale: 1, worldX: 0, worldY: 0 };
  */
 function detectLanguage() {
   try {
-    const stored = window.localStorage.getItem(LANGUAGE_KEY);
+    const stored = window.localStorage.getItem(STORAGE_KEYS.language);
     if (stored === 'fr' || stored === 'en' || stored === 'es') return stored;
   } catch (error) {
     console.warn('Stockage local indisponible : détection via le navigateur.', error);

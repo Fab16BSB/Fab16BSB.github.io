@@ -19,8 +19,92 @@
         </span>
       </div>
 
-      <!-- Raccourcis de vue : concepts, recentrage et libération des nœuds épinglés. -->
-      <div class="toolbar" role="toolbar" aria-label="Affichage" data-i18n-aria="displayGroup">
+      <!-- Rendu du graphe : disposition, recentrage et libération des nœuds épinglés. -->
+      <div class="toolbar" id="view-toolbar" role="toolbar" aria-label="Affichage" data-i18n-aria="displayGroup">
+
+        <!-- Déclencheur mobile : ouvre les options de vue. -->
+        <button
+          type="button"
+          class="view-trigger"
+          id="view-trigger"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="view-panel"
+          title="Options de vue"
+          data-i18n-title="viewOptions"
+          data-i18n-aria="viewOptions"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+            <use id="view-trigger-use" href="#icon-network" />
+          </svg>
+          <span data-i18n="viewButton">Vue</span>
+          <svg class="view-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#icon-chevron-down" />
+          </svg>
+        </button>
+
+        <!-- Panneau de vue : inline sur desktop, menu déroulant sur mobile. -->
+        <div
+          class="view-panel"
+          id="view-panel"
+          role="group"
+          aria-label="Options de vue"
+          data-i18n-aria="viewOptions"
+        >
+
+          <!-- Disposition : réseau de liens, grappes par section ou par thème. -->
+          <div
+            class="layout-switch"
+            role="group"
+            aria-label="Disposition du graphe"
+            data-i18n-aria="layoutGroup"
+          >
+            <button
+              type="button"
+              class="layout-option"
+              data-layout="network"
+              aria-pressed="true"
+              title="Graphe de liens entre les contenus"
+              data-i18n-title="layoutNetworkTitle"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+                <use href="#icon-network" />
+              </svg>
+              <span data-i18n="layoutNetwork">Réseau</span>
+            </button>
+
+            <button
+              type="button"
+              class="layout-option"
+              data-layout="sections"
+              aria-pressed="false"
+              title="Grappes par section du site"
+              data-i18n-title="layoutSectionsTitle"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <use href="#icon-grid" />
+              </svg>
+              <span data-i18n="layoutSections">Sections</span>
+            </button>
+
+            <button
+              type="button"
+              class="layout-option"
+              data-layout="themes"
+              aria-pressed="false"
+              title="Grappes par thème dominant"
+              data-i18n-title="layoutThemesTitle"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <use href="#icon-layers" />
+              </svg>
+              <span data-i18n="layoutThemes">Thèmes</span>
+            </button>
+          </div>
+        </div>
+
+        <span class="toolbar-divider" aria-hidden="true"></span>
+
         <button
           id="toggle-concepts"
           class="tool"
@@ -29,8 +113,8 @@
           data-i18n-title="conceptsTitle"
           data-i18n-aria="conceptsTitle"
         >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
-            <use href="#icon-concepts" />
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#icon-chip" />
           </svg>
           <span data-i18n="conceptsButton">Concepts</span>
         </button>

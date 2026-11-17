@@ -24,7 +24,7 @@ function nodeAt(screenPoint, extraSlop = 0) {
   let closest = null;
   let closestDistance = Infinity;
   for (const entry of nodes) {
-    const radius = nodeRadius(displayKind(entry.node)) + (NODE_HIT_SLOP + extraSlop) / view.scale;
+    const radius = nodeRadius(displayKind(entry.node)) + (INTERACTION.nodeHitSlop + extraSlop) / view.scale;
     const dx = entry.position.x - world.x;
     const dy = entry.position.y - world.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
@@ -50,6 +50,13 @@ function updateTooltip(event, entry) {
     const small = document.createElement('small');
     small.textContent = kindLabel(displayKind(node)) + (node.year ? ' · ' + node.year : '');
     tooltip.appendChild(small);
+
+    // En mode Thèmes, rappelle tous les thèmes du contenu.
+    if (layoutMode === 'themes' && node.themes && node.themes.length > 0) {
+      const themes = document.createElement('small');
+      themes.textContent = node.themes.map(themeLabel).join(' · ');
+      tooltip.appendChild(themes);
+    }
 
     tooltip.style.left = event.clientX - canvas.getBoundingClientRect().left + 'px';
     tooltip.style.top = event.clientY - canvas.getBoundingClientRect().top + 'px';
@@ -132,10 +139,10 @@ function startPinch() {
  * Borne l'échelle de zoom aux valeurs autorisées.
  *
  * @param {number} scale - Échelle demandée.
- * @returns {number} Échelle comprise entre `ZOOM_MIN` et `ZOOM_MAX`.
+ * @returns {number} Échelle comprise entre `INTERACTION.zoomMin` et `INTERACTION.zoomMax`.
  */
 function clampScale(scale) {
-  return Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, scale));
+  return Math.min(INTERACTION.zoomMax, Math.max(INTERACTION.zoomMin, scale));
 }
 
 /**
@@ -165,7 +172,7 @@ canvas.addEventListener('pointerdown', (event) => {
   }
   if (pointers.size > 2) return;
 
-  const entry = nodeAt(point, event.pointerType === 'touch' ? TOUCH_HIT_SLOP : 0);
+  const entry = nodeAt(point, event.pointerType === 'touch' ? INTERACTION.touchHitSlop : 0);
   followId = null;
   drag.moved = false;
 
@@ -175,7 +182,7 @@ canvas.addEventListener('pointerdown', (event) => {
     drag.nodeId = entry.node.id;
     drag.startX = point.x;
     drag.startY = point.y;
-    drag.slop = event.pointerType === 'touch' ? TAP_SLOP_TOUCH : TAP_SLOP_MOUSE;
+    drag.slop = event.pointerType === 'touch' ? INTERACTION.tapSlopTouch : INTERACTION.tapSlopMouse;
   } else {
     // Sinon, mémorise l'origine du déplacement de la vue.
     drag.mode = 'pan';

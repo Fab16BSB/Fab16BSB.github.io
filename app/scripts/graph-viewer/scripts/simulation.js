@@ -3,6 +3,10 @@
 ======================================================================= */
 /** Applique une itération de la simulation de forces. */
 function tick() {
+
+  // Mode grappes : les positions sont fixes, aucune force à appliquer.
+  if (isClusteredLayout()) return;
+
   const repulsion = 2200;
   const centerPull = 0.0035;
   const damping = 0.86;

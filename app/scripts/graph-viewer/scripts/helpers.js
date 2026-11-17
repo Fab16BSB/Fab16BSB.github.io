@@ -23,6 +23,17 @@ function kindLabel(kind) {
 }
 
 /**
+ * Retourne le libellé localisé d'un thème.
+ *
+ * @param {string} themeId - Identifiant du thème.
+ * @returns {string} Libellé traduit, ou identifiant en repli.
+ */
+function themeLabel(themeId) {
+  const node = byId.get('theme:' + themeId);
+  return node ? labelOf(node) : themeId;
+}
+
+/**
  * Retourne la couleur d'un type de nœud pour le thème courant.
  *
  * @param {string} kind - Identifiant du type.
@@ -45,6 +56,26 @@ function displayKind(node) {
 }
 
 /**
+ * Indique si la vue regroupe les contenus en grappes.
+ *
+ * @returns {boolean} `true` hors du mode Réseau.
+ */
+function isClusteredLayout() {
+  return layoutMode !== 'network';
+}
+
+/**
+ * Met à jour l'aide affichée sous le graphe selon la disposition.
+ *
+ * @returns {void}
+ */
+function updateHint() {
+  const hint = document.getElementById('hint');
+  if (!hint) return;
+  hint.textContent = isClusteredLayout() ? UI[lang].hintClusters : UI[lang].hint;
+}
+
+/**
  * Retourne les couleurs du canvas pour le thème courant.
  *
  * @returns {object} Palette de tracés et d'étiquettes.
@@ -60,7 +91,7 @@ function canvasPalette() {
  * @returns {number} Rayon en unités monde.
  */
 function nodeRadius(kind) {
-  const boost = isCompactLayout() ? COMPACT_NODE_SCALE : 1;
+  const boost = isCompactLayout() ? INTERACTION.compactNodeScale : 1;
   return ((KIND_RADIUS[kind] || 5) * boost) / Math.sqrt(view.scale);
 }
 
@@ -94,7 +125,7 @@ function applyTheme(next, persist) {
 
   if (persist) {
     try {
-      window.localStorage.setItem(THEME_KEY, next);
+      window.localStorage.setItem(STORAGE_KEYS.theme, next);
     } catch (error) {
       console.warn('Stockage local indisponible : le thème ne sera pas conservé.', error);
     }
@@ -158,6 +189,14 @@ function positionOf(id) {
  * @returns {boolean} `true` si le nœud est visible.
  */
 function isVisible(node) {
+
+  // En mode grappes, seuls les contenus restent affichés : sans arêtes, les
+  // pivots de taxonomie n'ont plus de rôle visuel.
+  if (isClusteredLayout()) {
+    if (node.kind === 'theme' || node.kind === 'concept') return false;
+    return visibleKinds.has(displayKind(node));
+  }
+
   let visible;
   if (node.kind === 'theme') visible = true;
   else if (node.kind === 'concept') visible = showConcepts;

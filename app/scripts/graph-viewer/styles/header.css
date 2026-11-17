@@ -327,3 +327,105 @@ header {
   background: var(--gradient);
   transform: translateX(-50%);
 }
+
+/* Outil indisponible : la place reste réservée pour garder les icônes fixes. */
+.tool.is-hidden-tool {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Sélecteur de disposition : Réseau, Sections ou Thèmes. */
+.layout-switch {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2px;
+  margin-right: 0.35rem;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.layout-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: 32px;
+  padding: 0 0.6rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-faint);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.layout-option svg {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.layout-option:hover {
+  background: var(--surface-3);
+  color: var(--text);
+}
+
+.layout-option[aria-pressed='true'] {
+  background: color-mix(in srgb, var(--accent) 20%, var(--surface));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 32%, transparent);
+  color: var(--text);
+}
+
+/* Séparateur entre la disposition et les actions de vue. */
+.toolbar-divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 0.35rem;
+  background: var(--border);
+}
+
+/* Déclencheur mobile du menu de vue, masqué sur desktop. */
+.view-trigger {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  height: 38px;
+  padding: 0 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.view-trigger:hover {
+  border-color: var(--accent);
+  background: var(--gradient-soft);
+}
+
+.view-chevron {
+  color: var(--text-faint);
+  transition: transform var(--transition);
+}
+
+.toolbar[data-open='true'] .view-chevron {
+  transform: rotate(180deg);
+}
+
+/* Panneau de vue inline sur desktop. */
+.view-panel {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}

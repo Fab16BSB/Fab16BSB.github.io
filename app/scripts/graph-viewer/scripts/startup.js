@@ -22,12 +22,43 @@ document.getElementById('filters-none').addEventListener('click', () => {
 filtersToggle.addEventListener('click', () => setFiltersCollapsed(!filtersCollapsed));
 
 // Bascule des concepts techniques et reprise du panneau.
-document.getElementById('toggle-concepts').addEventListener('click', (event) => {
+toggleConcepts.addEventListener('click', () => {
   showConcepts = !showConcepts;
-  event.currentTarget.setAttribute('aria-pressed', showConcepts ? 'true' : 'false');
+  toggleConcepts.setAttribute('aria-pressed', showConcepts ? 'true' : 'false');
   rebuild();
   renderPanel();
+  setViewMenuOpen(false);
 });
+
+// Sélecteur de disposition : réseau, sections ou thèmes.
+for (const button of document.querySelectorAll('[data-layout]')) {
+  button.addEventListener('click', () => setLayoutMode(button.dataset.layout));
+}
+
+// Menu de vue mobile : ouverture, fermeture extérieure et clavier.
+viewTrigger.addEventListener('click', () => setViewMenuOpen(!viewMenuOpen));
+
+document.addEventListener('pointerdown', (event) => {
+  if (viewMenuOpen && !viewToolbar.contains(event.target)) setViewMenuOpen(false);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && viewMenuOpen) {
+    setViewMenuOpen(false);
+    viewTrigger.focus();
+  }
+});
+
+// Ferme le menu en repassant en disposition desktop.
+const viewMenuMedia = window.matchMedia('(max-width: 520px)');
+const syncViewMenu = () => {
+  if (!viewMenuMedia.matches) setViewMenuOpen(false);
+};
+if (typeof viewMenuMedia.addEventListener === 'function') {
+  viewMenuMedia.addEventListener('change', syncViewMenu);
+} else {
+  viewMenuMedia.addListener(syncViewMenu);
+}
 
 // Zoom tactile : boutons visibles sur les petits écrans.
 document.getElementById('zoom-in').addEventListener('click', () => zoomBy(1.35));
@@ -38,12 +69,14 @@ document.getElementById('reset-view').addEventListener('click', () => {
   alpha = 0.02;
   followId = null;
   fitView();
+  setViewMenuOpen(false);
 });
 
 // Libère tous les nœuds épinglés.
-document.getElementById('release-nodes').addEventListener('click', () => {
+releaseNodes.addEventListener('click', () => {
   for (const position of positions.values()) position.pinned = false;
   alpha = 1;
+  setViewMenuOpen(false);
 });
 
 // Entrée lance la recherche.
@@ -73,16 +106,28 @@ if (typeof ResizeObserver === 'function') {
   });
 }
 
-// Premier rendu : libellés, dimensions, données et panneau.
+// Disposition initiale : mémoire locale, puis lien direct `?mode=`.
+try {
+  const storedLayout = window.localStorage.getItem(STORAGE_KEYS.layout);
+  if (LAYOUT_MODES.includes(storedLayout)) layoutMode = storedLayout;
+} catch (error) {
+  console.warn('Stockage local indisponible : disposition par défaut appliquée.', error);
+}
+
+const params = new URLSearchParams(window.location.search);
+const initialLayout = params.get('mode');
+if (LAYOUT_MODES.includes(initialLayout)) layoutMode = initialLayout;
+
+// Premier rendu : libellés, disposition, dimensions, données et panneau.
 filtersCollapsed = isCompactLayout();
 applyLabels();
+syncLayoutSwitch();
 resize();
 rebuild();
 renderFilters();
 renderPanel();
 
 // Lien direct pour ouvrir un contenu précis : ?select=project:these
-const params = new URLSearchParams(window.location.search);
 const initialId = params.get('select');
 if (initialId && byId.has(initialId)) {
   const initialNode = byId.get(initialId);

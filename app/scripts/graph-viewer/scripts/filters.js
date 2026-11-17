@@ -37,6 +37,71 @@ function toggleKindVisibility(kind) {
 }
 
 /**
+ * Applique une disposition et rafraîchit les vues dépendantes.
+ *
+ * @param {string} mode - `network`, `sections` ou `themes`.
+ * @returns {void}
+ */
+function setLayoutMode(mode) {
+  setViewMenuOpen(false);
+  if (!LAYOUT_MODES.includes(mode) || mode === layoutMode) return;
+
+  layoutMode = mode;
+  followId = null;
+
+  try {
+    window.localStorage.setItem(STORAGE_KEYS.layout, mode);
+  } catch (error) {
+    console.warn('Stockage local indisponible : la disposition ne sera pas conservée.', error);
+  }
+
+  syncLayoutSwitch();
+  rebuild();
+  renderFilters();
+  renderPanel();
+}
+
+/**
+ * Ouvre ou ferme le menu de vue mobile.
+ *
+ * @param {boolean} next - Nouvel état ouvert.
+ * @returns {void}
+ */
+function setViewMenuOpen(next) {
+  viewMenuOpen = next;
+  viewTrigger.setAttribute('aria-expanded', next ? 'true' : 'false');
+  viewToolbar.dataset.open = next ? 'true' : 'false';
+}
+
+/**
+ * Aligne les boutons de disposition et l'aide sur le mode courant.
+ *
+ * @returns {void}
+ */
+function syncLayoutSwitch() {
+  const network = layoutMode === 'network';
+  const icons = {
+    network: '#icon-network',
+    sections: '#icon-grid',
+    themes: '#icon-layers',
+  };
+
+  for (const button of document.querySelectorAll('[data-layout]')) {
+    const active = button.dataset.layout === layoutMode;
+    button.setAttribute('aria-pressed', active ? 'true' : 'false');
+  }
+
+  viewTriggerUse.setAttribute('href', icons[layoutMode] || '#icon-network');
+
+  // Les concepts et le relâchement des nœuds n'ont de sens qu'avec les liens.
+  // La classe réserve leur place : les autres icônes ne bougent pas.
+  toggleConcepts.classList.toggle('is-hidden-tool', !network);
+  releaseNodes.classList.toggle('is-hidden-tool', !network);
+
+  updateHint();
+}
+
+/**
  * Crée la puce d'un type de contenu avec son libellé et son compteur.
  *
  * @param {string} kind - Identifiant du type de contenu.

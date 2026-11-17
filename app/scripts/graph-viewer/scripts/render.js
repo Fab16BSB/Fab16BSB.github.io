@@ -85,6 +85,9 @@ function draw() {
   ctx.translate(view.x, view.y);
   ctx.scale(view.scale, view.scale);
 
+  // Halos des grappes, dessinés sous les nœuds.
+  if (isClusteredLayout()) drawClusters(palette);
+
   drawEdges(focusId, palette);
   drawNodes(highlighted, palette);
 
@@ -283,6 +286,9 @@ function drawLabels(palette) {
   ctx.textBaseline = 'middle';
   ctx.font = size + 'px ' + LABEL_FONT_FAMILY;
 
+  // Les titres de grappes sont placés avant les nœuds pour rester lisibles.
+  if (isClusteredLayout()) drawClusterLabels(palette, layout);
+
   for (const entry of labelEntries) {
     drawLabel(entry, palette, layout);
   }
@@ -309,6 +315,15 @@ function labelPriority(node) {
  */
 function isLabelVisible(node) {
   const kind = displayKind(node);
+
+  // En mode grappes, seuls le survol, la sélection et la recherche nomment un
+  // nœud ; le zoom révèle les autres étiquettes.
+  if (isClusteredLayout()) {
+    if (node.id === selectedId || node.id === hoverId) return true;
+    if (matchIds.has(node.id)) return true;
+    return view.scale >= 1.4;
+  }
+
   let visible = view.scale >= 1.1;
   if (node.id === selectedId || node.id === hoverId) visible = true;
   else if (kind === 'theme' || kind === 'project' || kind === 'notebook') visible = true;

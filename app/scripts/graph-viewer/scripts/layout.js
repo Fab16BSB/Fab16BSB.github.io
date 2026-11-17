@@ -1,6 +1,7 @@
 /* =======================================================================
   CONSTRUCTION DE LA VUE
 ======================================================================= */
+
 /** Place les thèmes en cercle et accroche chaque contenu à ses thèmes. */
 function seedLayout() {
   const themeEntries = nodes.filter((entry) => entry.node.kind === 'theme');
@@ -71,6 +72,15 @@ function rebuild() {
     nodes.push({ node, position: positionOf(node.id) });
   }
 
+  // Mode grappes : aucun lien, placement statique immédiat.
+  if (isClusteredLayout()) {
+    edges = [];
+    seedClusterLayout();
+    alpha = 0;
+    fitView();
+    return;
+  }
+
   // Ne garde que les arêtes dont les deux extrémités sont visibles.
   edges = DATA.edges.filter((edge) => {
     if (!visibleIds.has(edge.from) || !visibleIds.has(edge.to)) return false;
@@ -79,6 +89,8 @@ function rebuild() {
   });
 
   // Stabilise la simulation avant le premier rendu pour une vue immobile.
+  clusters = [];
+  clusterCellX = 0;
   seedLayout();
   alpha = 1;
   for (let step = 0; step < 260; step += 1) tick();
@@ -94,14 +106,21 @@ function rebuild() {
 function fitView() {
   if (nodes.length === 0) return;
 
+  // En mode grappes, réserve la place des halos et de leurs titres.
+  const clusterMargin = clusters.reduce(
+    (margin, group) =>
+      Math.max(margin, group.radius + CLUSTER_LAYOUT.labelMargin),
+    0,
+  );
+
   // Bornes du graphe sur chaque axe.
   const xs = nodes.map((entry) => entry.position.x).sort((left, right) => left - right);
   const ys = nodes.map((entry) => entry.position.y).sort((left, right) => left - right);
 
-  const minX = xs[0];
-  const maxX = xs[xs.length - 1];
-  const minY = ys[0];
-  const maxY = ys[ys.length - 1];
+  const minX = xs[0] - clusterMargin;
+  const maxX = xs[xs.length - 1] + clusterMargin;
+  const minY = ys[0] - clusterMargin;
+  const maxY = ys[ys.length - 1] + clusterMargin;
 
   const width = Math.max(1, maxX - minX);
   const height = Math.max(1, maxY - minY);
@@ -124,9 +143,9 @@ function fitView() {
 }
 
 /**
- * Compte les contenus, thèmes, concepts et relations visibles.
+ * Compte les contenus, thèmes, concepts, relations et grappes visibles.
  *
- * @returns {{ contents: number, themes: number, concepts: number, relations: number }} Compteurs du panneau.
+ * @returns {{ contents: number, themes: number, concepts: number, relations: number, clusters: number }} Compteurs du panneau.
  */
 function counts() {
   // Les contenus excluent les thèmes et les concepts.
@@ -138,5 +157,6 @@ function counts() {
     themes: DATA.nodes.filter((node) => node.kind === 'theme').length,
     concepts: DATA.nodes.filter((node) => node.kind === 'concept').length,
     relations: edges.filter((edge) => edge.relation === 'related').length,
+    clusters: clusters.length,
   };
 }

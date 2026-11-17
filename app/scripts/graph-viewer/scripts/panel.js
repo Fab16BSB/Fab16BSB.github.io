@@ -99,12 +99,28 @@ function createOverviewHead() {
 function createOverviewStats() {
   const stats = element('div', 'stats');
   const current = counts();
-  const items = [
-    [current.contents, UI[lang].contents],
-    [current.themes, UI[lang].themes],
-    [current.concepts, UI[lang].concepts],
-    [current.relations, UI[lang].relations],
-  ];
+  let items;
+
+  if (!isClusteredLayout()) {
+    items = [
+      [current.contents, UI[lang].contents],
+      [current.themes, UI[lang].themes],
+      [current.concepts, UI[lang].concepts],
+      [current.relations, UI[lang].relations],
+    ];
+  } else if (layoutMode === 'themes') {
+    // En mode Thèmes, les grappes sont les thèmes : un seul compteur suffit.
+    items = [
+      [current.contents, UI[lang].contents],
+      [current.clusters, UI[lang].clusters],
+    ];
+  } else {
+    items = [
+      [current.contents, UI[lang].contents],
+      [current.clusters, UI[lang].clusters],
+      [current.themes, UI[lang].themes],
+    ];
+  }
 
   for (const [value, label] of items) {
     const stat = element('div', 'stat');

@@ -2,6 +2,8 @@
   CONSTANTES
 ======================================================================= */
 
+// --- TYPES DE CONTENUS ------------------------------------------------------
+
 // Types de contenus affichables dans les filtres.
 const CONTENT_KINDS = [
   'project', 'notebook', 'publication', 'article', 'teaching', 'experience',
@@ -10,6 +12,46 @@ const CONTENT_KINDS = [
 
 // Types visibles au démarrage : les compétences restent masquées.
 const DEFAULT_KINDS = CONTENT_KINDS.filter((kind) => kind !== 'skill');
+
+// --- DISPOSITIONS -----------------------------------------------------------
+
+// Dispositions disponibles : réseau de liens et grappes sans arêtes.
+const LAYOUT_MODES = ['network', 'sections', 'themes'];
+
+// --- STOCKAGE LOCAL ---------------------------------------------------------
+
+// Clés de persistance partagées avec le portfolio et le viewer.
+const STORAGE_KEYS = Object.freeze({
+  theme: 'fp-theme',
+  language: 'fp-lang',
+  layout: 'fp-graph-layout',
+});
+
+// --- GRAPPES ----------------------------------------------------------------
+
+// Clé de la grappe qui rassemble les contenus sans thème.
+const OTHER_CLUSTER_ID = 'other';
+
+// Géométrie des grappes : spirale interne, grille et en-têtes.
+const CLUSTER_LAYOUT = Object.freeze({
+  // Spirale interne.
+  spiralStep: 12,
+  minRadius: 62,
+  nodeMargin: 32,
+
+  // Grille.
+  cellGap: 80,
+  cellAspect: 1.9,
+  columnDesktop: 170,
+  columnCompact: 120,
+
+  // En-têtes.
+  labelGap: 10,
+  labelMargin: 56,
+  titlePillGap: 8,
+});
+
+// --- LIBELLÉS ---------------------------------------------------------------
 
 // Libellés localisés des types de nœuds.
 const KIND_LABELS = {
@@ -27,6 +69,8 @@ const KIND_LABELS = {
   theme: { fr: 'Thème', en: 'Theme', es: 'Tema' },
   concept: { fr: 'Concept', en: 'Concept', es: 'Concepto' },
 };
+
+// --- COULEURS ---------------------------------------------------------------
 
 // Couleurs de base par type pour le thème sombre.
 const KIND_COLORS = {
@@ -63,6 +107,8 @@ const KIND_COLORS_LIGHT = {
   concept: '#475569',
 };
 
+// --- PALETTE CANVAS ---------------------------------------------------------
+
 // Couleurs du canvas, séparées du DOM car elles ne lisent pas les variables CSS.
 const CANVAS_COLORS = {
 
@@ -77,6 +123,7 @@ const CANVAS_COLORS = {
     labelBackground: 'rgba(8, 13, 26, 0.72)',
     labelText: 'rgba(230, 236, 255, 0.92)',
     themeLabel: '#e2e8f0',
+    clusterStroke: 'rgba(226, 232, 240, 0.18)',
   },
 
   // Palette du thème clair.
@@ -90,28 +137,32 @@ const CANVAS_COLORS = {
     labelBackground: 'rgba(241, 234, 221, 0.82)',
     labelText: 'rgba(32, 26, 19, 0.9)',
     themeLabel: '#201a13',
+    clusterStroke: 'rgba(32, 26, 19, 0.16)',
   },
 };
 
-// Bornes du zoom manuel sur la scène.
-const ZOOM_MIN = 0.18;
-const ZOOM_MAX = 3;
+// --- INTERACTIONS -----------------------------------------------------------
 
-// Tolérance de clic ajoutée au rayon des nœuds, en pixels écran.
-const NODE_HIT_SLOP = 4;
+// Réglages du zoom, des zones de clic, du glisser et de la feuille mobile.
+const INTERACTION = Object.freeze({
+  // Zoom manuel.
+  zoomMin: 0.18,
+  zoomMax: 3,
 
-// Tolérance supplémentaire pour un appui tactile.
-const TOUCH_HIT_SLOP = 10;
+  // Zones de clic.
+  nodeHitSlop: 4,
+  touchHitSlop: 10,
 
-// Déplacement maximal toléré pour considérer un appui comme un clic.
-const TAP_SLOP_TOUCH = 12;
-const TAP_SLOP_MOUSE = 4;
+  // Seuil de glisser.
+  tapSlopTouch: 12,
+  tapSlopMouse: 4,
 
-// Agrandissement visuel des nœuds sur les petits écrans.
-const COMPACT_NODE_SCALE = 1.3;
+  // Affichage compact et feuille mobile.
+  compactNodeScale: 1.3,
+  sheetCloseGuardMs: 350,
+});
 
-// Délai pendant lequel la feuille ignore le clic qui suit son ouverture.
-const SHEET_CLOSE_GUARD_MS = 350;
+// --- RAYONS -----------------------------------------------------------------
 
 // Rayon de dessin des nœuds par type, en pixels monde.
 const KIND_RADIUS = {

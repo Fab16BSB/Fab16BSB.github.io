@@ -15,6 +15,18 @@
   }
 }
 
+/* Réduit les modes de disposition à leurs icônes sous 1180 px. */
+@media (max-width: 1180px) {
+  .layout-option {
+    width: 38px;
+    padding: 0;
+  }
+
+  .layout-option span {
+    display: none;
+  }
+}
+
 /* Passe le panneau en feuille mobile sous 1020 px. */
 @media (max-width: 1020px) {
   .workspace {
@@ -24,7 +36,7 @@
   }
 
   .filters-list {
-    max-height: min(30vh, 180px);
+    max-height: none;
   }
 
   .panel-backdrop {
@@ -190,7 +202,7 @@
   }
 
   .filters {
-    max-height: 40vh;
+    max-height: none;
     padding: 0.5rem 0.85rem 0.6rem;
   }
 
@@ -230,6 +242,12 @@
     order: -1;
     flex: 1 1 100%;
   }
+
+  .filters-actions {
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
 }
 
 /* Masque le sous-titre et le raccourci sous 640 px. */
@@ -254,12 +272,15 @@
   }
 }
 
-/* Réorganise l'en-tête en flex sous 520 px. */
+/* Réorganise l'en-tête sur une ligne avec un menu Vue sous 520 px. */
 @media (max-width: 520px) {
   .header-inner {
+    position: relative;
     display: flex;
     flex-wrap: nowrap;
-    gap: 0.4rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35rem;
     padding-block: 0.55rem;
   }
 
@@ -268,15 +289,18 @@
     margin-right: 0;
   }
 
+  /* Barre de vue dans le flux, entre la marque et les actions. */
   .toolbar {
-    order: 2;
-    flex: 1 1 auto;
-    justify-content: center;
-    gap: 0.15rem;
+    gap: 0.1rem;
+  }
+
+  .view-trigger {
+    display: inline-flex;
+    height: 36px;
   }
 
   .tool {
-    width: 34px;
+    width: 32px;
     height: 36px;
     padding: 0;
   }
@@ -286,8 +310,57 @@
     height: 16px;
   }
 
+  .view-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 50%;
+    z-index: 30;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
+    width: min(300px, calc(100vw - 2rem));
+    padding: 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    box-shadow: var(--shadow-md);
+    transform: translateX(-50%);
+  }
+
+  .toolbar[data-open='true'] .view-panel {
+    display: flex;
+  }
+
+  .view-panel .layout-switch {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.2rem;
+    margin-right: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .view-panel .layout-option {
+    width: 100%;
+    height: 36px;
+    justify-content: flex-start;
+    padding: 0 0.5rem;
+    border-radius: var(--radius-xs);
+    font-size: 0.78rem;
+  }
+
+  .view-panel .layout-option span {
+    display: inline;
+  }
+
+  .toolbar-divider {
+    display: none;
+  }
+
   .actions {
-    order: 3;
     flex-shrink: 0;
     margin-left: 0;
     gap: 0.25rem;
@@ -317,16 +390,63 @@
     gap: 0.3rem;
   }
 
+  .view-trigger span {
+    display: none;
+  }
+
+  .toolbar {
+    gap: 0.1rem;
+  }
+
+  .tool,
+  .layout-option {
+    width: 32px;
+  }
+
+  .toolbar-divider {
+    margin: 0 0.1rem;
+  }
+
   .filters-summary-types,
   .filters-summary-sep {
     display: none;
   }
 }
 
+/* Compression supplémentaire de l'en-tête sous 380 px. */
+@media (max-width: 380px) {
+  .header-inner {
+    width: calc(100% - 1rem);
+  }
+
+  .filters-title {
+    display: none;
+  }
+
+  .tool,
+  .layout-option {
+    width: 30px;
+  }
+
+  .theme-toggle,
+  .portfolio-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .lang-trigger {
+    width: 36px;
+  }
+
+  .actions {
+    gap: 0.2rem;
+  }
+}
+
 /* Compression maximale de l'en-tête sous 340 px. */
 @media (max-width: 340px) {
-  .header-inner {
-    gap: 0.3rem;
+  .view-trigger {
+    padding: 0 0.45rem;
   }
 
   .toolbar {
@@ -335,6 +455,11 @@
 
   .tool {
     width: 30px;
+  }
+
+  .layout-option {
+    width: 30px;
+    height: 32px;
   }
 
   .theme-toggle,
@@ -349,14 +474,21 @@
   }
 }
 
+/* Sous 320 px, libère la place du bouton Relâcher. */
+@media (max-width: 320px) {
+  #release-nodes {
+    display: none;
+  }
+}
+
 /* Réduit les animations si l'utilisateur le demande. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
   }
 }

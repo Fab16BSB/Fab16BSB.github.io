@@ -123,6 +123,8 @@ function applyLabels() {
     if (value) node.setAttribute('aria-label', value);
   }
 
+  // L'aide dépend de la disposition courante, pas seulement de la langue.
+  updateHint();
   updateLanguageSwitcher();
   updateThemeToggle();
   setFiltersCollapsed(filtersCollapsed);
@@ -139,7 +141,7 @@ function setLanguage(next, persist = true) {
   lang = next;
   if (persist) {
     try {
-      window.localStorage.setItem(LANGUAGE_KEY, next);
+      window.localStorage.setItem(STORAGE_KEYS.language, next);
     } catch (error) {
       console.warn('Stockage local indisponible : la langue ne sera pas conservée.', error);
     }
@@ -154,12 +156,12 @@ function setLanguage(next, persist = true) {
 /** Reprend le thème et la langue modifiés dans un autre onglet. */
 function syncPreferences() {
   try {
-    const storedTheme = window.localStorage.getItem(THEME_KEY);
+    const storedTheme = window.localStorage.getItem(STORAGE_KEYS.theme);
     if ((storedTheme === 'light' || storedTheme === 'dark') && storedTheme !== theme) {
       applyTheme(storedTheme, false);
     }
 
-    const storedLang = window.localStorage.getItem(LANGUAGE_KEY);
+    const storedLang = window.localStorage.getItem(STORAGE_KEYS.language);
     if (
       (storedLang === 'fr' || storedLang === 'en' || storedLang === 'es') &&
       storedLang !== lang
@@ -208,7 +210,7 @@ function bindSheetControls() {
 
   // Ignore le clic synthétique qui suit l'ouverture par un appui sur un nœud.
   panelBackdrop.addEventListener('click', () => {
-    if (performance.now() - sheetOpenedAt < SHEET_CLOSE_GUARD_MS) return;
+    if (performance.now() - sheetOpenedAt < INTERACTION.sheetCloseGuardMs) return;
     setSheetOpen(false);
   });
 
@@ -252,7 +254,7 @@ function bindPortfolioLink() {
 /** Branche la synchronisation des préférences entre onglets et au retour du cache. */
 function bindPreferenceSync() {
   window.addEventListener('storage', (event) => {
-    if (event.key === THEME_KEY || event.key === LANGUAGE_KEY) syncPreferences();
+    if (event.key === STORAGE_KEYS.theme || event.key === STORAGE_KEYS.language) syncPreferences();
   });
 
   window.addEventListener('pageshow', (event) => {
