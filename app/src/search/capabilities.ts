@@ -3,19 +3,13 @@
   Décide si le modèle sémantique peut être proposé.
 ========================================================================= */
 
-/** Raison pour laquelle le modèle est disponible ou non. */
-export type SemanticCapabilityReason =
-  | 'ok'
-  | 'worker'
-  | 'saveData'
-  | 'network'
-  | 'memory'
-  | 'cpu';
+/* =========================================================================
+  TYPES
+========================================================================= */
 
 /** Capacité de l'appareil à exécuter le modèle. */
 export type SemanticCapability = {
   supported: boolean;
-  reason: SemanticCapabilityReason;
 };
 
 /** Champs non standard exposés par certains navigateurs. */
@@ -27,16 +21,21 @@ type NavigatorWithHints = Navigator & {
   deviceMemory?: number;
 };
 
+/* =========================================================================
+  HELPERS
+========================================================================= */
+
 /**
  * Détecte si l'appareil peut télécharger et exécuter le modèle.
  *
  * Les critères couvrent les vieux ordinateurs autant que les mobiles :
  * économie de données, réseau lent, mémoire vive et nombre de cœurs.
  *
- * @returns La capacité et la raison du refus.
+ * @returns La capacité de l'appareil.
  */
 export function detectSemanticCapability(): SemanticCapability {
-  let result: SemanticCapability = { supported: true, reason: 'ok' };
+  // Capacité supposée avant vérification des API et du matériel.
+  let supported = true;
 
   // Sans Worker ni WebAssembly, le modèle ne peut pas s'exécuter.
   if (
@@ -44,41 +43,42 @@ export function detectSemanticCapability(): SemanticCapability {
     typeof Worker === 'undefined' ||
     typeof WebAssembly === 'undefined'
   ) {
-    result = { supported: false, reason: 'worker' };
-  } 
-  
+    supported = false;
+  }
+
+  // Navigateur compatible : vérifier les ressources de l'appareil.
   else {
     const device = navigator as NavigatorWithHints;
 
     // L'utilisateur a activé l'économie de données de son navigateur.
     if (device.connection?.saveData) {
-      result = { supported: false, reason: 'saveData' };
-    } 
+      supported = false;
+    }
 
     // 2G/3G : trop lent pour télécharger puis exécuter le modèle.
     else if (
       device.connection?.effectiveType &&
       ['slow-2g', '2g', '3g'].includes(device.connection.effectiveType)
     ) {
-      result = { supported: false, reason: 'network' };
-    } 
-    
+      supported = false;
+    }
+
     // Moins de 4 Go de RAM : le modèle risque de faire planter l'onglet.
     else if (
       typeof device.deviceMemory === 'number' &&
       device.deviceMemory < 4
     ) {
-      result = { supported: false, reason: 'memory' };
-    } 
+      supported = false;
+    }
 
     // Moins de 4 cœurs : l'inférence serait trop lente.
     else if (
       typeof device.hardwareConcurrency === 'number' &&
       device.hardwareConcurrency < 4
     ) {
-      result = { supported: false, reason: 'cpu' };
+      supported = false;
     }
   }
 
-  return result;
+  return { supported };
 }

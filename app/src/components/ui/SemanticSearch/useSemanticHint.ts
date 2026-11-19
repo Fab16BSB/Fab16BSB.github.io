@@ -33,17 +33,28 @@ export function useSemanticHint() {
   // État par défaut : chargement en cours ou en attente.
   let state: SemanticHintState = { kind: 'loading', progress: semanticProgress };
 
+  // L'appareil ne peut pas exécuter le modèle.
   if (!capability.supported) {
-    // L'appareil ne peut pas exécuter le modèle.
     state = { kind: 'unavailable' };
-  } else if (!semanticEnabled) {
-    // Aucune préférence active : proposer l'activation.
+  }
+
+  // Aucune préférence active : proposer l'activation.
+  else if (!semanticEnabled) {
     state = { kind: 'enable' };
-  } else if (semanticStatus === 'error') {
-    // Le dernier téléchargement ou chargement a échoué.
+  }
+
+  // Le navigateur ne fournit pas les API nécessaires au modèle.
+  else if (semanticStatus === 'unsupported') {
+    state = { kind: 'unavailable' };
+  }
+
+  // Le dernier téléchargement ou chargement a échoué.
+  else if (semanticStatus === 'error') {
     state = { kind: 'error' };
-  } else if (semanticStatus === 'ready') {
-    // Le modèle est prêt : proposer la désactivation.
+  }
+
+  // Le modèle est prêt : proposer la désactivation.
+  else if (semanticStatus === 'ready') {
     state = { kind: 'active' };
   }
 

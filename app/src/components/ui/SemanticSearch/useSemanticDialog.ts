@@ -1,7 +1,8 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import { useDialogFocusTrap } from '@/hooks/ui/useDialogFocusTrap';
 import { useLockBodyScroll } from '@/hooks/ui/useLockBodyScroll';
 import { useOnClickOutside } from '@/hooks/ui/useOnClickOutside';
 import { useSearchSettings } from '@/search/useSearchSettings';
@@ -23,12 +24,8 @@ export function useSemanticDialog() {
   // Bloque le défilement de la page derrière la modale.
   useLockBodyScroll(promptOpen);
 
-  // Donne le focus à l'action principale dès l'ouverture.
-  useEffect(() => {
-    if (promptOpen) {
-      confirmRef.current?.focus();
-    }
-  }, [promptOpen]);
+  // Piège le focus dans la modale et le restaure à la fermeture.
+  useDialogFocusTrap(dialogRef, promptOpen, confirmRef);
 
   return {
     promptOpen,
