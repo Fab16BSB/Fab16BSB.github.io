@@ -1,8 +1,8 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { education } from '@/data/education.data';
-import { experiences } from '@/data/experience.data';
+import { education } from '@/data/career/education.data';
+import { experiences } from '@/data/career/experience.data';
 import { useI18n } from '@/i18n/useI18n';
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading';
 import { Tabs } from '@/components/ui/Tabs/Tabs';

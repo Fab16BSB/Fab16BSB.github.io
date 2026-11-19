@@ -2,12 +2,12 @@
   IMPORTS
 ========================================================================= */
 import { useMemo } from 'react';
-import { knowledgeThemes } from '@/data/knowledge-taxonomy.data';
-import mediumPostsRaw from '@/data/medium-posts.json';
+import { knowledgeThemes } from '@/data/knowledge/knowledge-taxonomy.data';
+import mediumPostsRaw from '@/data/feeds/medium-posts.json';
 import { useI18n } from '@/i18n/useI18n';
-import { getKnowledgeGraph } from '@/lib/knowledge-index';
-import { getKnowledgeRecommendations } from '@/lib/knowledge-recommendations';
-import { KNOWLEDGE_RANKING } from '@/lib/knowledge.config';
+import { getKnowledgeGraph } from '@/lib/knowledge/knowledge-index';
+import { getKnowledgeRecommendations } from '@/lib/knowledge/knowledge-recommendations';
+import { KNOWLEDGE_RANKING } from '@/lib/knowledge/knowledge.config';
 import type { Localized } from '@/types/common.types';
 import type { MediumPost } from '@/types/medium.types';
 import type {

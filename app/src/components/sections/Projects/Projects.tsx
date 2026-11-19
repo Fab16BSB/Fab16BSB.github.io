@@ -1,7 +1,7 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { links } from '@/data/links.data';
+import { links } from '@/data/profile/links.data';
 import { useI18n } from '@/i18n/useI18n';
 import { EmptyState } from '@/components/ui/EmptyState/EmptyState';
 import { Icon } from '@/components/ui/Icon/Icon';

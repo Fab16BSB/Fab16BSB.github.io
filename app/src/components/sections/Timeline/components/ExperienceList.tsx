@@ -1,8 +1,8 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { education } from '@/data/education.data';
-import { experiences } from '@/data/experience.data';
+import { education } from '@/data/career/education.data';
+import { experiences } from '@/data/career/experience.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { formatRange, experienceTypeLabels, sortExperiences } from '../timeline.helpers';

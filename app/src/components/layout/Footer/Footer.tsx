@@ -1,9 +1,9 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { navItems } from '@/data/navigation.data';
-import { community, socials } from '@/data/socials.data';
-import { profile } from '@/data/profile.data';
+import { navItems } from '@/data/site/navigation.data';
+import { community, socials } from '@/data/profile/socials.data';
+import { profile } from '@/data/profile/profile.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { SocialLinks } from '@/components/ui/SocialLinks/SocialLinks';

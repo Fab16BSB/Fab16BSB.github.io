@@ -2,8 +2,8 @@
   HELPERS : recommandations de projets — fonctions pures
   Adapte le graphe de connaissances aux cartes de projet du site.
 ========================================================================= */
-import { knowledgeThemes } from '@/data/knowledge-taxonomy.data';
-import { projects } from '@/data/projects.data';
+import { knowledgeThemes } from '@/data/knowledge/knowledge-taxonomy.data';
+import { projects } from '@/data/content/projects.data';
 import type { Localized } from '@/types/common.types';
 import type { KnowledgeRelatedProject } from '@/types/knowledge.types';
 import { getKnowledgeGraph } from './knowledge-index';

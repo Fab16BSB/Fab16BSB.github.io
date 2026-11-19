@@ -1,5 +1,5 @@
 import type { Experience } from '@/types/experience.types';
-import { links } from './links.data';
+import { links } from '@/data/profile/links.data';
 
 /**
  * Expériences professionnelles, de la plus récente à la plus ancienne.

@@ -14,8 +14,8 @@ import { writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { env, pipeline, type FeatureExtractionPipeline } from '@huggingface/transformers';
-import { extractContentNodes } from '../src/lib/knowledge-extract';
-import { EMBEDDING_CONFIG } from '../src/lib/search.config';
+import { extractContentNodes } from '../src/lib/knowledge/knowledge-extract';
+import { EMBEDDING_CONFIG } from '../src/lib/search/search.config';
 import type { Locale } from '../src/types/common.types';
 import type {
   KnowledgeContentNode,
@@ -31,7 +31,7 @@ import type {
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 
 /** Fichier de sortie de l'index de similarité. */
-const outputPath = resolve(scriptDir, '../src/data/knowledge-similarity.json');
+const outputPath = resolve(scriptDir, '../src/data/knowledge/knowledge-similarity.json');
 
 /** Cache local du modèle d'embedding. */
 const cacheDir = resolve(scriptDir, '../.cache/transformers');

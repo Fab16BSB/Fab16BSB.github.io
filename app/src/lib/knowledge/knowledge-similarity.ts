@@ -2,7 +2,7 @@
   HELPERS : index de similarité sémantique — données précalculées
   Lecture du fichier produit par scripts/build-knowledge-similarity.ts.
 ========================================================================= */
-import similarityRaw from '@/data/knowledge-similarity.json';
+import similarityRaw from '@/data/knowledge/knowledge-similarity.json';
 import type {
   KnowledgeSimilarityIndex,
   KnowledgeSimilarityNeighbor,

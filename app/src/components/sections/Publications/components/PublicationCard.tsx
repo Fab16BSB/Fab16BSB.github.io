@@ -2,7 +2,7 @@
   IMPORTS
 ========================================================================= */
 import type { CSSProperties } from 'react';
-import { publicationSummaries } from '@/data/publication-summaries.data';
+import { publicationSummaries } from '@/data/content/publication-summaries.data';
 import { useI18n } from '@/i18n/useI18n';
 import type { Locale } from '@/types/common.types';
 import type { Publication, PublicationLanguage, PublicationLink } from '@/types/publication.types';

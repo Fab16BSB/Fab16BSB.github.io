@@ -1,5 +1,5 @@
 import type { Project } from '@/types/project.types';
-import { links } from './links.data';
+import { links } from '@/data/profile/links.data';
 
 /**
  * Projets affichés dans la section Projects.

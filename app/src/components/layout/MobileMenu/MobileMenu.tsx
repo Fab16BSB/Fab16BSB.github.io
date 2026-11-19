@@ -2,8 +2,8 @@
   IMPORTS
 ========================================================================= */
 import type { CSSProperties } from 'react';
-import { navItems } from '@/data/navigation.data';
-import { socials } from '@/data/socials.data';
+import { navItems } from '@/data/site/navigation.data';
+import { socials } from '@/data/profile/socials.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { SocialLinks } from '@/components/ui/SocialLinks/SocialLinks';

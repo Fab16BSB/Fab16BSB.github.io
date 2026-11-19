@@ -9,7 +9,7 @@ import type { KnowledgeContentKind } from '@/types/knowledge.types';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { NotebookCover } from '@/components/ui/NotebookCover/NotebookCover';
 import { RelatedContent } from '@/components/ui/RelatedContent/RelatedContent';
-import { KNOWLEDGE_RANKING } from '@/lib/knowledge.config';
+import { KNOWLEDGE_RANKING } from '@/lib/knowledge/knowledge.config';
 import type { IconName } from '@/types/ui.types';
 import { RelatedProjects } from './components/RelatedProjects/RelatedProjects';
 import { useProjectModal } from './useProjectModal';

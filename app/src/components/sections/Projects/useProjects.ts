@@ -2,10 +2,10 @@
   IMPORTS
 ========================================================================= */
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { projects } from '@/data/projects.data';
-import { getSearchIndex, searchDocuments } from '@/lib/search-engine';
-import { projectSearchFields } from '@/lib/search-fields';
-import { rankSearchResults } from '@/lib/search-rank';
+import { projects } from '@/data/content/projects.data';
+import { getSearchIndex, searchDocuments } from '@/lib/search/search-engine';
+import { projectSearchFields } from '@/lib/search/search-fields';
+import { rankSearchResults } from '@/lib/search/search-rank';
 import { useSemanticSearch } from '@/search/useSemanticSearch';
 import type { Locale } from '@/types/common.types';
 import type { Project, ProjectCategory } from '@/types/project.types';

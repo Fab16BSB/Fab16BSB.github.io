@@ -3,7 +3,7 @@
 ========================================================================= */
 import { useReveal } from '@/hooks/sections/useReveal';
 import { useSectionProgress } from '@/hooks/sections/useSectionProgress';
-import { sectionIds } from '@/data/navigation.data';
+import { sectionIds } from '@/data/site/navigation.data';
 import { useI18n } from '@/i18n/useI18n';
 
 // Layout

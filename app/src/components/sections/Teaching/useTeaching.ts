@@ -2,11 +2,11 @@
   IMPORTS
 ========================================================================= */
 import { useEffect, useMemo, useState } from 'react';
-import { teaching } from '@/data/teaching.data';
-import { supervisions } from '@/data/supervisions.data';
-import { getSearchIndex, searchDocuments } from '@/lib/search-engine';
-import { teachingCourseSearchFields } from '@/lib/search-fields';
-import { rankSearchResults } from '@/lib/search-rank';
+import { teaching } from '@/data/content/teaching.data';
+import { supervisions } from '@/data/content/supervisions.data';
+import { getSearchIndex, searchDocuments } from '@/lib/search/search-engine';
+import { teachingCourseSearchFields } from '@/lib/search/search-fields';
+import { rankSearchResults } from '@/lib/search/search-rank';
 import { useSemanticSearch } from '@/search/useSemanticSearch';
 import type { Locale } from '@/types/common.types';
 import type { TeachingCourse, TeachingLevel } from '@/types/teaching.types';

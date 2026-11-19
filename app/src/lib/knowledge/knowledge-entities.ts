@@ -4,15 +4,15 @@
   Un nœud brut est un nœud intermédiaire : il contient les données brutes du
   contenu, avant la détection des thèmes, des concepts et des arêtes.
 ========================================================================= */
-import { awards } from '@/data/awards.data';
-import { education } from '@/data/education.data';
-import { experiences } from '@/data/experience.data';
-import { publicationSummaries } from '@/data/publication-summaries.data';
-import { publications } from '@/data/publications.data';
-import { projects } from '@/data/projects.data';
-import { skills } from '@/data/skills.data';
-import { supervisions } from '@/data/supervisions.data';
-import { teaching } from '@/data/teaching.data';
+import { awards } from '@/data/content/awards.data';
+import { education } from '@/data/career/education.data';
+import { experiences } from '@/data/career/experience.data';
+import { publicationSummaries } from '@/data/content/publication-summaries.data';
+import { publications } from '@/data/content/publications.data';
+import { projects } from '@/data/content/projects.data';
+import { skills } from '@/data/career/skills.data';
+import { supervisions } from '@/data/content/supervisions.data';
+import { teaching } from '@/data/content/teaching.data';
 import type { Locale, Localized } from '@/types/common.types';
 import type { EducationId } from '@/types/education.types';
 import type { ExperienceId } from '@/types/experience.types';

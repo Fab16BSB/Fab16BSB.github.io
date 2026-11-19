@@ -5,7 +5,7 @@ import { useI18n } from '@/i18n/useI18n';
 import type { Locale } from '@/types/common.types';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { LanguageFlag } from '@/components/ui/LanguageFlag/LanguageFlag';
-import { languageOptions } from '@/data/languages.data';
+import { languageOptions } from '@/data/profile/languages.data';
 import { useLanguageSwitcher } from './useLanguageSwitcher';
 import styles from './LanguageSwitcher.module.css';
 

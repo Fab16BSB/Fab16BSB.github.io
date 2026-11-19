@@ -2,7 +2,7 @@
   IMPORTS
 ========================================================================= */
 import type { CSSProperties, RefObject } from 'react';
-import { navItems } from '@/data/navigation.data';
+import { navItems } from '@/data/site/navigation.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import styles from './SectionTimeline.module.css';

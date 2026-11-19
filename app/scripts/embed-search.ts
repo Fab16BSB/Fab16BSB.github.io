@@ -17,14 +17,14 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { env, pipeline, type FeatureExtractionPipeline } from '@huggingface/transformers';
-import mediumPostsRaw from '../src/data/medium-posts.json';
-import { publicationSummaries } from '../src/data/publication-summaries.data';
-import { publications } from '../src/data/publications.data';
-import { projects } from '../src/data/projects.data';
-import { teaching } from '../src/data/teaching.data';
-import videosRaw from '../src/data/youtube-videos.json';
+import mediumPostsRaw from '../src/data/feeds/medium-posts.json';
+import { publicationSummaries } from '../src/data/content/publication-summaries.data';
+import { publications } from '../src/data/content/publications.data';
+import { projects } from '../src/data/content/projects.data';
+import { teaching } from '../src/data/content/teaching.data';
+import videosRaw from '../src/data/feeds/youtube-videos.json';
 import { filterMediumPosts } from '../src/components/sections/Publications/publications.helpers';
-import { EMBEDDING_CONFIG } from '../src/lib/search.config';
+import { EMBEDDING_CONFIG } from '../src/lib/search/search.config';
 import {
   buildSearchText,
   mediumPostSearchFields,
@@ -32,7 +32,7 @@ import {
   publicationSearchFields,
   teachingCourseSearchFields,
   videoSearchFields,
-} from '../src/lib/search-fields';
+} from '../src/lib/search/search-fields';
 import type { Locale } from '../src/types/common.types';
 import type { MediumPost } from '../src/types/medium.types';
 import type { SearchIndexManifest, SearchSection } from '../src/types/search.types';

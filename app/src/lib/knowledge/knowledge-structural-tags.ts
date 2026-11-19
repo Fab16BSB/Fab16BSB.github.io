@@ -2,11 +2,11 @@
   HELPERS : tags structurels du graphe — données dérivées
   Tags de métadonnées qui ne doivent pas devenir des pivots `tag:*`.
 ========================================================================= */
-import { awards } from '@/data/awards.data';
-import { projects } from '@/data/projects.data';
-import { skills } from '@/data/skills.data';
-import { supervisions } from '@/data/supervisions.data';
-import { teaching } from '@/data/teaching.data';
+import { awards } from '@/data/content/awards.data';
+import { projects } from '@/data/content/projects.data';
+import { skills } from '@/data/career/skills.data';
+import { supervisions } from '@/data/content/supervisions.data';
+import { teaching } from '@/data/content/teaching.data';
 import { videos } from './knowledge-raw-data';
 import { normalizeKnowledgeText } from './knowledge-normalize';
 

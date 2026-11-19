@@ -1,7 +1,7 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { education } from '@/data/education.data';
+import { education } from '@/data/career/education.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { formatRange } from '../timeline.helpers';

@@ -3,12 +3,12 @@
   Génération des concepts depuis les compétences et les domaines de connaissance.
 ========================================================================= */
 import type { KnowledgeConcept } from '@/types/knowledge.types';
-import { skills } from '@/data/skills.data';
-import { knowledgeDomains } from '@/data/knowledge-domains.data';
+import { skills } from '@/data/career/skills.data';
+import { knowledgeDomains } from '@/data/knowledge/knowledge-domains.data';
 import {
   CONCEPT_ALIASES,
   CONCEPT_ID_BY_SKILL,
-} from '@/data/knowledge-concept-overrides.data';
+} from '@/data/knowledge/knowledge-concept-overrides.data';
 
 /* =========================================================================
   HELPERS

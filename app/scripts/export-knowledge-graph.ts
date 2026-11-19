@@ -14,13 +14,13 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getKnowledgeGraph } from '../src/lib/knowledge-index';
-import { getKnowledgeRecommendations, getSimilarProjects } from '../src/lib/knowledge-recommendations';
-import { extractContentNodes } from '../src/lib/knowledge-extract';
-import { buildKnowledgeGraph } from '../src/lib/knowledge-graph';
-import { getSimilarityIndex } from '../src/lib/knowledge-similarity';
-import { KNOWLEDGE_RANKING } from '../src/lib/knowledge.config';
-import { EMBEDDING_CONFIG } from '../src/lib/search.config';
+import { getKnowledgeGraph } from '../src/lib/knowledge/knowledge-index';
+import { getKnowledgeRecommendations, getSimilarProjects } from '../src/lib/knowledge/knowledge-recommendations';
+import { extractContentNodes } from '../src/lib/knowledge/knowledge-extract';
+import { buildKnowledgeGraph } from '../src/lib/knowledge/knowledge-graph';
+import { getSimilarityIndex } from '../src/lib/knowledge/knowledge-similarity';
+import { KNOWLEDGE_RANKING } from '../src/lib/knowledge/knowledge.config';
+import { EMBEDDING_CONFIG } from '../src/lib/search/search.config';
 import type { KnowledgeGraph, KnowledgeNode } from '../src/types/knowledge.types';
 
 /* =========================================================================

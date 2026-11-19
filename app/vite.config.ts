@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
-import { seo } from './src/data/seo.data';
+import { seo } from './src/data/site/seo.data';
 
 /** Échappe les valeurs injectées dans les attributs HTML. */
 function escapeHtml(value: string): string {

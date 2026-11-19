@@ -1,5 +1,5 @@
 import type { Education } from '@/types/education.types';
-import { links } from './links.data';
+import { links } from '@/data/profile/links.data';
 
 /**
  * Formation, de la plus récente à la plus ancienne.

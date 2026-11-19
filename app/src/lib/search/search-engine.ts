@@ -7,7 +7,7 @@ import { eng, fra, spa } from 'stopword';
 import { stemmer as stemmerEn } from '@orama/stemmers/english';
 import { stemmer as stemmerEs } from '@orama/stemmers/spanish';
 import { stemmer as stemmerFr } from '@orama/stemmers/french';
-import { normalizeSearchText } from '@/lib/search';
+import { normalizeSearchText } from '@/lib/search/search';
 import type { Locale } from '@/types/common.types';
 import type { LexicalMatch, SearchDocument } from '@/types/search.types';
 

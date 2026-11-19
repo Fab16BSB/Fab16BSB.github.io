@@ -8,7 +8,7 @@ import type {
   KnowledgeRecommendation,
   KnowledgeRecommendationOptions,
 } from '@/types/knowledge.types';
-import { projects } from '@/data/projects.data';
+import { projects } from '@/data/content/projects.data';
 import { KNOWLEDGE_RANKING, getKnowledgeSuggestionWeight } from './knowledge.config';
 import { knowledgeConcepts } from './knowledge-concepts';
 import { isContentNode } from './knowledge-index';

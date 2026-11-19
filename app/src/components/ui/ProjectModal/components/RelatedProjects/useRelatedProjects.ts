@@ -2,7 +2,7 @@
   IMPORTS
 ========================================================================= */
 import { useMemo } from 'react';
-import { getRelatedProjects } from '@/lib/knowledge-projects';
+import { getRelatedProjects } from '@/lib/knowledge/knowledge-projects';
 import type { KnowledgeRelatedProject } from '@/types/knowledge.types';
 
 /* =========================================================================

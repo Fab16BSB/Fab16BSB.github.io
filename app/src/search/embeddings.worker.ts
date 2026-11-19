@@ -2,7 +2,7 @@
   IMPORTS
 ========================================================================= */
 import { env, pipeline, type FeatureExtractionPipeline } from '@huggingface/transformers';
-import { EMBEDDING_CONFIG } from '@/lib/search.config';
+import { EMBEDDING_CONFIG } from '@/lib/search/search.config';
 import type { EmbeddingRequest, EmbeddingResponse } from '@/types/search.types';
 
 /* =========================================================================

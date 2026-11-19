@@ -10,7 +10,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading';
 import { Select } from '@/components/ui/Select/Select';
 import { Tabs } from '@/components/ui/Tabs/Tabs';
 import { SkillModal } from './components/SkillModal';
-import { knowledgeDomains } from '@/data/knowledge-domains.data';
+import { knowledgeDomains } from '@/data/knowledge/knowledge-domains.data';
 import { skillCategories } from './skills.helpers';
 import { useSkills } from './useSkills';
 import styles from './Skills.module.css';

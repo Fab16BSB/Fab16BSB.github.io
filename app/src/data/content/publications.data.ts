@@ -1,5 +1,5 @@
 import type { Publication } from '@/types/publication.types';
-import { links } from './links.data';
+import { links } from '@/data/profile/links.data';
 
 /**
  * Publications, de la plus récente à la plus ancienne.

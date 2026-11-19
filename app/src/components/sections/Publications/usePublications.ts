@@ -2,12 +2,12 @@
   IMPORTS
 ========================================================================= */
 import { useCallback, useMemo, useState } from 'react';
-import mediumPostsRaw from '@/data/medium-posts.json';
-import { publicationSummaries } from '@/data/publication-summaries.data';
-import { publications } from '@/data/publications.data';
-import { getSearchIndex, searchDocuments } from '@/lib/search-engine';
-import { mediumPostSearchFields, publicationSearchFields } from '@/lib/search-fields';
-import { rankSearchResults } from '@/lib/search-rank';
+import mediumPostsRaw from '@/data/feeds/medium-posts.json';
+import { publicationSummaries } from '@/data/content/publication-summaries.data';
+import { publications } from '@/data/content/publications.data';
+import { getSearchIndex, searchDocuments } from '@/lib/search/search-engine';
+import { mediumPostSearchFields, publicationSearchFields } from '@/lib/search/search-fields';
+import { rankSearchResults } from '@/lib/search/search-rank';
 import { useSemanticSearch } from '@/search/useSemanticSearch';
 import type { Locale } from '@/types/common.types';
 import type { MediumPost } from '@/types/medium.types';

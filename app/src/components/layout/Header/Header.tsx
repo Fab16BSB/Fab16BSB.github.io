@@ -1,8 +1,8 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { navItems } from '@/data/navigation.data';
-import { profile } from '@/data/profile.data';
+import { navItems } from '@/data/site/navigation.data';
+import { profile } from '@/data/profile/profile.data';
 import { useI18n } from '@/i18n/useI18n';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher/LanguageSwitcher';
 import { ThemeToggle } from '@/components/ui/ThemeToggle/ThemeToggle';

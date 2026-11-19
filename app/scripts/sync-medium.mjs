@@ -17,7 +17,7 @@ import { XMLParser } from 'fast-xml-parser';
 ========================================================================= */
 // Configuration du flux et du fichier de sortie.
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const outputPath = resolve(__dirname, '../src/data/medium-posts.json');
+const outputPath = resolve(__dirname, '../src/data/feeds/medium-posts.json');
 const feedUrl = process.env.MEDIUM_FEED_URL ?? 'https://medium.com/feed/@fab.16';
 
 // Parseur XML : conserve les CDATA et les attributs.

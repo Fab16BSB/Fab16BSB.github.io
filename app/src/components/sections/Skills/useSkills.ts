@@ -2,8 +2,8 @@
   IMPORTS
 ========================================================================= */
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { projects } from '@/data/projects.data';
-import { skills } from '@/data/skills.data';
+import { projects } from '@/data/content/projects.data';
+import { skills } from '@/data/career/skills.data';
 import type { Project } from '@/types/project.types';
 import type { Skill, SkillCategory } from '@/types/skill.types';
 import { countSkills, filterSkills, skillCategories } from './skills.helpers';

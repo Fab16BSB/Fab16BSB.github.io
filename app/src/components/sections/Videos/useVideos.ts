@@ -2,10 +2,10 @@
   IMPORTS
 ========================================================================= */
 import { useMemo, useState } from 'react';
-import videosRaw from '@/data/youtube-videos.json';
-import { getSearchIndex, searchDocuments } from '@/lib/search-engine';
-import { videoSearchFields } from '@/lib/search-fields';
-import { rankSearchResults } from '@/lib/search-rank';
+import videosRaw from '@/data/feeds/youtube-videos.json';
+import { getSearchIndex, searchDocuments } from '@/lib/search/search-engine';
+import { videoSearchFields } from '@/lib/search/search-fields';
+import { rankSearchResults } from '@/lib/search/search-rank';
 import { useSemanticSearch } from '@/search/useSemanticSearch';
 import type { Locale } from '@/types/common.types';
 import type { YoutubeVideo } from '@/types/youtube.types';

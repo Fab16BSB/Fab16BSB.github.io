@@ -16,7 +16,7 @@ import { XMLParser } from 'fast-xml-parser';
 ========================================================================= */
 // Configuration du flux et du fichier de sortie.
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const outputPath = resolve(__dirname, '../src/data/youtube-videos.json');
+const outputPath = resolve(__dirname, '../src/data/feeds/youtube-videos.json');
 const feedUrl =
   process.env.YOUTUBE_FEED_URL ??
   'https://www.youtube.com/feeds/videos.xml?channel_id=UCHS2xgITwh7olsnznmq8o0A';

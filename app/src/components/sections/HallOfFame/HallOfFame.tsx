@@ -2,7 +2,7 @@
   IMPORTS
 ========================================================================= */
 import type { CSSProperties } from 'react';
-import { awards } from '@/data/awards.data';
+import { awards } from '@/data/content/awards.data';
 import { useI18n } from '@/i18n/useI18n';
 import { AwardPin } from '@/components/ui/AwardPin/AwardPin';
 import { getPinAccent } from '@/components/ui/AwardPin/awardPin.helpers';

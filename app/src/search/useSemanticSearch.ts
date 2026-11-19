@@ -4,7 +4,7 @@
 import { useEffect, useState } from 'react';
 import { useI18n } from '@/i18n/useI18n';
 import { logger } from '@/lib/logger';
-import { computeSemanticScores, loadSearchIndex } from '@/lib/search-index';
+import { computeSemanticScores, loadSearchIndex } from '@/lib/search/search-index';
 import type { SearchSection } from '@/types/search.types';
 import { embedQuery } from './embeddings.client';
 import { useSearchSettings } from './useSearchSettings';

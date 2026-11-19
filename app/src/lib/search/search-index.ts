@@ -2,7 +2,7 @@
   HELPERS : index sémantique côté navigateur
   Chargement paresseux des vecteurs et calcul du cosinus.
 ========================================================================= */
-import { EMBEDDING_CONFIG } from '@/lib/search.config';
+import { EMBEDDING_CONFIG } from '@/lib/search/search.config';
 import type { Locale } from '@/types/common.types';
 import type {
   SearchIndex,

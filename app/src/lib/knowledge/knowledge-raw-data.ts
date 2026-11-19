@@ -2,8 +2,8 @@
   DONNÉES : contenus bruts
   JSON importés et normalisés avant la construction des nœuds du graphe.
 ========================================================================= */
-import mediumPostsRaw from '@/data/medium-posts.json';
-import videosRaw from '@/data/youtube-videos.json';
+import mediumPostsRaw from '@/data/feeds/medium-posts.json';
+import videosRaw from '@/data/feeds/youtube-videos.json';
 import type { MediumPost } from '@/types/medium.types';
 import type { YoutubeVideo } from '@/types/youtube.types';
 

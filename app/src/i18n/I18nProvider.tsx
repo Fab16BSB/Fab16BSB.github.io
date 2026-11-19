@@ -2,7 +2,7 @@
   IMPORTS
 ========================================================================= */
 import { createContext, useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { localizedSiteMeta } from '@/data/siteMeta.data';
+import { localizedSiteMeta } from '@/data/site/siteMeta.data';
 import type { Locale, Localized } from '@/types/common.types';
 import type { I18nContextValue } from '@/types/i18n.types';
 import fr from './locales/fr.json';

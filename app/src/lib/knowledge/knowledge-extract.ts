@@ -2,8 +2,8 @@
   HELPERS : extraction des signaux du graphe — fonctions pures
   Détection des thèmes et des concepts, puis création des nœuds de contenu.
 ========================================================================= */
-import { knowledgeThemes } from '@/data/knowledge-taxonomy.data';
-import { TAG_ALIASES } from '@/data/knowledge-concept-overrides.data';
+import { knowledgeThemes } from '@/data/knowledge/knowledge-taxonomy.data';
+import { TAG_ALIASES } from '@/data/knowledge/knowledge-concept-overrides.data';
 import type { KnowledgeContentNode, KnowledgeNode } from '@/types/knowledge.types';
 import type { KnowledgeRawNode } from './knowledge-entities';
 import { extractRawNodes } from './knowledge-entities';

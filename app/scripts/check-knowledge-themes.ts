@@ -9,9 +9,9 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { education } from '../src/data/education.data';
-import { experiences } from '../src/data/experience.data';
-import { getKnowledgeGraph } from '../src/lib/knowledge-index';
+import { education } from '../src/data/career/education.data';
+import { experiences } from '../src/data/career/experience.data';
+import { getKnowledgeGraph } from '../src/lib/knowledge/knowledge-index';
 import type { KnowledgeContentNode, KnowledgeNode, KnowledgeThemeId } from '../src/types/knowledge.types';
 
 /* =========================================================================

@@ -12,15 +12,15 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { knowledgeThemes } from '../src/data/knowledge-taxonomy.data';
-import { knowledgeConcepts } from '../src/lib/knowledge-concepts';
-import { getKnowledgeGraph } from '../src/lib/knowledge-index';
-import { KNOWLEDGE_STRUCTURAL_TAGS } from '../src/lib/knowledge-structural-tags';
+import { knowledgeThemes } from '../src/data/knowledge/knowledge-taxonomy.data';
+import { knowledgeConcepts } from '../src/lib/knowledge/knowledge-concepts';
+import { getKnowledgeGraph } from '../src/lib/knowledge/knowledge-index';
+import { KNOWLEDGE_STRUCTURAL_TAGS } from '../src/lib/knowledge/knowledge-structural-tags';
 import {
   includesKnowledgePhrase,
   normalizeKnowledgeText,
   padKnowledgeText,
-} from '../src/lib/knowledge-normalize';
+} from '../src/lib/knowledge/knowledge-normalize';
 
 /* =========================================================================
   CONFIGURATION

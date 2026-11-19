@@ -1,7 +1,7 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { SEARCH_RANKING } from '@/lib/search.config';
+import { SEARCH_RANKING } from '@/lib/search/search.config';
 import type { LexicalMatch } from '@/types/search.types';
 
 /* =========================================================================

@@ -1,9 +1,9 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { passions, qualities } from '@/data/about.data';
-import { profile } from '@/data/profile.data';
-import { socials } from '@/data/socials.data';
+import { passions, qualities } from '@/data/content/about.data';
+import { profile } from '@/data/profile/profile.data';
+import { socials } from '@/data/profile/socials.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { SocialLinks } from '@/components/ui/SocialLinks/SocialLinks';

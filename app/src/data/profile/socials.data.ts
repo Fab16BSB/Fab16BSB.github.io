@@ -1,5 +1,5 @@
 import type { SocialLink } from '@/types/social.types';
-import { links } from './links.data';
+import { links } from '@/data/profile/links.data';
 
 /**
  * Réseaux personnels.

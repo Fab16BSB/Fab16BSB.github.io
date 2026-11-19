@@ -2,7 +2,7 @@
   HELPERS : construction du graphe — fonctions pures
   Nœuds de contenu, pivots thématiques, concepts et arêtes de similarité.
 ========================================================================= */
-import { knowledgeThemes } from '@/data/knowledge-taxonomy.data';
+import { knowledgeThemes } from '@/data/knowledge/knowledge-taxonomy.data';
 import type {
   KnowledgeContentNode,
   KnowledgeEdge,
