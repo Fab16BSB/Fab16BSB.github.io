@@ -2,6 +2,7 @@
   HELPERS : construction du graphe — fonctions pures
   Nœuds de contenu, pivots thématiques, concepts et arêtes de similarité.
 ========================================================================= */
+import { knowledgeDomains } from '@/data/knowledge/knowledge-domains.data';
 import { knowledgeThemes } from '@/data/knowledge/knowledge-taxonomy.data';
 import type {
   KnowledgeContentNode,
@@ -174,6 +175,48 @@ function buildRelatedEdges(nodes: KnowledgeContentNode[]): KnowledgeEdge[] {
 }
 
 /**
+ * Crée les arêtes `related` entre concepts explicitement liés.
+ *
+ * Les relations sont déclarées par `related` sur les concepts de domaine.
+ * Une seule déclaration suffit : l'arête est non dirigée et dédupliquée.
+ *
+ * @param termIds - Concepts réellement présents dans le graphe.
+ * @returns Les arêtes concept-concept, triées par identifiant.
+ */
+function buildConceptRelatedEdges(
+  termIds: Set<string>,
+): KnowledgeEdge[] {
+  const edges = new Map<string, KnowledgeEdge>();
+
+  for (const domain of knowledgeDomains) {
+    for (const item of domain.items) {
+      for (const relatedId of item.related ?? []) {
+        if (!termIds.has(item.id) || !termIds.has(relatedId)) {
+          continue;
+        }
+
+        const ids = [`concept:${item.id}`, `concept:${relatedId}`].sort();
+        const id = `related:${ids[0]}|${ids[1]}`;
+
+        if (!edges.has(id)) {
+          edges.set(id, {
+            id,
+            from: ids[0],
+            to: ids[1],
+            relation: 'related',
+            score: 0.6,
+          });
+        }
+      }
+    }
+  }
+
+  return [...edges.values()].sort((left, right) =>
+    left.id.localeCompare(right.id),
+  );
+}
+
+/**
  * Construit les arêtes de contexte explicites.
  *
  * - expérience → formation via `educationId` ;
@@ -333,17 +376,29 @@ export function buildKnowledgeGraph(extraction: KnowledgeExtraction): KnowledgeG
     terms: node.terms.filter((term) => extraction.termLabels.has(term)),
   }));
 
+  const themeIds = new Set(
+    contentNodes.flatMap((node) => node.themes),
+  );
+  const termIds = new Set(
+    contentNodes.flatMap((node) => node.terms),
+  );
   const pivotNodes = buildPivotNodes(
-    new Set(contentNodes.flatMap((node) => node.themes)),
-    new Set(contentNodes.flatMap((node) => node.terms)),
+    themeIds,
+    termIds,
     extraction.termLabels,
   );
   const edges = contentNodes.flatMap(buildMembershipEdges);
   const relatedEdges = mergeRelatedEdges(buildRelatedEdges(contentNodes));
+  const conceptRelatedEdges = buildConceptRelatedEdges(termIds);
   const contextEdges = buildContextEdges(contentNodes);
 
   return {
     nodes: [...contentNodes, ...pivotNodes],
-    edges: [...edges, ...relatedEdges, ...contextEdges],
+    edges: [
+      ...edges,
+      ...relatedEdges,
+      ...conceptRelatedEdges,
+      ...contextEdges,
+    ],
   };
 }

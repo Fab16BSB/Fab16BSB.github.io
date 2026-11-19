@@ -110,6 +110,7 @@ export const knowledgeDomains: KnowledgeDomain[] = [
           'modelo de lenguaje',
           'chatbot',
         ],
+        related: ['rag'],
       },
       {
         id: 'rag',

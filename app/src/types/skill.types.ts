@@ -22,12 +22,14 @@ export type KnowledgeDomainId = 'vision' | 'nlp' | 'ml';
  * @property {string} label - Libellé affiché dans le graphe.
  * @property {string} labelKey - Clé de traduction dans les locales.
  * @property {string[]} aliases - Graphies reconnues dans les textes et les tags.
+ * @property {string[]} [related] - Concepts explicitement liés, par identifiant.
  */
 export type KnowledgeDomainItem = {
   id: string;
   label: string;
   labelKey: string;
   aliases: string[];
+  related?: string[];
 };
 
 /**
