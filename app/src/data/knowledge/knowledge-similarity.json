@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-14T15:40:52.582Z",
+  "generatedAt": "2026-11-18T22:27:05.025Z",
   "model": {
     "name": "Xenova/multilingual-e5-small",
     "revision": "761b726dd34fb83930e26aab4e9ac3899aa1fa78",
@@ -11,16 +11,16 @@
     "project:kaggle-california-housing": "b6e2a591ef2ec30a1e77bed11659fdf4b633b983e1c3e61c244556a982d4a257",
     "project:kaggle-telco-churn": "58289f911ad160c71327738beab7ec29399861eb0555da429db9a30bf83ec754",
     "project:scheduler-finder": "1f794a4c81774113fc04dbea6aad733eba9a6ac0f72281079fc0d5c270bf866d",
-    "project:progenimages": "90d8a5a23421f49a5fd52cf5ed3e8eef3bdca2566803a61b5763ed722fea11f7",
+    "project:progenimages": "412b0123dd6dfb2f0460df140539e279f5275cb00b40f629b186cb91371feaeb",
     "project:these": "3697c6820bf674ff9f7aee634e8c0417f6bc8507c00f1f40c0df400f1c06c1e2",
     "project:story-bot": "e52981d9af50bd2320cef97ad9724bece5e41611125e277fc0a852b6d652f318",
     "project:image-classification": "b0db4b16c8a20093f695d9d8a8bd53da5bcb6ac0323f6a1a566f80a45009e8e3",
-    "project:som": "cdba384aeb488f2496c96663f2c2c1a056c0febd105e6a9e14c2e3cbf9e952e9",
-    "project:huffman": "7b8abc625f42c0df053eaccc7ce02e0caae753df083dfc0fa59016a9b089aee7",
-    "project:infiltration": "71065685038475afe35e382ec2aef03f9b99b291fc7804f585e70bf0f6dca450",
-    "project:searchengine": "eeb5f304f7be82734f0ff7e8a462063c222ddb9ce494cb15f03106b6d42f5daf",
-    "project:plagiat-inc": "968ff931566622f83c85bbc11ab40432d254661b492528794b6d9f138878599e",
-    "project:kermtech": "50301323649117ecebf97f6c454156f7a10a5216978bdb0b33bd514a48639222",
+    "project:som": "ac18e0c13256c18dc46c28854ae9505fad3673a3c8486d4b36998a950c10a24a",
+    "project:huffman": "cea5ef8d51c0f2920401c98a5ec38f0724938e43bdf8dcd40572bd5e9750c697",
+    "project:infiltration": "270abd12f4d4c7451836b4127c69cba9eb8b5f1cb419747e88b96466c2616c37",
+    "project:searchengine": "097a3a7e1aa3f7258c694b737ec61e8a9ea936526e1fce48ecc46d5d184ad1e0",
+    "project:plagiat-inc": "a331c39ad1960ad84a736d4b086e81d0e092b1ad26004ec35f256ae1e0643c21",
+    "project:kermtech": "03f17ddc7484baeb96479e8441540b836c7819513e06832901807953ead504ef",
     "publication:arxiv-2410-15909": "a603ecadcd677a6c64a47fd8399db5d82cc4277358d990d2e04f228b7ee4e090",
     "publication:arxiv-2411-04707": "f259d2cfb7a12cf1f892627a1ab0cf78db61b3b73bd3b028c78b969d13909f2c",
     "publication:aiccsa-2023": "c17ee9ac9a69f6f4768f4f59cdd9cf72d46b491615c251fd6023fe9e01db31fb",
@@ -98,10 +98,10 @@
     "experience:stage-quatorze": "97dd7e537d2a2e7ca1add11536a4b10f222d7a003ae95e7b39984e842027e263",
     "experience:stage-directannonces": "b15cf5d25a4677ad1e95c8825823ae922528a2c3f979f006be993e3682e7f2ee",
     "experience:stage-soldout": "34b8ad525287efdd3b3bf698fb35f52dba467a6e04d936d68f9a04b567c9dfdf",
-    "education:phd": "cea01df267423a2ca5c0b79abb9e5d3b624eaac7f369eca2ef163a8bfccdb9d4",
-    "education:master": "bd1a94a7bb7cc497474da1926b92de6d599357d8974cc7d0c9d1e9a9cc584223",
-    "education:licence": "91de536313286facbce9178fde3438649ff935f37382144e4bd97226a7f61beb",
-    "education:dut": "71775e16e10157b70c5ac0f3947fe92c7489690cdc00b3c94726cc949fb139a6",
+    "education:phd": "36df34234b96967e8bfb42e142b8d3120ff704bf8e54f220697b6b9fc982e90e",
+    "education:master": "985db35ebac5c98061a21a7a58a35d4e9338c857da21f26411c683efcb4aa782",
+    "education:licence": "0c875b77705e18b4ca0fbab8e2bcaef6704f6ed09b742abeef21068c30a29c91",
+    "education:dut": "c9fb70598ee48aa107ec26447fd7bf1c09be8370302a6c9ef589e593e48cec19",
     "award:co-responsable-alternance": "a2392645254aa493ed07fe72bafbc59df50161b1b034bf8c9c4cb477a1f053e0",
     "award:forum-metiers": "19c77d427e506bed5ee9737105a2d290eff91a17dac78b445ca77b38923b2af9",
     "award:selection-candidats": "d27c3f9ad3ce56e9637298f2e4918ba54a189c9f694d2f34ac54695c1f4021fa",
@@ -136,11 +136,11 @@
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.69
+          0.691
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.66
+          0.661
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
@@ -156,19 +156,19 @@
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.322
+          0.323
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.292
+          0.293
         ],
         [
           "project:image-classification",
-          0.209
+          0.21
         ],
         [
-          "project:progenimages",
-          0.196
+          "project:som",
+          0.186
         ]
       ]
     },
@@ -184,7 +184,7 @@
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.711
+          0.712
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
@@ -196,11 +196,11 @@
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.451
+          0.452
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.369
+          0.37
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
@@ -208,11 +208,11 @@
         ],
         [
           "project:som",
-          0.211
+          0.213
         ],
         [
           "project:image-classification",
-          0.206
+          0.207
         ]
       ]
     },
@@ -228,11 +228,11 @@
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.692
+          0.693
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.551
+          0.552
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
@@ -240,7 +240,7 @@
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.463
+          0.464
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
@@ -248,15 +248,15 @@
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.29
+          0.291
         ],
         [
           "project:som",
-          0.182
+          0.181
         ],
         [
           "project:story-bot",
-          0.175
+          0.176
         ]
       ]
     },
@@ -264,11 +264,11 @@
       "neighbors": [
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.692
+          0.693
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.69
+          0.691
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
@@ -280,27 +280,27 @@
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.514
+          0.515
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.452
+          0.453
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.273
+          0.274
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.249
+          0.25
+        ],
+        [
+          "project:story-bot",
+          0.191
         ],
         [
           "project:som",
           0.191
-        ],
-        [
-          "project:story-bot",
-          0.19
         ]
       ]
     },
@@ -308,7 +308,7 @@
       "neighbors": [
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.731
+          0.732
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
@@ -316,7 +316,7 @@
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.451
+          0.452
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
@@ -324,19 +324,19 @@
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.355
+          0.356
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.292
+          0.293
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.29
+          0.291
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.249
+          0.25
         ],
         [
           "project:image-classification",
@@ -344,7 +344,7 @@
         ],
         [
           "project:som",
-          0.172
+          0.171
         ]
       ]
     },
@@ -364,7 +364,7 @@
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.54
+          0.541
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
@@ -372,7 +372,7 @@
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.514
+          0.515
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
@@ -380,7 +380,7 @@
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.355
+          0.356
         ],
         [
           "project:image-classification",
@@ -396,7 +396,7 @@
       "neighbors": [
         [
           "article:https://medium.com/p/505cdf727735",
-          0.731
+          0.732
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
@@ -404,7 +404,7 @@
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
-          0.54
+          0.541
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
@@ -412,7 +412,7 @@
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.369
+          0.37
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
@@ -420,19 +420,19 @@
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.315
+          0.316
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.273
+          0.274
         ],
         [
           "project:image-classification",
-          0.233
+          0.234
         ],
         [
           "publication:arxiv-2410-15909",
-          0.204
+          0.209
         ]
       ]
     },
@@ -440,7 +440,7 @@
       "neighbors": [
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.711
+          0.712
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
@@ -448,11 +448,11 @@
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.66
+          0.661
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.551
+          0.552
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
@@ -464,15 +464,15 @@
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.319
+          0.32
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
-          0.315
+          0.316
         ],
         [
           "project:som",
-          0.248
+          0.252
         ],
         [
           "project:story-bot",
@@ -492,11 +492,11 @@
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.463
+          0.464
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.452
+          0.453
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
@@ -508,19 +508,19 @@
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.322
+          0.323
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.319
+          0.32
         ],
         [
           "project:image-classification",
-          0.185
+          0.186
         ],
         [
           "project:som",
-          0.172
+          0.171
         ]
       ]
     },
@@ -556,7 +556,7 @@
         ],
         [
           "project:scheduler-finder",
-          0.176
+          0.171
         ],
         [
           "education:master",
@@ -564,7 +564,7 @@
         ],
         [
           "teaching:poste-2025",
-          0.054
+          0.055
         ]
       ]
     },
@@ -572,7 +572,7 @@
       "neighbors": [
         [
           "video:EGHUEPMI4c8",
-          0.43
+          0.429
         ],
         [
           "award:jury-alternance",
@@ -588,7 +588,7 @@
         ],
         [
           "skill:gemini",
-          0.154
+          0.153
         ],
         [
           "award:forum-metiers",
@@ -632,7 +632,7 @@
         ],
         [
           "supervision:stages-tutorat-iut",
-          0.204
+          0.203
         ],
         [
           "teaching:poste-2025",
@@ -640,7 +640,7 @@
         ],
         [
           "project:scheduler-finder",
-          0.146
+          0.141
         ],
         [
           "award:egc-2022",
@@ -672,7 +672,7 @@
         ],
         [
           "education:dut",
-          0.325
+          0.324
         ],
         [
           "award:egc-2022",
@@ -688,7 +688,7 @@
         ],
         [
           "project:scheduler-finder",
-          0.198
+          0.197
         ],
         [
           "video:EGHUEPMI4c8",
@@ -716,7 +716,7 @@
         ],
         [
           "education:dut",
-          0.378
+          0.377
         ],
         [
           "award:egc-2022",
@@ -724,11 +724,11 @@
         ],
         [
           "project:scheduler-finder",
-          0.177
+          0.175
         ],
         [
           "supervision:stages-tutorat-iut",
-          0.175
+          0.174
         ],
         [
           "supervision:alternance-aeroport",
@@ -740,7 +740,7 @@
         ],
         [
           "teaching:poste-2025",
-          0.087
+          0.086
         ]
       ]
     },
@@ -752,7 +752,7 @@
         ],
         [
           "education:licence",
-          0.542
+          0.541
         ],
         [
           "education:phd",
@@ -760,7 +760,7 @@
         ],
         [
           "award:selection-candidats",
-          0.378
+          0.377
         ],
         [
           "award:forum-metiers",
@@ -772,7 +772,7 @@
         ],
         [
           "award:jury-alternance",
-          0.325
+          0.324
         ],
         [
           "teaching:architecture-2025",
@@ -780,7 +780,7 @@
         ],
         [
           "supervision:stages-tutorat-iut",
-          0.176
+          0.175
         ],
         [
           "video:uye9Z8fGWSs",
@@ -796,7 +796,7 @@
         ],
         [
           "education:dut",
-          0.542
+          0.541
         ],
         [
           "education:phd",
@@ -804,7 +804,7 @@
         ],
         [
           "teaching:architecture-2025",
-          0.168
+          0.167
         ],
         [
           "skill:postgresql",
@@ -820,7 +820,7 @@
         ],
         [
           "video:uye9Z8fGWSs",
-          0.061
+          0.06
         ],
         [
           "supervision:stage-liasd",
@@ -828,7 +828,7 @@
         ],
         [
           "award:selection-candidats",
-          0.055
+          0.054
         ]
       ]
     },
@@ -852,7 +852,7 @@
         ],
         [
           "video:uye9Z8fGWSs",
-          0.116
+          0.115
         ],
         [
           "award:selection-candidats",
@@ -860,7 +860,7 @@
         ],
         [
           "experience:stage-quatorze",
-          0.084
+          0.085
         ],
         [
           "award:egc-2022",
@@ -892,11 +892,11 @@
         ],
         [
           "project:these",
-          0.353
+          0.356
         ],
         [
           "experience:these-othello",
-          0.296
+          0.297
         ],
         [
           "publication:egc-2022",
@@ -904,19 +904,19 @@
         ],
         [
           "publication:arxiv-2410-15909",
-          0.185
+          0.186
         ],
         [
           "publication:thesis-2023",
-          0.159
+          0.16
         ],
         [
           "publication:aiccsa-2023",
-          0.139
+          0.14
         ],
         [
           "experience:stage-quatorze",
-          0.12
+          0.121
         ]
       ]
     },
@@ -928,11 +928,11 @@
         ],
         [
           "supervision:stage-imt-albi",
-          0.269
+          0.27
         ],
         [
           "project:scheduler-finder",
-          0.199
+          0.202
         ],
         [
           "publication:egc-2022",
@@ -956,7 +956,7 @@
         ],
         [
           "project:searchengine",
-          0.141
+          0.135
         ],
         [
           "publication:arxiv-2411-04707",
@@ -968,7 +968,7 @@
       "neighbors": [
         [
           "supervision:stage-imt-albi",
-          0.297
+          0.298
         ],
         [
           "project:scheduler-finder",
@@ -976,15 +976,15 @@
         ],
         [
           "supervision:stage-liasd",
-          0.177
+          0.178
         ],
         [
           "experience:stage-directannonces",
-          0.162
+          0.163
         ],
         [
           "experience:stage-soldout",
-          0.161
+          0.162
         ],
         [
           "experience:ater-paris8",
@@ -996,15 +996,15 @@
         ],
         [
           "project:story-bot",
-          0.144
+          0.145
         ],
         [
           "project:kaggle-telco-churn",
-          0.14
+          0.138
         ],
         [
-          "project:progenimages",
-          0.123
+          "project:som",
+          0.118
         ]
       ]
     },
@@ -1012,11 +1012,11 @@
       "neighbors": [
         [
           "project:plagiat-inc",
-          0.28
+          0.275
         ],
         [
           "project:searchengine",
-          0.264
+          0.247
         ],
         [
           "teaching:oop-java-2023",
@@ -1024,7 +1024,7 @@
         ],
         [
           "experience:stage-soldout",
-          0.224
+          0.225
         ],
         [
           "teaching:java-init-2025",
@@ -1036,19 +1036,19 @@
         ],
         [
           "experience:freelance-leasup",
-          0.162
+          0.163
         ],
         [
           "project:scheduler-finder",
-          0.153
+          0.156
         ],
         [
           "project:kermtech",
-          0.145
+          0.141
         ],
         [
-          "teaching:java-2020",
-          0.138
+          "project:som",
+          0.139
         ]
       ]
     },
@@ -1063,12 +1063,12 @@
           0.197
         ],
         [
-          "project:these",
-          0.186
+          "project:scheduler-finder",
+          0.187
         ],
         [
-          "project:scheduler-finder",
-          0.178
+          "project:these",
+          0.185
         ],
         [
           "supervision:stages-tutorat-iut",
@@ -1079,12 +1079,12 @@
           0.166
         ],
         [
-          "project:searchengine",
-          0.16
-        ],
-        [
           "supervision:stage-imt-albi",
           0.159
+        ],
+        [
+          "project:searchengine",
+          0.158
         ],
         [
           "experience:ater-paris8",
@@ -1100,27 +1100,27 @@
       "neighbors": [
         [
           "project:scheduler-finder",
-          0.246
+          0.245
         ],
         [
           "experience:stage-directannonces",
-          0.224
-        ],
-        [
-          "project:plagiat-inc",
-          0.218
-        ],
-        [
-          "project:infiltration",
-          0.211
+          0.225
         ],
         [
           "supervision:alternance-aeroport",
           0.207
         ],
         [
+          "project:plagiat-inc",
+          0.205
+        ],
+        [
+          "project:infiltration",
+          0.201
+        ],
+        [
           "project:som",
-          0.173
+          0.178
         ],
         [
           "supervision:stages-tutorat-iut",
@@ -1128,7 +1128,7 @@
         ],
         [
           "experience:freelance-leasup",
-          0.161
+          0.162
         ],
         [
           "project:kermtech",
@@ -1144,7 +1144,7 @@
       "neighbors": [
         [
           "project:these",
-          0.809
+          0.807
         ],
         [
           "publication:thesis-2023",
@@ -1156,7 +1156,7 @@
         ],
         [
           "publication:arxiv-2410-15909",
-          0.398
+          0.394
         ],
         [
           "publication:egc-2022",
@@ -1164,11 +1164,11 @@
         ],
         [
           "education:phd",
-          0.296
+          0.297
         ],
         [
           "publication:arxiv-2411-04707",
-          0.188
+          0.189
         ],
         [
           "experience:stage-quatorze",
@@ -1176,11 +1176,11 @@
         ],
         [
           "video:EGHUEPMI4c8",
-          0.146
+          0.145
         ],
         [
           "project:scheduler-finder",
-          0.096
+          0.102
         ]
       ]
     },
@@ -1188,19 +1188,11 @@
       "neighbors": [
         [
           "project:som",
-          0.266
+          0.258
         ],
         [
           "project:progenimages",
-          0.238
-        ],
-        [
-          "project:plagiat-inc",
-          0.18
-        ],
-        [
-          "project:searchengine",
-          0.174
+          0.25
         ],
         [
           "project:image-classification",
@@ -1208,23 +1200,31 @@
         ],
         [
           "project:infiltration",
-          0.167
+          0.164
+        ],
+        [
+          "project:plagiat-inc",
+          0.162
+        ],
+        [
+          "project:searchengine",
+          0.155
         ],
         [
           "video:9XfqYxcB6vE",
-          0.139
+          0.133
         ],
         [
           "experience:stage-directannonces",
-          0.131
+          0.129
         ],
         [
           "project:kermtech",
-          0.12
+          0.115
         ],
         [
-          "article:https://medium.com/p/2b84f642e027",
-          0.105
+          "project:kaggle-auto-mpg",
+          0.104
         ]
       ]
     },
@@ -1243,24 +1243,24 @@
           0.249
         ],
         [
-          "publication:arxiv-2411-04707",
-          0.247
-        ],
-        [
-          "project:progenimages",
-          0.244
-        ],
-        [
           "article:https://medium.com/p/7e11c3f0434e",
           0.244
         ],
         [
-          "project:kaggle-telco-churn",
+          "publication:arxiv-2411-04707",
           0.243
         ],
         [
+          "project:kaggle-telco-churn",
+          0.239
+        ],
+        [
+          "project:progenimages",
+          0.238
+        ],
+        [
           "article:https://medium.com/p/89bd19ca464b",
-          0.233
+          0.234
         ],
         [
           "article:https://medium.com/p/505cdf727735",
@@ -1276,43 +1276,43 @@
       "neighbors": [
         [
           "project:plagiat-inc",
-          0.388
+          0.37
         ],
         [
           "project:som",
           0.219
         ],
         [
-          "experience:stage-soldout",
-          0.211
-        ],
-        [
           "experience:stage-directannonces",
           0.205
         ],
         [
+          "experience:stage-soldout",
+          0.201
+        ],
+        [
           "project:progenimages",
-          0.168
+          0.177
         ],
         [
           "project:huffman",
-          0.167
+          0.164
         ],
         [
           "project:scheduler-finder",
-          0.136
+          0.141
         ],
         [
           "teaching:app-quality-2024",
-          0.094
+          0.086
+        ],
+        [
+          "supervision:stages-tutorat-iut",
+          0.086
         ],
         [
           "teaching:gui-2024",
-          0.083
-        ],
-        [
-          "teaching:java-init-2025",
-          0.08
+          0.077
         ]
       ]
     },
@@ -1328,7 +1328,11 @@
         ],
         [
           "project:scheduler-finder",
-          0.157
+          0.161
+        ],
+        [
+          "project:progenimages",
+          0.148
         ],
         [
           "project:image-classification",
@@ -1340,11 +1344,7 @@
         ],
         [
           "project:searchengine",
-          0.143
-        ],
-        [
-          "project:progenimages",
-          0.13
+          0.135
         ],
         [
           "experience:stage-quatorze",
@@ -1368,7 +1368,7 @@
         ],
         [
           "project:kaggle-telco-churn",
-          0.305
+          0.301
         ],
         [
           "project:image-classification",
@@ -1376,19 +1376,19 @@
         ],
         [
           "project:searchengine",
-          0.148
+          0.158
         ],
         [
           "publication:arxiv-2411-04707",
-          0.144
+          0.138
         ],
         [
           "publication:arxiv-2410-15909",
-          0.135
+          0.131
         ],
         [
           "experience:stage-directannonces",
-          0.106
+          0.107
         ],
         [
           "supervision:stage-liasd",
@@ -1400,7 +1400,7 @@
         ],
         [
           "project:scheduler-finder",
-          0.078
+          0.075
         ]
       ]
     },
@@ -1408,7 +1408,7 @@
       "neighbors": [
         [
           "project:kaggle-california-housing",
-          0.305
+          0.301
         ],
         [
           "project:kaggle-auto-mpg",
@@ -1416,11 +1416,11 @@
         ],
         [
           "project:image-classification",
-          0.243
+          0.239
         ],
         [
           "supervision:stage-liasd",
-          0.222
+          0.221
         ],
         [
           "publication:thesis-2023",
@@ -1428,23 +1428,23 @@
         ],
         [
           "publication:egc-2022",
-          0.195
+          0.194
         ],
         [
           "publication:aiccsa-2023",
-          0.178
+          0.179
         ],
         [
           "project:story-bot",
-          0.171
+          0.172
         ],
         [
           "publication:arxiv-2411-04707",
-          0.166
+          0.16
         ],
         [
           "experience:freelance-leasup",
-          0.14
+          0.138
         ]
       ]
     },
@@ -1452,43 +1452,43 @@
       "neighbors": [
         [
           "project:progenimages",
-          0.17
+          0.193
         ],
         [
           "supervision:stage-liasd",
-          0.147
+          0.148
         ],
         [
           "experience:stage-directannonces",
-          0.145
+          0.141
         ],
         [
           "project:searchengine",
-          0.123
+          0.122
         ],
         [
           "project:huffman",
-          0.12
+          0.115
         ],
         [
           "project:kaggle-auto-mpg",
-          0.107
+          0.103
+        ],
+        [
+          "project:these",
+          0.101
         ],
         [
           "article:https://medium.com/p/505cdf727735",
-          0.106
+          0.101
         ],
         [
           "experience:stage-soldout",
           0.1
         ],
         [
-          "project:these",
-          0.1
-        ],
-        [
           "project:som",
-          0.098
+          0.095
         ]
       ]
     },
@@ -1496,87 +1496,87 @@
       "neighbors": [
         [
           "project:infiltration",
-          0.388
-        ],
-        [
-          "project:som",
-          0.281
+          0.37
         ],
         [
           "experience:stage-directannonces",
-          0.28
+          0.275
+        ],
+        [
+          "project:som",
+          0.26
         ],
         [
           "skill:java",
-          0.229
+          0.224
         ],
         [
           "experience:stage-soldout",
-          0.218
+          0.205
         ],
         [
           "project:huffman",
-          0.18
+          0.162
         ],
         [
           "project:scheduler-finder",
-          0.132
-        ],
-        [
-          "project:searchengine",
-          0.129
+          0.125
         ],
         [
           "project:progenimages",
-          0.124
+          0.117
+        ],
+        [
+          "project:searchengine",
+          0.11
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.114
+          0.107
         ]
       ]
     },
     "project:progenimages": {
       "neighbors": [
         [
-          "project:image-classification",
-          0.244
+          "project:huffman",
+          0.25
         ],
         [
-          "project:huffman",
+          "project:image-classification",
           0.238
         ],
         [
-          "article:https://medium.com/p/257850cd83e8",
-          0.196
-        ],
-        [
-          "publication:arxiv-2411-04707",
-          0.174
-        ],
-        [
-          "article:https://medium.com/p/e4fbd82fd615",
-          0.173
-        ],
-        [
           "project:kermtech",
-          0.17
+          0.193
         ],
         [
           "project:infiltration",
-          0.168
+          0.177
         ],
         [
-          "publication:egc-2022",
-          0.162
+          "article:https://medium.com/p/257850cd83e8",
+          0.164
+        ],
+        [
+          "publication:arxiv-2411-04707",
+          0.163
+        ],
+        [
+          "project:kaggle-auto-mpg",
+          0.148
         ],
         [
           "project:som",
-          0.16
+          0.147
         ],
         [
-          "project:story-bot",
-          0.146
+          "publication:egc-2022",
+          0.143
+        ],
+        [
+          "article:https://medium.com/p/505cdf727735",
+          0.131
         ]
       ]
     },
@@ -1584,43 +1584,43 @@
       "neighbors": [
         [
           "supervision:stages-tutorat-iut",
-          0.285
+          0.284
         ],
         [
           "supervision:alternance-aeroport",
-          0.261
+          0.264
         ],
         [
           "experience:stage-soldout",
-          0.246
+          0.245
         ],
         [
           "experience:ater-paris8",
-          0.199
+          0.202
         ],
         [
           "award:jury-alternance",
-          0.198
+          0.197
+        ],
+        [
+          "experience:stage-quatorze",
+          0.187
         ],
         [
           "experience:freelance-leasup",
           0.18
         ],
         [
-          "experience:stage-quatorze",
-          0.178
-        ],
-        [
           "award:selection-candidats",
-          0.177
+          0.175
         ],
         [
           "award:co-responsable-alternance",
-          0.176
+          0.171
         ],
         [
-          "publication:aiccsa-2023",
-          0.168
+          "publication:arxiv-2411-04707",
+          0.162
         ]
       ]
     },
@@ -1628,43 +1628,43 @@
       "neighbors": [
         [
           "experience:stage-directannonces",
-          0.264
-        ],
-        [
-          "project:huffman",
-          0.174
-        ],
-        [
-          "project:som",
-          0.173
+          0.247
         ],
         [
           "experience:stage-quatorze",
-          0.16
+          0.158
+        ],
+        [
+          "project:som",
+          0.158
         ],
         [
           "project:kaggle-california-housing",
-          0.148
+          0.158
         ],
         [
-          "project:kaggle-auto-mpg",
-          0.143
+          "project:huffman",
+          0.155
         ],
         [
           "experience:ater-paris8",
-          0.141
+          0.135
         ],
         [
-          "project:plagiat-inc",
-          0.129
-        ],
-        [
-          "project:kermtech",
-          0.123
+          "project:kaggle-auto-mpg",
+          0.135
         ],
         [
           "project:scheduler-finder",
-          0.118
+          0.128
+        ],
+        [
+          "project:kermtech",
+          0.122
+        ],
+        [
+          "article:https://medium.com/p/89bd19ca464b",
+          0.112
         ]
       ]
     },
@@ -1672,15 +1672,15 @@
       "neighbors": [
         [
           "project:plagiat-inc",
-          0.281
+          0.26
         ],
         [
           "project:huffman",
-          0.266
+          0.258
         ],
         [
           "article:https://medium.com/p/e4fbd82fd615",
-          0.248
+          0.252
         ],
         [
           "project:infiltration",
@@ -1688,7 +1688,7 @@
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.211
+          0.213
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
@@ -1700,15 +1700,15 @@
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.182
-        ],
-        [
-          "project:searchengine",
-          0.173
+          0.181
         ],
         [
           "experience:stage-soldout",
-          0.173
+          0.178
+        ],
+        [
+          "article:https://medium.com/p/505cdf727735",
+          0.171
         ]
       ]
     },
@@ -1728,27 +1728,27 @@
         ],
         [
           "article:https://medium.com/p/2b84f642e027",
-          0.195
+          0.196
         ],
         [
           "project:image-classification",
-          0.191
+          0.192
         ],
         [
           "article:https://medium.com/p/448b8ff2a461",
-          0.19
+          0.191
         ],
         [
           "article:https://medium.com/p/257850cd83e8",
-          0.182
+          0.183
         ],
         [
           "article:https://medium.com/p/3bbb9b38aec7",
-          0.175
+          0.176
         ],
         [
           "project:kaggle-telco-churn",
-          0.171
+          0.172
         ],
         [
           "article:https://medium.com/p/7e11c3f0434e",
@@ -1760,43 +1760,43 @@
       "neighbors": [
         [
           "experience:these-othello",
-          0.809
-        ],
-        [
-          "publication:arxiv-2410-15909",
-          0.598
+          0.807
         ],
         [
           "publication:aiccsa-2023",
+          0.597
+        ],
+        [
+          "publication:arxiv-2410-15909",
           0.596
         ],
         [
           "publication:thesis-2023",
-          0.539
+          0.541
         ],
         [
           "publication:egc-2022",
-          0.533
+          0.535
         ],
         [
           "education:phd",
-          0.353
+          0.356
         ],
         [
           "publication:arxiv-2411-04707",
-          0.341
+          0.337
         ],
         [
           "experience:stage-quatorze",
-          0.186
+          0.185
         ],
         [
           "project:image-classification",
-          0.165
+          0.161
         ],
         [
-          "experience:ater-paris8",
-          0.107
+          "project:scheduler-finder",
+          0.115
         ]
       ]
     },
@@ -1808,11 +1808,11 @@
         ],
         [
           "publication:arxiv-2410-15909",
-          0.69
+          0.689
         ],
         [
           "project:these",
-          0.596
+          0.597
         ],
         [
           "publication:egc-2022",
@@ -1820,7 +1820,7 @@
         ],
         [
           "publication:arxiv-2411-04707",
-          0.569
+          0.566
         ],
         [
           "experience:these-othello",
@@ -1836,11 +1836,11 @@
         ],
         [
           "project:kaggle-telco-churn",
-          0.178
+          0.179
         ],
         [
           "project:scheduler-finder",
-          0.168
+          0.162
         ]
       ]
     },
@@ -1848,43 +1848,43 @@
       "neighbors": [
         [
           "publication:aiccsa-2023",
-          0.69
+          0.689
         ],
         [
           "publication:thesis-2023",
-          0.641
-        ],
-        [
-          "publication:arxiv-2411-04707",
-          0.618
+          0.639
         ],
         [
           "publication:egc-2022",
-          0.61
+          0.606
+        ],
+        [
+          "publication:arxiv-2411-04707",
+          0.604
         ],
         [
           "project:these",
-          0.598
+          0.596
         ],
         [
           "experience:these-othello",
-          0.398
+          0.394
+        ],
+        [
+          "article:https://medium.com/p/89bd19ca464b",
+          0.209
         ],
         [
           "project:image-classification",
           0.209
         ],
         [
-          "article:https://medium.com/p/89bd19ca464b",
-          0.204
-        ],
-        [
           "education:phd",
-          0.185
+          0.186
         ],
         [
           "article:https://medium.com/p/f98104af68fe",
-          0.153
+          0.157
         ]
       ]
     },
@@ -1892,43 +1892,43 @@
       "neighbors": [
         [
           "publication:egc-2022",
-          0.63
+          0.629
         ],
         [
           "publication:arxiv-2410-15909",
-          0.618
+          0.604
         ],
         [
           "publication:thesis-2023",
-          0.6
+          0.598
         ],
         [
           "publication:aiccsa-2023",
-          0.569
+          0.566
         ],
         [
           "project:these",
-          0.341
+          0.337
         ],
         [
           "project:image-classification",
-          0.247
-        ],
-        [
-          "article:https://medium.com/p/89bd19ca464b",
-          0.194
+          0.243
         ],
         [
           "experience:these-othello",
-          0.188
+          0.189
+        ],
+        [
+          "article:https://medium.com/p/89bd19ca464b",
+          0.185
         ],
         [
           "project:progenimages",
-          0.174
+          0.163
         ],
         [
-          "project:kaggle-telco-churn",
-          0.166
+          "project:scheduler-finder",
+          0.162
         ]
       ]
     },
@@ -1936,11 +1936,11 @@
       "neighbors": [
         [
           "publication:arxiv-2411-04707",
-          0.63
+          0.629
         ],
         [
           "publication:arxiv-2410-15909",
-          0.61
+          0.606
         ],
         [
           "publication:thesis-2023",
@@ -1952,7 +1952,7 @@
         ],
         [
           "project:these",
-          0.533
+          0.535
         ],
         [
           "experience:these-othello",
@@ -1972,7 +1972,7 @@
         ],
         [
           "project:kaggle-telco-churn",
-          0.195
+          0.194
         ]
       ]
     },
@@ -1984,7 +1984,7 @@
         ],
         [
           "publication:arxiv-2410-15909",
-          0.641
+          0.639
         ],
         [
           "publication:egc-2022",
@@ -1992,11 +1992,11 @@
         ],
         [
           "publication:arxiv-2411-04707",
-          0.6
+          0.598
         ],
         [
           "project:these",
-          0.539
+          0.541
         ],
         [
           "experience:these-othello",
@@ -2012,7 +2012,7 @@
         ],
         [
           "education:phd",
-          0.159
+          0.16
         ],
         [
           "article:https://medium.com/p/89bd19ca464b",
@@ -2040,7 +2040,7 @@
         ],
         [
           "skill:mlflow",
-          0.279
+          0.278
         ],
         [
           "skill:mistral",
@@ -2048,15 +2048,15 @@
         ],
         [
           "skill:tensorflow",
-          0.251
+          0.25
         ],
         [
           "skill:postgresql",
-          0.238
+          0.237
         ],
         [
           "skill:ollama",
-          0.226
+          0.225
         ],
         [
           "skill:huggingface",
@@ -2068,7 +2068,7 @@
       "neighbors": [
         [
           "skill:postgresql",
-          0.418
+          0.417
         ],
         [
           "skill:matplotlib",
@@ -2092,15 +2092,15 @@
         ],
         [
           "skill:langchain",
-          0.321
+          0.32
         ],
         [
           "skill:mlflow",
-          0.319
+          0.318
         ],
         [
           "skill:sql",
-          0.313
+          0.312
         ],
         [
           "skill:mysql",
@@ -2128,7 +2128,7 @@
         ],
         [
           "skill:mvc",
-          0.26
+          0.259
         ],
         [
           "skill:mysql",
@@ -2136,7 +2136,7 @@
         ],
         [
           "skill:keras",
-          0.244
+          0.243
         ],
         [
           "skill:latex",
@@ -2148,7 +2148,7 @@
         ],
         [
           "skill:sql",
-          0.221
+          0.22
         ]
       ]
     },
@@ -2184,7 +2184,7 @@
         ],
         [
           "skill:keras",
-          0.27
+          0.269
         ],
         [
           "skill:jupyter",
@@ -2224,7 +2224,7 @@
         ],
         [
           "skill:matplotlib",
-          0.255
+          0.254
         ],
         [
           "skill:langchain",
@@ -2232,7 +2232,7 @@
         ],
         [
           "skill:sql",
-          0.219
+          0.218
         ],
         [
           "skill:mysql",
@@ -2244,7 +2244,7 @@
       "neighbors": [
         [
           "skill:pandas",
-          0.341
+          0.34
         ],
         [
           "skill:swagger",
@@ -2276,7 +2276,7 @@
         ],
         [
           "skill:gemini",
-          0.27
+          0.269
         ],
         [
           "skill:jupyter",
@@ -2300,7 +2300,7 @@
         ],
         [
           "skill:flask",
-          0.27
+          0.269
         ],
         [
           "skill:numpy",
@@ -2352,7 +2352,7 @@
         ],
         [
           "skill:mysql",
-          0.297
+          0.296
         ],
         [
           "skill:java",
@@ -2400,7 +2400,7 @@
         ],
         [
           "skill:latex",
-          0.285
+          0.284
         ],
         [
           "skill:mlflow",
@@ -2424,7 +2424,7 @@
         ],
         [
           "skill:poo",
-          0.303
+          0.302
         ],
         [
           "skill:seaborn",
@@ -2436,15 +2436,15 @@
         ],
         [
           "skill:langchain",
-          0.282
+          0.281
         ],
         [
           "skill:jupyter",
-          0.281
+          0.28
         ],
         [
           "skill:ollama",
-          0.281
+          0.28
         ],
         [
           "skill:gemini",
@@ -2476,7 +2476,7 @@
         ],
         [
           "skill:mysql",
-          0.267
+          0.268
         ],
         [
           "skill:junit",
@@ -2492,7 +2492,7 @@
         ],
         [
           "project:plagiat-inc",
-          0.229
+          0.224
         ],
         [
           "skill:docker",
@@ -2500,7 +2500,7 @@
         ],
         [
           "skill:css",
-          0.203
+          0.204
         ]
       ]
     },
@@ -2552,7 +2552,7 @@
       "neighbors": [
         [
           "skill:jupyter",
-          0.363
+          0.362
         ],
         [
           "skill:git",
@@ -2564,7 +2564,7 @@
         ],
         [
           "skill:huggingface",
-          0.257
+          0.256
         ],
         [
           "skill:java",
@@ -2572,11 +2572,11 @@
         ],
         [
           "skill:pytest",
-          0.245
+          0.244
         ],
         [
           "skill:react",
-          0.24
+          0.239
         ],
         [
           "skill:gemini",
@@ -2584,7 +2584,7 @@
         ],
         [
           "skill:javascript",
-          0.235
+          0.234
         ],
         [
           "skill:swagger",
@@ -2604,7 +2604,7 @@
         ],
         [
           "skill:numpy",
-          0.381
+          0.38
         ],
         [
           "skill:pytest",
@@ -2612,11 +2612,11 @@
         ],
         [
           "skill:junit",
-          0.363
+          0.362
         ],
         [
           "skill:swagger",
-          0.325
+          0.324
         ],
         [
           "skill:keras",
@@ -2628,7 +2628,7 @@
         ],
         [
           "skill:huggingface",
-          0.281
+          0.28
         ],
         [
           "skill:seaborn",
@@ -2652,7 +2652,7 @@
         ],
         [
           "skill:numpy",
-          0.289
+          0.288
         ],
         [
           "skill:flask",
@@ -2668,7 +2668,7 @@
         ],
         [
           "skill:docker",
-          0.27
+          0.269
         ],
         [
           "skill:seaborn",
@@ -2684,7 +2684,7 @@
       "neighbors": [
         [
           "skill:nltk",
-          0.375
+          0.374
         ],
         [
           "skill:mlflow",
@@ -2692,7 +2692,7 @@
         ],
         [
           "skill:chromadb",
-          0.321
+          0.32
         ],
         [
           "skill:api-rest",
@@ -2704,15 +2704,15 @@
         ],
         [
           "skill:huggingface",
-          0.282
+          0.281
         ],
         [
           "skill:tensorflow",
-          0.276
+          0.275
         ],
         [
           "skill:seaborn",
-          0.275
+          0.274
         ],
         [
           "skill:pytest",
@@ -2732,7 +2732,7 @@
         ],
         [
           "skill:nltk",
-          0.384
+          0.383
         ],
         [
           "skill:matplotlib",
@@ -2752,15 +2752,15 @@
         ],
         [
           "skill:html",
-          0.285
+          0.284
         ],
         [
           "skill:flask",
-          0.25
+          0.249
         ],
         [
           "skill:numpy",
-          0.249
+          0.248
         ],
         [
           "skill:css",
@@ -2776,11 +2776,11 @@
         ],
         [
           "skill:tensorflow",
-          0.435
+          0.434
         ],
         [
           "skill:numpy",
-          0.431
+          0.43
         ],
         [
           "skill:chromadb",
@@ -2788,7 +2788,7 @@
         ],
         [
           "skill:opencv",
-          0.323
+          0.322
         ],
         [
           "skill:pytest",
@@ -2808,7 +2808,7 @@
         ],
         [
           "skill:postgresql",
-          0.271
+          0.27
         ]
       ]
     },
@@ -2840,7 +2840,7 @@
         ],
         [
           "skill:opencv",
-          0.243
+          0.242
         ],
         [
           "skill:gemini",
@@ -2880,11 +2880,11 @@
         ],
         [
           "skill:chromadb",
-          0.319
+          0.318
         ],
         [
           "skill:api-rest",
-          0.279
+          0.278
         ],
         [
           "skill:html",
@@ -2896,7 +2896,7 @@
         ],
         [
           "skill:ollama",
-          0.256
+          0.255
         ]
       ]
     },
@@ -2904,11 +2904,11 @@
       "neighbors": [
         [
           "skill:opencv",
-          0.391
+          0.39
         ],
         [
           "skill:mysql",
-          0.346
+          0.345
         ],
         [
           "skill:mlflow",
@@ -2928,15 +2928,15 @@
         ],
         [
           "skill:css",
-          0.26
+          0.259
         ],
         [
           "skill:numpy",
-          0.243
+          0.242
         ],
         [
           "skill:nltk",
-          0.24
+          0.239
         ],
         [
           "skill:docker",
@@ -2956,7 +2956,7 @@
         ],
         [
           "skill:mvc",
-          0.346
+          0.345
         ],
         [
           "skill:html",
@@ -2968,14 +2968,14 @@
         ],
         [
           "skill:git",
-          0.297
-        ],
-        [
-          "skill:docker",
-          0.288
+          0.296
         ],
         [
           "skill:uml",
+          0.288
+        ],
+        [
+          "skill:docker",
           0.288
         ],
         [
@@ -2992,15 +2992,15 @@
       "neighbors": [
         [
           "skill:latex",
-          0.384
+          0.383
         ],
         [
           "skill:langchain",
-          0.375
+          0.374
         ],
         [
           "skill:ollama",
-          0.307
+          0.306
         ],
         [
           "skill:matplotlib",
@@ -3008,11 +3008,11 @@
         ],
         [
           "skill:seaborn",
-          0.276
+          0.275
         ],
         [
           "skill:poo",
-          0.274
+          0.273
         ],
         [
           "skill:swagger",
@@ -3028,7 +3028,7 @@
         ],
         [
           "skill:mvc",
-          0.24
+          0.239
         ]
       ]
     },
@@ -3040,11 +3040,11 @@
         ],
         [
           "skill:matplotlib",
-          0.431
+          0.43
         ],
         [
           "skill:jupyter",
-          0.381
+          0.38
         ],
         [
           "skill:opencv",
@@ -3052,7 +3052,7 @@
         ],
         [
           "skill:pytest",
-          0.318
+          0.317
         ],
         [
           "skill:uml",
@@ -3060,7 +3060,7 @@
         ],
         [
           "skill:sql",
-          0.302
+          0.301
         ],
         [
           "skill:tensorflow",
@@ -3072,7 +3072,7 @@
         ],
         [
           "skill:keras",
-          0.289
+          0.288
         ]
       ]
     },
@@ -3084,11 +3084,11 @@
         ],
         [
           "skill:nltk",
-          0.307
+          0.306
         ],
         [
           "skill:huggingface",
-          0.281
+          0.28
         ],
         [
           "skill:chromadb",
@@ -3096,7 +3096,7 @@
         ],
         [
           "skill:mlflow",
-          0.256
+          0.255
         ],
         [
           "skill:langchain",
@@ -3108,7 +3108,7 @@
         ],
         [
           "skill:api-rest",
-          0.226
+          0.225
         ],
         [
           "skill:swagger",
@@ -3124,7 +3124,7 @@
       "neighbors": [
         [
           "skill:mvc",
-          0.391
+          0.39
         ],
         [
           "skill:tensorflow",
@@ -3140,7 +3140,7 @@
         ],
         [
           "skill:matplotlib",
-          0.323
+          0.322
         ],
         [
           "skill:keras",
@@ -3152,15 +3152,15 @@
         ],
         [
           "skill:postgresql",
-          0.256
+          0.255
         ],
         [
           "skill:mlflow",
-          0.254
+          0.253
         ],
         [
           "skill:mistral",
-          0.243
+          0.242
         ]
       ]
     },
@@ -3180,7 +3180,7 @@
         ],
         [
           "skill:flask",
-          0.341
+          0.34
         ],
         [
           "skill:gemini",
@@ -3224,7 +3224,7 @@
         ],
         [
           "skill:huggingface",
-          0.303
+          0.302
         ],
         [
           "skill:seaborn",
@@ -3232,7 +3232,7 @@
         ],
         [
           "skill:nltk",
-          0.274
+          0.273
         ],
         [
           "skill:jupyter",
@@ -3248,7 +3248,7 @@
         ],
         [
           "skill:keras",
-          0.23
+          0.229
         ]
       ]
     },
@@ -3256,7 +3256,7 @@
       "neighbors": [
         [
           "skill:sql",
-          0.594
+          0.593
         ],
         [
           "skill:mysql",
@@ -3264,7 +3264,7 @@
         ],
         [
           "skill:chromadb",
-          0.418
+          0.417
         ],
         [
           "skill:elasticsearch",
@@ -3280,11 +3280,11 @@
         ],
         [
           "skill:matplotlib",
-          0.271
+          0.27
         ],
         [
           "skill:numpy",
-          0.27
+          0.269
         ],
         [
           "skill:javascript",
@@ -3292,7 +3292,7 @@
         ],
         [
           "skill:opencv",
-          0.256
+          0.255
         ]
       ]
     },
@@ -3312,7 +3312,7 @@
         ],
         [
           "skill:numpy",
-          0.318
+          0.317
         ],
         [
           "skill:api-rest",
@@ -3332,7 +3332,7 @@
         ],
         [
           "skill:junit",
-          0.245
+          0.244
         ],
         [
           "skill:seaborn",
@@ -3416,7 +3416,7 @@
         ],
         [
           "skill:junit",
-          0.24
+          0.239
         ],
         [
           "skill:mysql",
@@ -3424,7 +3424,7 @@
         ],
         [
           "skill:seaborn",
-          0.223
+          0.222
         ]
       ]
     },
@@ -3432,7 +3432,7 @@
       "neighbors": [
         [
           "skill:swagger",
-          0.401
+          0.4
         ],
         [
           "skill:ollama",
@@ -3448,7 +3448,7 @@
         ],
         [
           "skill:nltk",
-          0.276
+          0.275
         ],
         [
           "skill:poo",
@@ -3456,7 +3456,7 @@
         ],
         [
           "skill:langchain",
-          0.275
+          0.274
         ],
         [
           "skill:docker",
@@ -3476,7 +3476,7 @@
       "neighbors": [
         [
           "skill:langchain",
-          0.246
+          0.245
         ],
         [
           "skill:matplotlib",
@@ -3488,11 +3488,11 @@
         ],
         [
           "skill:huggingface",
-          0.187
+          0.186
         ],
         [
           "skill:api-rest",
-          0.151
+          0.15
         ],
         [
           "skill:elasticsearch",
@@ -3524,11 +3524,11 @@
         ],
         [
           "skill:postgresql",
-          0.594
+          0.593
         ],
         [
           "skill:chromadb",
-          0.313
+          0.312
         ],
         [
           "skill:javascript",
@@ -3536,7 +3536,7 @@
         ],
         [
           "skill:numpy",
-          0.302
+          0.301
         ],
         [
           "skill:uml",
@@ -3544,7 +3544,7 @@
         ],
         [
           "skill:python",
-          0.274
+          0.273
         ],
         [
           "skill:docker",
@@ -3564,7 +3564,7 @@
       "neighbors": [
         [
           "skill:seaborn",
-          0.401
+          0.4
         ],
         [
           "skill:huggingface",
@@ -3580,7 +3580,7 @@
         ],
         [
           "skill:jupyter",
-          0.325
+          0.324
         ],
         [
           "skill:nltk",
@@ -3612,7 +3612,7 @@
         ],
         [
           "skill:matplotlib",
-          0.435
+          0.434
         ],
         [
           "skill:opencv",
@@ -3640,7 +3640,7 @@
         ],
         [
           "skill:langchain",
-          0.276
+          0.275
         ],
         [
           "skill:keras",
@@ -3700,7 +3700,7 @@
         ],
         [
           "project:scheduler-finder",
-          0.261
+          0.264
         ],
         [
           "award:jury-alternance",
@@ -3719,11 +3719,11 @@
           0.204
         ],
         [
-          "experience:stage-quatorze",
+          "supervision:stage-imt-albi",
           0.139
         ],
         [
-          "supervision:stage-imt-albi",
+          "experience:stage-quatorze",
           0.139
         ],
         [
@@ -3740,11 +3740,11 @@
       "neighbors": [
         [
           "experience:freelance-leasup",
-          0.297
+          0.298
         ],
         [
           "experience:ater-paris8",
-          0.269
+          0.27
         ],
         [
           "supervision:stages-tutorat-iut",
@@ -3752,7 +3752,7 @@
         ],
         [
           "supervision:stage-liasd",
-          0.242
+          0.243
         ],
         [
           "experience:stage-quatorze",
@@ -3760,23 +3760,23 @@
         ],
         [
           "project:story-bot",
-          0.146
+          0.147
+        ],
+        [
+          "project:scheduler-finder",
+          0.14
         ],
         [
           "supervision:alternance-aeroport",
           0.139
         ],
         [
-          "project:scheduler-finder",
-          0.129
-        ],
-        [
           "publication:arxiv-2411-04707",
-          0.123
+          0.124
         ],
         [
           "experience:stage-directannonces",
-          0.115
+          0.116
         ]
       ]
     },
@@ -3796,7 +3796,7 @@
         ],
         [
           "supervision:stage-imt-albi",
-          0.242
+          0.243
         ],
         [
           "experience:stage-quatorze",
@@ -3804,7 +3804,7 @@
         ],
         [
           "project:kaggle-telco-churn",
-          0.222
+          0.221
         ],
         [
           "supervision:alternance-aeroport",
@@ -3816,7 +3816,7 @@
         ],
         [
           "experience:freelance-leasup",
-          0.177
+          0.178
         ],
         [
           "publication:egc-2022",
@@ -3836,7 +3836,7 @@
         ],
         [
           "project:scheduler-finder",
-          0.285
+          0.284
         ],
         [
           "supervision:stage-imt-albi",
@@ -3852,7 +3852,7 @@
         ],
         [
           "award:forum-metiers",
-          0.204
+          0.203
         ],
         [
           "teaching:ppp-2024",
@@ -3860,11 +3860,11 @@
         ],
         [
           "education:dut",
-          0.176
+          0.175
         ],
         [
           "award:selection-candidats",
-          0.175
+          0.174
         ]
       ]
     },
@@ -3899,11 +3899,11 @@
           0.491
         ],
         [
-          "teaching:os-2025",
+          "teaching:web-2025",
           0.463
         ],
         [
-          "teaching:web-2025",
+          "teaching:os-2025",
           0.463
         ],
         [
@@ -4072,7 +4072,7 @@
         ],
         [
           "teaching:support-2024",
-          0.486
+          0.485
         ],
         [
           "teaching:os-2025",
@@ -4296,11 +4296,11 @@
         ],
         [
           "teaching:os-2025",
-          0.56
+          0.559
         ],
         [
           "teaching:poste-2025",
-          0.535
+          0.534
         ],
         [
           "teaching:architecture-2025",
@@ -4344,7 +4344,7 @@
         ],
         [
           "teaching:web-2025",
-          0.464
+          0.465
         ],
         [
           "teaching:oop-2024",
@@ -4436,7 +4436,7 @@
         ],
         [
           "teaching:gui-2024",
-          0.275
+          0.274
         ]
       ]
     },
@@ -4468,7 +4468,7 @@
         ],
         [
           "teaching:low-level-2024",
-          0.56
+          0.559
         ],
         [
           "teaching:java-init-2025",
@@ -4500,7 +4500,7 @@
         ],
         [
           "teaching:low-level-2024",
-          0.535
+          0.534
         ],
         [
           "teaching:algo-compare-2024",
@@ -4636,7 +4636,7 @@
         ],
         [
           "teaching:os-2025",
-          0.495
+          0.494
         ],
         [
           "teaching:algo-quality-2025",
@@ -4644,7 +4644,7 @@
         ],
         [
           "teaching:client-need-2024",
-          0.486
+          0.485
         ],
         [
           "teaching:software-archi-2024",
@@ -4744,7 +4744,7 @@
         ],
         [
           "video:uye9Z8fGWSs",
-          0.236
+          0.235
         ]
       ]
     },
@@ -4800,7 +4800,7 @@
         ],
         [
           "video:GjQaSi18B08",
-          0.668
+          0.667
         ],
         [
           "video:KP1CgRq7ffk",
@@ -4820,11 +4820,11 @@
         ],
         [
           "video:GLin95_je_A",
-          0.494
+          0.493
         ],
         [
           "video:uye9Z8fGWSs",
-          0.414
+          0.413
         ],
         [
           "video:EYinYM2M43A",
@@ -4832,7 +4832,7 @@
         ],
         [
           "video:YR8VKxy8JX0",
-          0.371
+          0.37
         ]
       ]
     },
@@ -4840,15 +4840,15 @@
       "neighbors": [
         [
           "award:egc-2022",
-          0.43
+          0.429
         ],
         [
           "video:p7ifvNUNk_4",
-          0.354
+          0.353
         ],
         [
           "video:uye9Z8fGWSs",
-          0.343
+          0.342
         ],
         [
           "video:EYinYM2M43A",
@@ -4856,7 +4856,7 @@
         ],
         [
           "video:GLin95_je_A",
-          0.294
+          0.293
         ],
         [
           "video:MNPhTlvzSIA",
@@ -4864,7 +4864,7 @@
         ],
         [
           "video:GjQaSi18B08",
-          0.268
+          0.267
         ],
         [
           "video:qENBQokefZs",
@@ -4876,7 +4876,7 @@
         ],
         [
           "video:AvebYlXnoPo",
-          0.254
+          0.253
         ]
       ]
     },
@@ -4884,7 +4884,7 @@
       "neighbors": [
         [
           "video:GjQaSi18B08",
-          0.624
+          0.623
         ],
         [
           "video:GLin95_je_A",
@@ -4904,11 +4904,11 @@
         ],
         [
           "video:__0pkM8zBdQ",
-          0.435
+          0.434
         ],
         [
           "video:uye9Z8fGWSs",
-          0.423
+          0.422
         ],
         [
           "video:AvebYlXnoPo",
@@ -4928,7 +4928,7 @@
       "neighbors": [
         [
           "video:MNPhTlvzSIA",
-          0.663
+          0.662
         ],
         [
           "video:EYinYM2M43A",
@@ -4944,7 +4944,7 @@
         ],
         [
           "video:qENBQokefZs",
-          0.545
+          0.544
         ],
         [
           "video:KP1CgRq7ffk",
@@ -4952,11 +4952,11 @@
         ],
         [
           "video:__0pkM8zBdQ",
-          0.501
+          0.5
         ],
         [
           "video:AvebYlXnoPo",
-          0.494
+          0.493
         ],
         [
           "video:uye9Z8fGWSs",
@@ -4964,7 +4964,7 @@
         ],
         [
           "video:YR8VKxy8JX0",
-          0.422
+          0.421
         ]
       ]
     },
@@ -4976,11 +4976,11 @@
         ],
         [
           "video:AvebYlXnoPo",
-          0.668
+          0.667
         ],
         [
           "video:EYinYM2M43A",
-          0.624
+          0.623
         ],
         [
           "video:GLin95_je_A",
@@ -5072,7 +5072,7 @@
         ],
         [
           "video:GLin95_je_A",
-          0.663
+          0.662
         ],
         [
           "video:p7ifvNUNk_4",
@@ -5088,15 +5088,15 @@
         ],
         [
           "video:__0pkM8zBdQ",
-          0.546
+          0.545
         ],
         [
           "video:uye9Z8fGWSs",
-          0.493
+          0.492
         ],
         [
           "video:YR8VKxy8JX0",
-          0.46
+          0.459
         ]
       ]
     },
@@ -5107,12 +5107,12 @@
           0.471
         ],
         [
-          "video:p7ifvNUNk_4",
-          0.46
+          "video:MNPhTlvzSIA",
+          0.459
         ],
         [
-          "video:MNPhTlvzSIA",
-          0.46
+          "video:p7ifvNUNk_4",
+          0.459
         ],
         [
           "video:GjQaSi18B08",
@@ -5120,7 +5120,7 @@
         ],
         [
           "video:GLin95_je_A",
-          0.422
+          0.421
         ],
         [
           "video:uye9Z8fGWSs",
@@ -5132,7 +5132,7 @@
         ],
         [
           "video:AvebYlXnoPo",
-          0.371
+          0.37
         ],
         [
           "video:5RA39MJpAtU",
@@ -5160,7 +5160,7 @@
         ],
         [
           "video:MNPhTlvzSIA",
-          0.546
+          0.545
         ],
         [
           "video:qENBQokefZs",
@@ -5168,11 +5168,11 @@
         ],
         [
           "video:GLin95_je_A",
-          0.501
+          0.5
         ],
         [
           "video:EYinYM2M43A",
-          0.435
+          0.434
         ],
         [
           "video:GjQaSi18B08",
@@ -5224,7 +5224,7 @@
         ],
         [
           "video:uye9Z8fGWSs",
-          0.507
+          0.506
         ],
         [
           "video:whxjoMvrq2E",
@@ -5244,7 +5244,7 @@
         ],
         [
           "video:GLin95_je_A",
-          0.545
+          0.544
         ],
         [
           "video:AvebYlXnoPo",
@@ -5284,11 +5284,11 @@
         ],
         [
           "video:p7ifvNUNk_4",
-          0.507
+          0.506
         ],
         [
           "video:MNPhTlvzSIA",
-          0.493
+          0.492
         ],
         [
           "video:GLin95_je_A",
@@ -5300,7 +5300,7 @@
         ],
         [
           "video:EYinYM2M43A",
-          0.423
+          0.422
         ],
         [
           "video:YR8VKxy8JX0",
@@ -5308,7 +5308,7 @@
         ],
         [
           "video:AvebYlXnoPo",
-          0.414
+          0.413
         ],
         [
           "video:__0pkM8zBdQ",
