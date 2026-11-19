@@ -9,12 +9,6 @@
   margin-bottom: clamp(2rem, 5vw, 3.4rem);
 }
 
-.center {
-  align-items: center;
-  text-align: center;
-  margin-inline: auto;
-}
-
 .wide {
   max-width: 900px;
 }

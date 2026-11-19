@@ -146,7 +146,7 @@ export function useTeaching(locale: Locale) {
   const years = useMemo(() => getYears(teaching), []);
   const levels = useMemo(() => getLevels(teaching), []);
 
-  const filteredHours = useMemo(() => totalHours(filtered), [filtered]);
+  // Total global, indépendant des filtres.
   const allHours = useMemo(() => totalHours(teaching), []);
 
   // La pagination ne s'applique qu'à la liste des cours.
@@ -165,7 +165,6 @@ export function useTeaching(locale: Locale) {
     visible,
     years,
     levels,
-    filteredHours,
     allHours,
     expanded,
     setExpanded,

@@ -105,7 +105,7 @@ export function Publications() {
 
         {/* Articles Medium. */}
         {tab === 'medium' && (
-          <div className={styles.medium} key="medium">
+          <div key="medium">
             {medium.length > 0 ? (
               <div className={styles.posts}>
                 {medium.map((post, index) => (

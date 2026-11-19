@@ -101,7 +101,6 @@
     "results": "Your route",
     "suggested": "Suggested route",
     "summary": "{count} steps · about {minutes} min",
-    "why": "Matches",
     "complement": "Complementary step",
     "openSection": "View section",
     "openItem": "View {name}",

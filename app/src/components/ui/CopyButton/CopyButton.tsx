@@ -12,21 +12,20 @@ import styles from './CopyButton.module.css';
 type CopyButtonProps = {
   value: string;
   label?: string;
-  className?: string;
 };
 
 /* =========================================================================
   COMPOSANT : CopyButton
   Bouton de copie dans le presse-papiers.
 ========================================================================= */
-export function CopyButton({ value, label, className }: CopyButtonProps) {
+export function CopyButton({ value, label }: CopyButtonProps) {
   const { copied, copy } = useCopyToClipboard();
   const { t } = useI18n();
 
   return (
     <button
       type="button"
-      className={[styles.button, copied ? styles.copied : '', className].filter(Boolean).join(' ')}
+      className={[styles.button, copied ? styles.copied : ''].filter(Boolean).join(' ')}
       onClick={() => copy(value)}
     >
       <Icon name={copied ? 'check' : 'copy'} size={15} />

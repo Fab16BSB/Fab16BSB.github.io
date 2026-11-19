@@ -3,10 +3,6 @@
   Calcul de la langue à focaliser selon la touche pressée.
 ========================================================================= */
 
-/* ─────────────────────────────────────────────────────────────────────────
-   NAVIGATION CLAVIER
-   ───────────────────────────────────────────────────────────────────────── */
-
 /**
  * Retourne l'index de l'option à focaliser après une touche de navigation.
  *

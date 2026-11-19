@@ -14,7 +14,6 @@ type EmptyStateProps = {
   description?: string;
   actionLabel?: string;
   onAction?: () => void;
-  className?: string;
 };
 
 /* =========================================================================
@@ -27,13 +26,9 @@ export function EmptyState({
   description,
   actionLabel,
   onAction,
-  className,
 }: EmptyStateProps) {
   return (
-    <div
-      className={[styles.empty, className].filter(Boolean).join(' ')}
-      role="status"
-    >
+    <div className={styles.empty} role="status">
       <span className={styles.icon} aria-hidden="true">
         {/* Icône décorative. */}
         <Icon name={icon} size={24} />

@@ -29,7 +29,7 @@ export function Footer() {
           <a className={styles.brand} href="#about">
             <span className={styles.monogram}>FP</span>
             <span>
-              <span className={styles.name}>Fabien Poirier</span>
+              <span className={styles.name}>{profile.name}</span>
               <span className={styles.role}>{loc(profile.role)}</span>
             </span>
           </a>
@@ -38,7 +38,7 @@ export function Footer() {
         </div>
 
         {/* Navigation */}
-        <nav className={styles.navColumn} aria-label={t('accessibility.mainNavigation')}>
+        <nav aria-label={t('accessibility.mainNavigation')}>
           <h3 className={styles.heading}>{t('footer.nav')}</h3>
           <ul className={styles.links}>
             {navItems.map((item) => (

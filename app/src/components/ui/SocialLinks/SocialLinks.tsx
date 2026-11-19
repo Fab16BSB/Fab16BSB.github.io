@@ -10,8 +10,6 @@ import styles from './SocialLinks.module.css';
 ========================================================================= */
 type SocialLinksProps = {
   links: SocialLink[];
-  size?: number;
-  className?: string;
   labels?: boolean;
 };
 
@@ -19,9 +17,9 @@ type SocialLinksProps = {
   COMPOSANT : SocialLinks
   Liste de liens sociaux.
 ========================================================================= */
-export function SocialLinks({ links, size = 18, className, labels = false }: SocialLinksProps) {
+export function SocialLinks({ links, labels = false }: SocialLinksProps) {
   return (
-    <ul className={[styles.list, className].filter(Boolean).join(' ')}>
+    <ul className={styles.list}>
 
       {/* Liens sociaux. */}
       {links.map((link) => (
@@ -38,7 +36,7 @@ export function SocialLinks({ links, size = 18, className, labels = false }: Soc
           >
 
             {/* Icône du réseau. */}
-            <Icon name={link.icon} size={size} />
+            <Icon name={link.icon} size={18} />
 
             {/* Libellé affiché si demandé. */}
             {labels && <span>{link.label}</span>}

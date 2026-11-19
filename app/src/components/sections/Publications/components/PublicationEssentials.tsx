@@ -74,7 +74,6 @@ export function PublicationEssentials({
 
       {/* Points accessibles. */}
       <div
-        className={styles.panelBody}
         role="tabpanel"
         id={panelId('essentials')}
         aria-labelledby={tabId('essentials')}
@@ -95,7 +94,6 @@ export function PublicationEssentials({
 
       {/* Abstract original de la version affichée. */}
       <div
-        className={styles.panelBody}
         role="tabpanel"
         id={panelId('abstract')}
         aria-labelledby={tabId('abstract')}

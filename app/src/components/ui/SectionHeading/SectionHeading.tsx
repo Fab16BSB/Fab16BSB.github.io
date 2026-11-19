@@ -13,7 +13,6 @@ type SectionHeadingProps = {
   title: string;
   description?: string;
   icon?: IconName;
-  align?: 'left' | 'center';
   wide?: boolean;
   titleId?: string;
 };
@@ -27,13 +26,12 @@ export function SectionHeading({
   title,
   description,
   icon,
-  align = 'left',
   wide = false,
   titleId,
 }: SectionHeadingProps) {
   return (
     <div
-      className={[styles.head, align === 'center' ? styles.center : '', wide ? styles.wide : '']
+      className={[styles.head, wide ? styles.wide : '']
         .filter(Boolean)
         .join(' ')}
       data-reveal

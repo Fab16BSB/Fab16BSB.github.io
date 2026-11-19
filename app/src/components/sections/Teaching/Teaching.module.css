@@ -124,13 +124,6 @@
   border-color: var(--accent);
 }
 
-.resultCount {
-  margin-left: auto;
-  color: var(--text-faint);
-  font-size: 0.72rem;
-  white-space: nowrap;
-}
-
 /* ─────────────────────────────────────────────────────────────────────────
    Tableau des cours
    ───────────────────────────────────────────────────────────────────────── */
