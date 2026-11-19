@@ -32,6 +32,7 @@ export function MobileMenu({ open, active, onClose }: MobileMenuProps) {
       id="mobile-menu"
       className={[styles.panel, open ? styles.open : ''].filter(Boolean).join(' ')}
       aria-hidden={!open}
+      inert={!open}
     >
       {/* Navigation */}
       <nav className={styles.nav} aria-label={t('accessibility.mainNavigation')}>
@@ -43,6 +44,7 @@ export function MobileMenu({ open, active, onClose }: MobileMenuProps) {
                 href={item.href}
                 onClick={onClose}
                 tabIndex={open ? 0 : -1}
+                aria-current={active === item.id ? 'location' : undefined}
               >
                 <span className={styles.label}>
                   <Icon name={item.icon} size={22} className={styles.icon} />

@@ -1,7 +1,14 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type KeyboardEvent,
+} from 'react';
 import { useOnClickOutside } from '@/hooks/ui/useOnClickOutside';
 import type { SelectOption } from '@/types/ui.types';
 
@@ -41,8 +48,10 @@ export function useSelect(
   // Option affichée dans le déclencheur.
   const selected = options[selectedIndex] ?? options[0];
 
-  // Ferme le menu au clic extérieur.
-  useOnClickOutside(wrapperRef, () => setOpen(false), open);
+  // Ferme le menu au clic extérieur, avec un gestionnaire stable.
+  const closeMenu = useCallback(() => setOpen(false), []);
+
+  useOnClickOutside(wrapperRef, closeMenu, open);
 
   // Ferme le menu.
   const close = (focusTrigger = false) => {

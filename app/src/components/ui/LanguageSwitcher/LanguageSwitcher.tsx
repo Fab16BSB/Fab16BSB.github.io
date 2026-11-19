@@ -1,8 +1,8 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
+import { useId } from 'react';
 import { useI18n } from '@/i18n/useI18n';
-import type { Locale } from '@/types/common.types';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { LanguageFlag } from '@/components/ui/LanguageFlag/LanguageFlag';
 import { languageOptions } from '@/data/profile/languages.data';
@@ -14,25 +14,33 @@ import styles from './LanguageSwitcher.module.css';
   Sélecteur de langue.
 ========================================================================= */
 export function LanguageSwitcher() {
-  const { locale, setLocale, t } = useI18n();
-  const { open, toggle, close, ref } = useLanguageSwitcher();
-  const current = languageOptions.find((option) => option.code === locale) ?? languageOptions[0];
+  const { t } = useI18n();
+  const {
+    open,
+    toggle,
+    current,
+    choose,
+    onListKeyDown,
+    wrapperRef,
+    triggerRef,
+    optionRefs,
+  } = useLanguageSwitcher();
 
-  const choose = (code: Locale) => {
-    setLocale(code);
-    close();
-  };
+  // Identifiant unique de la liste, référencé par le déclencheur.
+  const menuId = useId();
 
   return (
-    <div className={styles.wrapper} ref={ref}>
+    <div className={styles.wrapper} ref={wrapperRef}>
 
       {/* Langue courante. */}
       <button
+        ref={triggerRef}
         type="button"
         className={styles.trigger}
         onClick={toggle}
         aria-haspopup="listbox"
         aria-expanded={open}
+        aria-controls={menuId}
         aria-label={t('accessibility.changeLanguage')}
       >
         <LanguageFlag code={current.code} className={styles.flag} />
@@ -42,14 +50,23 @@ export function LanguageSwitcher() {
 
       {open && (
         // Liste des langues disponibles.
-        <ul className={styles.menu} role="listbox" aria-label={t('accessibility.changeLanguage')}>
-          {languageOptions.map((option) => (
+        <ul
+          id={menuId}
+          className={styles.menu}
+          role="listbox"
+          aria-label={t('accessibility.changeLanguage')}
+          onKeyDown={onListKeyDown}
+        >
+          {languageOptions.map((option, index) => (
             <li key={option.code}>
               <button
+                ref={(element) => {
+                  optionRefs.current[index] = element;
+                }}
                 type="button"
                 role="option"
-                aria-selected={option.code === locale}
-                className={[styles.option, option.code === locale ? styles.active : '']
+                aria-selected={option.code === current.code}
+                className={[styles.option, option.code === current.code ? styles.active : '']
                   .filter(Boolean)
                   .join(' ')}
                 onClick={() => choose(option.code)}
@@ -58,7 +75,7 @@ export function LanguageSwitcher() {
 
                 {/* Libellé et coche de la langue active. */}
                 <span>{option.label}</span>
-                {option.code === locale && <Icon name="check" size={15} className={styles.check} />}
+                {option.code === current.code && <Icon name="check" size={15} className={styles.check} />}
               </button>
             </li>
           ))}

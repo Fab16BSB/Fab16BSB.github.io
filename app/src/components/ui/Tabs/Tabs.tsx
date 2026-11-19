@@ -13,7 +13,6 @@ type TabsProps = {
   active: string;
   onChange: (id: string) => void;
   ariaLabel?: string;
-  className?: string;
   variant?: 'segmented' | 'filters';
 };
 
@@ -26,7 +25,6 @@ export function Tabs({
   active,
   onChange,
   ariaLabel,
-  className,
   variant = 'segmented',
 }: TabsProps) {
   const { refs, containerRef, scrollable, onKeyDown } = useTabs(items, active, onChange);
@@ -38,11 +36,10 @@ export function Tabs({
         styles.tabs,
         variant === 'filters' ? styles.filters : styles.segmented,
         scrollable ? styles.scrollable : '',
-        className,
       ]
         .filter(Boolean)
         .join(' ')}
-      role="tablist"
+      role="group"
       aria-label={ariaLabel}
     >
       {items.map((item, index) => (
@@ -53,9 +50,7 @@ export function Tabs({
             refs.current[index] = element;
           }}
           type="button"
-          role="tab"
-          aria-selected={item.id === active}
-          tabIndex={item.id === active ? 0 : -1}
+          aria-pressed={item.id === active}
           className={[styles.tab, item.id === active ? styles.active : ''].filter(Boolean).join(' ')}
           onClick={() => onChange(item.id)}
           onKeyDown={(event) => onKeyDown(event, index)}
