@@ -11,6 +11,7 @@ import { Select } from '@/components/ui/Select/Select';
 import { Tabs } from '@/components/ui/Tabs/Tabs';
 import { SkillModal } from './components/SkillModal';
 import { knowledgeDomains } from '@/data/knowledge/knowledge-domains.data';
+import { visitTarget } from '@/lib/visit/visit-targets';
 import { skillCategories } from './skills.helpers';
 import { useSkills } from './useSkills';
 import styles from './Skills.module.css';
@@ -39,6 +40,7 @@ export function Skills() {
     closeProject,
   } = useSkills();
 
+  // Onglets de filtre : « tous » puis les catégories, avec leur compteur.
   const tabs = [
     { id: 'all', label: t('common.all'), count: counts.all },
     ...skillCategories.map((category) => ({
@@ -48,6 +50,7 @@ export function Skills() {
     })),
   ];
 
+  // Options du sélecteur mobile, compteur inclus dans le libellé.
   const filterOptions = tabs.map((tab) => ({
     value: tab.id,
     label: `${tab.label} (${tab.count})`,
@@ -129,6 +132,7 @@ export function Skills() {
                 style={{ '--reveal-delay': `${Math.min(index, 12) * 28}ms` } as CSSProperties}
                 onClick={() => openSkill(skill)}
                 aria-label={t('skills.related.open', { name: skill.name })}
+                data-visit-target={visitTarget('skill', skill.id)}
                 data-reveal
               >
                 {/* Icône ou monogramme de la compétence. */}

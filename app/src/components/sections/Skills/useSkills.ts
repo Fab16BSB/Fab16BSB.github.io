@@ -1,9 +1,11 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { projects } from '@/data/content/projects.data';
 import { skills } from '@/data/career/skills.data';
+import { useVisitReveal } from '@/hooks/sections/useVisitReveal';
+import { visitTargetPrefix } from '@/lib/visit/visit-targets';
 import type { Project } from '@/types/project.types';
 import type { Skill, SkillCategory } from '@/types/skill.types';
 import { countSkills, filterSkills, skillCategories } from './skills.helpers';
@@ -26,6 +28,7 @@ const INITIAL_VISIBLE = 16;
   Gère la catégorie active et l'affichage progressif des compétences.
 ========================================================================= */
 export function useSkills() {
+
   // Catégorie active.
   const [active, setActive] = useState<SkillFilter>('all');
 
@@ -38,10 +41,37 @@ export function useSkills() {
   // Projet ouvert depuis la modale d'une compétence.
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Chaque catégorie repart d'une liste repliée.
+  // Évite de replier la liste juste après une demande de visite.
+  const skipCollapseRef = useRef(false);
+
+  // Minuteur de fin de révélation, annulé au démontage.
+  const collapseTimerRef = useRef<number | undefined>(undefined);
+
+  // Annule le minuteur de révélation au démontage.
+  useEffect(
+    () => () => window.clearTimeout(collapseTimerRef.current),
+    [],
+  );
+
+  // Chaque catégorie repart d'une liste repliée, sauf pendant une révélation.
   useEffect(() => {
-    setExpanded(false);
+    if (skipCollapseRef.current) {
+      skipCollapseRef.current = false;
+    } else {
+      setExpanded(false);
+    }
   }, [active]);
+
+  // Une visite guidée peut demander une compétence précise : on montre tout.
+  useVisitReveal([visitTargetPrefix('skill')], () => {
+    skipCollapseRef.current = true;
+    setActive('all');
+    setExpanded(true);
+    window.clearTimeout(collapseTimerRef.current);
+    collapseTimerRef.current = window.setTimeout(() => {
+      skipCollapseRef.current = false;
+    }, 200);
+  });
 
   // Compétences de la catégorie active.
   const filtered = useMemo(() => filterSkills(skills, active), [active]);

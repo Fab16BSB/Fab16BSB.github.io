@@ -1,12 +1,14 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { teaching } from '@/data/content/teaching.data';
 import { supervisions } from '@/data/content/supervisions.data';
+import { useVisitReveal } from '@/hooks/sections/useVisitReveal';
 import { getSearchIndex, searchDocuments } from '@/lib/search/search-engine';
 import { teachingCourseSearchFields } from '@/lib/search/search-fields';
 import { rankSearchResults } from '@/lib/search/search-rank';
+import { visitTargetPrefix } from '@/lib/visit/visit-targets';
 import { useSemanticSearch } from '@/search/useSemanticSearch';
 import type { Locale } from '@/types/common.types';
 import type { TeachingCourse, TeachingLevel } from '@/types/teaching.types';
@@ -39,10 +41,55 @@ export function useTeaching(locale: Locale) {
   // Indique si la liste complète est affichée.
   const [expanded, setExpanded] = useState(false);
 
-  // Un nouveau filtre replie la liste.
+  // Évite de replier la liste juste après une demande de visite.
+  const skipCollapseRef = useRef(false);
+
+  // Minuteur de fin de révélation, annulé au démontage.
+  const collapseTimerRef = useRef<number | undefined>(undefined);
+
+  // Annule le minuteur de révélation au démontage.
+  useEffect(
+    () => () => window.clearTimeout(collapseTimerRef.current),
+    [],
+  );
+
+  // Un nouveau filtre replie la liste, sauf pendant une révélation.
   useEffect(() => {
-    setExpanded(false);
+    if (skipCollapseRef.current) {
+      skipCollapseRef.current = false;
+    } else {
+      setExpanded(false);
+    }
   }, [year, level, query, tab]);
+
+  // Remet les filtres de cours à zéro.
+  const reset = () => {
+    setYear('all');
+    setLevel('all');
+    setQuery('');
+  };
+
+  // Préfixes des cartes ciblables par la visite.
+  const coursePrefix = visitTargetPrefix('course');
+  const supervisionPrefix = visitTargetPrefix('supervision');
+
+  // Une visite guidée peut demander un cours ou un encadrement précis.
+  useVisitReveal([coursePrefix, supervisionPrefix], (target) => {
+    const isSupervision = target.startsWith(supervisionPrefix);
+
+    skipCollapseRef.current = true;
+    setTab(isSupervision ? 'supervisions' : 'courses');
+
+    if (!isSupervision) {
+      reset();
+    }
+
+    setExpanded(true);
+    window.clearTimeout(collapseTimerRef.current);
+    collapseTimerRef.current = window.setTimeout(() => {
+      skipCollapseRef.current = false;
+    }, 200);
+  });
 
   // Index plein texte des cours, construit une fois par langue.
   const index = useMemo(
@@ -99,19 +146,11 @@ export function useTeaching(locale: Locale) {
   const years = useMemo(() => getYears(teaching), []);
   const levels = useMemo(() => getLevels(teaching), []);
 
-  // Le total suit les filtres ; `allHours` reste la référence globale.
   const filteredHours = useMemo(() => totalHours(filtered), [filtered]);
   const allHours = useMemo(() => totalHours(teaching), []);
 
   // La pagination ne s'applique qu'à la liste des cours.
   const visible = expanded ? filtered : filtered.slice(0, 8);
-
-  // Remet les filtres de cours à zéro.
-  const reset = () => {
-    setYear('all');
-    setLevel('all');
-    setQuery('');
-  };
 
   return {
     tab,

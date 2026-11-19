@@ -7,6 +7,7 @@ import { useI18n } from '@/i18n/useI18n';
 import { AwardPin } from '@/components/ui/AwardPin/AwardPin';
 import { getPinAccent } from '@/components/ui/AwardPin/awardPin.helpers';
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading';
+import { visitTarget } from '@/lib/visit/visit-targets';
 import styles from './HallOfFame.module.css';
 
 /* =========================================================================
@@ -36,6 +37,7 @@ export function HallOfFame() {
               className={styles.award}
               key={award.id}
               data-kind={award.kind}
+              data-visit-target={visitTarget('award', award.id)}
               style={
                 {
                   '--reveal-delay': `${index * 70}ms`,

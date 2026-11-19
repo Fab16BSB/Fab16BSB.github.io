@@ -4,6 +4,7 @@
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import type { Supervision } from '@/types/supervision.types';
+import { visitTarget } from '@/lib/visit/visit-targets';
 import styles from '../Teaching.module.css';
 
 /* =========================================================================
@@ -21,7 +22,10 @@ export function SupervisionCard({ supervision }: SupervisionCardProps) {
   const { t, loc } = useI18n();
 
   return (
-    <article className={styles.supervisionCard}>
+    <article
+      className={styles.supervisionCard}
+      data-visit-target={visitTarget('supervision', supervision.id)}
+    >
 
       {/* Sujet, rôle et établissement. */}
       <div className={styles.profileTop}>

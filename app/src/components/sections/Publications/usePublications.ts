@@ -5,9 +5,11 @@ import { useCallback, useMemo, useState } from 'react';
 import mediumPostsRaw from '@/data/feeds/medium-posts.json';
 import { publicationSummaries } from '@/data/content/publication-summaries.data';
 import { publications } from '@/data/content/publications.data';
+import { useVisitReveal } from '@/hooks/sections/useVisitReveal';
 import { getSearchIndex, searchDocuments } from '@/lib/search/search-engine';
 import { mediumPostSearchFields, publicationSearchFields } from '@/lib/search/search-fields';
 import { rankSearchResults } from '@/lib/search/search-rank';
+import { visitTargetPrefix } from '@/lib/visit/visit-targets';
 import { useSemanticSearch } from '@/search/useSemanticSearch';
 import type { Locale } from '@/types/common.types';
 import type { MediumPost } from '@/types/medium.types';
@@ -42,6 +44,18 @@ export function usePublications(locale: Locale) {
 
   // Langue choisie par publication ; la locale courante sert de défaut.
   const [languages, setLanguages] = useState<Record<string, PublicationLanguage>>({});
+
+  // La langue choisie est conservée ; seuls la recherche et l'année sont remises à zéro.
+  const resetFilters = useCallback(() => {
+    setQuery('');
+    setYear('all');
+  }, []);
+
+  // Une visite guidée peut demander une publication précise : on montre tout.
+  useVisitReveal([visitTargetPrefix('publication')], () => {
+    setTabState('scientific');
+    resetFilters();
+  });
 
   // Publications scientifiques triées.
   const allScientific = useMemo(() => sortPublications(publications), []);
@@ -187,12 +201,6 @@ export function usePublications(locale: Locale) {
   // Le changement d'onglet remet l'année à zéro puisque les listes diffèrent.
   const setTab = useCallback((next: PublicationTab) => {
     setTabState(next);
-    setYear('all');
-  }, []);
-
-  // La langue choisie est conservée ; seuls la recherche et l'année sont remises à zéro.
-  const resetFilters = useCallback(() => {
-    setQuery('');
     setYear('all');
   }, []);
 

@@ -5,6 +5,7 @@ import { education } from '@/data/career/education.data';
 import { experiences } from '@/data/career/experience.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
+import { visitTarget } from '@/lib/visit/visit-targets';
 import { formatRange, experienceTypeLabels, sortExperiences } from '../timeline.helpers';
 import { TimelineItem } from './TimelineItem';
 import styles from '../Timeline.module.css';
@@ -40,6 +41,7 @@ export function ExperienceList() {
             accent={item.accent}
             index={index}
             date={date}
+            target={visitTarget('experience', item.id)}
             badge={
               <>
                 <span className={styles.type} data-type={item.type}>

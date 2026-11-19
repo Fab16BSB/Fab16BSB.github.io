@@ -10,6 +10,7 @@ import type { IconName } from '@/types/ui.types';
 import { CopyButton } from '@/components/ui/CopyButton/CopyButton';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { LanguageFlag } from '@/components/ui/LanguageFlag/LanguageFlag';
+import { visitTarget } from '@/lib/visit/visit-targets';
 import { PublicationEssentials } from './PublicationEssentials';
 import { pickPublicationVersion, sortPublicationLinks } from '../publications.helpers';
 import styles from '../Publications.module.css';
@@ -63,6 +64,7 @@ export function PublicationCard({
     <article
       className={styles.paper}
       style={{ '--reveal-delay': `${index * 60}ms` } as CSSProperties}
+      data-visit-target={visitTarget('publication', publication.id)}
       data-reveal
     >
       <div className={styles.paperYear}>

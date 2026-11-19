@@ -3,9 +3,11 @@
 ========================================================================= */
 import { useMemo, useState } from 'react';
 import videosRaw from '@/data/feeds/youtube-videos.json';
+import { useVisitReveal } from '@/hooks/sections/useVisitReveal';
 import { getSearchIndex, searchDocuments } from '@/lib/search/search-engine';
 import { videoSearchFields } from '@/lib/search/search-fields';
 import { rankSearchResults } from '@/lib/search/search-rank';
+import { visitTargetPrefix } from '@/lib/visit/visit-targets';
 import { useSemanticSearch } from '@/search/useSemanticSearch';
 import type { Locale } from '@/types/common.types';
 import type { YoutubeVideo } from '@/types/youtube.types';
@@ -36,6 +38,16 @@ export function useVideos(locale: Locale) {
 
   // Année sélectionnée.
   const [year, setYear] = useState('all');
+
+  // Remet la recherche, l'année et le type à zéro.
+  const resetFilters = () => {
+    setQuery('');
+    setYear('all');
+    setFilter('all');
+  };
+
+  // Une visite guidée peut demander une vidéo précise : on montre tout.
+  useVisitReveal([visitTargetPrefix('video')], resetFilters);
 
   // Années disponibles, de la plus récente à la plus ancienne.
   const years = useMemo(
@@ -108,13 +120,6 @@ export function useVideos(locale: Locale) {
 
   // Le filtre de type est exclu : les onglets restent toujours visibles.
   const hasFilters = query.length > 0 || year !== 'all';
-
-  // Remet la recherche, l'année et le type à zéro.
-  const resetFilters = () => {
-    setQuery('');
-    setYear('all');
-    setFilter('all');
-  };
 
   return {
     filter,

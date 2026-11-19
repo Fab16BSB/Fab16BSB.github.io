@@ -11,6 +11,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading';
 import { SemanticHint } from '@/components/ui/SemanticSearch/SemanticHint';
 import { Select } from '@/components/ui/Select/Select';
 import { Tabs } from '@/components/ui/Tabs/Tabs';
+import { visitTarget } from '@/lib/visit/visit-targets';
 import { useVideos, type VideoFilter } from './useVideos';
 import { formatVideoDate } from './videos.helpers';
 import styles from './Videos.module.css';
@@ -105,6 +106,7 @@ export function Videos() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ '--reveal-delay': `${Math.min(index, 9) * 50}ms` } as CSSProperties}
+                data-visit-target={visitTarget('video', video.id)}
                 data-reveal
               >
                 {/* Miniature remplacée par le fallback si elle ne charge pas. */}

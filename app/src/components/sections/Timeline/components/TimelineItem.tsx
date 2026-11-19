@@ -12,6 +12,7 @@ type TimelineItemProps = {
   accent: Accent;
   index: number;
   date: string;
+  target?: string;
   badge?: ReactNode;
   children: ReactNode;
 };
@@ -20,7 +21,7 @@ type TimelineItemProps = {
   COMPOSANT : TimelineItem
   Coquille commune d'une étape : date, rail, point et carte.
 ========================================================================= */
-export function TimelineItem({ accent, index, date, badge, children }: TimelineItemProps) {
+export function TimelineItem({ accent, index, date, target, badge, children }: TimelineItemProps) {
   return (
     <li
       className={styles.item}
@@ -30,6 +31,7 @@ export function TimelineItem({ accent, index, date, badge, children }: TimelineI
           '--reveal-delay': `${index * 60}ms`,
         } as CSSProperties
       }
+      data-visit-target={target}
       data-reveal
     >
       <div className={styles.itemDate}>{date}</div>

@@ -6,6 +6,7 @@ import { useI18n } from '@/i18n/useI18n';
 import type { Project } from '@/types/project.types';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { NotebookCover } from '@/components/ui/NotebookCover/NotebookCover';
+import { visitTarget } from '@/lib/visit/visit-targets';
 import styles from './ProjectCard.module.css';
 
 /* =========================================================================
@@ -30,6 +31,7 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
       className={styles.card}
       style={accentStyle}
       onClick={() => onOpen(project)}
+      data-visit-target={visitTarget('project', project.id)}
       data-reveal
     >
       <span

@@ -4,6 +4,7 @@
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import type { TeachingCourse } from '@/types/teaching.types';
+import { visitTarget } from '@/lib/visit/visit-targets';
 import { formatCourseYears, formatHours } from '../teaching.helpers';
 import { DistributionHelp } from './DistributionHelp';
 import styles from '../Teaching.module.css';
@@ -49,7 +50,10 @@ export function CourseTable({ courses }: CourseTableProps) {
         {/* Lignes des cours filtrés. */}
         <tbody>
           {courses.map((course) => (
-            <tr key={course.id}>
+            <tr
+              key={course.id}
+              data-visit-target={visitTarget('course', course.id)}
+            >
               <td className={styles.yearCell}>
                 <span className={styles.dateTag}>
                   <Icon name="calendar" size={12} />

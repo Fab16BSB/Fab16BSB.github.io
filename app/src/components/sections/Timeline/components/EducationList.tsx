@@ -4,6 +4,7 @@
 import { education } from '@/data/career/education.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
+import { visitTarget } from '@/lib/visit/visit-targets';
 import { formatRange } from '../timeline.helpers';
 import { TimelineItem } from './TimelineItem';
 import styles from '../Timeline.module.css';
@@ -28,6 +29,7 @@ export function EducationList() {
             accent={item.accent}
             index={index}
             date={date}
+            target={visitTarget('education', item.id)}
           >
             <h3 className={styles.title}>{loc(item.degree)}</h3>
             {item.detail && <p className={styles.description}>{loc(item.detail)}</p>}
@@ -42,6 +44,7 @@ export function EducationList() {
                 loc(item.school)
               )}
             </p>
+
 
             {/* Liens associés au diplôme. */}
             {item.links && (

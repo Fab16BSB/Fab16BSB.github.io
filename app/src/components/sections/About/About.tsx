@@ -21,7 +21,7 @@ export function About() {
       <div className={`container ${styles.grid}`}>
 
         {/* Identité : nom, rôle et localisation. */}
-        <header className={styles.header} data-reveal>
+        <header className={styles.header} data-reveal data-visit-target="about-profile">
           <span className="eyebrow">
             <Icon name="user" size={20} />
             {t('about.eyebrow')}

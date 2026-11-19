@@ -1,11 +1,13 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { projects } from '@/data/content/projects.data';
+import { useVisitReveal } from '@/hooks/sections/useVisitReveal';
 import { getSearchIndex, searchDocuments } from '@/lib/search/search-engine';
 import { projectSearchFields } from '@/lib/search/search-fields';
 import { rankSearchResults } from '@/lib/search/search-rank';
+import { visitTargetPrefix } from '@/lib/visit/visit-targets';
 import { useSemanticSearch } from '@/search/useSemanticSearch';
 import type { Locale } from '@/types/common.types';
 import type { Project, ProjectCategory } from '@/types/project.types';
@@ -41,10 +43,44 @@ export function useProjects(locale: Locale) {
   // Projet ouvert dans la modale, ou `null`.
   const [selected, setSelected] = useState<Project | null>(null);
 
-  // Tout changement de filtre replie la liste.
+  // Évite de replier la liste juste après une demande de visite.
+  const skipCollapseRef = useRef(false);
+
+  // Minuteur de fin de révélation, annulé au démontage.
+  const collapseTimerRef = useRef<number | undefined>(undefined);
+
+  // Annule le minuteur de révélation au démontage.
+  useEffect(
+    () => () => window.clearTimeout(collapseTimerRef.current),
+    [],
+  );
+
+  // Tout changement de filtre replie la liste, sauf pendant une révélation.
   useEffect(() => {
-    setExpanded(false);
+    if (skipCollapseRef.current) {
+      skipCollapseRef.current = false;
+    } else {
+      setExpanded(false);
+    }
   }, [active, year, query]);
+
+  // Réinitialise la recherche et l'année, sans toucher à la catégorie.
+  const resetFilters = useCallback(() => {
+    setQuery('');
+    setYear('all');
+  }, []);
+
+  // Une visite guidée peut demander un projet précis : on montre tout.
+  useVisitReveal([visitTargetPrefix('project')], () => {
+    skipCollapseRef.current = true;
+    setActiveState('all');
+    resetFilters();
+    setExpanded(true);
+    window.clearTimeout(collapseTimerRef.current);
+    collapseTimerRef.current = window.setTimeout(() => {
+      skipCollapseRef.current = false;
+    }, 200);
+  });
 
   // Années disponibles, de la plus récente à la plus ancienne.
   const years = useMemo(() => getProjectYears(projects), []);
@@ -123,12 +159,6 @@ export function useProjects(locale: Locale) {
   // Change de catégorie et réinitialise l'année.
   const setActive = useCallback((next: ProjectFilter) => {
     setActiveState(next);
-    setYear('all');
-  }, []);
-
-  // Réinitialise la recherche et l'année, sans toucher à la catégorie.
-  const resetFilters = useCallback(() => {
-    setQuery('');
     setYear('all');
   }, []);
 
