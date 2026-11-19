@@ -9,13 +9,20 @@ import type {
   KnowledgeRecommendationOptions,
 } from '@/types/knowledge.types';
 import { KNOWLEDGE_RANKING, getKnowledgeSuggestionWeight } from './knowledge.config';
-import { isContentNode } from './knowledge-index';
+import { isContentNode } from './knowledge-nodes';
 
 /* =========================================================================
   HELPERS
 ========================================================================= */
 
-/** Relie un contenu aux formations et expériences qu'il déclare. */
+/**
+ * Relie un contenu aux formations et expériences qu'il déclare.
+ *
+ * @param graph - Graphe de connaissances.
+ * @param source - Contenu de départ.
+ * @param options - Filtres de nature et score minimal.
+ * @returns Les recommandations structurelles, ou une liste vide sous le seuil.
+ */
 export function rankContextRecommendations(
   graph: KnowledgeGraph,
   source: KnowledgeContentNode,

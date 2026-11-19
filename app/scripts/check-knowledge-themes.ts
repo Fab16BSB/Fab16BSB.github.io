@@ -12,7 +12,8 @@
 import { education } from '../src/data/career/education.data';
 import { experiences } from '../src/data/career/experience.data';
 import { getKnowledgeGraph } from '../src/lib/knowledge/knowledge-index';
-import type { KnowledgeContentNode, KnowledgeNode, KnowledgeThemeId } from '../src/types/knowledge.types';
+import { isContentNode } from '../src/lib/knowledge/knowledge-nodes';
+import type { KnowledgeNode, KnowledgeThemeId } from '../src/types/knowledge.types';
 
 /* =========================================================================
   CONFIGURATION
@@ -30,16 +31,6 @@ const problems: string[] = [];
 /* =========================================================================
   HELPERS
 ========================================================================= */
-
-/**
- * Restreint un nœud à un contenu.
- *
- * @param node - Nœud du graphe.
- * @returns `true` si le nœud n'est ni un thème ni un concept.
- */
-function isContentNode(node: KnowledgeNode): node is KnowledgeContentNode {
-  return node.kind !== 'theme' && node.kind !== 'concept';
-}
 
 /**
  * Vérifie les thèmes attendus et interdits d'un nœud.
@@ -65,20 +56,6 @@ function expectThemes(
   for (const theme of expected.excludes ?? []) {
     if (node.themes.includes(theme)) {
       problems.push(`${nodeId} ne devrait pas être dans « ${theme} ».`);
-    }
-  }
-}
-
-/**
- * Vérifie qu'aucun contenu d'une nature donnée ne porte un thème interdit.
- *
- * @param kind - Nature de contenu.
- * @param theme - Thème interdit.
- */
-function expectNoKindTheme(kind: KnowledgeNode['kind'], theme: KnowledgeThemeId): void {
-  for (const node of graph.nodes) {
-    if (node.kind === kind && node.themes.includes(theme)) {
-      problems.push(`${node.id} (${kind}) ne devrait pas être dans « ${theme} ».`);
     }
   }
 }

@@ -103,52 +103,6 @@ export function resolveTermLabels(
    ARTICLES MEDIUM
    ───────────────────────────────────────────────────────────────────────── */
 
-/** Nombre de tags communs qui identifient deux traductions d'un article. */
-const TRANSLATION_TAG_COUNT = 4;
-
-/**
- * Compte les tags communs à deux articles Medium.
- *
- * @param left - Tags du premier article.
- * @param right - Tags du second article.
- * @returns Le nombre de tags identiques, sans tenir compte de la casse.
- */
-function sharedArticleTagCount(left: string[], right: string[]): number {
-  const rightTags = new Set(right.map((tag) => tag.toLowerCase()));
-  return left.filter((tag) => rightTags.has(tag.toLowerCase())).length;
-}
-
-/**
- * Indexe les traductions Medium d'un même article.
- *
- * @param posts - Articles Medium du portfolio.
- * @returns Une table `id d'article → traductions par langue`.
- */
-export function buildArticleTranslationIndex(
-  posts: MediumPost[],
-): Map<string, Map<Locale, MediumPost>> {
-  const index = new Map<string, Map<Locale, MediumPost>>();
-
-  for (const post of posts) {
-    const translations = new Map<Locale, MediumPost>();
-
-    for (const candidate of posts) {
-      const isSamePost = candidate.id === post.id;
-      const isTranslation =
-        sharedArticleTagCount(post.tags, candidate.tags) >= TRANSLATION_TAG_COUNT;
-
-      if (!isSamePost && !isTranslation) continue;
-      if (candidate.language !== 'unknown') {
-        translations.set(candidate.language, candidate);
-      }
-    }
-
-    index.set(post.id, translations);
-  }
-
-  return index;
-}
-
 /**
  * Retourne le titre d'un article Medium dans la langue courante.
  *

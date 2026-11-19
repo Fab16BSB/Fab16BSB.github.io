@@ -14,10 +14,8 @@ import type {
   KnowledgeContentKind,
   KnowledgeRelatedContent,
 } from '@/types/knowledge.types';
-import {
-  buildArticleTranslationIndex,
-  buildRelatedContentItem,
-} from './relatedContent.helpers';
+import { buildArticleTranslationIndex } from '@/lib/medium-articles';
+import { buildRelatedContentItem } from './relatedContent.helpers';
 
 /* =========================================================================
   INTERFACES

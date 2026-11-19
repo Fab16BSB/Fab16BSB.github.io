@@ -10,21 +10,14 @@ import type {
   KnowledgeRecommendationOptions,
 } from '@/types/knowledge.types';
 import { KNOWLEDGE_RANKING, getKnowledgeSuggestionWeight } from './knowledge.config';
+import { areArticleTranslations } from '@/lib/medium-articles';
+import { isContentNode } from './knowledge-nodes';
 import { getSimilarityNeighbors } from './knowledge-similarity';
+import { compareRecommendations } from './knowledge-sort';
 
 /* =========================================================================
   HELPERS
 ========================================================================= */
-
-/**
- * Restreint un nœud à une nature de contenu.
- *
- * @param node - Nœud du graphe.
- * @returns `true` si le nœud n'est ni un thème ni un concept.
- */
-function isContentNode(node: KnowledgeNode): node is KnowledgeContentNode {
-  return node.kind !== 'theme' && node.kind !== 'concept';
-}
 
 /**
  * Indique si deux contenus appartiennent à la même période.
@@ -48,14 +41,17 @@ function isSamePeriod(left: KnowledgeNode, right: KnowledgeNode): boolean {
  * @param keptTags - Tags des articles déjà retenus.
  * @returns `true` si l'article est un doublon.
  */
-function isDuplicateArticle(node: KnowledgeNode, keptTags: string[][]): boolean {
+function isDuplicateArticle(
+  node: KnowledgeNode,
+  keptTags: string[][],
+): boolean {
   if (node.kind !== 'article') return false;
 
-  const tags = node.tags.map((tag) => tag.toLowerCase());
-  const duplicate = keptTags.some(
-    (kept) => kept.filter((tag) => tags.includes(tag)).length >= 4,
+  const duplicate = keptTags.some((kept) =>
+    areArticleTranslations(kept, node.tags),
   );
-  if (!duplicate) keptTags.push(tags);
+
+  if (!duplicate) keptTags.push(node.tags);
 
   return duplicate;
 }
@@ -117,11 +113,6 @@ export function rankSimilarityRecommendations(
   }
 
   return recommendations
-    .sort(
-      (left, right) =>
-        right.score - left.score ||
-        (right.node.year ?? 0) - (left.node.year ?? 0) ||
-        left.node.id.localeCompare(right.node.id),
-    )
+    .sort(compareRecommendations)
     .slice(0, limit);
 }

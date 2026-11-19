@@ -4,9 +4,7 @@
 ========================================================================= */
 import type {
   KnowledgeContentKind,
-  KnowledgeContentNode,
   KnowledgeGraph,
-  KnowledgeNode,
 } from '@/types/knowledge.types';
 import { extractContentNodes } from './knowledge-extract';
 import { buildKnowledgeGraph } from './knowledge-graph';
@@ -15,22 +13,25 @@ import { buildKnowledgeGraph } from './knowledge-graph';
   TYPES ET CONSTANTES
 ========================================================================= */
 
+/** Index du graphe, construit une fois puis réutilisé. */
 type KnowledgeIndex = {
   graph: KnowledgeGraph;
 };
 
+/** Index mémoïsé, partagé par tous les appelants. */
 let cachedIndex: KnowledgeIndex | null = null;
 
 /* =========================================================================
   HELPERS
 ========================================================================= */
 
-/** Indique si un nœud du graphe est un contenu. */
-export function isContentNode(node: KnowledgeNode): node is KnowledgeContentNode {
-  return node.kind !== 'theme' && node.kind !== 'concept';
-}
-
-/** Retourne l'identifiant global d'un contenu. */
+/**
+ * Construit l'identifiant global d'un contenu.
+ *
+ * @param kind - Nature du contenu.
+ * @param sourceId - Identifiant de la source.
+ * @returns L'identifiant préfixé.
+ */
 function knowledgeNodeId(
   kind: KnowledgeContentKind,
   sourceId: string,
@@ -38,14 +39,23 @@ function knowledgeNodeId(
   return `${kind}:${sourceId}`;
 }
 
-/** Normalise l'identifiant d'un projet, avec ou sans préfixe. */
+/**
+ * Normalise l'identifiant d'un projet, avec ou sans préfixe.
+ *
+ * @param projectId - Identifiant brut ou déjà préfixé.
+ * @returns L'identifiant `project:<id>`.
+ */
 export function projectNodeId(projectId: string): string {
   return projectId.startsWith('project:')
     ? projectId
     : knowledgeNodeId('project', projectId);
 }
 
-/** Construit l'index du graphe à la première demande, puis le réutilise. */
+/**
+ * Construit l'index du graphe à la première demande, puis le réutilise.
+ *
+ * @returns L'index mémoïsé.
+ */
 export function getKnowledgeIndex(): KnowledgeIndex {
   if (!cachedIndex) {
     cachedIndex = {
@@ -59,7 +69,11 @@ export function getKnowledgeIndex(): KnowledgeIndex {
   API PUBLIQUE
 ========================================================================= */
 
-/** Retourne le graphe de connaissances complet du portfolio. */
+/**
+ * Retourne le graphe de connaissances complet du portfolio.
+ *
+ * @returns Le graphe construit.
+ */
 export function getKnowledgeGraph(): KnowledgeGraph {
   return getKnowledgeIndex().graph;
 }

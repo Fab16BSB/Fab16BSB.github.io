@@ -18,14 +18,11 @@ type RelatedContentProps = {
   minScore?: number;
   kinds?: KnowledgeContentKind[];
   excludeKinds?: KnowledgeContentKind[];
-  titleKey?: string;
-  subtitleKey?: string;
   embedded?: boolean;
   showHeader?: boolean;
   emptyState?: ReactNode;
   onOpenProject?: (projectId: string) => void;
   onNavigate?: (href: string) => void;
-  className?: string;
 };
 
 /* =========================================================================
@@ -38,14 +35,11 @@ export function RelatedContent({
   minScore,
   kinds,
   excludeKinds,
-  titleKey = 'knowledge.related.title',
-  subtitleKey = 'knowledge.related.subtitle',
   embedded = false,
   showHeader = true,
   emptyState,
   onOpenProject,
   onNavigate,
-  className,
 }: RelatedContentProps) {
   const { t } = useI18n();
   const titleId = useId();
@@ -58,11 +52,7 @@ export function RelatedContent({
   if (items.length > 0 || empty) {
     result = (
       <section
-        className={[
-          styles.section,
-          embedded ? styles.embedded : '',
-          className ?? '',
-        ]
+        className={[styles.section, embedded ? styles.embedded : '']
           .filter(Boolean)
           .join(' ')}
         aria-labelledby={showHeader ? titleId : undefined}
@@ -71,9 +61,11 @@ export function RelatedContent({
         {showHeader && (
           <div className={styles.header}>
             <h4 className={styles.title} id={titleId}>
-              {t(titleKey)}
+              {t('knowledge.related.title')}
             </h4>
-            {subtitleKey && <p className={styles.subtitle}>{t(subtitleKey)}</p>}
+            <p className={styles.subtitle}>
+              {t('knowledge.related.subtitle')}
+            </p>
           </div>
         )}
 

@@ -12,64 +12,106 @@ import {
   rankProjectFallback,
   rankReciprocalProjectRecommendations,
 } from './knowledge-fallback';
-import { getKnowledgeIndex, isContentNode, projectNodeId } from './knowledge-index';
+import { areArticleTranslations } from '@/lib/medium-articles';
+import { getKnowledgeIndex, projectNodeId } from './knowledge-index';
+import { isContentNode } from './knowledge-nodes';
 import { rankSimilarityRecommendations } from './knowledge-rank';
+import {
+  compareProjectsFirst,
+  compareRecommendations,
+} from './knowledge-sort';
 import { rankDirectSkillRecommendations } from './knowledge-signals';
 
 /* =========================================================================
   HELPERS
 ========================================================================= */
 
-/** Fusionne plusieurs listes sans doublon, dans l'ordre de priorité. */
+/**
+ * Indique si un article est déjà représenté par une de ses traductions.
+ *
+ * @param node - Contenu candidat.
+ * @param merged - Recommandations déjà retenues.
+ * @returns `true` si une traduction est déjà présente.
+ */
+function isArticleTranslationDuplicate(
+  node: KnowledgeRecommendation['node'],
+  merged: KnowledgeRecommendation[],
+): boolean {
+  return (
+    node.kind === 'article' &&
+    merged.some(
+      (item) =>
+        item.node.kind === 'article' &&
+        areArticleTranslations(item.node.tags, node.tags),
+    )
+  );
+}
+
+/**
+ * Fusionne plusieurs listes sans doublon, en gardant le meilleur score.
+ *
+ * @param groups - Listes de recommandations par ordre de priorité.
+ * @param limit - Nombre maximal de recommandations.
+ * @returns Les recommandations fusionnées et triées.
+ */
 function mergeKnowledgeRecommendations(
   groups: KnowledgeRecommendation[][],
   limit: number,
 ): KnowledgeRecommendation[] {
-  const seen = new Set<string>();
+  const byId = new Map<string, KnowledgeRecommendation>();
   const merged: KnowledgeRecommendation[] = [];
 
   for (const group of groups) {
     for (const recommendation of group) {
-      if (seen.has(recommendation.node.id)) continue;
-      seen.add(recommendation.node.id);
+      const existing = byId.get(recommendation.node.id);
+
+      if (existing) {
+        if (recommendation.score > existing.score) {
+          // Le premier objet garde ses métadonnées (dont `context`).
+          byId.set(recommendation.node.id, {
+            ...existing,
+            score: recommendation.score,
+          });
+        }
+
+        continue;
+      }
+
+      if (isArticleTranslationDuplicate(recommendation.node, merged)) {
+        continue;
+      }
+
+      byId.set(recommendation.node.id, recommendation);
       merged.push(recommendation);
     }
   }
 
-  return sortKnowledgeRecommendations(merged).slice(0, limit);
+  return [...byId.values()].sort(compareRecommendations).slice(0, limit);
 }
 
-/** Trie des recommandations par score, puis par année et identifiant. */
-function sortKnowledgeRecommendations(
-  recommendations: KnowledgeRecommendation[],
-): KnowledgeRecommendation[] {
-  return [...recommendations].sort(
-    (left, right) =>
-      right.score - left.score ||
-      (right.node.year ?? 0) - (left.node.year ?? 0) ||
-      left.node.id.localeCompare(right.node.id),
-  );
-}
-
-/** Place les projets en tête des recommandations d'une compétence. */
+/**
+ * Place les projets en tête des recommandations d'une compétence.
+ *
+ * @param recommendations - Recommandations à réordonner.
+ * @returns Une nouvelle liste triée.
+ */
 function prioritizeProjects(
   recommendations: KnowledgeRecommendation[],
 ): KnowledgeRecommendation[] {
-  return [...recommendations].sort(
-    (left, right) =>
-      (left.node.kind === 'project' ? 0 : 1) -
-        (right.node.kind === 'project' ? 0 : 1) ||
-      right.score - left.score ||
-      (right.node.year ?? 0) - (left.node.year ?? 0) ||
-      left.node.id.localeCompare(right.node.id),
-  );
+  return [...recommendations].sort(compareProjectsFirst);
 }
 
 /* =========================================================================
   API PUBLIQUE
 ========================================================================= */
 
-/** Retourne les contenus proches d'un nœud du graphe. */
+/**
+ * Retourne les contenus proches d'un nœud du graphe.
+ *
+ * @param nodeId - Identifiant global du contenu de départ.
+ * @param options - Filtres de nature, score minimal et limite.
+ * @returns Les recommandations classées.
+ */
 export function getKnowledgeRecommendations(
   nodeId: string,
   options: KnowledgeRecommendationOptions = {},
@@ -134,7 +176,13 @@ export function getKnowledgeRecommendations(
   );
 }
 
-/** Recommande les projets proches d'un projet, par thème et technologies. */
+/**
+ * Recommande les projets proches d'un projet, par thème et technologies.
+ *
+ * @param projectId - Identifiant du projet, avec ou sans préfixe.
+ * @param limit - Nombre maximal de recommandations.
+ * @returns Les projets proches classés.
+ */
 export function getSimilarProjects(
   projectId: string,
   limit = 4,

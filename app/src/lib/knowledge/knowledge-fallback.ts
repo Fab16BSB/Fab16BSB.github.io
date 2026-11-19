@@ -9,7 +9,8 @@ import type {
   KnowledgeRecommendationOptions,
 } from '@/types/knowledge.types';
 import { KNOWLEDGE_RANKING, getKnowledgeSuggestionWeight } from './knowledge.config';
-import { isContentNode } from './knowledge-index';
+import { isContentNode } from './knowledge-nodes';
+import { compareRecommendations } from './knowledge-sort';
 import { getSimilarityNeighbors } from './knowledge-similarity';
 
 /* =========================================================================
@@ -29,7 +30,14 @@ const PROJECT_FALLBACK_TERM_SCORE = 0.08;
   HELPERS
 ========================================================================= */
 
-/** Classe les projets proches par recouvrement de thèmes et de concepts. */
+/**
+ * Classe les projets proches par recouvrement de thèmes et de concepts.
+ *
+ * @param graph - Graphe de connaissances.
+ * @param projectId - Identifiant du projet de départ.
+ * @param limit - Nombre maximal de recommandations.
+ * @returns Les projets classés, ou une liste vide si la source est invalide.
+ */
 export function rankProjectFallback(
   graph: KnowledgeGraph,
   projectId: string,
@@ -78,16 +86,18 @@ export function rankProjectFallback(
     .filter(
       (entry) => entry.score >= KNOWLEDGE_RANKING.projectSimilarityMinScore,
     )
-    .sort(
-      (left, right) =>
-        right.score - left.score ||
-        (right.node.year ?? 0) - (left.node.year ?? 0) ||
-        left.node.id.localeCompare(right.node.id),
-    )
+    .sort(compareRecommendations)
     .slice(0, limit);
 }
 
-/** Ajoute les projets qui recommandent déjà la source. */
+/**
+ * Ajoute les projets qui recommandent déjà la source.
+ *
+ * @param graph - Graphe de connaissances.
+ * @param source - Contenu de départ.
+ * @param options - Filtres de nature et score minimal.
+ * @returns Les projets symétriques classés.
+ */
 export function rankReciprocalProjectRecommendations(
   graph: KnowledgeGraph,
   source: KnowledgeContentNode,
