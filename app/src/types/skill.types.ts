@@ -48,22 +48,33 @@ export type KnowledgeDomain = {
 /**
  * Compétence affichée dans la section Skills.
  *
+ * Les alias servent à la correspondance, pas à l'affichage : ils sont comparés
+ * sans casse, accents ni ponctuation, et n'ont pas à répéter le nom.
+ *
  * @property {string} id - Identifiant stable.
  * @property {string} name - Nom affiché.
+ * @property {string[]} [aliases] - Graphies supplémentaires reconnues dans les stacks, les tags de cours et la recherche.
  * @property {SkillCategory} category - Catégorie de compétence.
+ * @property {string[]} [conceptIds] - Concepts associés à la compétence, identifiants de `knowledgeConcepts`.
  * @property {string} [icon] - Fichier d'icône.
  * @property {string} [monogram] - Texte affiché si aucune icône n'est disponible.
  * @property {Localized} [context] - Contexte optionnel.
  * @property {EducationId[]} [educationIds] - Formations pendant lesquelles la compétence a été utilisée.
  * @property {ExperienceId[]} [experienceIds] - Expériences pendant lesquelles la compétence a été utilisée.
+ * @property {string[]} [projectIds] - Projets où la compétence est utilisée.
+ * @property {string[]} [mediumPostIds] - Articles Medium associés.
  */
 export type Skill = {
   id: string;
   name: string;
+  aliases?: string[];
   category: SkillCategory;
+  conceptIds?: string[];
   icon?: string;
   monogram?: string;
   context?: Localized;
   educationIds?: EducationId[];
   experienceIds?: ExperienceId[];
+  projectIds?: string[];
+  mediumPostIds?: string[];
 };

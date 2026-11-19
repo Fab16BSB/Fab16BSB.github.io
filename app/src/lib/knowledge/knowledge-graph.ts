@@ -12,6 +12,7 @@ import type {
 } from '@/types/knowledge.types';
 import { KNOWLEDGE_RANKING } from './knowledge.config';
 import type { KnowledgeExtraction } from './knowledge-extract';
+import { localizedSame } from './knowledge-labels';
 import { normalizeKnowledgeText } from './knowledge-normalize';
 import { getSimilarityNeighbors } from './knowledge-similarity';
 
@@ -40,16 +41,6 @@ const TEACHING_KINDS = new Set<KnowledgeContentNode['kind']>([
 ========================================================================= */
 
 /**
- * Construit un libellé identique dans les trois langues.
- *
- * @param value - Libellé invariant.
- * @returns Le libellé traduit.
- */
-function sameLabel(value: string): KnowledgeNode['label'] {
-  return { fr: value, en: value, es: value };
-}
-
-/**
  * Crée les nœuds pivots réellement utilisés par au moins un contenu.
  *
  * @param themeIds - Thèmes rattachés à un contenu.
@@ -72,7 +63,7 @@ function buildPivotNodes(
       themes: [theme.id],
       terms: [],
       tags: [],
-      text: sameLabel(theme.label.fr),
+      text: localizedSame(theme.label.fr),
     }));
 
   const conceptNodes: KnowledgeNode[] = [...termLabels.entries()]
@@ -82,11 +73,11 @@ function buildPivotNodes(
       id: `concept:${termId}`,
       kind: 'concept',
       sourceId: termId,
-      label: sameLabel(label),
+      label: localizedSame(label),
       themes: [],
       terms: [termId],
       tags: [],
-      text: sameLabel(label),
+      text: localizedSame(label),
     }));
 
   return [...themeNodes, ...conceptNodes];
@@ -223,6 +214,10 @@ function buildContextEdges(nodes: KnowledgeContentNode[]): KnowledgeEdge[] {
     for (const experienceId of node.experienceIds ?? []) {
       add(node.id, `experience:${experienceId}`);
     }
+
+    for (const projectId of node.projectIds ?? []) {
+      add(node.id, `project:${projectId}`);
+    }
   }
 
   return [...edges.values()].sort((left, right) =>
@@ -267,6 +262,58 @@ function mentionsAlternance(node: KnowledgeContentNode): boolean {
   );
 }
 
+/**
+ * Détermine les thèmes d'un nœud de contenu.
+ *
+ * @param node - Nœud extrait des données.
+ * @param knownThemeIds - Thèmes valides de la taxonomie.
+ * @returns Les thèmes dédoublonnés du nœud.
+ */
+function resolveContentThemes(
+  node: KnowledgeContentNode,
+  knownThemeIds: Set<string>,
+): KnowledgeThemeId[] {
+  const themes = new Set<KnowledgeThemeId>(
+    node.themes.filter((theme) => knownThemeIds.has(theme)),
+  );
+  const kindTheme = KIND_THEMES[node.kind];
+
+  if (kindTheme) {
+    themes.add(kindTheme);
+  }
+
+  // Rattache les stages et thèses CIFRE au thème de la formation.
+  if (node.kind === 'experience' && node.educationId) {
+    themes.add('education');
+  }
+
+  const isAcademicProject =
+    node.kind === 'project' &&
+    node.tags.some((tag) => tag.toLowerCase() === 'academic');
+
+  // Rattache les projets académiques au thème de la formation.
+  if (isAcademicProject) {
+    themes.add('education');
+  }
+
+  // Un projet professionnel ou personnel n'est pas une formation,
+  // même s'il mentionne un IUT ou des soutenances.
+  if (node.kind === 'project' && !isAcademicProject) {
+    themes.delete('education');
+  }
+
+  // Filtre ou conserve le thème pédagogique selon le type et le contexte.
+  const keepsTeaching =
+    TEACHING_KINDS.has(node.kind) ||
+    (node.kind === 'project' && mentionsAlternance(node));
+
+  if (!keepsTeaching) {
+    themes.delete('teaching');
+  }
+
+  return [...themes];
+}
+
 /* =========================================================================
   API PUBLIQUE
 ========================================================================= */
@@ -280,40 +327,11 @@ function mentionsAlternance(node: KnowledgeContentNode): boolean {
 export function buildKnowledgeGraph(extraction: KnowledgeExtraction): KnowledgeGraph {
   const knownThemeIds = new Set(knowledgeThemes.map((theme) => theme.id));
 
-  const contentNodes = extraction.nodes.map((node) => {
-    const themes = new Set<KnowledgeThemeId>(
-      node.themes.filter((theme) => knownThemeIds.has(theme)),
-    );
-
-    const kindTheme = KIND_THEMES[node.kind];
-    if (kindTheme) themes.add(kindTheme);
-
-    // Rattache les stages et thèses CIFRE au thème de la formation.
-    if (node.kind === 'experience' && node.educationId) {
-      themes.add('education');
-    }
-
-    // Rattache les projets académiques au thème de la formation.
-    if (
-      node.kind === 'project' &&
-      node.tags.some((tag) => tag.toLowerCase() === 'academic')
-    ) {
-      themes.add('education');
-    }
-
-    // Filtre ou conserve le thème pédagogique selon le type et le contexte.
-    const keepsTeaching =
-      TEACHING_KINDS.has(node.kind) ||
-      (node.kind === 'project' && mentionsAlternance(node));
-    if (!keepsTeaching) themes.delete('teaching');
-
-    // Retourne le nœud enrichi avec ses thèmes et termes filtrés.
-    return {
-      ...node,
-      themes: [...themes],
-      terms: node.terms.filter((term) => extraction.termLabels.has(term)),
-    };
-  });
+  const contentNodes = extraction.nodes.map((node) => ({
+    ...node,
+    themes: resolveContentThemes(node, knownThemeIds),
+    terms: node.terms.filter((term) => extraction.termLabels.has(term)),
+  }));
 
   const pivotNodes = buildPivotNodes(
     new Set(contentNodes.flatMap((node) => node.themes)),

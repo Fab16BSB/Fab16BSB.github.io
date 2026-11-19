@@ -13,8 +13,10 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { knowledgeThemes } from '../src/data/knowledge/knowledge-taxonomy.data';
+import { skills } from '../src/data/career/skills.data';
 import { knowledgeConcepts } from '../src/lib/knowledge/knowledge-concepts';
 import { getKnowledgeGraph } from '../src/lib/knowledge/knowledge-index';
+import { isContentNode } from '../src/lib/knowledge/knowledge-nodes';
 import { KNOWLEDGE_STRUCTURAL_TAGS } from '../src/lib/knowledge/knowledge-structural-tags';
 import {
   includesKnowledgePhrase,
@@ -55,9 +57,7 @@ const TAG_CONTENT_KINDS = new Set([
 ========================================================================= */
 
 /** Contenus du graphe, hors thèmes et concepts. */
-const nodes = getKnowledgeGraph().nodes.filter(
-  (node) => node.kind !== 'theme' && node.kind !== 'concept',
-);
+const nodes = getKnowledgeGraph().nodes.filter(isContentNode);
 
 /** Concepts réellement rattachés à au moins un contenu. */
 const usedTerms = new Set(nodes.flatMap((node) => node.terms));
@@ -97,6 +97,18 @@ const duplicateAliases = [...aliasOwners.entries()]
 /** Concepts dont aucun alias n'est exploitable. */
 const conceptsWithoutAliases = knowledgeConcepts.filter((concept) =>
   concept.aliases.every((alias) => !normalizeKnowledgeText(alias)),
+);
+
+/** Identifiants de concepts connus. */
+const knownConceptIds = new Set(
+  knowledgeConcepts.map((concept) => concept.id),
+);
+
+/** Concepts déclarés par une compétence mais absents de la taxonomie. */
+const unknownSkillConcepts = skills.flatMap((skill) =>
+  (skill.conceptIds ?? [])
+    .filter((id) => !knownConceptIds.has(id))
+    .map((id) => `${skill.id} → ${id}`),
 );
 
 /** Concepts qu'aucun contenu ne référence. */
@@ -273,6 +285,9 @@ const errors = [
   ),
   ...conceptsWithoutAliases.map(
     (concept) => `concept sans alias : ${concept.id}`,
+  ),
+  ...unknownSkillConcepts.map(
+    (link) => `concept inconnu déclaré par une compétence : ${link}`,
   ),
 ];
 

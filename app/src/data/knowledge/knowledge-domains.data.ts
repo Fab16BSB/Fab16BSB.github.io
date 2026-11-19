@@ -1,12 +1,20 @@
 import type { KnowledgeDomain } from '@/types/skill.types';
 
 /**
- * Domaines de connaissance affichés dans la section Compétences.
+ * Domaines de connaissance affichés dans la section Compétences. Les items
+ * servent aussi de source aux concepts du graphe : chaque item possède un
+ * identifiant stable et des alias détectés dans les textes et les tags.
  *
- * Les items servent aussi de source aux concepts du graphe : chaque item
- * possède un identifiant stable et des alias détectés dans les textes/tags.
+ * Élément de type `KnowledgeDomain`.
+ *
+ * @property {KnowledgeDomainId} id - Identifiant du domaine.
+ * @property {string} titleKey - Clé de traduction du titre.
+ * @property {KnowledgeConcept[]} [concepts] - Concepts de haut niveau du domaine.
+ * @property {KnowledgeDomainItem[]} items - Concepts rattachés au domaine.
  */
 export const knowledgeDomains: KnowledgeDomain[] = [
+
+  /** ▸ Vision · imagerie, vidéo et détection d'anomalies */
   {
     id: 'vision',
     titleKey: 'skills.knowledge.domains.vision',
@@ -14,7 +22,13 @@ export const knowledgeDomains: KnowledgeDomain[] = [
       {
         id: 'computer-vision',
         label: 'Computer vision',
-        aliases: ['computer vision', 'vision par ordinateur'],
+        aliases: [
+          'computer vision',
+          'vision',
+          'vision par ordinateur',
+          'vision por computador',
+          'vision por computadora',
+        ],
       },
     ],
     items: [
@@ -30,6 +44,7 @@ export const knowledgeDomains: KnowledgeDomain[] = [
         labelKey: 'anomaly',
         aliases: [
           'anomaly detection',
+          'video anomaly detection',
           'detection d anomalies',
           'deteccion de anomalias',
           'anomalie',
@@ -68,6 +83,7 @@ export const knowledgeDomains: KnowledgeDomain[] = [
       },
     ],
   },
+  /** ▸ NLP · texte, RAG et modèles de langage */
   {
     id: 'nlp',
     titleKey: 'skills.knowledge.domains.nlp',
@@ -76,13 +92,24 @@ export const knowledgeDomains: KnowledgeDomain[] = [
         id: 'nlp',
         label: 'NLP',
         labelKey: 'nlp',
-        aliases: ['nlp', 'natural language processing', 'traitement du langage'],
+        aliases: [
+          'nlp',
+          'natural language processing',
+          'traitement du langage',
+          'procesamiento de lenguaje natural',
+        ],
       },
       {
         id: 'llm',
         label: 'LLM',
         labelKey: 'llm',
-        aliases: ['llm', 'large language model', 'modele de langage'],
+        aliases: [
+          'llm',
+          'large language model',
+          'modele de langage',
+          'modelo de lenguaje',
+          'chatbot',
+        ],
       },
       {
         id: 'rag',
@@ -110,6 +137,7 @@ export const knowledgeDomains: KnowledgeDomain[] = [
       },
     ],
   },
+  /** ▸ ML · apprentissage, modèles et évaluation */
   {
     id: 'ml',
     titleKey: 'skills.knowledge.domains.ml',
@@ -122,12 +150,12 @@ export const knowledgeDomains: KnowledgeDomain[] = [
       {
         id: 'machine-learning',
         label: 'Machine learning',
-        aliases: ['machine learning', 'apprentissage automatique'],
+        aliases: ['machine learning', 'apprentissage automatique', 'aprendizaje automatico', 'ml'],
       },
       {
         id: 'deep-learning',
         label: 'Deep learning',
-        aliases: ['deep learning', 'apprentissage profond'],
+        aliases: ['deep learning', 'apprentissage profond', 'aprendizaje profundo', 'dl'],
       },
     ],
     items: [

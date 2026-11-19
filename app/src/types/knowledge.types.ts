@@ -99,12 +99,16 @@ export type KnowledgeNode = {
  * @property {EducationId} [educationId] - Formation suivie pendant une expérience.
  * @property {EducationId[]} [educationIds] - Formations pendant lesquelles le contenu a été réalisé ou utilisé.
  * @property {ExperienceId[]} [experienceIds] - Expériences pendant lesquelles le contenu a été réalisé ou utilisé.
+ * @property {string[]} [projectIds] - Projets où le contenu est explicitement utilisé.
+ * @property {string[]} [declaredTerms] - Concepts déclarés par la donnée, absents du texte.
  */
 export type KnowledgeContentNode = KnowledgeNode & {
   kind: KnowledgeContentKind;
   educationId?: EducationId;
   educationIds?: EducationId[];
   experienceIds?: ExperienceId[];
+  projectIds?: string[];
+  declaredTerms?: string[];
   isNotebook?: boolean;
 };
 

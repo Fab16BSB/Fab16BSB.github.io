@@ -2,12 +2,15 @@
   HELPERS : extraction des signaux du graphe — fonctions pures
   Détection des thèmes et des concepts, puis création des nœuds de contenu.
 ========================================================================= */
-import { knowledgeThemes } from '@/data/knowledge/knowledge-taxonomy.data';
 import { TAG_ALIASES } from '@/data/knowledge/knowledge-concept-overrides.data';
-import type { KnowledgeContentNode, KnowledgeNode } from '@/types/knowledge.types';
+import type { KnowledgeContentNode } from '@/types/knowledge.types';
 import type { KnowledgeRawNode } from './knowledge-entities';
 import { extractRawNodes } from './knowledge-entities';
-import { knowledgeConcepts } from './knowledge-concepts';
+import {
+  conceptAliases,
+  conceptLabels,
+  detectThemesFromPadded,
+} from './knowledge-matching';
 import { KNOWLEDGE_STRUCTURAL_TAGS } from './knowledge-structural-tags';
 import {
   includesKnowledgePhrase,
@@ -34,55 +37,26 @@ type ConceptMatcher = {
   shortAliases: string[];
 };
 
-/** Termes d'un thème, prêts pour la détection. */
-type ThemeMatcher = {
-  id: (typeof knowledgeThemes)[number]['id'];
-  weight: number;
-  terms: string[];
-};
-
 /* =========================================================================
   CONSTANTES
 ========================================================================= */
 
 /** Concepts préparés pour la détection dans les textes et les tags. */
-const conceptMatchers: ConceptMatcher[] = knowledgeConcepts.map((concept) => {
-  const aliases = concept.aliases.map(normalizeKnowledgeText).filter(Boolean);
-  return {
-    id: concept.id,
-    longAliases: aliases.filter((alias) => !isShortKnowledgeAlias(alias)),
-    shortAliases: aliases.filter((alias) => isShortKnowledgeAlias(alias)),
-  };
-});
-
-/** Libellés des concepts, utilisés pour créer les nœuds pivots. */
-const conceptLabels = new Map<string, string>(
-  knowledgeConcepts.map((concept) => [concept.id, concept.label]),
+const conceptMatchers: ConceptMatcher[] = [...conceptAliases].map(
+  ([id, { normalized }]) => ({
+    id,
+    longAliases: normalized.filter(
+      (alias) => !isShortKnowledgeAlias(alias),
+    ),
+    shortAliases: normalized.filter((alias) =>
+      isShortKnowledgeAlias(alias),
+    ),
+  }),
 );
-
-/** Thèmes préparés avec leurs termes normalisés. */
-const themeMatchers: ThemeMatcher[] = knowledgeThemes.map((theme) => ({
-  id: theme.id,
-  weight: theme.weight,
-  terms: theme.terms.map(normalizeKnowledgeText).filter(Boolean),
-}));
 
 /* =========================================================================
   HELPERS
 ========================================================================= */
-
-/**
- * Détecte les thèmes présents dans un texte normalisé.
- *
- * @param paddedText - Texte normalisé entouré d'espaces.
- * @returns Les thèmes triés par poids décroissant.
- */
-function detectThemes(paddedText: string): KnowledgeNode['themes'] {
-  return themeMatchers
-    .filter((theme) => theme.terms.some((term) => includesKnowledgePhrase(paddedText, term)))
-    .sort((left, right) => right.weight - left.weight || left.id.localeCompare(right.id))
-    .map((theme) => theme.id);
-}
 
 /**
  * Détecte les concepts techniques d'un contenu.
@@ -168,6 +142,9 @@ function enrichNode(
   const tagSet = rawNode.tags.map(normalizeKnowledgeText).filter(Boolean);
   const concepts = detectConcepts(paddedText, tagSet);
   const looseTerms = extractLooseTerms(rawNode.tags, termLabels);
+  const declaredConcepts = (rawNode.conceptIds ?? []).filter((id) =>
+    conceptLabels.has(id),
+  );
 
   return {
     id: `${rawNode.kind}:${rawNode.sourceId}`,
@@ -179,9 +156,11 @@ function enrichNode(
     ...(rawNode.educationId ? { educationId: rawNode.educationId } : {}),
     ...(rawNode.educationIds?.length ? { educationIds: rawNode.educationIds } : {}),
     ...(rawNode.experienceIds?.length ? { experienceIds: rawNode.experienceIds } : {}),
+    ...(rawNode.projectIds?.length ? { projectIds: rawNode.projectIds } : {}),
+    ...(declaredConcepts.length ? { declaredTerms: declaredConcepts } : {}),
     ...(rawNode.isNotebook ? { isNotebook: true } : {}),
-    themes: detectThemes(themeText),
-    terms: [...new Set([...concepts, ...looseTerms])].sort(),
+    themes: detectThemesFromPadded(themeText),
+    terms: [...new Set([...concepts, ...looseTerms, ...declaredConcepts])].sort(),
     tags: rawNode.tags,
     text: rawNode.text,
   };

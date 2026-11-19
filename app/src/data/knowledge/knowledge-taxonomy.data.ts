@@ -1,7 +1,9 @@
 import type { KnowledgeTheme } from '@/types/knowledge.types';
 
 /**
- * Thèmes qui relient les contenus du portfolio.
+ * Thèmes qui relient les contenus du portfolio. L'ordre n'a pas d'importance :
+ * le calcul trie les thèmes par poids, et les termes sont comparés sans accent
+ * ni casse pour la seule détection.
  *
  * Élément de type `KnowledgeTheme`.
  *
@@ -9,9 +11,6 @@ import type { KnowledgeTheme } from '@/types/knowledge.types';
  * @property {Localized} label - Libellé en FR / EN / ES.
  * @property {number} weight - Poids utilisé pour ordonner les thèmes détectés.
  * @property {string[]} terms - Termes et expressions qui déclenchent le thème.
- *
- * L'ordre n'a pas d'importance : le calcul trie les thèmes par poids. Les termes
- * sont comparés sans accent ni casse et servent uniquement à la détection.
  */
 export const knowledgeThemes: KnowledgeTheme[] = [
 
@@ -121,6 +120,11 @@ export const knowledgeThemes: KnowledgeTheme[] = [
     },
     terms: [
       'machine learning',
+      'intelligence artificielle',
+      'artificial intelligence',
+      'inteligencia artificial',
+      'ia',
+      'ai',
       'apprentissage automatique',
       'aprendizaje automatico',
       'deep learning',
@@ -426,6 +430,7 @@ export const knowledgeThemes: KnowledgeTheme[] = [
       'apprenticeship',
       'alternant',
       'apprenti',
+      'alternancia',
       'co responsable de l alternance',
       'responsable de l alternance',
       'forum des metiers',
@@ -614,6 +619,37 @@ export const knowledgeThemes: KnowledgeTheme[] = [
       en: 'Education and degrees',
       es: 'Formación y títulos',
     },
-    terms: [],
+    terms: [
+      'formation',
+      'formations',
+      'diplome',
+      'diplomes',
+      'diplome universitaire',
+      'doctorat',
+      'doctorate',
+      'doctorado',
+      'these',
+      'thesis',
+      'tesis',
+      'phd',
+      'master',
+      'licence',
+      'bachelor',
+      'but',
+      'dut',
+      'universite',
+      'university',
+      'universidad',
+      'ecole',
+      'school',
+      'escuela',
+      'degree',
+      'education',
+      'formacion',
+      'titre',
+      'titulo',
+      'grado',
+      'master',
+    ],
   },
 ];

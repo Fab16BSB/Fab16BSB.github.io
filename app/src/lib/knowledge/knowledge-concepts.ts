@@ -1,6 +1,7 @@
 /* =========================================================================
   HELPERS : concepts du graphe — fonctions pures
-  Génération des concepts depuis les compétences et les domaines de connaissance.
+  Génération des concepts depuis les compétences, les domaines et les
+  concepts transverses déclarés dans les surcharges.
 ========================================================================= */
 import type { KnowledgeConcept } from '@/types/knowledge.types';
 import { skills } from '@/data/career/skills.data';
@@ -8,6 +9,7 @@ import { knowledgeDomains } from '@/data/knowledge/knowledge-domains.data';
 import {
   CONCEPT_ALIASES,
   CONCEPT_ID_BY_SKILL,
+  EXTRA_CONCEPTS,
 } from '@/data/knowledge/knowledge-concept-overrides.data';
 
 /* =========================================================================
@@ -65,6 +67,7 @@ export function buildKnowledgeConcepts(): KnowledgeConcept[] {
     ...skillConcepts,
     ...domainConcepts,
     ...domainLevelConcepts,
+    ...EXTRA_CONCEPTS,
   ].map(withAliases)) {
     const existing = merged.get(concept.id);
     if (!existing) {

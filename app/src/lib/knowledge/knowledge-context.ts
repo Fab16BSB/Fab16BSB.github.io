@@ -1,6 +1,6 @@
 /* =========================================================================
-  HELPERS : contexte explicite du graphe
-  Relie les formations et expériences à leurs contenus, dans les deux sens.
+   HELPERS : contexte explicite du graphe
+   Relie les formations et expériences à leurs contenus, dans les deux sens.
 ========================================================================= */
 import type {
   KnowledgeContentNode,
@@ -12,26 +12,16 @@ import { KNOWLEDGE_RANKING, getKnowledgeSuggestionWeight } from './knowledge.con
 import { isContentNode } from './knowledge-nodes';
 
 /* =========================================================================
-  HELPERS
+   HELPERS
 ========================================================================= */
 
 /**
  * Relie un contenu aux formations et expériences qu'il déclare.
  *
- * @param graph - Graphe de connaissances.
  * @param source - Contenu de départ.
- * @param options - Filtres de nature et score minimal.
- * @returns Les recommandations structurelles, ou une liste vide sous le seuil.
+ * @returns Les identifiants liés.
  */
-export function rankContextRecommendations(
-  graph: KnowledgeGraph,
-  source: KnowledgeContentNode,
-  options: KnowledgeRecommendationOptions,
-): KnowledgeRecommendation[] {
-  const acceptedKinds = options.kinds ? new Set(options.kinds) : null;
-  const minScore = options.minScore ?? KNOWLEDGE_RANKING.minScore;
-  if (KNOWLEDGE_RANKING.structuralScore < minScore) return [];
-
+function collectDirectLinks(source: KnowledgeContentNode): Set<string> {
   const linkedIds = new Set<string>();
 
   if (source.kind === 'experience' && source.educationId) {
@@ -44,6 +34,42 @@ export function rankContextRecommendations(
 
   for (const experienceId of source.experienceIds ?? []) {
     linkedIds.add(`experience:${experienceId}`);
+  }
+
+  for (const projectId of source.projectIds ?? []) {
+    linkedIds.add(`project:${projectId}`);
+  }
+
+  return linkedIds;
+}
+
+/**
+ * Relie un contenu aux contenus qui le déclarent.
+ *
+ * @param graph - Graphe de connaissances.
+ * @param source - Contenu de départ.
+ * @returns Les identifiants liés.
+ */
+function collectReverseLinks(
+  graph: KnowledgeGraph,
+  source: KnowledgeContentNode,
+): Set<string> {
+  const linkedIds = new Set<string>();
+
+  // Vue inverse : un projet pointe vers les compétences qui le déclarent.
+  if (source.kind === 'project') {
+    for (const node of graph.nodes) {
+      if (!isContentNode(node)) {
+        continue;
+      }
+
+      if (
+        node.kind === 'skill' &&
+        node.projectIds?.some((id) => id === source.sourceId)
+      ) {
+        linkedIds.add(node.id);
+      }
+    }
   }
 
   // Vue inverse : une formation ou une expérience pointe vers ses contenus.
@@ -63,6 +89,31 @@ export function rankContextRecommendations(
     }
   }
 
+  return linkedIds;
+}
+
+/**
+ * Relie un contenu à ses formations, expériences et projets déclarés.
+ *
+ * @param graph - Graphe de connaissances.
+ * @param source - Contenu de départ.
+ * @param options - Filtres de nature et score minimal.
+ * @returns Les recommandations structurelles, ou une liste vide sous le seuil.
+ */
+export function rankContextRecommendations(
+  graph: KnowledgeGraph,
+  source: KnowledgeContentNode,
+  options: KnowledgeRecommendationOptions,
+): KnowledgeRecommendation[] {
+  const acceptedKinds = options.kinds ? new Set(options.kinds) : null;
+  const minScore = options.minScore ?? KNOWLEDGE_RANKING.minScore;
+
+  if (KNOWLEDGE_RANKING.structuralScore < minScore) return [];
+
+  const linkedIds = new Set([
+    ...collectDirectLinks(source),
+    ...collectReverseLinks(graph, source),
+  ]);
   const nodesById = new Map(graph.nodes.map((node) => [node.id, node]));
 
   return [...linkedIds]

@@ -4,6 +4,7 @@
   Un nœud brut est un nœud intermédiaire : il contient les données brutes du
   contenu, avant la détection des thèmes, des concepts et des arêtes.
 ========================================================================= */
+import { localizedSame } from './knowledge-labels';
 import { awards } from '@/data/content/awards.data';
 import { education } from '@/data/career/education.data';
 import { experiences } from '@/data/career/experience.data';
@@ -36,6 +37,8 @@ export type KnowledgeRawNode = {
   educationId?: EducationId;
   educationIds?: EducationId[];
   experienceIds?: ExperienceId[];
+  projectIds?: string[];
+  conceptIds?: string[];
   isNotebook?: boolean;
   tags: string[];
   text: Record<Locale, string>;
@@ -72,22 +75,12 @@ function joinText(parts: Array<string | undefined | null>): string {
 }
 
 /**
- * Construit un libellé identique dans les trois langues.
- *
- * @param value - Libellé invariant.
- * @returns Le libellé traduit.
- */
-function sameLabel(value: string): Localized {
-  return { fr: value, en: value, es: value };
-}
-
-/**
  * Extrait la première année à quatre chiffres d'un libellé.
  *
  * @param value - Année ou plage d'années.
  * @returns L'année numérique, sinon `undefined`.
  */
-function parseYear(value: string | number): number | undefined {
+function parseFirstYear(value: string | number): number | undefined {
   if (typeof value === 'number') return value;
   const match = value.match(/\d{4}/);
   return match ? Number(match[0]) : undefined;
@@ -139,7 +132,7 @@ function projectRawNode(project: (typeof projects)[number]): KnowledgeRawNode {
     kind: 'project',
     sourceId: project.id,
     label: project.title,
-    year: parseYear(project.year),
+    year: parseFirstYear(project.year),
     anchor: '#projects',
     educationIds: project.educationIds,
     experienceIds: project.experienceIds,
@@ -187,7 +180,7 @@ function publicationRawNode(publication: Publication): KnowledgeRawNode {
         publicationVersion(publication, 'fr')?.title ??
         publication.id,
     },
-    year: parseYear(publication.year),
+    year: parseFirstYear(publication.year),
     anchor: '#publications',
     tags: [
       ...publication.authors,
@@ -211,8 +204,8 @@ function articleRawNode(post: MediumPost): KnowledgeRawNode {
   return {
     kind: 'article',
     sourceId: post.id,
-    label: sameLabel(post.title),
-    year: parseYear(post.publishedAt.slice(0, 4)),
+    label: localizedSame(post.title),
+    year: parseFirstYear(post.publishedAt.slice(0, 4)),
     anchor: '#publications',
     tags: [...post.tags, 'Medium'],
     text: { fr: text, en: text, es: text },
@@ -241,10 +234,12 @@ function skillRawNode(skill: (typeof skills)[number]): KnowledgeRawNode {
   return {
     kind: 'skill',
     sourceId: skill.id,
-    label: sameLabel(skill.name),
+    label: localizedSame(skill.name),
     anchor: '#skills',
     educationIds: skill.educationIds,
     experienceIds: skill.experienceIds,
+    projectIds: skill.projectIds,
+    conceptIds: skill.conceptIds,
     tags: [skill.name, skill.category],
     text,
   };
@@ -363,7 +358,7 @@ function awardRawNode(award: (typeof awards)[number]): KnowledgeRawNode {
     kind: 'award',
     sourceId: award.id,
     label: award.title,
-    year: parseYear(award.year),
+    year: parseFirstYear(award.year),
     anchor: '#awards',
     tags: [award.kind, award.tier ?? '', award.event ?? ''].filter(Boolean),
     text,
@@ -415,8 +410,8 @@ function videoRawNode(video: YoutubeVideo): KnowledgeRawNode {
   return {
     kind: 'video',
     sourceId: video.id,
-    label: sameLabel(video.title),
-    year: parseYear(video.publishedAt.slice(0, 4)),
+    label: localizedSame(video.title),
+    year: parseFirstYear(video.publishedAt.slice(0, 4)),
     anchor: '#videos',
     tags: [video.type, 'YouTube'],
     text: { fr: text, en: text, es: text },
