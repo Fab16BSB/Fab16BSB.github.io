@@ -14,11 +14,14 @@
 
 .tabsRow {
   display: flex;
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* Cinq filtres : passage à la ligne plutôt qu'un défilement horizontal. */
-.tabsRow [role='tablist'] {
+.tabsRow > [role='group'] {
   flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .filters {
