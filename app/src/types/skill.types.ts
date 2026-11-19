@@ -78,3 +78,70 @@ export type Skill = {
   projectIds?: string[];
   mediumPostIds?: string[];
 };
+
+/**
+ * Origine d'une trace d'utilisation d'une compétence.
+ *
+ * - `education` : formation où la compétence a été pratiquée ;
+ * - `experience` : poste professionnel ;
+ * - `project` : projet personnel, académique ou client ;
+ * - `teaching` : cours dont les tags citent la compétence ;
+ * - `article` : article Medium rattaché à la compétence.
+ */
+export type SkillTenureSourceKind =
+  | 'education'
+  | 'experience'
+  | 'project'
+  | 'teaching'
+  | 'article';
+
+/**
+ * Trace datée d'utilisation d'une compétence.
+ *
+ * `end` vaut `present` tant que la source est en cours ; l'année de référence
+ * est alors utilisée pour les calculs.
+ *
+ * @property {SkillTenureSourceKind} kind - Nature de la source.
+ * @property {string} id - Identifiant du contenu d'origine (formation, expérience, projet, cours ou article).
+ * @property {number} start - Année de début.
+ * @property {number | 'present'} end - Année de fin, ou `present` si la source continue.
+ * @property {Localized} label - Libellé localisé affiché pour la source.
+ */
+export type SkillTenureSource = {
+  kind: SkillTenureSourceKind;
+  id: string;
+  start: number;
+  end: number | 'present';
+  label: Localized;
+};
+
+/**
+ * Ancienneté calculée d'une compétence.
+ *
+ * Les années sont des écarts, pas des durées cumulées : seule la première et
+ * la dernière trace comptent, les périodes intermédiaires ne s'additionnent
+ * pas. Un champ reste `null` quand la compétence n'a aucune source de ce type.
+ *
+ * @property {string} skillId - Compétence concernée.
+ * @property {number | null} firstYear - Première année d'utilisation.
+ * @property {number | null} lastYear - Dernière année d'utilisation, `present` compté comme l'année de référence.
+ * @property {number | null} spanYears - Écart entre la première et la dernière année, toutes sources confondues.
+ * @property {number | null} professionalYears - Écart entre la première et la dernière année en expérience.
+ * @property {boolean} isCurrent - Vrai si une source est en cours ou se termine pendant l'année de référence.
+ * @property {SkillTenureSource[]} sources - Traces triées par année de début, puis par année de fin.
+ */
+export type SkillTenure = {
+  skillId: string;
+  firstYear: number | null;
+  lastYear: number | null;
+  spanYears: number | null;
+  professionalYears: number | null;
+  isCurrent: boolean;
+  sources: SkillTenureSource[];
+};
+
+/** Ancienneté réduite aux champs affichés, sans la liste des sources. */
+export type SkillTenureSummary = Pick<
+  SkillTenure,
+  'firstYear' | 'lastYear' | 'spanYears' | 'professionalYears' | 'isCurrent'
+>;

@@ -6,6 +6,11 @@ import { createPortal } from 'react-dom';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { RelatedContent } from '@/components/ui/RelatedContent/RelatedContent';
 import { useI18n } from '@/i18n/useI18n';
+import { getSkillTenure } from '@/lib/skill-tenure';
+import {
+  formatTenureCompact,
+  formatTenureYears,
+} from '@/lib/tenure-format';
 import type { Skill } from '@/types/skill.types';
 import { SkillEmptyState } from './SkillEmptyState';
 import { useSkillModal } from './useSkillModal';
@@ -28,6 +33,14 @@ export function SkillModal({ skill, onClose, onOpenProject }: SkillModalProps) {
   const { t } = useI18n();
   const titleId = useId();
   const { dialogRef } = useSkillModal(onClose);
+  const tenure = getSkillTenure(skill.id);
+  const tenureTitle =
+    tenure &&
+    tenure.firstYear !== null &&
+    tenure.lastYear !== null &&
+    tenure.spanYears !== null
+      ? `${t('skills.tenure.first')} ${tenure.firstYear} · ${t('skills.tenure.last')} ${tenure.lastYear} · ${t('skills.tenure.span')} ${formatTenureYears(tenure.spanYears, t)}`
+      : undefined;
 
   // Ferme la modale avant de rejoindre une section ou un contenu.
   const navigate = (href: string) => {
@@ -68,6 +81,34 @@ export function SkillModal({ skill, onClose, onOpenProject }: SkillModalProps) {
           <h3 className={styles.title} id={titleId}>
             {skill.name}
           </h3>
+
+          {/* Ancienneté */}
+          <p className={styles.tenureLine} title={tenureTitle}>
+            <Icon name="clock" size={14} />
+            {tenure &&
+            tenure.firstYear !== null &&
+            tenure.lastYear !== null &&
+            tenure.spanYears !== null ? (
+              <span className={styles.tenureValue}>
+                {formatTenureCompact(tenure, t)}
+              </span>
+            ) : (
+              <span>{t('skills.tenure.undated')}</span>
+            )}
+            {tenure && tenure.professionalYears !== null ? (
+              <>
+                <span className={styles.tenureDot} aria-hidden="true">
+                  ·
+                </span>
+                <span>
+                  {t('skills.tenure.industryYears', {
+                    years: formatTenureYears(tenure.professionalYears, t),
+                  })}
+                </span>
+              </>
+            ) : null}
+          </p>
+
           <p className={styles.subtitle}>{t('skills.related.subtitle')}</p>
 
           {/* Réalisations et contenus liés. */}

@@ -1,6 +1,7 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
+import { formatYearRange } from '@/lib/tenure-format';
 import type { TeachingCourse, TeachingLevel } from '@/types/teaching.types';
 
 /* =========================================================================
@@ -92,5 +93,5 @@ export function formatHours(value: number): string {
  * @returns L'année seule ou la plage `début — fin`.
  */
 export function formatCourseYears(course: TeachingCourse): string {
-  return course.start === course.end ? String(course.start) : `${course.start} — ${course.end}`;
+  return formatYearRange(course.start, course.end, ' — ');
 }

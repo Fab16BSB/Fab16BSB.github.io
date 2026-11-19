@@ -94,6 +94,34 @@
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   Ancienneté
+   ───────────────────────────────────────────────────────────────────────── */
+.tenureLine {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.1rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.tenureLine svg {
+  flex-shrink: 0;
+  color: var(--accent-2);
+}
+
+.tenureValue {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.tenureDot {
+  color: var(--text-faint);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    État vide
    ───────────────────────────────────────────────────────────────────────── */
 .empty {
