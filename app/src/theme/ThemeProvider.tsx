@@ -2,6 +2,7 @@
   IMPORTS
 ========================================================================= */
 import { createContext, useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { useStorageSync } from '@/hooks/ui/useStorageSync';
 import type { Theme } from '@/types/common.types';
 import { THEME_KEY, applyTheme, getInitialTheme, getNextTheme } from './theme.helpers';
 
@@ -12,7 +13,6 @@ import { THEME_KEY, applyTheme, getInitialTheme, getNextTheme } from './theme.he
 /** Valeurs exposées par le contexte de thème. */
 export type ThemeContextValue = {
   theme: Theme;
-  setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
 };
 
@@ -32,11 +32,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   // Thème courant, lu dans le stockage au premier rendu.
   const [theme, setThemeState] = useState<Theme>(() => getInitialTheme());
 
-  // Applique un thème précis.
-  const setTheme = useCallback((next: Theme) => {
-    setThemeState(next);
-  }, []);
-
   // Bascule entre clair et sombre.
   const toggleTheme = useCallback(() => {
     setThemeState((current) => getNextTheme(current));
@@ -48,42 +43,30 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     window.localStorage.setItem(THEME_KEY, theme);
   }, [theme]);
 
-  // Synchronise le thème (cache ou modification externe)
-  useEffect(() => {
-    const syncTheme = () => {
-      const stored = window.localStorage.getItem(THEME_KEY);
-      if (stored === 'light' || stored === 'dark') {
-        setThemeState((current) => (current === stored ? current : stored));
-      }
-    };
+  // Valide un thème stocké.
+  const isValidTheme = useCallback(
+    (value: string) => value === 'light' || value === 'dark',
+    [],
+  );
 
-    const onPageShow = (event: PageTransitionEvent) => {
-      if (event.persisted) syncTheme();
-    };
-
-    const onStorage = (event: StorageEvent) => {
-      if (event.key === THEME_KEY) syncTheme();
-    };
-
-    const onVisibilityChange = () => {
-      if (document.visibilityState === 'visible') syncTheme();
-    };
-
-    window.addEventListener('pageshow', onPageShow);
-    window.addEventListener('storage', onStorage);
-    document.addEventListener('visibilitychange', onVisibilityChange);
-
-    return () => {
-      window.removeEventListener('pageshow', onPageShow);
-      window.removeEventListener('storage', onStorage);
-      document.removeEventListener('visibilitychange', onVisibilityChange);
-    };
+  // Applique un thème stocké sans écraser un changement local identique.
+  const syncTheme = useCallback((value: string) => {
+    setThemeState((current) =>
+      current === value ? current : (value as Theme),
+    );
   }, []);
+
+  // Synchronise le thème (cache ou modification externe).
+  useStorageSync({
+    key: THEME_KEY,
+    isValid: isValidTheme,
+    onSync: syncTheme,
+  });
 
   // Valeur exposée aux consommateurs du contexte.
   const value = useMemo<ThemeContextValue>(
-    () => ({ theme, setTheme, toggleTheme }),
-    [theme, setTheme, toggleTheme],
+    () => ({ theme, toggleTheme }),
+    [theme, toggleTheme],
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;

@@ -3,6 +3,7 @@
 ========================================================================= */
 import { createContext, useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { localizedSiteMeta } from '@/data/site/siteMeta.data';
+import { useStorageSync } from '@/hooks/ui/useStorageSync';
 import type { Locale, Localized } from '@/types/common.types';
 import type { I18nContextValue } from '@/types/i18n.types';
 import fr from './locales/fr.json';
@@ -60,37 +61,19 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     }
   }, [locale]);
 
-  // Synchronise la langue (cache ou modification externe)
-  useEffect(() => {
-    const syncLocale = () => {
-      const stored = window.localStorage.getItem(LANGUAGE_KEY);
-      if (isLocale(stored)) {
-        setLocaleState((current) => (current === stored ? current : stored));
-      }
-    };
-
-    const onPageShow = (event: PageTransitionEvent) => {
-      if (event.persisted) syncLocale();
-    };
-
-    const onStorage = (event: StorageEvent) => {
-      if (event.key === LANGUAGE_KEY) syncLocale();
-    };
-
-    const onVisibilityChange = () => {
-      if (document.visibilityState === 'visible') syncLocale();
-    };
-
-    window.addEventListener('pageshow', onPageShow);
-    window.addEventListener('storage', onStorage);
-    document.addEventListener('visibilitychange', onVisibilityChange);
-
-    return () => {
-      window.removeEventListener('pageshow', onPageShow);
-      window.removeEventListener('storage', onStorage);
-      document.removeEventListener('visibilitychange', onVisibilityChange);
-    };
+  // Applique une langue stockée sans écraser un changement local identique.
+  const syncLocale = useCallback((value: string) => {
+    setLocaleState((current) =>
+      current === value ? current : (value as Locale),
+    );
   }, []);
+
+  // Synchronise la langue (cache ou modification externe).
+  useStorageSync({
+    key: LANGUAGE_KEY,
+    isValid: isLocale,
+    onSync: syncLocale,
+  });
 
   // Traduit une clé dans une langue donnée, avec repli sur le français.
   const tFor = useCallback((target: Locale, key: string, vars?: Record<string, string | number>) => {

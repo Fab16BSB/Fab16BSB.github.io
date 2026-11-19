@@ -7,9 +7,6 @@ import type { Locale, Localized } from '@/types/common.types';
   CONSTANTES
 ========================================================================= */
 
-/** Langues supportées par le site. */
-export const SUPPORTED_LOCALES: Locale[] = ['fr', 'en', 'es'];
-
 /** Langue utilisée par défaut. */
 export const DEFAULT_LOCALE: Locale = 'fr';
 
