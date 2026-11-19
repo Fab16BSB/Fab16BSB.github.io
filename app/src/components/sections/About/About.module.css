@@ -47,6 +47,28 @@
   color: transparent;
 }
 
+/* Ligne des chips : localisation et disponibilité. */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Badge de disponibilité : vert quand disponible */
+.availability[data-status='available'] {
+  border-color: color-mix(in srgb, var(--color-emerald) 35%, transparent);
+  color: var(--color-emerald);
+  background: color-mix(in srgb, var(--color-emerald) 8%, var(--surface-2));
+}
+
+/* Badge de disponibilité : rouge quand indisponible. */
+.availability[data-status='unavailable'] {
+  border-color: color-mix(in srgb, var(--danger) 35%, transparent);
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 8%, var(--surface-2));
+}
+
 /* ─────────────────────────────────────────────────────────────────────────
    Portrait
    ───────────────────────────────────────────────────────────────────────── */

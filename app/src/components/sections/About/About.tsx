@@ -15,6 +15,12 @@ import styles from './About.module.css';
 ========================================================================= */
 export function About() {
   const { t, loc, locale } = useI18n();
+  const availabilityStatus = profile.availability.status;
+  const availabilityLabel = t('about.freelance');
+  const availabilityDescription =
+    availabilityStatus === 'hidden'
+      ? ''
+      : loc(profile.availability.text[availabilityStatus]);
 
   return (
     <section id="about" className={styles.about} aria-labelledby="about-title">
@@ -30,10 +36,33 @@ export function About() {
             {profile.name}
           </h1>
           <p className={styles.role}>{loc(profile.role)}</p>
-          <span className="chip">
-            <Icon name="map-pin" size={14} />
-            {t('about.location')}
-          </span>
+          <div className={styles.meta}>
+            <span className="chip">
+              <Icon name="map-pin" size={14} />
+              {t('about.location')}
+            </span>
+            {availabilityStatus !== 'hidden' ? (
+              <span
+                className={`chip ${styles.availability}`}
+                data-status={availabilityStatus}
+                title={availabilityDescription}
+              >
+                <Icon
+                  name={
+                    availabilityStatus === 'available'
+                      ? 'check'
+                      : 'close'
+                  }
+                  size={14}
+                />
+                {availabilityLabel}
+                <span className="sr-only">
+                  {' — '}
+                  {availabilityDescription}
+                </span>
+              </span>
+            ) : null}
+          </div>
         </header>
 
         {/* Portrait principal, chargé en priorité. */}

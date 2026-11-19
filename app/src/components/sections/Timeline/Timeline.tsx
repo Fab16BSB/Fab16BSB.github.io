@@ -40,7 +40,12 @@ export function Timeline() {
 
         {/* Onglets formation / expérience. */}
         <div className={styles.toolbar} data-reveal>
-          <Tabs items={tabs} active={tab} onChange={(id) => setTab(id as typeof tab)} />
+          <Tabs
+            items={tabs}
+            active={tab}
+            onChange={(id) => setTab(id as typeof tab)}
+            ariaLabel={t('timeline.title')}
+          />
         </div>
 
         {/* Formation. */}

@@ -45,6 +45,16 @@ export function EducationList() {
               )}
             </p>
 
+            {/* Tags visibles de la formation. */}
+            {item.displayTags && item.displayTags.length > 0 && (
+              <ul className={styles.tags}>
+                {item.displayTags.map((tag) => (
+                  <li className="tag" key={tag.fr}>
+                    {loc(tag)}
+                  </li>
+                ))}
+              </ul>
+            )}
 
             {/* Liens associés au diplôme. */}
             {item.links && (
