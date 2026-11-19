@@ -4,6 +4,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { projects } from '@/data/content/projects.data';
 import { useVisitReveal } from '@/hooks/sections/useVisitReveal';
+import { collectYears } from '@/lib/date.helpers';
 import { getSearchIndex, searchDocuments } from '@/lib/search/search-engine';
 import { projectSearchFields } from '@/lib/search/search-fields';
 import { rankSearchResults } from '@/lib/search/search-rank';
@@ -14,7 +15,6 @@ import type { Project, ProjectCategory } from '@/types/project.types';
 import {
   countProjects,
   filterProjects,
-  getProjectYears,
 } from './projects.helpers';
 
 /* =========================================================================
@@ -83,7 +83,10 @@ export function useProjects(locale: Locale) {
   });
 
   // Années disponibles, de la plus récente à la plus ancienne.
-  const years = useMemo(() => getProjectYears(projects), []);
+  const years = useMemo(
+    () => collectYears(projects.map((project) => project.year)),
+    [],
+  );
 
   // Une année absente de la catégorie courante retombe sur « toutes ».
   const activeYear = years.includes(year) ? year : 'all';

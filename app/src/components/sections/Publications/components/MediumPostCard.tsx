@@ -6,7 +6,7 @@ import { useI18n } from '@/i18n/useI18n';
 import type { Locale } from '@/types/common.types';
 import type { MediumPost } from '@/types/medium.types';
 import { Icon } from '@/components/ui/Icon/Icon';
-import { formatPostDate } from '../publications.helpers';
+import { formatDisplayDate } from '@/lib/date.helpers';
 import styles from '../Publications.module.css';
 
 /* =========================================================================
@@ -62,7 +62,7 @@ export function MediumPostCard({ post, locale, index }: MediumPostCardProps) {
           <span className={styles.postMeta}>
             <span className={styles.postDate}>
               <Icon name="calendar" size={12} />
-              {formatPostDate(post.publishedAt, locale)}
+              {formatDisplayDate(post.publishedAt, locale)}
             </span>
             <span className={styles.readTime}>
               <Icon name="clock" size={12} />

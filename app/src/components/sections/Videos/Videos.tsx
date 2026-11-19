@@ -13,7 +13,7 @@ import { Select } from '@/components/ui/Select/Select';
 import { Tabs } from '@/components/ui/Tabs/Tabs';
 import { visitTarget } from '@/lib/visit/visit-targets';
 import { useVideos, type VideoFilter } from './useVideos';
-import { formatVideoDate } from './videos.helpers';
+import { formatDisplayDate } from '@/lib/date.helpers';
 import styles from './Videos.module.css';
 
 /* =========================================================================
@@ -36,12 +36,14 @@ export function Videos() {
     resetFilters,
   } = useVideos(locale);
 
+  // Onglets de filtre par type de contenu, avec leur compteur.
   const tabs = [
     { id: 'all', label: t('videos.filters.all'), count: counts.all },
     { id: 'video', label: t('videos.filters.video'), count: counts.video },
     { id: 'short', label: t('videos.filters.short'), count: counts.short },
   ];
 
+  // Options d'année : « toutes » puis les années disponibles.
   const yearOptions = [
     { value: 'all', label: t('videos.allYears') },
     ...years.map((option) => ({ value: option, label: option })),
@@ -134,7 +136,7 @@ export function Videos() {
                     <span className={styles.meta}>
                       <span className={styles.metaTag}>
                         <Icon name="calendar" size={12} />
-                        {formatVideoDate(video.publishedAt, locale)}
+                        {formatDisplayDate(video.publishedAt, locale)}
                       </span>
                       <span className={styles.metaTag}>
                         <Icon name="youtube" size={12} />

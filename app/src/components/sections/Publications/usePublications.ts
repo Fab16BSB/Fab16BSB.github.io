@@ -11,26 +11,31 @@ import { mediumPostSearchFields, publicationSearchFields } from '@/lib/search/se
 import { rankSearchResults } from '@/lib/search/search-rank';
 import { visitTargetPrefix } from '@/lib/visit/visit-targets';
 import { useSemanticSearch } from '@/search/useSemanticSearch';
+import { collectYears, extractYear } from '@/lib/date.helpers';
 import type { Locale } from '@/types/common.types';
 import type { MediumPost } from '@/types/medium.types';
 import type { PublicationLanguage, Publication } from '@/types/publication.types';
 import {
-  availableYears,
   filterMediumPosts,
-  mediumPostYear,
   sortMediumPosts,
   sortPublications,
 } from './publications.helpers';
 
 /* =========================================================================
+  TYPES & INTERFACES
+========================================================================= */
+export type PublicationTab = 'scientific' | 'medium';
+
+/* =========================================================================
+  CONSTANTES
+========================================================================= */
+/** Articles Medium importés du flux JSON. */
+const mediumPosts = mediumPostsRaw as MediumPost[];
+
+/* =========================================================================
   HOOK : usePublications
   Gère les onglets, les filtres et la langue choisie pour chaque publication.
 ========================================================================= */
-
-const mediumPosts = mediumPostsRaw as MediumPost[];
-
-export type PublicationTab = 'scientific' | 'medium';
-
 export function usePublications(locale: Locale) {
 
   // Onglet actif.
@@ -67,9 +72,15 @@ export function usePublications(locale: Locale) {
   );
 
   // Années disponibles dans chaque onglet.
-  const scientificYears = useMemo(() => availableYears(allScientific), [allScientific]);
+  const scientificYears = useMemo(
+    () => collectYears(allScientific.map((item) => item.year)),
+    [allScientific],
+  );
   const mediumYears = useMemo(
-    () => availableYears(allMedium.map((post) => ({ year: mediumPostYear(post) }))),
+    () =>
+      collectYears(
+        allMedium.map((post) => extractYear(post.publishedAt)),
+      ),
     [allMedium],
   );
 
@@ -179,7 +190,9 @@ export function usePublications(locale: Locale) {
   // Articles Medium filtrés par année, puis classés par pertinence.
   const medium = useMemo(() => {
     const base = allMedium.filter(
-      (post) => activeYear === 'all' || mediumPostYear(post) === activeYear,
+      (post) =>
+        activeYear === 'all' ||
+        extractYear(post.publishedAt) === activeYear,
     );
     let result = base;
 

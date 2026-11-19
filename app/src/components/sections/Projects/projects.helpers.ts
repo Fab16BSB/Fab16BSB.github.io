@@ -47,15 +47,3 @@ export function countProjects(projects: Project[], category: ProjectCategory | '
     ? projects.length
     : projects.filter((project) => project.category === category).length;
 }
-
-/**
- * Retourne les années présentes, de la plus récente à la plus ancienne.
- *
- * @param projects - Liste des projets.
- * @returns Les années triées.
- */
-export function getProjectYears(projects: Project[]): string[] {
-  return [...new Set(projects.map((project) => project.year))].sort(
-    (a, b) => Number(b) - Number(a),
-  );
-}

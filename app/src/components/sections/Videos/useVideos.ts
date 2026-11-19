@@ -11,7 +11,7 @@ import { visitTargetPrefix } from '@/lib/visit/visit-targets';
 import { useSemanticSearch } from '@/search/useSemanticSearch';
 import type { Locale } from '@/types/common.types';
 import type { YoutubeVideo } from '@/types/youtube.types';
-import { videoYear } from './videos.helpers';
+import { collectYears, extractYear } from '@/lib/date.helpers';
 
 
 /* =========================================================================
@@ -51,7 +51,9 @@ export function useVideos(locale: Locale) {
 
   // Années disponibles, de la plus récente à la plus ancienne.
   const years = useMemo(
-    () => [...new Set(videos.map(videoYear))].sort((a, b) => Number(b) - Number(a)),
+    () => collectYears(
+      videos.map((video) => extractYear(video.publishedAt)),
+    ),
     [],
   );
 
@@ -84,7 +86,11 @@ export function useVideos(locale: Locale) {
 
   // Vidéos correspondant à l'année, classées par pertinence.
   const searched = useMemo(() => {
-    const base = videos.filter((video) => year === 'all' || videoYear(video) === year);
+    const base = videos.filter(
+      (video) =>
+        year === 'all' ||
+        extractYear(video.publishedAt) === year,
+    );
     let result: YoutubeVideo[] = [];
 
     if (query.trim().length === 0) {

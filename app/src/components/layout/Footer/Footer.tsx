@@ -5,6 +5,7 @@ import { navItems } from '@/data/site/navigation.data';
 import { community, socials } from '@/data/profile/socials.data';
 import { profile } from '@/data/profile/profile.data';
 import { useI18n } from '@/i18n/useI18n';
+import { formatDisplayDate } from '@/lib/date.helpers';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { SocialLinks } from '@/components/ui/SocialLinks/SocialLinks';
 import styles from './Footer.module.css';
@@ -17,10 +18,7 @@ export function Footer() {
   const { t, loc, locale } = useI18n();
   const year = new Date().getFullYear();
 
-  const lastUpdated = new Intl.DateTimeFormat(
-    locale === 'fr' ? 'fr-FR' : locale === 'es' ? 'es-ES' : 'en-GB',
-    { day: 'numeric', month: 'long', year: 'numeric' },
-  ).format(new Date(__BUILD_DATE__));
+  const lastUpdated = formatDisplayDate(__BUILD_DATE__, locale, 'long');
 
   return (
     <footer className={styles.footer}>
