@@ -7,6 +7,7 @@ import type { Locale } from '@/types/common.types';
 import type { MediumPost } from '@/types/medium.types';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { formatDisplayDate } from '@/lib/date.helpers';
+import { visitTarget } from '@/lib/visit/visit-targets';
 import styles from '../Publications.module.css';
 
 /* =========================================================================
@@ -32,6 +33,7 @@ export function MediumPostCard({ post, locale, index }: MediumPostCardProps) {
       target="_blank"
       rel="noopener noreferrer"
       style={{ '--reveal-delay': `${index * 50}ms` } as CSSProperties}
+      data-visit-target={visitTarget('article', post.id)}
       data-reveal
     >
       {/* Illustration, masquée si elle ne charge pas. */}

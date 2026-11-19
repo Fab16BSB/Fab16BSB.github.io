@@ -15,6 +15,7 @@ import type { KnowledgeContentKind } from '@/types/knowledge.types';
 export const VISIT_TARGET_PREFIXES = {
   project: 'project',
   publication: 'publication',
+  article: 'article',
   course: 'course',
   supervision: 'supervision',
   experience: 'experience',
@@ -68,6 +69,18 @@ export function isVisitTargetKind(
   return Object.hasOwn(VISIT_TARGET_PREFIXES, value);
 }
 
+/**
+ * Indique si une valeur désigne une carte de la page.
+ *
+ * @param value - Valeur complète, par exemple `project-these`.
+ * @returns `true` si le préfixe correspond à une carte connue.
+ */
+export function isVisitTarget(value: string): boolean {
+  return Object.values(VISIT_TARGET_PREFIXES).some((prefix) =>
+    value.startsWith(`${prefix}-`),
+  );
+}
+
 /* ─────────────────────────────────────────────────────────────────────────
    CORRESPONDANCE AVEC LE GRAPHE
    ───────────────────────────────────────────────────────────────────────── */
@@ -76,8 +89,8 @@ export function isVisitTargetKind(
  * Préfixe HTML correspondant à une nature de nœud du graphe.
  *
  * `teaching` vise les cartes de cours : le type du graphe nomme la section,
- * le préfixe nomme l'élément. Les natures sans carte ciblable restent hors de
- * la visite : `article` (posts Medium), ainsi que `theme` et `concept`.
+ * le préfixe nomme l'élément. Les pivots de taxonomie (`theme`, `concept`)
+ * restent hors de la visite faute de carte correspondante.
  *
  * @param kind - Nature du nœud.
  * @returns Le préfixe, ou `null` si le nœud n'est pas ciblable.

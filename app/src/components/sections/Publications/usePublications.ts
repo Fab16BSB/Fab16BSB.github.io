@@ -56,11 +56,19 @@ export function usePublications(locale: Locale) {
     setYear('all');
   }, []);
 
-  // Une visite guidée peut demander une publication précise : on montre tout.
-  useVisitReveal([visitTargetPrefix('publication')], () => {
-    setTabState('scientific');
-    resetFilters();
-  });
+  // Une visite guidée peut demander une publication ou un article précis :
+  // on ouvre l'onglet correspondant et on montre tous les éléments.
+  useVisitReveal(
+    [visitTargetPrefix('publication'), visitTargetPrefix('article')],
+    (target) => {
+      setTabState(
+        target.startsWith(visitTargetPrefix('article'))
+          ? 'medium'
+          : 'scientific',
+      );
+      resetFilters();
+    },
+  );
 
   // Publications scientifiques triées.
   const allScientific = useMemo(() => sortPublications(publications), []);

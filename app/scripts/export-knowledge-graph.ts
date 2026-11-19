@@ -21,6 +21,7 @@ import { buildKnowledgeGraph } from '../src/lib/knowledge/knowledge-graph';
 import { getSimilarityIndex } from '../src/lib/knowledge/knowledge-similarity';
 import { KNOWLEDGE_RANKING } from '../src/lib/knowledge/knowledge.config';
 import { EMBEDDING_CONFIG } from '../src/lib/search/search.config';
+import { knowledgeTarget, visitTarget } from '../src/lib/visit/visit-targets';
 import { hashKnowledgeSource } from './knowledge-source-hash';
 import type { KnowledgeGraph, KnowledgeNode } from '../src/types/knowledge.types';
 
@@ -431,6 +432,13 @@ function buildPayload(graph: KnowledgeGraph) {
   const contentNodes = graph.nodes.filter(
     (node) => isContentNode(node),
   );
+  const viewerNodes = graph.nodes.map((node) => {
+    if (!isContentNode(node)) return node;
+
+    const kind = knowledgeTarget(node.kind);
+
+    return kind ? { ...node, target: visitTarget(kind, node.sourceId) } : node;
+  });
   const recommendations = Object.fromEntries(
     contentNodes.map((node) => [
       node.id,
@@ -459,7 +467,7 @@ function buildPayload(graph: KnowledgeGraph) {
       edges: graph.edges.length,
       contents: contentNodes.length,
     },
-    nodes: graph.nodes,
+    nodes: viewerNodes,
     edges: graph.edges,
     recommendations,
   };

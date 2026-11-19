@@ -13,6 +13,7 @@ import { useDialogFocusTrap } from '@/hooks/ui/useDialogFocusTrap';
 import { useLockBodyScroll } from '@/hooks/ui/useLockBodyScroll';
 import { useI18n } from '@/i18n/useI18n';
 import { buildVisitPlan } from '@/lib/visit/plan/visit-plan';
+import { isVisitTarget } from '@/lib/visit/visit-targets';
 import type { VisitMode, VisitPersona } from '@/types/visit.types';
 import { useVisitTour } from './useVisitTour';
 
@@ -157,6 +158,23 @@ export function useVisitSearch() {
       );
     }
   }, []);
+
+  // Rejoint la carte visée par un lien profond `?target=project-these`.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get('target');
+
+    if (target === null || !isVisitTarget(target)) {
+      return undefined;
+    }
+
+    // Laisse les sections s'abonner aux demandes de révélation.
+    const timer = window.setTimeout(() => {
+      scrollToTarget(target, window.location.hash || undefined);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [scrollToTarget]);
 
   // Retire la mise en évidence au démontage.
   useEffect(() => () => clearHighlight(), [clearHighlight]);

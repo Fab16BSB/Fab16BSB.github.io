@@ -13,6 +13,11 @@
 import assert from 'node:assert/strict';
 import { visitSections } from '../src/data/visit/visit-sections.data';
 import { selectRankedSections } from '../src/lib/visit/search/routing/visit-search-routing.selection';
+import {
+  isVisitTarget,
+  knowledgeTarget,
+  visitTarget,
+} from '../src/lib/visit/visit-targets';
 import { buildCheckPlan, LOCALES } from './visit-check.shared';
 import type { VisitSearchSection } from '../src/types/visit-search.types';
 import type {
@@ -735,6 +740,29 @@ for (const mode of ['express', 'full'] as const) {
     `section nommée sous le plancher : retenue en ${mode}`,
   );
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CIBLES DE LIEN PROFOND
+   ───────────────────────────────────────────────────────────────────────── */
+
+// Un article Medium doit être ciblable comme les autres cartes.
+assert.equal(
+  knowledgeTarget('article'),
+  'article',
+  'lien profond : article Medium ciblable',
+);
+assert.ok(
+  isVisitTarget(visitTarget('project', 'these')),
+  'lien profond : cible projet reconnue',
+);
+assert.ok(
+  isVisitTarget(visitTarget('article', 'https://medium.com/p/1')),
+  'lien profond : cible article reconnue',
+);
+assert.ok(
+  !isVisitTarget('inconnu-these'),
+  'lien profond : préfixe inconnu refusé',
+);
 
 /* =========================================================================
   RÉSULTAT

@@ -233,6 +233,20 @@ function createNodeMeta(node) {
 }
 
 /**
+ * Construit l'URL du portfolio vers le contenu ou sa section.
+ *
+ * @param {object} node - Nœud sélectionné.
+ * @returns {string} URL absolue du portfolio.
+ */
+function siteHref(node) {
+  const anchor = node.anchor || '';
+
+  if (!node.target) return SITE_URL + anchor;
+
+  return SITE_URL + '?target=' + encodeURIComponent(node.target) + anchor;
+}
+
+/**
  * Crée le lien vers la section du portfolio, s'il existe.
  *
  * @param {object} node - Nœud sélectionné.
@@ -240,11 +254,9 @@ function createNodeMeta(node) {
  */
 function createSiteLink(node) {
   let link = null;
-  if (node.anchor) {
+  if (node.target || node.anchor) {
     link = element('a', 'site-link', UI[lang].openSite + ' ↗');
-    link.href = SITE_URL + node.anchor;
-    link.target = '_blank';
-    link.rel = 'noreferrer';
+    link.href = siteHref(node);
   }
   return link;
 }
