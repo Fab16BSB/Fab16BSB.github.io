@@ -33,6 +33,16 @@ const STOP_WORDS: Record<Locale, Set<string>> = {
   es: buildStopWords(spa),
 };
 
+/**
+ * Retourne les mots vides normalisés d'une langue.
+ *
+ * @param locale - Langue demandée.
+ * @returns Les mots vides de la langue.
+ */
+export function getStopWords(locale: Locale): ReadonlySet<string> {
+  return STOP_WORDS[locale];
+}
+
 /** Part du meilleur score conservée pour éliminer le bruit de fin de liste. */
 const SCORE_FLOOR_RATIO = 0.1;
 
@@ -106,6 +116,27 @@ export function getSearchIndex(
   }
 
   return index;
+}
+
+/**
+ * Découpe un texte comme l'index MiniSearch.
+ *
+ * @param locale - Langue de lecture.
+ * @param text - Texte à tokeniser.
+ * @returns Les termes normalisés et stemmés.
+ */
+export function tokenizeSearchText(
+  locale: Locale,
+  text: string,
+): string[] {
+  const stopWords = STOP_WORDS[locale];
+  const stemmer = stemmers[locale];
+
+  return normalizeSearchText(text)
+    .split(' ')
+    .filter((term) => term.length > 0 && !stopWords.has(term))
+    .map(stemmer)
+    .filter(Boolean);
 }
 
 /**

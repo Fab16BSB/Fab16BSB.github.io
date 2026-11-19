@@ -84,6 +84,29 @@ export function isShortKnowledgeAlias(normalizedAlias: string): boolean {
 }
 
 /**
+ * Indique si un sigle apparaît en majuscules dans un texte brut.
+ *
+ * Un alias de deux lettres (« ml », « dl ») n'est fiable que comme sigle :
+ * en minuscules, « ai » est un mot français. La comparaison se fait donc sur
+ * le texte d'origine, sensible à la casse et bornée aux mots entiers.
+ *
+ * @param text - Texte brut.
+ * @param acronym - Sigle attendu, en majuscules.
+ * @returns `true` si le sigle est présent comme mot entier.
+ */
+export function includesKnowledgeAcronym(
+  text: string,
+  acronym: string,
+): boolean {
+  const escaped = acronym.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pattern = new RegExp(
+    `(^|[^A-Za-z0-9])${escaped}(?![A-Za-z0-9])`,
+  );
+
+  return pattern.test(text);
+}
+
+/**
  * Produit un identifiant stable à partir d'un libellé libre.
  *
  * @param value - Libellé brut.

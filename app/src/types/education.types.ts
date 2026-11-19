@@ -1,4 +1,5 @@
 import type { Accent, Localized } from './common.types';
+import type { KnowledgeThemeId } from './knowledge.types';
 
 /** Identifiants stables des formations du portfolio. */
 export type EducationId = 'phd' | 'master' | 'licence' | 'dut';
@@ -28,6 +29,8 @@ export type EducationLink = {
  * @property {string} [schoolUrl] - URL de l'établissement.
  * @property {EducationLink[]} [links] - Liens complémentaires.
  * @property {string[]} [tags] - Technologies et méthodes apprises.
+ * @property {KnowledgeThemeId[]} themes - Thèmes structurés de la formation.
+ * @property {Localized[]} [displayTags] - Tags visibles sur la carte formation.
  * @property {Accent} accent - Couleur d'accent.
  */
 export type Education = {
@@ -40,5 +43,7 @@ export type Education = {
   schoolUrl?: string;
   links?: EducationLink[];
   tags?: string[];
+  themes: KnowledgeThemeId[];
+  displayTags?: Localized[];
   accent: Accent;
 };

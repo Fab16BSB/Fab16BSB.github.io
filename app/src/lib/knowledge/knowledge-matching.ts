@@ -23,7 +23,7 @@ type ThemeMatcher = {
 };
 
 /** Alias d'un concept, bruts et normalisés. */
-export type ConceptAliases = {
+export type ConceptAliasEntry = {
   raw: string[];
   normalized: string[];
 };
@@ -39,8 +39,8 @@ const themeMatchers: ThemeMatcher[] = knowledgeThemes.map((theme) => ({
   terms: theme.terms.map(normalizeKnowledgeText).filter(Boolean),
 }));
 
-/** Alias des concepts, normalisés une seule fois. */
-export const conceptAliases: Map<string, ConceptAliases> = new Map(
+/** Alias des concepts, normalisés une seule fois et indexés par identifiant. */
+export const conceptAliasIndex: Map<string, ConceptAliasEntry> = new Map(
   knowledgeConcepts.map((concept) => [
     concept.id,
     {

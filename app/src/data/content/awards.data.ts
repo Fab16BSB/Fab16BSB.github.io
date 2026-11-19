@@ -13,6 +13,7 @@ import type { Award } from '@/types/award.types';
  * @property {AwardColor} [color] - Couleur du pin (`accent`, `indigo`, `cyan`, `amber`, `rose`, `emerald`, `slate`).
  * @property {string} [event] - Événement ou structure.
  * @property {Localized} title - Intitulé en FR / EN / ES.
+ * @property {string[]} [tags] - Thèmes et mots-clés de la distinction.
  */
 export const awards: Award[] = [
 
@@ -27,6 +28,13 @@ export const awards: Award[] = [
       en: 'Organization of a career fair',
       es: 'Organización de una feria de empleo',
     },
+    tags: [
+      'forum',
+      'orientation',
+      'enseignement',
+      'réseau',
+      'contact',
+    ],
   },
 
   /** ▸ 2024–2025 · IUT Montreuil — co-responsable de l\'alternance */
@@ -40,6 +48,7 @@ export const awards: Award[] = [
       en: 'Co-head of apprenticeship programs',
       es: 'Coorresponsable de la formación en alternancia',
     },
+    tags: ['alternance', 'enseignement', 'responsabilité'],
   },
 
   /** ▸ 2024–2025 · IUT Montreuil — sélection des candidats */
@@ -53,6 +62,7 @@ export const awards: Award[] = [
       en: 'Candidate selection',
       es: 'Selección de candidatos',
     },
+    tags: ['alternance', 'recrutement', 'enseignement'],
   },
 
   /** ▸ 2023–2025 · IUT Montreuil — jury de l\'alternance */
@@ -66,6 +76,7 @@ export const awards: Award[] = [
       en: 'Apprenticeship jury',
       es: 'Jurado de la formación en alternancia',
     },
+    tags: ['jury', 'alternance', 'enseignement'],
   },
 
   /** ▸ 2022 · EGC — prix de la meilleure démonstration */
@@ -80,5 +91,6 @@ export const awards: Award[] = [
       en: 'Best Demo Award',
       es: 'Premio a la mejor demostración',
     },
+    tags: ['conférence', 'EGC', 'recherche', 'démonstration'],
   },
 ];

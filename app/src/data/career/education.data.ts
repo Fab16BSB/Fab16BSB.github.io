@@ -40,6 +40,13 @@ export const education: Education[] = [
       es: 'Detección de anomalías en tiempo real en flujos de vídeo',
     },
     schoolUrl: 'https://www.univ-paris8.fr',
+    tags: [
+      'Computer vision',
+      'Deep learning',
+      'Anomaly detection',
+      'Python',
+    ],
+    themes: ['education', 'research', 'vision', 'machine-learning'],
     links: [
       {
         label: { fr: 'Thèse PDF', en: 'Thesis PDF', es: 'Tesis PDF' },
@@ -81,6 +88,27 @@ export const education: Education[] = [
       es: 'Universidad Paris 8',
     },
     schoolUrl: 'https://www.univ-paris8.fr',
+    tags: [
+      'Machine learning',
+      'Big data',
+      'Data science',
+      'Python',
+      'SQL',
+    ],
+    themes: ['education', 'research', 'machine-learning', 'data'],
+    displayTags: [
+      {
+        fr: 'Apprentissage automatique',
+        en: 'Machine learning',
+        es: 'Aprendizaje automático',
+      },
+      { fr: 'Big data', en: 'Big data', es: 'Big data' },
+      {
+        fr: 'Science des données',
+        en: 'Data science',
+        es: 'Ciencia de datos',
+      },
+    ],
     accent: 'amber',
   },
 
@@ -105,6 +133,42 @@ export const education: Education[] = [
       es: 'Universidad Paris 8',
     },
     schoolUrl: 'https://www.univ-paris8.fr',
+    tags: [
+      'Embedded systems',
+      'Android',
+      'iOS',
+      'Networks',
+      'Microcontrollers',
+      'Real-time',
+    ],
+    themes: [
+      'education',
+      'systems',
+      'software-engineering',
+      'programming',
+    ],
+    displayTags: [
+      {
+        fr: 'Développement mobile',
+        en: 'Mobile development',
+        es: 'Desarrollo móvil',
+      },
+      {
+        fr: 'Programmation objet',
+        en: 'Object-oriented programming',
+        es: 'Programación orientada a objetos',
+      },
+      {
+        fr: 'Bases de données',
+        en: 'Databases',
+        es: 'Bases de datos',
+      },
+      {
+        fr: 'Gestion de projet',
+        en: 'Project management',
+        es: 'Gestión de proyectos',
+      },
+    ],
     accent: 'rose',
   },
 
@@ -124,7 +188,32 @@ export const education: Education[] = [
       es: 'IUT de Montreuil, Paris 8',
     },
     schoolUrl: links.organizations.sit,
-    tags: ['JUnit'],
+    tags: [
+      'Programming',
+      'Java',
+      'Databases',
+      'Networks',
+      'Software engineering',
+      'Web',
+      'JUnit',
+    ],
+    themes: [
+      'education',
+      'programming',
+      'software-engineering',
+      'systems',
+      'web',
+    ],
+    displayTags: [
+      { fr: 'Programmation', en: 'Programming', es: 'Programación' },
+      {
+        fr: 'Bases de données',
+        en: 'Databases',
+        es: 'Bases de datos',
+      },
+      { fr: 'Réseaux', en: 'Networks', es: 'Redes' },
+      { fr: 'Web', en: 'Web', es: 'Web' },
+    ],
     accent: 'emerald',
   },
 ];

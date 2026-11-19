@@ -7,7 +7,7 @@ import type { KnowledgeContentNode } from '@/types/knowledge.types';
 import type { KnowledgeRawNode } from './knowledge-entities';
 import { extractRawNodes } from './knowledge-entities';
 import {
-  conceptAliases,
+  conceptAliasIndex,
   conceptLabels,
   detectThemesFromPadded,
 } from './knowledge-matching';
@@ -42,7 +42,7 @@ type ConceptMatcher = {
 ========================================================================= */
 
 /** Concepts préparés pour la détection dans les textes et les tags. */
-const conceptMatchers: ConceptMatcher[] = [...conceptAliases].map(
+const conceptMatchers: ConceptMatcher[] = [...conceptAliasIndex].map(
   ([id, { normalized }]) => ({
     id,
     longAliases: normalized.filter(

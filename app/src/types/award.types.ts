@@ -26,6 +26,7 @@ export type AwardColor =
  * @property {AwardColor} [color] - Couleur du pin, sinon couleur du type.
  * @property {string} [event] - Événement ou structure.
  * @property {Localized} title - Intitulé.
+ * @property {string[]} [tags] - Thèmes et mots-clés de la distinction.
  */
 export type Award = {
   id: string;
@@ -35,4 +36,5 @@ export type Award = {
   color?: AwardColor;
   event?: string;
   title: Localized;
+  tags?: string[];
 };
