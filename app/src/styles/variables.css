@@ -8,17 +8,18 @@
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
 
   --container: 1180px;
-  --container-narrow: 860px;
   --gutter: clamp(1rem, 4vw, 2.5rem);
   --section-space: clamp(4.5rem, 9vw, 7.5rem);
-  --header-h: 72px;
+  --header-top: 6px;
+  --header-main-h: 72px;
+  --header-invite-h: 44px;
+  --header-h: calc(var(--header-top) + var(--header-main-h) + var(--header-invite-h));
   --timeline-h: 56px;
 
   --radius-xs: 8px;
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 26px;
-  --radius-xl: 34px;
 
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --transition: 220ms var(--ease);
@@ -38,6 +39,7 @@
   --border-strong: rgba(38, 30, 20, 0.3);
   --glass: rgba(241, 234, 221, 0.82);
   --glass-strong: rgba(241, 234, 221, 0.94);
+  --visit-spotlight: rgba(32, 26, 19, 0.38);
   --code-bg: #241f18;
   --code-text: #f2e8d6;
 
@@ -81,6 +83,7 @@
   --border-strong: rgba(255, 255, 255, 0.16);
   --glass: rgba(10, 16, 29, 0.68);
   --glass-strong: rgba(10, 16, 29, 0.9);
+  --visit-spotlight: rgba(7, 11, 20, 0.62);
   --code-bg: #050912;
   --code-text: #dbeafe;
 
@@ -102,4 +105,6 @@
   --color-rose: #fb7185;
   --color-emerald: #34d399;
   --color-slate: #94a3b8;
+
+  --danger: #f87171;
 }

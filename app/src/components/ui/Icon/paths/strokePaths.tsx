@@ -11,6 +11,12 @@ import type { IconName } from '@/types/ui.types';
 // dans le sprite du viewer de graphe : garder les tracés alignés.
 export const strokePaths: Partial<Record<IconName, ReactNode>> = {
   'arrow-right': <path d="M4 12h15m0 0-5.5-5.5M19 12l-5.5 5.5" />,
+  compass: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z" />
+    </>
+  ),
   'arrow-down': <path d="M12 4v15m0 0 5.5-5.5M12 19l-5.5-5.5" />,
   'arrow-up-right': <path d="M7 17 17 7M9 7h8v8" />,
   external: (

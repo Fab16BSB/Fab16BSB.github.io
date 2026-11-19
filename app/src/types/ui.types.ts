@@ -26,6 +26,7 @@ export type IconName =
   | 'user'
   | 'clock'
   | 'route'
+  | 'compass'
   | 'filter'
   | 'search'
   | 'calendar'

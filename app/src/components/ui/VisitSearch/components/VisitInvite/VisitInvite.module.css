@@ -1,0 +1,115 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Bouton d'invitation
+   ───────────────────────────────────────────────────────────────────────── */
+.invite {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: var(--header-invite-h);
+  padding: 0;
+  background: transparent;
+  color: var(--accent-3);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.inviteInner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: min(calc(var(--container) + 100px), calc(100% - 2 * var(--gutter)));
+  min-width: 0;
+  margin-inline: auto;
+}
+
+.invitePill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 30px;
+  min-width: 0;
+  padding: 0.2rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--accent-3) 32%, var(--border));
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent-3);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.invite:hover .invitePill {
+  border-color: var(--accent-3);
+  background: color-mix(in srgb, var(--accent-3) 9%, transparent);
+  color: var(--text);
+}
+
+.invite:focus-visible {
+  outline: none;
+}
+
+.invite:focus-visible .invitePill {
+  outline: 2px solid var(--accent-3);
+  outline-offset: 2px;
+}
+
+.inviteIcon {
+  flex-shrink: 0;
+  color: var(--accent-3);
+}
+
+.inviteText {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .invite {
+    font-size: 0.72rem;
+  }
+
+  .invitePill {
+    padding: 0.2rem 0.65rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .inviteInner {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1359px) {
+  .invite {
+    position: absolute;
+    top: var(--header-top);
+    left: calc(50% - 32px);
+    z-index: 1;
+    width: auto;
+    height: var(--header-main-h);
+    transform: translateX(-50%);
+  }
+
+  .inviteInner {
+    width: auto;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1360px) {
+  .invite {
+    align-items: flex-start;
+  }
+
+  .inviteInner {
+    justify-content: center;
+  }
+}

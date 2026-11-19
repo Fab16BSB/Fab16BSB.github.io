@@ -6,6 +6,7 @@ import { profile } from '@/data/profile/profile.data';
 import { useI18n } from '@/i18n/useI18n';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher/LanguageSwitcher';
 import { ThemeToggle } from '@/components/ui/ThemeToggle/ThemeToggle';
+import { VisitSearch } from '@/components/ui/VisitSearch/VisitSearch';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { useHeader } from './useHeader';
@@ -32,10 +33,14 @@ export function Header({ active }: HeaderProps) {
         <div className={styles.inner}>
 
           {/* Identité */}
-          <a className={styles.brand} href="#about" aria-label="Fabien Poirier — accueil">
+          <a
+            className={styles.brand}
+            href="#about"
+            aria-label={`${profile.name} — ${t('accessibility.home')}`}
+          >
             <span className={styles.monogram}>FP</span>
             <span className={styles.brandText}>
-              <span className={styles.brandName}>Fabien Poirier</span>
+              <span className={styles.brandName}>{profile.name}</span>
               <span className={styles.brandRole}>{loc(profile.role)}</span>
             </span>
           </a>
@@ -48,6 +53,7 @@ export function Header({ active }: HeaderProps) {
                   <a
                     className={[styles.navLink, active === item.id ? styles.active : ''].filter(Boolean).join(' ')}
                     href={item.href}
+                    aria-current={active === item.id ? 'location' : undefined}
                   >
                     <Icon name={item.icon} size={18} className={styles.navIcon} />
                     {t(item.labelKey)}
@@ -81,6 +87,9 @@ export function Header({ active }: HeaderProps) {
             </button>
           </div>
         </div>
+
+        {/* Invitation permanente à lancer la visite. */}
+        <VisitSearch />
       </header>
 
       {/* Menu mobile */}

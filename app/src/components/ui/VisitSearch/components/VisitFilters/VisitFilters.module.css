@@ -1,0 +1,116 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Conteneur des filtres
+   ───────────────────────────────────────────────────────────────────────── */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem 0.6rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Profils de lecture
+   ───────────────────────────────────────────────────────────────────────── */
+.personas {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+  padding-bottom: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.personas::-webkit-scrollbar {
+  display: none;
+}
+
+.persona {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.35rem;
+  height: 30px;
+  padding: 0 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.persona:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+.persona[data-active='true'] {
+  border-color: transparent;
+  background: var(--gradient);
+  background-origin: border-box;
+  color: var(--accent-contrast);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Longueur du parcours
+   ───────────────────────────────────────────────────────────────────────── */
+.modes {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.mode {
+  height: 24px;
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.66rem;
+  font-weight: 600;
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.mode[data-active='true'] {
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .controls {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0.7rem 1rem 0.55rem;
+  }
+
+  .personas {
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding-bottom: 4px;
+  }
+
+  .persona {
+    height: 28px;
+    padding: 0 0.55rem;
+    font-size: 0.66rem;
+  }
+
+  .modes {
+    margin-left: auto;
+  }
+}

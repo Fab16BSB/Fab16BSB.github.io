@@ -1,0 +1,161 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Bandeau et couleurs par niveau
+   ───────────────────────────────────────────────────────────────────────── */
+.verdict {
+  --fit-color: var(--accent);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 0.6rem;
+  padding: 0.85rem 0.95rem 0.9rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--fit-color) 40%, var(--border));
+  border-radius: 16px;
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      color-mix(in srgb, var(--fit-color) 24%, transparent),
+      transparent 58%
+    ),
+    color-mix(in srgb, var(--fit-color) 10%, var(--surface));
+  animation: verdict-in 220ms var(--ease);
+}
+
+.verdict[data-fit='strong'] {
+  --fit-color: var(--success);
+}
+
+.verdict[data-fit='partial'] {
+  --fit-color: var(--accent-3);
+}
+
+.verdict[data-fit='weak'] {
+  --fit-color: var(--danger);
+}
+
+[data-theme='dark'] .verdict[data-fit='strong'] {
+  --fit-color: #34d399;
+}
+
+[data-theme='dark'] .verdict[data-fit='partial'] {
+  --fit-color: #fbbf24;
+}
+
+[data-theme='dark'] .verdict[data-fit='weak'] {
+  --fit-color: #fb7185;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   En-tête du verdict
+   ───────────────────────────────────────────────────────────────────────── */
+.verdictHead {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.verdictIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--fit-color);
+  color: var(--accent-contrast);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--fit-color) 13%, transparent),
+    0 6px 16px color-mix(in srgb, var(--fit-color) 30%, transparent);
+}
+
+.verdictTitle {
+  margin: 0;
+  color: var(--fit-color);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Preuves et écarts
+   ───────────────────────────────────────────────────────────────────────── */
+.verdictGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.verdictLabel {
+  color: color-mix(in srgb, var(--fit-color) 45%, var(--text-faint));
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.verdictTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.verdictTag {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.26rem 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--fit-color) 30%, var(--border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--fit-color) 10%, var(--surface));
+  color: var(--text);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.verdictTag[data-tone='gap'] {
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--fit-color) 38%, var(--border));
+  background: color-mix(in srgb, var(--fit-color) 5%, var(--surface));
+  color: var(--text-muted);
+}
+
+/* ── Animations ─────────────────────────────────────────────────────────── */
+@keyframes verdict-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .verdict {
+    padding: 0.75rem 0.8rem 0.8rem;
+  }
+
+  .verdictTitle {
+    font-size: 0.85rem;
+  }
+
+  .verdictTag {
+    font-size: 0.66rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .verdict {
+    animation: none;
+  }
+}

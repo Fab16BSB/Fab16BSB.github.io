@@ -13,6 +13,9 @@
   background: var(--glass-strong);
   backdrop-filter: blur(18px);
   box-shadow: 0 -12px 30px rgba(7, 11, 20, 0.12);
+  transition:
+    transform var(--transition),
+    opacity var(--transition);
 }
 
 .inner {
@@ -171,6 +174,15 @@
   .node:hover .label {
     opacity: 1;
     transform: translate(-50%, 0);
+  }
+}
+
+/* Pendant la visite compacte, la frise laisse la place à la barre du bas. */
+@media (max-width: 1359px) {
+  :global(body.visit-tour-active) .bar {
+    transform: translateY(110%);
+    opacity: 0;
+    pointer-events: none;
   }
 }
 

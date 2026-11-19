@@ -1,0 +1,21 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Projecteur
+   ───────────────────────────────────────────────────────────────────────── */
+.spotlight {
+  position: fixed;
+  z-index: 90;
+  border-radius: 14px;
+  box-shadow: 0 0 0 9999px var(--visit-spotlight);
+  pointer-events: none;
+  transition:
+    top 170ms var(--ease),
+    left 170ms var(--ease),
+    width 170ms var(--ease),
+    height 170ms var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight {
+    transition: none;
+  }
+}
