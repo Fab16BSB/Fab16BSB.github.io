@@ -16,6 +16,7 @@ import {
   getThemeOnlyMatch,
 } from '@/lib/visit/search/visit-search.matches';
 import { buildVisitRouting } from '@/lib/visit/search/routing/visit-search-routing';
+import { buildEnrichedRanked } from '@/lib/visit/search/sections/visit-search-sections.enriched';
 import { rankVisitSections } from '@/lib/visit/search/sections/visit-search-sections';
 import {
   buildAboutStop,
@@ -73,8 +74,16 @@ export function buildSearchVisitPlan(
     return null;
   }
 
-  const routing = buildVisitRouting(
+  // Les sections cœur absentes sont ouvertes par les thèmes de la demande.
+  const enriched = buildEnrichedRanked(
     ranked,
+    byId,
+    offerGraph,
+    mode,
+  );
+  const routing = buildVisitRouting(
+    enriched.sections,
+    enriched.themeSectionIds,
     mode,
     persona,
     availabilityMatch,

@@ -80,7 +80,15 @@ export function About() {
         <div className={styles.story} data-reveal>
           <p>{t('about.p1')}</p>
           <p>{t('about.p2')}</p>
-          <SocialLinks links={socials} />
+
+          {/* Cible de la dernière étape de visite. */}
+          <div
+            className={styles.socials}
+            id="contact"
+            data-visit-target="contact-socials"
+          >
+            <SocialLinks links={socials} />
+          </div>
         </div>
       </div>
 

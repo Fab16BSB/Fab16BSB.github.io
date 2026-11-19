@@ -51,8 +51,16 @@ for (const persona of visitPersonas) {
       );
       const label = `${persona.id} ${item.id} ${locale}`;
       const expressIds = express.stops.map((stop) => stop.id);
+      const fullIds = full.stops.map((stop) => stop.id);
       const fullStops = new Map(
         full.stops.map((stop) => [stop.id, stop]),
+      );
+
+      // Le complet prolonge exactement l'essentiel, sans le réordonner.
+      assert.deepEqual(
+        fullIds.slice(0, expressIds.length),
+        expressIds,
+        `${label} : le complet prolonge l’essentiel`,
       );
 
       for (const stop of express.stops) {
@@ -67,6 +75,31 @@ for (const persona of visitPersonas) {
           `${label} : ${stop.id} plus pauvre en complet ` +
             `(${fullStop.highlights.length} < ${stop.highlights.length})`,
         );
+      }
+
+      // Une étape ajoutée par le complet porte toujours un contenu réel.
+      const expressSet = new Set(expressIds);
+
+      for (const stop of full.stops) {
+        if (!expressSet.has(stop.id)) {
+          assert.ok(
+            !stop.isComplement,
+            `${label} : ${stop.id} ajoutée sans contenu réel`,
+          );
+        }
+      }
+
+      // Le plafond de contenus du complet reste appliqué.
+      const fullItems = VISIT_CONFIG.modes.full.items;
+
+      if (fullItems !== null) {
+        for (const stop of full.stops) {
+          assert.ok(
+            stop.highlights.length <= fullItems[stop.id],
+            `${label} : ${stop.id} dépasse le plafond complet ` +
+              `(${stop.highlights.length} > ${fullItems[stop.id]})`,
+          );
+        }
       }
 
       if (MAX_EXPRESS_SECTIONS !== null) {

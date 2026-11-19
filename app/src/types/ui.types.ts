@@ -36,6 +36,7 @@ export type IconName =
   | 'play'
   | 'layers'
   | 'graph'
+  | 'mail'
   | 'github'
   | 'linkedin'
   | 'medium'

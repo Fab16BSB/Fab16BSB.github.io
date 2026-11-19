@@ -2,6 +2,22 @@
 
 React, TypeScript, and CSS Modules portfolio. The entire site lives in `app/`.
 
+## Contents
+
+- [Stack](#stack)
+- [Commands](#commands)
+- [Structure](#structure)
+- [Editing content](#editing-content)
+- [Visit planner](#visit-planner)
+- [Images and documents](#images-and-documents)
+- [Medium and YouTube](#medium-and-youtube)
+- [Knowledge graph](#knowledge-graph)
+  - [Recommendation blocks](#recommendation-blocks)
+  - [Generated files](#generated-files)
+  - [Test viewer](#test-viewer)
+- [Privacy](#privacy)
+- [Deployment](#deployment)
+
 ## Stack
 
 - React 19 + TypeScript + Vite
@@ -21,16 +37,22 @@ npm run dev              # local server
 npm run build            # typecheck + build into app/dist
 npm run preview          # preview the build
 npm run typecheck        # TypeScript check
+npm run visit:check      # validate route invariants
+npm run visit:test       # plan, offers and mode invariants
+npm run visit:blind      # 20 control requests (routing regressions)
+npm run visit:dataset    # synthetic routing dataset (504 offers)
+npm run visit:report     # write app/.cache/visit/visit-questions.report.md
+npm run embed:search     # rebuild the semantic search indexes
 npm run knowledge:similarity # rebuild semantic neighbors
-npm run knowledge:graph      # similarity + taxonomy + graph JSON + report + /graph/ page
+npm run knowledge:graph      # similarity + taxonomy + theme checks + graph JSON + report + /graph/ page
 npm run knowledge:check      # validate taxonomy, graph and theme guardrails
 npm run knowledge:taxonomy   # check taxonomy and write a coverage report
 npm run knowledge:viewer     # generate the public /graph/ page (local)
 npm run knowledge:viewer:prod # same page with portfolio prerender (production)
 npm run knowledge:themes     # check expected theme attachments
 npm run knowledge:refresh    # sync Medium + YouTube then rebuild the graph
-npm run sync:medium          # update src/data/medium-posts.json
-npm run sync:youtube         # update src/data/youtube-videos.json
+npm run sync:medium          # update src/data/feeds/medium-posts.json
+npm run sync:youtube         # update src/data/feeds/youtube-videos.json
 ```
 
 ## Structure
@@ -43,6 +65,11 @@ app/
 │  ├─ documents/         # EGC poster
 │  └─ .nojekyll
 ├─ scripts/
+│  ├─ fixtures/          # visit test datasets
+│  ├─ graph-viewer/      # standalone /graph/ page sources
+│  ├─ check-*.ts         # visit and knowledge checks
+│  ├─ embed-search.ts    # semantic search indexes
+│  ├─ export-knowledge-graph.ts
 │  ├─ sync-medium.mjs
 │  └─ sync-youtube.mjs
 └─ src/
@@ -52,12 +79,24 @@ app/
    │  ├─ ui/             # reusable building blocks
    │  └─ sections/       # page sections
    ├─ data/              # structured content
+   │  ├─ career/         # education, experience, skills
+   │  ├─ content/        # projects, publications, teaching, awards
+   │  ├─ feeds/          # generated Medium and YouTube JSON
+   │  ├─ knowledge/      # taxonomy and semantic neighbors
+   │  ├─ profile/        # profile, social links, languages
+   │  ├─ search/         # generated embedding indexes
+   │  ├─ site/           # navigation, SEO, site metadata
+   │  └─ visit/          # visit personas and sections
    ├─ hooks/             # shared hooks
    ├─ i18n/              # providers, helpers, and locales
    ├─ lib/               # transversal, non-React utilities
+   │  ├─ knowledge/      # knowledge graph engine
+   │  ├─ search/         # lexical search, embeddings, vectors
+   │  └─ visit/          # visit planner and evidence
+   ├─ pages/             # page assembly
+   ├─ search/            # semantic search provider and embeddings worker
    ├─ styles/            # tokens, reset, global, fonts
    ├─ theme/             # theme provider and helpers
-   ├─ pages/             # page assembly
    └─ types/             # shared types
 ```
 
@@ -76,17 +115,71 @@ Helper and hook files are only created when they make sense.
 ## Editing content
 
 - **UI text**: `src/i18n/locales/fr.json`, `en.json`, `es.json`.
-- **Experience / education**: `src/data/experience.data.ts`, `education.data.ts`.
-- **Projects**: `src/data/projects.data.ts` (public GitHub repositories and Kaggle notebooks; notebooks use `category: 'notebook'` and a Kaggle `extraLinks` entry).
-- **Skills**: `src/data/skills.data.ts`.
-- **Publications**: `src/data/publications.data.ts`.
-- **Public essentials**: `src/data/publication-summaries.data.ts` (context, problem and proposed solution plus keywords per scientific publication, in FR / EN / ES; they follow the FR / EN version toggled on each card, and Medium posts are excluded).
-- **Abstracts**: each `PublicationVersion` in `src/data/publications.data.ts` carries its original abstract (FR / EN), shown in the "Abstract" tab of the card.
-- **Teaching**: `src/data/teaching.data.ts`.
-- **Awards / achievements**: `src/data/awards.data.ts`.
-- **Supervisions**: `src/data/supervisions.data.ts` (4 supervisions shown in the Teaching tab).
-- **Passions / badges**: `src/data/about.data.ts`.
-- **Social links**: `src/data/socials.data.ts` and `src/data/profile.data.ts` (personal Medium in `socials`, Override community Medium in `community`).
+- **Experience / education**: `src/data/career/experience.data.ts`, `education.data.ts`.
+- **Projects**: `src/data/content/projects.data.ts` (public GitHub repositories and Kaggle notebooks; notebooks use `category: 'notebook'` and a Kaggle `extraLinks` entry).
+- **Skills**: `src/data/career/skills.data.ts`.
+- **Publications**: `src/data/content/publications.data.ts`.
+- **Public essentials**: `src/data/content/publication-summaries.data.ts` (context, problem and proposed solution plus keywords per scientific publication, in FR / EN / ES; they follow the FR / EN version toggled on each card, and Medium posts are excluded).
+- **Abstracts**: each `PublicationVersion` in `src/data/content/publications.data.ts` carries its original abstract (FR / EN), shown in the "Abstract" tab of the card.
+- **Teaching**: `src/data/content/teaching.data.ts`.
+- **Awards / achievements**: `src/data/content/awards.data.ts`.
+- **Supervisions**: `src/data/content/supervisions.data.ts` (4 supervisions shown in the Teaching tab).
+- **Passions / badges**: `src/data/content/about.data.ts`.
+- **Social links**: `src/data/profile/socials.data.ts` and `src/data/profile/profile.data.ts` (personal Medium in `socials`, Override community Medium in `community`).
+- **Availability**: `src/data/profile/profile.data.ts`. `availability.status` accepts `available`, `unavailable` or `hidden`; the About tag next to the location follows it, and the visit planner uses the matching localized text.
+
+## Visit planner
+
+The header search opens a client-side visit planner: a recruiter describes a
+role, a technology or a need and gets an ordered route through the profile with
+concrete items to open.
+
+- **Ranking.** A MiniSearch index (IDF/BM25, stop words, FR/EN/ES stemmers)
+  matches exact stems, so `AWS` does not match `award`. Every item is indexed and
+  each section has a descriptor built from its own labels and tags; a descriptor
+  can name a section but never becomes evidence. A second pass checks theme and
+  concept coherence against the knowledge graph. No backend, no model download;
+  the separate semantic search is not used here.
+- **Profiles and modes.** `visit-personas.data.ts` defines four visible profiles
+  (Data & AI, Industry, Research, Teaching), each with its own section order and
+  domain themes. A profile and a query are exclusive; a query runs with the
+  generalist profile. *Essential* keeps at most four content sections with two to
+  five items, and opens contextual sections (teaching, publications, videos,
+  awards) only when named. *Full* keeps the same route, fills each section up to
+  ten items and adds every contextual section with a real match. Industry skips
+  teaching, videos and awards; Research skips teaching and keeps research
+  projects and awards; Teaching keeps courses first, pedagogical videos, teaching
+  awards, one `Tutorat` supervision and excludes `Responsable de stage` roles.
+- **Verdict.** A colored banner shows a strong (green), partial (amber) or weak
+  (red) match, with up to three evidence pills and two gaps. It uses only items
+  above the score and graph thresholds in `src/lib/visit/visit.config.ts`. A weak
+  request shows no steps and invites the visitor to reformulate. A named section
+  without a precise item is complementary; with no content at all it becomes a
+  gap. Availability keeps About and the timeline, plus any named section.
+- **Evidence.** Items are ranked by theme and query match, recency, usage traces
+  and skill tenure, never by source order. Descriptors give the broad vocabulary;
+  precise terms such as `churn` or `RAG` come from the real content. Teaching-only
+  offers fill missing evidence from skills before the timeline. Skill
+  `conceptIds` expand generic terms (visualisation to Matplotlib/Seaborn, MLOps
+  to Docker, MLflow and API REST).
+- **Guided visit.** The palette starts a step-by-step tour over items tagged with
+  `data-visit-target`, with a right-side drawer (or a mobile bottom bar), a
+  spotlight and a reveal event that resets filters before scrolling. Every
+  non-empty route ends with a Contact step targeting the About social links
+  (LinkedIn, GitHub, Medium, Kaggle, YouTube). Open the planner with the gold
+  invitation under the header, `Ctrl/Cmd+K`, `/`, or a deep link such as
+  `/#visit=NLP`.
+
+Files: `src/data/visit/`, `src/lib/visit/` (`search/`, `plan/`, `evidence/`,
+config and graph), `src/lib/skill-tenure.ts`,
+`src/hooks/sections/useVisitReveal.ts` and `src/components/ui/VisitSearch/`.
+Fixtures live in `scripts/fixtures/`; the visit checks share
+`scripts/visit-check.shared.ts`.
+
+Commands: `visit:check` (route invariants), `visit:test` (plan, 17 offers in
+FR / EN / ES, modes), `visit:blind` (20 control requests), `visit:dataset` (504
+synthetic offers) and `visit:report` (writes
+`app/.cache/visit/visit-questions.report.md`).
 
 ## Images and documents
 
@@ -110,8 +203,8 @@ Keep a single copy: no duplicated images in `src/assets/` or elsewhere.
 
 ## Medium and YouTube
 
-- `scripts/sync-medium.mjs` reads `https://medium.com/feed/@fab.16`, generates `src/data/medium-posts.json`, and filters posts by the active language.
-- `scripts/sync-youtube.mjs` reads the channel feed and generates `src/data/youtube-videos.json`.
+- `scripts/sync-medium.mjs` reads `https://medium.com/feed/@fab.16`, generates `src/data/feeds/medium-posts.json`, and filters posts by the active language.
+- `scripts/sync-youtube.mjs` reads the channel feed and generates `src/data/feeds/youtube-videos.json`.
 - If the network request fails, the existing JSON files are kept.
 
 Both scripts run in the deployment workflow before the build. They can also be run manually.
@@ -128,30 +221,39 @@ Ranking is semantic-first:
 - **precomputed semantic neighbors** — the same multilingual e5 model as the
   search encodes all contents in FR / EN / ES, then only the best neighbors are
   stored. No model is loaded in the browser for recommendations;
-- **explicit links** — context links (`educationIds` / `experienceIds` on
-  projects and skills), direct skill matches and the suggestion-weight matrix
-  complete or prioritize the semantic results.
+- **explicit links** - context links (`educationIds` / `experienceIds` /
+  `projectIds` on projects and skills), direct skill matches and declared skill
+  concepts (`conceptIds`) complete or prioritize the semantic results.
 
 Themes and technologies remain useful for graph pivots and human-readable
-reasons, but they no longer decide whether a content is recommended.
+reasons, but they no longer decide whether a content is recommended. Declared
+skill concepts create the graph edges and feed the visit lexical expansion;
+they are excluded from visit coherence, which stays based on detected mentions.
 
-- Engine: `src/lib/knowledge-index.ts` (cache and graph access),
-  `knowledge-recommendations.ts` (public recommendation API),
-  `knowledge-signals.ts`, `knowledge-context.ts`, `knowledge-fallback.ts`,
-  `knowledge-extract.ts`, `knowledge-graph.ts`, `knowledge-rank.ts`,
-  `knowledge-similarity.ts`, `knowledge-normalize.ts` and `knowledge.config.ts`.
-- Taxonomy: `src/data/knowledge-taxonomy.data.ts` - 15 themes, skill concepts
-  generated from `skills.data.ts`, domain-level concepts attached to
-  `knowledge-domains.data.ts`, and manual aliases in
-  `knowledge-concept-overrides.data.ts`. `npm run knowledge:taxonomy` writes
+- Engine, all in `src/lib/knowledge/`: `knowledge.config.ts`,
+  `knowledge-index.ts` (cache and graph access), `knowledge-recommendations.ts`
+  (public recommendation API), `knowledge-raw-data.ts`, `knowledge-extract.ts`,
+  `knowledge-entities.ts`, `knowledge-nodes.ts`, `knowledge-concepts.ts`,
+  `knowledge-labels.ts`, `knowledge-structural-tags.ts`, `knowledge-projects.ts`,
+  `knowledge-normalize.ts`, `knowledge-matching.ts`, `knowledge-graph.ts`,
+  `knowledge-similarity.ts`, `knowledge-rank.ts`, `knowledge-context.ts`,
+  `knowledge-fallback.ts`, `knowledge-signals.ts` and `knowledge-sort.ts`.
+- Taxonomy, in `src/data/knowledge/`: `knowledge-taxonomy.data.ts` - 15 themes,
+  skill concepts generated from `src/data/career/skills.data.ts` (including the
+  concepts each skill declares in `conceptIds`), domain-level concepts attached
+  to `knowledge-domains.data.ts` (including explicit relations through
+  `related`, for example LLM ↔ RAG), and manual aliases or cross-cutting
+  concepts in `knowledge-concept-overrides.data.ts`; `knowledge-graph.ts` turns
+  each `related` declaration into a `related` edge between the two concept
+  nodes. `npm run knowledge:taxonomy` writes
   `.cache/knowledge/knowledge-taxonomy.report.md` with unused concepts, unknown
   tags and unused theme terms.
-- Semantic index: `src/data/knowledge-similarity.json` — committed neighbors for
+- Semantic index: `src/data/knowledge/knowledge-similarity.json` — committed neighbors for
   every content, generated by `npm run knowledge:similarity`.
 - Types: `src/types/knowledge.types.ts`.
 
 ```ts
-import { getSimilarProjects } from '@/lib/knowledge-recommendations';
+import { getSimilarProjects } from '@/lib/knowledge/knowledge-recommendations';
 
 const projects = getSimilarProjects('these'); // semantically close projects
 ```
@@ -165,9 +267,28 @@ excludes a target kind, and a missing entry uses
 `KNOWLEDGE_SUGGESTION_DEFAULT_WEIGHT`. This is how projects avoid recommending
 skills and formations while experiences remain, and how skills recommend
 projects, formations and experiences.
-Projects and skills declare their context with `educationIds` / `experienceIds`;
-the graph creates explicit `context` edges, while experiences keep their single
-`educationId`. The graph is built once, on first import, and memoised.
+Projects and skills declare their context with `educationIds` / `experienceIds`
+/ `projectIds`; the graph creates explicit `context` edges, while experiences
+keep their single `educationId`. The graph is built once, on first import, and
+memoised.
+
+### Recommendation blocks
+
+The same engine feeds three blocks, with different filters:
+
+| Block | Source | Accepted kinds | Limit |
+| --- | --- | --- | --- |
+| "Voir aussi" (`RelatedProjects`) | project | projects only | 3 |
+| "Contenus liés" (`RelatedContent`) | project | everything except projects | 6 |
+| "Réalisations liées" (`RelatedContent`) | skill | all kinds, weighted | 6 |
+
+Candidates are merged in priority order — explicit context links, semantic
+neighbors, direct skill matches, reciprocal projects, then a theme/concept
+fallback — deduplicated, sorted by score then year, and cut at the limit. For a
+skill source, direct technology matches are merged before semantic neighbors and
+projects are sorted first.
+Thresholds and weights live in `src/lib/knowledge/knowledge.config.ts`; do not repeat them
+here, they move.
 
 ### Generated files
 
@@ -185,8 +306,8 @@ The viewer source lives in `scripts/graph-viewer/`:
 
 - `template.html` — skeleton with placeholders.
 - `html/` — head, icons, header and workspace partials.
-- `styles/` — CSS split by responsibility (tokens, header, filters, stage, panel, responsive).
-- `scripts/` — JavaScript split by responsibility (data, state, layout, render, panel, filters, preferences, startup).
+- `styles/` — CSS split by responsibility (base, tokens, fonts, header, filters, search, stage, layout, panel, responsive).
+- `scripts/` — JavaScript split by responsibility (constants, data, state, helpers, i18n, theme-init, cluster-layout, layout, cluster-render, render, simulation, interactions, panel, filters, preferences, startup).
 
 `export-knowledge-graph.ts` concatenates these partials and injects the graph
 data into the standalone viewer.
@@ -198,7 +319,7 @@ prerender; it is git-ignored. The local commands omit the prerender so Vite HMR
 and the browser back/forward cache do not produce WebSocket warnings during
 development.
 
-`src/data/knowledge-similarity.json` is committed so the site and the viewer work
+`src/data/knowledge/knowledge-similarity.json` is committed so the site and the viewer work
 without re-running the model. Regenerate it after any content change:
 
 ```bash
@@ -231,6 +352,14 @@ below, and the search stays visible when filters are collapsed. It carries
 `noindex,nofollow` and stays out of search engines.
 
 - Filter by content kind, search a title and toggle technical concepts.
+- Layout switch in the header: `Réseau` (default), `Sections` (one cluster per
+  content kind) and `Thèmes` (one cluster per most specific theme, `Autres` for
+  unthemed content). Cluster modes hide links and freeze the simulation; each
+  cluster title stays above its halo. `Concepts` and `Relâcher` sit with the
+  view tools and only appear in `Réseau`. On phones, the view modes collapse
+  into a `Vue` menu while the other tools stay visible. Clicking a node still
+  opens its panel. The choice is stored locally and can be overridden with
+  `?mode=network|sections|themes`.
 - Node names stay visible with the same zoom-based decluttering; relation
   details and reasons live in the side panel.
 - In a theme panel, see the linked skills/technologies and filter its attached contents by content kind.
@@ -238,16 +367,22 @@ below, and the search stays visible when filters are collapsed. It carries
 - Drag a node to pin it, double-click to release it; wheel or pinch to zoom. On
   phones, the `+` / `−` buttons zoom, filters start collapsed, and the detail
   sheet opens full height over the graph.
-- Deep link: `/graph/?select=project:these`, optionally with `&concepts=1`; use
+- "Ouvrir la section du site" opens the target card in the same tab through
+  `/?target=<kind>-<sourceId>#<section>`. The site reveals the section filters,
+  switches to the Medium tab for `article-...` targets, then scrolls to the card.
+  The base URL follows the viewer origin in dev and production, and falls back
+  to `https://fab16bsb.github.io/` when the HTML file is opened directly.
+- Deep link: `/graph/?select=project:these`, optionally with `&concepts=1` or
+  `&mode=sections|themes`; use
   `public/graph/index.html?select=project:these` when opening the file directly.
 
 Tune detection in `knowledge-taxonomy.data.ts` (themes, aliases) and scoring in
-`src/lib/knowledge.config.ts` (weights, thresholds and suggestion weights).
+`src/lib/knowledge/knowledge.config.ts` (weights, thresholds and suggestion weights).
 
 ## Privacy
 
 - No CV is present in the repository.
-- No email or phone number is published on the site. Contact goes through social links (LinkedIn, GitHub, Medium, Kaggle).
+- No email or phone number is published on the site. Contact goes through social links (LinkedIn, GitHub, Medium, Kaggle, YouTube).
 - The Contact section has been removed: the site is a personal presentation, not a commercial page.
 - The thesis is linked to HAL; the EGC poster is hosted in `public/documents`.
 
@@ -261,6 +396,6 @@ The site is published to GitHub Pages via GitHub Actions:
 - URL: `https://fab16bsb.github.io/`;
 - `base: '/'` in `vite.config.ts`, correct for a user site served at the root.
 
-The workflow triggers on changes to `app/**` or the workflow itself, runs every day at 04:00 UTC, and can be started manually (`workflow_dispatch`). It runs `npm ci`, the Medium/YouTube syncs, the build, then publishes the artifact.
+The workflow triggers on changes to `app/**` or the workflow itself, runs every day at 04:00 UTC, and can be started manually (`workflow_dispatch`). It runs `npm ci`, the Medium/YouTube syncs, `embed:search`, `knowledge:similarity` and `knowledge:check`, regenerates the `/graph/` page with `knowledge:viewer:prod`, builds the site, then publishes the artifact. The embedding and similarity steps are non-blocking and keep the committed indexes on failure.
 
 The site is a single page with anchors (`/#about`, `/#timeline`, `/#skills`, etc.): no SPA rewrite rule is needed.

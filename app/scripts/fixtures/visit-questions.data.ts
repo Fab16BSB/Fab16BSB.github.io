@@ -32,6 +32,13 @@ export type VisitQuestionTenureExpectation = {
   isCurrent?: boolean;
 };
 
+/** Attentes propres au mode complet. */
+export type VisitQuestionFullExpectation = {
+  sections?: VisitSectionId[];
+  excludedSections?: VisitSectionId[];
+  empty?: boolean;
+};
+
 /** Attentes vérifiées pour une offre. */
 export type VisitQuestionExpectation = {
   fit?: VisitFit;
@@ -48,6 +55,7 @@ export type VisitQuestionExpectation = {
   evidenceAnyPrefixes?: string[];
   minSteps?: number;
   maxSteps?: number;
+  full?: VisitQuestionFullExpectation;
 };
 
 /** Offre de référence et résultat attendu. */
@@ -85,6 +93,7 @@ export const visitQuestions: VisitQuestion[] = [
       ],
       evidenceTargets: ['experience-freelance-leasup'],
       maxSteps: 5,
+      full: { sections: ['teaching'] },
     },
   },
   {
@@ -120,6 +129,7 @@ export const visitQuestions: VisitQuestion[] = [
       evidenceTargets: ['skill-docker', 'skill-mlflow', 'skill-api-rest'],
       excludedEvidenceTargets: ['experience-ater-paris8'],
       maxSteps: 5,
+      full: { sections: ['publications'] },
     },
   },
   {
@@ -180,6 +190,7 @@ export const visitQuestions: VisitQuestion[] = [
         'skill-opencv',
       ],
       maxSteps: 5,
+      full: { sections: ['publications'] },
     },
   },
   {
@@ -214,6 +225,7 @@ export const visitQuestions: VisitQuestion[] = [
       targets: ['project-story-bot', 'skill-huggingface'],
       evidenceTargets: ['skill-langchain'],
       maxSteps: 5,
+      full: { sections: ['teaching'] },
     },
   },
 
@@ -251,6 +263,7 @@ export const visitQuestions: VisitQuestion[] = [
       targets: ['course-deep-learning-2023', 'education-phd'],
       evidenceAnyPrefixes: ['publication-'],
       maxSteps: 5,
+      full: { sections: ['skills'] },
     },
   },
   {
@@ -288,6 +301,7 @@ export const visitQuestions: VisitQuestion[] = [
       targets: ['project-scheduler-finder', 'skill-react', 'skill-python'],
       evidenceTargets: ['skill-react', 'skill-python'],
       maxSteps: 5,
+      full: { sections: ['teaching'] },
     },
   },
   {
@@ -311,6 +325,7 @@ export const visitQuestions: VisitQuestion[] = [
       evidenceTargets: ['skill-sql', 'skill-python'],
       excludedEvidenceTargets: ['experience-stage-directannonces'],
       maxSteps: 5,
+      full: { sections: ['teaching'] },
     },
   },
 
@@ -323,12 +338,11 @@ export const visitQuestions: VisitQuestion[] = [
       es: 'Competencias LaTeX',
     },
     expected: {
-      fit: 'partial',
-      gaps: ['visit.gaps.projects'],
-      sections: ['skills'],
-      excludedSections: ['projects', 'timeline'],
+      fit: 'strong',
+      gaps: [],
+      sections: ['skills', 'timeline', 'projects'],
       targets: ['skill-latex'],
-      maxSteps: 2,
+      maxSteps: 4,
     },
   },
   {
@@ -361,7 +375,8 @@ export const visitQuestions: VisitQuestion[] = [
       fit: 'weak',
       hasMatches: false,
       gaps: ['visit.gaps.unknown', 'visit.gaps.unknown'],
-      maxSteps: 5,
+      maxSteps: 0,
+      full: { empty: true },
     },
   },
   {
@@ -375,7 +390,8 @@ export const visitQuestions: VisitQuestion[] = [
       fit: 'weak',
       hasMatches: false,
       gaps: ['visit.gaps.coverage'],
-      maxSteps: 5,
+      maxSteps: 0,
+      full: { empty: true },
     },
   },
 ];

@@ -26,6 +26,12 @@ export const strokePaths: Partial<Record<IconName, ReactNode>> = {
       <path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" />
     </>
   ),
+  mail: (
+    <>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
+    </>
+  ),
   download: (
     <>
       <path d="M12 3v12" />

@@ -12,7 +12,8 @@ export type VisitSectionId =
   | 'publications'
   | 'videos'
   | 'teaching'
-  | 'awards';
+  | 'awards'
+  | 'contact';
 
 /** Profil de lecture utilisé pour pondérer le parcours. */
 export type VisitPersona =
@@ -24,6 +25,14 @@ export type VisitPersona =
 
 /** Longueur du parcours proposé. */
 export type VisitMode = 'express' | 'full';
+
+/**
+ * Politique d'accès aux sections hors noyau.
+ *
+ * `named` exige que la demande nomme la section, `matched` l'ouvre dès qu'un
+ * contenu réel correspond.
+ */
+export type VisitSectionPolicy = 'named' | 'matched';
 
 /**
  * Définition statique d'une étape possible.

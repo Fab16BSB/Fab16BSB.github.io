@@ -246,6 +246,113 @@ function checkQuestion(
   return result;
 }
 
+/**
+ * Vérifie le mode complet d'une question dans une langue.
+ *
+ * Le complet doit prolonger l'essentiel, ne jamais perdre de contenu et
+ * n'ajouter que des sections portées par un contenu réel.
+ *
+ * @param item - Question et attentes.
+ * @param locale - Langue testée.
+ * @returns Le résultat détaillé du mode complet.
+ */
+function checkFullQuestion(
+  item: VisitQuestion,
+  locale: Locale,
+): QuestionResult {
+  const plan = buildCheckPlan(
+    item.question[locale],
+    'general',
+    'full',
+    locale,
+  );
+  // Une requête s'évalue toujours avec le profil généraliste.
+  const essential = buildCheckPlan(
+    item.question[locale],
+    'general',
+    'express',
+    locale,
+  );
+  const failures: string[] = [];
+  const essentialIds = essential.stops.map((stop) => stop.id);
+  const fullIds = plan.stops.map((stop) => stop.id);
+
+  if (
+    fullIds.slice(0, essentialIds.length).join('|') !==
+    essentialIds.join('|')
+  ) {
+    failures.push('le complet ne prolonge pas l’essentiel');
+  }
+
+  for (const stop of essential.stops) {
+    const fullStop = plan.stops.find((entry) => entry.id === stop.id);
+
+    if (!fullStop) {
+      failures.push(`section perdue en complet : ${stop.id}`);
+    } else if (fullStop.highlights.length < stop.highlights.length) {
+      failures.push(`contenus perdus en complet : ${stop.id}`);
+    }
+  }
+
+  const essentialSet = new Set(essentialIds);
+
+  for (const stop of plan.stops) {
+    if (!essentialSet.has(stop.id) && stop.isComplement) {
+      failures.push(`étape ajoutée sans contenu réel : ${stop.id}`);
+    }
+  }
+
+  // Le verdict reste identique entre les deux modes.
+  if (plan.verdict?.fit !== essential.verdict?.fit) {
+    failures.push(
+      `verdict ${plan.verdict?.fit ?? 'absent'} ` +
+        `(essentiel ${essential.verdict?.fit ?? 'absent'})`,
+    );
+  }
+
+  if (
+    JSON.stringify(plan.verdict?.gaps ?? []) !==
+    JSON.stringify(essential.verdict?.gaps ?? [])
+  ) {
+    failures.push('écarts différents entre essentiel et complet');
+  }
+
+  if (
+    JSON.stringify(plan.verdict?.evidence ?? []) !==
+    JSON.stringify(essential.verdict?.evidence ?? [])
+  ) {
+    failures.push('preuves différentes entre essentiel et complet');
+  }
+
+  if (item.expected.full?.empty === true && plan.stops.length > 0) {
+    failures.push(
+      `visite proposée en complet : ${plan.stops.length} étape(s)`,
+    );
+  }
+
+  for (const section of item.expected.full?.sections ?? []) {
+    if (!fullIds.includes(section)) {
+      failures.push(`section manquante en complet : ${section}`);
+    }
+  }
+
+  for (const section of item.expected.full?.excludedSections ?? []) {
+    if (fullIds.includes(section)) {
+      failures.push(`section interdite en complet : ${section}`);
+    }
+  }
+
+  return {
+    questionId: item.id,
+    question: item.question[locale],
+    locale,
+    status: failures.length === 0 ? 'OK' : 'FAIL',
+    route: formatRoute(plan),
+    failures,
+    plan,
+  };
+}
+
 /* ─────────────────────────────────────────────────────────────────────────
    COHÉRENCE ENTRE LANGUES
    ───────────────────────────────────────────────────────────────────────── */
@@ -386,18 +493,25 @@ function formatVerdict(plan: VisitPlan): string {
 async function writeReport(
   results: QuestionResult[],
   crossLanguageFailures: string[],
+  fullResults: QuestionResult[],
 ): Promise<void> {
   const path = resolve(
     scriptDir,
     '../.cache/visit/visit-questions.report.md',
   );
   const ok = results.filter((result) => result.status === 'OK').length;
+  const fullOk = fullResults.filter(
+    (result) => result.status === 'OK',
+  ).length;
   const lines = [
     '# Rapport du parcours de visite',
     '',
     `Année de référence : ${REFERENCE_YEAR}`,
     '',
-    `Résultat : ${ok}/${results.length} cas réussis.`,
+    `Résultat essentiel : ${ok}/${results.length} cas réussis.`,
+    `Résultat complet : ${fullOk}/${fullResults.length} cas réussis.`,
+    '',
+    '## Mode essentiel',
     '',
     '| Question | Langue | Verdict | Statut | Parcours | Échecs |',
     '|---|---|---|---|---|---|',
@@ -406,7 +520,16 @@ async function writeReport(
         `| ${result.questionId} | ${result.locale} | ${result.plan.verdict?.fit ?? '—'} | ${result.status} | ${result.route.replaceAll('|', '/')} | ${result.failures.join('<br>') || '—'} |`,
     ),
     '',
-    '## Cohérence entre langues',
+    '## Mode complet',
+    '',
+    '| Question | Langue | Verdict | Statut | Parcours | Échecs |',
+    '|---|---|---|---|---|---|',
+    ...fullResults.map(
+      (result) =>
+        `| ${result.questionId} | ${result.locale} | ${result.plan.verdict?.fit ?? '—'} | ${result.status} | ${result.route.replaceAll('|', '/')} | ${result.failures.join('<br>') || '—'} |`,
+    ),
+    '',
+    '## Cohérence entre langues (essentiel)',
     '',
     ...(crossLanguageFailures.length > 0
       ? crossLanguageFailures.map((failure) => `- ${failure}`)
@@ -445,10 +568,29 @@ const activeQuestions = visitQuestions.filter(isCaseActive);
 const results = activeQuestions.flatMap((item) =>
   LOCALES.map((locale) => checkQuestion(item, locale)),
 );
+const fullResults = activeQuestions.flatMap((item) =>
+  LOCALES.map((locale) => checkFullQuestion(item, locale)),
+);
 const failures = results.filter((result) => result.status === 'FAIL');
+const fullFailures = fullResults.filter(
+  (result) => result.status === 'FAIL',
+);
 const crossLanguageFailures = checkCrossLanguage(results);
 
 for (const result of results) {
+  const prefix = formatStatus(result.status === 'OK');
+  console.log(
+    `${prefix} [${result.locale}] ${result.questionId} — ${result.route}`,
+  );
+
+  for (const failure of result.failures) {
+    console.log(`     ${failure}`);
+  }
+}
+
+console.log('\nMode complet :');
+
+for (const result of fullResults) {
   const prefix = formatStatus(result.status === 'OK');
   console.log(
     `${prefix} [${result.locale}] ${result.questionId} — ${result.route}`,
@@ -468,14 +610,21 @@ if (crossLanguageFailures.length > 0) {
 }
 
 const ok = results.length - failures.length;
+const fullOk = fullResults.length - fullFailures.length;
 console.log(
-  `\n${ok}/${results.length} cas réussis — ${activeQuestions.length} questions × ${LOCALES.length} langues`,
+  `\nEssentiel : ${ok}/${results.length} cas réussis — ` +
+    `complet : ${fullOk}/${fullResults.length} cas réussis ` +
+    `(${activeQuestions.length} questions × ${LOCALES.length} langues)`,
 );
 
 if (wantsReport) {
-  await writeReport(results, crossLanguageFailures);
+  await writeReport(results, crossLanguageFailures, fullResults);
 }
 
-if (failures.length > 0 || crossLanguageFailures.length > 0) {
+if (
+  failures.length > 0 ||
+  fullFailures.length > 0 ||
+  crossLanguageFailures.length > 0
+) {
   process.exitCode = 1;
 }

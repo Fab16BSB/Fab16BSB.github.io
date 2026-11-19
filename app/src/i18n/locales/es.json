@@ -7,7 +7,8 @@
     "publications": "Publicaciones",
     "videos": "Vídeos",
     "teaching": "Enseñanza",
-    "awards": "Palmarés"
+    "awards": "Palmarés",
+    "contact": "Contacto"
   },
 
   "graph": {
@@ -100,7 +101,7 @@
     "modeLabel": "Duración del recorrido",
     "results": "Tu recorrido",
     "suggested": "Recorrido recomendado",
-    "summary": "{count} etapas · unos {minutes} min",
+    "summary": "{count} etapas · {items} elementos · unos {minutes} min",
     "complement": "Etapa complementaria",
     "openSection": "Ver la sección",
     "openItem": "Ver {name}",
@@ -123,7 +124,9 @@
     "durationMinutes": "{minutes} min",
     "durationMixed": "{minutes} min {seconds} s",
     "itemCount": "{count} elementos",
-    "noMatch": "No hay coincidencias directas. Este es el recorrido recomendado para descubrir el perfil.",
+    "noMatchTitle": "Ningún recorrido para esta solicitud",
+    "noMatchHint": "Prueba otra formulación, una tecnología o elige un perfil.",
+    "contactTitle": "Mantengamos el contacto",
     "privacy": "Recorrido calculado en tu navegador. No se envían datos.",
     "reset": "Reiniciar"
   },

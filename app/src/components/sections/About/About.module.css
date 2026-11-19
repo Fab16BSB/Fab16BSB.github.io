@@ -111,8 +111,12 @@
   line-height: 1.75;
 }
 
-.story > ul {
-  margin-top: 0.25rem;
+.socials {
+  width: fit-content;
+  max-width: 100%;
+  margin: -0.6rem -0.85rem 0;
+  padding: 0.85rem;
+  border-radius: 14px;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────

@@ -3,7 +3,11 @@
   Seuils ajustables sans toucher au moteur.
 ========================================================================= */
 
-import type { VisitMode, VisitSectionId } from '@/types/visit.types';
+import type {
+  VisitMode,
+  VisitSectionId,
+  VisitSectionPolicy,
+} from '@/types/visit.types';
 
 /* =========================================================================
   TYPES
@@ -14,6 +18,7 @@ export type VisitModeLimits = {
   maxSections: number | null;
   items: Record<VisitSectionId, number> | null;
   timelineShared: number | null;
+  contextSections: VisitSectionPolicy;
 };
 
 /* =========================================================================
@@ -34,6 +39,8 @@ export const VISIT_CONFIG = {
    * `maxSections` à `null` signifie « toutes les sections au-dessus du seuil ».
    * `timelineShared` s'applique quand la demande couvre aussi l'enseignement
    * ou la recherche : le parcours sert alors de preuve d'expérience.
+   * `contextSections` décide si une section hors noyau doit être nommée ou
+   * seulement avoir un contenu réel.
    */
   modes: {
     express: {
@@ -48,12 +55,25 @@ export const VISIT_CONFIG = {
         teaching: 3,
         videos: 2,
         awards: 2,
+        contact: 1,
       },
+      contextSections: 'named',
     },
     full: {
       maxSections: null,
       timelineShared: null,
-      items: null,
+      items: {
+        about: 1,
+        timeline: 10,
+        projects: 10,
+        skills: 10,
+        publications: 10,
+        teaching: 10,
+        videos: 10,
+        awards: 10,
+        contact: 1,
+      },
+      contextSections: 'matched',
     },
   } as Record<VisitMode, VisitModeLimits>,
 

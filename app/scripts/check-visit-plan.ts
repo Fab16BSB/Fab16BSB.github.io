@@ -12,6 +12,7 @@
 ========================================================================= */
 import assert from 'node:assert/strict';
 import { visitSections } from '../src/data/visit/visit-sections.data';
+import { appendContactStop } from '../src/lib/visit/plan/visit-plan.contact';
 import { selectRankedSections } from '../src/lib/visit/search/routing/visit-search-routing.selection';
 import {
   isVisitTarget,
@@ -645,12 +646,16 @@ assert.ok(
 );
 
 const noMatch = buildCheckPlan('zzzz', 'general', 'express', 'fr');
-checkPlan('sans correspondance', noMatch);
-assert.equal(noMatch.hasMatches, false, 'sans correspondance : repli signalé');
+assert.equal(noMatch.hasMatches, false, 'sans correspondance : aucune visite');
 assert.equal(
   noMatch.stops.length,
-  5,
-  'sans correspondance : parcours conseillé',
+  0,
+  'sans correspondance : aucune étape proposée',
+);
+assert.equal(
+  noMatch.verdict?.fit,
+  'weak',
+  'sans correspondance : verdict faible',
 );
 
 // Le mode complet prolonge exactement l'ordre de l'essentiel.
@@ -689,6 +694,11 @@ assert.equal(
   false,
   'offre inconnue : aucune correspondance directe',
 );
+assert.equal(
+  weakOffer.stops.length,
+  0,
+  'offre inconnue : aucune visite proposée',
+);
 assert.deepEqual(
   weakOffer.verdict?.gaps.map((gap) => gap.key),
   ['visit.gaps.unknown', 'visit.gaps.unknown'],
@@ -698,6 +708,33 @@ assert.deepEqual(
   weakOffer.verdict?.gaps.map((gap) => gap.params?.term),
   ['AWS', 'GCP'],
   'offre inconnue : termes nommés',
+);
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CONTACT
+   ───────────────────────────────────────────────────────────────────────── */
+
+// Tout parcours non vide se termine par l'étape de contact.
+const contactBase = buildCheckPlan('', 'general', 'express', 'fr');
+const contactPlan = appendContactStop(contactBase, 'fr');
+
+assert.equal(
+  contactPlan.stops.at(-1)?.id,
+  'contact',
+  'contact : dernière étape du parcours',
+);
+assert.equal(
+  contactPlan.duration,
+  contactBase.duration + 10,
+  'contact : durée ajoutée',
+);
+assert.equal(
+  appendContactStop(
+    buildCheckPlan('zzzz', 'general', 'express', 'fr'),
+    'fr',
+  ).stops.length,
+  0,
+  'contact : aucune étape sans parcours',
 );
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -718,6 +755,59 @@ for (const mode of ['express', 'full'] as const) {
     `section nommée : complément retenu en ${mode}`,
   );
 }
+
+// Le complet ouvre les sections cœur portées par les thèmes de la demande.
+const themeExpress = buildCheckPlan(
+  'consultant en Intelligence Artificielle',
+  'general',
+  'express',
+  'fr',
+);
+const themeFull = buildCheckPlan(
+  'consultant en Intelligence Artificielle',
+  'general',
+  'full',
+  'fr',
+);
+const countHighlights = (plan: VisitPlan) =>
+  plan.stops.reduce(
+    (total, stop) => total + stop.highlights.length,
+    0,
+  );
+
+assert.ok(
+  themeExpress.stops.some((stop) => stop.id === 'skills'),
+  'thèmes : compétences ouvertes en essentiel',
+);
+assert.ok(
+  themeFull.stops.some((stop) => stop.id === 'skills'),
+  'thèmes : compétences ouvertes en complet',
+);
+assert.equal(
+  themeExpress.verdict?.fit,
+  'strong',
+  'thèmes : correspondance confirmée en essentiel',
+);
+assert.ok(
+  themeFull.stops.length > themeExpress.stops.length,
+  'thèmes : le complet ajoute des sections',
+);
+assert.ok(
+  countHighlights(themeFull) > countHighlights(themeExpress),
+  'thèmes : le complet enrichit les contenus',
+);
+assert.equal(
+  themeFull.verdict?.fit,
+  'strong',
+  'thèmes : le complet confirme la correspondance',
+);
+assert.deepEqual(
+  themeFull.stops
+    .slice(0, themeExpress.stops.length)
+    .map((stop) => stop.id),
+  themeExpress.stops.map((stop) => stop.id),
+  'thèmes : le complet prolonge l’essentiel',
+);
 
 // Une section nommée avec contenu reste retenue sous le plancher de score.
 const namedRanked: VisitSearchSection[] = [

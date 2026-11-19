@@ -12,6 +12,7 @@ import {
 import { useDialogFocusTrap } from '@/hooks/ui/useDialogFocusTrap';
 import { useLockBodyScroll } from '@/hooks/ui/useLockBodyScroll';
 import { useI18n } from '@/i18n/useI18n';
+import { appendContactStop } from '@/lib/visit/plan/visit-plan.contact';
 import { buildVisitPlan } from '@/lib/visit/plan/visit-plan';
 import { isVisitTarget } from '@/lib/visit/visit-targets';
 import type { VisitMode, VisitPersona } from '@/types/visit.types';
@@ -51,9 +52,13 @@ export function useVisitSearch() {
     });
   }, []);
 
-  // Parcours recalculé à chaque frappe.
+  // Parcours recalculé à chaque frappe, toujours terminé par le contact.
   const plan = useMemo(
-    () => buildVisitPlan(query, persona, mode, locale),
+    () =>
+      appendContactStop(
+        buildVisitPlan(query, persona, mode, locale),
+        locale,
+      ),
     [query, persona, mode, locale],
   );
 

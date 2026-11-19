@@ -4,6 +4,7 @@
 import { createPortal } from 'react-dom';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { useI18n } from '@/i18n/useI18n';
+import { VisitContactBar } from '../VisitContactBar/VisitContactBar';
 import { VisitFilters } from '../VisitFilters/VisitFilters';
 import { VisitResults } from '../VisitResults/VisitResults';
 import type { useVisitSearch } from '../../useVisitSearch';
@@ -130,6 +131,9 @@ export function VisitPanel({ search }: VisitPanelProps) {
           onSelect={goToTarget}
         />
 
+        {/* Contact toujours visible, hors zone de défilement. */}
+        <VisitContactBar />
+
         {/* Confidentialité et actions de pied de palette. */}
         <footer className={styles.foot}>
           <p className={styles.privacy}>
@@ -150,7 +154,7 @@ export function VisitPanel({ search }: VisitPanelProps) {
               type="button"
               className="button button--primary button--small"
               onClick={startTour}
-              disabled={showPrompt}
+              disabled={showPrompt || plan.stops.length === 0}
             >
               <Icon name="route" size={15} />
               {t('visit.tour.start')}

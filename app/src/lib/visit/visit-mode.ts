@@ -3,7 +3,11 @@
    Les valeurs vivent dans `visit.config.ts` ; ce module les applique.
 ========================================================================= */
 import { VISIT_CONFIG } from '@/lib/visit/visit.config';
-import type { VisitMode, VisitSectionId } from '@/types/visit.types';
+import type {
+  VisitMode,
+  VisitSectionId,
+  VisitSectionPolicy,
+} from '@/types/visit.types';
 
 /**
  * Nombre maximal de sections de contenu.
@@ -13,6 +17,16 @@ import type { VisitMode, VisitSectionId } from '@/types/visit.types';
  */
 export function getMaxContentSections(mode: VisitMode): number | null {
   return VISIT_CONFIG.modes[mode].maxSections;
+}
+
+/**
+ * Politique d'accès aux sections hors noyau.
+ *
+ * @param mode - Mode essentiel ou approfondi.
+ * @returns `named` si la section doit être nommée, `matched` si un contenu suffit.
+ */
+export function getSectionPolicy(mode: VisitMode): VisitSectionPolicy {
+  return VISIT_CONFIG.modes[mode].contextSections;
 }
 
 /**

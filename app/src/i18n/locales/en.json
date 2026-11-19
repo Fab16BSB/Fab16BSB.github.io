@@ -7,7 +7,8 @@
     "publications": "Publications",
     "videos": "Videos",
     "teaching": "Teaching",
-    "awards": "Awards"
+    "awards": "Awards",
+    "contact": "Contact"
   },
 
   "graph": {
@@ -100,7 +101,7 @@
     "modeLabel": "Route length",
     "results": "Your route",
     "suggested": "Suggested route",
-    "summary": "{count} steps · about {minutes} min",
+    "summary": "{count} steps · {items} items · about {minutes} min",
     "complement": "Complementary step",
     "openSection": "View section",
     "openItem": "View {name}",
@@ -123,7 +124,9 @@
     "durationMinutes": "{minutes} min",
     "durationMixed": "{minutes} min {seconds} s",
     "itemCount": "{count} items",
-    "noMatch": "No direct match. Here is the suggested route to discover the profile.",
+    "noMatchTitle": "No route for this request",
+    "noMatchHint": "Try another wording, a technology, or pick a profile.",
+    "contactTitle": "Let's stay in touch",
     "privacy": "Route computed in your browser. No data is sent.",
     "reset": "Reset"
   },

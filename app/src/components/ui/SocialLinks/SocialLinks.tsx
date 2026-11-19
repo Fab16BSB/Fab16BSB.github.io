@@ -11,15 +11,28 @@ import styles from './SocialLinks.module.css';
 type SocialLinksProps = {
   links: SocialLink[];
   labels?: boolean;
+  variant?: 'default' | 'contact';
 };
 
 /* =========================================================================
   COMPOSANT : SocialLinks
   Liste de liens sociaux.
 ========================================================================= */
-export function SocialLinks({ links, labels = false }: SocialLinksProps) {
+export function SocialLinks({
+  links,
+  labels = false,
+  variant = 'default',
+}: SocialLinksProps) {
+  // La variante contact rend les icônes blanches et fait pulser LinkedIn.
+  const listClassName = [
+    styles.list,
+    variant === 'contact' ? styles.contact : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <ul className={styles.list}>
+    <ul className={listClassName}>
 
       {/* Liens sociaux. */}
       {links.map((link) => (
@@ -33,6 +46,8 @@ export function SocialLinks({ links, labels = false }: SocialLinksProps) {
             rel="noopener noreferrer"
             aria-label={link.label}
             data-tooltip={labels ? undefined : link.label}
+            data-network={link.icon}
+            data-social-link
           >
 
             {/* Icône du réseau. */}

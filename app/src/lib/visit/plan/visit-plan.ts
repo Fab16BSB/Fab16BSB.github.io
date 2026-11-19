@@ -12,6 +12,7 @@ import type { Locale } from '@/types/common.types';
 import type {
   VisitMode,
   VisitPersona,
+  VisitPersonaDefinition,
   VisitPlan,
   VisitVerdict,
   VisitVerdictGap,
@@ -19,26 +20,20 @@ import type {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   VERDICT DE REPLI
+   VERDICT SANS CORRESPONDANCE
    ───────────────────────────────────────────────────────────────────────── */
 
 /**
- * Construit le verdict faible d'un parcours de repli.
+ * Construit le verdict d'une demande sans aucun contenu correspondant.
  *
  * @param query - Demande nettoyée.
  * @param locale - Langue de lecture.
- * @param useProfileFallback - Indique que le parcours suit le profil.
- * @returns Le verdict, ou `undefined` quand la recherche a répondu.
+ * @returns Le verdict faible, avec les termes inconnus puis la couverture.
  */
-function buildFallbackVerdict(
+function buildNoMatchVerdict(
   query: string,
   locale: Locale,
-  useProfileFallback: boolean,
-): VisitVerdict | undefined {
-  if (!useProfileFallback) {
-    return undefined;
-  }
-
+): VisitVerdict {
   const unknownTerms = getUnknownTechTerms(query, locale);
   const gaps: VisitVerdictGap[] = unknownTerms.map((term) => ({
     key: 'visit.gaps.unknown',
@@ -57,6 +52,31 @@ function buildFallbackVerdict(
   };
 }
 
+/**
+ * Construit un parcours vide : aucune étape, seulement le verdict.
+ *
+ * @param query - Demande nettoyée.
+ * @param persona - Profil de lecture appliqué.
+ * @param mode - Parcours essentiel ou approfondi.
+ * @param locale - Langue de lecture.
+ * @returns Le parcours sans visite disponible.
+ */
+function buildEmptyQueryPlan(
+  query: string,
+  persona: VisitPersonaDefinition,
+  mode: VisitMode,
+  locale: Locale,
+): VisitPlan {
+  return {
+    stops: [],
+    duration: 0,
+    mode,
+    persona: persona.id,
+    hasMatches: false,
+    verdict: buildNoMatchVerdict(query, locale),
+  };
+}
+
 /* ─────────────────────────────────────────────────────────────────────────
    API PUBLIQUE
    ───────────────────────────────────────────────────────────────────────── */
@@ -68,8 +88,10 @@ function buildFallbackVerdict(
  * toujours avec le profil généraliste, un profil sélectionné s'évalue sans
  * requête. Sans demande, le parcours suit l'ordre du profil. Avec une demande,
  * seules les sections qui correspondent sont retenues, classées par pertinence.
- * Le mode approfondi garde les mêmes sections mais montre davantage de contenus
- * par section.
+ * Une demande sans contenu correspondant, ou dont la correspondance reste
+ * faible, ne propose aucune visite. Le mode approfondi garde les mêmes sections
+ * puis ajoute celles qui ne tenaient pas dans l'essentiel, avec davantage de
+ * contenus par section.
  *
  * @param query - Demande saisie par le visiteur.
  * @param persona - Profil de lecture sélectionné.
@@ -89,12 +111,6 @@ export function buildVisitPlan(
   const personaDefinition =
     visitPersonas.find((item) => item.id === persona) ??
     visitPersonas[0];
-  const order = personaDefinition.sectionOrder.filter(
-    (id) => id !== 'about',
-  );
-  const profileThemes = personaDefinition.themes;
-
-  let useProfileFallback = false;
 
   if (trimmed.length > 0) {
     const searchPlan = buildSearchVisitPlan(
@@ -105,14 +121,16 @@ export function buildVisitPlan(
       referenceYear,
     );
 
-    if (searchPlan && searchPlan.verdict?.fit !== 'weak') {
-      return searchPlan;
-    }
-
-    useProfileFallback = true;
+    // Une correspondance faible n'est pas crédible : aucune visite.
+    return searchPlan && searchPlan.verdict?.fit !== 'weak'
+      ? searchPlan
+      : buildEmptyQueryPlan(trimmed, personaDefinition, mode, locale);
   }
 
-  const hasMatches = trimmed.length === 0;
+  const order = personaDefinition.sectionOrder.filter(
+    (id) => id !== 'about',
+  );
+  const profileThemes = personaDefinition.themes;
   const maxSections = getMaxContentSections(mode);
   const contentIds =
     maxSections === null ? [...order] : order.slice(0, maxSections);
@@ -134,18 +152,12 @@ export function buildVisitPlan(
     (total, stop) => total + stop.duration,
     0,
   );
-  const verdict = buildFallbackVerdict(
-    trimmed,
-    locale,
-    useProfileFallback,
-  );
 
   return {
     stops: visibleStops,
     duration,
     mode,
-    persona,
-    hasMatches,
-    ...(verdict ? { verdict } : {}),
+    persona: personaDefinition.id,
+    hasMatches: true,
   };
 }

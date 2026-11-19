@@ -2,7 +2,10 @@
   ROUTAGE : sélection des sections autorisées et retenues
   Le profil filtre les sections contextuelles, la demande réserve sa place.
 ========================================================================= */
-import { getMaxContentSections } from '@/lib/visit/visit-mode';
+import {
+  getMaxContentSections,
+  getSectionPolicy,
+} from '@/lib/visit/visit-mode';
 import { VISIT_CONFIG } from '@/lib/visit/visit.config';
 import type { VisitSearchSection } from '@/types/visit-search.types';
 import type {
@@ -36,6 +39,7 @@ const CORE_SECTIONS = new Set<VisitSectionId>([
  * @param persona - Profil de lecture.
  * @param availabilityMatch - Demande liée à la disponibilité.
  * @param strictNamedSectionIds - Sections nommées par la demande.
+ * @param mode - Mode essentiel ou approfondi.
  * @returns Les sections autorisées.
  */
 export function filterRankedSections(
@@ -43,7 +47,11 @@ export function filterRankedSections(
   persona: VisitPersonaDefinition,
   availabilityMatch: boolean,
   strictNamedSectionIds: Set<VisitSectionId>,
+  mode: VisitMode,
 ): VisitSearchSection[] {
+  // Le mode complet ouvre toute section portée par un contenu réel.
+  const matchedPolicy = getSectionPolicy(mode) === 'matched';
+
   return ranked.filter((entry) => {
     if (!entry.hasRealItem && !strictNamedSectionIds.has(entry.section)) {
       return false;
@@ -62,6 +70,7 @@ export function filterRankedSections(
     }
 
     return (
+      matchedPolicy ||
       strictNamedSectionIds.has(entry.section) ||
       persona.contextSections.includes(entry.section)
     );
@@ -78,20 +87,32 @@ export function filterRankedSections(
  * @param filteredRanked - Sections autorisées, classées.
  * @param mode - Mode essentiel ou approfondi.
  * @param strictNamedSectionIds - Sections nommées par la demande.
+ * @param prioritySectionIds - Sections cœur ouvertes par les thèmes.
  * @returns Les sections retenues, du meilleur au moins bon score.
  */
 export function selectRankedSections(
   filteredRanked: VisitSearchSection[],
   mode: VisitMode,
   strictNamedSectionIds: Set<VisitSectionId>,
+  prioritySectionIds: Set<VisitSectionId> = new Set(),
 ): VisitSearchSection[] {
   const best = filteredRanked[0]?.score ?? 0;
   const aboveFloor = filteredRanked.filter(
-    (entry) => entry.score >= best * VISIT_CONFIG.sectionFloorRatio,
+    (entry) =>
+      prioritySectionIds.has(entry.section) ||
+      entry.score >= best * VISIT_CONFIG.sectionFloorRatio,
+  );
+  const priority = aboveFloor.filter((entry) =>
+    prioritySectionIds.has(entry.section),
+  );
+  const others = aboveFloor.filter(
+    (entry) => !prioritySectionIds.has(entry.section),
   );
   const maxSections = getMaxContentSections(mode);
   let selected =
-    maxSections === null ? [...aboveFloor] : aboveFloor.slice(0, maxSections);
+    maxSections === null
+      ? [...aboveFloor]
+      : [...priority, ...others].slice(0, maxSections);
   const selectedIds = new Set(selected.map((entry) => entry.section));
   const reserved = filteredRanked.filter(
     (entry) =>

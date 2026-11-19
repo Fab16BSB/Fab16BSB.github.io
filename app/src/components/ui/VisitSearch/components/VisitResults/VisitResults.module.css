@@ -89,17 +89,6 @@
   color: var(--accent);
 }
 
-.note {
-  margin: 0 0.25rem 0.55rem;
-  padding: 0.5rem 0.65rem;
-  border: 1px solid color-mix(in srgb, var(--accent-3) 28%, var(--border));
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--accent-3) 8%, var(--surface));
-  color: var(--text-muted);
-  font-size: 0.72rem;
-  line-height: 1.45;
-}
-
 /* ─────────────────────────────────────────────────────────────────────────
    Liste des étapes
    ───────────────────────────────────────────────────────────────────────── */

@@ -243,4 +243,30 @@ export const visitSections: VisitSectionDefinition[] = [
       'trophée', 'trophy',
     ],
   },
+
+  // Contact
+  {
+    id: 'contact',
+    anchor: '#contact',
+    icon: 'mail',
+    labelKey: 'nav.contact',
+    description: {
+      fr: 'LinkedIn, GitHub, Medium, Kaggle et YouTube pour me contacter.',
+      en: 'LinkedIn, GitHub, Medium, Kaggle and YouTube to get in touch.',
+      es: 'LinkedIn, GitHub, Medium, Kaggle y YouTube para contactarme.',
+    },
+    duration: 10,
+    order: 8,
+    nameWords: [
+      'contact', 'contacto', 'linkedin', 'github', 'medium', 'kaggle',
+      'youtube', 'réseau', 'reseau', 'network', 'red', 'email', 'mail',
+      'courriel', 'correo', 'recrutement', 'recruitment', 'recrutamiento',
+      'embauche', 'hiring', 'contratacion',
+    ],
+    searchTags: [
+      'contact', 'contacto', 'linkedin', 'github', 'medium', 'kaggle',
+      'youtube', 'réseau', 'reseau', 'network', 'red', 'email', 'mail',
+      'courriel', 'correo',
+    ],
+  },
 ];
