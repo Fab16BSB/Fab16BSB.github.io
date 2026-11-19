@@ -7,9 +7,9 @@ export type ProjectCategory = 'personal' | 'professional' | 'academic' | 'notebo
 
 /** Niveau d'études associé à un projet académique. */
 export type ProjectStudyLevel =
-  | 'but1'
-  | 'but2'
-  | 'but3'
+  | 'dut1'
+  | 'dut2'
+  | 'licence3'
   | 'master1'
   | 'master2'
   | 'doctorate';
@@ -71,7 +71,6 @@ export type ProjectGalleryImage = {
  * @property {string} [image] - Visuel de la carte.
  * @property {ProjectGalleryImage[]} [gallery] - Captures détaillées du projet.
  * @property {ProjectNotebook} [notebook] - Jeu de données et tâche affichés sur la couverture d'un notebook.
- * @property {'active' | 'archived'} [status] - Statut du projet.
  * @property {ProjectStudyLevel} [studyLevel] - Niveau d'études associé.
  * @property {EducationId[]} [educationIds] - Formations pendant lesquelles le projet a été réalisé.
  * @property {ExperienceId[]} [experienceIds] - Expériences pendant lesquelles le projet a été réalisé.
@@ -92,7 +91,6 @@ export type Project = {
   image?: string;
   gallery?: ProjectGalleryImage[];
   notebook?: ProjectNotebook;
-  status?: 'active' | 'archived';
   studyLevel?: ProjectStudyLevel;
   educationIds?: EducationId[];
   experienceIds?: ExperienceId[];

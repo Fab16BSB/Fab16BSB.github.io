@@ -19,7 +19,6 @@ import { links } from '@/data/profile/links.data';
  * @property {Localized[]} [points] - Points clés.
  * @property {string[]} tags - Technologies et mots-clés.
  * @property {Accent} accent - Couleur d'accent.
- * @property {boolean} [legacy] - Marque les expériences anciennes.
  */
 export const experiences: Experience[] = [
 
@@ -129,7 +128,6 @@ export const experiences: Experience[] = [
       'Classification de documents',
     ],
     accent: 'amber',
-    legacy: true,
   },
 
   /** ▸ 2017 · Stage Java — Directannonces */
@@ -163,7 +161,6 @@ export const experiences: Experience[] = [
       'Annonces automobiles',
     ],
     accent: 'emerald',
-    legacy: true,
   },
 
   /** ▸ 2016 · Stage iOS — Soldout */
@@ -187,6 +184,5 @@ export const experiences: Experience[] = [
     },
     tags: ['iOS', 'Appcelerator Titanium', 'Java', 'Mobile'],
     accent: 'slate',
-    legacy: true,
   },
 ];

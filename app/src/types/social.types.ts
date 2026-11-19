@@ -11,14 +11,14 @@ export type SocialId =
 /**
  * Lien social affiché dans le site.
  *
- * @property {SocialId} id - Identifiant du réseau.
+ * @property {string} id - Identifiant unique du lien (le réseau est porté par `icon`).
  * @property {string} label - Libellé affiché.
  * @property {string} url - URL du profil.
  * @property {SocialId} icon - Icône utilisée.
  */
 export type SocialLink = {
-  id: SocialId;
+  id: string;
   label: string;
   url: string;
-  icon: SocialId | 'github';
+  icon: SocialId;
 };

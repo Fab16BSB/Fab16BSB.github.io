@@ -395,7 +395,6 @@ export const projects: Project[] = [
         },
       },
     ],
-    status: 'active',
     accent: 'indigo',
     icon: 'SCH',
   },
@@ -416,9 +415,9 @@ export const projects: Project[] = [
       es: 'Glosario visual que explica conceptos informáticos con una imagen por noción.',
     },
     details: {
-      fr: 'Glossaire visuel pour étudiants : chaque notion de programmation, de web ou d\'IA est illustrée et reliée à un exemple concret de la vie réelle, pour comprendre le terme et savoir l\'utiliser.',
-      en: 'Visual glossary for students: each programming, web or AI concept is illustrated and linked to a concrete real-life example, so students can understand the term and know how to use it.',
-      es: 'Glosario visual para estudiantes: cada noción de programación, web o IA se ilustra y se relaciona con un ejemplo concreto de la vida real, para entender el término y saber utilizarlo.',
+      fr: 'Glossaire visuel pour étudiants : une sélection de notions de programmation et d\'informatique, illustrées et reliées à des exemples concrets de la vie réelle pour comprendre les termes et savoir les utiliser.',
+      en: 'Visual glossary for students: a selection of programming and computer science concepts, illustrated and linked to concrete real-life examples so students can understand the terms and know how to use them.',
+      es: 'Glosario visual para estudiantes: una selección de nociones de programación e informática, ilustradas y relacionadas con ejemplos concretos de la vida real para entender los términos y saber utilizarlos.',
     },
     stack: [
       'TypeScript',
@@ -478,7 +477,6 @@ export const projects: Project[] = [
       pdf: links.thesis.pdf,
     },
     image: '/images/projects/anomaly-detection.webp',
-    status: 'archived',
     accent: 'rose',
     icon: 'TH',
   },
@@ -573,7 +571,7 @@ export const projects: Project[] = [
     id: 'som',
     year: '2017',
     category: 'academic',
-    studyLevel: 'but3',
+    studyLevel: 'licence3',
     educationIds: ['licence'],
     title: {
       fr: 'SOM — Java & C',
@@ -609,7 +607,7 @@ export const projects: Project[] = [
     id: 'infiltration',
     year: '2016',
     category: 'academic',
-    studyLevel: 'but2',
+    studyLevel: 'dut2',
     title: {
       fr: 'Infiltration',
       en: 'Infiltration',
@@ -638,7 +636,7 @@ export const projects: Project[] = [
     id: 'huffman',
     year: '2016',
     category: 'academic',
-    studyLevel: 'but2',
+    studyLevel: 'dut2',
     title: {
       fr: 'Visualiseur Huffman',
       en: 'Huffman Visualizer',
@@ -667,7 +665,7 @@ export const projects: Project[] = [
     id: 'searchengine',
     year: '2016',
     category: 'academic',
-    studyLevel: 'but2',
+    studyLevel: 'dut2',
     title: {
       fr: 'Moteur de recherche',
       en: 'Search engine',
@@ -706,7 +704,7 @@ export const projects: Project[] = [
     id: 'plagiat-inc',
     year: '2015',
     category: 'academic',
-    studyLevel: 'but1',
+    studyLevel: 'dut1',
     title: {
       fr: 'Plagiat Inc',
       en: 'Plagiat Inc',
@@ -735,7 +733,7 @@ export const projects: Project[] = [
     id: 'kermtech',
     year: '2014',
     category: 'academic',
-    studyLevel: 'but1',
+    studyLevel: 'dut1',
     title: {
       fr: 'Ker(M)Tech',
       en: 'Ker(M)Tech',

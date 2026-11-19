@@ -29,7 +29,6 @@ export type ExperienceType = 'freelance' | 'cdd' | 'thesis' | 'internship';
  * @property {Localized[]} [points] - Points clés.
  * @property {string[]} tags - Technologies et mots-clés.
  * @property {Accent} accent - Couleur d'accent.
- * @property {boolean} [legacy] - Marque les expériences anciennes.
  */
 export type Experience = {
   id: ExperienceId;
@@ -45,5 +44,4 @@ export type Experience = {
   points?: Localized[];
   tags: string[];
   accent: Accent;
-  legacy?: boolean;
 };

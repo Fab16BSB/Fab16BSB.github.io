@@ -28,6 +28,6 @@ export const socials: SocialLink[] = [
  */
 export const community: SocialLink[] = [
   { id: 'discord', label: 'Discord', url: links.social.discord, icon: 'discord' },
-  { id: 'override', label: 'Override Community', url: links.social.overrideGithub, icon: 'github' },
-  { id: 'override', label: 'Override Medium', url: links.social.overrideMedium, icon: 'medium' },
+  { id: 'override-github', label: 'Override Community', url: links.social.overrideGithub, icon: 'github' },
+  { id: 'override-medium', label: 'Override Medium', url: links.social.overrideMedium, icon: 'medium' },
 ];

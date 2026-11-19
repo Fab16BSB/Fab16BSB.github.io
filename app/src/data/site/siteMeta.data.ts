@@ -8,7 +8,7 @@ import type { Locale } from '@/types/common.types';
  * @property {string} description - Description meta.
  * @property {string} url - URL canonique du site.
  */
-export const siteMeta = {
+const siteMeta = {
   title: seo.title,
   description: seo.description,
   url: seo.url,
