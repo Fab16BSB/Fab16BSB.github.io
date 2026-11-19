@@ -9,13 +9,19 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { createHash } from 'node:crypto';
 import { writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { env, pipeline, type FeatureExtractionPipeline } from '@huggingface/transformers';
 import { extractContentNodes } from '../src/lib/knowledge/knowledge-extract';
+import { KNOWLEDGE_RANKING } from '../src/lib/knowledge/knowledge.config';
 import { EMBEDDING_CONFIG } from '../src/lib/search/search.config';
+import {
+  centerAndNormalize,
+  centroid,
+  meanVector,
+} from '../src/lib/search/vector-math';
+import { hashKnowledgeSource } from './knowledge-source-hash';
 import type { Locale } from '../src/types/common.types';
 import type {
   KnowledgeContentNode,
@@ -45,11 +51,8 @@ const batchSize = 8;
 /** Nombre de voisins conservés par contenu. */
 const TOP_K = 10;
 
-/** Cosinus minimal pour retenir une paire. */
+/** Cosinus minimal pour retenir une paire, sur l'échelle brute. */
 const MIN_COSINE = 0.1;
-
-/** Cosinus considéré comme une similarité nulle à l'affichage. */
-const COSINE_FLOOR = 0.05;
 
 env.cacheDir = cacheDir;
 env.allowLocalModels = false;
@@ -77,82 +80,15 @@ type TextEntry = {
 ========================================================================= */
 
 /**
- * Moyenne les vecteurs normalisés du corpus.
+ * Produit un score d'affichage entre 0 et 1, recentré sur le plancher commun.
  *
- * @param vectors - Vecteurs du corpus.
- * @returns La moyenne, de la dimension du modèle.
- */
-function meanVector(vectors: Float32Array[]): Float32Array {
-  const mean = new Float32Array(EMBEDDING_CONFIG.dimension);
-
-  for (const vector of vectors) {
-    for (let index = 0; index < mean.length; index += 1) {
-      mean[index] += vector[index] / vectors.length;
-    }
-  }
-
-  return mean;
-}
-
-/**
- * Centre un vecteur sur la moyenne du corpus puis le renormalise.
- *
- * @param vector - Vecteur normalisé.
- * @param mean - Moyenne du corpus.
- * @returns Le vecteur centré de norme 1.
- */
-function centerAndNormalize(vector: Float32Array, mean: Float32Array): Float32Array {
-  const centered = new Float32Array(vector.length);
-  let norm = 0;
-
-  for (let index = 0; index < vector.length; index += 1) {
-    const value = vector[index] - mean[index];
-    centered[index] = value;
-    norm += value * value;
-  }
-
-  const scale = norm > 0 ? 1 / Math.sqrt(norm) : 0;
-  for (let index = 0; index < centered.length; index += 1) {
-    centered[index] *= scale;
-  }
-
-  return centered;
-}
-
-/**
- * Calcule le centroïde de plusieurs vecteurs, puis le renormalise.
- *
- * @param vectors - Vecteurs d'un même contenu dans plusieurs langues.
- * @returns Le centroïde de norme 1.
- */
-function centroid(vectors: Float32Array[]): Float32Array {
-  const result = new Float32Array(EMBEDDING_CONFIG.dimension);
-
-  for (const vector of vectors) {
-    for (let index = 0; index < result.length; index += 1) {
-      result[index] += vector[index] / vectors.length;
-    }
-  }
-
-  let norm = 0;
-  for (const value of result) norm += value * value;
-
-  const scale = norm > 0 ? 1 / Math.sqrt(norm) : 0;
-  for (let index = 0; index < result.length; index += 1) {
-    result[index] *= scale;
-  }
-
-  return result;
-}
-
-/**
- * Produit un score d'affichage entre 0 et 1.
- *
- * @param cosine - Cosinus centré entre deux contenus.
+ * @param cosine - Cosinus brut entre deux contenus.
  * @returns Le score normalisé, arrondi au millième.
  */
 function displayScore(cosine: number): number {
-  const normalized = (cosine - COSINE_FLOOR) / (1 - COSINE_FLOOR);
+  const floor = KNOWLEDGE_RANKING.similarityScoreFloor;
+  const normalized = (cosine - floor) / (1 - floor);
+
   return Math.round(Math.max(0, Math.min(1, normalized)) * 1000) / 1000;
 }
 
@@ -188,26 +124,6 @@ async function embedTexts(
 /* =========================================================================
   HELPERS : contenus
 ========================================================================= */
-
-/**
- * Hash du texte source d'un contenu, pour détecter un index périmé.
- *
- * @param node - Contenu du portfolio.
- * @returns Le hash SHA-256 hexadécimal.
- */
-function hashNode(node: KnowledgeContentNode): string {
-  return createHash('sha256')
-    .update(
-      [
-        node.text.fr,
-        node.text.en,
-        node.text.es,
-        node.tags.join('|'),
-      ].join('\n'),
-      'utf8',
-    )
-    .digest('hex');
-}
 
 /**
  * Collecte les textes d'un contenu dans les trois langues.
@@ -281,7 +197,7 @@ async function main(): Promise<void> {
     extractor,
     entries.map((entry) => entry.text),
   );
-  const mean = meanVector(rawVectors);
+  const mean = meanVector(rawVectors, EMBEDDING_CONFIG.dimension);
   const centered = rawVectors.map((vector) => centerAndNormalize(vector, mean));
 
   const vectorsByNode = new Map<string, Float32Array[]>();
@@ -294,7 +210,10 @@ async function main(): Promise<void> {
 
   const centroids = new Map<string, Float32Array>();
   for (const [nodeId, vectors] of vectorsByNode) {
-    centroids.set(nodeId, centroid(vectors));
+    centroids.set(
+      nodeId,
+      centroid(vectors, EMBEDDING_CONFIG.dimension),
+    );
   }
 
   const nodesById = new Map(extraction.nodes.map((node) => [node.id, node]));
@@ -344,7 +263,10 @@ async function main(): Promise<void> {
       dimension: EMBEDDING_CONFIG.dimension,
     },
     sources: Object.fromEntries(
-      extraction.nodes.map((node) => [node.id, hashNode(node)]),
+      extraction.nodes.map((node) => [
+        node.id,
+        hashKnowledgeSource(node),
+      ]),
     ),
     documents,
   };

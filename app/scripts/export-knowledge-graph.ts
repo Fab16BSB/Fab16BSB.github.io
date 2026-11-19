@@ -10,17 +10,18 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getKnowledgeGraph } from '../src/lib/knowledge/knowledge-index';
+import { isContentNode } from '../src/lib/knowledge/knowledge-nodes';
 import { getKnowledgeRecommendations, getSimilarProjects } from '../src/lib/knowledge/knowledge-recommendations';
 import { extractContentNodes } from '../src/lib/knowledge/knowledge-extract';
 import { buildKnowledgeGraph } from '../src/lib/knowledge/knowledge-graph';
 import { getSimilarityIndex } from '../src/lib/knowledge/knowledge-similarity';
 import { KNOWLEDGE_RANKING } from '../src/lib/knowledge/knowledge.config';
 import { EMBEDDING_CONFIG } from '../src/lib/search/search.config';
+import { hashKnowledgeSource } from './knowledge-source-hash';
 import type { KnowledgeGraph, KnowledgeNode } from '../src/types/knowledge.types';
 
 /* =========================================================================
@@ -184,7 +185,7 @@ function describeReasons(
 function buildMarkdown(graph: KnowledgeGraph): string {
   const byId = new Map(graph.nodes.map((node) => [node.id, node]));
   const contentNodes = graph.nodes.filter(
-    (node) => node.kind !== 'theme' && node.kind !== 'concept',
+    (node) => isContentNode(node),
   );
   const projects = contentNodes.filter((node) => node.kind === 'project');
   const themes = graph.nodes.filter((node) => node.kind === 'theme');
@@ -304,21 +305,6 @@ function buildMarkdown(graph: KnowledgeGraph): string {
 ========================================================================= */
 
 /**
- * Hash du texte source d'un contenu, identique au script de similarité.
- *
- * @param node - Contenu du portfolio.
- * @returns Le hash SHA-256 hexadécimal.
- */
-function hashNode(node: KnowledgeNode): string {
-  return createHash('sha256')
-    .update(
-      [node.text.fr, node.text.en, node.text.es, node.tags.join('|')].join('\n'),
-      'utf8',
-    )
-    .digest('hex');
-}
-
-/**
  * Signale un index sémantique absent, périmé ou calculé avec un autre modèle.
  *
  * Un avertissement ne bloque pas le déploiement : les recommandations restent
@@ -348,7 +334,9 @@ function collectSimilarityWarnings(): string[] {
   }
 
   const stale = nodes.filter(
-    (node) => index.documents[node.id] && index.sources[node.id] !== hashNode(node),
+    (node) =>
+      index.documents[node.id] &&
+      index.sources[node.id] !== hashKnowledgeSource(node),
   );
   if (stale.length > 0) {
     warnings.push(
@@ -388,7 +376,7 @@ function collectProblems(graph: KnowledgeGraph): string[] {
   const problems: string[] = [];
   const ids = new Set(graph.nodes.map((node) => node.id));
   const contentNodes = graph.nodes.filter(
-    (node) => node.kind !== 'theme' && node.kind !== 'concept',
+    (node) => isContentNode(node),
   );
 
   for (const edge of graph.edges) {
@@ -441,7 +429,7 @@ function collectProblems(graph: KnowledgeGraph): string[] {
  */
 function buildPayload(graph: KnowledgeGraph) {
   const contentNodes = graph.nodes.filter(
-    (node) => node.kind !== 'theme' && node.kind !== 'concept',
+    (node) => isContentNode(node),
   );
   const recommendations = Object.fromEntries(
     contentNodes.map((node) => [
@@ -492,7 +480,7 @@ async function main(): Promise<void> {
   }
 
   const contents = graph.nodes.filter(
-    (node) => node.kind !== 'theme' && node.kind !== 'concept',
+    (node) => isContentNode(node),
   );
   const related = graph.edges.filter((edge) => edge.relation === 'related');
   console.log(

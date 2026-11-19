@@ -25,6 +25,8 @@ import { teaching } from '../src/data/content/teaching.data';
 import videosRaw from '../src/data/feeds/youtube-videos.json';
 import { filterMediumPosts } from '../src/components/sections/Publications/publications.helpers';
 import { EMBEDDING_CONFIG } from '../src/lib/search/search.config';
+import { decodeVector, encodeVector } from '../src/lib/search/vector-codec';
+import { meanVector } from '../src/lib/search/vector-math';
 import {
   buildSearchText,
   mediumPostSearchFields,
@@ -137,52 +139,6 @@ function hashText(text: string): string {
 }
 
 /* =========================================================================
-  HELPERS : vecteurs
-========================================================================= */
-
-/**
- * Encode un vecteur float32 en base64.
- *
- * @param vector - Vecteur à encoder.
- * @returns La chaîne base64.
- */
-function encodeVector(vector: Float32Array): string {
-  return Buffer.from(vector.buffer, vector.byteOffset, vector.byteLength).toString('base64');
-}
-
-/**
- * Décode un vecteur float32 encodé en base64.
- *
- * @param value - Chaîne base64.
- * @returns Le vecteur décodé.
- */
-function decodeVector(value: string): Float32Array {
-  const source = Buffer.from(value, 'base64');
-  const bytes = new Uint8Array(source.length);
-  bytes.set(source);
-
-  return new Float32Array(bytes.buffer);
-}
-
-/**
- * Calcule la moyenne du corpus.
- *
- * @param vectors - Vecteurs normalisés des documents.
- * @returns La moyenne, de même dimension.
- */
-function meanVector(vectors: Float32Array[]): Float32Array {
-  const mean = new Float32Array(EMBEDDING_CONFIG.dimension);
-
-  for (const vector of vectors) {
-    for (let index = 0; index < mean.length; index += 1) {
-      mean[index] += vector[index] / vectors.length;
-    }
-  }
-
-  return mean;
-}
-
-/* =========================================================================
   HELPERS : index existant
 ========================================================================= */
 
@@ -273,16 +229,14 @@ async function embedTexts(
  *
  * @param extractor - Pipeline d'extraction.
  * @param locale - Langue à générer.
- * @param force - Ré-encode tous les documents quand `true`.
  */
 async function buildLocale(
   extractor: FeatureExtractionPipeline,
   locale: Locale,
-  force: boolean,
 ): Promise<void> {
   const documents = buildDocuments(locale);
   const hashes = documents.map((document) => hashText(document.text));
-  const existing = force ? null : await readExisting(locale);
+  const existing = await readExisting(locale);
   const existingById = new Map(
     (existing?.documents ?? []).map((document) => [document.id, document]),
   );
@@ -331,7 +285,9 @@ async function buildLocale(
     generatedAt:
       missing.length > 0 || !existing ? new Date().toISOString() : existing.generatedAt,
     config: EMBEDDING_CONFIG,
-    mean: encodeVector(meanVector(ordered)),
+    mean: encodeVector(
+      meanVector(ordered, EMBEDDING_CONFIG.dimension),
+    ),
     documents: documents.map((document, index) => ({
       id: document.id,
       section: document.section,
@@ -356,7 +312,6 @@ async function buildLocale(
  * Point d'entrée du script : reconstruit les index de recherche.
  */
 async function main(): Promise<void> {
-  const force = process.argv.includes('--force');
   let lastProgress = -10;
 
   await mkdir(outputDir, { recursive: true });
@@ -373,7 +328,7 @@ async function main(): Promise<void> {
   });
 
   for (const locale of locales) {
-    await buildLocale(extractor, locale, force);
+    await buildLocale(extractor, locale);
   }
 }
 

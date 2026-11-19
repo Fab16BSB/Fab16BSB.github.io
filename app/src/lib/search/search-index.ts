@@ -3,6 +3,8 @@
   Chargement paresseux des vecteurs et calcul du cosinus.
 ========================================================================= */
 import { EMBEDDING_CONFIG } from '@/lib/search/search.config';
+import { decodeVector } from '@/lib/search/vector-codec';
+import { centerAndNormalize } from '@/lib/search/vector-math';
 import type { Locale } from '@/types/common.types';
 import type {
   SearchIndex,
@@ -12,7 +14,7 @@ import type {
 } from '@/types/search.types';
 
 /* =========================================================================
-  TYPES ET CONSTANTES
+  CONSTANTES
 ========================================================================= */
 
 /** Chargeur d'index par langue, découpé en chunks par Vite. */
@@ -28,52 +30,6 @@ const cache = new Map<Locale, Promise<SearchIndex>>();
 /* =========================================================================
   HELPERS : décodage et normalisation
 ========================================================================= */
-
-/**
- * Décode un vecteur float32 encodé en base64.
- *
- * @param value - Chaîne base64 produite par le script de build.
- * @returns Le vecteur décodé.
- */
-function decodeVector(value: string): Float32Array {
-  const binary = atob(value);
-  const bytes = new Uint8Array(binary.length);
-
-  for (let index = 0; index < binary.length; index += 1) {
-    bytes[index] = binary.charCodeAt(index);
-  }
-
-  return new Float32Array(bytes.buffer);
-}
-
-/**
- * Centre un vecteur sur la moyenne du corpus puis le normalise.
- *
- * Le centrage réduit l'anisotropie des embeddings : sans lui, deux textes sans
- * rapport obtiennent un cosinus très élevé et le seuil perd tout sens.
- *
- * @param vector - Vecteur brut normalisé.
- * @param mean - Moyenne du corpus.
- * @returns Le vecteur centré et de norme 1.
- */
-function centerVector(vector: Float32Array, mean: Float32Array): Float32Array {
-  const centered = new Float32Array(vector.length);
-  let norm = 0;
-
-  for (let index = 0; index < vector.length; index += 1) {
-    const value = vector[index] - mean[index];
-    centered[index] = value;
-    norm += value * value;
-  }
-
-  const scale = norm > 0 ? 1 / Math.sqrt(norm) : 0;
-
-  for (let index = 0; index < centered.length; index += 1) {
-    centered[index] *= scale;
-  }
-
-  return centered;
-}
 
 /**
  * Crée les quatre sections vides d'un index.
@@ -127,7 +83,7 @@ function buildIndex(locale: Locale, manifest: SearchIndexManifest): SearchIndex 
   const sections = emptySections();
 
   for (const document of manifest.documents) {
-    const vector = centerVector(decodeVector(document.vector), mean);
+    const vector = centerAndNormalize(decodeVector(document.vector), mean);
     sections[document.section].ids.push(document.id);
     sections[document.section].vectors.push(vector);
   }
@@ -178,7 +134,7 @@ export function computeSemanticScores(
     throw new Error('Vecteur de requête incompatible avec l’index de recherche');
   }
 
-  const centeredQuery = centerVector(query, index.mean);
+  const centeredQuery = centerAndNormalize(query, index.mean);
   const sectionIndex = index.sections[section];
   const scores = new Map<string, number>();
 

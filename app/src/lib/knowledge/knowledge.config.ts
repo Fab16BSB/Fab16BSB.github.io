@@ -14,6 +14,9 @@ const RECOMMENDATION_MIN_SCORE = 0.3;
 /** Réglages de calcul des recommandations. */
 export const KNOWLEDGE_RANKING = {
 
+  /** Plancher du recentrage des scores (échelle [0, 1] dérivée du cosinus, pas du cosinus brut). */
+  similarityScoreFloor: 0.05,
+
   /** Score minimal pour proposer un contenu. */
   minScore: RECOMMENDATION_MIN_SCORE,
 
