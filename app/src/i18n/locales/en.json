@@ -21,13 +21,9 @@
     "closeMenu": "Close menu",
     "toggleTheme": "Toggle theme",
     "changeLanguage": "Change language",
-    "externalLink": "Opens in a new tab",
     "mainNavigation": "Main navigation",
     "sectionNavigation": "Section navigation",
-    "previousSection": "Previous section",
-    "nextSection": "Next section",
-    "socialLinks": "Social links",
-    "projectDetails": "Project details",
+    "home": "Home",
     "closeDialog": "Close dialog"
   },
 
@@ -35,37 +31,16 @@
     "all": "All",
     "resetFilters": "Reset filters",
     "close": "Close",
-    "copy": "Copy",
     "copied": "Copied!",
     "cite": "Cite",
-    "article": "Article",
-    "pdf": "PDF",
-    "poster": "Poster",
-    "demo": "Demo",
-    "code": "Code",
-    "translation": "Translation",
-    "github": "GitHub",
-    "site": "Website",
-    "video": "Video",
     "seeMore": "See more",
     "seeLess": "See less",
-    "present": "Present",
-    "loading": "Loading",
-    "external": "Opens in a new tab",
-    "menu": "Menu",
-    "theme": "Theme",
-    "language": "Language",
     "light": "Light",
-    "dark": "Dark",
-    "backToTop": "Back to top",
-    "builtWith": "Built with React, TypeScript and CSS Modules",
-    "rights": "All rights reserved"
+    "dark": "Dark"
   },
 
   "search": {
     "deep": {
-      "label": "Deep search",
-      "enable": "Enable deep search",
       "disable": "Disable deep search",
       "disableShort": "Disable",
       "cancelDownload": "Cancel",
@@ -84,9 +59,80 @@
     }
   },
 
+  "visit": {
+    "invite": "What are you looking for in this profile?",
+    "open": "Open the guided visit",
+    "title": "What are you looking for in this profile?",
+    "subtitle": "Describe a role, a technology or a need: we suggest the route.",
+    "inputLabel": "Search the profile",
+    "placeholder": "A role, a technology, a need...",
+    "clear": "Clear search",
+    "personasLabel": "Reading profile",
+    "emptyTitle": "Where would you like to start?",
+    "emptyHint": "A profile for a ready-made route, or a search for a tailored one.",
+    "fit": {
+      "strong": "Strong match",
+      "partial": "Partial match",
+      "weak": "Weak match",
+      "evidence": "Evidence",
+      "gaps": "Gaps"
+    },
+    "gaps": {
+      "publications": "No publication linked to the offer",
+      "teaching": "No course or supervision linked to the offer",
+      "timeline": "No career item linked to the offer",
+      "projects": "No project item in the Projects section",
+      "skills": "No skill linked to the offer",
+      "unknown": "{term} not documented",
+      "coverage": "Part of the offer is not documented"
+    },
+    "personas": {
+      "general": "Whole profile",
+      "data": "Data & AI",
+      "research": "Research",
+      "teaching": "Teaching",
+      "industry": "Industry"
+    },
+    "modes": {
+      "express": "Essential",
+      "full": "Full"
+    },
+    "modeLabel": "Route length",
+    "results": "Your route",
+    "suggested": "Suggested route",
+    "summary": "{count} steps · about {minutes} min",
+    "why": "Matches",
+    "complement": "Complementary step",
+    "openSection": "View section",
+    "openItem": "View {name}",
+    "tour": {
+      "start": "Start the visit",
+      "title": "Guided visit",
+      "listTitle": "Visit steps",
+      "stepsCount": "Steps ({count})",
+      "step": "Step {current}/{total}",
+      "next": "Next",
+      "previous": "Previous",
+      "finish": "Finish",
+      "done": "Visit complete",
+      "doneHint": "You have gone through the selected steps.",
+      "hint": "Read the highlighted item, then click Next.",
+      "replay": "Replay the route",
+      "close": "Close"
+    },
+    "duration": "{seconds} s",
+    "durationMinutes": "{minutes} min",
+    "durationMixed": "{minutes} min {seconds} s",
+    "itemCount": "{count} items",
+    "noMatch": "No direct match. Here is the suggested route to discover the profile.",
+    "privacy": "Route computed in your browser. No data is sent.",
+    "reset": "Reset"
+  },
+
   "about": {
     "eyebrow": "01 — About",
     "location": "France",
+    "freelance": "Freelance",
     "portraitAlt": "Illustrated portrait of Fabien Poirier",
     "p1": "To me, artificial intelligence isn’t a black box: it’s a fascinating architecture that I love taking apart brick by brick to understand how it really works.",
     "p2": "Building projects from the ground up, testing new libraries and sharpening my analytical thinking: that’s where I thrive. I also care about making these technologies accessible by explaining and sharing what I learn, because the best way to master a topic is still to pass it on.",
@@ -125,8 +171,19 @@
     },
     "toolsTitle": "Tools & technologies",
     "count": "skills",
+    "tenure": {
+      "first": "First use",
+      "last": "Last use",
+      "span": "Span",
+      "industryYears": "{years} in industry",
+      "undated": "Not dated",
+      "year": "{count} year",
+      "years": "{count} years",
+      "lessThanOne": "less than a year",
+      "compact": "{first}–{last} · {years}",
+      "singleYear": "{year}"
+    },
     "related": {
-      "title": "Related work",
       "subtitle": "Projects, publications and content using this skill.",
       "empty": "No related work yet",
       "emptyHint": "This skill is not linked to a project, publication or video in the portfolio yet.",
@@ -184,7 +241,6 @@
     "results": "results",
     "noResults": "No project matches these filters.",
     "noResultsHint": "Try another keyword or another year.",
-    "resetFilters": "Reset filters",
     "allNotebooks": "All my Kaggle notebooks",
     "notebookContents": "In this notebook, you will find:",
     "notebookDataset": "Dataset",
@@ -202,9 +258,9 @@
       "notebook": "Notebooks"
     },
     "levels": {
-      "but1": "BUT 1",
-      "but2": "BUT 2",
-      "but3": "BUT 3",
+      "dut1": "DUT 1",
+      "dut2": "DUT 2",
+      "licence3": "Bachelor 3",
       "master1": "Master 1",
       "master2": "Master 2",
       "doctorate": "PhD"
@@ -220,18 +276,13 @@
       "empty": "No closely related project yet.",
       "open": "Open {title}"
     },
-    "status": {
-      "active": "Active",
-      "archived": "Completed"
-    },
     "links": {
       "github": "Code",
       "demo": "Demo",
       "video": "Video",
       "site": "Website",
       "pdf": "PDF"
-    },
-    "empty": "No project in this category."
+    }
   },
 
   "knowledge": {
@@ -281,7 +332,6 @@
     "results": "results",
     "noResults": "No publication matches these filters.",
     "noResultsHint": "Try another title, author or year.",
-    "resetFilters": "Reset filters",
     "language": "Language",
     "showVersion": "Show version",
     "languages": {
@@ -394,23 +444,13 @@
     "placeholder": {
       "title": "Supervision coming soon",
       "text": "This section will soon list supervised students, topics and levels."
-    },
-    "totalHours": "Total",
-    "courseCount": "courses shown"
+    }
   },
 
   "awards": {
     "eyebrow": "08 — Awards",
     "title": "A few highlights",
-    "description": "",
-    "kinds": {
-      "medal": "Medal",
-      "trophy": "Trophy",
-      "badge": "Badge",
-      "pin": "Pin"
-    },
-    "event": "Event",
-    "demo": "Watch the demo"
+    "description": ""
   },
 
   "footer": {

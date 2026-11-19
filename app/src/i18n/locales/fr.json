@@ -21,13 +21,9 @@
     "closeMenu": "Fermer le menu",
     "toggleTheme": "Changer de thème",
     "changeLanguage": "Changer de langue",
-    "externalLink": "Ouvre un nouvel onglet",
     "mainNavigation": "Navigation principale",
     "sectionNavigation": "Navigation entre les sections",
-    "previousSection": "Section précédente",
-    "nextSection": "Section suivante",
-    "socialLinks": "Réseaux sociaux",
-    "projectDetails": "Détails du projet",
+    "home": "Accueil",
     "closeDialog": "Fermer la fenêtre"
   },
 
@@ -35,37 +31,16 @@
     "all": "Tout",
     "resetFilters": "Réinitialiser",
     "close": "Fermer",
-    "copy": "Copier",
     "copied": "Copié !",
     "cite": "Citer",
-    "article": "Article",
-    "pdf": "PDF",
-    "poster": "Poster",
-    "demo": "Démo",
-    "code": "Code",
-    "translation": "Traduction",
-    "github": "GitHub",
-    "site": "Site",
-    "video": "Vidéo",
     "seeMore": "Voir plus",
     "seeLess": "Voir moins",
-    "present": "Aujourd'hui",
-    "loading": "Chargement",
-    "external": "Ouvre un nouvel onglet",
-    "menu": "Menu",
-    "theme": "Thème",
-    "language": "Langue",
     "light": "Clair",
-    "dark": "Sombre",
-    "backToTop": "Retour en haut",
-    "builtWith": "Conçu avec React, TypeScript et CSS Modules",
-    "rights": "Tous droits réservés"
+    "dark": "Sombre"
   },
 
   "search": {
     "deep": {
-      "label": "Recherche approfondie",
-      "enable": "Activer la recherche approfondie",
       "disable": "Désactiver la recherche approfondie",
       "disableShort": "Désactiver",
       "cancelDownload": "Annuler",
@@ -84,9 +59,80 @@
     }
   },
 
+  "visit": {
+    "invite": "Que cherchez-vous dans ce profil ?",
+    "open": "Ouvrir la visite guidée",
+    "title": "Que cherchez-vous dans ce profil ?",
+    "subtitle": "Décrivez un poste, une technologie ou un besoin : on vous propose le parcours.",
+    "inputLabel": "Rechercher dans le profil",
+    "placeholder": "Un poste, une technologie, un besoin...",
+    "clear": "Effacer la recherche",
+    "personasLabel": "Profil de lecture",
+    "emptyTitle": "Par où commencer ?",
+    "emptyHint": "Un profil pour un parcours prêt à l'emploi, ou une recherche pour un parcours sur mesure.",
+    "fit": {
+      "strong": "Correspondance forte",
+      "partial": "Correspondance partielle",
+      "weak": "Correspondance faible",
+      "evidence": "Preuves",
+      "gaps": "Écarts"
+    },
+    "gaps": {
+      "publications": "Aucune publication liée à l'offre",
+      "teaching": "Aucun cours ou encadrement lié à l'offre",
+      "timeline": "Aucun parcours lié à l'offre",
+      "projects": "Aucune réalisation dans la section Projets",
+      "skills": "Aucune compétence liée à l'offre",
+      "unknown": "{term} non documenté",
+      "coverage": "Une partie de l'offre n'est pas documentée"
+    },
+    "personas": {
+      "general": "Tout le profil",
+      "data": "Data & IA",
+      "research": "Recherche",
+      "teaching": "Enseignement",
+      "industry": "Industrie"
+    },
+    "modes": {
+      "express": "Essentiel",
+      "full": "Complet"
+    },
+    "modeLabel": "Longueur du parcours",
+    "results": "Votre parcours",
+    "suggested": "Parcours conseillé",
+    "summary": "{count} étapes · environ {minutes} min",
+    "why": "Correspond à",
+    "complement": "Étape complémentaire",
+    "openSection": "Voir la section",
+    "openItem": "Voir {name}",
+    "tour": {
+      "start": "Lancer la visite",
+      "title": "Visite guidée",
+      "listTitle": "Étapes de la visite",
+      "stepsCount": "Étapes ({count})",
+      "step": "Étape {current}/{total}",
+      "next": "Suivant",
+      "previous": "Précédent",
+      "finish": "Terminer",
+      "done": "Visite terminée",
+      "doneHint": "Vous avez parcouru les étapes sélectionnées.",
+      "hint": "Lisez l'élément mis en évidence, puis cliquez sur Suivant.",
+      "replay": "Revoir le parcours",
+      "close": "Fermer"
+    },
+    "duration": "{seconds} s",
+    "durationMinutes": "{minutes} min",
+    "durationMixed": "{minutes} min {seconds} s",
+    "itemCount": "{count} éléments",
+    "noMatch": "Aucune correspondance directe. Voici le parcours conseillé pour découvrir le profil.",
+    "privacy": "Parcours calculé dans votre navigateur. Aucune donnée envoyée.",
+    "reset": "Réinitialiser"
+  },
+
   "about": {
     "eyebrow": "01 — À propos",
     "location": "France",
+    "freelance": "Freelance",
     "portraitAlt": "Portrait illustré de Fabien Poirier",
     "p1": "Pour moi, l'intelligence artificielle n'est pas une boîte noire : c'est une architecture fascinante, que j'aime démonter brique par brique pour comprendre comment elle fonctionne vraiment.",
     "p2": "Concevoir des projets de A à Z, tester de nouvelles bibliothèques et affûter ma logique d'analyse : c'est là que je m'épanouis. J'aime aussi rendre ces technologies accessibles en expliquant et en partageant ce que j'apprends, parce que la meilleure façon de maîtriser un sujet reste encore de le transmettre.",
@@ -125,8 +171,19 @@
     },
     "toolsTitle": "Outils & technologies",
     "count": "compétences",
+    "tenure": {
+      "first": "Première utilisation",
+      "last": "Dernière utilisation",
+      "span": "Écart",
+      "industryYears": "{years} en entreprise",
+      "undated": "Non datée",
+      "year": "{count} an",
+      "years": "{count} ans",
+      "lessThanOne": "moins d'un an",
+      "compact": "{first}–{last} · {years}",
+      "singleYear": "{year}"
+    },
     "related": {
-      "title": "Réalisations liées",
       "subtitle": "Projets, publications et contenus qui utilisent cette compétence.",
       "empty": "Pas encore de réalisation liée",
       "emptyHint": "Cette compétence n'est pas encore associée à un projet, une publication ou une vidéo du portfolio.",
@@ -184,7 +241,6 @@
     "results": "résultats",
     "noResults": "Aucun projet ne correspond à ces filtres.",
     "noResultsHint": "Essaie un autre mot-clé ou une autre année.",
-    "resetFilters": "Réinitialiser",
     "allNotebooks": "Tous mes notebooks Kaggle",
     "notebookContents": "Dans ce notebook, vous retrouverez :",
     "notebookDataset": "Jeu de données",
@@ -202,9 +258,9 @@
       "notebook": "Notebooks"
     },
     "levels": {
-      "but1": "BUT 1",
-      "but2": "BUT 2",
-      "but3": "BUT 3",
+      "dut1": "DUT 1",
+      "dut2": "DUT 2",
+      "licence3": "Licence 3",
       "master1": "Master 1",
       "master2": "Master 2",
       "doctorate": "Doctorat"
@@ -220,18 +276,13 @@
       "empty": "Aucun projet suffisamment proche pour le moment.",
       "open": "Ouvrir {title}"
     },
-    "status": {
-      "active": "En cours",
-      "archived": "Terminé"
-    },
     "links": {
       "github": "Code",
       "demo": "Démo",
       "video": "Vidéo",
       "site": "Site",
       "pdf": "PDF"
-    },
-    "empty": "Aucun projet dans cette catégorie."
+    }
   },
 
   "knowledge": {
@@ -281,7 +332,6 @@
     "results": "résultats",
     "noResults": "Aucune publication ne correspond à ces filtres.",
     "noResultsHint": "Essaie un autre titre, auteur ou une autre année.",
-    "resetFilters": "Réinitialiser",
     "language": "Langue",
     "showVersion": "Afficher la version",
     "languages": {
@@ -394,23 +444,13 @@
     "placeholder": {
       "title": "Encadrements à venir",
       "text": "Cette section sera complétée prochainement avec les étudiants encadrés, les sujets et les niveaux."
-    },
-    "totalHours": "Total",
-    "courseCount": "cours affichés"
+    }
   },
 
   "awards": {
     "eyebrow": "08 — Palmarès",
     "title": "Quelques réussites",
-    "description": "",
-    "kinds": {
-      "medal": "Médaille",
-      "trophy": "Trophée",
-      "badge": "Badge",
-      "pin": "Pin"
-    },
-    "event": "Événement",
-    "demo": "Voir la démo"
+    "description": ""
   },
 
   "footer": {

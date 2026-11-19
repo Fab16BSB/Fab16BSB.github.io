@@ -21,13 +21,9 @@
     "closeMenu": "Cerrar el menú",
     "toggleTheme": "Cambiar de tema",
     "changeLanguage": "Cambiar de idioma",
-    "externalLink": "Se abre en una nueva pestaña",
     "mainNavigation": "Navegación principal",
     "sectionNavigation": "Navegación entre secciones",
-    "previousSection": "Sección anterior",
-    "nextSection": "Sección siguiente",
-    "socialLinks": "Redes sociales",
-    "projectDetails": "Detalles del proyecto",
+    "home": "Inicio",
     "closeDialog": "Cerrar la ventana"
   },
 
@@ -35,37 +31,16 @@
     "all": "Todo",
     "resetFilters": "Restablecer filtros",
     "close": "Cerrar",
-    "copy": "Copiar",
     "copied": "¡Copiado!",
     "cite": "Citar",
-    "article": "Artículo",
-    "pdf": "PDF",
-    "poster": "Póster",
-    "demo": "Demo",
-    "code": "Código",
-    "translation": "Traducción",
-    "github": "GitHub",
-    "site": "Sitio",
-    "video": "Vídeo",
     "seeMore": "Ver más",
     "seeLess": "Ver menos",
-    "present": "Actualidad",
-    "loading": "Cargando",
-    "external": "Se abre en una nueva pestaña",
-    "menu": "Menú",
-    "theme": "Tema",
-    "language": "Idioma",
     "light": "Claro",
-    "dark": "Oscuro",
-    "backToTop": "Volver arriba",
-    "builtWith": "Creado con React, TypeScript y CSS Modules",
-    "rights": "Todos los derechos reservados"
+    "dark": "Oscuro"
   },
 
   "search": {
     "deep": {
-      "label": "Búsqueda avanzada",
-      "enable": "Activar la búsqueda avanzada",
       "disable": "Desactivar la búsqueda avanzada",
       "disableShort": "Desactivar",
       "cancelDownload": "Cancelar",
@@ -84,9 +59,80 @@
     }
   },
 
+  "visit": {
+    "invite": "¿Qué busca en este perfil?",
+    "open": "Abrir la visita guiada",
+    "title": "¿Qué busca en este perfil?",
+    "subtitle": "Describe un puesto, una tecnología o una necesidad: te proponemos el recorrido.",
+    "inputLabel": "Buscar en el perfil",
+    "placeholder": "Un puesto, una tecnología, una necesidad...",
+    "clear": "Borrar la búsqueda",
+    "personasLabel": "Perfil de lectura",
+    "emptyTitle": "¿Por dónde empezar?",
+    "emptyHint": "Un perfil para un recorrido preparado, o una búsqueda para un recorrido a medida.",
+    "fit": {
+      "strong": "Coincidencia fuerte",
+      "partial": "Coincidencia parcial",
+      "weak": "Coincidencia débil",
+      "evidence": "Pruebas",
+      "gaps": "Brechas"
+    },
+    "gaps": {
+      "publications": "Ninguna publicación vinculada a la oferta",
+      "teaching": "Ningún curso o supervisión vinculado a la oferta",
+      "timeline": "Ninguna trayectoria vinculada a la oferta",
+      "projects": "Ninguna realización en la sección Proyectos",
+      "skills": "Ninguna competencia vinculada a la oferta",
+      "unknown": "{term} no documentado",
+      "coverage": "Parte de la oferta no está documentada"
+    },
+    "personas": {
+      "general": "Todo el perfil",
+      "data": "Data e IA",
+      "research": "Investigación",
+      "teaching": "Docencia",
+      "industry": "Industria"
+    },
+    "modes": {
+      "express": "Esencial",
+      "full": "Completo"
+    },
+    "modeLabel": "Duración del recorrido",
+    "results": "Tu recorrido",
+    "suggested": "Recorrido recomendado",
+    "summary": "{count} etapas · unos {minutes} min",
+    "why": "Coincide con",
+    "complement": "Etapa complementaria",
+    "openSection": "Ver la sección",
+    "openItem": "Ver {name}",
+    "tour": {
+      "start": "Iniciar la visita",
+      "title": "Visita guiada",
+      "listTitle": "Etapas de la visita",
+      "stepsCount": "Etapas ({count})",
+      "step": "Etapa {current}/{total}",
+      "next": "Siguiente",
+      "previous": "Anterior",
+      "finish": "Terminar",
+      "done": "Visita completada",
+      "doneHint": "Ha recorrido las etapas seleccionadas.",
+      "hint": "Lea el elemento resaltado y pulse Siguiente.",
+      "replay": "Repetir el recorrido",
+      "close": "Cerrar"
+    },
+    "duration": "{seconds} s",
+    "durationMinutes": "{minutes} min",
+    "durationMixed": "{minutes} min {seconds} s",
+    "itemCount": "{count} elementos",
+    "noMatch": "No hay coincidencias directas. Este es el recorrido recomendado para descubrir el perfil.",
+    "privacy": "Recorrido calculado en tu navegador. No se envían datos.",
+    "reset": "Reiniciar"
+  },
+
   "about": {
     "eyebrow": "01 — Sobre mí",
     "location": "Francia",
+    "freelance": "Freelance",
     "portraitAlt": "Retrato ilustrado de Fabien Poirier",
     "p1": "Para mí, la inteligencia artificial no es una caja negra: es una arquitectura fascinante que me encanta desmontar ladrillo a ladrillo para entender cómo funciona de verdad.",
     "p2": "Crear proyectos de principio a fin, probar nuevas librerías y afinar mi lógica analítica: ahí es donde disfruto. También me importa hacer estas tecnologías accesibles explicando y compartiendo lo que aprendo, porque la mejor forma de dominar un tema sigue siendo transmitirlo.",
@@ -125,8 +171,19 @@
     },
     "toolsTitle": "Herramientas & tecnologías",
     "count": "competencias",
+    "tenure": {
+      "first": "Primer uso",
+      "last": "Último uso",
+      "span": "Intervalo",
+      "industryYears": "{years} en empresa",
+      "undated": "Sin fecha",
+      "year": "{count} año",
+      "years": "{count} años",
+      "lessThanOne": "menos de un año",
+      "compact": "{first}–{last} · {years}",
+      "singleYear": "{year}"
+    },
     "related": {
-      "title": "Trabajos relacionados",
       "subtitle": "Proyectos, publicaciones y contenidos que usan esta competencia.",
       "empty": "Todavía no hay trabajos relacionados",
       "emptyHint": "Esta competencia aún no está asociada a un proyecto, una publicación o un vídeo del portafolio.",
@@ -184,7 +241,6 @@
     "results": "resultados",
     "noResults": "Ningún proyecto coincide con estos filtros.",
     "noResultsHint": "Prueba con otra palabra clave o otro año.",
-    "resetFilters": "Restablecer",
     "allNotebooks": "Todos mis notebooks de Kaggle",
     "notebookContents": "En este notebook encontrará:",
     "notebookDataset": "Conjunto de datos",
@@ -202,9 +258,9 @@
       "notebook": "Notebooks"
     },
     "levels": {
-      "but1": "BUT 1",
-      "but2": "BUT 2",
-      "but3": "BUT 3",
+      "dut1": "DUT 1",
+      "dut2": "DUT 2",
+      "licence3": "Grado 3",
       "master1": "Máster 1",
       "master2": "Máster 2",
       "doctorate": "Doctorado"
@@ -220,18 +276,13 @@
       "empty": "Todavía no hay un proyecto suficientemente cercano.",
       "open": "Abrir {title}"
     },
-    "status": {
-      "active": "En curso",
-      "archived": "Finalizado"
-    },
     "links": {
       "github": "Código",
       "demo": "Demo",
       "video": "Vídeo",
       "site": "Sitio",
       "pdf": "PDF"
-    },
-    "empty": "No hay proyectos en esta categoría."
+    }
   },
 
   "knowledge": {
@@ -281,7 +332,6 @@
     "results": "resultados",
     "noResults": "Ninguna publicación coincide con estos filtros.",
     "noResultsHint": "Prueba con otro título, autor o año.",
-    "resetFilters": "Restablecer",
     "language": "Idioma",
     "showVersion": "Mostrar la versión",
     "languages": {
@@ -394,23 +444,13 @@
     "placeholder": {
       "title": "Tutorías próximamente",
       "text": "Esta sección se completará con los estudiantes tutorizados, los temas y los niveles."
-    },
-    "totalHours": "Total",
-    "courseCount": "cursos mostrados"
+    }
   },
 
   "awards": {
     "eyebrow": "08 — Palmarés",
     "title": "Algunos logros",
-    "description": "",
-    "kinds": {
-      "medal": "Medalla",
-      "trophy": "Trofeo",
-      "badge": "Insignia",
-      "pin": "Pin"
-    },
-    "event": "Evento",
-    "demo": "Ver la demo"
+    "description": ""
   },
 
   "footer": {
