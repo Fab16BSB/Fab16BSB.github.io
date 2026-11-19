@@ -3,6 +3,7 @@
    Tout parcours non vide se termine par les réseaux de la section Contact.
 ========================================================================= */
 import { sectionsById } from '@/lib/visit/search/visit-search-vocabulary';
+import { sectionAnchor } from '@/data/site/sections.data';
 import type { Locale } from '@/types/common.types';
 import type { VisitPlan, VisitStop } from '@/types/visit.types';
 
@@ -21,7 +22,7 @@ function buildContactStop(locale: Locale): VisitStop | null {
 
   return {
     id: 'contact',
-    anchor: definition.anchor,
+    anchor: sectionAnchor(definition.id),
     icon: definition.icon,
     labelKey: definition.labelKey,
     description: definition.description[locale],

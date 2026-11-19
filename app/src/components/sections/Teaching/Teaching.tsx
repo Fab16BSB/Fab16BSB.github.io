@@ -1,6 +1,7 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
+import { SECTION } from '@/data/site/sections.data';
 import { useI18n } from '@/i18n/useI18n';
 import { EmptyState } from '@/components/ui/EmptyState/EmptyState';
 import { Icon } from '@/components/ui/Icon/Icon';
@@ -77,7 +78,11 @@ export function Teaching() {
         ];
 
   return (
-    <section id="teaching" className="section section--soft" aria-labelledby="teaching-title">
+    <section
+      id={SECTION.teaching.id}
+      className="section section--soft"
+      aria-labelledby={`${SECTION.teaching.id}-title`}
+    >
       <div className="container">
 
         {/* En-tête de la section. */}
@@ -86,7 +91,7 @@ export function Teaching() {
           icon="graduation"
           title={t('teaching.title')}
           description={t('teaching.description')}
-          titleId="teaching-title"
+          titleId={`${SECTION.teaching.id}-title`}
         />
 
         {/* Onglets et statistiques. */}

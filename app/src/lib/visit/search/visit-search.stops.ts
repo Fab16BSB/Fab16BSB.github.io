@@ -3,6 +3,7 @@
   Présentation puis sections classées, avec la limite de contenus du mode.
 ========================================================================= */
 import { profile } from '@/data/profile/profile.data';
+import { sectionAnchor } from '@/data/site/sections.data';
 import { getContentLimit } from '@/lib/visit/visit-mode';
 import { toHighlight } from '@/lib/visit/search/corpus/visit-search-corpus';
 import { sectionsById } from '@/lib/visit/search/visit-search-vocabulary';
@@ -37,7 +38,7 @@ export function buildAboutStop(
 
   return {
     id: 'about',
-    anchor: about.anchor,
+    anchor: sectionAnchor(about.id),
     icon: about.icon,
     labelKey: about.labelKey,
     description: about.description[locale],
@@ -87,7 +88,7 @@ export function buildSectionStop(
 
   return {
     id: definition.id,
-    anchor: definition.anchor,
+    anchor: sectionAnchor(definition.id),
     icon: definition.icon,
     labelKey: definition.labelKey,
     description: definition.description[locale],

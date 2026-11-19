@@ -3,6 +3,7 @@
    La présentation du profil ouvre la marche, puis les sections sélectionnées.
 ========================================================================= */
 import { getVisitHighlights } from '@/lib/visit/evidence/visit-evidence';
+import { sectionAnchor } from '@/data/site/sections.data';
 import { getContentLimit } from '@/lib/visit/visit-mode';
 import { sectionsById } from '@/lib/visit/search/visit-search-vocabulary';
 import type { Locale } from '@/types/common.types';
@@ -34,7 +35,7 @@ function buildStop(
 ): VisitStop {
   return {
     id: definition.id,
-    anchor: definition.anchor,
+    anchor: sectionAnchor(definition.id),
     icon: definition.icon,
     labelKey: definition.labelKey,
     description: definition.description[locale],

@@ -2,6 +2,7 @@
   IMPORTS
 ========================================================================= */
 import { links } from '@/data/profile/links.data';
+import { SECTION } from '@/data/site/sections.data';
 import { useI18n } from '@/i18n/useI18n';
 import { EmptyState } from '@/components/ui/EmptyState/EmptyState';
 import { Icon } from '@/components/ui/Icon/Icon';
@@ -47,7 +48,11 @@ export function Publications() {
   ];
 
   return (
-    <section id="publications" className="section" aria-labelledby="publications-title">
+    <section
+      id={SECTION.publications.id}
+      className="section"
+      aria-labelledby={`${SECTION.publications.id}-title`}
+    >
       <div className="container">
 
         {/* En-tête de la section. */}
@@ -56,7 +61,7 @@ export function Publications() {
           icon="book"
           title={t('publications.title')}
           description={t('publications.description')}
-          titleId="publications-title"
+          titleId={`${SECTION.publications.id}-title`}
         />
 
         <PublicationsFilters

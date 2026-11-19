@@ -1,7 +1,7 @@
 /* =========================================================================
   IMPORTS
 ========================================================================= */
-import { navItems } from '@/data/site/navigation.data';
+import { sectionsById } from '@/lib/visit/search/visit-search-vocabulary';
 import type { IconName } from '@/types/ui.types';
 import type { VisitTourState, VisitTourTarget } from '@/types/visit.types';
 
@@ -35,7 +35,7 @@ export function getVisitTourProgress(tour: VisitTourState): VisitTourProgress {
   const position = Math.min(tour.index + 1, total);
   const progress = total > 0 ? (position / total) * 100 : 0;
   const sectionIcon =
-    navItems.find((item) => item.id === current.stopId)?.icon ?? 'route';
+    sectionsById.get(current.stopId)?.icon ?? 'route';
 
   const result: VisitTourProgress = {
     current,

@@ -3,7 +3,7 @@
 ========================================================================= */
 import { useReveal } from '@/hooks/sections/useReveal';
 import { useSectionProgress } from '@/hooks/sections/useSectionProgress';
-import { sectionIds } from '@/data/site/navigation.data';
+import { navSectionIds } from '@/data/site/sections.data';
 import { useI18n } from '@/i18n/useI18n';
 
 // Layout
@@ -30,7 +30,7 @@ export function Home() {
   const revealRef = useReveal<HTMLDivElement>();
 
   // Section lue et progression commune au header et à la frise du bas.
-  const { active, progressRef } = useSectionProgress(sectionIds);
+  const { active, progressRef } = useSectionProgress(navSectionIds);
 
   return (
     <div ref={revealRef}>

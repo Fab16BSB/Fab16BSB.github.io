@@ -3,6 +3,7 @@
 ========================================================================= */
 import { education } from '@/data/career/education.data';
 import { experiences } from '@/data/career/experience.data';
+import { SECTION } from '@/data/site/sections.data';
 import { useI18n } from '@/i18n/useI18n';
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading';
 import { Tabs } from '@/components/ui/Tabs/Tabs';
@@ -25,7 +26,11 @@ export function Timeline() {
   ];
 
   return (
-    <section id="timeline" className="section section--soft" aria-labelledby="timeline-title">
+    <section
+      id={SECTION.timeline.id}
+      className="section section--soft"
+      aria-labelledby={`${SECTION.timeline.id}-title`}
+    >
       <div className="container">
 
         {/* En-tête de la section. */}
@@ -34,7 +39,7 @@ export function Timeline() {
           icon="route"
           title={t('timeline.title')}
           description={t('timeline.description')}
-          titleId="timeline-title"
+          titleId={`${SECTION.timeline.id}-title`}
           wide
         />
 

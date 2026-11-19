@@ -2,6 +2,7 @@
   IMPORTS
 ========================================================================= */
 import { navItems } from '@/data/site/navigation.data';
+import { SECTION, sectionAnchor } from '@/data/site/sections.data';
 import { profile } from '@/data/profile/profile.data';
 import { useI18n } from '@/i18n/useI18n';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher/LanguageSwitcher';
@@ -35,7 +36,7 @@ export function Header({ active }: HeaderProps) {
           {/* Identité */}
           <a
             className={styles.brand}
-            href="#about"
+            href={sectionAnchor(SECTION.about.id)}
             aria-label={`${profile.name} — ${t('accessibility.home')}`}
           >
             <span className={styles.monogram}>FP</span>

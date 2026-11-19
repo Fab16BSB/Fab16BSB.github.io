@@ -2,6 +2,7 @@
   HELPERS : RelatedContent — fonctions pures
   Libellés, ancres et icônes des recommandations du graphe.
 ========================================================================= */
+import { SECTION, sectionAnchor } from '@/data/site/sections.data';
 import type { Locale, Localized } from '@/types/common.types';
 import type { MediumPost } from '@/types/medium.types';
 import type {
@@ -49,7 +50,9 @@ export function kindIcon(kind: KnowledgeContentKind): IconName {
  * @returns L'ancre à utiliser dans un lien interne.
  */
 export function relatedHref(node: KnowledgeContentNode): string {
-  const fallback = node.kind === 'project' ? '#projects' : '#';
+  const fallback = node.kind === 'project'
+    ? sectionAnchor(SECTION.projects.id)
+    : '#';
   return node.anchor ?? fallback;
 }
 

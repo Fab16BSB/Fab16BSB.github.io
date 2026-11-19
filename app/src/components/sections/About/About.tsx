@@ -4,6 +4,7 @@
 import { passions, qualities } from '@/data/content/about.data';
 import { profile } from '@/data/profile/profile.data';
 import { socials } from '@/data/profile/socials.data';
+import { SECTION } from '@/data/site/sections.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { SocialLinks } from '@/components/ui/SocialLinks/SocialLinks';
@@ -23,7 +24,11 @@ export function About() {
       : loc(profile.availability.text[availabilityStatus]);
 
   return (
-    <section id="about" className={styles.about} aria-labelledby="about-title">
+    <section
+      id={SECTION.about.id}
+      className={styles.about}
+      aria-labelledby={`${SECTION.about.id}-title`}
+    >
       <div className={`container ${styles.grid}`}>
 
         {/* Identité : nom, rôle et localisation. */}
@@ -32,7 +37,7 @@ export function About() {
             <Icon name="user" size={20} />
             {t('about.eyebrow')}
           </span>
-          <h1 id="about-title" className={styles.name}>
+          <h1 id={`${SECTION.about.id}-title`} className={styles.name}>
             {profile.name}
           </h1>
           <p className={styles.role}>{loc(profile.role)}</p>
@@ -84,7 +89,7 @@ export function About() {
           {/* Cible de la dernière étape de visite. */}
           <div
             className={styles.socials}
-            id="contact"
+            id={SECTION.contact.id}
             data-visit-target="contact-socials"
           >
             <SocialLinks links={socials} />

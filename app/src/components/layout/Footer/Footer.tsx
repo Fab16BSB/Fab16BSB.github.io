@@ -2,6 +2,7 @@
   IMPORTS
 ========================================================================= */
 import { navItems } from '@/data/site/navigation.data';
+import { SECTION, sectionAnchor } from '@/data/site/sections.data';
 import { community, socials } from '@/data/profile/socials.data';
 import { profile } from '@/data/profile/profile.data';
 import { useI18n } from '@/i18n/useI18n';
@@ -26,7 +27,7 @@ export function Footer() {
 
         {/* Identité */}
         <div className={styles.brandColumn}>
-          <a className={styles.brand} href="#about">
+          <a className={styles.brand} href={sectionAnchor(SECTION.about.id)}>
             <span className={styles.monogram}>FP</span>
             <span>
               <span className={styles.name}>{profile.name}</span>
@@ -63,7 +64,7 @@ export function Footer() {
         </p>
         <p className={styles.updated}>{t('footer.lastUpdated', { date: lastUpdated })}</p>
         <p className={styles.built}>{t('footer.builtWith')}</p>
-        <a className={styles.top} href="#about">
+        <a className={styles.top} href={sectionAnchor(SECTION.about.id)}>
           {t('footer.backToTop')}
           <Icon name="arrow-up-right" size={15} />
         </a>

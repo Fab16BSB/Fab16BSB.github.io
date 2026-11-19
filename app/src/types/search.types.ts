@@ -1,7 +1,11 @@
 import type { Locale } from './common.types';
+import type { SectionId } from './section.types';
 
 /** Section du site disposant d'une barre de recherche. */
-export type SearchSection = 'projects' | 'publications' | 'videos' | 'teaching';
+export type SearchSection = Extract<
+  SectionId,
+  'projects' | 'publications' | 'videos' | 'teaching'
+>;
 
 /** Précision utilisée pour le modèle d'embedding. */
 export type EmbeddingDtype = 'q8' | 'fp16' | 'fp32';

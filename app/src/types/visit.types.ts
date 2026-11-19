@@ -1,19 +1,11 @@
 import type { Localized } from './common.types';
 import type { KnowledgeThemeId } from './knowledge.types';
+import type { SectionId } from './section.types';
 import type { SkillTenureSummary } from './skill.types';
 import type { IconName } from './ui.types';
 
 /** Section du site proposée dans un parcours de visite. */
-export type VisitSectionId =
-  | 'about'
-  | 'timeline'
-  | 'skills'
-  | 'projects'
-  | 'publications'
-  | 'videos'
-  | 'teaching'
-  | 'awards'
-  | 'contact';
+export type VisitSectionId = SectionId;
 
 /** Profil de lecture utilisé pour pondérer le parcours. */
 export type VisitPersona =
@@ -38,24 +30,20 @@ export type VisitSectionPolicy = 'named' | 'matched';
  * Définition statique d'une étape possible.
  *
  * @property {VisitSectionId} id - Identifiant de la section.
- * @property {string} anchor - Ancre de la section dans la page.
  * @property {IconName} icon - Icône affichée dans l'étape.
  * @property {string} labelKey - Clé i18n du libellé.
  * @property {Localized} description - Ce que la section apporte au visiteur.
  * @property {number} duration - Durée estimée en minutes.
- * @property {number} order - Position de repli dans le parcours.
  * @property {string[]} searchTags - Vocabulaire de recherche de la section.
  * @property {string[]} nameWords - Expressions qui nomment la section dans une demande.
  * @property {string[]} [searchAliases] - Alias réservés à la fiche de la section.
  */
 export type VisitSectionDefinition = {
   id: VisitSectionId;
-  anchor: string;
   icon: IconName;
   labelKey: string;
   description: Localized;
   duration: number;
-  order: number;
   searchTags: string[];
   nameWords: string[];
   searchAliases?: string[];

@@ -3,6 +3,7 @@
   Retiennent une section nommée sans jamais servir de preuve.
 ========================================================================= */
 import { visitSections } from '@/data/visit/visit-sections.data';
+import { sectionAnchor } from '@/data/site/sections.data';
 import { sectionsById } from '@/lib/visit/search/visit-search-vocabulary';
 import type { Locale } from '@/types/common.types';
 import type { CorpusAdd } from './visit-search-corpus.sources';
@@ -33,7 +34,7 @@ export function collectSectionSheets(
         section: definition.id,
         label: definition.description[locale],
         detail: '',
-        target: definition.anchor,
+        target: sectionAnchor(definition.id),
         year: 0,
         kind: 'section',
       },

@@ -3,6 +3,7 @@
 ========================================================================= */
 import type { CSSProperties } from 'react';
 import { links } from '@/data/profile/links.data';
+import { SECTION } from '@/data/site/sections.data';
 import { useI18n } from '@/i18n/useI18n';
 import { EmptyState } from '@/components/ui/EmptyState/EmptyState';
 import { Icon } from '@/components/ui/Icon/Icon';
@@ -50,7 +51,11 @@ export function Videos() {
   ];
 
   return (
-    <section id="videos" className="section" aria-labelledby="videos-title">
+    <section
+      id={SECTION.videos.id}
+      className="section"
+      aria-labelledby={`${SECTION.videos.id}-title`}
+    >
       <div className="container">
 
         {/* En-tête de la section. */}
@@ -59,7 +64,7 @@ export function Videos() {
           icon="play"
           title={t('videos.title')}
           description={t('videos.description')}
-          titleId="videos-title"
+          titleId={`${SECTION.videos.id}-title`}
         />
 
         {/* Filtres : type, recherche et année. */}

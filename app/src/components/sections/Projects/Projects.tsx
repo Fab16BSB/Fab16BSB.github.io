@@ -2,6 +2,7 @@
   IMPORTS
 ========================================================================= */
 import { links } from '@/data/profile/links.data';
+import { SECTION } from '@/data/site/sections.data';
 import { useI18n } from '@/i18n/useI18n';
 import { EmptyState } from '@/components/ui/EmptyState/EmptyState';
 import { Icon } from '@/components/ui/Icon/Icon';
@@ -58,7 +59,11 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="section section--soft" aria-labelledby="projects-title">
+    <section
+      id={SECTION.projects.id}
+      className="section section--soft"
+      aria-labelledby={`${SECTION.projects.id}-title`}
+    >
       <div className="container">
 
         {/* En-tête de la section. */}
@@ -67,7 +72,7 @@ export function Projects() {
           icon="code"
           title={t('projects.title')}
           description={t('projects.description')}
-          titleId="projects-title"
+          titleId={`${SECTION.projects.id}-title`}
         />
 
         {/* Filtres : catégories, recherche et année. */}

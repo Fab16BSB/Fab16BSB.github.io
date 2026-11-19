@@ -14,6 +14,7 @@ import { projects } from '@/data/content/projects.data';
 import { skills } from '@/data/career/skills.data';
 import { supervisions } from '@/data/content/supervisions.data';
 import { teaching } from '@/data/content/teaching.data';
+import { SECTION, sectionAnchor } from '@/data/site/sections.data';
 import type { Locale, Localized } from '@/types/common.types';
 import type { EducationId } from '@/types/education.types';
 import type { ExperienceId } from '@/types/experience.types';
@@ -133,7 +134,7 @@ function projectRawNode(project: (typeof projects)[number]): KnowledgeRawNode {
     sourceId: project.id,
     label: project.title,
     year: parseFirstYear(project.year),
-    anchor: '#projects',
+    anchor: sectionAnchor(SECTION.projects.id),
     educationIds: project.educationIds,
     experienceIds: project.experienceIds,
     isNotebook: project.category === 'notebook',
@@ -181,7 +182,7 @@ function publicationRawNode(publication: Publication): KnowledgeRawNode {
         publication.id,
     },
     year: parseFirstYear(publication.year),
-    anchor: '#publications',
+    anchor: sectionAnchor(SECTION.publications.id),
     tags: [
       ...publication.authors,
       publication.venue.fr,
@@ -206,7 +207,7 @@ function articleRawNode(post: MediumPost): KnowledgeRawNode {
     sourceId: post.id,
     label: localizedSame(post.title),
     year: parseFirstYear(post.publishedAt.slice(0, 4)),
-    anchor: '#publications',
+    anchor: sectionAnchor(SECTION.publications.id),
     tags: [...post.tags, 'Medium'],
     text: { fr: text, en: text, es: text },
   };
@@ -235,7 +236,7 @@ function skillRawNode(skill: (typeof skills)[number]): KnowledgeRawNode {
     kind: 'skill',
     sourceId: skill.id,
     label: localizedSame(skill.name),
-    anchor: '#skills',
+    anchor: sectionAnchor(SECTION.skills.id),
     educationIds: skill.educationIds,
     experienceIds: skill.experienceIds,
     projectIds: skill.projectIds,
@@ -272,7 +273,7 @@ function teachingRawNode(course: (typeof teaching)[number]): KnowledgeRawNode {
     sourceId: course.id,
     label: course.theme,
     year: course.end,
-    anchor: '#teaching',
+    anchor: sectionAnchor(SECTION.teaching.id),
     tags: [
       course.level,
       course.place,
@@ -308,7 +309,7 @@ function experienceRawNode(experience: (typeof experiences)[number]): KnowledgeR
     sourceId: experience.id,
     label: experience.role,
     year: experience.start,
-    anchor: '#timeline',
+    anchor: sectionAnchor(SECTION.timeline.id),
     educationId: experience.educationId,
     tags: experience.tags,
     text,
@@ -334,7 +335,7 @@ function educationRawNode(item: (typeof education)[number]): KnowledgeRawNode {
     sourceId: item.id,
     label: item.degree,
     year: item.end,
-    anchor: '#timeline',
+    anchor: sectionAnchor(SECTION.timeline.id),
     tags: ['formation', 'diplome', ...(item.tags ?? [])],
     text,
   };
@@ -359,7 +360,7 @@ function awardRawNode(award: (typeof awards)[number]): KnowledgeRawNode {
     sourceId: award.id,
     label: award.title,
     year: parseFirstYear(award.year),
-    anchor: '#awards',
+    anchor: sectionAnchor(SECTION.awards.id),
     tags: [award.kind, award.tier ?? '', award.event ?? ''].filter(Boolean),
     text,
   };
@@ -393,7 +394,7 @@ function supervisionRawNode(item: (typeof supervisions)[number]): KnowledgeRawNo
     sourceId: item.id,
     label: item.topic,
     year: item.start ?? (typeof item.end === 'number' ? item.end : undefined),
-    anchor: '#teaching',
+    anchor: sectionAnchor(SECTION.teaching.id),
     tags: [item.kind, item.mode, item.institution, ...(item.tags ?? [])],
     text,
   };
@@ -412,7 +413,7 @@ function videoRawNode(video: YoutubeVideo): KnowledgeRawNode {
     sourceId: video.id,
     label: localizedSame(video.title),
     year: parseFirstYear(video.publishedAt.slice(0, 4)),
-    anchor: '#videos',
+    anchor: sectionAnchor(SECTION.videos.id),
     tags: [video.type, 'YouTube'],
     text: { fr: text, en: text, es: text },
   };

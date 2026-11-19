@@ -1,3 +1,5 @@
+import { sectionIds } from '@/data/site/sections.data';
+import type { SectionId } from '@/types/section.types';
 import type { VisitSectionDefinition } from '@/types/visit.types';
 
 /* =========================================================================
@@ -6,17 +8,23 @@ import type { VisitSectionDefinition } from '@/types/visit.types';
 ========================================================================= */
 
 /* ─────────────────────────────────────────────────────────────────────────
+   TYPES
+   ───────────────────────────────────────────────────────────────────────── */
+
+/** Contenu de visite d'une section, hors identité et ancre dérivées. */
+type VisitSectionContent = Omit<VisitSectionDefinition, 'id'>;
+
+/* ─────────────────────────────────────────────────────────────────────────
    SECTIONS
+   Chaque section du document doit fournir son contenu de visite.
    L'ordre de `visitSections` est l'ordre narratif de repli.
    ───────────────────────────────────────────────────────────────────────── */
 
-/** Sections proposées par le parcours de visite. */
-export const visitSections: VisitSectionDefinition[] = [
+/** Contenus de visite, indexés par section du document. */
+const visitSectionContent: Record<SectionId, VisitSectionContent> = {
 
   // À propos
-  {
-    id: 'about',
-    anchor: '#about',
+  about: {
     icon: 'user',
     labelKey: 'nav.about',
     description: {
@@ -25,7 +33,6 @@ export const visitSections: VisitSectionDefinition[] = [
       es: 'Identidad, posicionamiento y disponibilidad.',
     },
     duration: 20,
-    order: 0,
     nameWords: [
       'à propos', 'about', 'présentation', 'presentation', 'presentación',
       'identité', 'identidad',
@@ -47,9 +54,7 @@ export const visitSections: VisitSectionDefinition[] = [
   },
 
   // Parcours
-  {
-    id: 'timeline',
-    anchor: '#timeline',
+  timeline: {
     icon: 'route',
     labelKey: 'nav.timeline',
     description: {
@@ -58,7 +63,6 @@ export const visitSections: VisitSectionDefinition[] = [
       es: 'Puestos, responsabilidades y contexto industrial.',
     },
     duration: 45,
-    order: 3,
     nameWords: [
       'parcours', 'expérience', 'experiencia', 'carrière', 'career',
       'trayectoria', 'formation', 'education', 'formación', 'historial',
@@ -70,9 +74,7 @@ export const visitSections: VisitSectionDefinition[] = [
   },
 
   // Compétences
-  {
-    id: 'skills',
-    anchor: '#skills',
+  skills: {
     icon: 'sparkles',
     labelKey: 'nav.skills',
     description: {
@@ -81,7 +83,6 @@ export const visitSections: VisitSectionDefinition[] = [
       es: 'Stack técnico, herramientas y áreas de dominio.',
     },
     duration: 30,
-    order: 4,
     nameWords: [
       'compétence', 'competence', 'competencia', 'habilidad', 'skill',
       'technologie', 'technology', 'tecnología', 'herramienta',
@@ -93,9 +94,7 @@ export const visitSections: VisitSectionDefinition[] = [
   },
 
   // Projets
-  {
-    id: 'projects',
-    anchor: '#projects',
+  projects: {
     icon: 'code',
     labelKey: 'nav.projects',
     description: {
@@ -104,7 +103,6 @@ export const visitSections: VisitSectionDefinition[] = [
       es: 'Realizaciones concretas, código y demostraciones.',
     },
     duration: 60,
-    order: 1,
     nameWords: [
       'projet', 'project', 'proyecto', 'réalisation', 'realización',
       'réalisations', 'realizaciones', 'portfolio', 'application',
@@ -117,9 +115,7 @@ export const visitSections: VisitSectionDefinition[] = [
   },
 
   // Publications
-  {
-    id: 'publications',
-    anchor: '#publications',
+  publications: {
     icon: 'book',
     labelKey: 'nav.publications',
     description: {
@@ -128,7 +124,6 @@ export const visitSections: VisitSectionDefinition[] = [
       es: 'Trabajos científicos, revistas y conferencias.',
     },
     duration: 45,
-    order: 2,
     nameWords: [
       'publication', 'publicación', 'publicaciones', 'paper', 'article',
       'artículo', 'artículos', 'recherche', 'research', 'investigación',
@@ -152,9 +147,7 @@ export const visitSections: VisitSectionDefinition[] = [
   },
 
   // Vidéos
-  {
-    id: 'videos',
-    anchor: '#videos',
+  videos: {
     icon: 'play',
     labelKey: 'nav.videos',
     description: {
@@ -163,7 +156,6 @@ export const visitSections: VisitSectionDefinition[] = [
       es: 'Demostraciones y divulgación en vídeo.',
     },
     duration: 25,
-    order: 6,
     nameWords: [
       'vidéo', 'video', 'vídeo', 'youtube', 'tutoriel', 'tutorial',
       'canal', 'chaîne', 'channel', 'vulgarisation', 'vulgarización',
@@ -178,9 +170,7 @@ export const visitSections: VisitSectionDefinition[] = [
   },
 
   // Enseignement
-  {
-    id: 'teaching',
-    anchor: '#teaching',
+  teaching: {
     icon: 'graduation',
     labelKey: 'nav.teaching',
     description: {
@@ -189,7 +179,6 @@ export const visitSections: VisitSectionDefinition[] = [
       es: 'Cursos, tutoría y transmisión.',
     },
     duration: 40,
-    order: 5,
     nameWords: [
       'enseignement', 'teaching', 'enseñanza', 'cours', 'course', 'curso',
       'formation', 'training', 'formación', 'encadrement', 'supervision',
@@ -213,9 +202,7 @@ export const visitSections: VisitSectionDefinition[] = [
   },
 
   // Distinctions
-  {
-    id: 'awards',
-    anchor: '#awards',
+  awards: {
     icon: 'trophy',
     labelKey: 'nav.awards',
     description: {
@@ -224,7 +211,6 @@ export const visitSections: VisitSectionDefinition[] = [
       es: 'Premios, concursos y responsabilidades.',
     },
     duration: 20,
-    order: 7,
     nameWords: [
       'distinction', 'distinción', 'distinciones', 'award', 'prize', 'prix',
       'premio', 'palmarès', 'reconnaissance', 'reconocimiento',
@@ -245,9 +231,7 @@ export const visitSections: VisitSectionDefinition[] = [
   },
 
   // Contact
-  {
-    id: 'contact',
-    anchor: '#contact',
+  contact: {
     icon: 'mail',
     labelKey: 'nav.contact',
     description: {
@@ -256,7 +240,6 @@ export const visitSections: VisitSectionDefinition[] = [
       es: 'LinkedIn, GitHub, Medium, Kaggle y YouTube para contactarme.',
     },
     duration: 10,
-    order: 8,
     nameWords: [
       'contact', 'contacto', 'linkedin', 'github', 'medium', 'kaggle',
       'youtube', 'réseau', 'reseau', 'network', 'red', 'email', 'mail',
@@ -269,4 +252,10 @@ export const visitSections: VisitSectionDefinition[] = [
       'courriel', 'correo',
     ],
   },
-];
+};
+
+/** Sections proposées par le parcours de visite, dans l'ordre du document. */
+export const visitSections: VisitSectionDefinition[] = sectionIds.map((id) => ({
+  id,
+  ...visitSectionContent[id],
+}));

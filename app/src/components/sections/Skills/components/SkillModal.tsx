@@ -3,6 +3,7 @@
 ========================================================================= */
 import { useId } from 'react';
 import { createPortal } from 'react-dom';
+import { SECTION, sectionAnchor } from '@/data/site/sections.data';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { RelatedContent } from '@/components/ui/RelatedContent/RelatedContent';
 import { useI18n } from '@/i18n/useI18n';
@@ -117,7 +118,13 @@ export function SkillModal({ skill, onClose, onOpenProject }: SkillModalProps) {
             limit={6}
             showHeader={false}
             embedded
-            emptyState={<SkillEmptyState onExploreProjects={() => navigate('#projects')} />}
+            emptyState={
+              <SkillEmptyState
+                onExploreProjects={() =>
+                  navigate(sectionAnchor(SECTION.projects.id))
+                }
+              />
+            }
             onOpenProject={onOpenProject}
             onNavigate={navigate}
           />

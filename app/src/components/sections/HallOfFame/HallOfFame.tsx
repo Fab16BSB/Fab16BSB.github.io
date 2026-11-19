@@ -3,6 +3,7 @@
 ========================================================================= */
 import type { CSSProperties } from 'react';
 import { awards } from '@/data/content/awards.data';
+import { SECTION } from '@/data/site/sections.data';
 import { useI18n } from '@/i18n/useI18n';
 import { AwardPin } from '@/components/ui/AwardPin/AwardPin';
 import { getPinAccent } from '@/components/ui/AwardPin/awardPin.helpers';
@@ -18,7 +19,11 @@ export function HallOfFame() {
   const { t, loc } = useI18n();
 
   return (
-    <section id="awards" className="section" aria-labelledby="awards-title">
+    <section
+      id={SECTION.awards.id}
+      className="section"
+      aria-labelledby={`${SECTION.awards.id}-title`}
+    >
       <div className="container">
 
         {/* En-tête de la section. */}
@@ -27,7 +32,7 @@ export function HallOfFame() {
           icon="trophy"
           title={t('awards.title')}
           description={t('awards.description')}
-          titleId="awards-title"
+          titleId={`${SECTION.awards.id}-title`}
         />
 
         {/* Distinction à afficher */}

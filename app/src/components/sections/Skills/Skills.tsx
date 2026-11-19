@@ -2,6 +2,7 @@
   IMPORTS
 ========================================================================= */
 import type { CSSProperties } from 'react';
+import { SECTION } from '@/data/site/sections.data';
 import { useI18n } from '@/i18n/useI18n';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { KnowledgeIcon } from '@/components/ui/KnowledgeIcon/KnowledgeIcon';
@@ -57,7 +58,11 @@ export function Skills() {
   }));
 
   return (
-    <section id="skills" className="section" aria-labelledby="skills-title">
+    <section
+      id={SECTION.skills.id}
+      className="section"
+      aria-labelledby={`${SECTION.skills.id}-title`}
+    >
       <div className="container">
 
         {/* En-tête de la section. */}
@@ -65,7 +70,7 @@ export function Skills() {
           eyebrow={t('skills.eyebrow')}
           icon="sparkles"
           title={t('skills.knowledge.title')}
-          titleId="skills-title"
+          titleId={`${SECTION.skills.id}-title`}
         />
 
         {/* Domaines de connaissance. */}
